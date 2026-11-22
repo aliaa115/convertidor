@@ -1,0 +1,38 @@
+import * as z from "zod";
+import type { Prisma } from "../../prisma/client.ts";
+import { ComentarioUpdateManyWithoutTipoNestedInputObjectSchema as ComentarioUpdateManyWithoutTipoNestedInputObjectSchema } from "./ComentarioUpdateManyWithoutTipoNestedInput.schema.ts";
+import { ConfiguracionUpdateManyWithoutTipoNestedInputObjectSchema as ConfiguracionUpdateManyWithoutTipoNestedInputObjectSchema } from "./ConfiguracionUpdateManyWithoutTipoNestedInput.schema.ts";
+import { EstadoUpdateOneRequiredWithoutTiposNestedInputObjectSchema as EstadoUpdateOneRequiredWithoutTiposNestedInputObjectSchema } from "./EstadoUpdateOneRequiredWithoutTiposNestedInput.schema.ts";
+import { NullableStringFieldUpdateOperationsInputObjectSchema as NullableStringFieldUpdateOperationsInputObjectSchema } from "./NullableStringFieldUpdateOperationsInput.schema.ts";
+
+const makeSchema = () =>
+	z
+		.object({
+			nombre: z
+				.union([
+					z.string(),
+					z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema),
+				])
+				.optional()
+				.nullable(),
+			tabla: z
+				.union([
+					z.string(),
+					z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema),
+				])
+				.optional()
+				.nullable(),
+			estado: z
+				.lazy(() => EstadoUpdateOneRequiredWithoutTiposNestedInputObjectSchema)
+				.optional(),
+			configuraciones: z
+				.lazy(() => ConfiguracionUpdateManyWithoutTipoNestedInputObjectSchema)
+				.optional(),
+			comentarios: z
+				.lazy(() => ComentarioUpdateManyWithoutTipoNestedInputObjectSchema)
+				.optional(),
+		})
+		.strict();
+export const TipoUpdateWithoutLibrosInputObjectSchema: z.ZodType<Prisma.TipoUpdateWithoutLibrosInput> =
+	makeSchema() as unknown as z.ZodType<Prisma.TipoUpdateWithoutLibrosInput>;
+export const TipoUpdateWithoutLibrosInputObjectZodSchema = makeSchema();

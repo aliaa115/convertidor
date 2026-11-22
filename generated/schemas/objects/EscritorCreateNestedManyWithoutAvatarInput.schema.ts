@@ -1,0 +1,44 @@
+import * as z from "zod";
+import type { Prisma } from "../../prisma/client.ts";
+import { EscritorCreateManyAvatarInputEnvelopeObjectSchema as EscritorCreateManyAvatarInputEnvelopeObjectSchema } from "./EscritorCreateManyAvatarInputEnvelope.schema.ts";
+import { EscritorCreateOrConnectWithoutAvatarInputObjectSchema as EscritorCreateOrConnectWithoutAvatarInputObjectSchema } from "./EscritorCreateOrConnectWithoutAvatarInput.schema.ts";
+import { EscritorCreateWithoutAvatarInputObjectSchema as EscritorCreateWithoutAvatarInputObjectSchema } from "./EscritorCreateWithoutAvatarInput.schema.ts";
+import { EscritorUncheckedCreateWithoutAvatarInputObjectSchema as EscritorUncheckedCreateWithoutAvatarInputObjectSchema } from "./EscritorUncheckedCreateWithoutAvatarInput.schema.ts";
+import { EscritorWhereUniqueInputObjectSchema as EscritorWhereUniqueInputObjectSchema } from "./EscritorWhereUniqueInput.schema.ts";
+
+const makeSchema = () =>
+	z
+		.object({
+			create: z
+				.union([
+					z.lazy(() => EscritorCreateWithoutAvatarInputObjectSchema),
+					z.lazy(() => EscritorCreateWithoutAvatarInputObjectSchema).array(),
+					z.lazy(() => EscritorUncheckedCreateWithoutAvatarInputObjectSchema),
+					z
+						.lazy(() => EscritorUncheckedCreateWithoutAvatarInputObjectSchema)
+						.array(),
+				])
+				.optional(),
+			connectOrCreate: z
+				.union([
+					z.lazy(() => EscritorCreateOrConnectWithoutAvatarInputObjectSchema),
+					z
+						.lazy(() => EscritorCreateOrConnectWithoutAvatarInputObjectSchema)
+						.array(),
+				])
+				.optional(),
+			createMany: z
+				.lazy(() => EscritorCreateManyAvatarInputEnvelopeObjectSchema)
+				.optional(),
+			connect: z
+				.union([
+					z.lazy(() => EscritorWhereUniqueInputObjectSchema),
+					z.lazy(() => EscritorWhereUniqueInputObjectSchema).array(),
+				])
+				.optional(),
+		})
+		.strict();
+export const EscritorCreateNestedManyWithoutAvatarInputObjectSchema: z.ZodType<Prisma.EscritorCreateNestedManyWithoutAvatarInput> =
+	makeSchema() as unknown as z.ZodType<Prisma.EscritorCreateNestedManyWithoutAvatarInput>;
+export const EscritorCreateNestedManyWithoutAvatarInputObjectZodSchema =
+	makeSchema();

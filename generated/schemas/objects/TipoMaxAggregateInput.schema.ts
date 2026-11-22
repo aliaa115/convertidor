@@ -1,0 +1,15 @@
+import * as z from "zod";
+import type { Prisma } from "../../prisma/client.ts";
+
+const makeSchema = () =>
+	z
+		.object({
+			id: z.literal(true).optional(),
+			nombre: z.literal(true).optional(),
+			tabla: z.literal(true).optional(),
+			estadoId: z.literal(true).optional(),
+		})
+		.strict();
+export const TipoMaxAggregateInputObjectSchema: z.ZodType<Prisma.TipoMaxAggregateInputType> =
+	makeSchema() as unknown as z.ZodType<Prisma.TipoMaxAggregateInputType>;
+export const TipoMaxAggregateInputObjectZodSchema = makeSchema();

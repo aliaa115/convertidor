@@ -1,0 +1,44 @@
+import * as z from "zod";
+import type { Prisma } from "../../prisma/client.ts";
+import { FavoritoCreateManyEstadoInputEnvelopeObjectSchema as FavoritoCreateManyEstadoInputEnvelopeObjectSchema } from "./FavoritoCreateManyEstadoInputEnvelope.schema.ts";
+import { FavoritoCreateOrConnectWithoutEstadoInputObjectSchema as FavoritoCreateOrConnectWithoutEstadoInputObjectSchema } from "./FavoritoCreateOrConnectWithoutEstadoInput.schema.ts";
+import { FavoritoCreateWithoutEstadoInputObjectSchema as FavoritoCreateWithoutEstadoInputObjectSchema } from "./FavoritoCreateWithoutEstadoInput.schema.ts";
+import { FavoritoUncheckedCreateWithoutEstadoInputObjectSchema as FavoritoUncheckedCreateWithoutEstadoInputObjectSchema } from "./FavoritoUncheckedCreateWithoutEstadoInput.schema.ts";
+import { FavoritoWhereUniqueInputObjectSchema as FavoritoWhereUniqueInputObjectSchema } from "./FavoritoWhereUniqueInput.schema.ts";
+
+const makeSchema = () =>
+	z
+		.object({
+			create: z
+				.union([
+					z.lazy(() => FavoritoCreateWithoutEstadoInputObjectSchema),
+					z.lazy(() => FavoritoCreateWithoutEstadoInputObjectSchema).array(),
+					z.lazy(() => FavoritoUncheckedCreateWithoutEstadoInputObjectSchema),
+					z
+						.lazy(() => FavoritoUncheckedCreateWithoutEstadoInputObjectSchema)
+						.array(),
+				])
+				.optional(),
+			connectOrCreate: z
+				.union([
+					z.lazy(() => FavoritoCreateOrConnectWithoutEstadoInputObjectSchema),
+					z
+						.lazy(() => FavoritoCreateOrConnectWithoutEstadoInputObjectSchema)
+						.array(),
+				])
+				.optional(),
+			createMany: z
+				.lazy(() => FavoritoCreateManyEstadoInputEnvelopeObjectSchema)
+				.optional(),
+			connect: z
+				.union([
+					z.lazy(() => FavoritoWhereUniqueInputObjectSchema),
+					z.lazy(() => FavoritoWhereUniqueInputObjectSchema).array(),
+				])
+				.optional(),
+		})
+		.strict();
+export const FavoritoCreateNestedManyWithoutEstadoInputObjectSchema: z.ZodType<Prisma.FavoritoCreateNestedManyWithoutEstadoInput> =
+	makeSchema() as unknown as z.ZodType<Prisma.FavoritoCreateNestedManyWithoutEstadoInput>;
+export const FavoritoCreateNestedManyWithoutEstadoInputObjectZodSchema =
+	makeSchema();

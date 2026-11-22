@@ -1,0 +1,18 @@
+import * as z from "zod";
+import type { Prisma } from "../../prisma/client.ts";
+
+const makeSchema = () =>
+	z
+		.object({
+			id: z.number().int().optional(),
+			nombre: z.string().optional().nullable(),
+			indice: z.number().int().optional().nullable(),
+			createdAt: z.coerce.date().optional(),
+			updatedAt: z.coerce.date().optional(),
+			libroId: z.number().int(),
+			estadoId: z.number().int().optional(),
+		})
+		.strict();
+export const CapituloCreateManyInputObjectSchema: z.ZodType<Prisma.CapituloCreateManyInput> =
+	makeSchema() as unknown as z.ZodType<Prisma.CapituloCreateManyInput>;
+export const CapituloCreateManyInputObjectZodSchema = makeSchema();

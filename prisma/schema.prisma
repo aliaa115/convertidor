@@ -1,0 +1,506 @@
+generator client {
+  provider               = "prisma-client"
+  output                 = "../generated/prisma"
+  moduleFormat           = "esm"
+  generatedFileExtension = "ts"
+  importFileExtension    = "ts"
+}
+
+generator zod {
+  provider               = "prisma-zod-generator"
+  generatedFileExtension = "ts"
+  importFileExtension    = "ts"
+  config                 = "./zod-generator.config.json"
+  output                 = "../generated"
+  // optional output = "./prisma/generated" (JSON config can supply if omitted)
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Estado {
+  id        Int      @id @default(autoincrement())
+  nombre    String
+  color     String?
+  icon      String?
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  categorias      Categoria[]
+  etiquetas       Etiqueta[]
+  tipos           Tipo[]
+  usuarios        Usuario[]
+  escritores      Escritor[]
+  configuraciones Configuracion[]
+
+  idioma Idioma[]
+
+  libros      Libro[]
+  capitulos   Capitulo[]
+  parrafos    Parrafo[]
+  comentarios Comentario[]
+
+  libroCategorias LibroCategoria[]
+  libroEtiquetas  LibroEtiqueta[]
+
+  favoritos      Favorito[]
+  glosarios      Glosario[]
+  notasAutor     NotaAutor[]
+  marcadores     Marcador[]
+  listas         Lista[]
+  listaLibros    ListaLibro[]
+  seguirUsuarios SeguirUsuario[]
+
+  @@map("estado")
+}
+
+model Avatar {
+  id     Int    @id @default(autoincrement())
+  nombre String @unique
+  url    String
+
+  escritores Escritor[]
+
+  @@map("avatares")
+}
+
+model Categoria {
+  id        Int      @id @default(autoincrement())
+  nombre    String?
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  estadoId Int    @default(1)
+  estado   Estado @relation(fields: [estadoId], references: [id])
+
+  libros LibroCategoria[]
+
+  @@map("categoria")
+}
+
+model Etiqueta {
+  id        Int      @id @default(autoincrement())
+  nombre    String?
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  estadoId Int    @default(1)
+  estado   Estado @relation(fields: [estadoId], references: [id])
+
+  libros LibroEtiqueta[]
+
+  @@map("etiqueta")
+}
+
+model Tipo {
+  id     Int     @id @default(autoincrement())
+  nombre String?
+  tabla  String?
+
+  estadoId Int    @default(1)
+  estado   Estado @relation(fields: [estadoId], references: [id])
+
+  configuraciones Configuracion[]
+  libros          Libro[]
+  comentarios     Comentario[]
+
+  @@map("tipo")
+}
+
+model Usuario {
+  id       Int    @id @default(autoincrement())
+  userName String @unique @map("user_name")
+  email    String @unique
+  password String
+  nivel    Int    @default(1)
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  estadoId Int    @default(1)
+  estado   Estado @relation(fields: [estadoId], references: [id])
+
+  configuracion Configuracion?
+  escritor      Escritor?
+
+  listas Lista[]
+
+  notificacions Notificacion[]
+
+  @@map("usuario")
+}
+
+model Configuracion {
+  id        Int      @id @default(autoincrement())
+  valor     String?
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  usuarioId Int?     @unique
+  usuario   Usuario? @relation(fields: [usuarioId], references: [id])
+
+  tipoId Int?
+  tipo   Tipo? @relation(fields: [tipoId], references: [id])
+
+  estadoId Int    @default(1)
+  estado   Estado @relation(fields: [estadoId], references: [id])
+
+  @@map("configuracion")
+}
+
+model Escritor {
+  id        Int     @id @default(autoincrement())
+  nombres   String?
+  apellidos String?
+  alias     String?
+
+  descripcion String? @default("") @db.VarChar(255)
+
+  fechaNacimiento DateTime? @map("fecha_nacimiento")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  usuarioId Int?     @unique
+  usuario   Usuario? @relation(fields: [usuarioId], references: [id])
+
+  avatarId Int    @default(1)
+  avatar   Avatar @relation(fields: [avatarId], references: [id])
+
+  estadoId Int    @default(1)
+  estado   Estado @relation(fields: [estadoId], references: [id])
+
+  libros      Libro[]
+  comentarios Comentario[]
+  favoritos   Favorito[]
+  glosarios   Glosario[]
+  notasAutor  NotaAutor[]
+  marcadores  Marcador[]
+
+  seguidores SeguirUsuario[] @relation("seguido")
+  siguiendo  SeguirUsuario[] @relation("seguidor")
+
+  @@map("escritor")
+}
+
+model Idioma {
+  id     Int     @id @default(autoincrement())
+  nombre String?
+  siglas String?
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  estadoId Int    @default(1)
+  estado   Estado @relation(fields: [estadoId], references: [id])
+
+  libros Libro[]
+
+  @@map("idioma")
+}
+
+model Libro {
+  id      Int    @id @default(autoincrement())
+  titulo  String
+  resumen String
+
+  portada String?
+
+  publicado Boolean @default(false)
+
+  fechaPublicacion DateTime? @map("fecha_publicacion")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  escritorId Int
+  escritor   Escritor @relation(fields: [escritorId], references: [id])
+
+  tipoId Int
+  tipo   Tipo @relation(fields: [tipoId], references: [id])
+
+  estadoId Int    @default(1)
+  estado   Estado @relation(fields: [estadoId], references: [id])
+
+  idiomaId Int    @default(1)
+  idioma   Idioma @relation(fields: [idiomaId], references: [id])
+
+  capitulos  Capitulo[]
+  categorias LibroCategoria[]
+  etiquetas  LibroEtiqueta[]
+
+  favoritos   Favorito[]
+  glosarios   Glosario[]
+  listaLibros ListaLibro[]
+
+  @@map("libro")
+}
+
+model LibroCategoria {
+  libroId     Int
+  categoriaId Int
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  estadoId Int    @default(1)
+  estado   Estado @relation(fields: [estadoId], references: [id])
+
+  libro     Libro     @relation(fields: [libroId], references: [id], onDelete: Cascade)
+  categoria Categoria @relation(fields: [categoriaId], references: [id], onDelete: Cascade)
+
+  @@id([libroId, categoriaId])
+  @@map("libro_categoria")
+}
+
+model LibroEtiqueta {
+  libroId    Int
+  etiquetaId Int
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  estadoId Int    @default(1)
+  estado   Estado @relation(fields: [estadoId], references: [id])
+
+  libro    Libro    @relation(fields: [libroId], references: [id], onDelete: Cascade)
+  etiqueta Etiqueta @relation(fields: [etiquetaId], references: [id], onDelete: Cascade)
+
+  @@id([libroId, etiquetaId])
+  @@map("libro_etiqueta")
+}
+
+model Capitulo {
+  id     Int     @id @default(autoincrement())
+  nombre String?
+  indice Int?
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  libroId Int
+  libro   Libro @relation(fields: [libroId], references: [id])
+
+  estadoId Int    @default(1)
+  estado   Estado @relation(fields: [estadoId], references: [id])
+
+  parrafos   Parrafo[]
+  notasAutor NotaAutor[]
+
+  @@map("capitulo")
+}
+
+model Parrafo {
+  id        Int     @id @default(autoincrement())
+  contenido String?
+  indice    Int?
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  capituloId Int
+  capitulo   Capitulo @relation(fields: [capituloId], references: [id])
+
+  estadoId Int    @default(1)
+  estado   Estado @relation(fields: [estadoId], references: [id])
+
+  comentarios Comentario[]
+  marcadores  Marcador[]
+
+  @@unique([id, indice])
+  @@map("parrafo")
+}
+
+model Comentario {
+  id        Int    @id @default(autoincrement())
+  contenido String
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  escritorId Int
+  escritor   Escritor @relation(fields: [escritorId], references: [id])
+
+  parrafoId Int
+  parrafo   Parrafo @relation(fields: [parrafoId], references: [id])
+
+  comentarioPadreId Int?
+  padre             Comentario?  @relation("ComentarioPadre", fields: [comentarioPadreId], references: [id])
+  respuestas        Comentario[] @relation("ComentarioPadre")
+
+  tipoId Int?
+  tipo   Tipo? @relation(fields: [tipoId], references: [id])
+
+  estadoId Int    @default(1)
+  estado   Estado @relation(fields: [estadoId], references: [id])
+
+  @@map("comentario")
+}
+
+model Favorito {
+  id Int @id @default(autoincrement())
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  escritorId Int?
+  escritor   Escritor? @relation(fields: [escritorId], references: [id])
+
+  libroId Int?
+  libro   Libro? @relation(fields: [libroId], references: [id])
+
+  estadoId Int    @default(1)
+  estado   Estado @relation(fields: [estadoId], references: [id])
+
+  @@map("favorito")
+}
+
+model Lista {
+  id      Int     @id @default(autoincrement())
+  nombre  String?
+  privada Boolean @default(true)
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  usuarioId Int?
+  usuario   Usuario? @relation(fields: [usuarioId], references: [id])
+
+  estadoId Int    @default(1)
+  estado   Estado @relation(fields: [estadoId], references: [id])
+
+  libros ListaLibro[]
+
+  @@map("lista")
+}
+
+model ListaLibro {
+  id Int @id @default(autoincrement())
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  listaId Int?
+  lista   Lista? @relation(fields: [listaId], references: [id])
+
+  libroId Int?
+  libro   Libro? @relation(fields: [libroId], references: [id])
+
+  estadoId Int    @default(1)
+  estado   Estado @relation(fields: [estadoId], references: [id])
+
+  @@map("lista_libro")
+}
+
+model Glosario {
+  id          Int     @id @default(autoincrement())
+  palabra     String?
+  significado String?
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  libroId Int
+  libro   Libro @relation(fields: [libroId], references: [id])
+
+  escritorId Int
+  escritor   Escritor @relation(fields: [escritorId], references: [id])
+
+  estadoId Int    @default(1)
+  estado   Estado @relation(fields: [estadoId], references: [id])
+
+  @@map("glosario")
+}
+
+model NotaAutor {
+  id    Int     @id @default(autoincrement())
+  texto String?
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  escritorId Int
+  escritor   Escritor @relation(fields: [escritorId], references: [id])
+
+  capituloId Int
+  capitulo   Capitulo @relation(fields: [capituloId], references: [id])
+
+  estadoId Int    @default(1)
+  estado   Estado @relation(fields: [estadoId], references: [id])
+
+  @@map("nota_autor")
+}
+
+model Marcador {
+  id     Int     @id @default(autoincrement())
+  nombre String?
+  color  String?
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  escritorId Int
+  escritor   Escritor @relation(fields: [escritorId], references: [id])
+
+  parrafoId Int
+  parrafo   Parrafo @relation(fields: [parrafoId], references: [id])
+
+  estadoId Int    @default(1)
+  estado   Estado @relation(fields: [estadoId], references: [id])
+
+  @@map("marcador")
+}
+
+model SeguirUsuario {
+  id Int @id @default(autoincrement())
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  escritorId Int
+  escritor   Escritor @relation("seguidor", fields: [escritorId], references: [id])
+
+  escritorSeguidoId Int
+  seguido           Escritor @relation("seguido", fields: [escritorSeguidoId], references: [id])
+
+  estadoId Int    @default(1)
+  estado   Estado @relation(fields: [estadoId], references: [id])
+
+  @@map("seguir_usuario")
+}
+
+enum EntidadTipo {
+  LIBRO
+  ESCRITOR
+  COMENTARIO
+  LISTA
+  SYSTEM
+}
+
+enum NotificacionTipo {
+  FOLLOW
+  COMMENT
+  FAVORITE
+  PUBLISH
+  SYSTEM
+}
+
+model Notificacion {
+  id      Int              @id @default(autoincrement())
+  titulo  String
+  mensaje String?
+  tipo    NotificacionTipo @default(SYSTEM)
+  leida   Boolean          @default(false)
+
+  usuarioId Int
+  usuario   Usuario @relation(fields: [usuarioId], references: [id])
+
+  entidadId   Int?
+  entidadTipo EntidadTipo @default(SYSTEM)
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("notificacion")
+}

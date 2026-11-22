@@ -1,0 +1,23 @@
+import * as z from "zod";
+import type { Prisma } from "../../prisma/client.ts";
+import { EstadoCreateNestedOneWithoutListasInputObjectSchema as EstadoCreateNestedOneWithoutListasInputObjectSchema } from "./EstadoCreateNestedOneWithoutListasInput.schema.ts";
+import { ListaLibroCreateNestedManyWithoutListaInputObjectSchema as ListaLibroCreateNestedManyWithoutListaInputObjectSchema } from "./ListaLibroCreateNestedManyWithoutListaInput.schema.ts";
+
+const makeSchema = () =>
+	z
+		.object({
+			nombre: z.string().optional().nullable(),
+			privada: z.boolean().optional(),
+			createdAt: z.coerce.date().optional(),
+			updatedAt: z.coerce.date().optional(),
+			estado: z
+				.lazy(() => EstadoCreateNestedOneWithoutListasInputObjectSchema)
+				.optional(),
+			libros: z
+				.lazy(() => ListaLibroCreateNestedManyWithoutListaInputObjectSchema)
+				.optional(),
+		})
+		.strict();
+export const ListaCreateWithoutUsuarioInputObjectSchema: z.ZodType<Prisma.ListaCreateWithoutUsuarioInput> =
+	makeSchema() as unknown as z.ZodType<Prisma.ListaCreateWithoutUsuarioInput>;
+export const ListaCreateWithoutUsuarioInputObjectZodSchema = makeSchema();

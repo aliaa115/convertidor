@@ -1,0 +1,41 @@
+import * as z from "zod";
+import type { Prisma } from "../prisma/client.ts";
+import { UsuarioCreateInputObjectSchema as UsuarioCreateInputObjectSchema } from "./objects/UsuarioCreateInput.schema.ts";
+import { UsuarioIncludeObjectSchema as UsuarioIncludeObjectSchema } from "./objects/UsuarioInclude.schema.ts";
+import { UsuarioSelectObjectSchema as UsuarioSelectObjectSchema } from "./objects/UsuarioSelect.schema.ts";
+import { UsuarioUncheckedCreateInputObjectSchema as UsuarioUncheckedCreateInputObjectSchema } from "./objects/UsuarioUncheckedCreateInput.schema.ts";
+import { UsuarioUncheckedUpdateInputObjectSchema as UsuarioUncheckedUpdateInputObjectSchema } from "./objects/UsuarioUncheckedUpdateInput.schema.ts";
+import { UsuarioUpdateInputObjectSchema as UsuarioUpdateInputObjectSchema } from "./objects/UsuarioUpdateInput.schema.ts";
+import { UsuarioWhereUniqueInputObjectSchema as UsuarioWhereUniqueInputObjectSchema } from "./objects/UsuarioWhereUniqueInput.schema.ts";
+
+export const UsuarioUpsertOneSchema: z.ZodType<Prisma.UsuarioUpsertArgs> = z
+	.object({
+		select: UsuarioSelectObjectSchema.optional(),
+		include: UsuarioIncludeObjectSchema.optional(),
+		where: UsuarioWhereUniqueInputObjectSchema,
+		create: z.union([
+			UsuarioCreateInputObjectSchema,
+			UsuarioUncheckedCreateInputObjectSchema,
+		]),
+		update: z.union([
+			UsuarioUpdateInputObjectSchema,
+			UsuarioUncheckedUpdateInputObjectSchema,
+		]),
+	})
+	.strict() as unknown as z.ZodType<Prisma.UsuarioUpsertArgs>;
+
+export const UsuarioUpsertOneZodSchema = z
+	.object({
+		select: UsuarioSelectObjectSchema.optional(),
+		include: UsuarioIncludeObjectSchema.optional(),
+		where: UsuarioWhereUniqueInputObjectSchema,
+		create: z.union([
+			UsuarioCreateInputObjectSchema,
+			UsuarioUncheckedCreateInputObjectSchema,
+		]),
+		update: z.union([
+			UsuarioUpdateInputObjectSchema,
+			UsuarioUncheckedUpdateInputObjectSchema,
+		]),
+	})
+	.strict();
