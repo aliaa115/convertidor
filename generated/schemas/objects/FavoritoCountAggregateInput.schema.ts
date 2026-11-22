@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 
 const makeSchema = () =>
 	z
@@ -13,6 +13,5 @@ const makeSchema = () =>
 			_all: z.literal(true).optional(),
 		})
 		.strict();
-export const FavoritoCountAggregateInputObjectSchema: z.ZodType<Prisma.FavoritoCountAggregateInputType> =
-	makeSchema() as unknown as z.ZodType<Prisma.FavoritoCountAggregateInputType>;
+export const FavoritoCountAggregateInputObjectSchema: z.ZodType<Prisma.FavoritoCountAggregateInputType> = makeSchema() as unknown as z.ZodType<Prisma.FavoritoCountAggregateInputType>;
 export const FavoritoCountAggregateInputObjectZodSchema = makeSchema();

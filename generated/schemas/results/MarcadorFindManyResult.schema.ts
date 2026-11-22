@@ -1,4 +1,7 @@
 import * as z from "zod";
+import { EscritorSchema } from "../models/Escritor.schema.ts";
+import { EstadoSchema } from "../models/Estado.schema.ts";
+import { ParrafoSchema } from "../models/Parrafo.schema.ts";
 export const MarcadorFindManyResultSchema = z.object({
 	data: z.array(
 		z.object({
@@ -8,11 +11,11 @@ export const MarcadorFindManyResultSchema = z.object({
 			createdAt: z.date(),
 			updatedAt: z.date(),
 			escritorId: z.number().int(),
-			escritor: z.unknown(),
+			escritor: EscritorSchema.optional(),
 			parrafoId: z.number().int(),
-			parrafo: z.unknown(),
+			parrafo: ParrafoSchema.optional(),
 			estadoId: z.number().int(),
-			estado: z.unknown(),
+			estado: EstadoSchema.optional(),
 		}),
 	),
 	pagination: z.object({

@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { IdiomaIncludeObjectSchema as IdiomaIncludeObjectSchema } from "./IdiomaInclude.schema.ts";
 import { IdiomaSelectObjectSchema as IdiomaSelectObjectSchema } from "./IdiomaSelect.schema.ts";
 

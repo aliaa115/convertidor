@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { EstadoCountOutputTypeSelectObjectSchema as EstadoCountOutputTypeSelectObjectSchema } from "./EstadoCountOutputTypeSelect.schema.ts";
 
 const makeSchema = () =>

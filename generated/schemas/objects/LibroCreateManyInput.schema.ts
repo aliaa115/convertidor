@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 
 const makeSchema = () =>
 	z
@@ -18,6 +18,5 @@ const makeSchema = () =>
 			idiomaId: z.number().int().optional(),
 		})
 		.strict();
-export const LibroCreateManyInputObjectSchema: z.ZodType<Prisma.LibroCreateManyInput> =
-	makeSchema() as unknown as z.ZodType<Prisma.LibroCreateManyInput>;
+export const LibroCreateManyInputObjectSchema: z.ZodType<Prisma.LibroCreateManyInput> = makeSchema() as unknown as z.ZodType<Prisma.LibroCreateManyInput>;
 export const LibroCreateManyInputObjectZodSchema = makeSchema();

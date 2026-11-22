@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { EscritorAvgAggregateInputObjectSchema as EscritorAvgAggregateInputObjectSchema } from "./objects/EscritorAvgAggregateInput.schema.ts";
 import { EscritorCountAggregateInputObjectSchema as EscritorCountAggregateInputObjectSchema } from "./objects/EscritorCountAggregateInput.schema.ts";
 import { EscritorMaxAggregateInputObjectSchema as EscritorMaxAggregateInputObjectSchema } from "./objects/EscritorMaxAggregateInput.schema.ts";
@@ -9,44 +9,29 @@ import { EscritorSumAggregateInputObjectSchema as EscritorSumAggregateInputObjec
 import { EscritorWhereInputObjectSchema as EscritorWhereInputObjectSchema } from "./objects/EscritorWhereInput.schema.ts";
 import { EscritorWhereUniqueInputObjectSchema as EscritorWhereUniqueInputObjectSchema } from "./objects/EscritorWhereUniqueInput.schema.ts";
 
-export const EscritorAggregateSchema: z.ZodType<Prisma.EscritorAggregateArgs> =
-	z
-		.object({
-			orderBy: z
-				.union([
-					EscritorOrderByWithRelationInputObjectSchema,
-					EscritorOrderByWithRelationInputObjectSchema.array(),
-				])
-				.optional(),
-			where: EscritorWhereInputObjectSchema.optional(),
-			cursor: EscritorWhereUniqueInputObjectSchema.optional(),
-			take: z.number().optional(),
-			skip: z.number().optional(),
-			_count: z
-				.union([z.literal(true), EscritorCountAggregateInputObjectSchema])
-				.optional(),
-			_min: EscritorMinAggregateInputObjectSchema.optional(),
-			_max: EscritorMaxAggregateInputObjectSchema.optional(),
-			_avg: EscritorAvgAggregateInputObjectSchema.optional(),
-			_sum: EscritorSumAggregateInputObjectSchema.optional(),
-		})
-		.strict() as unknown as z.ZodType<Prisma.EscritorAggregateArgs>;
-
-export const EscritorAggregateZodSchema = z
+export const EscritorAggregateSchema: z.ZodType<Prisma.EscritorAggregateArgs> = z
 	.object({
-		orderBy: z
-			.union([
-				EscritorOrderByWithRelationInputObjectSchema,
-				EscritorOrderByWithRelationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([EscritorOrderByWithRelationInputObjectSchema, EscritorOrderByWithRelationInputObjectSchema.array()]).optional(),
 		where: EscritorWhereInputObjectSchema.optional(),
 		cursor: EscritorWhereUniqueInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
-		_count: z
-			.union([z.literal(true), EscritorCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), EscritorCountAggregateInputObjectSchema]).optional(),
+		_min: EscritorMinAggregateInputObjectSchema.optional(),
+		_max: EscritorMaxAggregateInputObjectSchema.optional(),
+		_avg: EscritorAvgAggregateInputObjectSchema.optional(),
+		_sum: EscritorSumAggregateInputObjectSchema.optional(),
+	})
+	.strict() as unknown as z.ZodType<Prisma.EscritorAggregateArgs>;
+
+export const EscritorAggregateZodSchema = z
+	.object({
+		orderBy: z.union([EscritorOrderByWithRelationInputObjectSchema, EscritorOrderByWithRelationInputObjectSchema.array()]).optional(),
+		where: EscritorWhereInputObjectSchema.optional(),
+		cursor: EscritorWhereUniqueInputObjectSchema.optional(),
+		take: z.number().optional(),
+		skip: z.number().optional(),
+		_count: z.union([z.literal(true), EscritorCountAggregateInputObjectSchema]).optional(),
 		_min: EscritorMinAggregateInputObjectSchema.optional(),
 		_max: EscritorMaxAggregateInputObjectSchema.optional(),
 		_avg: EscritorAvgAggregateInputObjectSchema.optional(),

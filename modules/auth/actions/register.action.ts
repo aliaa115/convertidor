@@ -7,23 +7,10 @@ import { usuarioFormSchema } from "../schema/register.schema";
 export type RegisterActionState = {
 	success: boolean;
 	message: string;
-	fieldErrors?: Partial<
-		Record<
-			| "email"
-			| "userName"
-			| "password"
-			| "confirmPassword"
-			| "nombres"
-			| "apellidos"
-			| "fechaNacimiento",
-			string[]
-		>
-	>;
+	fieldErrors?: Partial<Record<"email" | "userName" | "password" | "confirmPassword" | "nombres" | "apellidos" | "fechaNacimiento", string[]>>;
 };
 
-export async function registerAction(
-	values: unknown,
-): Promise<RegisterActionState> {
+export async function registerAction(values: unknown): Promise<RegisterActionState> {
 	const parsed = usuarioFormSchema.safeParse(values);
 
 	if (!parsed.success) {
@@ -34,8 +21,7 @@ export async function registerAction(
 		};
 	}
 
-	const { email, userName, password, nombres, apellidos, fechaNacimiento } =
-		parsed.data;
+	const { email, userName, password, nombres, apellidos, fechaNacimiento } = parsed.data;
 
 	try {
 		const existingUser = await prisma.usuario.findFirst({

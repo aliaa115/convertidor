@@ -1,4 +1,6 @@
 import * as z from "zod";
+import { EstadoSchema } from "../models/Estado.schema.ts";
+import { LibroSchema } from "../models/Libro.schema.ts";
 export const IdiomaUpdateResultSchema = z.nullable(
 	z.object({
 		id: z.number().int(),
@@ -7,7 +9,7 @@ export const IdiomaUpdateResultSchema = z.nullable(
 		createdAt: z.date(),
 		updatedAt: z.date(),
 		estadoId: z.number().int(),
-		estado: z.unknown(),
-		libros: z.array(z.unknown()),
+		estado: EstadoSchema.optional(),
+		libros: z.array(LibroSchema).optional(),
 	}),
 );

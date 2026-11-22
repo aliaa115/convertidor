@@ -3,15 +3,11 @@ import { generarImagen } from "@/lib/generar-imagen";
 import { prisma } from "@/lib/prisma";
 import { isValidUrl } from "@/lib/utils";
 
-export async function GET(
-	req: NextRequest,
-	{ params }: { params: Promise<{ id: string }> },
-) {
+export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
 	const { id } = await params;
 	const numericId = Number(id);
 
-	if (isNaN(numericId))
-		return new Response("Libro no encontrado", { status: 404 });
+	if (isNaN(numericId)) return new Response("Libro no encontrado", { status: 404 });
 
 	const { searchParams } = new URL(req.url);
 

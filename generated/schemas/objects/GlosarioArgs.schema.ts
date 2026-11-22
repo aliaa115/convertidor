@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { GlosarioIncludeObjectSchema as GlosarioIncludeObjectSchema } from "./GlosarioInclude.schema.ts";
 import { GlosarioSelectObjectSchema as GlosarioSelectObjectSchema } from "./GlosarioSelect.schema.ts";
 

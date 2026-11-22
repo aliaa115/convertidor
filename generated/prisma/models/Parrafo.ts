@@ -15,8 +15,7 @@ import type * as Prisma from "../internal/prismaNamespace.ts";
  * Model Parrafo
  *
  */
-export type ParrafoModel =
-	runtime.Types.Result.DefaultSelection<Prisma.$ParrafoPayload>;
+export type ParrafoModel = runtime.Types.Result.DefaultSelection<Prisma.$ParrafoPayload>;
 
 export type AggregateParrafo = {
 	_count: ParrafoCountAggregateOutputType | null;
@@ -116,10 +115,7 @@ export type ParrafoCountAggregateInputType = {
 	_all?: true;
 };
 
-export type ParrafoAggregateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Parrafo to aggregate.
 	 */
@@ -129,9 +125,7 @@ export type ParrafoAggregateArgs<
 	 *
 	 * Determine the order of Parrafos to fetch.
 	 */
-	orderBy?:
-		| Prisma.ParrafoOrderByWithRelationInput
-		| Prisma.ParrafoOrderByWithRelationInput[];
+	orderBy?: Prisma.ParrafoOrderByWithRelationInput | Prisma.ParrafoOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -190,14 +184,9 @@ export type GetParrafoAggregateType<T extends ParrafoAggregateArgs> = {
 		: Prisma.GetScalarType<T[P], AggregateParrafo[P]>;
 };
 
-export type ParrafoGroupByArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.ParrafoWhereInput;
-	orderBy?:
-		| Prisma.ParrafoOrderByWithAggregationInput
-		| Prisma.ParrafoOrderByWithAggregationInput[];
+	orderBy?: Prisma.ParrafoOrderByWithAggregationInput | Prisma.ParrafoOrderByWithAggregationInput[];
 	by: Prisma.ParrafoScalarFieldEnum[] | Prisma.ParrafoScalarFieldEnum;
 	having?: Prisma.ParrafoScalarWhereWithAggregatesInput;
 	take?: number;
@@ -224,18 +213,17 @@ export type ParrafoGroupByOutputType = {
 	_max: ParrafoMaxAggregateOutputType | null;
 };
 
-export type GetParrafoGroupByPayload<T extends ParrafoGroupByArgs> =
-	Prisma.PrismaPromise<
-		Array<
-			Prisma.PickEnumerable<ParrafoGroupByOutputType, T["by"]> & {
-				[P in keyof T & keyof ParrafoGroupByOutputType]: P extends "_count"
-					? T[P] extends boolean
-						? number
-						: Prisma.GetScalarType<T[P], ParrafoGroupByOutputType[P]>
-					: Prisma.GetScalarType<T[P], ParrafoGroupByOutputType[P]>;
-			}
-		>
-	>;
+export type GetParrafoGroupByPayload<T extends ParrafoGroupByArgs> = Prisma.PrismaPromise<
+	Array<
+		Prisma.PickEnumerable<ParrafoGroupByOutputType, T["by"]> & {
+			[P in keyof T & keyof ParrafoGroupByOutputType]: P extends "_count"
+				? T[P] extends boolean
+					? number
+					: Prisma.GetScalarType<T[P], ParrafoGroupByOutputType[P]>
+				: Prisma.GetScalarType<T[P], ParrafoGroupByOutputType[P]>;
+		}
+	>
+>;
 
 export type ParrafoWhereInput = {
 	AND?: Prisma.ParrafoWhereInput | Prisma.ParrafoWhereInput[];
@@ -248,14 +236,8 @@ export type ParrafoWhereInput = {
 	updatedAt?: Prisma.DateTimeFilter<"Parrafo"> | Date | string;
 	capituloId?: Prisma.IntFilter<"Parrafo"> | number;
 	estadoId?: Prisma.IntFilter<"Parrafo"> | number;
-	capitulo?: Prisma.XOR<
-		Prisma.CapituloScalarRelationFilter,
-		Prisma.CapituloWhereInput
-	>;
-	estado?: Prisma.XOR<
-		Prisma.EstadoScalarRelationFilter,
-		Prisma.EstadoWhereInput
-	>;
+	capitulo?: Prisma.XOR<Prisma.CapituloScalarRelationFilter, Prisma.CapituloWhereInput>;
+	estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 	comentarios?: Prisma.ComentarioListRelationFilter;
 	marcadores?: Prisma.MarcadorListRelationFilter;
 };
@@ -287,14 +269,8 @@ export type ParrafoWhereUniqueInput = Prisma.AtLeast<
 		updatedAt?: Prisma.DateTimeFilter<"Parrafo"> | Date | string;
 		capituloId?: Prisma.IntFilter<"Parrafo"> | number;
 		estadoId?: Prisma.IntFilter<"Parrafo"> | number;
-		capitulo?: Prisma.XOR<
-			Prisma.CapituloScalarRelationFilter,
-			Prisma.CapituloWhereInput
-		>;
-		estado?: Prisma.XOR<
-			Prisma.EstadoScalarRelationFilter,
-			Prisma.EstadoWhereInput
-		>;
+		capitulo?: Prisma.XOR<Prisma.CapituloScalarRelationFilter, Prisma.CapituloWhereInput>;
+		estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 		comentarios?: Prisma.ComentarioListRelationFilter;
 		marcadores?: Prisma.MarcadorListRelationFilter;
 	},
@@ -317,18 +293,11 @@ export type ParrafoOrderByWithAggregationInput = {
 };
 
 export type ParrafoScalarWhereWithAggregatesInput = {
-	AND?:
-		| Prisma.ParrafoScalarWhereWithAggregatesInput
-		| Prisma.ParrafoScalarWhereWithAggregatesInput[];
+	AND?: Prisma.ParrafoScalarWhereWithAggregatesInput | Prisma.ParrafoScalarWhereWithAggregatesInput[];
 	OR?: Prisma.ParrafoScalarWhereWithAggregatesInput[];
-	NOT?:
-		| Prisma.ParrafoScalarWhereWithAggregatesInput
-		| Prisma.ParrafoScalarWhereWithAggregatesInput[];
+	NOT?: Prisma.ParrafoScalarWhereWithAggregatesInput | Prisma.ParrafoScalarWhereWithAggregatesInput[];
 	id?: Prisma.IntWithAggregatesFilter<"Parrafo"> | number;
-	contenido?:
-		| Prisma.StringNullableWithAggregatesFilter<"Parrafo">
-		| string
-		| null;
+	contenido?: Prisma.StringNullableWithAggregatesFilter<"Parrafo"> | string | null;
 	indice?: Prisma.IntNullableWithAggregatesFilter<"Parrafo"> | number | null;
 	createdAt?: Prisma.DateTimeWithAggregatesFilter<"Parrafo"> | Date | string;
 	updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Parrafo"> | Date | string;
@@ -475,242 +444,138 @@ export type ParrafoScalarRelationFilter = {
 
 export type ParrafoCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ParrafoCreateWithoutEstadoInput,
-				Prisma.ParrafoUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.ParrafoCreateWithoutEstadoInput, Prisma.ParrafoUncheckedCreateWithoutEstadoInput>
 		| Prisma.ParrafoCreateWithoutEstadoInput[]
 		| Prisma.ParrafoUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.ParrafoCreateOrConnectWithoutEstadoInput
-		| Prisma.ParrafoCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.ParrafoCreateOrConnectWithoutEstadoInput | Prisma.ParrafoCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.ParrafoCreateManyEstadoInputEnvelope;
 	connect?: Prisma.ParrafoWhereUniqueInput | Prisma.ParrafoWhereUniqueInput[];
 };
 
 export type ParrafoUncheckedCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ParrafoCreateWithoutEstadoInput,
-				Prisma.ParrafoUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.ParrafoCreateWithoutEstadoInput, Prisma.ParrafoUncheckedCreateWithoutEstadoInput>
 		| Prisma.ParrafoCreateWithoutEstadoInput[]
 		| Prisma.ParrafoUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.ParrafoCreateOrConnectWithoutEstadoInput
-		| Prisma.ParrafoCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.ParrafoCreateOrConnectWithoutEstadoInput | Prisma.ParrafoCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.ParrafoCreateManyEstadoInputEnvelope;
 	connect?: Prisma.ParrafoWhereUniqueInput | Prisma.ParrafoWhereUniqueInput[];
 };
 
 export type ParrafoUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ParrafoCreateWithoutEstadoInput,
-				Prisma.ParrafoUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.ParrafoCreateWithoutEstadoInput, Prisma.ParrafoUncheckedCreateWithoutEstadoInput>
 		| Prisma.ParrafoCreateWithoutEstadoInput[]
 		| Prisma.ParrafoUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.ParrafoCreateOrConnectWithoutEstadoInput
-		| Prisma.ParrafoCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.ParrafoUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.ParrafoUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.ParrafoCreateOrConnectWithoutEstadoInput | Prisma.ParrafoCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.ParrafoUpsertWithWhereUniqueWithoutEstadoInput | Prisma.ParrafoUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.ParrafoCreateManyEstadoInputEnvelope;
 	set?: Prisma.ParrafoWhereUniqueInput | Prisma.ParrafoWhereUniqueInput[];
-	disconnect?:
-		| Prisma.ParrafoWhereUniqueInput
-		| Prisma.ParrafoWhereUniqueInput[];
+	disconnect?: Prisma.ParrafoWhereUniqueInput | Prisma.ParrafoWhereUniqueInput[];
 	delete?: Prisma.ParrafoWhereUniqueInput | Prisma.ParrafoWhereUniqueInput[];
 	connect?: Prisma.ParrafoWhereUniqueInput | Prisma.ParrafoWhereUniqueInput[];
-	update?:
-		| Prisma.ParrafoUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.ParrafoUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.ParrafoUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.ParrafoUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.ParrafoScalarWhereInput
-		| Prisma.ParrafoScalarWhereInput[];
+	update?: Prisma.ParrafoUpdateWithWhereUniqueWithoutEstadoInput | Prisma.ParrafoUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.ParrafoUpdateManyWithWhereWithoutEstadoInput | Prisma.ParrafoUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.ParrafoScalarWhereInput | Prisma.ParrafoScalarWhereInput[];
 };
 
 export type ParrafoUncheckedUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ParrafoCreateWithoutEstadoInput,
-				Prisma.ParrafoUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.ParrafoCreateWithoutEstadoInput, Prisma.ParrafoUncheckedCreateWithoutEstadoInput>
 		| Prisma.ParrafoCreateWithoutEstadoInput[]
 		| Prisma.ParrafoUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.ParrafoCreateOrConnectWithoutEstadoInput
-		| Prisma.ParrafoCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.ParrafoUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.ParrafoUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.ParrafoCreateOrConnectWithoutEstadoInput | Prisma.ParrafoCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.ParrafoUpsertWithWhereUniqueWithoutEstadoInput | Prisma.ParrafoUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.ParrafoCreateManyEstadoInputEnvelope;
 	set?: Prisma.ParrafoWhereUniqueInput | Prisma.ParrafoWhereUniqueInput[];
-	disconnect?:
-		| Prisma.ParrafoWhereUniqueInput
-		| Prisma.ParrafoWhereUniqueInput[];
+	disconnect?: Prisma.ParrafoWhereUniqueInput | Prisma.ParrafoWhereUniqueInput[];
 	delete?: Prisma.ParrafoWhereUniqueInput | Prisma.ParrafoWhereUniqueInput[];
 	connect?: Prisma.ParrafoWhereUniqueInput | Prisma.ParrafoWhereUniqueInput[];
-	update?:
-		| Prisma.ParrafoUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.ParrafoUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.ParrafoUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.ParrafoUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.ParrafoScalarWhereInput
-		| Prisma.ParrafoScalarWhereInput[];
+	update?: Prisma.ParrafoUpdateWithWhereUniqueWithoutEstadoInput | Prisma.ParrafoUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.ParrafoUpdateManyWithWhereWithoutEstadoInput | Prisma.ParrafoUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.ParrafoScalarWhereInput | Prisma.ParrafoScalarWhereInput[];
 };
 
 export type ParrafoCreateNestedManyWithoutCapituloInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ParrafoCreateWithoutCapituloInput,
-				Prisma.ParrafoUncheckedCreateWithoutCapituloInput
-		  >
+		| Prisma.XOR<Prisma.ParrafoCreateWithoutCapituloInput, Prisma.ParrafoUncheckedCreateWithoutCapituloInput>
 		| Prisma.ParrafoCreateWithoutCapituloInput[]
 		| Prisma.ParrafoUncheckedCreateWithoutCapituloInput[];
-	connectOrCreate?:
-		| Prisma.ParrafoCreateOrConnectWithoutCapituloInput
-		| Prisma.ParrafoCreateOrConnectWithoutCapituloInput[];
+	connectOrCreate?: Prisma.ParrafoCreateOrConnectWithoutCapituloInput | Prisma.ParrafoCreateOrConnectWithoutCapituloInput[];
 	createMany?: Prisma.ParrafoCreateManyCapituloInputEnvelope;
 	connect?: Prisma.ParrafoWhereUniqueInput | Prisma.ParrafoWhereUniqueInput[];
 };
 
 export type ParrafoUncheckedCreateNestedManyWithoutCapituloInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ParrafoCreateWithoutCapituloInput,
-				Prisma.ParrafoUncheckedCreateWithoutCapituloInput
-		  >
+		| Prisma.XOR<Prisma.ParrafoCreateWithoutCapituloInput, Prisma.ParrafoUncheckedCreateWithoutCapituloInput>
 		| Prisma.ParrafoCreateWithoutCapituloInput[]
 		| Prisma.ParrafoUncheckedCreateWithoutCapituloInput[];
-	connectOrCreate?:
-		| Prisma.ParrafoCreateOrConnectWithoutCapituloInput
-		| Prisma.ParrafoCreateOrConnectWithoutCapituloInput[];
+	connectOrCreate?: Prisma.ParrafoCreateOrConnectWithoutCapituloInput | Prisma.ParrafoCreateOrConnectWithoutCapituloInput[];
 	createMany?: Prisma.ParrafoCreateManyCapituloInputEnvelope;
 	connect?: Prisma.ParrafoWhereUniqueInput | Prisma.ParrafoWhereUniqueInput[];
 };
 
 export type ParrafoUpdateManyWithoutCapituloNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ParrafoCreateWithoutCapituloInput,
-				Prisma.ParrafoUncheckedCreateWithoutCapituloInput
-		  >
+		| Prisma.XOR<Prisma.ParrafoCreateWithoutCapituloInput, Prisma.ParrafoUncheckedCreateWithoutCapituloInput>
 		| Prisma.ParrafoCreateWithoutCapituloInput[]
 		| Prisma.ParrafoUncheckedCreateWithoutCapituloInput[];
-	connectOrCreate?:
-		| Prisma.ParrafoCreateOrConnectWithoutCapituloInput
-		| Prisma.ParrafoCreateOrConnectWithoutCapituloInput[];
-	upsert?:
-		| Prisma.ParrafoUpsertWithWhereUniqueWithoutCapituloInput
-		| Prisma.ParrafoUpsertWithWhereUniqueWithoutCapituloInput[];
+	connectOrCreate?: Prisma.ParrafoCreateOrConnectWithoutCapituloInput | Prisma.ParrafoCreateOrConnectWithoutCapituloInput[];
+	upsert?: Prisma.ParrafoUpsertWithWhereUniqueWithoutCapituloInput | Prisma.ParrafoUpsertWithWhereUniqueWithoutCapituloInput[];
 	createMany?: Prisma.ParrafoCreateManyCapituloInputEnvelope;
 	set?: Prisma.ParrafoWhereUniqueInput | Prisma.ParrafoWhereUniqueInput[];
-	disconnect?:
-		| Prisma.ParrafoWhereUniqueInput
-		| Prisma.ParrafoWhereUniqueInput[];
+	disconnect?: Prisma.ParrafoWhereUniqueInput | Prisma.ParrafoWhereUniqueInput[];
 	delete?: Prisma.ParrafoWhereUniqueInput | Prisma.ParrafoWhereUniqueInput[];
 	connect?: Prisma.ParrafoWhereUniqueInput | Prisma.ParrafoWhereUniqueInput[];
-	update?:
-		| Prisma.ParrafoUpdateWithWhereUniqueWithoutCapituloInput
-		| Prisma.ParrafoUpdateWithWhereUniqueWithoutCapituloInput[];
-	updateMany?:
-		| Prisma.ParrafoUpdateManyWithWhereWithoutCapituloInput
-		| Prisma.ParrafoUpdateManyWithWhereWithoutCapituloInput[];
-	deleteMany?:
-		| Prisma.ParrafoScalarWhereInput
-		| Prisma.ParrafoScalarWhereInput[];
+	update?: Prisma.ParrafoUpdateWithWhereUniqueWithoutCapituloInput | Prisma.ParrafoUpdateWithWhereUniqueWithoutCapituloInput[];
+	updateMany?: Prisma.ParrafoUpdateManyWithWhereWithoutCapituloInput | Prisma.ParrafoUpdateManyWithWhereWithoutCapituloInput[];
+	deleteMany?: Prisma.ParrafoScalarWhereInput | Prisma.ParrafoScalarWhereInput[];
 };
 
 export type ParrafoUncheckedUpdateManyWithoutCapituloNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ParrafoCreateWithoutCapituloInput,
-				Prisma.ParrafoUncheckedCreateWithoutCapituloInput
-		  >
+		| Prisma.XOR<Prisma.ParrafoCreateWithoutCapituloInput, Prisma.ParrafoUncheckedCreateWithoutCapituloInput>
 		| Prisma.ParrafoCreateWithoutCapituloInput[]
 		| Prisma.ParrafoUncheckedCreateWithoutCapituloInput[];
-	connectOrCreate?:
-		| Prisma.ParrafoCreateOrConnectWithoutCapituloInput
-		| Prisma.ParrafoCreateOrConnectWithoutCapituloInput[];
-	upsert?:
-		| Prisma.ParrafoUpsertWithWhereUniqueWithoutCapituloInput
-		| Prisma.ParrafoUpsertWithWhereUniqueWithoutCapituloInput[];
+	connectOrCreate?: Prisma.ParrafoCreateOrConnectWithoutCapituloInput | Prisma.ParrafoCreateOrConnectWithoutCapituloInput[];
+	upsert?: Prisma.ParrafoUpsertWithWhereUniqueWithoutCapituloInput | Prisma.ParrafoUpsertWithWhereUniqueWithoutCapituloInput[];
 	createMany?: Prisma.ParrafoCreateManyCapituloInputEnvelope;
 	set?: Prisma.ParrafoWhereUniqueInput | Prisma.ParrafoWhereUniqueInput[];
-	disconnect?:
-		| Prisma.ParrafoWhereUniqueInput
-		| Prisma.ParrafoWhereUniqueInput[];
+	disconnect?: Prisma.ParrafoWhereUniqueInput | Prisma.ParrafoWhereUniqueInput[];
 	delete?: Prisma.ParrafoWhereUniqueInput | Prisma.ParrafoWhereUniqueInput[];
 	connect?: Prisma.ParrafoWhereUniqueInput | Prisma.ParrafoWhereUniqueInput[];
-	update?:
-		| Prisma.ParrafoUpdateWithWhereUniqueWithoutCapituloInput
-		| Prisma.ParrafoUpdateWithWhereUniqueWithoutCapituloInput[];
-	updateMany?:
-		| Prisma.ParrafoUpdateManyWithWhereWithoutCapituloInput
-		| Prisma.ParrafoUpdateManyWithWhereWithoutCapituloInput[];
-	deleteMany?:
-		| Prisma.ParrafoScalarWhereInput
-		| Prisma.ParrafoScalarWhereInput[];
+	update?: Prisma.ParrafoUpdateWithWhereUniqueWithoutCapituloInput | Prisma.ParrafoUpdateWithWhereUniqueWithoutCapituloInput[];
+	updateMany?: Prisma.ParrafoUpdateManyWithWhereWithoutCapituloInput | Prisma.ParrafoUpdateManyWithWhereWithoutCapituloInput[];
+	deleteMany?: Prisma.ParrafoScalarWhereInput | Prisma.ParrafoScalarWhereInput[];
 };
 
 export type ParrafoCreateNestedOneWithoutComentariosInput = {
-	create?: Prisma.XOR<
-		Prisma.ParrafoCreateWithoutComentariosInput,
-		Prisma.ParrafoUncheckedCreateWithoutComentariosInput
-	>;
+	create?: Prisma.XOR<Prisma.ParrafoCreateWithoutComentariosInput, Prisma.ParrafoUncheckedCreateWithoutComentariosInput>;
 	connectOrCreate?: Prisma.ParrafoCreateOrConnectWithoutComentariosInput;
 	connect?: Prisma.ParrafoWhereUniqueInput;
 };
 
 export type ParrafoUpdateOneRequiredWithoutComentariosNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.ParrafoCreateWithoutComentariosInput,
-		Prisma.ParrafoUncheckedCreateWithoutComentariosInput
-	>;
+	create?: Prisma.XOR<Prisma.ParrafoCreateWithoutComentariosInput, Prisma.ParrafoUncheckedCreateWithoutComentariosInput>;
 	connectOrCreate?: Prisma.ParrafoCreateOrConnectWithoutComentariosInput;
 	upsert?: Prisma.ParrafoUpsertWithoutComentariosInput;
 	connect?: Prisma.ParrafoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.ParrafoUpdateToOneWithWhereWithoutComentariosInput,
-			Prisma.ParrafoUpdateWithoutComentariosInput
-		>,
-		Prisma.ParrafoUncheckedUpdateWithoutComentariosInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.ParrafoUpdateToOneWithWhereWithoutComentariosInput, Prisma.ParrafoUpdateWithoutComentariosInput>, Prisma.ParrafoUncheckedUpdateWithoutComentariosInput>;
 };
 
 export type ParrafoCreateNestedOneWithoutMarcadoresInput = {
-	create?: Prisma.XOR<
-		Prisma.ParrafoCreateWithoutMarcadoresInput,
-		Prisma.ParrafoUncheckedCreateWithoutMarcadoresInput
-	>;
+	create?: Prisma.XOR<Prisma.ParrafoCreateWithoutMarcadoresInput, Prisma.ParrafoUncheckedCreateWithoutMarcadoresInput>;
 	connectOrCreate?: Prisma.ParrafoCreateOrConnectWithoutMarcadoresInput;
 	connect?: Prisma.ParrafoWhereUniqueInput;
 };
 
 export type ParrafoUpdateOneRequiredWithoutMarcadoresNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.ParrafoCreateWithoutMarcadoresInput,
-		Prisma.ParrafoUncheckedCreateWithoutMarcadoresInput
-	>;
+	create?: Prisma.XOR<Prisma.ParrafoCreateWithoutMarcadoresInput, Prisma.ParrafoUncheckedCreateWithoutMarcadoresInput>;
 	connectOrCreate?: Prisma.ParrafoCreateOrConnectWithoutMarcadoresInput;
 	upsert?: Prisma.ParrafoUpsertWithoutMarcadoresInput;
 	connect?: Prisma.ParrafoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.ParrafoUpdateToOneWithWhereWithoutMarcadoresInput,
-			Prisma.ParrafoUpdateWithoutMarcadoresInput
-		>,
-		Prisma.ParrafoUncheckedUpdateWithoutMarcadoresInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.ParrafoUpdateToOneWithWhereWithoutMarcadoresInput, Prisma.ParrafoUpdateWithoutMarcadoresInput>, Prisma.ParrafoUncheckedUpdateWithoutMarcadoresInput>;
 };
 
 export type ParrafoCreateWithoutEstadoInput = {
@@ -736,45 +601,28 @@ export type ParrafoUncheckedCreateWithoutEstadoInput = {
 
 export type ParrafoCreateOrConnectWithoutEstadoInput = {
 	where: Prisma.ParrafoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.ParrafoCreateWithoutEstadoInput,
-		Prisma.ParrafoUncheckedCreateWithoutEstadoInput
-	>;
+	create: Prisma.XOR<Prisma.ParrafoCreateWithoutEstadoInput, Prisma.ParrafoUncheckedCreateWithoutEstadoInput>;
 };
 
 export type ParrafoCreateManyEstadoInputEnvelope = {
-	data:
-		| Prisma.ParrafoCreateManyEstadoInput
-		| Prisma.ParrafoCreateManyEstadoInput[];
+	data: Prisma.ParrafoCreateManyEstadoInput | Prisma.ParrafoCreateManyEstadoInput[];
 	skipDuplicates?: boolean;
 };
 
 export type ParrafoUpsertWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.ParrafoWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.ParrafoUpdateWithoutEstadoInput,
-		Prisma.ParrafoUncheckedUpdateWithoutEstadoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.ParrafoCreateWithoutEstadoInput,
-		Prisma.ParrafoUncheckedCreateWithoutEstadoInput
-	>;
+	update: Prisma.XOR<Prisma.ParrafoUpdateWithoutEstadoInput, Prisma.ParrafoUncheckedUpdateWithoutEstadoInput>;
+	create: Prisma.XOR<Prisma.ParrafoCreateWithoutEstadoInput, Prisma.ParrafoUncheckedCreateWithoutEstadoInput>;
 };
 
 export type ParrafoUpdateWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.ParrafoWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.ParrafoUpdateWithoutEstadoInput,
-		Prisma.ParrafoUncheckedUpdateWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.ParrafoUpdateWithoutEstadoInput, Prisma.ParrafoUncheckedUpdateWithoutEstadoInput>;
 };
 
 export type ParrafoUpdateManyWithWhereWithoutEstadoInput = {
 	where: Prisma.ParrafoScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.ParrafoUpdateManyMutationInput,
-		Prisma.ParrafoUncheckedUpdateManyWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.ParrafoUpdateManyMutationInput, Prisma.ParrafoUncheckedUpdateManyWithoutEstadoInput>;
 };
 
 export type ParrafoScalarWhereInput = {
@@ -813,45 +661,28 @@ export type ParrafoUncheckedCreateWithoutCapituloInput = {
 
 export type ParrafoCreateOrConnectWithoutCapituloInput = {
 	where: Prisma.ParrafoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.ParrafoCreateWithoutCapituloInput,
-		Prisma.ParrafoUncheckedCreateWithoutCapituloInput
-	>;
+	create: Prisma.XOR<Prisma.ParrafoCreateWithoutCapituloInput, Prisma.ParrafoUncheckedCreateWithoutCapituloInput>;
 };
 
 export type ParrafoCreateManyCapituloInputEnvelope = {
-	data:
-		| Prisma.ParrafoCreateManyCapituloInput
-		| Prisma.ParrafoCreateManyCapituloInput[];
+	data: Prisma.ParrafoCreateManyCapituloInput | Prisma.ParrafoCreateManyCapituloInput[];
 	skipDuplicates?: boolean;
 };
 
 export type ParrafoUpsertWithWhereUniqueWithoutCapituloInput = {
 	where: Prisma.ParrafoWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.ParrafoUpdateWithoutCapituloInput,
-		Prisma.ParrafoUncheckedUpdateWithoutCapituloInput
-	>;
-	create: Prisma.XOR<
-		Prisma.ParrafoCreateWithoutCapituloInput,
-		Prisma.ParrafoUncheckedCreateWithoutCapituloInput
-	>;
+	update: Prisma.XOR<Prisma.ParrafoUpdateWithoutCapituloInput, Prisma.ParrafoUncheckedUpdateWithoutCapituloInput>;
+	create: Prisma.XOR<Prisma.ParrafoCreateWithoutCapituloInput, Prisma.ParrafoUncheckedCreateWithoutCapituloInput>;
 };
 
 export type ParrafoUpdateWithWhereUniqueWithoutCapituloInput = {
 	where: Prisma.ParrafoWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.ParrafoUpdateWithoutCapituloInput,
-		Prisma.ParrafoUncheckedUpdateWithoutCapituloInput
-	>;
+	data: Prisma.XOR<Prisma.ParrafoUpdateWithoutCapituloInput, Prisma.ParrafoUncheckedUpdateWithoutCapituloInput>;
 };
 
 export type ParrafoUpdateManyWithWhereWithoutCapituloInput = {
 	where: Prisma.ParrafoScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.ParrafoUpdateManyMutationInput,
-		Prisma.ParrafoUncheckedUpdateManyWithoutCapituloInput
-	>;
+	data: Prisma.XOR<Prisma.ParrafoUpdateManyMutationInput, Prisma.ParrafoUncheckedUpdateManyWithoutCapituloInput>;
 };
 
 export type ParrafoCreateWithoutComentariosInput = {
@@ -877,30 +708,18 @@ export type ParrafoUncheckedCreateWithoutComentariosInput = {
 
 export type ParrafoCreateOrConnectWithoutComentariosInput = {
 	where: Prisma.ParrafoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.ParrafoCreateWithoutComentariosInput,
-		Prisma.ParrafoUncheckedCreateWithoutComentariosInput
-	>;
+	create: Prisma.XOR<Prisma.ParrafoCreateWithoutComentariosInput, Prisma.ParrafoUncheckedCreateWithoutComentariosInput>;
 };
 
 export type ParrafoUpsertWithoutComentariosInput = {
-	update: Prisma.XOR<
-		Prisma.ParrafoUpdateWithoutComentariosInput,
-		Prisma.ParrafoUncheckedUpdateWithoutComentariosInput
-	>;
-	create: Prisma.XOR<
-		Prisma.ParrafoCreateWithoutComentariosInput,
-		Prisma.ParrafoUncheckedCreateWithoutComentariosInput
-	>;
+	update: Prisma.XOR<Prisma.ParrafoUpdateWithoutComentariosInput, Prisma.ParrafoUncheckedUpdateWithoutComentariosInput>;
+	create: Prisma.XOR<Prisma.ParrafoCreateWithoutComentariosInput, Prisma.ParrafoUncheckedCreateWithoutComentariosInput>;
 	where?: Prisma.ParrafoWhereInput;
 };
 
 export type ParrafoUpdateToOneWithWhereWithoutComentariosInput = {
 	where?: Prisma.ParrafoWhereInput;
-	data: Prisma.XOR<
-		Prisma.ParrafoUpdateWithoutComentariosInput,
-		Prisma.ParrafoUncheckedUpdateWithoutComentariosInput
-	>;
+	data: Prisma.XOR<Prisma.ParrafoUpdateWithoutComentariosInput, Prisma.ParrafoUncheckedUpdateWithoutComentariosInput>;
 };
 
 export type ParrafoUpdateWithoutComentariosInput = {
@@ -947,30 +766,18 @@ export type ParrafoUncheckedCreateWithoutMarcadoresInput = {
 
 export type ParrafoCreateOrConnectWithoutMarcadoresInput = {
 	where: Prisma.ParrafoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.ParrafoCreateWithoutMarcadoresInput,
-		Prisma.ParrafoUncheckedCreateWithoutMarcadoresInput
-	>;
+	create: Prisma.XOR<Prisma.ParrafoCreateWithoutMarcadoresInput, Prisma.ParrafoUncheckedCreateWithoutMarcadoresInput>;
 };
 
 export type ParrafoUpsertWithoutMarcadoresInput = {
-	update: Prisma.XOR<
-		Prisma.ParrafoUpdateWithoutMarcadoresInput,
-		Prisma.ParrafoUncheckedUpdateWithoutMarcadoresInput
-	>;
-	create: Prisma.XOR<
-		Prisma.ParrafoCreateWithoutMarcadoresInput,
-		Prisma.ParrafoUncheckedCreateWithoutMarcadoresInput
-	>;
+	update: Prisma.XOR<Prisma.ParrafoUpdateWithoutMarcadoresInput, Prisma.ParrafoUncheckedUpdateWithoutMarcadoresInput>;
+	create: Prisma.XOR<Prisma.ParrafoCreateWithoutMarcadoresInput, Prisma.ParrafoUncheckedCreateWithoutMarcadoresInput>;
 	where?: Prisma.ParrafoWhereInput;
 };
 
 export type ParrafoUpdateToOneWithWhereWithoutMarcadoresInput = {
 	where?: Prisma.ParrafoWhereInput;
-	data: Prisma.XOR<
-		Prisma.ParrafoUpdateWithoutMarcadoresInput,
-		Prisma.ParrafoUncheckedUpdateWithoutMarcadoresInput
-	>;
+	data: Prisma.XOR<Prisma.ParrafoUpdateWithoutMarcadoresInput, Prisma.ParrafoUncheckedUpdateWithoutMarcadoresInput>;
 };
 
 export type ParrafoUpdateWithoutMarcadoresInput = {
@@ -1081,10 +888,7 @@ export type ParrafoCountOutputType = {
 	marcadores: number;
 };
 
-export type ParrafoCountOutputTypeSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	comentarios?: boolean | ParrafoCountOutputTypeCountComentariosArgs;
 	marcadores?: boolean | ParrafoCountOutputTypeCountMarcadoresArgs;
 };
@@ -1092,10 +896,7 @@ export type ParrafoCountOutputTypeSelect<
 /**
  * ParrafoCountOutputType without action
  */
-export type ParrafoCountOutputTypeDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the ParrafoCountOutputType
 	 */
@@ -1105,27 +906,18 @@ export type ParrafoCountOutputTypeDefaultArgs<
 /**
  * ParrafoCountOutputType without action
  */
-export type ParrafoCountOutputTypeCountComentariosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoCountOutputTypeCountComentariosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.ComentarioWhereInput;
 };
 
 /**
  * ParrafoCountOutputType without action
  */
-export type ParrafoCountOutputTypeCountMarcadoresArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoCountOutputTypeCountMarcadoresArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.MarcadorWhereInput;
 };
 
-export type ParrafoSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type ParrafoSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		contenido?: boolean;
@@ -1143,10 +935,7 @@ export type ParrafoSelect<
 	ExtArgs["result"]["parrafo"]
 >;
 
-export type ParrafoSelectCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type ParrafoSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		contenido?: boolean;
@@ -1161,10 +950,7 @@ export type ParrafoSelectCreateManyAndReturn<
 	ExtArgs["result"]["parrafo"]
 >;
 
-export type ParrafoSelectUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type ParrafoSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		contenido?: boolean;
@@ -1189,48 +975,27 @@ export type ParrafoSelectScalar = {
 	estadoId?: boolean;
 };
 
-export type ParrafoOmit<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetOmit<
-	| "id"
-	| "contenido"
-	| "indice"
-	| "createdAt"
-	| "updatedAt"
-	| "capituloId"
-	| "estadoId",
+export type ParrafoOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<
+	"id" | "contenido" | "indice" | "createdAt" | "updatedAt" | "capituloId" | "estadoId",
 	ExtArgs["result"]["parrafo"]
 >;
-export type ParrafoInclude<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	capitulo?: boolean | Prisma.CapituloDefaultArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 	comentarios?: boolean | Prisma.Parrafo$comentariosArgs<ExtArgs>;
 	marcadores?: boolean | Prisma.Parrafo$marcadoresArgs<ExtArgs>;
 	_count?: boolean | Prisma.ParrafoCountOutputTypeDefaultArgs<ExtArgs>;
 };
-export type ParrafoIncludeCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	capitulo?: boolean | Prisma.CapituloDefaultArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
-export type ParrafoIncludeUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	capitulo?: boolean | Prisma.CapituloDefaultArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
 
-export type $ParrafoPayload<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type $ParrafoPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	name: "Parrafo";
 	objects: {
 		capitulo: Prisma.$CapituloPayload<ExtArgs>;
@@ -1253,26 +1018,14 @@ export type $ParrafoPayload<
 	composites: {};
 };
 
-export type ParrafoGetPayload<
-	S extends boolean | null | undefined | ParrafoDefaultArgs,
-> = runtime.Types.Result.GetResult<Prisma.$ParrafoPayload, S>;
+export type ParrafoGetPayload<S extends boolean | null | undefined | ParrafoDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$ParrafoPayload, S>;
 
-export type ParrafoCountArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = Omit<ParrafoFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
+export type ParrafoCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<ParrafoFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
 	select?: ParrafoCountAggregateInputType | true;
 };
 
-export interface ParrafoDelegate<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> {
-	[K: symbol]: {
-		types: Prisma.TypeMap<ExtArgs>["model"]["Parrafo"];
-		meta: { name: "Parrafo" };
-	};
+export interface ParrafoDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+	[K: symbol]: { types: Prisma.TypeMap<ExtArgs>["model"]["Parrafo"]; meta: { name: "Parrafo" } };
 	/**
 	 * Find zero or one Parrafo that matches the filter.
 	 * @param {ParrafoFindUniqueArgs} args - Arguments to find a Parrafo
@@ -1286,17 +1039,7 @@ export interface ParrafoDelegate<
 	 */
 	findUnique<T extends ParrafoFindUniqueArgs>(
 		args: Prisma.SelectSubset<T, ParrafoFindUniqueArgs<ExtArgs>>,
-	): Prisma.Prisma__ParrafoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ParrafoPayload<ExtArgs>,
-			T,
-			"findUnique",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ParrafoClient<runtime.Types.Result.GetResult<Prisma.$ParrafoPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find one Parrafo that matches the filter or throw an error with `error.code='P2025'`
@@ -1312,17 +1055,7 @@ export interface ParrafoDelegate<
 	 */
 	findUniqueOrThrow<T extends ParrafoFindUniqueOrThrowArgs>(
 		args: Prisma.SelectSubset<T, ParrafoFindUniqueOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__ParrafoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ParrafoPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ParrafoClient<runtime.Types.Result.GetResult<Prisma.$ParrafoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Parrafo that matches the filter.
@@ -1339,17 +1072,7 @@ export interface ParrafoDelegate<
 	 */
 	findFirst<T extends ParrafoFindFirstArgs>(
 		args?: Prisma.SelectSubset<T, ParrafoFindFirstArgs<ExtArgs>>,
-	): Prisma.Prisma__ParrafoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ParrafoPayload<ExtArgs>,
-			T,
-			"findFirst",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ParrafoClient<runtime.Types.Result.GetResult<Prisma.$ParrafoPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Parrafo that matches the filter or
@@ -1367,17 +1090,7 @@ export interface ParrafoDelegate<
 	 */
 	findFirstOrThrow<T extends ParrafoFindFirstOrThrowArgs>(
 		args?: Prisma.SelectSubset<T, ParrafoFindFirstOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__ParrafoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ParrafoPayload<ExtArgs>,
-			T,
-			"findFirstOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ParrafoClient<runtime.Types.Result.GetResult<Prisma.$ParrafoPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find zero or more Parrafos that matches the filter.
@@ -1397,14 +1110,7 @@ export interface ParrafoDelegate<
 	 */
 	findMany<T extends ParrafoFindManyArgs>(
 		args?: Prisma.SelectSubset<T, ParrafoFindManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$ParrafoPayload<ExtArgs>,
-			T,
-			"findMany",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ParrafoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
 
 	/**
 	 * Create a Parrafo.
@@ -1420,17 +1126,7 @@ export interface ParrafoDelegate<
 	 */
 	create<T extends ParrafoCreateArgs>(
 		args: Prisma.SelectSubset<T, ParrafoCreateArgs<ExtArgs>>,
-	): Prisma.Prisma__ParrafoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ParrafoPayload<ExtArgs>,
-			T,
-			"create",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ParrafoClient<runtime.Types.Result.GetResult<Prisma.$ParrafoPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Create many Parrafos.
@@ -1444,9 +1140,7 @@ export interface ParrafoDelegate<
 	 * })
 	 *
 	 */
-	createMany<T extends ParrafoCreateManyArgs>(
-		args?: Prisma.SelectSubset<T, ParrafoCreateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	createMany<T extends ParrafoCreateManyArgs>(args?: Prisma.SelectSubset<T, ParrafoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Create many Parrafos and returns the data saved in the database.
@@ -1472,14 +1166,7 @@ export interface ParrafoDelegate<
 	 */
 	createManyAndReturn<T extends ParrafoCreateManyAndReturnArgs>(
 		args?: Prisma.SelectSubset<T, ParrafoCreateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$ParrafoPayload<ExtArgs>,
-			T,
-			"createManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ParrafoPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Delete a Parrafo.
@@ -1495,17 +1182,7 @@ export interface ParrafoDelegate<
 	 */
 	delete<T extends ParrafoDeleteArgs>(
 		args: Prisma.SelectSubset<T, ParrafoDeleteArgs<ExtArgs>>,
-	): Prisma.Prisma__ParrafoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ParrafoPayload<ExtArgs>,
-			T,
-			"delete",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ParrafoClient<runtime.Types.Result.GetResult<Prisma.$ParrafoPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Update one Parrafo.
@@ -1524,17 +1201,7 @@ export interface ParrafoDelegate<
 	 */
 	update<T extends ParrafoUpdateArgs>(
 		args: Prisma.SelectSubset<T, ParrafoUpdateArgs<ExtArgs>>,
-	): Prisma.Prisma__ParrafoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ParrafoPayload<ExtArgs>,
-			T,
-			"update",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ParrafoClient<runtime.Types.Result.GetResult<Prisma.$ParrafoPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Delete zero or more Parrafos.
@@ -1548,9 +1215,7 @@ export interface ParrafoDelegate<
 	 * })
 	 *
 	 */
-	deleteMany<T extends ParrafoDeleteManyArgs>(
-		args?: Prisma.SelectSubset<T, ParrafoDeleteManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	deleteMany<T extends ParrafoDeleteManyArgs>(args?: Prisma.SelectSubset<T, ParrafoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Parrafos.
@@ -1569,9 +1234,7 @@ export interface ParrafoDelegate<
 	 * })
 	 *
 	 */
-	updateMany<T extends ParrafoUpdateManyArgs>(
-		args: Prisma.SelectSubset<T, ParrafoUpdateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	updateMany<T extends ParrafoUpdateManyArgs>(args: Prisma.SelectSubset<T, ParrafoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Parrafos and returns the data updated in the database.
@@ -1603,14 +1266,7 @@ export interface ParrafoDelegate<
 	 */
 	updateManyAndReturn<T extends ParrafoUpdateManyAndReturnArgs>(
 		args: Prisma.SelectSubset<T, ParrafoUpdateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$ParrafoPayload<ExtArgs>,
-			T,
-			"updateManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ParrafoPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Create or update one Parrafo.
@@ -1631,17 +1287,7 @@ export interface ParrafoDelegate<
 	 */
 	upsert<T extends ParrafoUpsertArgs>(
 		args: Prisma.SelectSubset<T, ParrafoUpsertArgs<ExtArgs>>,
-	): Prisma.Prisma__ParrafoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ParrafoPayload<ExtArgs>,
-			T,
-			"upsert",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ParrafoClient<runtime.Types.Result.GetResult<Prisma.$ParrafoPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Count the number of Parrafos.
@@ -1658,13 +1304,7 @@ export interface ParrafoDelegate<
 	 **/
 	count<T extends ParrafoCountArgs>(
 		args?: Prisma.Subset<T, ParrafoCountArgs>,
-	): Prisma.PrismaPromise<
-		T extends runtime.Types.Utils.Record<"select", any>
-			? T["select"] extends true
-				? number
-				: Prisma.GetScalarType<T["select"], ParrafoCountAggregateOutputType>
-			: number
-	>;
+	): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<"select", any> ? (T["select"] extends true ? number : Prisma.GetScalarType<T["select"], ParrafoCountAggregateOutputType>) : number>;
 
 	/**
 	 * Allows you to perform aggregations operations on a Parrafo.
@@ -1690,9 +1330,7 @@ export interface ParrafoDelegate<
 	 *   take: 10,
 	 * })
 	 **/
-	aggregate<T extends ParrafoAggregateArgs>(
-		args: Prisma.Subset<T, ParrafoAggregateArgs>,
-	): Prisma.PrismaPromise<GetParrafoAggregateType<T>>;
+	aggregate<T extends ParrafoAggregateArgs>(args: Prisma.Subset<T, ParrafoAggregateArgs>): Prisma.PrismaPromise<GetParrafoAggregateType<T>>;
 
 	/**
 	 * Group by Parrafo.
@@ -1714,16 +1352,9 @@ export interface ParrafoDelegate<
 	 **/
 	groupBy<
 		T extends ParrafoGroupByArgs,
-		HasSelectOrTake extends Prisma.Or<
-			Prisma.Extends<"skip", Prisma.Keys<T>>,
-			Prisma.Extends<"take", Prisma.Keys<T>>
-		>,
-		OrderByArg extends Prisma.True extends HasSelectOrTake
-			? { orderBy: ParrafoGroupByArgs["orderBy"] }
-			: { orderBy?: ParrafoGroupByArgs["orderBy"] },
-		OrderFields extends Prisma.ExcludeUnderscoreKeys<
-			Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>
-		>,
+		HasSelectOrTake extends Prisma.Or<Prisma.Extends<"skip", Prisma.Keys<T>>, Prisma.Extends<"take", Prisma.Keys<T>>>,
+		OrderByArg extends Prisma.True extends HasSelectOrTake ? { orderBy: ParrafoGroupByArgs["orderBy"] } : { orderBy?: ParrafoGroupByArgs["orderBy"] },
+		OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>>,
 		ByFields extends Prisma.MaybeTupleToUnion<T["by"]>,
 		ByValid extends Prisma.Has<ByFields, OrderFields>,
 		HavingFields extends Prisma.GetHavingFields<T["having"]>,
@@ -1737,21 +1368,14 @@ export interface ParrafoDelegate<
 							? never
 							: P extends string
 								? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-								: [
-										Error,
-										"Field ",
-										P,
-										` in "having" needs to be provided in "by"`,
-									];
+								: [Error, "Field ", P, ` in "having" needs to be provided in "by"`];
 					}[HavingFields]
 				: "take" extends Prisma.Keys<T>
 					? "orderBy" extends Prisma.Keys<T>
 						? ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields]
 						: 'Error: If you provide "take", you also need to provide "orderBy"'
 					: "skip" extends Prisma.Keys<T>
@@ -1759,24 +1383,15 @@ export interface ParrafoDelegate<
 							? ByValid extends Prisma.True
 								? {}
 								: {
-										[P in OrderFields]: P extends ByFields
-											? never
-											: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+										[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 									}[OrderFields]
 							: 'Error: If you provide "skip", you also need to provide "orderBy"'
 						: ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields],
-	>(
-		args: Prisma.SubsetIntersection<T, ParrafoGroupByArgs, OrderByArg> &
-			InputErrors,
-	): {} extends InputErrors
-		? GetParrafoGroupByPayload<T>
-		: Prisma.PrismaPromise<InputErrors>;
+	>(args: Prisma.SubsetIntersection<T, ParrafoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetParrafoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
 	/**
 	 * Fields of the Parrafo model
 	 */
@@ -1789,64 +1404,21 @@ export interface ParrafoDelegate<
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__ParrafoClient<
-	T,
-	Null = never,
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> extends Prisma.PrismaPromise<T> {
+export interface Prisma__ParrafoClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}>
+	extends Prisma.PrismaPromise<T> {
 	readonly [Symbol.toStringTag]: "PrismaPromise";
 	capitulo<T extends Prisma.CapituloDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.CapituloDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__CapituloClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$CapituloPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__CapituloClient<runtime.Types.Result.GetResult<Prisma.$CapituloPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	estado<T extends Prisma.EstadoDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EstadoDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EstadoPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	comentarios<T extends Prisma.Parrafo$comentariosArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Parrafo$comentariosArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$ComentarioPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	marcadores<T extends Prisma.Parrafo$marcadoresArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Parrafo$marcadoresArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$MarcadorPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MarcadorPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	/**
 	 * Attaches callbacks for the resolution and/or rejection of the Promise.
 	 * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1854,35 +1426,22 @@ export interface Prisma__ParrafoClient<
 	 * @returns A Promise for the completion of which ever callback is executed.
 	 */
 	then<TResult1 = T, TResult2 = never>(
-		onfulfilled?:
-			| ((value: T) => TResult1 | PromiseLike<TResult1>)
-			| undefined
-			| null,
-		onrejected?:
-			| ((reason: any) => TResult2 | PromiseLike<TResult2>)
-			| undefined
-			| null,
+		onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+		onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
 	): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
 	/**
 	 * Attaches a callback for only the rejection of the Promise.
 	 * @param onrejected The callback to execute when the Promise is rejected.
 	 * @returns A Promise for the completion of the callback.
 	 */
-	catch<TResult = never>(
-		onrejected?:
-			| ((reason: any) => TResult | PromiseLike<TResult>)
-			| undefined
-			| null,
-	): runtime.Types.Utils.JsPromise<T | TResult>;
+	catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
 	/**
 	 * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
 	 * resolved value cannot be modified from the callback.
 	 * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
 	 * @returns A Promise for the completion of the callback.
 	 */
-	finally(
-		onfinally?: (() => void) | undefined | null,
-	): runtime.Types.Utils.JsPromise<T>;
+	finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
 }
 
 /**
@@ -1902,10 +1461,7 @@ export interface ParrafoFieldRefs {
 /**
  * Parrafo findUnique
  */
-export type ParrafoFindUniqueArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Parrafo
 	 */
@@ -1927,10 +1483,7 @@ export type ParrafoFindUniqueArgs<
 /**
  * Parrafo findUniqueOrThrow
  */
-export type ParrafoFindUniqueOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Parrafo
 	 */
@@ -1952,10 +1505,7 @@ export type ParrafoFindUniqueOrThrowArgs<
 /**
  * Parrafo findFirst
  */
-export type ParrafoFindFirstArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Parrafo
 	 */
@@ -1977,9 +1527,7 @@ export type ParrafoFindFirstArgs<
 	 *
 	 * Determine the order of Parrafos to fetch.
 	 */
-	orderBy?:
-		| Prisma.ParrafoOrderByWithRelationInput
-		| Prisma.ParrafoOrderByWithRelationInput[];
+	orderBy?: Prisma.ParrafoOrderByWithRelationInput | Prisma.ParrafoOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -2009,10 +1557,7 @@ export type ParrafoFindFirstArgs<
 /**
  * Parrafo findFirstOrThrow
  */
-export type ParrafoFindFirstOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Parrafo
 	 */
@@ -2034,9 +1579,7 @@ export type ParrafoFindFirstOrThrowArgs<
 	 *
 	 * Determine the order of Parrafos to fetch.
 	 */
-	orderBy?:
-		| Prisma.ParrafoOrderByWithRelationInput
-		| Prisma.ParrafoOrderByWithRelationInput[];
+	orderBy?: Prisma.ParrafoOrderByWithRelationInput | Prisma.ParrafoOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -2066,10 +1609,7 @@ export type ParrafoFindFirstOrThrowArgs<
 /**
  * Parrafo findMany
  */
-export type ParrafoFindManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Parrafo
 	 */
@@ -2091,9 +1631,7 @@ export type ParrafoFindManyArgs<
 	 *
 	 * Determine the order of Parrafos to fetch.
 	 */
-	orderBy?:
-		| Prisma.ParrafoOrderByWithRelationInput
-		| Prisma.ParrafoOrderByWithRelationInput[];
+	orderBy?: Prisma.ParrafoOrderByWithRelationInput | Prisma.ParrafoOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -2123,10 +1661,7 @@ export type ParrafoFindManyArgs<
 /**
  * Parrafo create
  */
-export type ParrafoCreateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Parrafo
 	 */
@@ -2142,19 +1677,13 @@ export type ParrafoCreateArgs<
 	/**
 	 * The data needed to create a Parrafo.
 	 */
-	data: Prisma.XOR<
-		Prisma.ParrafoCreateInput,
-		Prisma.ParrafoUncheckedCreateInput
-	>;
+	data: Prisma.XOR<Prisma.ParrafoCreateInput, Prisma.ParrafoUncheckedCreateInput>;
 };
 
 /**
  * Parrafo createMany
  */
-export type ParrafoCreateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to create many Parrafos.
 	 */
@@ -2165,10 +1694,7 @@ export type ParrafoCreateManyArgs<
 /**
  * Parrafo createManyAndReturn
  */
-export type ParrafoCreateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Parrafo
 	 */
@@ -2191,10 +1717,7 @@ export type ParrafoCreateManyAndReturnArgs<
 /**
  * Parrafo update
  */
-export type ParrafoUpdateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Parrafo
 	 */
@@ -2210,10 +1733,7 @@ export type ParrafoUpdateArgs<
 	/**
 	 * The data needed to update a Parrafo.
 	 */
-	data: Prisma.XOR<
-		Prisma.ParrafoUpdateInput,
-		Prisma.ParrafoUncheckedUpdateInput
-	>;
+	data: Prisma.XOR<Prisma.ParrafoUpdateInput, Prisma.ParrafoUncheckedUpdateInput>;
 	/**
 	 * Choose, which Parrafo to update.
 	 */
@@ -2223,17 +1743,11 @@ export type ParrafoUpdateArgs<
 /**
  * Parrafo updateMany
  */
-export type ParrafoUpdateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to update Parrafos.
 	 */
-	data: Prisma.XOR<
-		Prisma.ParrafoUpdateManyMutationInput,
-		Prisma.ParrafoUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.ParrafoUpdateManyMutationInput, Prisma.ParrafoUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Parrafos to update
 	 */
@@ -2247,10 +1761,7 @@ export type ParrafoUpdateManyArgs<
 /**
  * Parrafo updateManyAndReturn
  */
-export type ParrafoUpdateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Parrafo
 	 */
@@ -2262,10 +1773,7 @@ export type ParrafoUpdateManyAndReturnArgs<
 	/**
 	 * The data used to update Parrafos.
 	 */
-	data: Prisma.XOR<
-		Prisma.ParrafoUpdateManyMutationInput,
-		Prisma.ParrafoUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.ParrafoUpdateManyMutationInput, Prisma.ParrafoUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Parrafos to update
 	 */
@@ -2283,10 +1791,7 @@ export type ParrafoUpdateManyAndReturnArgs<
 /**
  * Parrafo upsert
  */
-export type ParrafoUpsertArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Parrafo
 	 */
@@ -2306,26 +1811,17 @@ export type ParrafoUpsertArgs<
 	/**
 	 * In case the Parrafo found by the `where` argument doesn't exist, create a new Parrafo with this data.
 	 */
-	create: Prisma.XOR<
-		Prisma.ParrafoCreateInput,
-		Prisma.ParrafoUncheckedCreateInput
-	>;
+	create: Prisma.XOR<Prisma.ParrafoCreateInput, Prisma.ParrafoUncheckedCreateInput>;
 	/**
 	 * In case the Parrafo was found with the provided `where` argument, update it with this data.
 	 */
-	update: Prisma.XOR<
-		Prisma.ParrafoUpdateInput,
-		Prisma.ParrafoUncheckedUpdateInput
-	>;
+	update: Prisma.XOR<Prisma.ParrafoUpdateInput, Prisma.ParrafoUncheckedUpdateInput>;
 };
 
 /**
  * Parrafo delete
  */
-export type ParrafoDeleteArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Parrafo
 	 */
@@ -2347,10 +1843,7 @@ export type ParrafoDeleteArgs<
 /**
  * Parrafo deleteMany
  */
-export type ParrafoDeleteManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Parrafos to delete
 	 */
@@ -2364,10 +1857,7 @@ export type ParrafoDeleteManyArgs<
 /**
  * Parrafo.comentarios
  */
-export type Parrafo$comentariosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Parrafo$comentariosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Comentario
 	 */
@@ -2381,24 +1871,17 @@ export type Parrafo$comentariosArgs<
 	 */
 	include?: Prisma.ComentarioInclude<ExtArgs> | null;
 	where?: Prisma.ComentarioWhereInput;
-	orderBy?:
-		| Prisma.ComentarioOrderByWithRelationInput
-		| Prisma.ComentarioOrderByWithRelationInput[];
+	orderBy?: Prisma.ComentarioOrderByWithRelationInput | Prisma.ComentarioOrderByWithRelationInput[];
 	cursor?: Prisma.ComentarioWhereUniqueInput;
 	take?: number;
 	skip?: number;
-	distinct?:
-		| Prisma.ComentarioScalarFieldEnum
-		| Prisma.ComentarioScalarFieldEnum[];
+	distinct?: Prisma.ComentarioScalarFieldEnum | Prisma.ComentarioScalarFieldEnum[];
 };
 
 /**
  * Parrafo.marcadores
  */
-export type Parrafo$marcadoresArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Parrafo$marcadoresArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Marcador
 	 */
@@ -2412,9 +1895,7 @@ export type Parrafo$marcadoresArgs<
 	 */
 	include?: Prisma.MarcadorInclude<ExtArgs> | null;
 	where?: Prisma.MarcadorWhereInput;
-	orderBy?:
-		| Prisma.MarcadorOrderByWithRelationInput
-		| Prisma.MarcadorOrderByWithRelationInput[];
+	orderBy?: Prisma.MarcadorOrderByWithRelationInput | Prisma.MarcadorOrderByWithRelationInput[];
 	cursor?: Prisma.MarcadorWhereUniqueInput;
 	take?: number;
 	skip?: number;
@@ -2424,10 +1905,7 @@ export type Parrafo$marcadoresArgs<
 /**
  * Parrafo without action
  */
-export type ParrafoDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ParrafoDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Parrafo
 	 */

@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { EtiquetaWhereInputObjectSchema as EtiquetaWhereInputObjectSchema } from "./EtiquetaWhereInput.schema.ts";
 
 const makeSchema = () =>
@@ -9,5 +8,4 @@ const makeSchema = () =>
 		})
 		.strict();
 export const EstadoCountOutputTypeCountEtiquetasArgsObjectSchema = makeSchema();
-export const EstadoCountOutputTypeCountEtiquetasArgsObjectZodSchema =
-	makeSchema();
+export const EstadoCountOutputTypeCountEtiquetasArgsObjectZodSchema = makeSchema();

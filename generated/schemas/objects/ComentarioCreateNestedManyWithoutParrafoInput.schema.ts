@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { ComentarioCreateManyParrafoInputEnvelopeObjectSchema as ComentarioCreateManyParrafoInputEnvelopeObjectSchema } from "./ComentarioCreateManyParrafoInputEnvelope.schema.ts";
 import { ComentarioCreateOrConnectWithoutParrafoInputObjectSchema as ComentarioCreateOrConnectWithoutParrafoInputObjectSchema } from "./ComentarioCreateOrConnectWithoutParrafoInput.schema.ts";
 import { ComentarioCreateWithoutParrafoInputObjectSchema as ComentarioCreateWithoutParrafoInputObjectSchema } from "./ComentarioCreateWithoutParrafoInput.schema.ts";
@@ -13,40 +13,15 @@ const makeSchema = () =>
 				.union([
 					z.lazy(() => ComentarioCreateWithoutParrafoInputObjectSchema),
 					z.lazy(() => ComentarioCreateWithoutParrafoInputObjectSchema).array(),
-					z.lazy(
-						() => ComentarioUncheckedCreateWithoutParrafoInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => ComentarioUncheckedCreateWithoutParrafoInputObjectSchema,
-						)
-						.array(),
+					z.lazy(() => ComentarioUncheckedCreateWithoutParrafoInputObjectSchema),
+					z.lazy(() => ComentarioUncheckedCreateWithoutParrafoInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(
-						() => ComentarioCreateOrConnectWithoutParrafoInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => ComentarioCreateOrConnectWithoutParrafoInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			createMany: z
-				.lazy(() => ComentarioCreateManyParrafoInputEnvelopeObjectSchema)
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => ComentarioWhereUniqueInputObjectSchema),
-					z.lazy(() => ComentarioWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => ComentarioCreateOrConnectWithoutParrafoInputObjectSchema), z.lazy(() => ComentarioCreateOrConnectWithoutParrafoInputObjectSchema).array()]).optional(),
+			createMany: z.lazy(() => ComentarioCreateManyParrafoInputEnvelopeObjectSchema).optional(),
+			connect: z.union([z.lazy(() => ComentarioWhereUniqueInputObjectSchema), z.lazy(() => ComentarioWhereUniqueInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const ComentarioCreateNestedManyWithoutParrafoInputObjectSchema: z.ZodType<Prisma.ComentarioCreateNestedManyWithoutParrafoInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.ComentarioCreateNestedManyWithoutParrafoInput>;
-export const ComentarioCreateNestedManyWithoutParrafoInputObjectZodSchema =
-	makeSchema();
+export const ComentarioCreateNestedManyWithoutParrafoInputObjectZodSchema = makeSchema();

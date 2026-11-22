@@ -1,4 +1,7 @@
 import * as z from "zod";
+import { CategoriaSchema } from "../models/Categoria.schema.ts";
+import { EstadoSchema } from "../models/Estado.schema.ts";
+import { LibroSchema } from "../models/Libro.schema.ts";
 export const LibroCategoriaFindManyResultSchema = z.object({
 	data: z.array(
 		z.object({
@@ -7,9 +10,9 @@ export const LibroCategoriaFindManyResultSchema = z.object({
 			createdAt: z.date(),
 			updatedAt: z.date(),
 			estadoId: z.number().int(),
-			estado: z.unknown(),
-			libro: z.unknown(),
-			categoria: z.unknown(),
+			estado: EstadoSchema.optional(),
+			libro: LibroSchema.optional(),
+			categoria: CategoriaSchema.optional(),
 		}),
 	),
 	pagination: z.object({

@@ -5,24 +5,25 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-function Popover({
-	...props
-}: React.ComponentProps<typeof PopoverPrimitive.Root>) {
-	return <PopoverPrimitive.Root data-slot="popover" {...props} />;
+function Popover({ ...props }: React.ComponentProps<typeof PopoverPrimitive.Root>) {
+	return (
+		<PopoverPrimitive.Root
+			data-slot="popover"
+			{...props}
+		/>
+	);
 }
 
-function PopoverTrigger({
-	...props
-}: React.ComponentProps<typeof PopoverPrimitive.Trigger>) {
-	return <PopoverPrimitive.Trigger data-slot="popover-trigger" {...props} />;
+function PopoverTrigger({ ...props }: React.ComponentProps<typeof PopoverPrimitive.Trigger>) {
+	return (
+		<PopoverPrimitive.Trigger
+			data-slot="popover-trigger"
+			{...props}
+		/>
+	);
 }
 
-function PopoverContent({
-	className,
-	align = "center",
-	sideOffset = 4,
-	...props
-}: React.ComponentProps<typeof PopoverPrimitive.Content>) {
+function PopoverContent({ className, align = "center", sideOffset = 4, ...props }: React.ComponentProps<typeof PopoverPrimitive.Content>) {
 	return (
 		<PopoverPrimitive.Portal>
 			<PopoverPrimitive.Content
@@ -39,10 +40,13 @@ function PopoverContent({
 	);
 }
 
-function PopoverAnchor({
-	...props
-}: React.ComponentProps<typeof PopoverPrimitive.Anchor>) {
-	return <PopoverPrimitive.Anchor data-slot="popover-anchor" {...props} />;
+function PopoverAnchor({ ...props }: React.ComponentProps<typeof PopoverPrimitive.Anchor>) {
+	return (
+		<PopoverPrimitive.Anchor
+			data-slot="popover-anchor"
+			{...props}
+		/>
+	);
 }
 
 function PopoverHeader({ className, ...props }: React.ComponentProps<"div">) {
@@ -65,10 +69,7 @@ function PopoverTitle({ className, ...props }: React.ComponentProps<"h2">) {
 	);
 }
 
-function PopoverDescription({
-	className,
-	...props
-}: React.ComponentProps<"p">) {
+function PopoverDescription({ className, ...props }: React.ComponentProps<"p">) {
 	return (
 		<p
 			data-slot="popover-description"
@@ -78,12 +79,4 @@ function PopoverDescription({
 	);
 }
 
-export {
-	Popover,
-	PopoverAnchor,
-	PopoverContent,
-	PopoverDescription,
-	PopoverHeader,
-	PopoverTitle,
-	PopoverTrigger,
-};
+export { Popover, PopoverAnchor, PopoverContent, PopoverDescription, PopoverHeader, PopoverTitle, PopoverTrigger };

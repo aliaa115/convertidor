@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { IdiomaWhereInputObjectSchema as IdiomaWhereInputObjectSchema } from "./IdiomaWhereInput.schema.ts";
 
 const makeSchema = () =>

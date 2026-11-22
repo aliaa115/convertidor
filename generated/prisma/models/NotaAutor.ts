@@ -15,8 +15,7 @@ import type * as Prisma from "../internal/prismaNamespace.ts";
  * Model NotaAutor
  *
  */
-export type NotaAutorModel =
-	runtime.Types.Result.DefaultSelection<Prisma.$NotaAutorPayload>;
+export type NotaAutorModel = runtime.Types.Result.DefaultSelection<Prisma.$NotaAutorPayload>;
 
 export type AggregateNotaAutor = {
 	_count: NotaAutorCountAggregateOutputType | null;
@@ -116,10 +115,7 @@ export type NotaAutorCountAggregateInputType = {
 	_all?: true;
 };
 
-export type NotaAutorAggregateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type NotaAutorAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which NotaAutor to aggregate.
 	 */
@@ -129,9 +125,7 @@ export type NotaAutorAggregateArgs<
 	 *
 	 * Determine the order of NotaAutors to fetch.
 	 */
-	orderBy?:
-		| Prisma.NotaAutorOrderByWithRelationInput
-		| Prisma.NotaAutorOrderByWithRelationInput[];
+	orderBy?: Prisma.NotaAutorOrderByWithRelationInput | Prisma.NotaAutorOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -190,14 +184,9 @@ export type GetNotaAutorAggregateType<T extends NotaAutorAggregateArgs> = {
 		: Prisma.GetScalarType<T[P], AggregateNotaAutor[P]>;
 };
 
-export type NotaAutorGroupByArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type NotaAutorGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.NotaAutorWhereInput;
-	orderBy?:
-		| Prisma.NotaAutorOrderByWithAggregationInput
-		| Prisma.NotaAutorOrderByWithAggregationInput[];
+	orderBy?: Prisma.NotaAutorOrderByWithAggregationInput | Prisma.NotaAutorOrderByWithAggregationInput[];
 	by: Prisma.NotaAutorScalarFieldEnum[] | Prisma.NotaAutorScalarFieldEnum;
 	having?: Prisma.NotaAutorScalarWhereWithAggregatesInput;
 	take?: number;
@@ -224,18 +213,17 @@ export type NotaAutorGroupByOutputType = {
 	_max: NotaAutorMaxAggregateOutputType | null;
 };
 
-export type GetNotaAutorGroupByPayload<T extends NotaAutorGroupByArgs> =
-	Prisma.PrismaPromise<
-		Array<
-			Prisma.PickEnumerable<NotaAutorGroupByOutputType, T["by"]> & {
-				[P in keyof T & keyof NotaAutorGroupByOutputType]: P extends "_count"
-					? T[P] extends boolean
-						? number
-						: Prisma.GetScalarType<T[P], NotaAutorGroupByOutputType[P]>
-					: Prisma.GetScalarType<T[P], NotaAutorGroupByOutputType[P]>;
-			}
-		>
-	>;
+export type GetNotaAutorGroupByPayload<T extends NotaAutorGroupByArgs> = Prisma.PrismaPromise<
+	Array<
+		Prisma.PickEnumerable<NotaAutorGroupByOutputType, T["by"]> & {
+			[P in keyof T & keyof NotaAutorGroupByOutputType]: P extends "_count"
+				? T[P] extends boolean
+					? number
+					: Prisma.GetScalarType<T[P], NotaAutorGroupByOutputType[P]>
+				: Prisma.GetScalarType<T[P], NotaAutorGroupByOutputType[P]>;
+		}
+	>
+>;
 
 export type NotaAutorWhereInput = {
 	AND?: Prisma.NotaAutorWhereInput | Prisma.NotaAutorWhereInput[];
@@ -248,18 +236,9 @@ export type NotaAutorWhereInput = {
 	escritorId?: Prisma.IntFilter<"NotaAutor"> | number;
 	capituloId?: Prisma.IntFilter<"NotaAutor"> | number;
 	estadoId?: Prisma.IntFilter<"NotaAutor"> | number;
-	escritor?: Prisma.XOR<
-		Prisma.EscritorScalarRelationFilter,
-		Prisma.EscritorWhereInput
-	>;
-	capitulo?: Prisma.XOR<
-		Prisma.CapituloScalarRelationFilter,
-		Prisma.CapituloWhereInput
-	>;
-	estado?: Prisma.XOR<
-		Prisma.EstadoScalarRelationFilter,
-		Prisma.EstadoWhereInput
-	>;
+	escritor?: Prisma.XOR<Prisma.EscritorScalarRelationFilter, Prisma.EscritorWhereInput>;
+	capitulo?: Prisma.XOR<Prisma.CapituloScalarRelationFilter, Prisma.CapituloWhereInput>;
+	estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 };
 
 export type NotaAutorOrderByWithRelationInput = {
@@ -287,18 +266,9 @@ export type NotaAutorWhereUniqueInput = Prisma.AtLeast<
 		escritorId?: Prisma.IntFilter<"NotaAutor"> | number;
 		capituloId?: Prisma.IntFilter<"NotaAutor"> | number;
 		estadoId?: Prisma.IntFilter<"NotaAutor"> | number;
-		escritor?: Prisma.XOR<
-			Prisma.EscritorScalarRelationFilter,
-			Prisma.EscritorWhereInput
-		>;
-		capitulo?: Prisma.XOR<
-			Prisma.CapituloScalarRelationFilter,
-			Prisma.CapituloWhereInput
-		>;
-		estado?: Prisma.XOR<
-			Prisma.EstadoScalarRelationFilter,
-			Prisma.EstadoWhereInput
-		>;
+		escritor?: Prisma.XOR<Prisma.EscritorScalarRelationFilter, Prisma.EscritorWhereInput>;
+		capitulo?: Prisma.XOR<Prisma.CapituloScalarRelationFilter, Prisma.CapituloWhereInput>;
+		estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 	},
 	"id"
 >;
@@ -319,18 +289,11 @@ export type NotaAutorOrderByWithAggregationInput = {
 };
 
 export type NotaAutorScalarWhereWithAggregatesInput = {
-	AND?:
-		| Prisma.NotaAutorScalarWhereWithAggregatesInput
-		| Prisma.NotaAutorScalarWhereWithAggregatesInput[];
+	AND?: Prisma.NotaAutorScalarWhereWithAggregatesInput | Prisma.NotaAutorScalarWhereWithAggregatesInput[];
 	OR?: Prisma.NotaAutorScalarWhereWithAggregatesInput[];
-	NOT?:
-		| Prisma.NotaAutorScalarWhereWithAggregatesInput
-		| Prisma.NotaAutorScalarWhereWithAggregatesInput[];
+	NOT?: Prisma.NotaAutorScalarWhereWithAggregatesInput | Prisma.NotaAutorScalarWhereWithAggregatesInput[];
 	id?: Prisma.IntWithAggregatesFilter<"NotaAutor"> | number;
-	texto?:
-		| Prisma.StringNullableWithAggregatesFilter<"NotaAutor">
-		| string
-		| null;
+	texto?: Prisma.StringNullableWithAggregatesFilter<"NotaAutor"> | string | null;
 	createdAt?: Prisma.DateTimeWithAggregatesFilter<"NotaAutor"> | Date | string;
 	updatedAt?: Prisma.DateTimeWithAggregatesFilter<"NotaAutor"> | Date | string;
 	escritorId?: Prisma.IntWithAggregatesFilter<"NotaAutor"> | number;
@@ -458,320 +421,164 @@ export type NotaAutorSumOrderByAggregateInput = {
 
 export type NotaAutorCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.NotaAutorCreateWithoutEstadoInput,
-				Prisma.NotaAutorUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.NotaAutorCreateWithoutEstadoInput, Prisma.NotaAutorUncheckedCreateWithoutEstadoInput>
 		| Prisma.NotaAutorCreateWithoutEstadoInput[]
 		| Prisma.NotaAutorUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.NotaAutorCreateOrConnectWithoutEstadoInput
-		| Prisma.NotaAutorCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.NotaAutorCreateOrConnectWithoutEstadoInput | Prisma.NotaAutorCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.NotaAutorCreateManyEstadoInputEnvelope;
-	connect?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
+	connect?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
 };
 
 export type NotaAutorUncheckedCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.NotaAutorCreateWithoutEstadoInput,
-				Prisma.NotaAutorUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.NotaAutorCreateWithoutEstadoInput, Prisma.NotaAutorUncheckedCreateWithoutEstadoInput>
 		| Prisma.NotaAutorCreateWithoutEstadoInput[]
 		| Prisma.NotaAutorUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.NotaAutorCreateOrConnectWithoutEstadoInput
-		| Prisma.NotaAutorCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.NotaAutorCreateOrConnectWithoutEstadoInput | Prisma.NotaAutorCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.NotaAutorCreateManyEstadoInputEnvelope;
-	connect?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
+	connect?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
 };
 
 export type NotaAutorUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.NotaAutorCreateWithoutEstadoInput,
-				Prisma.NotaAutorUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.NotaAutorCreateWithoutEstadoInput, Prisma.NotaAutorUncheckedCreateWithoutEstadoInput>
 		| Prisma.NotaAutorCreateWithoutEstadoInput[]
 		| Prisma.NotaAutorUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.NotaAutorCreateOrConnectWithoutEstadoInput
-		| Prisma.NotaAutorCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.NotaAutorUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.NotaAutorUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.NotaAutorCreateOrConnectWithoutEstadoInput | Prisma.NotaAutorCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.NotaAutorUpsertWithWhereUniqueWithoutEstadoInput | Prisma.NotaAutorUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.NotaAutorCreateManyEstadoInputEnvelope;
 	set?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
-	disconnect?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
-	delete?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
-	connect?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
-	update?:
-		| Prisma.NotaAutorUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.NotaAutorUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.NotaAutorUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.NotaAutorUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.NotaAutorScalarWhereInput
-		| Prisma.NotaAutorScalarWhereInput[];
+	disconnect?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
+	delete?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
+	connect?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
+	update?: Prisma.NotaAutorUpdateWithWhereUniqueWithoutEstadoInput | Prisma.NotaAutorUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.NotaAutorUpdateManyWithWhereWithoutEstadoInput | Prisma.NotaAutorUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.NotaAutorScalarWhereInput | Prisma.NotaAutorScalarWhereInput[];
 };
 
 export type NotaAutorUncheckedUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.NotaAutorCreateWithoutEstadoInput,
-				Prisma.NotaAutorUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.NotaAutorCreateWithoutEstadoInput, Prisma.NotaAutorUncheckedCreateWithoutEstadoInput>
 		| Prisma.NotaAutorCreateWithoutEstadoInput[]
 		| Prisma.NotaAutorUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.NotaAutorCreateOrConnectWithoutEstadoInput
-		| Prisma.NotaAutorCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.NotaAutorUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.NotaAutorUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.NotaAutorCreateOrConnectWithoutEstadoInput | Prisma.NotaAutorCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.NotaAutorUpsertWithWhereUniqueWithoutEstadoInput | Prisma.NotaAutorUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.NotaAutorCreateManyEstadoInputEnvelope;
 	set?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
-	disconnect?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
-	delete?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
-	connect?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
-	update?:
-		| Prisma.NotaAutorUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.NotaAutorUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.NotaAutorUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.NotaAutorUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.NotaAutorScalarWhereInput
-		| Prisma.NotaAutorScalarWhereInput[];
+	disconnect?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
+	delete?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
+	connect?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
+	update?: Prisma.NotaAutorUpdateWithWhereUniqueWithoutEstadoInput | Prisma.NotaAutorUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.NotaAutorUpdateManyWithWhereWithoutEstadoInput | Prisma.NotaAutorUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.NotaAutorScalarWhereInput | Prisma.NotaAutorScalarWhereInput[];
 };
 
 export type NotaAutorCreateNestedManyWithoutEscritorInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.NotaAutorCreateWithoutEscritorInput,
-				Prisma.NotaAutorUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.NotaAutorCreateWithoutEscritorInput, Prisma.NotaAutorUncheckedCreateWithoutEscritorInput>
 		| Prisma.NotaAutorCreateWithoutEscritorInput[]
 		| Prisma.NotaAutorUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.NotaAutorCreateOrConnectWithoutEscritorInput
-		| Prisma.NotaAutorCreateOrConnectWithoutEscritorInput[];
+	connectOrCreate?: Prisma.NotaAutorCreateOrConnectWithoutEscritorInput | Prisma.NotaAutorCreateOrConnectWithoutEscritorInput[];
 	createMany?: Prisma.NotaAutorCreateManyEscritorInputEnvelope;
-	connect?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
+	connect?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
 };
 
 export type NotaAutorUncheckedCreateNestedManyWithoutEscritorInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.NotaAutorCreateWithoutEscritorInput,
-				Prisma.NotaAutorUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.NotaAutorCreateWithoutEscritorInput, Prisma.NotaAutorUncheckedCreateWithoutEscritorInput>
 		| Prisma.NotaAutorCreateWithoutEscritorInput[]
 		| Prisma.NotaAutorUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.NotaAutorCreateOrConnectWithoutEscritorInput
-		| Prisma.NotaAutorCreateOrConnectWithoutEscritorInput[];
+	connectOrCreate?: Prisma.NotaAutorCreateOrConnectWithoutEscritorInput | Prisma.NotaAutorCreateOrConnectWithoutEscritorInput[];
 	createMany?: Prisma.NotaAutorCreateManyEscritorInputEnvelope;
-	connect?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
+	connect?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
 };
 
 export type NotaAutorUpdateManyWithoutEscritorNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.NotaAutorCreateWithoutEscritorInput,
-				Prisma.NotaAutorUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.NotaAutorCreateWithoutEscritorInput, Prisma.NotaAutorUncheckedCreateWithoutEscritorInput>
 		| Prisma.NotaAutorCreateWithoutEscritorInput[]
 		| Prisma.NotaAutorUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.NotaAutorCreateOrConnectWithoutEscritorInput
-		| Prisma.NotaAutorCreateOrConnectWithoutEscritorInput[];
-	upsert?:
-		| Prisma.NotaAutorUpsertWithWhereUniqueWithoutEscritorInput
-		| Prisma.NotaAutorUpsertWithWhereUniqueWithoutEscritorInput[];
+	connectOrCreate?: Prisma.NotaAutorCreateOrConnectWithoutEscritorInput | Prisma.NotaAutorCreateOrConnectWithoutEscritorInput[];
+	upsert?: Prisma.NotaAutorUpsertWithWhereUniqueWithoutEscritorInput | Prisma.NotaAutorUpsertWithWhereUniqueWithoutEscritorInput[];
 	createMany?: Prisma.NotaAutorCreateManyEscritorInputEnvelope;
 	set?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
-	disconnect?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
-	delete?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
-	connect?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
-	update?:
-		| Prisma.NotaAutorUpdateWithWhereUniqueWithoutEscritorInput
-		| Prisma.NotaAutorUpdateWithWhereUniqueWithoutEscritorInput[];
-	updateMany?:
-		| Prisma.NotaAutorUpdateManyWithWhereWithoutEscritorInput
-		| Prisma.NotaAutorUpdateManyWithWhereWithoutEscritorInput[];
-	deleteMany?:
-		| Prisma.NotaAutorScalarWhereInput
-		| Prisma.NotaAutorScalarWhereInput[];
+	disconnect?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
+	delete?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
+	connect?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
+	update?: Prisma.NotaAutorUpdateWithWhereUniqueWithoutEscritorInput | Prisma.NotaAutorUpdateWithWhereUniqueWithoutEscritorInput[];
+	updateMany?: Prisma.NotaAutorUpdateManyWithWhereWithoutEscritorInput | Prisma.NotaAutorUpdateManyWithWhereWithoutEscritorInput[];
+	deleteMany?: Prisma.NotaAutorScalarWhereInput | Prisma.NotaAutorScalarWhereInput[];
 };
 
 export type NotaAutorUncheckedUpdateManyWithoutEscritorNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.NotaAutorCreateWithoutEscritorInput,
-				Prisma.NotaAutorUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.NotaAutorCreateWithoutEscritorInput, Prisma.NotaAutorUncheckedCreateWithoutEscritorInput>
 		| Prisma.NotaAutorCreateWithoutEscritorInput[]
 		| Prisma.NotaAutorUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.NotaAutorCreateOrConnectWithoutEscritorInput
-		| Prisma.NotaAutorCreateOrConnectWithoutEscritorInput[];
-	upsert?:
-		| Prisma.NotaAutorUpsertWithWhereUniqueWithoutEscritorInput
-		| Prisma.NotaAutorUpsertWithWhereUniqueWithoutEscritorInput[];
+	connectOrCreate?: Prisma.NotaAutorCreateOrConnectWithoutEscritorInput | Prisma.NotaAutorCreateOrConnectWithoutEscritorInput[];
+	upsert?: Prisma.NotaAutorUpsertWithWhereUniqueWithoutEscritorInput | Prisma.NotaAutorUpsertWithWhereUniqueWithoutEscritorInput[];
 	createMany?: Prisma.NotaAutorCreateManyEscritorInputEnvelope;
 	set?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
-	disconnect?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
-	delete?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
-	connect?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
-	update?:
-		| Prisma.NotaAutorUpdateWithWhereUniqueWithoutEscritorInput
-		| Prisma.NotaAutorUpdateWithWhereUniqueWithoutEscritorInput[];
-	updateMany?:
-		| Prisma.NotaAutorUpdateManyWithWhereWithoutEscritorInput
-		| Prisma.NotaAutorUpdateManyWithWhereWithoutEscritorInput[];
-	deleteMany?:
-		| Prisma.NotaAutorScalarWhereInput
-		| Prisma.NotaAutorScalarWhereInput[];
+	disconnect?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
+	delete?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
+	connect?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
+	update?: Prisma.NotaAutorUpdateWithWhereUniqueWithoutEscritorInput | Prisma.NotaAutorUpdateWithWhereUniqueWithoutEscritorInput[];
+	updateMany?: Prisma.NotaAutorUpdateManyWithWhereWithoutEscritorInput | Prisma.NotaAutorUpdateManyWithWhereWithoutEscritorInput[];
+	deleteMany?: Prisma.NotaAutorScalarWhereInput | Prisma.NotaAutorScalarWhereInput[];
 };
 
 export type NotaAutorCreateNestedManyWithoutCapituloInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.NotaAutorCreateWithoutCapituloInput,
-				Prisma.NotaAutorUncheckedCreateWithoutCapituloInput
-		  >
+		| Prisma.XOR<Prisma.NotaAutorCreateWithoutCapituloInput, Prisma.NotaAutorUncheckedCreateWithoutCapituloInput>
 		| Prisma.NotaAutorCreateWithoutCapituloInput[]
 		| Prisma.NotaAutorUncheckedCreateWithoutCapituloInput[];
-	connectOrCreate?:
-		| Prisma.NotaAutorCreateOrConnectWithoutCapituloInput
-		| Prisma.NotaAutorCreateOrConnectWithoutCapituloInput[];
+	connectOrCreate?: Prisma.NotaAutorCreateOrConnectWithoutCapituloInput | Prisma.NotaAutorCreateOrConnectWithoutCapituloInput[];
 	createMany?: Prisma.NotaAutorCreateManyCapituloInputEnvelope;
-	connect?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
+	connect?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
 };
 
 export type NotaAutorUncheckedCreateNestedManyWithoutCapituloInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.NotaAutorCreateWithoutCapituloInput,
-				Prisma.NotaAutorUncheckedCreateWithoutCapituloInput
-		  >
+		| Prisma.XOR<Prisma.NotaAutorCreateWithoutCapituloInput, Prisma.NotaAutorUncheckedCreateWithoutCapituloInput>
 		| Prisma.NotaAutorCreateWithoutCapituloInput[]
 		| Prisma.NotaAutorUncheckedCreateWithoutCapituloInput[];
-	connectOrCreate?:
-		| Prisma.NotaAutorCreateOrConnectWithoutCapituloInput
-		| Prisma.NotaAutorCreateOrConnectWithoutCapituloInput[];
+	connectOrCreate?: Prisma.NotaAutorCreateOrConnectWithoutCapituloInput | Prisma.NotaAutorCreateOrConnectWithoutCapituloInput[];
 	createMany?: Prisma.NotaAutorCreateManyCapituloInputEnvelope;
-	connect?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
+	connect?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
 };
 
 export type NotaAutorUpdateManyWithoutCapituloNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.NotaAutorCreateWithoutCapituloInput,
-				Prisma.NotaAutorUncheckedCreateWithoutCapituloInput
-		  >
+		| Prisma.XOR<Prisma.NotaAutorCreateWithoutCapituloInput, Prisma.NotaAutorUncheckedCreateWithoutCapituloInput>
 		| Prisma.NotaAutorCreateWithoutCapituloInput[]
 		| Prisma.NotaAutorUncheckedCreateWithoutCapituloInput[];
-	connectOrCreate?:
-		| Prisma.NotaAutorCreateOrConnectWithoutCapituloInput
-		| Prisma.NotaAutorCreateOrConnectWithoutCapituloInput[];
-	upsert?:
-		| Prisma.NotaAutorUpsertWithWhereUniqueWithoutCapituloInput
-		| Prisma.NotaAutorUpsertWithWhereUniqueWithoutCapituloInput[];
+	connectOrCreate?: Prisma.NotaAutorCreateOrConnectWithoutCapituloInput | Prisma.NotaAutorCreateOrConnectWithoutCapituloInput[];
+	upsert?: Prisma.NotaAutorUpsertWithWhereUniqueWithoutCapituloInput | Prisma.NotaAutorUpsertWithWhereUniqueWithoutCapituloInput[];
 	createMany?: Prisma.NotaAutorCreateManyCapituloInputEnvelope;
 	set?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
-	disconnect?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
-	delete?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
-	connect?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
-	update?:
-		| Prisma.NotaAutorUpdateWithWhereUniqueWithoutCapituloInput
-		| Prisma.NotaAutorUpdateWithWhereUniqueWithoutCapituloInput[];
-	updateMany?:
-		| Prisma.NotaAutorUpdateManyWithWhereWithoutCapituloInput
-		| Prisma.NotaAutorUpdateManyWithWhereWithoutCapituloInput[];
-	deleteMany?:
-		| Prisma.NotaAutorScalarWhereInput
-		| Prisma.NotaAutorScalarWhereInput[];
+	disconnect?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
+	delete?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
+	connect?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
+	update?: Prisma.NotaAutorUpdateWithWhereUniqueWithoutCapituloInput | Prisma.NotaAutorUpdateWithWhereUniqueWithoutCapituloInput[];
+	updateMany?: Prisma.NotaAutorUpdateManyWithWhereWithoutCapituloInput | Prisma.NotaAutorUpdateManyWithWhereWithoutCapituloInput[];
+	deleteMany?: Prisma.NotaAutorScalarWhereInput | Prisma.NotaAutorScalarWhereInput[];
 };
 
 export type NotaAutorUncheckedUpdateManyWithoutCapituloNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.NotaAutorCreateWithoutCapituloInput,
-				Prisma.NotaAutorUncheckedCreateWithoutCapituloInput
-		  >
+		| Prisma.XOR<Prisma.NotaAutorCreateWithoutCapituloInput, Prisma.NotaAutorUncheckedCreateWithoutCapituloInput>
 		| Prisma.NotaAutorCreateWithoutCapituloInput[]
 		| Prisma.NotaAutorUncheckedCreateWithoutCapituloInput[];
-	connectOrCreate?:
-		| Prisma.NotaAutorCreateOrConnectWithoutCapituloInput
-		| Prisma.NotaAutorCreateOrConnectWithoutCapituloInput[];
-	upsert?:
-		| Prisma.NotaAutorUpsertWithWhereUniqueWithoutCapituloInput
-		| Prisma.NotaAutorUpsertWithWhereUniqueWithoutCapituloInput[];
+	connectOrCreate?: Prisma.NotaAutorCreateOrConnectWithoutCapituloInput | Prisma.NotaAutorCreateOrConnectWithoutCapituloInput[];
+	upsert?: Prisma.NotaAutorUpsertWithWhereUniqueWithoutCapituloInput | Prisma.NotaAutorUpsertWithWhereUniqueWithoutCapituloInput[];
 	createMany?: Prisma.NotaAutorCreateManyCapituloInputEnvelope;
 	set?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
-	disconnect?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
-	delete?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
-	connect?:
-		| Prisma.NotaAutorWhereUniqueInput
-		| Prisma.NotaAutorWhereUniqueInput[];
-	update?:
-		| Prisma.NotaAutorUpdateWithWhereUniqueWithoutCapituloInput
-		| Prisma.NotaAutorUpdateWithWhereUniqueWithoutCapituloInput[];
-	updateMany?:
-		| Prisma.NotaAutorUpdateManyWithWhereWithoutCapituloInput
-		| Prisma.NotaAutorUpdateManyWithWhereWithoutCapituloInput[];
-	deleteMany?:
-		| Prisma.NotaAutorScalarWhereInput
-		| Prisma.NotaAutorScalarWhereInput[];
+	disconnect?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
+	delete?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
+	connect?: Prisma.NotaAutorWhereUniqueInput | Prisma.NotaAutorWhereUniqueInput[];
+	update?: Prisma.NotaAutorUpdateWithWhereUniqueWithoutCapituloInput | Prisma.NotaAutorUpdateWithWhereUniqueWithoutCapituloInput[];
+	updateMany?: Prisma.NotaAutorUpdateManyWithWhereWithoutCapituloInput | Prisma.NotaAutorUpdateManyWithWhereWithoutCapituloInput[];
+	deleteMany?: Prisma.NotaAutorScalarWhereInput | Prisma.NotaAutorScalarWhereInput[];
 };
 
 export type NotaAutorCreateWithoutEstadoInput = {
@@ -793,45 +600,28 @@ export type NotaAutorUncheckedCreateWithoutEstadoInput = {
 
 export type NotaAutorCreateOrConnectWithoutEstadoInput = {
 	where: Prisma.NotaAutorWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.NotaAutorCreateWithoutEstadoInput,
-		Prisma.NotaAutorUncheckedCreateWithoutEstadoInput
-	>;
+	create: Prisma.XOR<Prisma.NotaAutorCreateWithoutEstadoInput, Prisma.NotaAutorUncheckedCreateWithoutEstadoInput>;
 };
 
 export type NotaAutorCreateManyEstadoInputEnvelope = {
-	data:
-		| Prisma.NotaAutorCreateManyEstadoInput
-		| Prisma.NotaAutorCreateManyEstadoInput[];
+	data: Prisma.NotaAutorCreateManyEstadoInput | Prisma.NotaAutorCreateManyEstadoInput[];
 	skipDuplicates?: boolean;
 };
 
 export type NotaAutorUpsertWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.NotaAutorWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.NotaAutorUpdateWithoutEstadoInput,
-		Prisma.NotaAutorUncheckedUpdateWithoutEstadoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.NotaAutorCreateWithoutEstadoInput,
-		Prisma.NotaAutorUncheckedCreateWithoutEstadoInput
-	>;
+	update: Prisma.XOR<Prisma.NotaAutorUpdateWithoutEstadoInput, Prisma.NotaAutorUncheckedUpdateWithoutEstadoInput>;
+	create: Prisma.XOR<Prisma.NotaAutorCreateWithoutEstadoInput, Prisma.NotaAutorUncheckedCreateWithoutEstadoInput>;
 };
 
 export type NotaAutorUpdateWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.NotaAutorWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.NotaAutorUpdateWithoutEstadoInput,
-		Prisma.NotaAutorUncheckedUpdateWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.NotaAutorUpdateWithoutEstadoInput, Prisma.NotaAutorUncheckedUpdateWithoutEstadoInput>;
 };
 
 export type NotaAutorUpdateManyWithWhereWithoutEstadoInput = {
 	where: Prisma.NotaAutorScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.NotaAutorUpdateManyMutationInput,
-		Prisma.NotaAutorUncheckedUpdateManyWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.NotaAutorUpdateManyMutationInput, Prisma.NotaAutorUncheckedUpdateManyWithoutEstadoInput>;
 };
 
 export type NotaAutorScalarWhereInput = {
@@ -866,45 +656,28 @@ export type NotaAutorUncheckedCreateWithoutEscritorInput = {
 
 export type NotaAutorCreateOrConnectWithoutEscritorInput = {
 	where: Prisma.NotaAutorWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.NotaAutorCreateWithoutEscritorInput,
-		Prisma.NotaAutorUncheckedCreateWithoutEscritorInput
-	>;
+	create: Prisma.XOR<Prisma.NotaAutorCreateWithoutEscritorInput, Prisma.NotaAutorUncheckedCreateWithoutEscritorInput>;
 };
 
 export type NotaAutorCreateManyEscritorInputEnvelope = {
-	data:
-		| Prisma.NotaAutorCreateManyEscritorInput
-		| Prisma.NotaAutorCreateManyEscritorInput[];
+	data: Prisma.NotaAutorCreateManyEscritorInput | Prisma.NotaAutorCreateManyEscritorInput[];
 	skipDuplicates?: boolean;
 };
 
 export type NotaAutorUpsertWithWhereUniqueWithoutEscritorInput = {
 	where: Prisma.NotaAutorWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.NotaAutorUpdateWithoutEscritorInput,
-		Prisma.NotaAutorUncheckedUpdateWithoutEscritorInput
-	>;
-	create: Prisma.XOR<
-		Prisma.NotaAutorCreateWithoutEscritorInput,
-		Prisma.NotaAutorUncheckedCreateWithoutEscritorInput
-	>;
+	update: Prisma.XOR<Prisma.NotaAutorUpdateWithoutEscritorInput, Prisma.NotaAutorUncheckedUpdateWithoutEscritorInput>;
+	create: Prisma.XOR<Prisma.NotaAutorCreateWithoutEscritorInput, Prisma.NotaAutorUncheckedCreateWithoutEscritorInput>;
 };
 
 export type NotaAutorUpdateWithWhereUniqueWithoutEscritorInput = {
 	where: Prisma.NotaAutorWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.NotaAutorUpdateWithoutEscritorInput,
-		Prisma.NotaAutorUncheckedUpdateWithoutEscritorInput
-	>;
+	data: Prisma.XOR<Prisma.NotaAutorUpdateWithoutEscritorInput, Prisma.NotaAutorUncheckedUpdateWithoutEscritorInput>;
 };
 
 export type NotaAutorUpdateManyWithWhereWithoutEscritorInput = {
 	where: Prisma.NotaAutorScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.NotaAutorUpdateManyMutationInput,
-		Prisma.NotaAutorUncheckedUpdateManyWithoutEscritorInput
-	>;
+	data: Prisma.XOR<Prisma.NotaAutorUpdateManyMutationInput, Prisma.NotaAutorUncheckedUpdateManyWithoutEscritorInput>;
 };
 
 export type NotaAutorCreateWithoutCapituloInput = {
@@ -926,45 +699,28 @@ export type NotaAutorUncheckedCreateWithoutCapituloInput = {
 
 export type NotaAutorCreateOrConnectWithoutCapituloInput = {
 	where: Prisma.NotaAutorWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.NotaAutorCreateWithoutCapituloInput,
-		Prisma.NotaAutorUncheckedCreateWithoutCapituloInput
-	>;
+	create: Prisma.XOR<Prisma.NotaAutorCreateWithoutCapituloInput, Prisma.NotaAutorUncheckedCreateWithoutCapituloInput>;
 };
 
 export type NotaAutorCreateManyCapituloInputEnvelope = {
-	data:
-		| Prisma.NotaAutorCreateManyCapituloInput
-		| Prisma.NotaAutorCreateManyCapituloInput[];
+	data: Prisma.NotaAutorCreateManyCapituloInput | Prisma.NotaAutorCreateManyCapituloInput[];
 	skipDuplicates?: boolean;
 };
 
 export type NotaAutorUpsertWithWhereUniqueWithoutCapituloInput = {
 	where: Prisma.NotaAutorWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.NotaAutorUpdateWithoutCapituloInput,
-		Prisma.NotaAutorUncheckedUpdateWithoutCapituloInput
-	>;
-	create: Prisma.XOR<
-		Prisma.NotaAutorCreateWithoutCapituloInput,
-		Prisma.NotaAutorUncheckedCreateWithoutCapituloInput
-	>;
+	update: Prisma.XOR<Prisma.NotaAutorUpdateWithoutCapituloInput, Prisma.NotaAutorUncheckedUpdateWithoutCapituloInput>;
+	create: Prisma.XOR<Prisma.NotaAutorCreateWithoutCapituloInput, Prisma.NotaAutorUncheckedCreateWithoutCapituloInput>;
 };
 
 export type NotaAutorUpdateWithWhereUniqueWithoutCapituloInput = {
 	where: Prisma.NotaAutorWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.NotaAutorUpdateWithoutCapituloInput,
-		Prisma.NotaAutorUncheckedUpdateWithoutCapituloInput
-	>;
+	data: Prisma.XOR<Prisma.NotaAutorUpdateWithoutCapituloInput, Prisma.NotaAutorUncheckedUpdateWithoutCapituloInput>;
 };
 
 export type NotaAutorUpdateManyWithWhereWithoutCapituloInput = {
 	where: Prisma.NotaAutorScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.NotaAutorUpdateManyMutationInput,
-		Prisma.NotaAutorUncheckedUpdateManyWithoutCapituloInput
-	>;
+	data: Prisma.XOR<Prisma.NotaAutorUpdateManyMutationInput, Prisma.NotaAutorUncheckedUpdateManyWithoutCapituloInput>;
 };
 
 export type NotaAutorCreateManyEstadoInput = {
@@ -1072,10 +828,7 @@ export type NotaAutorUncheckedUpdateManyWithoutCapituloInput = {
 	estadoId?: Prisma.IntFieldUpdateOperationsInput | number;
 };
 
-export type NotaAutorSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type NotaAutorSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		texto?: boolean;
@@ -1091,10 +844,7 @@ export type NotaAutorSelect<
 	ExtArgs["result"]["notaAutor"]
 >;
 
-export type NotaAutorSelectCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type NotaAutorSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		texto?: boolean;
@@ -1110,10 +860,7 @@ export type NotaAutorSelectCreateManyAndReturn<
 	ExtArgs["result"]["notaAutor"]
 >;
 
-export type NotaAutorSelectUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type NotaAutorSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		texto?: boolean;
@@ -1139,48 +886,27 @@ export type NotaAutorSelectScalar = {
 	estadoId?: boolean;
 };
 
-export type NotaAutorOmit<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetOmit<
-	| "id"
-	| "texto"
-	| "createdAt"
-	| "updatedAt"
-	| "escritorId"
-	| "capituloId"
-	| "estadoId",
+export type NotaAutorOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<
+	"id" | "texto" | "createdAt" | "updatedAt" | "escritorId" | "capituloId" | "estadoId",
 	ExtArgs["result"]["notaAutor"]
 >;
-export type NotaAutorInclude<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type NotaAutorInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	escritor?: boolean | Prisma.EscritorDefaultArgs<ExtArgs>;
 	capitulo?: boolean | Prisma.CapituloDefaultArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
-export type NotaAutorIncludeCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type NotaAutorIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	escritor?: boolean | Prisma.EscritorDefaultArgs<ExtArgs>;
 	capitulo?: boolean | Prisma.CapituloDefaultArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
-export type NotaAutorIncludeUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type NotaAutorIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	escritor?: boolean | Prisma.EscritorDefaultArgs<ExtArgs>;
 	capitulo?: boolean | Prisma.CapituloDefaultArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
 
-export type $NotaAutorPayload<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type $NotaAutorPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	name: "NotaAutor";
 	objects: {
 		escritor: Prisma.$EscritorPayload<ExtArgs>;
@@ -1202,26 +928,17 @@ export type $NotaAutorPayload<
 	composites: {};
 };
 
-export type NotaAutorGetPayload<
-	S extends boolean | null | undefined | NotaAutorDefaultArgs,
-> = runtime.Types.Result.GetResult<Prisma.$NotaAutorPayload, S>;
+export type NotaAutorGetPayload<S extends boolean | null | undefined | NotaAutorDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$NotaAutorPayload, S>;
 
-export type NotaAutorCountArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = Omit<NotaAutorFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
+export type NotaAutorCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<
+	NotaAutorFindManyArgs,
+	"select" | "include" | "distinct" | "omit"
+> & {
 	select?: NotaAutorCountAggregateInputType | true;
 };
 
-export interface NotaAutorDelegate<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> {
-	[K: symbol]: {
-		types: Prisma.TypeMap<ExtArgs>["model"]["NotaAutor"];
-		meta: { name: "NotaAutor" };
-	};
+export interface NotaAutorDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+	[K: symbol]: { types: Prisma.TypeMap<ExtArgs>["model"]["NotaAutor"]; meta: { name: "NotaAutor" } };
 	/**
 	 * Find zero or one NotaAutor that matches the filter.
 	 * @param {NotaAutorFindUniqueArgs} args - Arguments to find a NotaAutor
@@ -1235,17 +952,7 @@ export interface NotaAutorDelegate<
 	 */
 	findUnique<T extends NotaAutorFindUniqueArgs>(
 		args: Prisma.SelectSubset<T, NotaAutorFindUniqueArgs<ExtArgs>>,
-	): Prisma.Prisma__NotaAutorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$NotaAutorPayload<ExtArgs>,
-			T,
-			"findUnique",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__NotaAutorClient<runtime.Types.Result.GetResult<Prisma.$NotaAutorPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find one NotaAutor that matches the filter or throw an error with `error.code='P2025'`
@@ -1261,17 +968,7 @@ export interface NotaAutorDelegate<
 	 */
 	findUniqueOrThrow<T extends NotaAutorFindUniqueOrThrowArgs>(
 		args: Prisma.SelectSubset<T, NotaAutorFindUniqueOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__NotaAutorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$NotaAutorPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__NotaAutorClient<runtime.Types.Result.GetResult<Prisma.$NotaAutorPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first NotaAutor that matches the filter.
@@ -1288,17 +985,7 @@ export interface NotaAutorDelegate<
 	 */
 	findFirst<T extends NotaAutorFindFirstArgs>(
 		args?: Prisma.SelectSubset<T, NotaAutorFindFirstArgs<ExtArgs>>,
-	): Prisma.Prisma__NotaAutorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$NotaAutorPayload<ExtArgs>,
-			T,
-			"findFirst",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__NotaAutorClient<runtime.Types.Result.GetResult<Prisma.$NotaAutorPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first NotaAutor that matches the filter or
@@ -1316,17 +1003,7 @@ export interface NotaAutorDelegate<
 	 */
 	findFirstOrThrow<T extends NotaAutorFindFirstOrThrowArgs>(
 		args?: Prisma.SelectSubset<T, NotaAutorFindFirstOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__NotaAutorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$NotaAutorPayload<ExtArgs>,
-			T,
-			"findFirstOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__NotaAutorClient<runtime.Types.Result.GetResult<Prisma.$NotaAutorPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find zero or more NotaAutors that matches the filter.
@@ -1346,14 +1023,7 @@ export interface NotaAutorDelegate<
 	 */
 	findMany<T extends NotaAutorFindManyArgs>(
 		args?: Prisma.SelectSubset<T, NotaAutorFindManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$NotaAutorPayload<ExtArgs>,
-			T,
-			"findMany",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotaAutorPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
 
 	/**
 	 * Create a NotaAutor.
@@ -1369,17 +1039,7 @@ export interface NotaAutorDelegate<
 	 */
 	create<T extends NotaAutorCreateArgs>(
 		args: Prisma.SelectSubset<T, NotaAutorCreateArgs<ExtArgs>>,
-	): Prisma.Prisma__NotaAutorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$NotaAutorPayload<ExtArgs>,
-			T,
-			"create",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__NotaAutorClient<runtime.Types.Result.GetResult<Prisma.$NotaAutorPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Create many NotaAutors.
@@ -1393,9 +1053,7 @@ export interface NotaAutorDelegate<
 	 * })
 	 *
 	 */
-	createMany<T extends NotaAutorCreateManyArgs>(
-		args?: Prisma.SelectSubset<T, NotaAutorCreateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	createMany<T extends NotaAutorCreateManyArgs>(args?: Prisma.SelectSubset<T, NotaAutorCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Create many NotaAutors and returns the data saved in the database.
@@ -1421,14 +1079,7 @@ export interface NotaAutorDelegate<
 	 */
 	createManyAndReturn<T extends NotaAutorCreateManyAndReturnArgs>(
 		args?: Prisma.SelectSubset<T, NotaAutorCreateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$NotaAutorPayload<ExtArgs>,
-			T,
-			"createManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotaAutorPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Delete a NotaAutor.
@@ -1444,17 +1095,7 @@ export interface NotaAutorDelegate<
 	 */
 	delete<T extends NotaAutorDeleteArgs>(
 		args: Prisma.SelectSubset<T, NotaAutorDeleteArgs<ExtArgs>>,
-	): Prisma.Prisma__NotaAutorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$NotaAutorPayload<ExtArgs>,
-			T,
-			"delete",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__NotaAutorClient<runtime.Types.Result.GetResult<Prisma.$NotaAutorPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Update one NotaAutor.
@@ -1473,17 +1114,7 @@ export interface NotaAutorDelegate<
 	 */
 	update<T extends NotaAutorUpdateArgs>(
 		args: Prisma.SelectSubset<T, NotaAutorUpdateArgs<ExtArgs>>,
-	): Prisma.Prisma__NotaAutorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$NotaAutorPayload<ExtArgs>,
-			T,
-			"update",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__NotaAutorClient<runtime.Types.Result.GetResult<Prisma.$NotaAutorPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Delete zero or more NotaAutors.
@@ -1497,9 +1128,7 @@ export interface NotaAutorDelegate<
 	 * })
 	 *
 	 */
-	deleteMany<T extends NotaAutorDeleteManyArgs>(
-		args?: Prisma.SelectSubset<T, NotaAutorDeleteManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	deleteMany<T extends NotaAutorDeleteManyArgs>(args?: Prisma.SelectSubset<T, NotaAutorDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more NotaAutors.
@@ -1518,9 +1147,7 @@ export interface NotaAutorDelegate<
 	 * })
 	 *
 	 */
-	updateMany<T extends NotaAutorUpdateManyArgs>(
-		args: Prisma.SelectSubset<T, NotaAutorUpdateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	updateMany<T extends NotaAutorUpdateManyArgs>(args: Prisma.SelectSubset<T, NotaAutorUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more NotaAutors and returns the data updated in the database.
@@ -1552,14 +1179,7 @@ export interface NotaAutorDelegate<
 	 */
 	updateManyAndReturn<T extends NotaAutorUpdateManyAndReturnArgs>(
 		args: Prisma.SelectSubset<T, NotaAutorUpdateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$NotaAutorPayload<ExtArgs>,
-			T,
-			"updateManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotaAutorPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Create or update one NotaAutor.
@@ -1580,17 +1200,7 @@ export interface NotaAutorDelegate<
 	 */
 	upsert<T extends NotaAutorUpsertArgs>(
 		args: Prisma.SelectSubset<T, NotaAutorUpsertArgs<ExtArgs>>,
-	): Prisma.Prisma__NotaAutorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$NotaAutorPayload<ExtArgs>,
-			T,
-			"upsert",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__NotaAutorClient<runtime.Types.Result.GetResult<Prisma.$NotaAutorPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Count the number of NotaAutors.
@@ -1607,13 +1217,7 @@ export interface NotaAutorDelegate<
 	 **/
 	count<T extends NotaAutorCountArgs>(
 		args?: Prisma.Subset<T, NotaAutorCountArgs>,
-	): Prisma.PrismaPromise<
-		T extends runtime.Types.Utils.Record<"select", any>
-			? T["select"] extends true
-				? number
-				: Prisma.GetScalarType<T["select"], NotaAutorCountAggregateOutputType>
-			: number
-	>;
+	): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<"select", any> ? (T["select"] extends true ? number : Prisma.GetScalarType<T["select"], NotaAutorCountAggregateOutputType>) : number>;
 
 	/**
 	 * Allows you to perform aggregations operations on a NotaAutor.
@@ -1639,9 +1243,7 @@ export interface NotaAutorDelegate<
 	 *   take: 10,
 	 * })
 	 **/
-	aggregate<T extends NotaAutorAggregateArgs>(
-		args: Prisma.Subset<T, NotaAutorAggregateArgs>,
-	): Prisma.PrismaPromise<GetNotaAutorAggregateType<T>>;
+	aggregate<T extends NotaAutorAggregateArgs>(args: Prisma.Subset<T, NotaAutorAggregateArgs>): Prisma.PrismaPromise<GetNotaAutorAggregateType<T>>;
 
 	/**
 	 * Group by NotaAutor.
@@ -1663,16 +1265,9 @@ export interface NotaAutorDelegate<
 	 **/
 	groupBy<
 		T extends NotaAutorGroupByArgs,
-		HasSelectOrTake extends Prisma.Or<
-			Prisma.Extends<"skip", Prisma.Keys<T>>,
-			Prisma.Extends<"take", Prisma.Keys<T>>
-		>,
-		OrderByArg extends Prisma.True extends HasSelectOrTake
-			? { orderBy: NotaAutorGroupByArgs["orderBy"] }
-			: { orderBy?: NotaAutorGroupByArgs["orderBy"] },
-		OrderFields extends Prisma.ExcludeUnderscoreKeys<
-			Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>
-		>,
+		HasSelectOrTake extends Prisma.Or<Prisma.Extends<"skip", Prisma.Keys<T>>, Prisma.Extends<"take", Prisma.Keys<T>>>,
+		OrderByArg extends Prisma.True extends HasSelectOrTake ? { orderBy: NotaAutorGroupByArgs["orderBy"] } : { orderBy?: NotaAutorGroupByArgs["orderBy"] },
+		OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>>,
 		ByFields extends Prisma.MaybeTupleToUnion<T["by"]>,
 		ByValid extends Prisma.Has<ByFields, OrderFields>,
 		HavingFields extends Prisma.GetHavingFields<T["having"]>,
@@ -1686,21 +1281,14 @@ export interface NotaAutorDelegate<
 							? never
 							: P extends string
 								? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-								: [
-										Error,
-										"Field ",
-										P,
-										` in "having" needs to be provided in "by"`,
-									];
+								: [Error, "Field ", P, ` in "having" needs to be provided in "by"`];
 					}[HavingFields]
 				: "take" extends Prisma.Keys<T>
 					? "orderBy" extends Prisma.Keys<T>
 						? ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields]
 						: 'Error: If you provide "take", you also need to provide "orderBy"'
 					: "skip" extends Prisma.Keys<T>
@@ -1708,24 +1296,15 @@ export interface NotaAutorDelegate<
 							? ByValid extends Prisma.True
 								? {}
 								: {
-										[P in OrderFields]: P extends ByFields
-											? never
-											: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+										[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 									}[OrderFields]
 							: 'Error: If you provide "skip", you also need to provide "orderBy"'
 						: ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields],
-	>(
-		args: Prisma.SubsetIntersection<T, NotaAutorGroupByArgs, OrderByArg> &
-			InputErrors,
-	): {} extends InputErrors
-		? GetNotaAutorGroupByPayload<T>
-		: Prisma.PrismaPromise<InputErrors>;
+	>(args: Prisma.SubsetIntersection<T, NotaAutorGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetNotaAutorGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
 	/**
 	 * Fields of the NotaAutor model
 	 */
@@ -1738,56 +1317,18 @@ export interface NotaAutorDelegate<
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__NotaAutorClient<
-	T,
-	Null = never,
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> extends Prisma.PrismaPromise<T> {
+export interface Prisma__NotaAutorClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}>
+	extends Prisma.PrismaPromise<T> {
 	readonly [Symbol.toStringTag]: "PrismaPromise";
 	escritor<T extends Prisma.EscritorDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EscritorDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EscritorClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EscritorPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EscritorClient<runtime.Types.Result.GetResult<Prisma.$EscritorPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	capitulo<T extends Prisma.CapituloDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.CapituloDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__CapituloClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$CapituloPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__CapituloClient<runtime.Types.Result.GetResult<Prisma.$CapituloPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	estado<T extends Prisma.EstadoDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EstadoDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EstadoPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	/**
 	 * Attaches callbacks for the resolution and/or rejection of the Promise.
 	 * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1795,35 +1336,22 @@ export interface Prisma__NotaAutorClient<
 	 * @returns A Promise for the completion of which ever callback is executed.
 	 */
 	then<TResult1 = T, TResult2 = never>(
-		onfulfilled?:
-			| ((value: T) => TResult1 | PromiseLike<TResult1>)
-			| undefined
-			| null,
-		onrejected?:
-			| ((reason: any) => TResult2 | PromiseLike<TResult2>)
-			| undefined
-			| null,
+		onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+		onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
 	): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
 	/**
 	 * Attaches a callback for only the rejection of the Promise.
 	 * @param onrejected The callback to execute when the Promise is rejected.
 	 * @returns A Promise for the completion of the callback.
 	 */
-	catch<TResult = never>(
-		onrejected?:
-			| ((reason: any) => TResult | PromiseLike<TResult>)
-			| undefined
-			| null,
-	): runtime.Types.Utils.JsPromise<T | TResult>;
+	catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
 	/**
 	 * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
 	 * resolved value cannot be modified from the callback.
 	 * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
 	 * @returns A Promise for the completion of the callback.
 	 */
-	finally(
-		onfinally?: (() => void) | undefined | null,
-	): runtime.Types.Utils.JsPromise<T>;
+	finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
 }
 
 /**
@@ -1843,10 +1371,7 @@ export interface NotaAutorFieldRefs {
 /**
  * NotaAutor findUnique
  */
-export type NotaAutorFindUniqueArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type NotaAutorFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the NotaAutor
 	 */
@@ -1868,10 +1393,7 @@ export type NotaAutorFindUniqueArgs<
 /**
  * NotaAutor findUniqueOrThrow
  */
-export type NotaAutorFindUniqueOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type NotaAutorFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the NotaAutor
 	 */
@@ -1893,10 +1415,7 @@ export type NotaAutorFindUniqueOrThrowArgs<
 /**
  * NotaAutor findFirst
  */
-export type NotaAutorFindFirstArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type NotaAutorFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the NotaAutor
 	 */
@@ -1918,9 +1437,7 @@ export type NotaAutorFindFirstArgs<
 	 *
 	 * Determine the order of NotaAutors to fetch.
 	 */
-	orderBy?:
-		| Prisma.NotaAutorOrderByWithRelationInput
-		| Prisma.NotaAutorOrderByWithRelationInput[];
+	orderBy?: Prisma.NotaAutorOrderByWithRelationInput | Prisma.NotaAutorOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1944,18 +1461,13 @@ export type NotaAutorFindFirstArgs<
 	 *
 	 * Filter by unique combinations of NotaAutors.
 	 */
-	distinct?:
-		| Prisma.NotaAutorScalarFieldEnum
-		| Prisma.NotaAutorScalarFieldEnum[];
+	distinct?: Prisma.NotaAutorScalarFieldEnum | Prisma.NotaAutorScalarFieldEnum[];
 };
 
 /**
  * NotaAutor findFirstOrThrow
  */
-export type NotaAutorFindFirstOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type NotaAutorFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the NotaAutor
 	 */
@@ -1977,9 +1489,7 @@ export type NotaAutorFindFirstOrThrowArgs<
 	 *
 	 * Determine the order of NotaAutors to fetch.
 	 */
-	orderBy?:
-		| Prisma.NotaAutorOrderByWithRelationInput
-		| Prisma.NotaAutorOrderByWithRelationInput[];
+	orderBy?: Prisma.NotaAutorOrderByWithRelationInput | Prisma.NotaAutorOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -2003,18 +1513,13 @@ export type NotaAutorFindFirstOrThrowArgs<
 	 *
 	 * Filter by unique combinations of NotaAutors.
 	 */
-	distinct?:
-		| Prisma.NotaAutorScalarFieldEnum
-		| Prisma.NotaAutorScalarFieldEnum[];
+	distinct?: Prisma.NotaAutorScalarFieldEnum | Prisma.NotaAutorScalarFieldEnum[];
 };
 
 /**
  * NotaAutor findMany
  */
-export type NotaAutorFindManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type NotaAutorFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the NotaAutor
 	 */
@@ -2036,9 +1541,7 @@ export type NotaAutorFindManyArgs<
 	 *
 	 * Determine the order of NotaAutors to fetch.
 	 */
-	orderBy?:
-		| Prisma.NotaAutorOrderByWithRelationInput
-		| Prisma.NotaAutorOrderByWithRelationInput[];
+	orderBy?: Prisma.NotaAutorOrderByWithRelationInput | Prisma.NotaAutorOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -2062,18 +1565,13 @@ export type NotaAutorFindManyArgs<
 	 *
 	 * Filter by unique combinations of NotaAutors.
 	 */
-	distinct?:
-		| Prisma.NotaAutorScalarFieldEnum
-		| Prisma.NotaAutorScalarFieldEnum[];
+	distinct?: Prisma.NotaAutorScalarFieldEnum | Prisma.NotaAutorScalarFieldEnum[];
 };
 
 /**
  * NotaAutor create
  */
-export type NotaAutorCreateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type NotaAutorCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the NotaAutor
 	 */
@@ -2089,19 +1587,13 @@ export type NotaAutorCreateArgs<
 	/**
 	 * The data needed to create a NotaAutor.
 	 */
-	data: Prisma.XOR<
-		Prisma.NotaAutorCreateInput,
-		Prisma.NotaAutorUncheckedCreateInput
-	>;
+	data: Prisma.XOR<Prisma.NotaAutorCreateInput, Prisma.NotaAutorUncheckedCreateInput>;
 };
 
 /**
  * NotaAutor createMany
  */
-export type NotaAutorCreateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type NotaAutorCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to create many NotaAutors.
 	 */
@@ -2112,10 +1604,7 @@ export type NotaAutorCreateManyArgs<
 /**
  * NotaAutor createManyAndReturn
  */
-export type NotaAutorCreateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type NotaAutorCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the NotaAutor
 	 */
@@ -2138,10 +1627,7 @@ export type NotaAutorCreateManyAndReturnArgs<
 /**
  * NotaAutor update
  */
-export type NotaAutorUpdateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type NotaAutorUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the NotaAutor
 	 */
@@ -2157,10 +1643,7 @@ export type NotaAutorUpdateArgs<
 	/**
 	 * The data needed to update a NotaAutor.
 	 */
-	data: Prisma.XOR<
-		Prisma.NotaAutorUpdateInput,
-		Prisma.NotaAutorUncheckedUpdateInput
-	>;
+	data: Prisma.XOR<Prisma.NotaAutorUpdateInput, Prisma.NotaAutorUncheckedUpdateInput>;
 	/**
 	 * Choose, which NotaAutor to update.
 	 */
@@ -2170,17 +1653,11 @@ export type NotaAutorUpdateArgs<
 /**
  * NotaAutor updateMany
  */
-export type NotaAutorUpdateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type NotaAutorUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to update NotaAutors.
 	 */
-	data: Prisma.XOR<
-		Prisma.NotaAutorUpdateManyMutationInput,
-		Prisma.NotaAutorUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.NotaAutorUpdateManyMutationInput, Prisma.NotaAutorUncheckedUpdateManyInput>;
 	/**
 	 * Filter which NotaAutors to update
 	 */
@@ -2194,10 +1671,7 @@ export type NotaAutorUpdateManyArgs<
 /**
  * NotaAutor updateManyAndReturn
  */
-export type NotaAutorUpdateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type NotaAutorUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the NotaAutor
 	 */
@@ -2209,10 +1683,7 @@ export type NotaAutorUpdateManyAndReturnArgs<
 	/**
 	 * The data used to update NotaAutors.
 	 */
-	data: Prisma.XOR<
-		Prisma.NotaAutorUpdateManyMutationInput,
-		Prisma.NotaAutorUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.NotaAutorUpdateManyMutationInput, Prisma.NotaAutorUncheckedUpdateManyInput>;
 	/**
 	 * Filter which NotaAutors to update
 	 */
@@ -2230,10 +1701,7 @@ export type NotaAutorUpdateManyAndReturnArgs<
 /**
  * NotaAutor upsert
  */
-export type NotaAutorUpsertArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type NotaAutorUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the NotaAutor
 	 */
@@ -2253,26 +1721,17 @@ export type NotaAutorUpsertArgs<
 	/**
 	 * In case the NotaAutor found by the `where` argument doesn't exist, create a new NotaAutor with this data.
 	 */
-	create: Prisma.XOR<
-		Prisma.NotaAutorCreateInput,
-		Prisma.NotaAutorUncheckedCreateInput
-	>;
+	create: Prisma.XOR<Prisma.NotaAutorCreateInput, Prisma.NotaAutorUncheckedCreateInput>;
 	/**
 	 * In case the NotaAutor was found with the provided `where` argument, update it with this data.
 	 */
-	update: Prisma.XOR<
-		Prisma.NotaAutorUpdateInput,
-		Prisma.NotaAutorUncheckedUpdateInput
-	>;
+	update: Prisma.XOR<Prisma.NotaAutorUpdateInput, Prisma.NotaAutorUncheckedUpdateInput>;
 };
 
 /**
  * NotaAutor delete
  */
-export type NotaAutorDeleteArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type NotaAutorDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the NotaAutor
 	 */
@@ -2294,10 +1753,7 @@ export type NotaAutorDeleteArgs<
 /**
  * NotaAutor deleteMany
  */
-export type NotaAutorDeleteManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type NotaAutorDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which NotaAutors to delete
 	 */
@@ -2311,10 +1767,7 @@ export type NotaAutorDeleteManyArgs<
 /**
  * NotaAutor without action
  */
-export type NotaAutorDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type NotaAutorDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the NotaAutor
 	 */

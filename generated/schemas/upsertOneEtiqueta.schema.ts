@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { EtiquetaCreateInputObjectSchema as EtiquetaCreateInputObjectSchema } from "./objects/EtiquetaCreateInput.schema.ts";
 import { EtiquetaIncludeObjectSchema as EtiquetaIncludeObjectSchema } from "./objects/EtiquetaInclude.schema.ts";
 import { EtiquetaSelectObjectSchema as EtiquetaSelectObjectSchema } from "./objects/EtiquetaSelect.schema.ts";
@@ -13,14 +13,8 @@ export const EtiquetaUpsertOneSchema: z.ZodType<Prisma.EtiquetaUpsertArgs> = z
 		select: EtiquetaSelectObjectSchema.optional(),
 		include: EtiquetaIncludeObjectSchema.optional(),
 		where: EtiquetaWhereUniqueInputObjectSchema,
-		create: z.union([
-			EtiquetaCreateInputObjectSchema,
-			EtiquetaUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			EtiquetaUpdateInputObjectSchema,
-			EtiquetaUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([EtiquetaCreateInputObjectSchema, EtiquetaUncheckedCreateInputObjectSchema]),
+		update: z.union([EtiquetaUpdateInputObjectSchema, EtiquetaUncheckedUpdateInputObjectSchema]),
 	})
 	.strict() as unknown as z.ZodType<Prisma.EtiquetaUpsertArgs>;
 
@@ -29,13 +23,7 @@ export const EtiquetaUpsertOneZodSchema = z
 		select: EtiquetaSelectObjectSchema.optional(),
 		include: EtiquetaIncludeObjectSchema.optional(),
 		where: EtiquetaWhereUniqueInputObjectSchema,
-		create: z.union([
-			EtiquetaCreateInputObjectSchema,
-			EtiquetaUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			EtiquetaUpdateInputObjectSchema,
-			EtiquetaUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([EtiquetaCreateInputObjectSchema, EtiquetaUncheckedCreateInputObjectSchema]),
+		update: z.union([EtiquetaUpdateInputObjectSchema, EtiquetaUncheckedUpdateInputObjectSchema]),
 	})
 	.strict();

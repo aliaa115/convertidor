@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { ParrafoWhereInputObjectSchema as ParrafoWhereInputObjectSchema } from "./ParrafoWhereInput.schema.ts";
 
 const makeSchema = () =>
@@ -10,6 +10,5 @@ const makeSchema = () =>
 			none: z.lazy(() => ParrafoWhereInputObjectSchema).optional(),
 		})
 		.strict();
-export const ParrafoListRelationFilterObjectSchema: z.ZodType<Prisma.ParrafoListRelationFilter> =
-	makeSchema() as unknown as z.ZodType<Prisma.ParrafoListRelationFilter>;
+export const ParrafoListRelationFilterObjectSchema: z.ZodType<Prisma.ParrafoListRelationFilter> = makeSchema() as unknown as z.ZodType<Prisma.ParrafoListRelationFilter>;
 export const ParrafoListRelationFilterObjectZodSchema = makeSchema();

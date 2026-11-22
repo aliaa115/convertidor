@@ -1,21 +1,11 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { ListaIncludeObjectSchema as ListaIncludeObjectSchema } from "./objects/ListaInclude.schema.ts";
 import { ListaSelectObjectSchema as ListaSelectObjectSchema } from "./objects/ListaSelect.schema.ts";
 import { ListaWhereUniqueInputObjectSchema as ListaWhereUniqueInputObjectSchema } from "./objects/ListaWhereUniqueInput.schema.ts";
 
 export const ListaFindUniqueSchema: z.ZodType<Prisma.ListaFindUniqueArgs> = z
-	.object({
-		select: ListaSelectObjectSchema.optional(),
-		include: ListaIncludeObjectSchema.optional(),
-		where: ListaWhereUniqueInputObjectSchema,
-	})
+	.object({ select: ListaSelectObjectSchema.optional(), include: ListaIncludeObjectSchema.optional(), where: ListaWhereUniqueInputObjectSchema })
 	.strict() as unknown as z.ZodType<Prisma.ListaFindUniqueArgs>;
 
-export const ListaFindUniqueZodSchema = z
-	.object({
-		select: ListaSelectObjectSchema.optional(),
-		include: ListaIncludeObjectSchema.optional(),
-		where: ListaWhereUniqueInputObjectSchema,
-	})
-	.strict();
+export const ListaFindUniqueZodSchema = z.object({ select: ListaSelectObjectSchema.optional(), include: ListaIncludeObjectSchema.optional(), where: ListaWhereUniqueInputObjectSchema }).strict();

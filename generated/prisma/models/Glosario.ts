@@ -15,8 +15,7 @@ import type * as Prisma from "../internal/prismaNamespace.ts";
  * Model Glosario
  *
  */
-export type GlosarioModel =
-	runtime.Types.Result.DefaultSelection<Prisma.$GlosarioPayload>;
+export type GlosarioModel = runtime.Types.Result.DefaultSelection<Prisma.$GlosarioPayload>;
 
 export type AggregateGlosario = {
 	_count: GlosarioCountAggregateOutputType | null;
@@ -122,10 +121,7 @@ export type GlosarioCountAggregateInputType = {
 	_all?: true;
 };
 
-export type GlosarioAggregateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type GlosarioAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Glosario to aggregate.
 	 */
@@ -135,9 +131,7 @@ export type GlosarioAggregateArgs<
 	 *
 	 * Determine the order of Glosarios to fetch.
 	 */
-	orderBy?:
-		| Prisma.GlosarioOrderByWithRelationInput
-		| Prisma.GlosarioOrderByWithRelationInput[];
+	orderBy?: Prisma.GlosarioOrderByWithRelationInput | Prisma.GlosarioOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -196,14 +190,9 @@ export type GetGlosarioAggregateType<T extends GlosarioAggregateArgs> = {
 		: Prisma.GetScalarType<T[P], AggregateGlosario[P]>;
 };
 
-export type GlosarioGroupByArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type GlosarioGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.GlosarioWhereInput;
-	orderBy?:
-		| Prisma.GlosarioOrderByWithAggregationInput
-		| Prisma.GlosarioOrderByWithAggregationInput[];
+	orderBy?: Prisma.GlosarioOrderByWithAggregationInput | Prisma.GlosarioOrderByWithAggregationInput[];
 	by: Prisma.GlosarioScalarFieldEnum[] | Prisma.GlosarioScalarFieldEnum;
 	having?: Prisma.GlosarioScalarWhereWithAggregatesInput;
 	take?: number;
@@ -231,18 +220,17 @@ export type GlosarioGroupByOutputType = {
 	_max: GlosarioMaxAggregateOutputType | null;
 };
 
-export type GetGlosarioGroupByPayload<T extends GlosarioGroupByArgs> =
-	Prisma.PrismaPromise<
-		Array<
-			Prisma.PickEnumerable<GlosarioGroupByOutputType, T["by"]> & {
-				[P in keyof T & keyof GlosarioGroupByOutputType]: P extends "_count"
-					? T[P] extends boolean
-						? number
-						: Prisma.GetScalarType<T[P], GlosarioGroupByOutputType[P]>
-					: Prisma.GetScalarType<T[P], GlosarioGroupByOutputType[P]>;
-			}
-		>
-	>;
+export type GetGlosarioGroupByPayload<T extends GlosarioGroupByArgs> = Prisma.PrismaPromise<
+	Array<
+		Prisma.PickEnumerable<GlosarioGroupByOutputType, T["by"]> & {
+			[P in keyof T & keyof GlosarioGroupByOutputType]: P extends "_count"
+				? T[P] extends boolean
+					? number
+					: Prisma.GetScalarType<T[P], GlosarioGroupByOutputType[P]>
+				: Prisma.GetScalarType<T[P], GlosarioGroupByOutputType[P]>;
+		}
+	>
+>;
 
 export type GlosarioWhereInput = {
 	AND?: Prisma.GlosarioWhereInput | Prisma.GlosarioWhereInput[];
@@ -257,14 +245,8 @@ export type GlosarioWhereInput = {
 	escritorId?: Prisma.IntFilter<"Glosario"> | number;
 	estadoId?: Prisma.IntFilter<"Glosario"> | number;
 	libro?: Prisma.XOR<Prisma.LibroScalarRelationFilter, Prisma.LibroWhereInput>;
-	escritor?: Prisma.XOR<
-		Prisma.EscritorScalarRelationFilter,
-		Prisma.EscritorWhereInput
-	>;
-	estado?: Prisma.XOR<
-		Prisma.EstadoScalarRelationFilter,
-		Prisma.EstadoWhereInput
-	>;
+	escritor?: Prisma.XOR<Prisma.EscritorScalarRelationFilter, Prisma.EscritorWhereInput>;
+	estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 };
 
 export type GlosarioOrderByWithRelationInput = {
@@ -294,18 +276,9 @@ export type GlosarioWhereUniqueInput = Prisma.AtLeast<
 		libroId?: Prisma.IntFilter<"Glosario"> | number;
 		escritorId?: Prisma.IntFilter<"Glosario"> | number;
 		estadoId?: Prisma.IntFilter<"Glosario"> | number;
-		libro?: Prisma.XOR<
-			Prisma.LibroScalarRelationFilter,
-			Prisma.LibroWhereInput
-		>;
-		escritor?: Prisma.XOR<
-			Prisma.EscritorScalarRelationFilter,
-			Prisma.EscritorWhereInput
-		>;
-		estado?: Prisma.XOR<
-			Prisma.EstadoScalarRelationFilter,
-			Prisma.EstadoWhereInput
-		>;
+		libro?: Prisma.XOR<Prisma.LibroScalarRelationFilter, Prisma.LibroWhereInput>;
+		escritor?: Prisma.XOR<Prisma.EscritorScalarRelationFilter, Prisma.EscritorWhereInput>;
+		estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 	},
 	"id"
 >;
@@ -327,22 +300,12 @@ export type GlosarioOrderByWithAggregationInput = {
 };
 
 export type GlosarioScalarWhereWithAggregatesInput = {
-	AND?:
-		| Prisma.GlosarioScalarWhereWithAggregatesInput
-		| Prisma.GlosarioScalarWhereWithAggregatesInput[];
+	AND?: Prisma.GlosarioScalarWhereWithAggregatesInput | Prisma.GlosarioScalarWhereWithAggregatesInput[];
 	OR?: Prisma.GlosarioScalarWhereWithAggregatesInput[];
-	NOT?:
-		| Prisma.GlosarioScalarWhereWithAggregatesInput
-		| Prisma.GlosarioScalarWhereWithAggregatesInput[];
+	NOT?: Prisma.GlosarioScalarWhereWithAggregatesInput | Prisma.GlosarioScalarWhereWithAggregatesInput[];
 	id?: Prisma.IntWithAggregatesFilter<"Glosario"> | number;
-	palabra?:
-		| Prisma.StringNullableWithAggregatesFilter<"Glosario">
-		| string
-		| null;
-	significado?:
-		| Prisma.StringNullableWithAggregatesFilter<"Glosario">
-		| string
-		| null;
+	palabra?: Prisma.StringNullableWithAggregatesFilter<"Glosario"> | string | null;
+	significado?: Prisma.StringNullableWithAggregatesFilter<"Glosario"> | string | null;
 	createdAt?: Prisma.DateTimeWithAggregatesFilter<"Glosario"> | Date | string;
 	updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Glosario"> | Date | string;
 	libroId?: Prisma.IntWithAggregatesFilter<"Glosario"> | number;
@@ -480,284 +443,164 @@ export type GlosarioSumOrderByAggregateInput = {
 
 export type GlosarioCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.GlosarioCreateWithoutEstadoInput,
-				Prisma.GlosarioUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.GlosarioCreateWithoutEstadoInput, Prisma.GlosarioUncheckedCreateWithoutEstadoInput>
 		| Prisma.GlosarioCreateWithoutEstadoInput[]
 		| Prisma.GlosarioUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.GlosarioCreateOrConnectWithoutEstadoInput
-		| Prisma.GlosarioCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.GlosarioCreateOrConnectWithoutEstadoInput | Prisma.GlosarioCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.GlosarioCreateManyEstadoInputEnvelope;
 	connect?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
 };
 
 export type GlosarioUncheckedCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.GlosarioCreateWithoutEstadoInput,
-				Prisma.GlosarioUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.GlosarioCreateWithoutEstadoInput, Prisma.GlosarioUncheckedCreateWithoutEstadoInput>
 		| Prisma.GlosarioCreateWithoutEstadoInput[]
 		| Prisma.GlosarioUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.GlosarioCreateOrConnectWithoutEstadoInput
-		| Prisma.GlosarioCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.GlosarioCreateOrConnectWithoutEstadoInput | Prisma.GlosarioCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.GlosarioCreateManyEstadoInputEnvelope;
 	connect?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
 };
 
 export type GlosarioUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.GlosarioCreateWithoutEstadoInput,
-				Prisma.GlosarioUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.GlosarioCreateWithoutEstadoInput, Prisma.GlosarioUncheckedCreateWithoutEstadoInput>
 		| Prisma.GlosarioCreateWithoutEstadoInput[]
 		| Prisma.GlosarioUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.GlosarioCreateOrConnectWithoutEstadoInput
-		| Prisma.GlosarioCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.GlosarioUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.GlosarioUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.GlosarioCreateOrConnectWithoutEstadoInput | Prisma.GlosarioCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.GlosarioUpsertWithWhereUniqueWithoutEstadoInput | Prisma.GlosarioUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.GlosarioCreateManyEstadoInputEnvelope;
 	set?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.GlosarioWhereUniqueInput
-		| Prisma.GlosarioWhereUniqueInput[];
+	disconnect?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
 	delete?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
 	connect?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
-	update?:
-		| Prisma.GlosarioUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.GlosarioUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.GlosarioUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.GlosarioUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.GlosarioScalarWhereInput
-		| Prisma.GlosarioScalarWhereInput[];
+	update?: Prisma.GlosarioUpdateWithWhereUniqueWithoutEstadoInput | Prisma.GlosarioUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.GlosarioUpdateManyWithWhereWithoutEstadoInput | Prisma.GlosarioUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.GlosarioScalarWhereInput | Prisma.GlosarioScalarWhereInput[];
 };
 
 export type GlosarioUncheckedUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.GlosarioCreateWithoutEstadoInput,
-				Prisma.GlosarioUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.GlosarioCreateWithoutEstadoInput, Prisma.GlosarioUncheckedCreateWithoutEstadoInput>
 		| Prisma.GlosarioCreateWithoutEstadoInput[]
 		| Prisma.GlosarioUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.GlosarioCreateOrConnectWithoutEstadoInput
-		| Prisma.GlosarioCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.GlosarioUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.GlosarioUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.GlosarioCreateOrConnectWithoutEstadoInput | Prisma.GlosarioCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.GlosarioUpsertWithWhereUniqueWithoutEstadoInput | Prisma.GlosarioUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.GlosarioCreateManyEstadoInputEnvelope;
 	set?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.GlosarioWhereUniqueInput
-		| Prisma.GlosarioWhereUniqueInput[];
+	disconnect?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
 	delete?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
 	connect?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
-	update?:
-		| Prisma.GlosarioUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.GlosarioUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.GlosarioUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.GlosarioUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.GlosarioScalarWhereInput
-		| Prisma.GlosarioScalarWhereInput[];
+	update?: Prisma.GlosarioUpdateWithWhereUniqueWithoutEstadoInput | Prisma.GlosarioUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.GlosarioUpdateManyWithWhereWithoutEstadoInput | Prisma.GlosarioUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.GlosarioScalarWhereInput | Prisma.GlosarioScalarWhereInput[];
 };
 
 export type GlosarioCreateNestedManyWithoutEscritorInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.GlosarioCreateWithoutEscritorInput,
-				Prisma.GlosarioUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.GlosarioCreateWithoutEscritorInput, Prisma.GlosarioUncheckedCreateWithoutEscritorInput>
 		| Prisma.GlosarioCreateWithoutEscritorInput[]
 		| Prisma.GlosarioUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.GlosarioCreateOrConnectWithoutEscritorInput
-		| Prisma.GlosarioCreateOrConnectWithoutEscritorInput[];
+	connectOrCreate?: Prisma.GlosarioCreateOrConnectWithoutEscritorInput | Prisma.GlosarioCreateOrConnectWithoutEscritorInput[];
 	createMany?: Prisma.GlosarioCreateManyEscritorInputEnvelope;
 	connect?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
 };
 
 export type GlosarioUncheckedCreateNestedManyWithoutEscritorInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.GlosarioCreateWithoutEscritorInput,
-				Prisma.GlosarioUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.GlosarioCreateWithoutEscritorInput, Prisma.GlosarioUncheckedCreateWithoutEscritorInput>
 		| Prisma.GlosarioCreateWithoutEscritorInput[]
 		| Prisma.GlosarioUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.GlosarioCreateOrConnectWithoutEscritorInput
-		| Prisma.GlosarioCreateOrConnectWithoutEscritorInput[];
+	connectOrCreate?: Prisma.GlosarioCreateOrConnectWithoutEscritorInput | Prisma.GlosarioCreateOrConnectWithoutEscritorInput[];
 	createMany?: Prisma.GlosarioCreateManyEscritorInputEnvelope;
 	connect?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
 };
 
 export type GlosarioUpdateManyWithoutEscritorNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.GlosarioCreateWithoutEscritorInput,
-				Prisma.GlosarioUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.GlosarioCreateWithoutEscritorInput, Prisma.GlosarioUncheckedCreateWithoutEscritorInput>
 		| Prisma.GlosarioCreateWithoutEscritorInput[]
 		| Prisma.GlosarioUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.GlosarioCreateOrConnectWithoutEscritorInput
-		| Prisma.GlosarioCreateOrConnectWithoutEscritorInput[];
-	upsert?:
-		| Prisma.GlosarioUpsertWithWhereUniqueWithoutEscritorInput
-		| Prisma.GlosarioUpsertWithWhereUniqueWithoutEscritorInput[];
+	connectOrCreate?: Prisma.GlosarioCreateOrConnectWithoutEscritorInput | Prisma.GlosarioCreateOrConnectWithoutEscritorInput[];
+	upsert?: Prisma.GlosarioUpsertWithWhereUniqueWithoutEscritorInput | Prisma.GlosarioUpsertWithWhereUniqueWithoutEscritorInput[];
 	createMany?: Prisma.GlosarioCreateManyEscritorInputEnvelope;
 	set?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.GlosarioWhereUniqueInput
-		| Prisma.GlosarioWhereUniqueInput[];
+	disconnect?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
 	delete?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
 	connect?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
-	update?:
-		| Prisma.GlosarioUpdateWithWhereUniqueWithoutEscritorInput
-		| Prisma.GlosarioUpdateWithWhereUniqueWithoutEscritorInput[];
-	updateMany?:
-		| Prisma.GlosarioUpdateManyWithWhereWithoutEscritorInput
-		| Prisma.GlosarioUpdateManyWithWhereWithoutEscritorInput[];
-	deleteMany?:
-		| Prisma.GlosarioScalarWhereInput
-		| Prisma.GlosarioScalarWhereInput[];
+	update?: Prisma.GlosarioUpdateWithWhereUniqueWithoutEscritorInput | Prisma.GlosarioUpdateWithWhereUniqueWithoutEscritorInput[];
+	updateMany?: Prisma.GlosarioUpdateManyWithWhereWithoutEscritorInput | Prisma.GlosarioUpdateManyWithWhereWithoutEscritorInput[];
+	deleteMany?: Prisma.GlosarioScalarWhereInput | Prisma.GlosarioScalarWhereInput[];
 };
 
 export type GlosarioUncheckedUpdateManyWithoutEscritorNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.GlosarioCreateWithoutEscritorInput,
-				Prisma.GlosarioUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.GlosarioCreateWithoutEscritorInput, Prisma.GlosarioUncheckedCreateWithoutEscritorInput>
 		| Prisma.GlosarioCreateWithoutEscritorInput[]
 		| Prisma.GlosarioUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.GlosarioCreateOrConnectWithoutEscritorInput
-		| Prisma.GlosarioCreateOrConnectWithoutEscritorInput[];
-	upsert?:
-		| Prisma.GlosarioUpsertWithWhereUniqueWithoutEscritorInput
-		| Prisma.GlosarioUpsertWithWhereUniqueWithoutEscritorInput[];
+	connectOrCreate?: Prisma.GlosarioCreateOrConnectWithoutEscritorInput | Prisma.GlosarioCreateOrConnectWithoutEscritorInput[];
+	upsert?: Prisma.GlosarioUpsertWithWhereUniqueWithoutEscritorInput | Prisma.GlosarioUpsertWithWhereUniqueWithoutEscritorInput[];
 	createMany?: Prisma.GlosarioCreateManyEscritorInputEnvelope;
 	set?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.GlosarioWhereUniqueInput
-		| Prisma.GlosarioWhereUniqueInput[];
+	disconnect?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
 	delete?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
 	connect?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
-	update?:
-		| Prisma.GlosarioUpdateWithWhereUniqueWithoutEscritorInput
-		| Prisma.GlosarioUpdateWithWhereUniqueWithoutEscritorInput[];
-	updateMany?:
-		| Prisma.GlosarioUpdateManyWithWhereWithoutEscritorInput
-		| Prisma.GlosarioUpdateManyWithWhereWithoutEscritorInput[];
-	deleteMany?:
-		| Prisma.GlosarioScalarWhereInput
-		| Prisma.GlosarioScalarWhereInput[];
+	update?: Prisma.GlosarioUpdateWithWhereUniqueWithoutEscritorInput | Prisma.GlosarioUpdateWithWhereUniqueWithoutEscritorInput[];
+	updateMany?: Prisma.GlosarioUpdateManyWithWhereWithoutEscritorInput | Prisma.GlosarioUpdateManyWithWhereWithoutEscritorInput[];
+	deleteMany?: Prisma.GlosarioScalarWhereInput | Prisma.GlosarioScalarWhereInput[];
 };
 
 export type GlosarioCreateNestedManyWithoutLibroInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.GlosarioCreateWithoutLibroInput,
-				Prisma.GlosarioUncheckedCreateWithoutLibroInput
-		  >
+		| Prisma.XOR<Prisma.GlosarioCreateWithoutLibroInput, Prisma.GlosarioUncheckedCreateWithoutLibroInput>
 		| Prisma.GlosarioCreateWithoutLibroInput[]
 		| Prisma.GlosarioUncheckedCreateWithoutLibroInput[];
-	connectOrCreate?:
-		| Prisma.GlosarioCreateOrConnectWithoutLibroInput
-		| Prisma.GlosarioCreateOrConnectWithoutLibroInput[];
+	connectOrCreate?: Prisma.GlosarioCreateOrConnectWithoutLibroInput | Prisma.GlosarioCreateOrConnectWithoutLibroInput[];
 	createMany?: Prisma.GlosarioCreateManyLibroInputEnvelope;
 	connect?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
 };
 
 export type GlosarioUncheckedCreateNestedManyWithoutLibroInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.GlosarioCreateWithoutLibroInput,
-				Prisma.GlosarioUncheckedCreateWithoutLibroInput
-		  >
+		| Prisma.XOR<Prisma.GlosarioCreateWithoutLibroInput, Prisma.GlosarioUncheckedCreateWithoutLibroInput>
 		| Prisma.GlosarioCreateWithoutLibroInput[]
 		| Prisma.GlosarioUncheckedCreateWithoutLibroInput[];
-	connectOrCreate?:
-		| Prisma.GlosarioCreateOrConnectWithoutLibroInput
-		| Prisma.GlosarioCreateOrConnectWithoutLibroInput[];
+	connectOrCreate?: Prisma.GlosarioCreateOrConnectWithoutLibroInput | Prisma.GlosarioCreateOrConnectWithoutLibroInput[];
 	createMany?: Prisma.GlosarioCreateManyLibroInputEnvelope;
 	connect?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
 };
 
 export type GlosarioUpdateManyWithoutLibroNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.GlosarioCreateWithoutLibroInput,
-				Prisma.GlosarioUncheckedCreateWithoutLibroInput
-		  >
+		| Prisma.XOR<Prisma.GlosarioCreateWithoutLibroInput, Prisma.GlosarioUncheckedCreateWithoutLibroInput>
 		| Prisma.GlosarioCreateWithoutLibroInput[]
 		| Prisma.GlosarioUncheckedCreateWithoutLibroInput[];
-	connectOrCreate?:
-		| Prisma.GlosarioCreateOrConnectWithoutLibroInput
-		| Prisma.GlosarioCreateOrConnectWithoutLibroInput[];
-	upsert?:
-		| Prisma.GlosarioUpsertWithWhereUniqueWithoutLibroInput
-		| Prisma.GlosarioUpsertWithWhereUniqueWithoutLibroInput[];
+	connectOrCreate?: Prisma.GlosarioCreateOrConnectWithoutLibroInput | Prisma.GlosarioCreateOrConnectWithoutLibroInput[];
+	upsert?: Prisma.GlosarioUpsertWithWhereUniqueWithoutLibroInput | Prisma.GlosarioUpsertWithWhereUniqueWithoutLibroInput[];
 	createMany?: Prisma.GlosarioCreateManyLibroInputEnvelope;
 	set?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.GlosarioWhereUniqueInput
-		| Prisma.GlosarioWhereUniqueInput[];
+	disconnect?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
 	delete?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
 	connect?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
-	update?:
-		| Prisma.GlosarioUpdateWithWhereUniqueWithoutLibroInput
-		| Prisma.GlosarioUpdateWithWhereUniqueWithoutLibroInput[];
-	updateMany?:
-		| Prisma.GlosarioUpdateManyWithWhereWithoutLibroInput
-		| Prisma.GlosarioUpdateManyWithWhereWithoutLibroInput[];
-	deleteMany?:
-		| Prisma.GlosarioScalarWhereInput
-		| Prisma.GlosarioScalarWhereInput[];
+	update?: Prisma.GlosarioUpdateWithWhereUniqueWithoutLibroInput | Prisma.GlosarioUpdateWithWhereUniqueWithoutLibroInput[];
+	updateMany?: Prisma.GlosarioUpdateManyWithWhereWithoutLibroInput | Prisma.GlosarioUpdateManyWithWhereWithoutLibroInput[];
+	deleteMany?: Prisma.GlosarioScalarWhereInput | Prisma.GlosarioScalarWhereInput[];
 };
 
 export type GlosarioUncheckedUpdateManyWithoutLibroNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.GlosarioCreateWithoutLibroInput,
-				Prisma.GlosarioUncheckedCreateWithoutLibroInput
-		  >
+		| Prisma.XOR<Prisma.GlosarioCreateWithoutLibroInput, Prisma.GlosarioUncheckedCreateWithoutLibroInput>
 		| Prisma.GlosarioCreateWithoutLibroInput[]
 		| Prisma.GlosarioUncheckedCreateWithoutLibroInput[];
-	connectOrCreate?:
-		| Prisma.GlosarioCreateOrConnectWithoutLibroInput
-		| Prisma.GlosarioCreateOrConnectWithoutLibroInput[];
-	upsert?:
-		| Prisma.GlosarioUpsertWithWhereUniqueWithoutLibroInput
-		| Prisma.GlosarioUpsertWithWhereUniqueWithoutLibroInput[];
+	connectOrCreate?: Prisma.GlosarioCreateOrConnectWithoutLibroInput | Prisma.GlosarioCreateOrConnectWithoutLibroInput[];
+	upsert?: Prisma.GlosarioUpsertWithWhereUniqueWithoutLibroInput | Prisma.GlosarioUpsertWithWhereUniqueWithoutLibroInput[];
 	createMany?: Prisma.GlosarioCreateManyLibroInputEnvelope;
 	set?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.GlosarioWhereUniqueInput
-		| Prisma.GlosarioWhereUniqueInput[];
+	disconnect?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
 	delete?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
 	connect?: Prisma.GlosarioWhereUniqueInput | Prisma.GlosarioWhereUniqueInput[];
-	update?:
-		| Prisma.GlosarioUpdateWithWhereUniqueWithoutLibroInput
-		| Prisma.GlosarioUpdateWithWhereUniqueWithoutLibroInput[];
-	updateMany?:
-		| Prisma.GlosarioUpdateManyWithWhereWithoutLibroInput
-		| Prisma.GlosarioUpdateManyWithWhereWithoutLibroInput[];
-	deleteMany?:
-		| Prisma.GlosarioScalarWhereInput
-		| Prisma.GlosarioScalarWhereInput[];
+	update?: Prisma.GlosarioUpdateWithWhereUniqueWithoutLibroInput | Prisma.GlosarioUpdateWithWhereUniqueWithoutLibroInput[];
+	updateMany?: Prisma.GlosarioUpdateManyWithWhereWithoutLibroInput | Prisma.GlosarioUpdateManyWithWhereWithoutLibroInput[];
+	deleteMany?: Prisma.GlosarioScalarWhereInput | Prisma.GlosarioScalarWhereInput[];
 };
 
 export type GlosarioCreateWithoutEstadoInput = {
@@ -781,45 +624,28 @@ export type GlosarioUncheckedCreateWithoutEstadoInput = {
 
 export type GlosarioCreateOrConnectWithoutEstadoInput = {
 	where: Prisma.GlosarioWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.GlosarioCreateWithoutEstadoInput,
-		Prisma.GlosarioUncheckedCreateWithoutEstadoInput
-	>;
+	create: Prisma.XOR<Prisma.GlosarioCreateWithoutEstadoInput, Prisma.GlosarioUncheckedCreateWithoutEstadoInput>;
 };
 
 export type GlosarioCreateManyEstadoInputEnvelope = {
-	data:
-		| Prisma.GlosarioCreateManyEstadoInput
-		| Prisma.GlosarioCreateManyEstadoInput[];
+	data: Prisma.GlosarioCreateManyEstadoInput | Prisma.GlosarioCreateManyEstadoInput[];
 	skipDuplicates?: boolean;
 };
 
 export type GlosarioUpsertWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.GlosarioWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.GlosarioUpdateWithoutEstadoInput,
-		Prisma.GlosarioUncheckedUpdateWithoutEstadoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.GlosarioCreateWithoutEstadoInput,
-		Prisma.GlosarioUncheckedCreateWithoutEstadoInput
-	>;
+	update: Prisma.XOR<Prisma.GlosarioUpdateWithoutEstadoInput, Prisma.GlosarioUncheckedUpdateWithoutEstadoInput>;
+	create: Prisma.XOR<Prisma.GlosarioCreateWithoutEstadoInput, Prisma.GlosarioUncheckedCreateWithoutEstadoInput>;
 };
 
 export type GlosarioUpdateWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.GlosarioWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.GlosarioUpdateWithoutEstadoInput,
-		Prisma.GlosarioUncheckedUpdateWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.GlosarioUpdateWithoutEstadoInput, Prisma.GlosarioUncheckedUpdateWithoutEstadoInput>;
 };
 
 export type GlosarioUpdateManyWithWhereWithoutEstadoInput = {
 	where: Prisma.GlosarioScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.GlosarioUpdateManyMutationInput,
-		Prisma.GlosarioUncheckedUpdateManyWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.GlosarioUpdateManyMutationInput, Prisma.GlosarioUncheckedUpdateManyWithoutEstadoInput>;
 };
 
 export type GlosarioScalarWhereInput = {
@@ -857,45 +683,28 @@ export type GlosarioUncheckedCreateWithoutEscritorInput = {
 
 export type GlosarioCreateOrConnectWithoutEscritorInput = {
 	where: Prisma.GlosarioWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.GlosarioCreateWithoutEscritorInput,
-		Prisma.GlosarioUncheckedCreateWithoutEscritorInput
-	>;
+	create: Prisma.XOR<Prisma.GlosarioCreateWithoutEscritorInput, Prisma.GlosarioUncheckedCreateWithoutEscritorInput>;
 };
 
 export type GlosarioCreateManyEscritorInputEnvelope = {
-	data:
-		| Prisma.GlosarioCreateManyEscritorInput
-		| Prisma.GlosarioCreateManyEscritorInput[];
+	data: Prisma.GlosarioCreateManyEscritorInput | Prisma.GlosarioCreateManyEscritorInput[];
 	skipDuplicates?: boolean;
 };
 
 export type GlosarioUpsertWithWhereUniqueWithoutEscritorInput = {
 	where: Prisma.GlosarioWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.GlosarioUpdateWithoutEscritorInput,
-		Prisma.GlosarioUncheckedUpdateWithoutEscritorInput
-	>;
-	create: Prisma.XOR<
-		Prisma.GlosarioCreateWithoutEscritorInput,
-		Prisma.GlosarioUncheckedCreateWithoutEscritorInput
-	>;
+	update: Prisma.XOR<Prisma.GlosarioUpdateWithoutEscritorInput, Prisma.GlosarioUncheckedUpdateWithoutEscritorInput>;
+	create: Prisma.XOR<Prisma.GlosarioCreateWithoutEscritorInput, Prisma.GlosarioUncheckedCreateWithoutEscritorInput>;
 };
 
 export type GlosarioUpdateWithWhereUniqueWithoutEscritorInput = {
 	where: Prisma.GlosarioWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.GlosarioUpdateWithoutEscritorInput,
-		Prisma.GlosarioUncheckedUpdateWithoutEscritorInput
-	>;
+	data: Prisma.XOR<Prisma.GlosarioUpdateWithoutEscritorInput, Prisma.GlosarioUncheckedUpdateWithoutEscritorInput>;
 };
 
 export type GlosarioUpdateManyWithWhereWithoutEscritorInput = {
 	where: Prisma.GlosarioScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.GlosarioUpdateManyMutationInput,
-		Prisma.GlosarioUncheckedUpdateManyWithoutEscritorInput
-	>;
+	data: Prisma.XOR<Prisma.GlosarioUpdateManyMutationInput, Prisma.GlosarioUncheckedUpdateManyWithoutEscritorInput>;
 };
 
 export type GlosarioCreateWithoutLibroInput = {
@@ -919,45 +728,28 @@ export type GlosarioUncheckedCreateWithoutLibroInput = {
 
 export type GlosarioCreateOrConnectWithoutLibroInput = {
 	where: Prisma.GlosarioWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.GlosarioCreateWithoutLibroInput,
-		Prisma.GlosarioUncheckedCreateWithoutLibroInput
-	>;
+	create: Prisma.XOR<Prisma.GlosarioCreateWithoutLibroInput, Prisma.GlosarioUncheckedCreateWithoutLibroInput>;
 };
 
 export type GlosarioCreateManyLibroInputEnvelope = {
-	data:
-		| Prisma.GlosarioCreateManyLibroInput
-		| Prisma.GlosarioCreateManyLibroInput[];
+	data: Prisma.GlosarioCreateManyLibroInput | Prisma.GlosarioCreateManyLibroInput[];
 	skipDuplicates?: boolean;
 };
 
 export type GlosarioUpsertWithWhereUniqueWithoutLibroInput = {
 	where: Prisma.GlosarioWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.GlosarioUpdateWithoutLibroInput,
-		Prisma.GlosarioUncheckedUpdateWithoutLibroInput
-	>;
-	create: Prisma.XOR<
-		Prisma.GlosarioCreateWithoutLibroInput,
-		Prisma.GlosarioUncheckedCreateWithoutLibroInput
-	>;
+	update: Prisma.XOR<Prisma.GlosarioUpdateWithoutLibroInput, Prisma.GlosarioUncheckedUpdateWithoutLibroInput>;
+	create: Prisma.XOR<Prisma.GlosarioCreateWithoutLibroInput, Prisma.GlosarioUncheckedCreateWithoutLibroInput>;
 };
 
 export type GlosarioUpdateWithWhereUniqueWithoutLibroInput = {
 	where: Prisma.GlosarioWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.GlosarioUpdateWithoutLibroInput,
-		Prisma.GlosarioUncheckedUpdateWithoutLibroInput
-	>;
+	data: Prisma.XOR<Prisma.GlosarioUpdateWithoutLibroInput, Prisma.GlosarioUncheckedUpdateWithoutLibroInput>;
 };
 
 export type GlosarioUpdateManyWithWhereWithoutLibroInput = {
 	where: Prisma.GlosarioScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.GlosarioUpdateManyMutationInput,
-		Prisma.GlosarioUncheckedUpdateManyWithoutLibroInput
-	>;
+	data: Prisma.XOR<Prisma.GlosarioUpdateManyMutationInput, Prisma.GlosarioUncheckedUpdateManyWithoutLibroInput>;
 };
 
 export type GlosarioCreateManyEstadoInput = {
@@ -1077,10 +869,7 @@ export type GlosarioUncheckedUpdateManyWithoutLibroInput = {
 	estadoId?: Prisma.IntFieldUpdateOperationsInput | number;
 };
 
-export type GlosarioSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type GlosarioSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		palabra?: boolean;
@@ -1097,10 +886,7 @@ export type GlosarioSelect<
 	ExtArgs["result"]["glosario"]
 >;
 
-export type GlosarioSelectCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type GlosarioSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		palabra?: boolean;
@@ -1117,10 +903,7 @@ export type GlosarioSelectCreateManyAndReturn<
 	ExtArgs["result"]["glosario"]
 >;
 
-export type GlosarioSelectUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type GlosarioSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		palabra?: boolean;
@@ -1148,49 +931,27 @@ export type GlosarioSelectScalar = {
 	estadoId?: boolean;
 };
 
-export type GlosarioOmit<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetOmit<
-	| "id"
-	| "palabra"
-	| "significado"
-	| "createdAt"
-	| "updatedAt"
-	| "libroId"
-	| "escritorId"
-	| "estadoId",
+export type GlosarioOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<
+	"id" | "palabra" | "significado" | "createdAt" | "updatedAt" | "libroId" | "escritorId" | "estadoId",
 	ExtArgs["result"]["glosario"]
 >;
-export type GlosarioInclude<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type GlosarioInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	libro?: boolean | Prisma.LibroDefaultArgs<ExtArgs>;
 	escritor?: boolean | Prisma.EscritorDefaultArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
-export type GlosarioIncludeCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type GlosarioIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	libro?: boolean | Prisma.LibroDefaultArgs<ExtArgs>;
 	escritor?: boolean | Prisma.EscritorDefaultArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
-export type GlosarioIncludeUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type GlosarioIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	libro?: boolean | Prisma.LibroDefaultArgs<ExtArgs>;
 	escritor?: boolean | Prisma.EscritorDefaultArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
 
-export type $GlosarioPayload<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type $GlosarioPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	name: "Glosario";
 	objects: {
 		libro: Prisma.$LibroPayload<ExtArgs>;
@@ -1213,26 +974,14 @@ export type $GlosarioPayload<
 	composites: {};
 };
 
-export type GlosarioGetPayload<
-	S extends boolean | null | undefined | GlosarioDefaultArgs,
-> = runtime.Types.Result.GetResult<Prisma.$GlosarioPayload, S>;
+export type GlosarioGetPayload<S extends boolean | null | undefined | GlosarioDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$GlosarioPayload, S>;
 
-export type GlosarioCountArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = Omit<GlosarioFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
+export type GlosarioCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<GlosarioFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
 	select?: GlosarioCountAggregateInputType | true;
 };
 
-export interface GlosarioDelegate<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> {
-	[K: symbol]: {
-		types: Prisma.TypeMap<ExtArgs>["model"]["Glosario"];
-		meta: { name: "Glosario" };
-	};
+export interface GlosarioDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+	[K: symbol]: { types: Prisma.TypeMap<ExtArgs>["model"]["Glosario"]; meta: { name: "Glosario" } };
 	/**
 	 * Find zero or one Glosario that matches the filter.
 	 * @param {GlosarioFindUniqueArgs} args - Arguments to find a Glosario
@@ -1246,17 +995,7 @@ export interface GlosarioDelegate<
 	 */
 	findUnique<T extends GlosarioFindUniqueArgs>(
 		args: Prisma.SelectSubset<T, GlosarioFindUniqueArgs<ExtArgs>>,
-	): Prisma.Prisma__GlosarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$GlosarioPayload<ExtArgs>,
-			T,
-			"findUnique",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__GlosarioClient<runtime.Types.Result.GetResult<Prisma.$GlosarioPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find one Glosario that matches the filter or throw an error with `error.code='P2025'`
@@ -1272,17 +1011,7 @@ export interface GlosarioDelegate<
 	 */
 	findUniqueOrThrow<T extends GlosarioFindUniqueOrThrowArgs>(
 		args: Prisma.SelectSubset<T, GlosarioFindUniqueOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__GlosarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$GlosarioPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__GlosarioClient<runtime.Types.Result.GetResult<Prisma.$GlosarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Glosario that matches the filter.
@@ -1299,17 +1028,7 @@ export interface GlosarioDelegate<
 	 */
 	findFirst<T extends GlosarioFindFirstArgs>(
 		args?: Prisma.SelectSubset<T, GlosarioFindFirstArgs<ExtArgs>>,
-	): Prisma.Prisma__GlosarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$GlosarioPayload<ExtArgs>,
-			T,
-			"findFirst",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__GlosarioClient<runtime.Types.Result.GetResult<Prisma.$GlosarioPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Glosario that matches the filter or
@@ -1327,17 +1046,7 @@ export interface GlosarioDelegate<
 	 */
 	findFirstOrThrow<T extends GlosarioFindFirstOrThrowArgs>(
 		args?: Prisma.SelectSubset<T, GlosarioFindFirstOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__GlosarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$GlosarioPayload<ExtArgs>,
-			T,
-			"findFirstOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__GlosarioClient<runtime.Types.Result.GetResult<Prisma.$GlosarioPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find zero or more Glosarios that matches the filter.
@@ -1357,14 +1066,7 @@ export interface GlosarioDelegate<
 	 */
 	findMany<T extends GlosarioFindManyArgs>(
 		args?: Prisma.SelectSubset<T, GlosarioFindManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$GlosarioPayload<ExtArgs>,
-			T,
-			"findMany",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GlosarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
 
 	/**
 	 * Create a Glosario.
@@ -1380,17 +1082,7 @@ export interface GlosarioDelegate<
 	 */
 	create<T extends GlosarioCreateArgs>(
 		args: Prisma.SelectSubset<T, GlosarioCreateArgs<ExtArgs>>,
-	): Prisma.Prisma__GlosarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$GlosarioPayload<ExtArgs>,
-			T,
-			"create",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__GlosarioClient<runtime.Types.Result.GetResult<Prisma.$GlosarioPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Create many Glosarios.
@@ -1404,9 +1096,7 @@ export interface GlosarioDelegate<
 	 * })
 	 *
 	 */
-	createMany<T extends GlosarioCreateManyArgs>(
-		args?: Prisma.SelectSubset<T, GlosarioCreateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	createMany<T extends GlosarioCreateManyArgs>(args?: Prisma.SelectSubset<T, GlosarioCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Create many Glosarios and returns the data saved in the database.
@@ -1432,14 +1122,7 @@ export interface GlosarioDelegate<
 	 */
 	createManyAndReturn<T extends GlosarioCreateManyAndReturnArgs>(
 		args?: Prisma.SelectSubset<T, GlosarioCreateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$GlosarioPayload<ExtArgs>,
-			T,
-			"createManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GlosarioPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Delete a Glosario.
@@ -1455,17 +1138,7 @@ export interface GlosarioDelegate<
 	 */
 	delete<T extends GlosarioDeleteArgs>(
 		args: Prisma.SelectSubset<T, GlosarioDeleteArgs<ExtArgs>>,
-	): Prisma.Prisma__GlosarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$GlosarioPayload<ExtArgs>,
-			T,
-			"delete",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__GlosarioClient<runtime.Types.Result.GetResult<Prisma.$GlosarioPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Update one Glosario.
@@ -1484,17 +1157,7 @@ export interface GlosarioDelegate<
 	 */
 	update<T extends GlosarioUpdateArgs>(
 		args: Prisma.SelectSubset<T, GlosarioUpdateArgs<ExtArgs>>,
-	): Prisma.Prisma__GlosarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$GlosarioPayload<ExtArgs>,
-			T,
-			"update",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__GlosarioClient<runtime.Types.Result.GetResult<Prisma.$GlosarioPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Delete zero or more Glosarios.
@@ -1508,9 +1171,7 @@ export interface GlosarioDelegate<
 	 * })
 	 *
 	 */
-	deleteMany<T extends GlosarioDeleteManyArgs>(
-		args?: Prisma.SelectSubset<T, GlosarioDeleteManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	deleteMany<T extends GlosarioDeleteManyArgs>(args?: Prisma.SelectSubset<T, GlosarioDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Glosarios.
@@ -1529,9 +1190,7 @@ export interface GlosarioDelegate<
 	 * })
 	 *
 	 */
-	updateMany<T extends GlosarioUpdateManyArgs>(
-		args: Prisma.SelectSubset<T, GlosarioUpdateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	updateMany<T extends GlosarioUpdateManyArgs>(args: Prisma.SelectSubset<T, GlosarioUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Glosarios and returns the data updated in the database.
@@ -1563,14 +1222,7 @@ export interface GlosarioDelegate<
 	 */
 	updateManyAndReturn<T extends GlosarioUpdateManyAndReturnArgs>(
 		args: Prisma.SelectSubset<T, GlosarioUpdateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$GlosarioPayload<ExtArgs>,
-			T,
-			"updateManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GlosarioPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Create or update one Glosario.
@@ -1591,17 +1243,7 @@ export interface GlosarioDelegate<
 	 */
 	upsert<T extends GlosarioUpsertArgs>(
 		args: Prisma.SelectSubset<T, GlosarioUpsertArgs<ExtArgs>>,
-	): Prisma.Prisma__GlosarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$GlosarioPayload<ExtArgs>,
-			T,
-			"upsert",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__GlosarioClient<runtime.Types.Result.GetResult<Prisma.$GlosarioPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Count the number of Glosarios.
@@ -1618,13 +1260,7 @@ export interface GlosarioDelegate<
 	 **/
 	count<T extends GlosarioCountArgs>(
 		args?: Prisma.Subset<T, GlosarioCountArgs>,
-	): Prisma.PrismaPromise<
-		T extends runtime.Types.Utils.Record<"select", any>
-			? T["select"] extends true
-				? number
-				: Prisma.GetScalarType<T["select"], GlosarioCountAggregateOutputType>
-			: number
-	>;
+	): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<"select", any> ? (T["select"] extends true ? number : Prisma.GetScalarType<T["select"], GlosarioCountAggregateOutputType>) : number>;
 
 	/**
 	 * Allows you to perform aggregations operations on a Glosario.
@@ -1650,9 +1286,7 @@ export interface GlosarioDelegate<
 	 *   take: 10,
 	 * })
 	 **/
-	aggregate<T extends GlosarioAggregateArgs>(
-		args: Prisma.Subset<T, GlosarioAggregateArgs>,
-	): Prisma.PrismaPromise<GetGlosarioAggregateType<T>>;
+	aggregate<T extends GlosarioAggregateArgs>(args: Prisma.Subset<T, GlosarioAggregateArgs>): Prisma.PrismaPromise<GetGlosarioAggregateType<T>>;
 
 	/**
 	 * Group by Glosario.
@@ -1674,16 +1308,9 @@ export interface GlosarioDelegate<
 	 **/
 	groupBy<
 		T extends GlosarioGroupByArgs,
-		HasSelectOrTake extends Prisma.Or<
-			Prisma.Extends<"skip", Prisma.Keys<T>>,
-			Prisma.Extends<"take", Prisma.Keys<T>>
-		>,
-		OrderByArg extends Prisma.True extends HasSelectOrTake
-			? { orderBy: GlosarioGroupByArgs["orderBy"] }
-			: { orderBy?: GlosarioGroupByArgs["orderBy"] },
-		OrderFields extends Prisma.ExcludeUnderscoreKeys<
-			Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>
-		>,
+		HasSelectOrTake extends Prisma.Or<Prisma.Extends<"skip", Prisma.Keys<T>>, Prisma.Extends<"take", Prisma.Keys<T>>>,
+		OrderByArg extends Prisma.True extends HasSelectOrTake ? { orderBy: GlosarioGroupByArgs["orderBy"] } : { orderBy?: GlosarioGroupByArgs["orderBy"] },
+		OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>>,
 		ByFields extends Prisma.MaybeTupleToUnion<T["by"]>,
 		ByValid extends Prisma.Has<ByFields, OrderFields>,
 		HavingFields extends Prisma.GetHavingFields<T["having"]>,
@@ -1697,21 +1324,14 @@ export interface GlosarioDelegate<
 							? never
 							: P extends string
 								? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-								: [
-										Error,
-										"Field ",
-										P,
-										` in "having" needs to be provided in "by"`,
-									];
+								: [Error, "Field ", P, ` in "having" needs to be provided in "by"`];
 					}[HavingFields]
 				: "take" extends Prisma.Keys<T>
 					? "orderBy" extends Prisma.Keys<T>
 						? ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields]
 						: 'Error: If you provide "take", you also need to provide "orderBy"'
 					: "skip" extends Prisma.Keys<T>
@@ -1719,24 +1339,15 @@ export interface GlosarioDelegate<
 							? ByValid extends Prisma.True
 								? {}
 								: {
-										[P in OrderFields]: P extends ByFields
-											? never
-											: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+										[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 									}[OrderFields]
 							: 'Error: If you provide "skip", you also need to provide "orderBy"'
 						: ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields],
-	>(
-		args: Prisma.SubsetIntersection<T, GlosarioGroupByArgs, OrderByArg> &
-			InputErrors,
-	): {} extends InputErrors
-		? GetGlosarioGroupByPayload<T>
-		: Prisma.PrismaPromise<InputErrors>;
+	>(args: Prisma.SubsetIntersection<T, GlosarioGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetGlosarioGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
 	/**
 	 * Fields of the Glosario model
 	 */
@@ -1749,56 +1360,18 @@ export interface GlosarioDelegate<
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__GlosarioClient<
-	T,
-	Null = never,
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> extends Prisma.PrismaPromise<T> {
+export interface Prisma__GlosarioClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}>
+	extends Prisma.PrismaPromise<T> {
 	readonly [Symbol.toStringTag]: "PrismaPromise";
 	libro<T extends Prisma.LibroDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.LibroDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__LibroClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$LibroPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__LibroClient<runtime.Types.Result.GetResult<Prisma.$LibroPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	escritor<T extends Prisma.EscritorDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EscritorDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EscritorClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EscritorPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EscritorClient<runtime.Types.Result.GetResult<Prisma.$EscritorPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	estado<T extends Prisma.EstadoDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EstadoDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EstadoPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	/**
 	 * Attaches callbacks for the resolution and/or rejection of the Promise.
 	 * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1806,35 +1379,22 @@ export interface Prisma__GlosarioClient<
 	 * @returns A Promise for the completion of which ever callback is executed.
 	 */
 	then<TResult1 = T, TResult2 = never>(
-		onfulfilled?:
-			| ((value: T) => TResult1 | PromiseLike<TResult1>)
-			| undefined
-			| null,
-		onrejected?:
-			| ((reason: any) => TResult2 | PromiseLike<TResult2>)
-			| undefined
-			| null,
+		onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+		onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
 	): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
 	/**
 	 * Attaches a callback for only the rejection of the Promise.
 	 * @param onrejected The callback to execute when the Promise is rejected.
 	 * @returns A Promise for the completion of the callback.
 	 */
-	catch<TResult = never>(
-		onrejected?:
-			| ((reason: any) => TResult | PromiseLike<TResult>)
-			| undefined
-			| null,
-	): runtime.Types.Utils.JsPromise<T | TResult>;
+	catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
 	/**
 	 * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
 	 * resolved value cannot be modified from the callback.
 	 * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
 	 * @returns A Promise for the completion of the callback.
 	 */
-	finally(
-		onfinally?: (() => void) | undefined | null,
-	): runtime.Types.Utils.JsPromise<T>;
+	finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
 }
 
 /**
@@ -1855,10 +1415,7 @@ export interface GlosarioFieldRefs {
 /**
  * Glosario findUnique
  */
-export type GlosarioFindUniqueArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type GlosarioFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Glosario
 	 */
@@ -1880,10 +1437,7 @@ export type GlosarioFindUniqueArgs<
 /**
  * Glosario findUniqueOrThrow
  */
-export type GlosarioFindUniqueOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type GlosarioFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Glosario
 	 */
@@ -1905,10 +1459,7 @@ export type GlosarioFindUniqueOrThrowArgs<
 /**
  * Glosario findFirst
  */
-export type GlosarioFindFirstArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type GlosarioFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Glosario
 	 */
@@ -1930,9 +1481,7 @@ export type GlosarioFindFirstArgs<
 	 *
 	 * Determine the order of Glosarios to fetch.
 	 */
-	orderBy?:
-		| Prisma.GlosarioOrderByWithRelationInput
-		| Prisma.GlosarioOrderByWithRelationInput[];
+	orderBy?: Prisma.GlosarioOrderByWithRelationInput | Prisma.GlosarioOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1962,10 +1511,7 @@ export type GlosarioFindFirstArgs<
 /**
  * Glosario findFirstOrThrow
  */
-export type GlosarioFindFirstOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type GlosarioFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Glosario
 	 */
@@ -1987,9 +1533,7 @@ export type GlosarioFindFirstOrThrowArgs<
 	 *
 	 * Determine the order of Glosarios to fetch.
 	 */
-	orderBy?:
-		| Prisma.GlosarioOrderByWithRelationInput
-		| Prisma.GlosarioOrderByWithRelationInput[];
+	orderBy?: Prisma.GlosarioOrderByWithRelationInput | Prisma.GlosarioOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -2019,10 +1563,7 @@ export type GlosarioFindFirstOrThrowArgs<
 /**
  * Glosario findMany
  */
-export type GlosarioFindManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type GlosarioFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Glosario
 	 */
@@ -2044,9 +1585,7 @@ export type GlosarioFindManyArgs<
 	 *
 	 * Determine the order of Glosarios to fetch.
 	 */
-	orderBy?:
-		| Prisma.GlosarioOrderByWithRelationInput
-		| Prisma.GlosarioOrderByWithRelationInput[];
+	orderBy?: Prisma.GlosarioOrderByWithRelationInput | Prisma.GlosarioOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -2076,10 +1615,7 @@ export type GlosarioFindManyArgs<
 /**
  * Glosario create
  */
-export type GlosarioCreateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type GlosarioCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Glosario
 	 */
@@ -2095,19 +1631,13 @@ export type GlosarioCreateArgs<
 	/**
 	 * The data needed to create a Glosario.
 	 */
-	data: Prisma.XOR<
-		Prisma.GlosarioCreateInput,
-		Prisma.GlosarioUncheckedCreateInput
-	>;
+	data: Prisma.XOR<Prisma.GlosarioCreateInput, Prisma.GlosarioUncheckedCreateInput>;
 };
 
 /**
  * Glosario createMany
  */
-export type GlosarioCreateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type GlosarioCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to create many Glosarios.
 	 */
@@ -2118,10 +1648,7 @@ export type GlosarioCreateManyArgs<
 /**
  * Glosario createManyAndReturn
  */
-export type GlosarioCreateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type GlosarioCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Glosario
 	 */
@@ -2144,10 +1671,7 @@ export type GlosarioCreateManyAndReturnArgs<
 /**
  * Glosario update
  */
-export type GlosarioUpdateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type GlosarioUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Glosario
 	 */
@@ -2163,10 +1687,7 @@ export type GlosarioUpdateArgs<
 	/**
 	 * The data needed to update a Glosario.
 	 */
-	data: Prisma.XOR<
-		Prisma.GlosarioUpdateInput,
-		Prisma.GlosarioUncheckedUpdateInput
-	>;
+	data: Prisma.XOR<Prisma.GlosarioUpdateInput, Prisma.GlosarioUncheckedUpdateInput>;
 	/**
 	 * Choose, which Glosario to update.
 	 */
@@ -2176,17 +1697,11 @@ export type GlosarioUpdateArgs<
 /**
  * Glosario updateMany
  */
-export type GlosarioUpdateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type GlosarioUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to update Glosarios.
 	 */
-	data: Prisma.XOR<
-		Prisma.GlosarioUpdateManyMutationInput,
-		Prisma.GlosarioUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.GlosarioUpdateManyMutationInput, Prisma.GlosarioUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Glosarios to update
 	 */
@@ -2200,10 +1715,7 @@ export type GlosarioUpdateManyArgs<
 /**
  * Glosario updateManyAndReturn
  */
-export type GlosarioUpdateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type GlosarioUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Glosario
 	 */
@@ -2215,10 +1727,7 @@ export type GlosarioUpdateManyAndReturnArgs<
 	/**
 	 * The data used to update Glosarios.
 	 */
-	data: Prisma.XOR<
-		Prisma.GlosarioUpdateManyMutationInput,
-		Prisma.GlosarioUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.GlosarioUpdateManyMutationInput, Prisma.GlosarioUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Glosarios to update
 	 */
@@ -2236,10 +1745,7 @@ export type GlosarioUpdateManyAndReturnArgs<
 /**
  * Glosario upsert
  */
-export type GlosarioUpsertArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type GlosarioUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Glosario
 	 */
@@ -2259,26 +1765,17 @@ export type GlosarioUpsertArgs<
 	/**
 	 * In case the Glosario found by the `where` argument doesn't exist, create a new Glosario with this data.
 	 */
-	create: Prisma.XOR<
-		Prisma.GlosarioCreateInput,
-		Prisma.GlosarioUncheckedCreateInput
-	>;
+	create: Prisma.XOR<Prisma.GlosarioCreateInput, Prisma.GlosarioUncheckedCreateInput>;
 	/**
 	 * In case the Glosario was found with the provided `where` argument, update it with this data.
 	 */
-	update: Prisma.XOR<
-		Prisma.GlosarioUpdateInput,
-		Prisma.GlosarioUncheckedUpdateInput
-	>;
+	update: Prisma.XOR<Prisma.GlosarioUpdateInput, Prisma.GlosarioUncheckedUpdateInput>;
 };
 
 /**
  * Glosario delete
  */
-export type GlosarioDeleteArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type GlosarioDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Glosario
 	 */
@@ -2300,10 +1797,7 @@ export type GlosarioDeleteArgs<
 /**
  * Glosario deleteMany
  */
-export type GlosarioDeleteManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type GlosarioDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Glosarios to delete
 	 */
@@ -2317,10 +1811,7 @@ export type GlosarioDeleteManyArgs<
 /**
  * Glosario without action
  */
-export type GlosarioDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type GlosarioDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Glosario
 	 */

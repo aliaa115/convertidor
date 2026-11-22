@@ -14,24 +14,11 @@ import { profileFormSchema } from "../schema/profile.schema";
 export type SaveProfileActionState = {
 	success: boolean;
 	message: string;
-	fieldErrors?: Partial<
-		Record<
-			| "email"
-			| "userName"
-			| "nombres"
-			| "apellidos"
-			| "alias"
-			| "fechaNacimiento"
-			| "avatarId",
-			string[]
-		>
-	>;
+	fieldErrors?: Partial<Record<"email" | "userName" | "nombres" | "apellidos" | "alias" | "fechaNacimiento" | "avatarId", string[]>>;
 };
 
 // Server Action que guarda los cambios del perfil.
-export async function saveProfileAction(
-	values: unknown,
-): Promise<SaveProfileActionState> {
+export async function saveProfileAction(values: unknown): Promise<SaveProfileActionState> {
 	// 1) Obtener el usuario actual autenticado.
 	// Si no hay sesión válida, no se puede guardar nada.
 	const currentUser = await getCurrentUser();
@@ -54,25 +41,14 @@ export async function saveProfileAction(
 	}
 
 	// 3) Extraer los datos ya validados.
-	const {
-		email,
-		userName,
-		nombres,
-		apellidos,
-		alias,
-		fechaNacimiento,
-		avatarId,
-	} = parsed.data;
+	const { email, userName, nombres, apellidos, alias, fechaNacimiento, avatarId } = parsed.data;
 
 	try {
 		// 4) Verificar si ya existe OTRO usuario con el mismo email o userName.
 		// El "id not currentUser.id" evita que el propio usuario choque consigo mismo.
 		const existingUser = await prisma.usuario.findFirst({
 			where: {
-				AND: [
-					{ OR: [{ email }, { userName }] },
-					{ id: { not: currentUser.id } },
-				],
+				AND: [{ OR: [{ email }, { userName }] }, { id: { not: currentUser.id } }],
 			},
 			// Solo traemos lo necesario para validar conflicto.
 			select: { id: true, email: true, userName: true },

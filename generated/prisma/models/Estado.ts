@@ -15,8 +15,7 @@ import type * as Prisma from "../internal/prismaNamespace.ts";
  * Model Estado
  *
  */
-export type EstadoModel =
-	runtime.Types.Result.DefaultSelection<Prisma.$EstadoPayload>;
+export type EstadoModel = runtime.Types.Result.DefaultSelection<Prisma.$EstadoPayload>;
 
 export type AggregateEstado = {
 	_count: EstadoCountAggregateOutputType | null;
@@ -98,10 +97,7 @@ export type EstadoCountAggregateInputType = {
 	_all?: true;
 };
 
-export type EstadoAggregateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Estado to aggregate.
 	 */
@@ -111,9 +107,7 @@ export type EstadoAggregateArgs<
 	 *
 	 * Determine the order of Estados to fetch.
 	 */
-	orderBy?:
-		| Prisma.EstadoOrderByWithRelationInput
-		| Prisma.EstadoOrderByWithRelationInput[];
+	orderBy?: Prisma.EstadoOrderByWithRelationInput | Prisma.EstadoOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -165,21 +159,12 @@ export type EstadoAggregateArgs<
 };
 
 export type GetEstadoAggregateType<T extends EstadoAggregateArgs> = {
-	[P in keyof T & keyof AggregateEstado]: P extends "_count" | "count"
-		? T[P] extends true
-			? number
-			: Prisma.GetScalarType<T[P], AggregateEstado[P]>
-		: Prisma.GetScalarType<T[P], AggregateEstado[P]>;
+	[P in keyof T & keyof AggregateEstado]: P extends "_count" | "count" ? (T[P] extends true ? number : Prisma.GetScalarType<T[P], AggregateEstado[P]>) : Prisma.GetScalarType<T[P], AggregateEstado[P]>;
 };
 
-export type EstadoGroupByArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.EstadoWhereInput;
-	orderBy?:
-		| Prisma.EstadoOrderByWithAggregationInput
-		| Prisma.EstadoOrderByWithAggregationInput[];
+	orderBy?: Prisma.EstadoOrderByWithAggregationInput | Prisma.EstadoOrderByWithAggregationInput[];
 	by: Prisma.EstadoScalarFieldEnum[] | Prisma.EstadoScalarFieldEnum;
 	having?: Prisma.EstadoScalarWhereWithAggregatesInput;
 	take?: number;
@@ -205,18 +190,17 @@ export type EstadoGroupByOutputType = {
 	_max: EstadoMaxAggregateOutputType | null;
 };
 
-export type GetEstadoGroupByPayload<T extends EstadoGroupByArgs> =
-	Prisma.PrismaPromise<
-		Array<
-			Prisma.PickEnumerable<EstadoGroupByOutputType, T["by"]> & {
-				[P in keyof T & keyof EstadoGroupByOutputType]: P extends "_count"
-					? T[P] extends boolean
-						? number
-						: Prisma.GetScalarType<T[P], EstadoGroupByOutputType[P]>
-					: Prisma.GetScalarType<T[P], EstadoGroupByOutputType[P]>;
-			}
-		>
-	>;
+export type GetEstadoGroupByPayload<T extends EstadoGroupByArgs> = Prisma.PrismaPromise<
+	Array<
+		Prisma.PickEnumerable<EstadoGroupByOutputType, T["by"]> & {
+			[P in keyof T & keyof EstadoGroupByOutputType]: P extends "_count"
+				? T[P] extends boolean
+					? number
+					: Prisma.GetScalarType<T[P], EstadoGroupByOutputType[P]>
+				: Prisma.GetScalarType<T[P], EstadoGroupByOutputType[P]>;
+		}
+	>
+>;
 
 export type EstadoWhereInput = {
 	AND?: Prisma.EstadoWhereInput | Prisma.EstadoWhereInput[];
@@ -329,13 +313,9 @@ export type EstadoOrderByWithAggregationInput = {
 };
 
 export type EstadoScalarWhereWithAggregatesInput = {
-	AND?:
-		| Prisma.EstadoScalarWhereWithAggregatesInput
-		| Prisma.EstadoScalarWhereWithAggregatesInput[];
+	AND?: Prisma.EstadoScalarWhereWithAggregatesInput | Prisma.EstadoScalarWhereWithAggregatesInput[];
 	OR?: Prisma.EstadoScalarWhereWithAggregatesInput[];
-	NOT?:
-		| Prisma.EstadoScalarWhereWithAggregatesInput
-		| Prisma.EstadoScalarWhereWithAggregatesInput[];
+	NOT?: Prisma.EstadoScalarWhereWithAggregatesInput | Prisma.EstadoScalarWhereWithAggregatesInput[];
 	id?: Prisma.IntWithAggregatesFilter<"Estado"> | number;
 	nombre?: Prisma.StringWithAggregatesFilter<"Estado"> | string;
 	color?: Prisma.StringNullableWithAggregatesFilter<"Estado"> | string | null;
@@ -545,523 +525,289 @@ export type IntFieldUpdateOperationsInput = {
 };
 
 export type EstadoCreateNestedOneWithoutCategoriasInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutCategoriasInput,
-		Prisma.EstadoUncheckedCreateWithoutCategoriasInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutCategoriasInput, Prisma.EstadoUncheckedCreateWithoutCategoriasInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutCategoriasInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 };
 
 export type EstadoUpdateOneRequiredWithoutCategoriasNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutCategoriasInput,
-		Prisma.EstadoUncheckedCreateWithoutCategoriasInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutCategoriasInput, Prisma.EstadoUncheckedCreateWithoutCategoriasInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutCategoriasInput;
 	upsert?: Prisma.EstadoUpsertWithoutCategoriasInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EstadoUpdateToOneWithWhereWithoutCategoriasInput,
-			Prisma.EstadoUpdateWithoutCategoriasInput
-		>,
-		Prisma.EstadoUncheckedUpdateWithoutCategoriasInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EstadoUpdateToOneWithWhereWithoutCategoriasInput, Prisma.EstadoUpdateWithoutCategoriasInput>, Prisma.EstadoUncheckedUpdateWithoutCategoriasInput>;
 };
 
 export type EstadoCreateNestedOneWithoutEtiquetasInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutEtiquetasInput,
-		Prisma.EstadoUncheckedCreateWithoutEtiquetasInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutEtiquetasInput, Prisma.EstadoUncheckedCreateWithoutEtiquetasInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutEtiquetasInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 };
 
 export type EstadoUpdateOneRequiredWithoutEtiquetasNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutEtiquetasInput,
-		Prisma.EstadoUncheckedCreateWithoutEtiquetasInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutEtiquetasInput, Prisma.EstadoUncheckedCreateWithoutEtiquetasInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutEtiquetasInput;
 	upsert?: Prisma.EstadoUpsertWithoutEtiquetasInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EstadoUpdateToOneWithWhereWithoutEtiquetasInput,
-			Prisma.EstadoUpdateWithoutEtiquetasInput
-		>,
-		Prisma.EstadoUncheckedUpdateWithoutEtiquetasInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EstadoUpdateToOneWithWhereWithoutEtiquetasInput, Prisma.EstadoUpdateWithoutEtiquetasInput>, Prisma.EstadoUncheckedUpdateWithoutEtiquetasInput>;
 };
 
 export type EstadoCreateNestedOneWithoutTiposInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutTiposInput,
-		Prisma.EstadoUncheckedCreateWithoutTiposInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutTiposInput, Prisma.EstadoUncheckedCreateWithoutTiposInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutTiposInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 };
 
 export type EstadoUpdateOneRequiredWithoutTiposNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutTiposInput,
-		Prisma.EstadoUncheckedCreateWithoutTiposInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutTiposInput, Prisma.EstadoUncheckedCreateWithoutTiposInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutTiposInput;
 	upsert?: Prisma.EstadoUpsertWithoutTiposInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EstadoUpdateToOneWithWhereWithoutTiposInput,
-			Prisma.EstadoUpdateWithoutTiposInput
-		>,
-		Prisma.EstadoUncheckedUpdateWithoutTiposInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EstadoUpdateToOneWithWhereWithoutTiposInput, Prisma.EstadoUpdateWithoutTiposInput>, Prisma.EstadoUncheckedUpdateWithoutTiposInput>;
 };
 
 export type EstadoCreateNestedOneWithoutUsuariosInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutUsuariosInput,
-		Prisma.EstadoUncheckedCreateWithoutUsuariosInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutUsuariosInput, Prisma.EstadoUncheckedCreateWithoutUsuariosInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutUsuariosInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 };
 
 export type EstadoUpdateOneRequiredWithoutUsuariosNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutUsuariosInput,
-		Prisma.EstadoUncheckedCreateWithoutUsuariosInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutUsuariosInput, Prisma.EstadoUncheckedCreateWithoutUsuariosInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutUsuariosInput;
 	upsert?: Prisma.EstadoUpsertWithoutUsuariosInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EstadoUpdateToOneWithWhereWithoutUsuariosInput,
-			Prisma.EstadoUpdateWithoutUsuariosInput
-		>,
-		Prisma.EstadoUncheckedUpdateWithoutUsuariosInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EstadoUpdateToOneWithWhereWithoutUsuariosInput, Prisma.EstadoUpdateWithoutUsuariosInput>, Prisma.EstadoUncheckedUpdateWithoutUsuariosInput>;
 };
 
 export type EstadoCreateNestedOneWithoutConfiguracionesInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutConfiguracionesInput,
-		Prisma.EstadoUncheckedCreateWithoutConfiguracionesInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutConfiguracionesInput, Prisma.EstadoUncheckedCreateWithoutConfiguracionesInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutConfiguracionesInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 };
 
 export type EstadoUpdateOneRequiredWithoutConfiguracionesNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutConfiguracionesInput,
-		Prisma.EstadoUncheckedCreateWithoutConfiguracionesInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutConfiguracionesInput, Prisma.EstadoUncheckedCreateWithoutConfiguracionesInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutConfiguracionesInput;
 	upsert?: Prisma.EstadoUpsertWithoutConfiguracionesInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EstadoUpdateToOneWithWhereWithoutConfiguracionesInput,
-			Prisma.EstadoUpdateWithoutConfiguracionesInput
-		>,
+		Prisma.XOR<Prisma.EstadoUpdateToOneWithWhereWithoutConfiguracionesInput, Prisma.EstadoUpdateWithoutConfiguracionesInput>,
 		Prisma.EstadoUncheckedUpdateWithoutConfiguracionesInput
 	>;
 };
 
 export type EstadoCreateNestedOneWithoutEscritoresInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutEscritoresInput,
-		Prisma.EstadoUncheckedCreateWithoutEscritoresInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutEscritoresInput, Prisma.EstadoUncheckedCreateWithoutEscritoresInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutEscritoresInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 };
 
 export type EstadoUpdateOneRequiredWithoutEscritoresNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutEscritoresInput,
-		Prisma.EstadoUncheckedCreateWithoutEscritoresInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutEscritoresInput, Prisma.EstadoUncheckedCreateWithoutEscritoresInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutEscritoresInput;
 	upsert?: Prisma.EstadoUpsertWithoutEscritoresInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EstadoUpdateToOneWithWhereWithoutEscritoresInput,
-			Prisma.EstadoUpdateWithoutEscritoresInput
-		>,
-		Prisma.EstadoUncheckedUpdateWithoutEscritoresInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EstadoUpdateToOneWithWhereWithoutEscritoresInput, Prisma.EstadoUpdateWithoutEscritoresInput>, Prisma.EstadoUncheckedUpdateWithoutEscritoresInput>;
 };
 
 export type EstadoCreateNestedOneWithoutIdiomaInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutIdiomaInput,
-		Prisma.EstadoUncheckedCreateWithoutIdiomaInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutIdiomaInput, Prisma.EstadoUncheckedCreateWithoutIdiomaInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutIdiomaInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 };
 
 export type EstadoUpdateOneRequiredWithoutIdiomaNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutIdiomaInput,
-		Prisma.EstadoUncheckedCreateWithoutIdiomaInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutIdiomaInput, Prisma.EstadoUncheckedCreateWithoutIdiomaInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutIdiomaInput;
 	upsert?: Prisma.EstadoUpsertWithoutIdiomaInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EstadoUpdateToOneWithWhereWithoutIdiomaInput,
-			Prisma.EstadoUpdateWithoutIdiomaInput
-		>,
-		Prisma.EstadoUncheckedUpdateWithoutIdiomaInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EstadoUpdateToOneWithWhereWithoutIdiomaInput, Prisma.EstadoUpdateWithoutIdiomaInput>, Prisma.EstadoUncheckedUpdateWithoutIdiomaInput>;
 };
 
 export type EstadoCreateNestedOneWithoutLibrosInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutLibrosInput,
-		Prisma.EstadoUncheckedCreateWithoutLibrosInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutLibrosInput, Prisma.EstadoUncheckedCreateWithoutLibrosInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutLibrosInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 };
 
 export type EstadoUpdateOneRequiredWithoutLibrosNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutLibrosInput,
-		Prisma.EstadoUncheckedCreateWithoutLibrosInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutLibrosInput, Prisma.EstadoUncheckedCreateWithoutLibrosInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutLibrosInput;
 	upsert?: Prisma.EstadoUpsertWithoutLibrosInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EstadoUpdateToOneWithWhereWithoutLibrosInput,
-			Prisma.EstadoUpdateWithoutLibrosInput
-		>,
-		Prisma.EstadoUncheckedUpdateWithoutLibrosInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EstadoUpdateToOneWithWhereWithoutLibrosInput, Prisma.EstadoUpdateWithoutLibrosInput>, Prisma.EstadoUncheckedUpdateWithoutLibrosInput>;
 };
 
 export type EstadoCreateNestedOneWithoutLibroCategoriasInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutLibroCategoriasInput,
-		Prisma.EstadoUncheckedCreateWithoutLibroCategoriasInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutLibroCategoriasInput, Prisma.EstadoUncheckedCreateWithoutLibroCategoriasInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutLibroCategoriasInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 };
 
 export type EstadoUpdateOneRequiredWithoutLibroCategoriasNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutLibroCategoriasInput,
-		Prisma.EstadoUncheckedCreateWithoutLibroCategoriasInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutLibroCategoriasInput, Prisma.EstadoUncheckedCreateWithoutLibroCategoriasInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutLibroCategoriasInput;
 	upsert?: Prisma.EstadoUpsertWithoutLibroCategoriasInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EstadoUpdateToOneWithWhereWithoutLibroCategoriasInput,
-			Prisma.EstadoUpdateWithoutLibroCategoriasInput
-		>,
+		Prisma.XOR<Prisma.EstadoUpdateToOneWithWhereWithoutLibroCategoriasInput, Prisma.EstadoUpdateWithoutLibroCategoriasInput>,
 		Prisma.EstadoUncheckedUpdateWithoutLibroCategoriasInput
 	>;
 };
 
 export type EstadoCreateNestedOneWithoutLibroEtiquetasInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutLibroEtiquetasInput,
-		Prisma.EstadoUncheckedCreateWithoutLibroEtiquetasInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutLibroEtiquetasInput, Prisma.EstadoUncheckedCreateWithoutLibroEtiquetasInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutLibroEtiquetasInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 };
 
 export type EstadoUpdateOneRequiredWithoutLibroEtiquetasNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutLibroEtiquetasInput,
-		Prisma.EstadoUncheckedCreateWithoutLibroEtiquetasInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutLibroEtiquetasInput, Prisma.EstadoUncheckedCreateWithoutLibroEtiquetasInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutLibroEtiquetasInput;
 	upsert?: Prisma.EstadoUpsertWithoutLibroEtiquetasInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EstadoUpdateToOneWithWhereWithoutLibroEtiquetasInput,
-			Prisma.EstadoUpdateWithoutLibroEtiquetasInput
-		>,
-		Prisma.EstadoUncheckedUpdateWithoutLibroEtiquetasInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EstadoUpdateToOneWithWhereWithoutLibroEtiquetasInput, Prisma.EstadoUpdateWithoutLibroEtiquetasInput>, Prisma.EstadoUncheckedUpdateWithoutLibroEtiquetasInput>;
 };
 
 export type EstadoCreateNestedOneWithoutCapitulosInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutCapitulosInput,
-		Prisma.EstadoUncheckedCreateWithoutCapitulosInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutCapitulosInput, Prisma.EstadoUncheckedCreateWithoutCapitulosInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutCapitulosInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 };
 
 export type EstadoUpdateOneRequiredWithoutCapitulosNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutCapitulosInput,
-		Prisma.EstadoUncheckedCreateWithoutCapitulosInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutCapitulosInput, Prisma.EstadoUncheckedCreateWithoutCapitulosInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutCapitulosInput;
 	upsert?: Prisma.EstadoUpsertWithoutCapitulosInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EstadoUpdateToOneWithWhereWithoutCapitulosInput,
-			Prisma.EstadoUpdateWithoutCapitulosInput
-		>,
-		Prisma.EstadoUncheckedUpdateWithoutCapitulosInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EstadoUpdateToOneWithWhereWithoutCapitulosInput, Prisma.EstadoUpdateWithoutCapitulosInput>, Prisma.EstadoUncheckedUpdateWithoutCapitulosInput>;
 };
 
 export type EstadoCreateNestedOneWithoutParrafosInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutParrafosInput,
-		Prisma.EstadoUncheckedCreateWithoutParrafosInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutParrafosInput, Prisma.EstadoUncheckedCreateWithoutParrafosInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutParrafosInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 };
 
 export type EstadoUpdateOneRequiredWithoutParrafosNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutParrafosInput,
-		Prisma.EstadoUncheckedCreateWithoutParrafosInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutParrafosInput, Prisma.EstadoUncheckedCreateWithoutParrafosInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutParrafosInput;
 	upsert?: Prisma.EstadoUpsertWithoutParrafosInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EstadoUpdateToOneWithWhereWithoutParrafosInput,
-			Prisma.EstadoUpdateWithoutParrafosInput
-		>,
-		Prisma.EstadoUncheckedUpdateWithoutParrafosInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EstadoUpdateToOneWithWhereWithoutParrafosInput, Prisma.EstadoUpdateWithoutParrafosInput>, Prisma.EstadoUncheckedUpdateWithoutParrafosInput>;
 };
 
 export type EstadoCreateNestedOneWithoutComentariosInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutComentariosInput,
-		Prisma.EstadoUncheckedCreateWithoutComentariosInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutComentariosInput, Prisma.EstadoUncheckedCreateWithoutComentariosInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutComentariosInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 };
 
 export type EstadoUpdateOneRequiredWithoutComentariosNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutComentariosInput,
-		Prisma.EstadoUncheckedCreateWithoutComentariosInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutComentariosInput, Prisma.EstadoUncheckedCreateWithoutComentariosInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutComentariosInput;
 	upsert?: Prisma.EstadoUpsertWithoutComentariosInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EstadoUpdateToOneWithWhereWithoutComentariosInput,
-			Prisma.EstadoUpdateWithoutComentariosInput
-		>,
-		Prisma.EstadoUncheckedUpdateWithoutComentariosInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EstadoUpdateToOneWithWhereWithoutComentariosInput, Prisma.EstadoUpdateWithoutComentariosInput>, Prisma.EstadoUncheckedUpdateWithoutComentariosInput>;
 };
 
 export type EstadoCreateNestedOneWithoutFavoritosInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutFavoritosInput,
-		Prisma.EstadoUncheckedCreateWithoutFavoritosInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutFavoritosInput, Prisma.EstadoUncheckedCreateWithoutFavoritosInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutFavoritosInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 };
 
 export type EstadoUpdateOneRequiredWithoutFavoritosNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutFavoritosInput,
-		Prisma.EstadoUncheckedCreateWithoutFavoritosInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutFavoritosInput, Prisma.EstadoUncheckedCreateWithoutFavoritosInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutFavoritosInput;
 	upsert?: Prisma.EstadoUpsertWithoutFavoritosInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EstadoUpdateToOneWithWhereWithoutFavoritosInput,
-			Prisma.EstadoUpdateWithoutFavoritosInput
-		>,
-		Prisma.EstadoUncheckedUpdateWithoutFavoritosInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EstadoUpdateToOneWithWhereWithoutFavoritosInput, Prisma.EstadoUpdateWithoutFavoritosInput>, Prisma.EstadoUncheckedUpdateWithoutFavoritosInput>;
 };
 
 export type EstadoCreateNestedOneWithoutListasInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutListasInput,
-		Prisma.EstadoUncheckedCreateWithoutListasInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutListasInput, Prisma.EstadoUncheckedCreateWithoutListasInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutListasInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 };
 
 export type EstadoUpdateOneRequiredWithoutListasNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutListasInput,
-		Prisma.EstadoUncheckedCreateWithoutListasInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutListasInput, Prisma.EstadoUncheckedCreateWithoutListasInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutListasInput;
 	upsert?: Prisma.EstadoUpsertWithoutListasInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EstadoUpdateToOneWithWhereWithoutListasInput,
-			Prisma.EstadoUpdateWithoutListasInput
-		>,
-		Prisma.EstadoUncheckedUpdateWithoutListasInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EstadoUpdateToOneWithWhereWithoutListasInput, Prisma.EstadoUpdateWithoutListasInput>, Prisma.EstadoUncheckedUpdateWithoutListasInput>;
 };
 
 export type EstadoCreateNestedOneWithoutListaLibrosInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutListaLibrosInput,
-		Prisma.EstadoUncheckedCreateWithoutListaLibrosInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutListaLibrosInput, Prisma.EstadoUncheckedCreateWithoutListaLibrosInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutListaLibrosInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 };
 
 export type EstadoUpdateOneRequiredWithoutListaLibrosNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutListaLibrosInput,
-		Prisma.EstadoUncheckedCreateWithoutListaLibrosInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutListaLibrosInput, Prisma.EstadoUncheckedCreateWithoutListaLibrosInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutListaLibrosInput;
 	upsert?: Prisma.EstadoUpsertWithoutListaLibrosInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EstadoUpdateToOneWithWhereWithoutListaLibrosInput,
-			Prisma.EstadoUpdateWithoutListaLibrosInput
-		>,
-		Prisma.EstadoUncheckedUpdateWithoutListaLibrosInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EstadoUpdateToOneWithWhereWithoutListaLibrosInput, Prisma.EstadoUpdateWithoutListaLibrosInput>, Prisma.EstadoUncheckedUpdateWithoutListaLibrosInput>;
 };
 
 export type EstadoCreateNestedOneWithoutGlosariosInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutGlosariosInput,
-		Prisma.EstadoUncheckedCreateWithoutGlosariosInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutGlosariosInput, Prisma.EstadoUncheckedCreateWithoutGlosariosInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutGlosariosInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 };
 
 export type EstadoUpdateOneRequiredWithoutGlosariosNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutGlosariosInput,
-		Prisma.EstadoUncheckedCreateWithoutGlosariosInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutGlosariosInput, Prisma.EstadoUncheckedCreateWithoutGlosariosInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutGlosariosInput;
 	upsert?: Prisma.EstadoUpsertWithoutGlosariosInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EstadoUpdateToOneWithWhereWithoutGlosariosInput,
-			Prisma.EstadoUpdateWithoutGlosariosInput
-		>,
-		Prisma.EstadoUncheckedUpdateWithoutGlosariosInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EstadoUpdateToOneWithWhereWithoutGlosariosInput, Prisma.EstadoUpdateWithoutGlosariosInput>, Prisma.EstadoUncheckedUpdateWithoutGlosariosInput>;
 };
 
 export type EstadoCreateNestedOneWithoutNotasAutorInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutNotasAutorInput,
-		Prisma.EstadoUncheckedCreateWithoutNotasAutorInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutNotasAutorInput, Prisma.EstadoUncheckedCreateWithoutNotasAutorInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutNotasAutorInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 };
 
 export type EstadoUpdateOneRequiredWithoutNotasAutorNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutNotasAutorInput,
-		Prisma.EstadoUncheckedCreateWithoutNotasAutorInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutNotasAutorInput, Prisma.EstadoUncheckedCreateWithoutNotasAutorInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutNotasAutorInput;
 	upsert?: Prisma.EstadoUpsertWithoutNotasAutorInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EstadoUpdateToOneWithWhereWithoutNotasAutorInput,
-			Prisma.EstadoUpdateWithoutNotasAutorInput
-		>,
-		Prisma.EstadoUncheckedUpdateWithoutNotasAutorInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EstadoUpdateToOneWithWhereWithoutNotasAutorInput, Prisma.EstadoUpdateWithoutNotasAutorInput>, Prisma.EstadoUncheckedUpdateWithoutNotasAutorInput>;
 };
 
 export type EstadoCreateNestedOneWithoutMarcadoresInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutMarcadoresInput,
-		Prisma.EstadoUncheckedCreateWithoutMarcadoresInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutMarcadoresInput, Prisma.EstadoUncheckedCreateWithoutMarcadoresInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutMarcadoresInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 };
 
 export type EstadoUpdateOneRequiredWithoutMarcadoresNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutMarcadoresInput,
-		Prisma.EstadoUncheckedCreateWithoutMarcadoresInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutMarcadoresInput, Prisma.EstadoUncheckedCreateWithoutMarcadoresInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutMarcadoresInput;
 	upsert?: Prisma.EstadoUpsertWithoutMarcadoresInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EstadoUpdateToOneWithWhereWithoutMarcadoresInput,
-			Prisma.EstadoUpdateWithoutMarcadoresInput
-		>,
-		Prisma.EstadoUncheckedUpdateWithoutMarcadoresInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EstadoUpdateToOneWithWhereWithoutMarcadoresInput, Prisma.EstadoUpdateWithoutMarcadoresInput>, Prisma.EstadoUncheckedUpdateWithoutMarcadoresInput>;
 };
 
 export type EstadoCreateNestedOneWithoutSeguirUsuariosInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutSeguirUsuariosInput,
-		Prisma.EstadoUncheckedCreateWithoutSeguirUsuariosInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutSeguirUsuariosInput, Prisma.EstadoUncheckedCreateWithoutSeguirUsuariosInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutSeguirUsuariosInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
 };
 
 export type EstadoUpdateOneRequiredWithoutSeguirUsuariosNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EstadoCreateWithoutSeguirUsuariosInput,
-		Prisma.EstadoUncheckedCreateWithoutSeguirUsuariosInput
-	>;
+	create?: Prisma.XOR<Prisma.EstadoCreateWithoutSeguirUsuariosInput, Prisma.EstadoUncheckedCreateWithoutSeguirUsuariosInput>;
 	connectOrCreate?: Prisma.EstadoCreateOrConnectWithoutSeguirUsuariosInput;
 	upsert?: Prisma.EstadoUpsertWithoutSeguirUsuariosInput;
 	connect?: Prisma.EstadoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EstadoUpdateToOneWithWhereWithoutSeguirUsuariosInput,
-			Prisma.EstadoUpdateWithoutSeguirUsuariosInput
-		>,
-		Prisma.EstadoUncheckedUpdateWithoutSeguirUsuariosInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EstadoUpdateToOneWithWhereWithoutSeguirUsuariosInput, Prisma.EstadoUpdateWithoutSeguirUsuariosInput>, Prisma.EstadoUncheckedUpdateWithoutSeguirUsuariosInput>;
 };
 
 export type EstadoCreateWithoutCategoriasInput = {
@@ -1121,30 +867,18 @@ export type EstadoUncheckedCreateWithoutCategoriasInput = {
 
 export type EstadoCreateOrConnectWithoutCategoriasInput = {
 	where: Prisma.EstadoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutCategoriasInput,
-		Prisma.EstadoUncheckedCreateWithoutCategoriasInput
-	>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutCategoriasInput, Prisma.EstadoUncheckedCreateWithoutCategoriasInput>;
 };
 
 export type EstadoUpsertWithoutCategoriasInput = {
-	update: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutCategoriasInput,
-		Prisma.EstadoUncheckedUpdateWithoutCategoriasInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutCategoriasInput,
-		Prisma.EstadoUncheckedCreateWithoutCategoriasInput
-	>;
+	update: Prisma.XOR<Prisma.EstadoUpdateWithoutCategoriasInput, Prisma.EstadoUncheckedUpdateWithoutCategoriasInput>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutCategoriasInput, Prisma.EstadoUncheckedCreateWithoutCategoriasInput>;
 	where?: Prisma.EstadoWhereInput;
 };
 
 export type EstadoUpdateToOneWithWhereWithoutCategoriasInput = {
 	where?: Prisma.EstadoWhereInput;
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutCategoriasInput,
-		Prisma.EstadoUncheckedUpdateWithoutCategoriasInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateWithoutCategoriasInput, Prisma.EstadoUncheckedUpdateWithoutCategoriasInput>;
 };
 
 export type EstadoUpdateWithoutCategoriasInput = {
@@ -1259,30 +993,18 @@ export type EstadoUncheckedCreateWithoutEtiquetasInput = {
 
 export type EstadoCreateOrConnectWithoutEtiquetasInput = {
 	where: Prisma.EstadoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutEtiquetasInput,
-		Prisma.EstadoUncheckedCreateWithoutEtiquetasInput
-	>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutEtiquetasInput, Prisma.EstadoUncheckedCreateWithoutEtiquetasInput>;
 };
 
 export type EstadoUpsertWithoutEtiquetasInput = {
-	update: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutEtiquetasInput,
-		Prisma.EstadoUncheckedUpdateWithoutEtiquetasInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutEtiquetasInput,
-		Prisma.EstadoUncheckedCreateWithoutEtiquetasInput
-	>;
+	update: Prisma.XOR<Prisma.EstadoUpdateWithoutEtiquetasInput, Prisma.EstadoUncheckedUpdateWithoutEtiquetasInput>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutEtiquetasInput, Prisma.EstadoUncheckedCreateWithoutEtiquetasInput>;
 	where?: Prisma.EstadoWhereInput;
 };
 
 export type EstadoUpdateToOneWithWhereWithoutEtiquetasInput = {
 	where?: Prisma.EstadoWhereInput;
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutEtiquetasInput,
-		Prisma.EstadoUncheckedUpdateWithoutEtiquetasInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateWithoutEtiquetasInput, Prisma.EstadoUncheckedUpdateWithoutEtiquetasInput>;
 };
 
 export type EstadoUpdateWithoutEtiquetasInput = {
@@ -1397,30 +1119,18 @@ export type EstadoUncheckedCreateWithoutTiposInput = {
 
 export type EstadoCreateOrConnectWithoutTiposInput = {
 	where: Prisma.EstadoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutTiposInput,
-		Prisma.EstadoUncheckedCreateWithoutTiposInput
-	>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutTiposInput, Prisma.EstadoUncheckedCreateWithoutTiposInput>;
 };
 
 export type EstadoUpsertWithoutTiposInput = {
-	update: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutTiposInput,
-		Prisma.EstadoUncheckedUpdateWithoutTiposInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutTiposInput,
-		Prisma.EstadoUncheckedCreateWithoutTiposInput
-	>;
+	update: Prisma.XOR<Prisma.EstadoUpdateWithoutTiposInput, Prisma.EstadoUncheckedUpdateWithoutTiposInput>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutTiposInput, Prisma.EstadoUncheckedCreateWithoutTiposInput>;
 	where?: Prisma.EstadoWhereInput;
 };
 
 export type EstadoUpdateToOneWithWhereWithoutTiposInput = {
 	where?: Prisma.EstadoWhereInput;
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutTiposInput,
-		Prisma.EstadoUncheckedUpdateWithoutTiposInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateWithoutTiposInput, Prisma.EstadoUncheckedUpdateWithoutTiposInput>;
 };
 
 export type EstadoUpdateWithoutTiposInput = {
@@ -1535,30 +1245,18 @@ export type EstadoUncheckedCreateWithoutUsuariosInput = {
 
 export type EstadoCreateOrConnectWithoutUsuariosInput = {
 	where: Prisma.EstadoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutUsuariosInput,
-		Prisma.EstadoUncheckedCreateWithoutUsuariosInput
-	>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutUsuariosInput, Prisma.EstadoUncheckedCreateWithoutUsuariosInput>;
 };
 
 export type EstadoUpsertWithoutUsuariosInput = {
-	update: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutUsuariosInput,
-		Prisma.EstadoUncheckedUpdateWithoutUsuariosInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutUsuariosInput,
-		Prisma.EstadoUncheckedCreateWithoutUsuariosInput
-	>;
+	update: Prisma.XOR<Prisma.EstadoUpdateWithoutUsuariosInput, Prisma.EstadoUncheckedUpdateWithoutUsuariosInput>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutUsuariosInput, Prisma.EstadoUncheckedCreateWithoutUsuariosInput>;
 	where?: Prisma.EstadoWhereInput;
 };
 
 export type EstadoUpdateToOneWithWhereWithoutUsuariosInput = {
 	where?: Prisma.EstadoWhereInput;
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutUsuariosInput,
-		Prisma.EstadoUncheckedUpdateWithoutUsuariosInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateWithoutUsuariosInput, Prisma.EstadoUncheckedUpdateWithoutUsuariosInput>;
 };
 
 export type EstadoUpdateWithoutUsuariosInput = {
@@ -1673,30 +1371,18 @@ export type EstadoUncheckedCreateWithoutConfiguracionesInput = {
 
 export type EstadoCreateOrConnectWithoutConfiguracionesInput = {
 	where: Prisma.EstadoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutConfiguracionesInput,
-		Prisma.EstadoUncheckedCreateWithoutConfiguracionesInput
-	>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutConfiguracionesInput, Prisma.EstadoUncheckedCreateWithoutConfiguracionesInput>;
 };
 
 export type EstadoUpsertWithoutConfiguracionesInput = {
-	update: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutConfiguracionesInput,
-		Prisma.EstadoUncheckedUpdateWithoutConfiguracionesInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutConfiguracionesInput,
-		Prisma.EstadoUncheckedCreateWithoutConfiguracionesInput
-	>;
+	update: Prisma.XOR<Prisma.EstadoUpdateWithoutConfiguracionesInput, Prisma.EstadoUncheckedUpdateWithoutConfiguracionesInput>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutConfiguracionesInput, Prisma.EstadoUncheckedCreateWithoutConfiguracionesInput>;
 	where?: Prisma.EstadoWhereInput;
 };
 
 export type EstadoUpdateToOneWithWhereWithoutConfiguracionesInput = {
 	where?: Prisma.EstadoWhereInput;
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutConfiguracionesInput,
-		Prisma.EstadoUncheckedUpdateWithoutConfiguracionesInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateWithoutConfiguracionesInput, Prisma.EstadoUncheckedUpdateWithoutConfiguracionesInput>;
 };
 
 export type EstadoUpdateWithoutConfiguracionesInput = {
@@ -1811,30 +1497,18 @@ export type EstadoUncheckedCreateWithoutEscritoresInput = {
 
 export type EstadoCreateOrConnectWithoutEscritoresInput = {
 	where: Prisma.EstadoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutEscritoresInput,
-		Prisma.EstadoUncheckedCreateWithoutEscritoresInput
-	>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutEscritoresInput, Prisma.EstadoUncheckedCreateWithoutEscritoresInput>;
 };
 
 export type EstadoUpsertWithoutEscritoresInput = {
-	update: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutEscritoresInput,
-		Prisma.EstadoUncheckedUpdateWithoutEscritoresInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutEscritoresInput,
-		Prisma.EstadoUncheckedCreateWithoutEscritoresInput
-	>;
+	update: Prisma.XOR<Prisma.EstadoUpdateWithoutEscritoresInput, Prisma.EstadoUncheckedUpdateWithoutEscritoresInput>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutEscritoresInput, Prisma.EstadoUncheckedCreateWithoutEscritoresInput>;
 	where?: Prisma.EstadoWhereInput;
 };
 
 export type EstadoUpdateToOneWithWhereWithoutEscritoresInput = {
 	where?: Prisma.EstadoWhereInput;
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutEscritoresInput,
-		Prisma.EstadoUncheckedUpdateWithoutEscritoresInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateWithoutEscritoresInput, Prisma.EstadoUncheckedUpdateWithoutEscritoresInput>;
 };
 
 export type EstadoUpdateWithoutEscritoresInput = {
@@ -1949,30 +1623,18 @@ export type EstadoUncheckedCreateWithoutIdiomaInput = {
 
 export type EstadoCreateOrConnectWithoutIdiomaInput = {
 	where: Prisma.EstadoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutIdiomaInput,
-		Prisma.EstadoUncheckedCreateWithoutIdiomaInput
-	>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutIdiomaInput, Prisma.EstadoUncheckedCreateWithoutIdiomaInput>;
 };
 
 export type EstadoUpsertWithoutIdiomaInput = {
-	update: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutIdiomaInput,
-		Prisma.EstadoUncheckedUpdateWithoutIdiomaInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutIdiomaInput,
-		Prisma.EstadoUncheckedCreateWithoutIdiomaInput
-	>;
+	update: Prisma.XOR<Prisma.EstadoUpdateWithoutIdiomaInput, Prisma.EstadoUncheckedUpdateWithoutIdiomaInput>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutIdiomaInput, Prisma.EstadoUncheckedCreateWithoutIdiomaInput>;
 	where?: Prisma.EstadoWhereInput;
 };
 
 export type EstadoUpdateToOneWithWhereWithoutIdiomaInput = {
 	where?: Prisma.EstadoWhereInput;
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutIdiomaInput,
-		Prisma.EstadoUncheckedUpdateWithoutIdiomaInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateWithoutIdiomaInput, Prisma.EstadoUncheckedUpdateWithoutIdiomaInput>;
 };
 
 export type EstadoUpdateWithoutIdiomaInput = {
@@ -2087,30 +1749,18 @@ export type EstadoUncheckedCreateWithoutLibrosInput = {
 
 export type EstadoCreateOrConnectWithoutLibrosInput = {
 	where: Prisma.EstadoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutLibrosInput,
-		Prisma.EstadoUncheckedCreateWithoutLibrosInput
-	>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutLibrosInput, Prisma.EstadoUncheckedCreateWithoutLibrosInput>;
 };
 
 export type EstadoUpsertWithoutLibrosInput = {
-	update: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutLibrosInput,
-		Prisma.EstadoUncheckedUpdateWithoutLibrosInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutLibrosInput,
-		Prisma.EstadoUncheckedCreateWithoutLibrosInput
-	>;
+	update: Prisma.XOR<Prisma.EstadoUpdateWithoutLibrosInput, Prisma.EstadoUncheckedUpdateWithoutLibrosInput>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutLibrosInput, Prisma.EstadoUncheckedCreateWithoutLibrosInput>;
 	where?: Prisma.EstadoWhereInput;
 };
 
 export type EstadoUpdateToOneWithWhereWithoutLibrosInput = {
 	where?: Prisma.EstadoWhereInput;
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutLibrosInput,
-		Prisma.EstadoUncheckedUpdateWithoutLibrosInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateWithoutLibrosInput, Prisma.EstadoUncheckedUpdateWithoutLibrosInput>;
 };
 
 export type EstadoUpdateWithoutLibrosInput = {
@@ -2225,30 +1875,18 @@ export type EstadoUncheckedCreateWithoutLibroCategoriasInput = {
 
 export type EstadoCreateOrConnectWithoutLibroCategoriasInput = {
 	where: Prisma.EstadoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutLibroCategoriasInput,
-		Prisma.EstadoUncheckedCreateWithoutLibroCategoriasInput
-	>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutLibroCategoriasInput, Prisma.EstadoUncheckedCreateWithoutLibroCategoriasInput>;
 };
 
 export type EstadoUpsertWithoutLibroCategoriasInput = {
-	update: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutLibroCategoriasInput,
-		Prisma.EstadoUncheckedUpdateWithoutLibroCategoriasInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutLibroCategoriasInput,
-		Prisma.EstadoUncheckedCreateWithoutLibroCategoriasInput
-	>;
+	update: Prisma.XOR<Prisma.EstadoUpdateWithoutLibroCategoriasInput, Prisma.EstadoUncheckedUpdateWithoutLibroCategoriasInput>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutLibroCategoriasInput, Prisma.EstadoUncheckedCreateWithoutLibroCategoriasInput>;
 	where?: Prisma.EstadoWhereInput;
 };
 
 export type EstadoUpdateToOneWithWhereWithoutLibroCategoriasInput = {
 	where?: Prisma.EstadoWhereInput;
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutLibroCategoriasInput,
-		Prisma.EstadoUncheckedUpdateWithoutLibroCategoriasInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateWithoutLibroCategoriasInput, Prisma.EstadoUncheckedUpdateWithoutLibroCategoriasInput>;
 };
 
 export type EstadoUpdateWithoutLibroCategoriasInput = {
@@ -2363,30 +2001,18 @@ export type EstadoUncheckedCreateWithoutLibroEtiquetasInput = {
 
 export type EstadoCreateOrConnectWithoutLibroEtiquetasInput = {
 	where: Prisma.EstadoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutLibroEtiquetasInput,
-		Prisma.EstadoUncheckedCreateWithoutLibroEtiquetasInput
-	>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutLibroEtiquetasInput, Prisma.EstadoUncheckedCreateWithoutLibroEtiquetasInput>;
 };
 
 export type EstadoUpsertWithoutLibroEtiquetasInput = {
-	update: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutLibroEtiquetasInput,
-		Prisma.EstadoUncheckedUpdateWithoutLibroEtiquetasInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutLibroEtiquetasInput,
-		Prisma.EstadoUncheckedCreateWithoutLibroEtiquetasInput
-	>;
+	update: Prisma.XOR<Prisma.EstadoUpdateWithoutLibroEtiquetasInput, Prisma.EstadoUncheckedUpdateWithoutLibroEtiquetasInput>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutLibroEtiquetasInput, Prisma.EstadoUncheckedCreateWithoutLibroEtiquetasInput>;
 	where?: Prisma.EstadoWhereInput;
 };
 
 export type EstadoUpdateToOneWithWhereWithoutLibroEtiquetasInput = {
 	where?: Prisma.EstadoWhereInput;
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutLibroEtiquetasInput,
-		Prisma.EstadoUncheckedUpdateWithoutLibroEtiquetasInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateWithoutLibroEtiquetasInput, Prisma.EstadoUncheckedUpdateWithoutLibroEtiquetasInput>;
 };
 
 export type EstadoUpdateWithoutLibroEtiquetasInput = {
@@ -2501,30 +2127,18 @@ export type EstadoUncheckedCreateWithoutCapitulosInput = {
 
 export type EstadoCreateOrConnectWithoutCapitulosInput = {
 	where: Prisma.EstadoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutCapitulosInput,
-		Prisma.EstadoUncheckedCreateWithoutCapitulosInput
-	>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutCapitulosInput, Prisma.EstadoUncheckedCreateWithoutCapitulosInput>;
 };
 
 export type EstadoUpsertWithoutCapitulosInput = {
-	update: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutCapitulosInput,
-		Prisma.EstadoUncheckedUpdateWithoutCapitulosInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutCapitulosInput,
-		Prisma.EstadoUncheckedCreateWithoutCapitulosInput
-	>;
+	update: Prisma.XOR<Prisma.EstadoUpdateWithoutCapitulosInput, Prisma.EstadoUncheckedUpdateWithoutCapitulosInput>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutCapitulosInput, Prisma.EstadoUncheckedCreateWithoutCapitulosInput>;
 	where?: Prisma.EstadoWhereInput;
 };
 
 export type EstadoUpdateToOneWithWhereWithoutCapitulosInput = {
 	where?: Prisma.EstadoWhereInput;
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutCapitulosInput,
-		Prisma.EstadoUncheckedUpdateWithoutCapitulosInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateWithoutCapitulosInput, Prisma.EstadoUncheckedUpdateWithoutCapitulosInput>;
 };
 
 export type EstadoUpdateWithoutCapitulosInput = {
@@ -2639,30 +2253,18 @@ export type EstadoUncheckedCreateWithoutParrafosInput = {
 
 export type EstadoCreateOrConnectWithoutParrafosInput = {
 	where: Prisma.EstadoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutParrafosInput,
-		Prisma.EstadoUncheckedCreateWithoutParrafosInput
-	>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutParrafosInput, Prisma.EstadoUncheckedCreateWithoutParrafosInput>;
 };
 
 export type EstadoUpsertWithoutParrafosInput = {
-	update: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutParrafosInput,
-		Prisma.EstadoUncheckedUpdateWithoutParrafosInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutParrafosInput,
-		Prisma.EstadoUncheckedCreateWithoutParrafosInput
-	>;
+	update: Prisma.XOR<Prisma.EstadoUpdateWithoutParrafosInput, Prisma.EstadoUncheckedUpdateWithoutParrafosInput>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutParrafosInput, Prisma.EstadoUncheckedCreateWithoutParrafosInput>;
 	where?: Prisma.EstadoWhereInput;
 };
 
 export type EstadoUpdateToOneWithWhereWithoutParrafosInput = {
 	where?: Prisma.EstadoWhereInput;
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutParrafosInput,
-		Prisma.EstadoUncheckedUpdateWithoutParrafosInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateWithoutParrafosInput, Prisma.EstadoUncheckedUpdateWithoutParrafosInput>;
 };
 
 export type EstadoUpdateWithoutParrafosInput = {
@@ -2777,30 +2379,18 @@ export type EstadoUncheckedCreateWithoutComentariosInput = {
 
 export type EstadoCreateOrConnectWithoutComentariosInput = {
 	where: Prisma.EstadoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutComentariosInput,
-		Prisma.EstadoUncheckedCreateWithoutComentariosInput
-	>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutComentariosInput, Prisma.EstadoUncheckedCreateWithoutComentariosInput>;
 };
 
 export type EstadoUpsertWithoutComentariosInput = {
-	update: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutComentariosInput,
-		Prisma.EstadoUncheckedUpdateWithoutComentariosInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutComentariosInput,
-		Prisma.EstadoUncheckedCreateWithoutComentariosInput
-	>;
+	update: Prisma.XOR<Prisma.EstadoUpdateWithoutComentariosInput, Prisma.EstadoUncheckedUpdateWithoutComentariosInput>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutComentariosInput, Prisma.EstadoUncheckedCreateWithoutComentariosInput>;
 	where?: Prisma.EstadoWhereInput;
 };
 
 export type EstadoUpdateToOneWithWhereWithoutComentariosInput = {
 	where?: Prisma.EstadoWhereInput;
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutComentariosInput,
-		Prisma.EstadoUncheckedUpdateWithoutComentariosInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateWithoutComentariosInput, Prisma.EstadoUncheckedUpdateWithoutComentariosInput>;
 };
 
 export type EstadoUpdateWithoutComentariosInput = {
@@ -2915,30 +2505,18 @@ export type EstadoUncheckedCreateWithoutFavoritosInput = {
 
 export type EstadoCreateOrConnectWithoutFavoritosInput = {
 	where: Prisma.EstadoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutFavoritosInput,
-		Prisma.EstadoUncheckedCreateWithoutFavoritosInput
-	>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutFavoritosInput, Prisma.EstadoUncheckedCreateWithoutFavoritosInput>;
 };
 
 export type EstadoUpsertWithoutFavoritosInput = {
-	update: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutFavoritosInput,
-		Prisma.EstadoUncheckedUpdateWithoutFavoritosInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutFavoritosInput,
-		Prisma.EstadoUncheckedCreateWithoutFavoritosInput
-	>;
+	update: Prisma.XOR<Prisma.EstadoUpdateWithoutFavoritosInput, Prisma.EstadoUncheckedUpdateWithoutFavoritosInput>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutFavoritosInput, Prisma.EstadoUncheckedCreateWithoutFavoritosInput>;
 	where?: Prisma.EstadoWhereInput;
 };
 
 export type EstadoUpdateToOneWithWhereWithoutFavoritosInput = {
 	where?: Prisma.EstadoWhereInput;
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutFavoritosInput,
-		Prisma.EstadoUncheckedUpdateWithoutFavoritosInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateWithoutFavoritosInput, Prisma.EstadoUncheckedUpdateWithoutFavoritosInput>;
 };
 
 export type EstadoUpdateWithoutFavoritosInput = {
@@ -3053,30 +2631,18 @@ export type EstadoUncheckedCreateWithoutListasInput = {
 
 export type EstadoCreateOrConnectWithoutListasInput = {
 	where: Prisma.EstadoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutListasInput,
-		Prisma.EstadoUncheckedCreateWithoutListasInput
-	>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutListasInput, Prisma.EstadoUncheckedCreateWithoutListasInput>;
 };
 
 export type EstadoUpsertWithoutListasInput = {
-	update: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutListasInput,
-		Prisma.EstadoUncheckedUpdateWithoutListasInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutListasInput,
-		Prisma.EstadoUncheckedCreateWithoutListasInput
-	>;
+	update: Prisma.XOR<Prisma.EstadoUpdateWithoutListasInput, Prisma.EstadoUncheckedUpdateWithoutListasInput>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutListasInput, Prisma.EstadoUncheckedCreateWithoutListasInput>;
 	where?: Prisma.EstadoWhereInput;
 };
 
 export type EstadoUpdateToOneWithWhereWithoutListasInput = {
 	where?: Prisma.EstadoWhereInput;
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutListasInput,
-		Prisma.EstadoUncheckedUpdateWithoutListasInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateWithoutListasInput, Prisma.EstadoUncheckedUpdateWithoutListasInput>;
 };
 
 export type EstadoUpdateWithoutListasInput = {
@@ -3191,30 +2757,18 @@ export type EstadoUncheckedCreateWithoutListaLibrosInput = {
 
 export type EstadoCreateOrConnectWithoutListaLibrosInput = {
 	where: Prisma.EstadoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutListaLibrosInput,
-		Prisma.EstadoUncheckedCreateWithoutListaLibrosInput
-	>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutListaLibrosInput, Prisma.EstadoUncheckedCreateWithoutListaLibrosInput>;
 };
 
 export type EstadoUpsertWithoutListaLibrosInput = {
-	update: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutListaLibrosInput,
-		Prisma.EstadoUncheckedUpdateWithoutListaLibrosInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutListaLibrosInput,
-		Prisma.EstadoUncheckedCreateWithoutListaLibrosInput
-	>;
+	update: Prisma.XOR<Prisma.EstadoUpdateWithoutListaLibrosInput, Prisma.EstadoUncheckedUpdateWithoutListaLibrosInput>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutListaLibrosInput, Prisma.EstadoUncheckedCreateWithoutListaLibrosInput>;
 	where?: Prisma.EstadoWhereInput;
 };
 
 export type EstadoUpdateToOneWithWhereWithoutListaLibrosInput = {
 	where?: Prisma.EstadoWhereInput;
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutListaLibrosInput,
-		Prisma.EstadoUncheckedUpdateWithoutListaLibrosInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateWithoutListaLibrosInput, Prisma.EstadoUncheckedUpdateWithoutListaLibrosInput>;
 };
 
 export type EstadoUpdateWithoutListaLibrosInput = {
@@ -3329,30 +2883,18 @@ export type EstadoUncheckedCreateWithoutGlosariosInput = {
 
 export type EstadoCreateOrConnectWithoutGlosariosInput = {
 	where: Prisma.EstadoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutGlosariosInput,
-		Prisma.EstadoUncheckedCreateWithoutGlosariosInput
-	>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutGlosariosInput, Prisma.EstadoUncheckedCreateWithoutGlosariosInput>;
 };
 
 export type EstadoUpsertWithoutGlosariosInput = {
-	update: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutGlosariosInput,
-		Prisma.EstadoUncheckedUpdateWithoutGlosariosInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutGlosariosInput,
-		Prisma.EstadoUncheckedCreateWithoutGlosariosInput
-	>;
+	update: Prisma.XOR<Prisma.EstadoUpdateWithoutGlosariosInput, Prisma.EstadoUncheckedUpdateWithoutGlosariosInput>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutGlosariosInput, Prisma.EstadoUncheckedCreateWithoutGlosariosInput>;
 	where?: Prisma.EstadoWhereInput;
 };
 
 export type EstadoUpdateToOneWithWhereWithoutGlosariosInput = {
 	where?: Prisma.EstadoWhereInput;
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutGlosariosInput,
-		Prisma.EstadoUncheckedUpdateWithoutGlosariosInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateWithoutGlosariosInput, Prisma.EstadoUncheckedUpdateWithoutGlosariosInput>;
 };
 
 export type EstadoUpdateWithoutGlosariosInput = {
@@ -3467,30 +3009,18 @@ export type EstadoUncheckedCreateWithoutNotasAutorInput = {
 
 export type EstadoCreateOrConnectWithoutNotasAutorInput = {
 	where: Prisma.EstadoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutNotasAutorInput,
-		Prisma.EstadoUncheckedCreateWithoutNotasAutorInput
-	>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutNotasAutorInput, Prisma.EstadoUncheckedCreateWithoutNotasAutorInput>;
 };
 
 export type EstadoUpsertWithoutNotasAutorInput = {
-	update: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutNotasAutorInput,
-		Prisma.EstadoUncheckedUpdateWithoutNotasAutorInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutNotasAutorInput,
-		Prisma.EstadoUncheckedCreateWithoutNotasAutorInput
-	>;
+	update: Prisma.XOR<Prisma.EstadoUpdateWithoutNotasAutorInput, Prisma.EstadoUncheckedUpdateWithoutNotasAutorInput>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutNotasAutorInput, Prisma.EstadoUncheckedCreateWithoutNotasAutorInput>;
 	where?: Prisma.EstadoWhereInput;
 };
 
 export type EstadoUpdateToOneWithWhereWithoutNotasAutorInput = {
 	where?: Prisma.EstadoWhereInput;
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutNotasAutorInput,
-		Prisma.EstadoUncheckedUpdateWithoutNotasAutorInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateWithoutNotasAutorInput, Prisma.EstadoUncheckedUpdateWithoutNotasAutorInput>;
 };
 
 export type EstadoUpdateWithoutNotasAutorInput = {
@@ -3605,30 +3135,18 @@ export type EstadoUncheckedCreateWithoutMarcadoresInput = {
 
 export type EstadoCreateOrConnectWithoutMarcadoresInput = {
 	where: Prisma.EstadoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutMarcadoresInput,
-		Prisma.EstadoUncheckedCreateWithoutMarcadoresInput
-	>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutMarcadoresInput, Prisma.EstadoUncheckedCreateWithoutMarcadoresInput>;
 };
 
 export type EstadoUpsertWithoutMarcadoresInput = {
-	update: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutMarcadoresInput,
-		Prisma.EstadoUncheckedUpdateWithoutMarcadoresInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutMarcadoresInput,
-		Prisma.EstadoUncheckedCreateWithoutMarcadoresInput
-	>;
+	update: Prisma.XOR<Prisma.EstadoUpdateWithoutMarcadoresInput, Prisma.EstadoUncheckedUpdateWithoutMarcadoresInput>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutMarcadoresInput, Prisma.EstadoUncheckedCreateWithoutMarcadoresInput>;
 	where?: Prisma.EstadoWhereInput;
 };
 
 export type EstadoUpdateToOneWithWhereWithoutMarcadoresInput = {
 	where?: Prisma.EstadoWhereInput;
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutMarcadoresInput,
-		Prisma.EstadoUncheckedUpdateWithoutMarcadoresInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateWithoutMarcadoresInput, Prisma.EstadoUncheckedUpdateWithoutMarcadoresInput>;
 };
 
 export type EstadoUpdateWithoutMarcadoresInput = {
@@ -3743,30 +3261,18 @@ export type EstadoUncheckedCreateWithoutSeguirUsuariosInput = {
 
 export type EstadoCreateOrConnectWithoutSeguirUsuariosInput = {
 	where: Prisma.EstadoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutSeguirUsuariosInput,
-		Prisma.EstadoUncheckedCreateWithoutSeguirUsuariosInput
-	>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutSeguirUsuariosInput, Prisma.EstadoUncheckedCreateWithoutSeguirUsuariosInput>;
 };
 
 export type EstadoUpsertWithoutSeguirUsuariosInput = {
-	update: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutSeguirUsuariosInput,
-		Prisma.EstadoUncheckedUpdateWithoutSeguirUsuariosInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EstadoCreateWithoutSeguirUsuariosInput,
-		Prisma.EstadoUncheckedCreateWithoutSeguirUsuariosInput
-	>;
+	update: Prisma.XOR<Prisma.EstadoUpdateWithoutSeguirUsuariosInput, Prisma.EstadoUncheckedUpdateWithoutSeguirUsuariosInput>;
+	create: Prisma.XOR<Prisma.EstadoCreateWithoutSeguirUsuariosInput, Prisma.EstadoUncheckedCreateWithoutSeguirUsuariosInput>;
 	where?: Prisma.EstadoWhereInput;
 };
 
 export type EstadoUpdateToOneWithWhereWithoutSeguirUsuariosInput = {
 	where?: Prisma.EstadoWhereInput;
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateWithoutSeguirUsuariosInput,
-		Prisma.EstadoUncheckedUpdateWithoutSeguirUsuariosInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateWithoutSeguirUsuariosInput, Prisma.EstadoUncheckedUpdateWithoutSeguirUsuariosInput>;
 };
 
 export type EstadoUpdateWithoutSeguirUsuariosInput = {
@@ -3851,10 +3357,7 @@ export type EstadoCountOutputType = {
 	seguirUsuarios: number;
 };
 
-export type EstadoCountOutputTypeSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	categorias?: boolean | EstadoCountOutputTypeCountCategoriasArgs;
 	etiquetas?: boolean | EstadoCountOutputTypeCountEtiquetasArgs;
 	tipos?: boolean | EstadoCountOutputTypeCountTiposArgs;
@@ -3880,10 +3383,7 @@ export type EstadoCountOutputTypeSelect<
 /**
  * EstadoCountOutputType without action
  */
-export type EstadoCountOutputTypeDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the EstadoCountOutputType
 	 */
@@ -3893,207 +3393,144 @@ export type EstadoCountOutputTypeDefaultArgs<
 /**
  * EstadoCountOutputType without action
  */
-export type EstadoCountOutputTypeCountCategoriasArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeCountCategoriasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.CategoriaWhereInput;
 };
 
 /**
  * EstadoCountOutputType without action
  */
-export type EstadoCountOutputTypeCountEtiquetasArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeCountEtiquetasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.EtiquetaWhereInput;
 };
 
 /**
  * EstadoCountOutputType without action
  */
-export type EstadoCountOutputTypeCountTiposArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeCountTiposArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.TipoWhereInput;
 };
 
 /**
  * EstadoCountOutputType without action
  */
-export type EstadoCountOutputTypeCountUsuariosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeCountUsuariosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.UsuarioWhereInput;
 };
 
 /**
  * EstadoCountOutputType without action
  */
-export type EstadoCountOutputTypeCountEscritoresArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeCountEscritoresArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.EscritorWhereInput;
 };
 
 /**
  * EstadoCountOutputType without action
  */
-export type EstadoCountOutputTypeCountConfiguracionesArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeCountConfiguracionesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.ConfiguracionWhereInput;
 };
 
 /**
  * EstadoCountOutputType without action
  */
-export type EstadoCountOutputTypeCountIdiomaArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeCountIdiomaArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.IdiomaWhereInput;
 };
 
 /**
  * EstadoCountOutputType without action
  */
-export type EstadoCountOutputTypeCountLibrosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeCountLibrosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.LibroWhereInput;
 };
 
 /**
  * EstadoCountOutputType without action
  */
-export type EstadoCountOutputTypeCountCapitulosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeCountCapitulosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.CapituloWhereInput;
 };
 
 /**
  * EstadoCountOutputType without action
  */
-export type EstadoCountOutputTypeCountParrafosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeCountParrafosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.ParrafoWhereInput;
 };
 
 /**
  * EstadoCountOutputType without action
  */
-export type EstadoCountOutputTypeCountComentariosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeCountComentariosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.ComentarioWhereInput;
 };
 
 /**
  * EstadoCountOutputType without action
  */
-export type EstadoCountOutputTypeCountLibroCategoriasArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeCountLibroCategoriasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.LibroCategoriaWhereInput;
 };
 
 /**
  * EstadoCountOutputType without action
  */
-export type EstadoCountOutputTypeCountLibroEtiquetasArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeCountLibroEtiquetasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.LibroEtiquetaWhereInput;
 };
 
 /**
  * EstadoCountOutputType without action
  */
-export type EstadoCountOutputTypeCountFavoritosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeCountFavoritosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.FavoritoWhereInput;
 };
 
 /**
  * EstadoCountOutputType without action
  */
-export type EstadoCountOutputTypeCountGlosariosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeCountGlosariosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.GlosarioWhereInput;
 };
 
 /**
  * EstadoCountOutputType without action
  */
-export type EstadoCountOutputTypeCountNotasAutorArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeCountNotasAutorArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.NotaAutorWhereInput;
 };
 
 /**
  * EstadoCountOutputType without action
  */
-export type EstadoCountOutputTypeCountMarcadoresArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeCountMarcadoresArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.MarcadorWhereInput;
 };
 
 /**
  * EstadoCountOutputType without action
  */
-export type EstadoCountOutputTypeCountListasArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeCountListasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.ListaWhereInput;
 };
 
 /**
  * EstadoCountOutputType without action
  */
-export type EstadoCountOutputTypeCountListaLibrosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeCountListaLibrosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.ListaLibroWhereInput;
 };
 
 /**
  * EstadoCountOutputType without action
  */
-export type EstadoCountOutputTypeCountSeguirUsuariosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCountOutputTypeCountSeguirUsuariosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.SeguirUsuarioWhereInput;
 };
 
-export type EstadoSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type EstadoSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -4126,10 +3563,7 @@ export type EstadoSelect<
 	ExtArgs["result"]["estado"]
 >;
 
-export type EstadoSelectCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type EstadoSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -4141,10 +3575,7 @@ export type EstadoSelectCreateManyAndReturn<
 	ExtArgs["result"]["estado"]
 >;
 
-export type EstadoSelectUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type EstadoSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -4165,17 +3596,11 @@ export type EstadoSelectScalar = {
 	updatedAt?: boolean;
 };
 
-export type EstadoOmit<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetOmit<
+export type EstadoOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<
 	"id" | "nombre" | "color" | "icon" | "createdAt" | "updatedAt",
 	ExtArgs["result"]["estado"]
 >;
-export type EstadoInclude<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	categorias?: boolean | Prisma.Estado$categoriasArgs<ExtArgs>;
 	etiquetas?: boolean | Prisma.Estado$etiquetasArgs<ExtArgs>;
 	tipos?: boolean | Prisma.Estado$tiposArgs<ExtArgs>;
@@ -4198,19 +3623,10 @@ export type EstadoInclude<
 	seguirUsuarios?: boolean | Prisma.Estado$seguirUsuariosArgs<ExtArgs>;
 	_count?: boolean | Prisma.EstadoCountOutputTypeDefaultArgs<ExtArgs>;
 };
-export type EstadoIncludeCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {};
-export type EstadoIncludeUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {};
+export type EstadoIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {};
+export type EstadoIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {};
 
-export type $EstadoPayload<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type $EstadoPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	name: "Estado";
 	objects: {
 		categorias: Prisma.$CategoriaPayload<ExtArgs>[];
@@ -4248,26 +3664,14 @@ export type $EstadoPayload<
 	composites: {};
 };
 
-export type EstadoGetPayload<
-	S extends boolean | null | undefined | EstadoDefaultArgs,
-> = runtime.Types.Result.GetResult<Prisma.$EstadoPayload, S>;
+export type EstadoGetPayload<S extends boolean | null | undefined | EstadoDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$EstadoPayload, S>;
 
-export type EstadoCountArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = Omit<EstadoFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
+export type EstadoCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<EstadoFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
 	select?: EstadoCountAggregateInputType | true;
 };
 
-export interface EstadoDelegate<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> {
-	[K: symbol]: {
-		types: Prisma.TypeMap<ExtArgs>["model"]["Estado"];
-		meta: { name: "Estado" };
-	};
+export interface EstadoDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+	[K: symbol]: { types: Prisma.TypeMap<ExtArgs>["model"]["Estado"]; meta: { name: "Estado" } };
 	/**
 	 * Find zero or one Estado that matches the filter.
 	 * @param {EstadoFindUniqueArgs} args - Arguments to find a Estado
@@ -4281,17 +3685,7 @@ export interface EstadoDelegate<
 	 */
 	findUnique<T extends EstadoFindUniqueArgs>(
 		args: Prisma.SelectSubset<T, EstadoFindUniqueArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EstadoPayload<ExtArgs>,
-			T,
-			"findUnique",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find one Estado that matches the filter or throw an error with `error.code='P2025'`
@@ -4307,17 +3701,7 @@ export interface EstadoDelegate<
 	 */
 	findUniqueOrThrow<T extends EstadoFindUniqueOrThrowArgs>(
 		args: Prisma.SelectSubset<T, EstadoFindUniqueOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EstadoPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Estado that matches the filter.
@@ -4334,17 +3718,7 @@ export interface EstadoDelegate<
 	 */
 	findFirst<T extends EstadoFindFirstArgs>(
 		args?: Prisma.SelectSubset<T, EstadoFindFirstArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EstadoPayload<ExtArgs>,
-			T,
-			"findFirst",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Estado that matches the filter or
@@ -4362,17 +3736,7 @@ export interface EstadoDelegate<
 	 */
 	findFirstOrThrow<T extends EstadoFindFirstOrThrowArgs>(
 		args?: Prisma.SelectSubset<T, EstadoFindFirstOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EstadoPayload<ExtArgs>,
-			T,
-			"findFirstOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find zero or more Estados that matches the filter.
@@ -4392,14 +3756,7 @@ export interface EstadoDelegate<
 	 */
 	findMany<T extends EstadoFindManyArgs>(
 		args?: Prisma.SelectSubset<T, EstadoFindManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$EstadoPayload<ExtArgs>,
-			T,
-			"findMany",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
 
 	/**
 	 * Create a Estado.
@@ -4415,17 +3772,7 @@ export interface EstadoDelegate<
 	 */
 	create<T extends EstadoCreateArgs>(
 		args: Prisma.SelectSubset<T, EstadoCreateArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EstadoPayload<ExtArgs>,
-			T,
-			"create",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Create many Estados.
@@ -4439,9 +3786,7 @@ export interface EstadoDelegate<
 	 * })
 	 *
 	 */
-	createMany<T extends EstadoCreateManyArgs>(
-		args?: Prisma.SelectSubset<T, EstadoCreateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	createMany<T extends EstadoCreateManyArgs>(args?: Prisma.SelectSubset<T, EstadoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Create many Estados and returns the data saved in the database.
@@ -4467,14 +3812,7 @@ export interface EstadoDelegate<
 	 */
 	createManyAndReturn<T extends EstadoCreateManyAndReturnArgs>(
 		args?: Prisma.SelectSubset<T, EstadoCreateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$EstadoPayload<ExtArgs>,
-			T,
-			"createManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Delete a Estado.
@@ -4490,17 +3828,7 @@ export interface EstadoDelegate<
 	 */
 	delete<T extends EstadoDeleteArgs>(
 		args: Prisma.SelectSubset<T, EstadoDeleteArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EstadoPayload<ExtArgs>,
-			T,
-			"delete",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Update one Estado.
@@ -4519,17 +3847,7 @@ export interface EstadoDelegate<
 	 */
 	update<T extends EstadoUpdateArgs>(
 		args: Prisma.SelectSubset<T, EstadoUpdateArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EstadoPayload<ExtArgs>,
-			T,
-			"update",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Delete zero or more Estados.
@@ -4543,9 +3861,7 @@ export interface EstadoDelegate<
 	 * })
 	 *
 	 */
-	deleteMany<T extends EstadoDeleteManyArgs>(
-		args?: Prisma.SelectSubset<T, EstadoDeleteManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	deleteMany<T extends EstadoDeleteManyArgs>(args?: Prisma.SelectSubset<T, EstadoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Estados.
@@ -4564,9 +3880,7 @@ export interface EstadoDelegate<
 	 * })
 	 *
 	 */
-	updateMany<T extends EstadoUpdateManyArgs>(
-		args: Prisma.SelectSubset<T, EstadoUpdateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	updateMany<T extends EstadoUpdateManyArgs>(args: Prisma.SelectSubset<T, EstadoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Estados and returns the data updated in the database.
@@ -4598,14 +3912,7 @@ export interface EstadoDelegate<
 	 */
 	updateManyAndReturn<T extends EstadoUpdateManyAndReturnArgs>(
 		args: Prisma.SelectSubset<T, EstadoUpdateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$EstadoPayload<ExtArgs>,
-			T,
-			"updateManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Create or update one Estado.
@@ -4626,17 +3933,7 @@ export interface EstadoDelegate<
 	 */
 	upsert<T extends EstadoUpsertArgs>(
 		args: Prisma.SelectSubset<T, EstadoUpsertArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EstadoPayload<ExtArgs>,
-			T,
-			"upsert",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Count the number of Estados.
@@ -4653,13 +3950,7 @@ export interface EstadoDelegate<
 	 **/
 	count<T extends EstadoCountArgs>(
 		args?: Prisma.Subset<T, EstadoCountArgs>,
-	): Prisma.PrismaPromise<
-		T extends runtime.Types.Utils.Record<"select", any>
-			? T["select"] extends true
-				? number
-				: Prisma.GetScalarType<T["select"], EstadoCountAggregateOutputType>
-			: number
-	>;
+	): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<"select", any> ? (T["select"] extends true ? number : Prisma.GetScalarType<T["select"], EstadoCountAggregateOutputType>) : number>;
 
 	/**
 	 * Allows you to perform aggregations operations on a Estado.
@@ -4685,9 +3976,7 @@ export interface EstadoDelegate<
 	 *   take: 10,
 	 * })
 	 **/
-	aggregate<T extends EstadoAggregateArgs>(
-		args: Prisma.Subset<T, EstadoAggregateArgs>,
-	): Prisma.PrismaPromise<GetEstadoAggregateType<T>>;
+	aggregate<T extends EstadoAggregateArgs>(args: Prisma.Subset<T, EstadoAggregateArgs>): Prisma.PrismaPromise<GetEstadoAggregateType<T>>;
 
 	/**
 	 * Group by Estado.
@@ -4709,16 +3998,9 @@ export interface EstadoDelegate<
 	 **/
 	groupBy<
 		T extends EstadoGroupByArgs,
-		HasSelectOrTake extends Prisma.Or<
-			Prisma.Extends<"skip", Prisma.Keys<T>>,
-			Prisma.Extends<"take", Prisma.Keys<T>>
-		>,
-		OrderByArg extends Prisma.True extends HasSelectOrTake
-			? { orderBy: EstadoGroupByArgs["orderBy"] }
-			: { orderBy?: EstadoGroupByArgs["orderBy"] },
-		OrderFields extends Prisma.ExcludeUnderscoreKeys<
-			Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>
-		>,
+		HasSelectOrTake extends Prisma.Or<Prisma.Extends<"skip", Prisma.Keys<T>>, Prisma.Extends<"take", Prisma.Keys<T>>>,
+		OrderByArg extends Prisma.True extends HasSelectOrTake ? { orderBy: EstadoGroupByArgs["orderBy"] } : { orderBy?: EstadoGroupByArgs["orderBy"] },
+		OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>>,
 		ByFields extends Prisma.MaybeTupleToUnion<T["by"]>,
 		ByValid extends Prisma.Has<ByFields, OrderFields>,
 		HavingFields extends Prisma.GetHavingFields<T["having"]>,
@@ -4732,21 +4014,14 @@ export interface EstadoDelegate<
 							? never
 							: P extends string
 								? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-								: [
-										Error,
-										"Field ",
-										P,
-										` in "having" needs to be provided in "by"`,
-									];
+								: [Error, "Field ", P, ` in "having" needs to be provided in "by"`];
 					}[HavingFields]
 				: "take" extends Prisma.Keys<T>
 					? "orderBy" extends Prisma.Keys<T>
 						? ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields]
 						: 'Error: If you provide "take", you also need to provide "orderBy"'
 					: "skip" extends Prisma.Keys<T>
@@ -4754,24 +4029,15 @@ export interface EstadoDelegate<
 							? ByValid extends Prisma.True
 								? {}
 								: {
-										[P in OrderFields]: P extends ByFields
-											? never
-											: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+										[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 									}[OrderFields]
 							: 'Error: If you provide "skip", you also need to provide "orderBy"'
 						: ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields],
-	>(
-		args: Prisma.SubsetIntersection<T, EstadoGroupByArgs, OrderByArg> &
-			InputErrors,
-	): {} extends InputErrors
-		? GetEstadoGroupByPayload<T>
-		: Prisma.PrismaPromise<InputErrors>;
+	>(args: Prisma.SubsetIntersection<T, EstadoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetEstadoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
 	/**
 	 * Fields of the Estado model
 	 */
@@ -4784,234 +4050,69 @@ export interface EstadoDelegate<
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__EstadoClient<
-	T,
-	Null = never,
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> extends Prisma.PrismaPromise<T> {
+export interface Prisma__EstadoClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}>
+	extends Prisma.PrismaPromise<T> {
 	readonly [Symbol.toStringTag]: "PrismaPromise";
 	categorias<T extends Prisma.Estado$categoriasArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Estado$categoriasArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$CategoriaPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CategoriaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	etiquetas<T extends Prisma.Estado$etiquetasArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Estado$etiquetasArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EtiquetaPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EtiquetaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	tipos<T extends Prisma.Estado$tiposArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Estado$tiposArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$TipoPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TipoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	usuarios<T extends Prisma.Estado$usuariosArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Estado$usuariosArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$UsuarioPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	escritores<T extends Prisma.Estado$escritoresArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Estado$escritoresArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EscritorPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EscritorPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	configuraciones<T extends Prisma.Estado$configuracionesArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Estado$configuracionesArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$ConfiguracionPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConfiguracionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	idioma<T extends Prisma.Estado$idiomaArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Estado$idiomaArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$IdiomaPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$IdiomaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	libros<T extends Prisma.Estado$librosArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Estado$librosArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$LibroPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LibroPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	capitulos<T extends Prisma.Estado$capitulosArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Estado$capitulosArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$CapituloPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CapituloPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	parrafos<T extends Prisma.Estado$parrafosArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Estado$parrafosArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$ParrafoPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ParrafoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	comentarios<T extends Prisma.Estado$comentariosArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Estado$comentariosArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$ComentarioPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	libroCategorias<T extends Prisma.Estado$libroCategoriasArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Estado$libroCategoriasArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$LibroCategoriaPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LibroCategoriaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	libroEtiquetas<T extends Prisma.Estado$libroEtiquetasArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Estado$libroEtiquetasArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$LibroEtiquetaPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LibroEtiquetaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	favoritos<T extends Prisma.Estado$favoritosArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Estado$favoritosArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$FavoritoPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FavoritoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	glosarios<T extends Prisma.Estado$glosariosArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Estado$glosariosArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$GlosarioPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GlosarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	notasAutor<T extends Prisma.Estado$notasAutorArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Estado$notasAutorArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$NotaAutorPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotaAutorPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	marcadores<T extends Prisma.Estado$marcadoresArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Estado$marcadoresArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$MarcadorPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MarcadorPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	listas<T extends Prisma.Estado$listasArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Estado$listasArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$ListaPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ListaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	listaLibros<T extends Prisma.Estado$listaLibrosArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Estado$listaLibrosArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$ListaLibroPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ListaLibroPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	seguirUsuarios<T extends Prisma.Estado$seguirUsuariosArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Estado$seguirUsuariosArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$SeguirUsuarioPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SeguirUsuarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	/**
 	 * Attaches callbacks for the resolution and/or rejection of the Promise.
 	 * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -5019,35 +4120,22 @@ export interface Prisma__EstadoClient<
 	 * @returns A Promise for the completion of which ever callback is executed.
 	 */
 	then<TResult1 = T, TResult2 = never>(
-		onfulfilled?:
-			| ((value: T) => TResult1 | PromiseLike<TResult1>)
-			| undefined
-			| null,
-		onrejected?:
-			| ((reason: any) => TResult2 | PromiseLike<TResult2>)
-			| undefined
-			| null,
+		onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+		onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
 	): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
 	/**
 	 * Attaches a callback for only the rejection of the Promise.
 	 * @param onrejected The callback to execute when the Promise is rejected.
 	 * @returns A Promise for the completion of the callback.
 	 */
-	catch<TResult = never>(
-		onrejected?:
-			| ((reason: any) => TResult | PromiseLike<TResult>)
-			| undefined
-			| null,
-	): runtime.Types.Utils.JsPromise<T | TResult>;
+	catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
 	/**
 	 * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
 	 * resolved value cannot be modified from the callback.
 	 * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
 	 * @returns A Promise for the completion of the callback.
 	 */
-	finally(
-		onfinally?: (() => void) | undefined | null,
-	): runtime.Types.Utils.JsPromise<T>;
+	finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
 }
 
 /**
@@ -5066,10 +4154,7 @@ export interface EstadoFieldRefs {
 /**
  * Estado findUnique
  */
-export type EstadoFindUniqueArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Estado
 	 */
@@ -5091,10 +4176,7 @@ export type EstadoFindUniqueArgs<
 /**
  * Estado findUniqueOrThrow
  */
-export type EstadoFindUniqueOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Estado
 	 */
@@ -5116,10 +4198,7 @@ export type EstadoFindUniqueOrThrowArgs<
 /**
  * Estado findFirst
  */
-export type EstadoFindFirstArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Estado
 	 */
@@ -5141,9 +4220,7 @@ export type EstadoFindFirstArgs<
 	 *
 	 * Determine the order of Estados to fetch.
 	 */
-	orderBy?:
-		| Prisma.EstadoOrderByWithRelationInput
-		| Prisma.EstadoOrderByWithRelationInput[];
+	orderBy?: Prisma.EstadoOrderByWithRelationInput | Prisma.EstadoOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -5173,10 +4250,7 @@ export type EstadoFindFirstArgs<
 /**
  * Estado findFirstOrThrow
  */
-export type EstadoFindFirstOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Estado
 	 */
@@ -5198,9 +4272,7 @@ export type EstadoFindFirstOrThrowArgs<
 	 *
 	 * Determine the order of Estados to fetch.
 	 */
-	orderBy?:
-		| Prisma.EstadoOrderByWithRelationInput
-		| Prisma.EstadoOrderByWithRelationInput[];
+	orderBy?: Prisma.EstadoOrderByWithRelationInput | Prisma.EstadoOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -5230,10 +4302,7 @@ export type EstadoFindFirstOrThrowArgs<
 /**
  * Estado findMany
  */
-export type EstadoFindManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Estado
 	 */
@@ -5255,9 +4324,7 @@ export type EstadoFindManyArgs<
 	 *
 	 * Determine the order of Estados to fetch.
 	 */
-	orderBy?:
-		| Prisma.EstadoOrderByWithRelationInput
-		| Prisma.EstadoOrderByWithRelationInput[];
+	orderBy?: Prisma.EstadoOrderByWithRelationInput | Prisma.EstadoOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -5287,10 +4354,7 @@ export type EstadoFindManyArgs<
 /**
  * Estado create
  */
-export type EstadoCreateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Estado
 	 */
@@ -5312,10 +4376,7 @@ export type EstadoCreateArgs<
 /**
  * Estado createMany
  */
-export type EstadoCreateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to create many Estados.
 	 */
@@ -5326,10 +4387,7 @@ export type EstadoCreateManyArgs<
 /**
  * Estado createManyAndReturn
  */
-export type EstadoCreateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Estado
 	 */
@@ -5348,10 +4406,7 @@ export type EstadoCreateManyAndReturnArgs<
 /**
  * Estado update
  */
-export type EstadoUpdateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Estado
 	 */
@@ -5377,17 +4432,11 @@ export type EstadoUpdateArgs<
 /**
  * Estado updateMany
  */
-export type EstadoUpdateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to update Estados.
 	 */
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateManyMutationInput,
-		Prisma.EstadoUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateManyMutationInput, Prisma.EstadoUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Estados to update
 	 */
@@ -5401,10 +4450,7 @@ export type EstadoUpdateManyArgs<
 /**
  * Estado updateManyAndReturn
  */
-export type EstadoUpdateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Estado
 	 */
@@ -5416,10 +4462,7 @@ export type EstadoUpdateManyAndReturnArgs<
 	/**
 	 * The data used to update Estados.
 	 */
-	data: Prisma.XOR<
-		Prisma.EstadoUpdateManyMutationInput,
-		Prisma.EstadoUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.EstadoUpdateManyMutationInput, Prisma.EstadoUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Estados to update
 	 */
@@ -5433,10 +4476,7 @@ export type EstadoUpdateManyAndReturnArgs<
 /**
  * Estado upsert
  */
-export type EstadoUpsertArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Estado
 	 */
@@ -5456,26 +4496,17 @@ export type EstadoUpsertArgs<
 	/**
 	 * In case the Estado found by the `where` argument doesn't exist, create a new Estado with this data.
 	 */
-	create: Prisma.XOR<
-		Prisma.EstadoCreateInput,
-		Prisma.EstadoUncheckedCreateInput
-	>;
+	create: Prisma.XOR<Prisma.EstadoCreateInput, Prisma.EstadoUncheckedCreateInput>;
 	/**
 	 * In case the Estado was found with the provided `where` argument, update it with this data.
 	 */
-	update: Prisma.XOR<
-		Prisma.EstadoUpdateInput,
-		Prisma.EstadoUncheckedUpdateInput
-	>;
+	update: Prisma.XOR<Prisma.EstadoUpdateInput, Prisma.EstadoUncheckedUpdateInput>;
 };
 
 /**
  * Estado delete
  */
-export type EstadoDeleteArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Estado
 	 */
@@ -5497,10 +4528,7 @@ export type EstadoDeleteArgs<
 /**
  * Estado deleteMany
  */
-export type EstadoDeleteManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Estados to delete
 	 */
@@ -5514,10 +4542,7 @@ export type EstadoDeleteManyArgs<
 /**
  * Estado.categorias
  */
-export type Estado$categoriasArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Estado$categoriasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Categoria
 	 */
@@ -5531,24 +4556,17 @@ export type Estado$categoriasArgs<
 	 */
 	include?: Prisma.CategoriaInclude<ExtArgs> | null;
 	where?: Prisma.CategoriaWhereInput;
-	orderBy?:
-		| Prisma.CategoriaOrderByWithRelationInput
-		| Prisma.CategoriaOrderByWithRelationInput[];
+	orderBy?: Prisma.CategoriaOrderByWithRelationInput | Prisma.CategoriaOrderByWithRelationInput[];
 	cursor?: Prisma.CategoriaWhereUniqueInput;
 	take?: number;
 	skip?: number;
-	distinct?:
-		| Prisma.CategoriaScalarFieldEnum
-		| Prisma.CategoriaScalarFieldEnum[];
+	distinct?: Prisma.CategoriaScalarFieldEnum | Prisma.CategoriaScalarFieldEnum[];
 };
 
 /**
  * Estado.etiquetas
  */
-export type Estado$etiquetasArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Estado$etiquetasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Etiqueta
 	 */
@@ -5562,9 +4580,7 @@ export type Estado$etiquetasArgs<
 	 */
 	include?: Prisma.EtiquetaInclude<ExtArgs> | null;
 	where?: Prisma.EtiquetaWhereInput;
-	orderBy?:
-		| Prisma.EtiquetaOrderByWithRelationInput
-		| Prisma.EtiquetaOrderByWithRelationInput[];
+	orderBy?: Prisma.EtiquetaOrderByWithRelationInput | Prisma.EtiquetaOrderByWithRelationInput[];
 	cursor?: Prisma.EtiquetaWhereUniqueInput;
 	take?: number;
 	skip?: number;
@@ -5574,10 +4590,7 @@ export type Estado$etiquetasArgs<
 /**
  * Estado.tipos
  */
-export type Estado$tiposArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Estado$tiposArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Tipo
 	 */
@@ -5591,9 +4604,7 @@ export type Estado$tiposArgs<
 	 */
 	include?: Prisma.TipoInclude<ExtArgs> | null;
 	where?: Prisma.TipoWhereInput;
-	orderBy?:
-		| Prisma.TipoOrderByWithRelationInput
-		| Prisma.TipoOrderByWithRelationInput[];
+	orderBy?: Prisma.TipoOrderByWithRelationInput | Prisma.TipoOrderByWithRelationInput[];
 	cursor?: Prisma.TipoWhereUniqueInput;
 	take?: number;
 	skip?: number;
@@ -5603,10 +4614,7 @@ export type Estado$tiposArgs<
 /**
  * Estado.usuarios
  */
-export type Estado$usuariosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Estado$usuariosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Usuario
 	 */
@@ -5620,9 +4628,7 @@ export type Estado$usuariosArgs<
 	 */
 	include?: Prisma.UsuarioInclude<ExtArgs> | null;
 	where?: Prisma.UsuarioWhereInput;
-	orderBy?:
-		| Prisma.UsuarioOrderByWithRelationInput
-		| Prisma.UsuarioOrderByWithRelationInput[];
+	orderBy?: Prisma.UsuarioOrderByWithRelationInput | Prisma.UsuarioOrderByWithRelationInput[];
 	cursor?: Prisma.UsuarioWhereUniqueInput;
 	take?: number;
 	skip?: number;
@@ -5632,10 +4638,7 @@ export type Estado$usuariosArgs<
 /**
  * Estado.escritores
  */
-export type Estado$escritoresArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Estado$escritoresArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Escritor
 	 */
@@ -5649,9 +4652,7 @@ export type Estado$escritoresArgs<
 	 */
 	include?: Prisma.EscritorInclude<ExtArgs> | null;
 	where?: Prisma.EscritorWhereInput;
-	orderBy?:
-		| Prisma.EscritorOrderByWithRelationInput
-		| Prisma.EscritorOrderByWithRelationInput[];
+	orderBy?: Prisma.EscritorOrderByWithRelationInput | Prisma.EscritorOrderByWithRelationInput[];
 	cursor?: Prisma.EscritorWhereUniqueInput;
 	take?: number;
 	skip?: number;
@@ -5661,10 +4662,7 @@ export type Estado$escritoresArgs<
 /**
  * Estado.configuraciones
  */
-export type Estado$configuracionesArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Estado$configuracionesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Configuracion
 	 */
@@ -5678,24 +4676,17 @@ export type Estado$configuracionesArgs<
 	 */
 	include?: Prisma.ConfiguracionInclude<ExtArgs> | null;
 	where?: Prisma.ConfiguracionWhereInput;
-	orderBy?:
-		| Prisma.ConfiguracionOrderByWithRelationInput
-		| Prisma.ConfiguracionOrderByWithRelationInput[];
+	orderBy?: Prisma.ConfiguracionOrderByWithRelationInput | Prisma.ConfiguracionOrderByWithRelationInput[];
 	cursor?: Prisma.ConfiguracionWhereUniqueInput;
 	take?: number;
 	skip?: number;
-	distinct?:
-		| Prisma.ConfiguracionScalarFieldEnum
-		| Prisma.ConfiguracionScalarFieldEnum[];
+	distinct?: Prisma.ConfiguracionScalarFieldEnum | Prisma.ConfiguracionScalarFieldEnum[];
 };
 
 /**
  * Estado.idioma
  */
-export type Estado$idiomaArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Estado$idiomaArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Idioma
 	 */
@@ -5709,9 +4700,7 @@ export type Estado$idiomaArgs<
 	 */
 	include?: Prisma.IdiomaInclude<ExtArgs> | null;
 	where?: Prisma.IdiomaWhereInput;
-	orderBy?:
-		| Prisma.IdiomaOrderByWithRelationInput
-		| Prisma.IdiomaOrderByWithRelationInput[];
+	orderBy?: Prisma.IdiomaOrderByWithRelationInput | Prisma.IdiomaOrderByWithRelationInput[];
 	cursor?: Prisma.IdiomaWhereUniqueInput;
 	take?: number;
 	skip?: number;
@@ -5721,10 +4710,7 @@ export type Estado$idiomaArgs<
 /**
  * Estado.libros
  */
-export type Estado$librosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Estado$librosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Libro
 	 */
@@ -5738,9 +4724,7 @@ export type Estado$librosArgs<
 	 */
 	include?: Prisma.LibroInclude<ExtArgs> | null;
 	where?: Prisma.LibroWhereInput;
-	orderBy?:
-		| Prisma.LibroOrderByWithRelationInput
-		| Prisma.LibroOrderByWithRelationInput[];
+	orderBy?: Prisma.LibroOrderByWithRelationInput | Prisma.LibroOrderByWithRelationInput[];
 	cursor?: Prisma.LibroWhereUniqueInput;
 	take?: number;
 	skip?: number;
@@ -5750,10 +4734,7 @@ export type Estado$librosArgs<
 /**
  * Estado.capitulos
  */
-export type Estado$capitulosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Estado$capitulosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Capitulo
 	 */
@@ -5767,9 +4748,7 @@ export type Estado$capitulosArgs<
 	 */
 	include?: Prisma.CapituloInclude<ExtArgs> | null;
 	where?: Prisma.CapituloWhereInput;
-	orderBy?:
-		| Prisma.CapituloOrderByWithRelationInput
-		| Prisma.CapituloOrderByWithRelationInput[];
+	orderBy?: Prisma.CapituloOrderByWithRelationInput | Prisma.CapituloOrderByWithRelationInput[];
 	cursor?: Prisma.CapituloWhereUniqueInput;
 	take?: number;
 	skip?: number;
@@ -5779,10 +4758,7 @@ export type Estado$capitulosArgs<
 /**
  * Estado.parrafos
  */
-export type Estado$parrafosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Estado$parrafosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Parrafo
 	 */
@@ -5796,9 +4772,7 @@ export type Estado$parrafosArgs<
 	 */
 	include?: Prisma.ParrafoInclude<ExtArgs> | null;
 	where?: Prisma.ParrafoWhereInput;
-	orderBy?:
-		| Prisma.ParrafoOrderByWithRelationInput
-		| Prisma.ParrafoOrderByWithRelationInput[];
+	orderBy?: Prisma.ParrafoOrderByWithRelationInput | Prisma.ParrafoOrderByWithRelationInput[];
 	cursor?: Prisma.ParrafoWhereUniqueInput;
 	take?: number;
 	skip?: number;
@@ -5808,10 +4782,7 @@ export type Estado$parrafosArgs<
 /**
  * Estado.comentarios
  */
-export type Estado$comentariosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Estado$comentariosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Comentario
 	 */
@@ -5825,24 +4796,17 @@ export type Estado$comentariosArgs<
 	 */
 	include?: Prisma.ComentarioInclude<ExtArgs> | null;
 	where?: Prisma.ComentarioWhereInput;
-	orderBy?:
-		| Prisma.ComentarioOrderByWithRelationInput
-		| Prisma.ComentarioOrderByWithRelationInput[];
+	orderBy?: Prisma.ComentarioOrderByWithRelationInput | Prisma.ComentarioOrderByWithRelationInput[];
 	cursor?: Prisma.ComentarioWhereUniqueInput;
 	take?: number;
 	skip?: number;
-	distinct?:
-		| Prisma.ComentarioScalarFieldEnum
-		| Prisma.ComentarioScalarFieldEnum[];
+	distinct?: Prisma.ComentarioScalarFieldEnum | Prisma.ComentarioScalarFieldEnum[];
 };
 
 /**
  * Estado.libroCategorias
  */
-export type Estado$libroCategoriasArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Estado$libroCategoriasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroCategoria
 	 */
@@ -5856,24 +4820,17 @@ export type Estado$libroCategoriasArgs<
 	 */
 	include?: Prisma.LibroCategoriaInclude<ExtArgs> | null;
 	where?: Prisma.LibroCategoriaWhereInput;
-	orderBy?:
-		| Prisma.LibroCategoriaOrderByWithRelationInput
-		| Prisma.LibroCategoriaOrderByWithRelationInput[];
+	orderBy?: Prisma.LibroCategoriaOrderByWithRelationInput | Prisma.LibroCategoriaOrderByWithRelationInput[];
 	cursor?: Prisma.LibroCategoriaWhereUniqueInput;
 	take?: number;
 	skip?: number;
-	distinct?:
-		| Prisma.LibroCategoriaScalarFieldEnum
-		| Prisma.LibroCategoriaScalarFieldEnum[];
+	distinct?: Prisma.LibroCategoriaScalarFieldEnum | Prisma.LibroCategoriaScalarFieldEnum[];
 };
 
 /**
  * Estado.libroEtiquetas
  */
-export type Estado$libroEtiquetasArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Estado$libroEtiquetasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroEtiqueta
 	 */
@@ -5887,24 +4844,17 @@ export type Estado$libroEtiquetasArgs<
 	 */
 	include?: Prisma.LibroEtiquetaInclude<ExtArgs> | null;
 	where?: Prisma.LibroEtiquetaWhereInput;
-	orderBy?:
-		| Prisma.LibroEtiquetaOrderByWithRelationInput
-		| Prisma.LibroEtiquetaOrderByWithRelationInput[];
+	orderBy?: Prisma.LibroEtiquetaOrderByWithRelationInput | Prisma.LibroEtiquetaOrderByWithRelationInput[];
 	cursor?: Prisma.LibroEtiquetaWhereUniqueInput;
 	take?: number;
 	skip?: number;
-	distinct?:
-		| Prisma.LibroEtiquetaScalarFieldEnum
-		| Prisma.LibroEtiquetaScalarFieldEnum[];
+	distinct?: Prisma.LibroEtiquetaScalarFieldEnum | Prisma.LibroEtiquetaScalarFieldEnum[];
 };
 
 /**
  * Estado.favoritos
  */
-export type Estado$favoritosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Estado$favoritosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Favorito
 	 */
@@ -5918,9 +4868,7 @@ export type Estado$favoritosArgs<
 	 */
 	include?: Prisma.FavoritoInclude<ExtArgs> | null;
 	where?: Prisma.FavoritoWhereInput;
-	orderBy?:
-		| Prisma.FavoritoOrderByWithRelationInput
-		| Prisma.FavoritoOrderByWithRelationInput[];
+	orderBy?: Prisma.FavoritoOrderByWithRelationInput | Prisma.FavoritoOrderByWithRelationInput[];
 	cursor?: Prisma.FavoritoWhereUniqueInput;
 	take?: number;
 	skip?: number;
@@ -5930,10 +4878,7 @@ export type Estado$favoritosArgs<
 /**
  * Estado.glosarios
  */
-export type Estado$glosariosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Estado$glosariosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Glosario
 	 */
@@ -5947,9 +4892,7 @@ export type Estado$glosariosArgs<
 	 */
 	include?: Prisma.GlosarioInclude<ExtArgs> | null;
 	where?: Prisma.GlosarioWhereInput;
-	orderBy?:
-		| Prisma.GlosarioOrderByWithRelationInput
-		| Prisma.GlosarioOrderByWithRelationInput[];
+	orderBy?: Prisma.GlosarioOrderByWithRelationInput | Prisma.GlosarioOrderByWithRelationInput[];
 	cursor?: Prisma.GlosarioWhereUniqueInput;
 	take?: number;
 	skip?: number;
@@ -5959,10 +4902,7 @@ export type Estado$glosariosArgs<
 /**
  * Estado.notasAutor
  */
-export type Estado$notasAutorArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Estado$notasAutorArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the NotaAutor
 	 */
@@ -5976,24 +4916,17 @@ export type Estado$notasAutorArgs<
 	 */
 	include?: Prisma.NotaAutorInclude<ExtArgs> | null;
 	where?: Prisma.NotaAutorWhereInput;
-	orderBy?:
-		| Prisma.NotaAutorOrderByWithRelationInput
-		| Prisma.NotaAutorOrderByWithRelationInput[];
+	orderBy?: Prisma.NotaAutorOrderByWithRelationInput | Prisma.NotaAutorOrderByWithRelationInput[];
 	cursor?: Prisma.NotaAutorWhereUniqueInput;
 	take?: number;
 	skip?: number;
-	distinct?:
-		| Prisma.NotaAutorScalarFieldEnum
-		| Prisma.NotaAutorScalarFieldEnum[];
+	distinct?: Prisma.NotaAutorScalarFieldEnum | Prisma.NotaAutorScalarFieldEnum[];
 };
 
 /**
  * Estado.marcadores
  */
-export type Estado$marcadoresArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Estado$marcadoresArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Marcador
 	 */
@@ -6007,9 +4940,7 @@ export type Estado$marcadoresArgs<
 	 */
 	include?: Prisma.MarcadorInclude<ExtArgs> | null;
 	where?: Prisma.MarcadorWhereInput;
-	orderBy?:
-		| Prisma.MarcadorOrderByWithRelationInput
-		| Prisma.MarcadorOrderByWithRelationInput[];
+	orderBy?: Prisma.MarcadorOrderByWithRelationInput | Prisma.MarcadorOrderByWithRelationInput[];
 	cursor?: Prisma.MarcadorWhereUniqueInput;
 	take?: number;
 	skip?: number;
@@ -6019,10 +4950,7 @@ export type Estado$marcadoresArgs<
 /**
  * Estado.listas
  */
-export type Estado$listasArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Estado$listasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Lista
 	 */
@@ -6036,9 +4964,7 @@ export type Estado$listasArgs<
 	 */
 	include?: Prisma.ListaInclude<ExtArgs> | null;
 	where?: Prisma.ListaWhereInput;
-	orderBy?:
-		| Prisma.ListaOrderByWithRelationInput
-		| Prisma.ListaOrderByWithRelationInput[];
+	orderBy?: Prisma.ListaOrderByWithRelationInput | Prisma.ListaOrderByWithRelationInput[];
 	cursor?: Prisma.ListaWhereUniqueInput;
 	take?: number;
 	skip?: number;
@@ -6048,10 +4974,7 @@ export type Estado$listasArgs<
 /**
  * Estado.listaLibros
  */
-export type Estado$listaLibrosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Estado$listaLibrosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the ListaLibro
 	 */
@@ -6065,24 +4988,17 @@ export type Estado$listaLibrosArgs<
 	 */
 	include?: Prisma.ListaLibroInclude<ExtArgs> | null;
 	where?: Prisma.ListaLibroWhereInput;
-	orderBy?:
-		| Prisma.ListaLibroOrderByWithRelationInput
-		| Prisma.ListaLibroOrderByWithRelationInput[];
+	orderBy?: Prisma.ListaLibroOrderByWithRelationInput | Prisma.ListaLibroOrderByWithRelationInput[];
 	cursor?: Prisma.ListaLibroWhereUniqueInput;
 	take?: number;
 	skip?: number;
-	distinct?:
-		| Prisma.ListaLibroScalarFieldEnum
-		| Prisma.ListaLibroScalarFieldEnum[];
+	distinct?: Prisma.ListaLibroScalarFieldEnum | Prisma.ListaLibroScalarFieldEnum[];
 };
 
 /**
  * Estado.seguirUsuarios
  */
-export type Estado$seguirUsuariosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Estado$seguirUsuariosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the SeguirUsuario
 	 */
@@ -6096,24 +5012,17 @@ export type Estado$seguirUsuariosArgs<
 	 */
 	include?: Prisma.SeguirUsuarioInclude<ExtArgs> | null;
 	where?: Prisma.SeguirUsuarioWhereInput;
-	orderBy?:
-		| Prisma.SeguirUsuarioOrderByWithRelationInput
-		| Prisma.SeguirUsuarioOrderByWithRelationInput[];
+	orderBy?: Prisma.SeguirUsuarioOrderByWithRelationInput | Prisma.SeguirUsuarioOrderByWithRelationInput[];
 	cursor?: Prisma.SeguirUsuarioWhereUniqueInput;
 	take?: number;
 	skip?: number;
-	distinct?:
-		| Prisma.SeguirUsuarioScalarFieldEnum
-		| Prisma.SeguirUsuarioScalarFieldEnum[];
+	distinct?: Prisma.SeguirUsuarioScalarFieldEnum | Prisma.SeguirUsuarioScalarFieldEnum[];
 };
 
 /**
  * Estado without action
  */
-export type EstadoDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EstadoDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Estado
 	 */

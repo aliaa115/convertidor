@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { ConfiguracionCreateWithoutEstadoInputObjectSchema as ConfiguracionCreateWithoutEstadoInputObjectSchema } from "./ConfiguracionCreateWithoutEstadoInput.schema.ts";
 import { ConfiguracionUncheckedCreateWithoutEstadoInputObjectSchema as ConfiguracionUncheckedCreateWithoutEstadoInputObjectSchema } from "./ConfiguracionUncheckedCreateWithoutEstadoInput.schema.ts";
 import { ConfiguracionUncheckedUpdateWithoutEstadoInputObjectSchema as ConfiguracionUncheckedUpdateWithoutEstadoInputObjectSchema } from "./ConfiguracionUncheckedUpdateWithoutEstadoInput.schema.ts";
@@ -10,21 +10,10 @@ const makeSchema = () =>
 	z
 		.object({
 			where: z.lazy(() => ConfiguracionWhereUniqueInputObjectSchema),
-			update: z.union([
-				z.lazy(() => ConfiguracionUpdateWithoutEstadoInputObjectSchema),
-				z.lazy(
-					() => ConfiguracionUncheckedUpdateWithoutEstadoInputObjectSchema,
-				),
-			]),
-			create: z.union([
-				z.lazy(() => ConfiguracionCreateWithoutEstadoInputObjectSchema),
-				z.lazy(
-					() => ConfiguracionUncheckedCreateWithoutEstadoInputObjectSchema,
-				),
-			]),
+			update: z.union([z.lazy(() => ConfiguracionUpdateWithoutEstadoInputObjectSchema), z.lazy(() => ConfiguracionUncheckedUpdateWithoutEstadoInputObjectSchema)]),
+			create: z.union([z.lazy(() => ConfiguracionCreateWithoutEstadoInputObjectSchema), z.lazy(() => ConfiguracionUncheckedCreateWithoutEstadoInputObjectSchema)]),
 		})
 		.strict();
 export const ConfiguracionUpsertWithWhereUniqueWithoutEstadoInputObjectSchema: z.ZodType<Prisma.ConfiguracionUpsertWithWhereUniqueWithoutEstadoInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.ConfiguracionUpsertWithWhereUniqueWithoutEstadoInput>;
-export const ConfiguracionUpsertWithWhereUniqueWithoutEstadoInputObjectZodSchema =
-	makeSchema();
+export const ConfiguracionUpsertWithWhereUniqueWithoutEstadoInputObjectZodSchema = makeSchema();

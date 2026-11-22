@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 
 const makeSchema = () =>
 	z
@@ -13,5 +13,4 @@ const makeSchema = () =>
 		.strict();
 export const EtiquetaUncheckedCreateWithoutLibrosInputObjectSchema: z.ZodType<Prisma.EtiquetaUncheckedCreateWithoutLibrosInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.EtiquetaUncheckedCreateWithoutLibrosInput>;
-export const EtiquetaUncheckedCreateWithoutLibrosInputObjectZodSchema =
-	makeSchema();
+export const EtiquetaUncheckedCreateWithoutLibrosInputObjectZodSchema = makeSchema();

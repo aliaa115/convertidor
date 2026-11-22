@@ -1,4 +1,8 @@
 import * as z from "zod";
+import { CapituloSchema } from "../models/Capitulo.schema.ts";
+import { ComentarioSchema } from "../models/Comentario.schema.ts";
+import { EstadoSchema } from "../models/Estado.schema.ts";
+import { MarcadorSchema } from "../models/Marcador.schema.ts";
 export const ParrafoUpsertResultSchema = z.object({
 	id: z.number().int(),
 	contenido: z.string().optional(),
@@ -6,9 +10,9 @@ export const ParrafoUpsertResultSchema = z.object({
 	createdAt: z.date(),
 	updatedAt: z.date(),
 	capituloId: z.number().int(),
-	capitulo: z.unknown(),
+	capitulo: CapituloSchema.optional(),
 	estadoId: z.number().int(),
-	estado: z.unknown(),
-	comentarios: z.array(z.unknown()),
-	marcadores: z.array(z.unknown()),
+	estado: EstadoSchema.optional(),
+	comentarios: z.array(ComentarioSchema).optional(),
+	marcadores: z.array(MarcadorSchema).optional(),
 });

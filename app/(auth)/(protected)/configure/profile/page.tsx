@@ -17,7 +17,12 @@ const page = async () => {
 		},
 	});
 
-	return <ProfileForm user={user} avatars={avatars} />;
+	return (
+		<ProfileForm
+			user={user}
+			avatars={avatars}
+		/>
+	);
 };
 
 export default page;

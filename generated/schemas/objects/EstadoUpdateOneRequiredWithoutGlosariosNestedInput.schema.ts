@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { EstadoCreateOrConnectWithoutGlosariosInputObjectSchema as EstadoCreateOrConnectWithoutGlosariosInputObjectSchema } from "./EstadoCreateOrConnectWithoutGlosariosInput.schema.ts";
 import { EstadoCreateWithoutGlosariosInputObjectSchema as EstadoCreateWithoutGlosariosInputObjectSchema } from "./EstadoCreateWithoutGlosariosInput.schema.ts";
 import { EstadoUncheckedCreateWithoutGlosariosInputObjectSchema as EstadoUncheckedCreateWithoutGlosariosInputObjectSchema } from "./EstadoUncheckedCreateWithoutGlosariosInput.schema.ts";
@@ -12,24 +12,13 @@ import { EstadoWhereUniqueInputObjectSchema as EstadoWhereUniqueInputObjectSchem
 const makeSchema = () =>
 	z
 		.object({
-			create: z
-				.union([
-					z.lazy(() => EstadoCreateWithoutGlosariosInputObjectSchema),
-					z.lazy(() => EstadoUncheckedCreateWithoutGlosariosInputObjectSchema),
-				])
-				.optional(),
-			connectOrCreate: z
-				.lazy(() => EstadoCreateOrConnectWithoutGlosariosInputObjectSchema)
-				.optional(),
-			upsert: z
-				.lazy(() => EstadoUpsertWithoutGlosariosInputObjectSchema)
-				.optional(),
+			create: z.union([z.lazy(() => EstadoCreateWithoutGlosariosInputObjectSchema), z.lazy(() => EstadoUncheckedCreateWithoutGlosariosInputObjectSchema)]).optional(),
+			connectOrCreate: z.lazy(() => EstadoCreateOrConnectWithoutGlosariosInputObjectSchema).optional(),
+			upsert: z.lazy(() => EstadoUpsertWithoutGlosariosInputObjectSchema).optional(),
 			connect: z.lazy(() => EstadoWhereUniqueInputObjectSchema).optional(),
 			update: z
 				.union([
-					z.lazy(
-						() => EstadoUpdateToOneWithWhereWithoutGlosariosInputObjectSchema,
-					),
+					z.lazy(() => EstadoUpdateToOneWithWhereWithoutGlosariosInputObjectSchema),
 					z.lazy(() => EstadoUpdateWithoutGlosariosInputObjectSchema),
 					z.lazy(() => EstadoUncheckedUpdateWithoutGlosariosInputObjectSchema),
 				])
@@ -38,5 +27,4 @@ const makeSchema = () =>
 		.strict();
 export const EstadoUpdateOneRequiredWithoutGlosariosNestedInputObjectSchema: z.ZodType<Prisma.EstadoUpdateOneRequiredWithoutGlosariosNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.EstadoUpdateOneRequiredWithoutGlosariosNestedInput>;
-export const EstadoUpdateOneRequiredWithoutGlosariosNestedInputObjectZodSchema =
-	makeSchema();
+export const EstadoUpdateOneRequiredWithoutGlosariosNestedInputObjectZodSchema = makeSchema();

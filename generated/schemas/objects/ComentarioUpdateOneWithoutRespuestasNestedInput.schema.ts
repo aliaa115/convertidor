@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { ComentarioCreateOrConnectWithoutRespuestasInputObjectSchema as ComentarioCreateOrConnectWithoutRespuestasInputObjectSchema } from "./ComentarioCreateOrConnectWithoutRespuestasInput.schema.ts";
 import { ComentarioCreateWithoutRespuestasInputObjectSchema as ComentarioCreateWithoutRespuestasInputObjectSchema } from "./ComentarioCreateWithoutRespuestasInput.schema.ts";
 import { ComentarioUncheckedCreateWithoutRespuestasInputObjectSchema as ComentarioUncheckedCreateWithoutRespuestasInputObjectSchema } from "./ComentarioUncheckedCreateWithoutRespuestasInput.schema.ts";
@@ -13,42 +13,21 @@ import { ComentarioWhereUniqueInputObjectSchema as ComentarioWhereUniqueInputObj
 const makeSchema = () =>
 	z
 		.object({
-			create: z
-				.union([
-					z.lazy(() => ComentarioCreateWithoutRespuestasInputObjectSchema),
-					z.lazy(
-						() => ComentarioUncheckedCreateWithoutRespuestasInputObjectSchema,
-					),
-				])
-				.optional(),
-			connectOrCreate: z
-				.lazy(() => ComentarioCreateOrConnectWithoutRespuestasInputObjectSchema)
-				.optional(),
-			upsert: z
-				.lazy(() => ComentarioUpsertWithoutRespuestasInputObjectSchema)
-				.optional(),
-			disconnect: z
-				.union([z.boolean(), z.lazy(() => ComentarioWhereInputObjectSchema)])
-				.optional(),
-			delete: z
-				.union([z.boolean(), z.lazy(() => ComentarioWhereInputObjectSchema)])
-				.optional(),
+			create: z.union([z.lazy(() => ComentarioCreateWithoutRespuestasInputObjectSchema), z.lazy(() => ComentarioUncheckedCreateWithoutRespuestasInputObjectSchema)]).optional(),
+			connectOrCreate: z.lazy(() => ComentarioCreateOrConnectWithoutRespuestasInputObjectSchema).optional(),
+			upsert: z.lazy(() => ComentarioUpsertWithoutRespuestasInputObjectSchema).optional(),
+			disconnect: z.union([z.boolean(), z.lazy(() => ComentarioWhereInputObjectSchema)]).optional(),
+			delete: z.union([z.boolean(), z.lazy(() => ComentarioWhereInputObjectSchema)]).optional(),
 			connect: z.lazy(() => ComentarioWhereUniqueInputObjectSchema).optional(),
 			update: z
 				.union([
-					z.lazy(
-						() =>
-							ComentarioUpdateToOneWithWhereWithoutRespuestasInputObjectSchema,
-					),
+					z.lazy(() => ComentarioUpdateToOneWithWhereWithoutRespuestasInputObjectSchema),
 					z.lazy(() => ComentarioUpdateWithoutRespuestasInputObjectSchema),
-					z.lazy(
-						() => ComentarioUncheckedUpdateWithoutRespuestasInputObjectSchema,
-					),
+					z.lazy(() => ComentarioUncheckedUpdateWithoutRespuestasInputObjectSchema),
 				])
 				.optional(),
 		})
 		.strict();
 export const ComentarioUpdateOneWithoutRespuestasNestedInputObjectSchema: z.ZodType<Prisma.ComentarioUpdateOneWithoutRespuestasNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.ComentarioUpdateOneWithoutRespuestasNestedInput>;
-export const ComentarioUpdateOneWithoutRespuestasNestedInputObjectZodSchema =
-	makeSchema();
+export const ComentarioUpdateOneWithoutRespuestasNestedInputObjectZodSchema = makeSchema();

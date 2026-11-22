@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { CapituloCreateNestedManyWithoutEstadoInputObjectSchema as CapituloCreateNestedManyWithoutEstadoInputObjectSchema } from "./CapituloCreateNestedManyWithoutEstadoInput.schema.ts";
 import { ComentarioCreateNestedManyWithoutEstadoInputObjectSchema as ComentarioCreateNestedManyWithoutEstadoInputObjectSchema } from "./ComentarioCreateNestedManyWithoutEstadoInput.schema.ts";
 import { ConfiguracionCreateNestedManyWithoutEstadoInputObjectSchema as ConfiguracionCreateNestedManyWithoutEstadoInputObjectSchema } from "./ConfiguracionCreateNestedManyWithoutEstadoInput.schema.ts";
@@ -28,67 +28,26 @@ const makeSchema = () =>
 			icon: z.string().optional().nullable(),
 			createdAt: z.coerce.date().optional(),
 			updatedAt: z.coerce.date().optional(),
-			etiquetas: z
-				.lazy(() => EtiquetaCreateNestedManyWithoutEstadoInputObjectSchema)
-				.optional(),
-			tipos: z
-				.lazy(() => TipoCreateNestedManyWithoutEstadoInputObjectSchema)
-				.optional(),
-			usuarios: z
-				.lazy(() => UsuarioCreateNestedManyWithoutEstadoInputObjectSchema)
-				.optional(),
-			escritores: z
-				.lazy(() => EscritorCreateNestedManyWithoutEstadoInputObjectSchema)
-				.optional(),
-			configuraciones: z
-				.lazy(() => ConfiguracionCreateNestedManyWithoutEstadoInputObjectSchema)
-				.optional(),
-			idioma: z
-				.lazy(() => IdiomaCreateNestedManyWithoutEstadoInputObjectSchema)
-				.optional(),
-			libros: z
-				.lazy(() => LibroCreateNestedManyWithoutEstadoInputObjectSchema)
-				.optional(),
-			capitulos: z
-				.lazy(() => CapituloCreateNestedManyWithoutEstadoInputObjectSchema)
-				.optional(),
-			parrafos: z
-				.lazy(() => ParrafoCreateNestedManyWithoutEstadoInputObjectSchema)
-				.optional(),
-			comentarios: z
-				.lazy(() => ComentarioCreateNestedManyWithoutEstadoInputObjectSchema)
-				.optional(),
-			libroCategorias: z
-				.lazy(
-					() => LibroCategoriaCreateNestedManyWithoutEstadoInputObjectSchema,
-				)
-				.optional(),
-			libroEtiquetas: z
-				.lazy(() => LibroEtiquetaCreateNestedManyWithoutEstadoInputObjectSchema)
-				.optional(),
-			favoritos: z
-				.lazy(() => FavoritoCreateNestedManyWithoutEstadoInputObjectSchema)
-				.optional(),
-			glosarios: z
-				.lazy(() => GlosarioCreateNestedManyWithoutEstadoInputObjectSchema)
-				.optional(),
-			notasAutor: z
-				.lazy(() => NotaAutorCreateNestedManyWithoutEstadoInputObjectSchema)
-				.optional(),
-			marcadores: z
-				.lazy(() => MarcadorCreateNestedManyWithoutEstadoInputObjectSchema)
-				.optional(),
-			listas: z
-				.lazy(() => ListaCreateNestedManyWithoutEstadoInputObjectSchema)
-				.optional(),
-			listaLibros: z
-				.lazy(() => ListaLibroCreateNestedManyWithoutEstadoInputObjectSchema)
-				.optional(),
-			seguirUsuarios: z
-				.lazy(() => SeguirUsuarioCreateNestedManyWithoutEstadoInputObjectSchema)
-				.optional(),
+			etiquetas: z.lazy(() => EtiquetaCreateNestedManyWithoutEstadoInputObjectSchema).optional(),
+			tipos: z.lazy(() => TipoCreateNestedManyWithoutEstadoInputObjectSchema).optional(),
+			usuarios: z.lazy(() => UsuarioCreateNestedManyWithoutEstadoInputObjectSchema).optional(),
+			escritores: z.lazy(() => EscritorCreateNestedManyWithoutEstadoInputObjectSchema).optional(),
+			configuraciones: z.lazy(() => ConfiguracionCreateNestedManyWithoutEstadoInputObjectSchema).optional(),
+			idioma: z.lazy(() => IdiomaCreateNestedManyWithoutEstadoInputObjectSchema).optional(),
+			libros: z.lazy(() => LibroCreateNestedManyWithoutEstadoInputObjectSchema).optional(),
+			capitulos: z.lazy(() => CapituloCreateNestedManyWithoutEstadoInputObjectSchema).optional(),
+			parrafos: z.lazy(() => ParrafoCreateNestedManyWithoutEstadoInputObjectSchema).optional(),
+			comentarios: z.lazy(() => ComentarioCreateNestedManyWithoutEstadoInputObjectSchema).optional(),
+			libroCategorias: z.lazy(() => LibroCategoriaCreateNestedManyWithoutEstadoInputObjectSchema).optional(),
+			libroEtiquetas: z.lazy(() => LibroEtiquetaCreateNestedManyWithoutEstadoInputObjectSchema).optional(),
+			favoritos: z.lazy(() => FavoritoCreateNestedManyWithoutEstadoInputObjectSchema).optional(),
+			glosarios: z.lazy(() => GlosarioCreateNestedManyWithoutEstadoInputObjectSchema).optional(),
+			notasAutor: z.lazy(() => NotaAutorCreateNestedManyWithoutEstadoInputObjectSchema).optional(),
+			marcadores: z.lazy(() => MarcadorCreateNestedManyWithoutEstadoInputObjectSchema).optional(),
+			listas: z.lazy(() => ListaCreateNestedManyWithoutEstadoInputObjectSchema).optional(),
+			listaLibros: z.lazy(() => ListaLibroCreateNestedManyWithoutEstadoInputObjectSchema).optional(),
+			seguirUsuarios: z.lazy(() => SeguirUsuarioCreateNestedManyWithoutEstadoInputObjectSchema).optional(),
 		})
 		.strict();
-export const EstadoCreateWithoutCategoriasInputObjectSchema: z.ZodType<Prisma.EstadoCreateWithoutCategoriasInput> =
-	makeSchema() as unknown as z.ZodType<Prisma.EstadoCreateWithoutCategoriasInput>;
+export const EstadoCreateWithoutCategoriasInputObjectSchema: z.ZodType<Prisma.EstadoCreateWithoutCategoriasInput> = makeSchema() as unknown as z.ZodType<Prisma.EstadoCreateWithoutCategoriasInput>;
 export const EstadoCreateWithoutCategoriasInputObjectZodSchema = makeSchema();

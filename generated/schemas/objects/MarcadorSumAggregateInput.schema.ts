@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 
 const makeSchema = () =>
 	z
@@ -10,6 +10,5 @@ const makeSchema = () =>
 			estadoId: z.literal(true).optional(),
 		})
 		.strict();
-export const MarcadorSumAggregateInputObjectSchema: z.ZodType<Prisma.MarcadorSumAggregateInputType> =
-	makeSchema() as unknown as z.ZodType<Prisma.MarcadorSumAggregateInputType>;
+export const MarcadorSumAggregateInputObjectSchema: z.ZodType<Prisma.MarcadorSumAggregateInputType> = makeSchema() as unknown as z.ZodType<Prisma.MarcadorSumAggregateInputType>;
 export const MarcadorSumAggregateInputObjectZodSchema = makeSchema();

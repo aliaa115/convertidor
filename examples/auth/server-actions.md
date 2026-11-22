@@ -18,10 +18,7 @@ import { parseFormData } from "@/lib/zod-formdata";
 import { prisma } from "@/lib/prisma";
 import { schema } from "./schema";
 
-export async function exampleAction(
-	_prevState: { error?: string },
-	formData: FormData,
-) {
+export async function exampleAction(_prevState: { error?: string }, formData: FormData) {
 	const parsed = parseFormData(formData, schema);
 
 	if (!parsed.success) {

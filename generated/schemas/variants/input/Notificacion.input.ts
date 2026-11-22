@@ -13,8 +13,8 @@ export const NotificacionInputSchema = z
 		usuario: z.unknown(),
 		entidadId: z.number().int().optional().nullable(),
 		entidadTipo: EntidadTipoSchema,
-		createdAt: z.date(),
-		updatedAt: z.date(),
+		createdAt: z.coerce.date(),
+		updatedAt: z.coerce.date(),
 	})
 	.strict();
 

@@ -1,4 +1,7 @@
 import * as z from "zod";
+import { EstadoSchema } from "../models/Estado.schema.ts";
+import { TipoSchema } from "../models/Tipo.schema.ts";
+import { UsuarioSchema } from "../models/Usuario.schema.ts";
 export const ConfiguracionDeleteResultSchema = z.nullable(
 	z.object({
 		id: z.number().int(),
@@ -6,10 +9,10 @@ export const ConfiguracionDeleteResultSchema = z.nullable(
 		createdAt: z.date(),
 		updatedAt: z.date(),
 		usuarioId: z.number().int().optional(),
-		usuario: z.unknown().optional(),
+		usuario: UsuarioSchema.optional(),
 		tipoId: z.number().int().optional(),
-		tipo: z.unknown().optional(),
+		tipo: TipoSchema.optional(),
 		estadoId: z.number().int(),
-		estado: z.unknown(),
+		estado: EstadoSchema.optional(),
 	}),
 );

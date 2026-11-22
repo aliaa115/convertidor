@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { UsuarioScalarFieldEnumSchema } from "./enums/UsuarioScalarFieldEnum.schema.ts";
 import { UsuarioAvgAggregateInputObjectSchema as UsuarioAvgAggregateInputObjectSchema } from "./objects/UsuarioAvgAggregateInput.schema.ts";
 import { UsuarioCountAggregateInputObjectSchema as UsuarioCountAggregateInputObjectSchema } from "./objects/UsuarioCountAggregateInput.schema.ts";
@@ -13,19 +13,12 @@ import { UsuarioWhereInputObjectSchema as UsuarioWhereInputObjectSchema } from "
 export const UsuarioGroupBySchema: z.ZodType<Prisma.UsuarioGroupByArgs> = z
 	.object({
 		where: UsuarioWhereInputObjectSchema.optional(),
-		orderBy: z
-			.union([
-				UsuarioOrderByWithAggregationInputObjectSchema,
-				UsuarioOrderByWithAggregationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([UsuarioOrderByWithAggregationInputObjectSchema, UsuarioOrderByWithAggregationInputObjectSchema.array()]).optional(),
 		having: UsuarioScalarWhereWithAggregatesInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
 		by: z.array(UsuarioScalarFieldEnumSchema),
-		_count: z
-			.union([z.literal(true), UsuarioCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), UsuarioCountAggregateInputObjectSchema]).optional(),
 		_min: UsuarioMinAggregateInputObjectSchema.optional(),
 		_max: UsuarioMaxAggregateInputObjectSchema.optional(),
 		_avg: UsuarioAvgAggregateInputObjectSchema.optional(),
@@ -36,19 +29,12 @@ export const UsuarioGroupBySchema: z.ZodType<Prisma.UsuarioGroupByArgs> = z
 export const UsuarioGroupByZodSchema = z
 	.object({
 		where: UsuarioWhereInputObjectSchema.optional(),
-		orderBy: z
-			.union([
-				UsuarioOrderByWithAggregationInputObjectSchema,
-				UsuarioOrderByWithAggregationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([UsuarioOrderByWithAggregationInputObjectSchema, UsuarioOrderByWithAggregationInputObjectSchema.array()]).optional(),
 		having: UsuarioScalarWhereWithAggregatesInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
 		by: z.array(UsuarioScalarFieldEnumSchema),
-		_count: z
-			.union([z.literal(true), UsuarioCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), UsuarioCountAggregateInputObjectSchema]).optional(),
 		_min: UsuarioMinAggregateInputObjectSchema.optional(),
 		_max: UsuarioMaxAggregateInputObjectSchema.optional(),
 		_avg: UsuarioAvgAggregateInputObjectSchema.optional(),

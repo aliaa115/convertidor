@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { ParrafoCreateManyCapituloInputEnvelopeObjectSchema as ParrafoCreateManyCapituloInputEnvelopeObjectSchema } from "./ParrafoCreateManyCapituloInputEnvelope.schema.ts";
 import { ParrafoCreateOrConnectWithoutCapituloInputObjectSchema as ParrafoCreateOrConnectWithoutCapituloInputObjectSchema } from "./ParrafoCreateOrConnectWithoutCapituloInput.schema.ts";
 import { ParrafoCreateWithoutCapituloInputObjectSchema as ParrafoCreateWithoutCapituloInputObjectSchema } from "./ParrafoCreateWithoutCapituloInput.schema.ts";
@@ -18,93 +18,21 @@ const makeSchema = () =>
 					z.lazy(() => ParrafoCreateWithoutCapituloInputObjectSchema),
 					z.lazy(() => ParrafoCreateWithoutCapituloInputObjectSchema).array(),
 					z.lazy(() => ParrafoUncheckedCreateWithoutCapituloInputObjectSchema),
-					z
-						.lazy(() => ParrafoUncheckedCreateWithoutCapituloInputObjectSchema)
-						.array(),
+					z.lazy(() => ParrafoUncheckedCreateWithoutCapituloInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(() => ParrafoCreateOrConnectWithoutCapituloInputObjectSchema),
-					z
-						.lazy(() => ParrafoCreateOrConnectWithoutCapituloInputObjectSchema)
-						.array(),
-				])
-				.optional(),
-			upsert: z
-				.union([
-					z.lazy(
-						() => ParrafoUpsertWithWhereUniqueWithoutCapituloInputObjectSchema,
-					),
-					z
-						.lazy(
-							() =>
-								ParrafoUpsertWithWhereUniqueWithoutCapituloInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			createMany: z
-				.lazy(() => ParrafoCreateManyCapituloInputEnvelopeObjectSchema)
-				.optional(),
-			set: z
-				.union([
-					z.lazy(() => ParrafoWhereUniqueInputObjectSchema),
-					z.lazy(() => ParrafoWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			disconnect: z
-				.union([
-					z.lazy(() => ParrafoWhereUniqueInputObjectSchema),
-					z.lazy(() => ParrafoWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			delete: z
-				.union([
-					z.lazy(() => ParrafoWhereUniqueInputObjectSchema),
-					z.lazy(() => ParrafoWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => ParrafoWhereUniqueInputObjectSchema),
-					z.lazy(() => ParrafoWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			update: z
-				.union([
-					z.lazy(
-						() => ParrafoUpdateWithWhereUniqueWithoutCapituloInputObjectSchema,
-					),
-					z
-						.lazy(
-							() =>
-								ParrafoUpdateWithWhereUniqueWithoutCapituloInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			updateMany: z
-				.union([
-					z.lazy(
-						() => ParrafoUpdateManyWithWhereWithoutCapituloInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => ParrafoUpdateManyWithWhereWithoutCapituloInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			deleteMany: z
-				.union([
-					z.lazy(() => ParrafoScalarWhereInputObjectSchema),
-					z.lazy(() => ParrafoScalarWhereInputObjectSchema).array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => ParrafoCreateOrConnectWithoutCapituloInputObjectSchema), z.lazy(() => ParrafoCreateOrConnectWithoutCapituloInputObjectSchema).array()]).optional(),
+			upsert: z.union([z.lazy(() => ParrafoUpsertWithWhereUniqueWithoutCapituloInputObjectSchema), z.lazy(() => ParrafoUpsertWithWhereUniqueWithoutCapituloInputObjectSchema).array()]).optional(),
+			createMany: z.lazy(() => ParrafoCreateManyCapituloInputEnvelopeObjectSchema).optional(),
+			set: z.union([z.lazy(() => ParrafoWhereUniqueInputObjectSchema), z.lazy(() => ParrafoWhereUniqueInputObjectSchema).array()]).optional(),
+			disconnect: z.union([z.lazy(() => ParrafoWhereUniqueInputObjectSchema), z.lazy(() => ParrafoWhereUniqueInputObjectSchema).array()]).optional(),
+			delete: z.union([z.lazy(() => ParrafoWhereUniqueInputObjectSchema), z.lazy(() => ParrafoWhereUniqueInputObjectSchema).array()]).optional(),
+			connect: z.union([z.lazy(() => ParrafoWhereUniqueInputObjectSchema), z.lazy(() => ParrafoWhereUniqueInputObjectSchema).array()]).optional(),
+			update: z.union([z.lazy(() => ParrafoUpdateWithWhereUniqueWithoutCapituloInputObjectSchema), z.lazy(() => ParrafoUpdateWithWhereUniqueWithoutCapituloInputObjectSchema).array()]).optional(),
+			updateMany: z.union([z.lazy(() => ParrafoUpdateManyWithWhereWithoutCapituloInputObjectSchema), z.lazy(() => ParrafoUpdateManyWithWhereWithoutCapituloInputObjectSchema).array()]).optional(),
+			deleteMany: z.union([z.lazy(() => ParrafoScalarWhereInputObjectSchema), z.lazy(() => ParrafoScalarWhereInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const ParrafoUncheckedUpdateManyWithoutCapituloNestedInputObjectSchema: z.ZodType<Prisma.ParrafoUncheckedUpdateManyWithoutCapituloNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.ParrafoUncheckedUpdateManyWithoutCapituloNestedInput>;
-export const ParrafoUncheckedUpdateManyWithoutCapituloNestedInputObjectZodSchema =
-	makeSchema();
+export const ParrafoUncheckedUpdateManyWithoutCapituloNestedInputObjectZodSchema = makeSchema();

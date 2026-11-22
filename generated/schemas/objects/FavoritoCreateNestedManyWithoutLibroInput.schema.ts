@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { FavoritoCreateManyLibroInputEnvelopeObjectSchema as FavoritoCreateManyLibroInputEnvelopeObjectSchema } from "./FavoritoCreateManyLibroInputEnvelope.schema.ts";
 import { FavoritoCreateOrConnectWithoutLibroInputObjectSchema as FavoritoCreateOrConnectWithoutLibroInputObjectSchema } from "./FavoritoCreateOrConnectWithoutLibroInput.schema.ts";
 import { FavoritoCreateWithoutLibroInputObjectSchema as FavoritoCreateWithoutLibroInputObjectSchema } from "./FavoritoCreateWithoutLibroInput.schema.ts";
@@ -14,31 +14,14 @@ const makeSchema = () =>
 					z.lazy(() => FavoritoCreateWithoutLibroInputObjectSchema),
 					z.lazy(() => FavoritoCreateWithoutLibroInputObjectSchema).array(),
 					z.lazy(() => FavoritoUncheckedCreateWithoutLibroInputObjectSchema),
-					z
-						.lazy(() => FavoritoUncheckedCreateWithoutLibroInputObjectSchema)
-						.array(),
+					z.lazy(() => FavoritoUncheckedCreateWithoutLibroInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(() => FavoritoCreateOrConnectWithoutLibroInputObjectSchema),
-					z
-						.lazy(() => FavoritoCreateOrConnectWithoutLibroInputObjectSchema)
-						.array(),
-				])
-				.optional(),
-			createMany: z
-				.lazy(() => FavoritoCreateManyLibroInputEnvelopeObjectSchema)
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => FavoritoWhereUniqueInputObjectSchema),
-					z.lazy(() => FavoritoWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => FavoritoCreateOrConnectWithoutLibroInputObjectSchema), z.lazy(() => FavoritoCreateOrConnectWithoutLibroInputObjectSchema).array()]).optional(),
+			createMany: z.lazy(() => FavoritoCreateManyLibroInputEnvelopeObjectSchema).optional(),
+			connect: z.union([z.lazy(() => FavoritoWhereUniqueInputObjectSchema), z.lazy(() => FavoritoWhereUniqueInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const FavoritoCreateNestedManyWithoutLibroInputObjectSchema: z.ZodType<Prisma.FavoritoCreateNestedManyWithoutLibroInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.FavoritoCreateNestedManyWithoutLibroInput>;
-export const FavoritoCreateNestedManyWithoutLibroInputObjectZodSchema =
-	makeSchema();
+export const FavoritoCreateNestedManyWithoutLibroInputObjectZodSchema = makeSchema();

@@ -35,10 +35,18 @@ export function ExampleForm({
 	const [state, formAction] = useActionState(action, initialState);
 
 	return (
-		<form action={formAction} className="space-y-4">
-			<input name="email" type="email" />
+		<form
+			action={formAction}
+			className="space-y-4">
+			<input
+				name="email"
+				type="email"
+			/>
 			{state?.error ? <p>{state.error}</p> : null}
-			<AuthSubmitButton text="Enviar" pendingText="Procesando..." />
+			<AuthSubmitButton
+				text="Enviar"
+				pendingText="Procesando..."
+			/>
 		</form>
 	);
 }

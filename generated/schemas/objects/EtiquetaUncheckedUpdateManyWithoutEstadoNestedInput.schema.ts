@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { EtiquetaCreateManyEstadoInputEnvelopeObjectSchema as EtiquetaCreateManyEstadoInputEnvelopeObjectSchema } from "./EtiquetaCreateManyEstadoInputEnvelope.schema.ts";
 import { EtiquetaCreateOrConnectWithoutEstadoInputObjectSchema as EtiquetaCreateOrConnectWithoutEstadoInputObjectSchema } from "./EtiquetaCreateOrConnectWithoutEstadoInput.schema.ts";
 import { EtiquetaCreateWithoutEstadoInputObjectSchema as EtiquetaCreateWithoutEstadoInputObjectSchema } from "./EtiquetaCreateWithoutEstadoInput.schema.ts";
@@ -18,91 +18,21 @@ const makeSchema = () =>
 					z.lazy(() => EtiquetaCreateWithoutEstadoInputObjectSchema),
 					z.lazy(() => EtiquetaCreateWithoutEstadoInputObjectSchema).array(),
 					z.lazy(() => EtiquetaUncheckedCreateWithoutEstadoInputObjectSchema),
-					z
-						.lazy(() => EtiquetaUncheckedCreateWithoutEstadoInputObjectSchema)
-						.array(),
+					z.lazy(() => EtiquetaUncheckedCreateWithoutEstadoInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(() => EtiquetaCreateOrConnectWithoutEstadoInputObjectSchema),
-					z
-						.lazy(() => EtiquetaCreateOrConnectWithoutEstadoInputObjectSchema)
-						.array(),
-				])
-				.optional(),
-			upsert: z
-				.union([
-					z.lazy(
-						() => EtiquetaUpsertWithWhereUniqueWithoutEstadoInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => EtiquetaUpsertWithWhereUniqueWithoutEstadoInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			createMany: z
-				.lazy(() => EtiquetaCreateManyEstadoInputEnvelopeObjectSchema)
-				.optional(),
-			set: z
-				.union([
-					z.lazy(() => EtiquetaWhereUniqueInputObjectSchema),
-					z.lazy(() => EtiquetaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			disconnect: z
-				.union([
-					z.lazy(() => EtiquetaWhereUniqueInputObjectSchema),
-					z.lazy(() => EtiquetaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			delete: z
-				.union([
-					z.lazy(() => EtiquetaWhereUniqueInputObjectSchema),
-					z.lazy(() => EtiquetaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => EtiquetaWhereUniqueInputObjectSchema),
-					z.lazy(() => EtiquetaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			update: z
-				.union([
-					z.lazy(
-						() => EtiquetaUpdateWithWhereUniqueWithoutEstadoInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => EtiquetaUpdateWithWhereUniqueWithoutEstadoInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			updateMany: z
-				.union([
-					z.lazy(
-						() => EtiquetaUpdateManyWithWhereWithoutEstadoInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => EtiquetaUpdateManyWithWhereWithoutEstadoInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			deleteMany: z
-				.union([
-					z.lazy(() => EtiquetaScalarWhereInputObjectSchema),
-					z.lazy(() => EtiquetaScalarWhereInputObjectSchema).array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => EtiquetaCreateOrConnectWithoutEstadoInputObjectSchema), z.lazy(() => EtiquetaCreateOrConnectWithoutEstadoInputObjectSchema).array()]).optional(),
+			upsert: z.union([z.lazy(() => EtiquetaUpsertWithWhereUniqueWithoutEstadoInputObjectSchema), z.lazy(() => EtiquetaUpsertWithWhereUniqueWithoutEstadoInputObjectSchema).array()]).optional(),
+			createMany: z.lazy(() => EtiquetaCreateManyEstadoInputEnvelopeObjectSchema).optional(),
+			set: z.union([z.lazy(() => EtiquetaWhereUniqueInputObjectSchema), z.lazy(() => EtiquetaWhereUniqueInputObjectSchema).array()]).optional(),
+			disconnect: z.union([z.lazy(() => EtiquetaWhereUniqueInputObjectSchema), z.lazy(() => EtiquetaWhereUniqueInputObjectSchema).array()]).optional(),
+			delete: z.union([z.lazy(() => EtiquetaWhereUniqueInputObjectSchema), z.lazy(() => EtiquetaWhereUniqueInputObjectSchema).array()]).optional(),
+			connect: z.union([z.lazy(() => EtiquetaWhereUniqueInputObjectSchema), z.lazy(() => EtiquetaWhereUniqueInputObjectSchema).array()]).optional(),
+			update: z.union([z.lazy(() => EtiquetaUpdateWithWhereUniqueWithoutEstadoInputObjectSchema), z.lazy(() => EtiquetaUpdateWithWhereUniqueWithoutEstadoInputObjectSchema).array()]).optional(),
+			updateMany: z.union([z.lazy(() => EtiquetaUpdateManyWithWhereWithoutEstadoInputObjectSchema), z.lazy(() => EtiquetaUpdateManyWithWhereWithoutEstadoInputObjectSchema).array()]).optional(),
+			deleteMany: z.union([z.lazy(() => EtiquetaScalarWhereInputObjectSchema), z.lazy(() => EtiquetaScalarWhereInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const EtiquetaUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema: z.ZodType<Prisma.EtiquetaUncheckedUpdateManyWithoutEstadoNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.EtiquetaUncheckedUpdateManyWithoutEstadoNestedInput>;
-export const EtiquetaUncheckedUpdateManyWithoutEstadoNestedInputObjectZodSchema =
-	makeSchema();
+export const EtiquetaUncheckedUpdateManyWithoutEstadoNestedInputObjectZodSchema = makeSchema();

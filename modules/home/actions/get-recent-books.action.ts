@@ -16,6 +16,7 @@ export async function getRecentBooks() {
 		},
 		where: {
 			estadoId: 1,
+			publicado: true,
 		},
 		orderBy: {
 			fechaPublicacion: "desc",

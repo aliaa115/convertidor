@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { EscritorFindManySchema as EscritorFindManySchema } from "../findManyEscritor.schema.ts";
 import { AvatarCountOutputTypeArgsObjectSchema as AvatarCountOutputTypeArgsObjectSchema } from "./AvatarCountOutputTypeArgs.schema.ts";
 
@@ -9,17 +9,9 @@ const makeSchema = () =>
 			id: z.boolean().optional(),
 			nombre: z.boolean().optional(),
 			url: z.boolean().optional(),
-			escritores: z
-				.union([z.boolean(), z.lazy(() => EscritorFindManySchema)])
-				.optional(),
-			_count: z
-				.union([
-					z.boolean(),
-					z.lazy(() => AvatarCountOutputTypeArgsObjectSchema),
-				])
-				.optional(),
+			escritores: z.union([z.boolean(), z.lazy(() => EscritorFindManySchema)]).optional(),
+			_count: z.union([z.boolean(), z.lazy(() => AvatarCountOutputTypeArgsObjectSchema)]).optional(),
 		})
 		.strict();
-export const AvatarSelectObjectSchema: z.ZodType<Prisma.AvatarSelect> =
-	makeSchema() as unknown as z.ZodType<Prisma.AvatarSelect>;
+export const AvatarSelectObjectSchema: z.ZodType<Prisma.AvatarSelect> = makeSchema() as unknown as z.ZodType<Prisma.AvatarSelect>;
 export const AvatarSelectObjectZodSchema = makeSchema();

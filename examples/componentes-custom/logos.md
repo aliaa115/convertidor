@@ -43,7 +43,12 @@ import LogoAnimated from "@/components/custom/logo/logo-animated";
 
 export function HeroBrand() {
 	return (
-		<LogoAnimated size={260} waves={5} duration={2.5} waveColor="#D4AF37" />
+		<LogoAnimated
+			size={260}
+			waves={5}
+			duration={2.5}
+			waveColor="#D4AF37"
+		/>
 	);
 }
 ```

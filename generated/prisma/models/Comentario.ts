@@ -15,8 +15,7 @@ import type * as Prisma from "../internal/prismaNamespace.ts";
  * Model Comentario
  *
  */
-export type ComentarioModel =
-	runtime.Types.Result.DefaultSelection<Prisma.$ComentarioPayload>;
+export type ComentarioModel = runtime.Types.Result.DefaultSelection<Prisma.$ComentarioPayload>;
 
 export type AggregateComentario = {
 	_count: ComentarioCountAggregateOutputType | null;
@@ -136,10 +135,7 @@ export type ComentarioCountAggregateInputType = {
 	_all?: true;
 };
 
-export type ComentarioAggregateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Comentario to aggregate.
 	 */
@@ -149,9 +145,7 @@ export type ComentarioAggregateArgs<
 	 *
 	 * Determine the order of Comentarios to fetch.
 	 */
-	orderBy?:
-		| Prisma.ComentarioOrderByWithRelationInput
-		| Prisma.ComentarioOrderByWithRelationInput[];
+	orderBy?: Prisma.ComentarioOrderByWithRelationInput | Prisma.ComentarioOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -210,14 +204,9 @@ export type GetComentarioAggregateType<T extends ComentarioAggregateArgs> = {
 		: Prisma.GetScalarType<T[P], AggregateComentario[P]>;
 };
 
-export type ComentarioGroupByArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.ComentarioWhereInput;
-	orderBy?:
-		| Prisma.ComentarioOrderByWithAggregationInput
-		| Prisma.ComentarioOrderByWithAggregationInput[];
+	orderBy?: Prisma.ComentarioOrderByWithAggregationInput | Prisma.ComentarioOrderByWithAggregationInput[];
 	by: Prisma.ComentarioScalarFieldEnum[] | Prisma.ComentarioScalarFieldEnum;
 	having?: Prisma.ComentarioScalarWhereWithAggregatesInput;
 	take?: number;
@@ -246,18 +235,17 @@ export type ComentarioGroupByOutputType = {
 	_max: ComentarioMaxAggregateOutputType | null;
 };
 
-export type GetComentarioGroupByPayload<T extends ComentarioGroupByArgs> =
-	Prisma.PrismaPromise<
-		Array<
-			Prisma.PickEnumerable<ComentarioGroupByOutputType, T["by"]> & {
-				[P in keyof T & keyof ComentarioGroupByOutputType]: P extends "_count"
-					? T[P] extends boolean
-						? number
-						: Prisma.GetScalarType<T[P], ComentarioGroupByOutputType[P]>
-					: Prisma.GetScalarType<T[P], ComentarioGroupByOutputType[P]>;
-			}
-		>
-	>;
+export type GetComentarioGroupByPayload<T extends ComentarioGroupByArgs> = Prisma.PrismaPromise<
+	Array<
+		Prisma.PickEnumerable<ComentarioGroupByOutputType, T["by"]> & {
+			[P in keyof T & keyof ComentarioGroupByOutputType]: P extends "_count"
+				? T[P] extends boolean
+					? number
+					: Prisma.GetScalarType<T[P], ComentarioGroupByOutputType[P]>
+				: Prisma.GetScalarType<T[P], ComentarioGroupByOutputType[P]>;
+		}
+	>
+>;
 
 export type ComentarioWhereInput = {
 	AND?: Prisma.ComentarioWhereInput | Prisma.ComentarioWhereInput[];
@@ -272,27 +260,12 @@ export type ComentarioWhereInput = {
 	comentarioPadreId?: Prisma.IntNullableFilter<"Comentario"> | number | null;
 	tipoId?: Prisma.IntNullableFilter<"Comentario"> | number | null;
 	estadoId?: Prisma.IntFilter<"Comentario"> | number;
-	escritor?: Prisma.XOR<
-		Prisma.EscritorScalarRelationFilter,
-		Prisma.EscritorWhereInput
-	>;
-	parrafo?: Prisma.XOR<
-		Prisma.ParrafoScalarRelationFilter,
-		Prisma.ParrafoWhereInput
-	>;
-	padre?: Prisma.XOR<
-		Prisma.ComentarioNullableScalarRelationFilter,
-		Prisma.ComentarioWhereInput
-	> | null;
+	escritor?: Prisma.XOR<Prisma.EscritorScalarRelationFilter, Prisma.EscritorWhereInput>;
+	parrafo?: Prisma.XOR<Prisma.ParrafoScalarRelationFilter, Prisma.ParrafoWhereInput>;
+	padre?: Prisma.XOR<Prisma.ComentarioNullableScalarRelationFilter, Prisma.ComentarioWhereInput> | null;
 	respuestas?: Prisma.ComentarioListRelationFilter;
-	tipo?: Prisma.XOR<
-		Prisma.TipoNullableScalarRelationFilter,
-		Prisma.TipoWhereInput
-	> | null;
-	estado?: Prisma.XOR<
-		Prisma.EstadoScalarRelationFilter,
-		Prisma.EstadoWhereInput
-	>;
+	tipo?: Prisma.XOR<Prisma.TipoNullableScalarRelationFilter, Prisma.TipoWhereInput> | null;
+	estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 };
 
 export type ComentarioOrderByWithRelationInput = {
@@ -327,27 +300,12 @@ export type ComentarioWhereUniqueInput = Prisma.AtLeast<
 		comentarioPadreId?: Prisma.IntNullableFilter<"Comentario"> | number | null;
 		tipoId?: Prisma.IntNullableFilter<"Comentario"> | number | null;
 		estadoId?: Prisma.IntFilter<"Comentario"> | number;
-		escritor?: Prisma.XOR<
-			Prisma.EscritorScalarRelationFilter,
-			Prisma.EscritorWhereInput
-		>;
-		parrafo?: Prisma.XOR<
-			Prisma.ParrafoScalarRelationFilter,
-			Prisma.ParrafoWhereInput
-		>;
-		padre?: Prisma.XOR<
-			Prisma.ComentarioNullableScalarRelationFilter,
-			Prisma.ComentarioWhereInput
-		> | null;
+		escritor?: Prisma.XOR<Prisma.EscritorScalarRelationFilter, Prisma.EscritorWhereInput>;
+		parrafo?: Prisma.XOR<Prisma.ParrafoScalarRelationFilter, Prisma.ParrafoWhereInput>;
+		padre?: Prisma.XOR<Prisma.ComentarioNullableScalarRelationFilter, Prisma.ComentarioWhereInput> | null;
 		respuestas?: Prisma.ComentarioListRelationFilter;
-		tipo?: Prisma.XOR<
-			Prisma.TipoNullableScalarRelationFilter,
-			Prisma.TipoWhereInput
-		> | null;
-		estado?: Prisma.XOR<
-			Prisma.EstadoScalarRelationFilter,
-			Prisma.EstadoWhereInput
-		>;
+		tipo?: Prisma.XOR<Prisma.TipoNullableScalarRelationFilter, Prisma.TipoWhereInput> | null;
+		estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 	},
 	"id"
 >;
@@ -370,23 +328,16 @@ export type ComentarioOrderByWithAggregationInput = {
 };
 
 export type ComentarioScalarWhereWithAggregatesInput = {
-	AND?:
-		| Prisma.ComentarioScalarWhereWithAggregatesInput
-		| Prisma.ComentarioScalarWhereWithAggregatesInput[];
+	AND?: Prisma.ComentarioScalarWhereWithAggregatesInput | Prisma.ComentarioScalarWhereWithAggregatesInput[];
 	OR?: Prisma.ComentarioScalarWhereWithAggregatesInput[];
-	NOT?:
-		| Prisma.ComentarioScalarWhereWithAggregatesInput
-		| Prisma.ComentarioScalarWhereWithAggregatesInput[];
+	NOT?: Prisma.ComentarioScalarWhereWithAggregatesInput | Prisma.ComentarioScalarWhereWithAggregatesInput[];
 	id?: Prisma.IntWithAggregatesFilter<"Comentario"> | number;
 	contenido?: Prisma.StringWithAggregatesFilter<"Comentario"> | string;
 	createdAt?: Prisma.DateTimeWithAggregatesFilter<"Comentario"> | Date | string;
 	updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Comentario"> | Date | string;
 	escritorId?: Prisma.IntWithAggregatesFilter<"Comentario"> | number;
 	parrafoId?: Prisma.IntWithAggregatesFilter<"Comentario"> | number;
-	comentarioPadreId?:
-		| Prisma.IntNullableWithAggregatesFilter<"Comentario">
-		| number
-		| null;
+	comentarioPadreId?: Prisma.IntNullableWithAggregatesFilter<"Comentario"> | number | null;
 	tipoId?: Prisma.IntNullableWithAggregatesFilter<"Comentario"> | number | null;
 	estadoId?: Prisma.IntWithAggregatesFilter<"Comentario"> | number;
 };
@@ -435,10 +386,7 @@ export type ComentarioUncheckedUpdateInput = {
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	escritorId?: Prisma.IntFieldUpdateOperationsInput | number;
 	parrafoId?: Prisma.IntFieldUpdateOperationsInput | number;
-	comentarioPadreId?:
-		| Prisma.NullableIntFieldUpdateOperationsInput
-		| number
-		| null;
+	comentarioPadreId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
 	tipoId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
 	estadoId?: Prisma.IntFieldUpdateOperationsInput | number;
 	respuestas?: Prisma.ComentarioUncheckedUpdateManyWithoutPadreNestedInput;
@@ -469,10 +417,7 @@ export type ComentarioUncheckedUpdateManyInput = {
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	escritorId?: Prisma.IntFieldUpdateOperationsInput | number;
 	parrafoId?: Prisma.IntFieldUpdateOperationsInput | number;
-	comentarioPadreId?:
-		| Prisma.NullableIntFieldUpdateOperationsInput
-		| number
-		| null;
+	comentarioPadreId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
 	tipoId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
 	estadoId?: Prisma.IntFieldUpdateOperationsInput | number;
 };
@@ -548,560 +493,288 @@ export type ComentarioSumOrderByAggregateInput = {
 
 export type ComentarioCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ComentarioCreateWithoutEstadoInput,
-				Prisma.ComentarioUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.ComentarioCreateWithoutEstadoInput, Prisma.ComentarioUncheckedCreateWithoutEstadoInput>
 		| Prisma.ComentarioCreateWithoutEstadoInput[]
 		| Prisma.ComentarioUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.ComentarioCreateOrConnectWithoutEstadoInput
-		| Prisma.ComentarioCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutEstadoInput | Prisma.ComentarioCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.ComentarioCreateManyEstadoInputEnvelope;
-	connect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
+	connect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
 };
 
 export type ComentarioUncheckedCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ComentarioCreateWithoutEstadoInput,
-				Prisma.ComentarioUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.ComentarioCreateWithoutEstadoInput, Prisma.ComentarioUncheckedCreateWithoutEstadoInput>
 		| Prisma.ComentarioCreateWithoutEstadoInput[]
 		| Prisma.ComentarioUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.ComentarioCreateOrConnectWithoutEstadoInput
-		| Prisma.ComentarioCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutEstadoInput | Prisma.ComentarioCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.ComentarioCreateManyEstadoInputEnvelope;
-	connect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
+	connect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
 };
 
 export type ComentarioUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ComentarioCreateWithoutEstadoInput,
-				Prisma.ComentarioUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.ComentarioCreateWithoutEstadoInput, Prisma.ComentarioUncheckedCreateWithoutEstadoInput>
 		| Prisma.ComentarioCreateWithoutEstadoInput[]
 		| Prisma.ComentarioUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.ComentarioCreateOrConnectWithoutEstadoInput
-		| Prisma.ComentarioCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.ComentarioUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.ComentarioUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutEstadoInput | Prisma.ComentarioCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.ComentarioUpsertWithWhereUniqueWithoutEstadoInput | Prisma.ComentarioUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.ComentarioCreateManyEstadoInputEnvelope;
 	set?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	delete?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	connect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	update?:
-		| Prisma.ComentarioUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.ComentarioUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.ComentarioUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.ComentarioUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.ComentarioScalarWhereInput
-		| Prisma.ComentarioScalarWhereInput[];
+	disconnect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	delete?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	connect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	update?: Prisma.ComentarioUpdateWithWhereUniqueWithoutEstadoInput | Prisma.ComentarioUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.ComentarioUpdateManyWithWhereWithoutEstadoInput | Prisma.ComentarioUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.ComentarioScalarWhereInput | Prisma.ComentarioScalarWhereInput[];
 };
 
 export type ComentarioUncheckedUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ComentarioCreateWithoutEstadoInput,
-				Prisma.ComentarioUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.ComentarioCreateWithoutEstadoInput, Prisma.ComentarioUncheckedCreateWithoutEstadoInput>
 		| Prisma.ComentarioCreateWithoutEstadoInput[]
 		| Prisma.ComentarioUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.ComentarioCreateOrConnectWithoutEstadoInput
-		| Prisma.ComentarioCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.ComentarioUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.ComentarioUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutEstadoInput | Prisma.ComentarioCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.ComentarioUpsertWithWhereUniqueWithoutEstadoInput | Prisma.ComentarioUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.ComentarioCreateManyEstadoInputEnvelope;
 	set?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	delete?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	connect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	update?:
-		| Prisma.ComentarioUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.ComentarioUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.ComentarioUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.ComentarioUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.ComentarioScalarWhereInput
-		| Prisma.ComentarioScalarWhereInput[];
+	disconnect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	delete?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	connect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	update?: Prisma.ComentarioUpdateWithWhereUniqueWithoutEstadoInput | Prisma.ComentarioUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.ComentarioUpdateManyWithWhereWithoutEstadoInput | Prisma.ComentarioUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.ComentarioScalarWhereInput | Prisma.ComentarioScalarWhereInput[];
 };
 
 export type ComentarioCreateNestedManyWithoutTipoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ComentarioCreateWithoutTipoInput,
-				Prisma.ComentarioUncheckedCreateWithoutTipoInput
-		  >
+		| Prisma.XOR<Prisma.ComentarioCreateWithoutTipoInput, Prisma.ComentarioUncheckedCreateWithoutTipoInput>
 		| Prisma.ComentarioCreateWithoutTipoInput[]
 		| Prisma.ComentarioUncheckedCreateWithoutTipoInput[];
-	connectOrCreate?:
-		| Prisma.ComentarioCreateOrConnectWithoutTipoInput
-		| Prisma.ComentarioCreateOrConnectWithoutTipoInput[];
+	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutTipoInput | Prisma.ComentarioCreateOrConnectWithoutTipoInput[];
 	createMany?: Prisma.ComentarioCreateManyTipoInputEnvelope;
-	connect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
+	connect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
 };
 
 export type ComentarioUncheckedCreateNestedManyWithoutTipoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ComentarioCreateWithoutTipoInput,
-				Prisma.ComentarioUncheckedCreateWithoutTipoInput
-		  >
+		| Prisma.XOR<Prisma.ComentarioCreateWithoutTipoInput, Prisma.ComentarioUncheckedCreateWithoutTipoInput>
 		| Prisma.ComentarioCreateWithoutTipoInput[]
 		| Prisma.ComentarioUncheckedCreateWithoutTipoInput[];
-	connectOrCreate?:
-		| Prisma.ComentarioCreateOrConnectWithoutTipoInput
-		| Prisma.ComentarioCreateOrConnectWithoutTipoInput[];
+	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutTipoInput | Prisma.ComentarioCreateOrConnectWithoutTipoInput[];
 	createMany?: Prisma.ComentarioCreateManyTipoInputEnvelope;
-	connect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
+	connect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
 };
 
 export type ComentarioUpdateManyWithoutTipoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ComentarioCreateWithoutTipoInput,
-				Prisma.ComentarioUncheckedCreateWithoutTipoInput
-		  >
+		| Prisma.XOR<Prisma.ComentarioCreateWithoutTipoInput, Prisma.ComentarioUncheckedCreateWithoutTipoInput>
 		| Prisma.ComentarioCreateWithoutTipoInput[]
 		| Prisma.ComentarioUncheckedCreateWithoutTipoInput[];
-	connectOrCreate?:
-		| Prisma.ComentarioCreateOrConnectWithoutTipoInput
-		| Prisma.ComentarioCreateOrConnectWithoutTipoInput[];
-	upsert?:
-		| Prisma.ComentarioUpsertWithWhereUniqueWithoutTipoInput
-		| Prisma.ComentarioUpsertWithWhereUniqueWithoutTipoInput[];
+	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutTipoInput | Prisma.ComentarioCreateOrConnectWithoutTipoInput[];
+	upsert?: Prisma.ComentarioUpsertWithWhereUniqueWithoutTipoInput | Prisma.ComentarioUpsertWithWhereUniqueWithoutTipoInput[];
 	createMany?: Prisma.ComentarioCreateManyTipoInputEnvelope;
 	set?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	delete?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	connect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	update?:
-		| Prisma.ComentarioUpdateWithWhereUniqueWithoutTipoInput
-		| Prisma.ComentarioUpdateWithWhereUniqueWithoutTipoInput[];
-	updateMany?:
-		| Prisma.ComentarioUpdateManyWithWhereWithoutTipoInput
-		| Prisma.ComentarioUpdateManyWithWhereWithoutTipoInput[];
-	deleteMany?:
-		| Prisma.ComentarioScalarWhereInput
-		| Prisma.ComentarioScalarWhereInput[];
+	disconnect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	delete?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	connect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	update?: Prisma.ComentarioUpdateWithWhereUniqueWithoutTipoInput | Prisma.ComentarioUpdateWithWhereUniqueWithoutTipoInput[];
+	updateMany?: Prisma.ComentarioUpdateManyWithWhereWithoutTipoInput | Prisma.ComentarioUpdateManyWithWhereWithoutTipoInput[];
+	deleteMany?: Prisma.ComentarioScalarWhereInput | Prisma.ComentarioScalarWhereInput[];
 };
 
 export type ComentarioUncheckedUpdateManyWithoutTipoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ComentarioCreateWithoutTipoInput,
-				Prisma.ComentarioUncheckedCreateWithoutTipoInput
-		  >
+		| Prisma.XOR<Prisma.ComentarioCreateWithoutTipoInput, Prisma.ComentarioUncheckedCreateWithoutTipoInput>
 		| Prisma.ComentarioCreateWithoutTipoInput[]
 		| Prisma.ComentarioUncheckedCreateWithoutTipoInput[];
-	connectOrCreate?:
-		| Prisma.ComentarioCreateOrConnectWithoutTipoInput
-		| Prisma.ComentarioCreateOrConnectWithoutTipoInput[];
-	upsert?:
-		| Prisma.ComentarioUpsertWithWhereUniqueWithoutTipoInput
-		| Prisma.ComentarioUpsertWithWhereUniqueWithoutTipoInput[];
+	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutTipoInput | Prisma.ComentarioCreateOrConnectWithoutTipoInput[];
+	upsert?: Prisma.ComentarioUpsertWithWhereUniqueWithoutTipoInput | Prisma.ComentarioUpsertWithWhereUniqueWithoutTipoInput[];
 	createMany?: Prisma.ComentarioCreateManyTipoInputEnvelope;
 	set?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	delete?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	connect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	update?:
-		| Prisma.ComentarioUpdateWithWhereUniqueWithoutTipoInput
-		| Prisma.ComentarioUpdateWithWhereUniqueWithoutTipoInput[];
-	updateMany?:
-		| Prisma.ComentarioUpdateManyWithWhereWithoutTipoInput
-		| Prisma.ComentarioUpdateManyWithWhereWithoutTipoInput[];
-	deleteMany?:
-		| Prisma.ComentarioScalarWhereInput
-		| Prisma.ComentarioScalarWhereInput[];
+	disconnect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	delete?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	connect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	update?: Prisma.ComentarioUpdateWithWhereUniqueWithoutTipoInput | Prisma.ComentarioUpdateWithWhereUniqueWithoutTipoInput[];
+	updateMany?: Prisma.ComentarioUpdateManyWithWhereWithoutTipoInput | Prisma.ComentarioUpdateManyWithWhereWithoutTipoInput[];
+	deleteMany?: Prisma.ComentarioScalarWhereInput | Prisma.ComentarioScalarWhereInput[];
 };
 
 export type ComentarioCreateNestedManyWithoutEscritorInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ComentarioCreateWithoutEscritorInput,
-				Prisma.ComentarioUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.ComentarioCreateWithoutEscritorInput, Prisma.ComentarioUncheckedCreateWithoutEscritorInput>
 		| Prisma.ComentarioCreateWithoutEscritorInput[]
 		| Prisma.ComentarioUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.ComentarioCreateOrConnectWithoutEscritorInput
-		| Prisma.ComentarioCreateOrConnectWithoutEscritorInput[];
+	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutEscritorInput | Prisma.ComentarioCreateOrConnectWithoutEscritorInput[];
 	createMany?: Prisma.ComentarioCreateManyEscritorInputEnvelope;
-	connect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
+	connect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
 };
 
 export type ComentarioUncheckedCreateNestedManyWithoutEscritorInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ComentarioCreateWithoutEscritorInput,
-				Prisma.ComentarioUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.ComentarioCreateWithoutEscritorInput, Prisma.ComentarioUncheckedCreateWithoutEscritorInput>
 		| Prisma.ComentarioCreateWithoutEscritorInput[]
 		| Prisma.ComentarioUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.ComentarioCreateOrConnectWithoutEscritorInput
-		| Prisma.ComentarioCreateOrConnectWithoutEscritorInput[];
+	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutEscritorInput | Prisma.ComentarioCreateOrConnectWithoutEscritorInput[];
 	createMany?: Prisma.ComentarioCreateManyEscritorInputEnvelope;
-	connect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
+	connect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
 };
 
 export type ComentarioUpdateManyWithoutEscritorNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ComentarioCreateWithoutEscritorInput,
-				Prisma.ComentarioUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.ComentarioCreateWithoutEscritorInput, Prisma.ComentarioUncheckedCreateWithoutEscritorInput>
 		| Prisma.ComentarioCreateWithoutEscritorInput[]
 		| Prisma.ComentarioUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.ComentarioCreateOrConnectWithoutEscritorInput
-		| Prisma.ComentarioCreateOrConnectWithoutEscritorInput[];
-	upsert?:
-		| Prisma.ComentarioUpsertWithWhereUniqueWithoutEscritorInput
-		| Prisma.ComentarioUpsertWithWhereUniqueWithoutEscritorInput[];
+	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutEscritorInput | Prisma.ComentarioCreateOrConnectWithoutEscritorInput[];
+	upsert?: Prisma.ComentarioUpsertWithWhereUniqueWithoutEscritorInput | Prisma.ComentarioUpsertWithWhereUniqueWithoutEscritorInput[];
 	createMany?: Prisma.ComentarioCreateManyEscritorInputEnvelope;
 	set?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	delete?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	connect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	update?:
-		| Prisma.ComentarioUpdateWithWhereUniqueWithoutEscritorInput
-		| Prisma.ComentarioUpdateWithWhereUniqueWithoutEscritorInput[];
-	updateMany?:
-		| Prisma.ComentarioUpdateManyWithWhereWithoutEscritorInput
-		| Prisma.ComentarioUpdateManyWithWhereWithoutEscritorInput[];
-	deleteMany?:
-		| Prisma.ComentarioScalarWhereInput
-		| Prisma.ComentarioScalarWhereInput[];
+	disconnect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	delete?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	connect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	update?: Prisma.ComentarioUpdateWithWhereUniqueWithoutEscritorInput | Prisma.ComentarioUpdateWithWhereUniqueWithoutEscritorInput[];
+	updateMany?: Prisma.ComentarioUpdateManyWithWhereWithoutEscritorInput | Prisma.ComentarioUpdateManyWithWhereWithoutEscritorInput[];
+	deleteMany?: Prisma.ComentarioScalarWhereInput | Prisma.ComentarioScalarWhereInput[];
 };
 
 export type ComentarioUncheckedUpdateManyWithoutEscritorNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ComentarioCreateWithoutEscritorInput,
-				Prisma.ComentarioUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.ComentarioCreateWithoutEscritorInput, Prisma.ComentarioUncheckedCreateWithoutEscritorInput>
 		| Prisma.ComentarioCreateWithoutEscritorInput[]
 		| Prisma.ComentarioUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.ComentarioCreateOrConnectWithoutEscritorInput
-		| Prisma.ComentarioCreateOrConnectWithoutEscritorInput[];
-	upsert?:
-		| Prisma.ComentarioUpsertWithWhereUniqueWithoutEscritorInput
-		| Prisma.ComentarioUpsertWithWhereUniqueWithoutEscritorInput[];
+	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutEscritorInput | Prisma.ComentarioCreateOrConnectWithoutEscritorInput[];
+	upsert?: Prisma.ComentarioUpsertWithWhereUniqueWithoutEscritorInput | Prisma.ComentarioUpsertWithWhereUniqueWithoutEscritorInput[];
 	createMany?: Prisma.ComentarioCreateManyEscritorInputEnvelope;
 	set?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	delete?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	connect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	update?:
-		| Prisma.ComentarioUpdateWithWhereUniqueWithoutEscritorInput
-		| Prisma.ComentarioUpdateWithWhereUniqueWithoutEscritorInput[];
-	updateMany?:
-		| Prisma.ComentarioUpdateManyWithWhereWithoutEscritorInput
-		| Prisma.ComentarioUpdateManyWithWhereWithoutEscritorInput[];
-	deleteMany?:
-		| Prisma.ComentarioScalarWhereInput
-		| Prisma.ComentarioScalarWhereInput[];
+	disconnect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	delete?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	connect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	update?: Prisma.ComentarioUpdateWithWhereUniqueWithoutEscritorInput | Prisma.ComentarioUpdateWithWhereUniqueWithoutEscritorInput[];
+	updateMany?: Prisma.ComentarioUpdateManyWithWhereWithoutEscritorInput | Prisma.ComentarioUpdateManyWithWhereWithoutEscritorInput[];
+	deleteMany?: Prisma.ComentarioScalarWhereInput | Prisma.ComentarioScalarWhereInput[];
 };
 
 export type ComentarioCreateNestedManyWithoutParrafoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ComentarioCreateWithoutParrafoInput,
-				Prisma.ComentarioUncheckedCreateWithoutParrafoInput
-		  >
+		| Prisma.XOR<Prisma.ComentarioCreateWithoutParrafoInput, Prisma.ComentarioUncheckedCreateWithoutParrafoInput>
 		| Prisma.ComentarioCreateWithoutParrafoInput[]
 		| Prisma.ComentarioUncheckedCreateWithoutParrafoInput[];
-	connectOrCreate?:
-		| Prisma.ComentarioCreateOrConnectWithoutParrafoInput
-		| Prisma.ComentarioCreateOrConnectWithoutParrafoInput[];
+	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutParrafoInput | Prisma.ComentarioCreateOrConnectWithoutParrafoInput[];
 	createMany?: Prisma.ComentarioCreateManyParrafoInputEnvelope;
-	connect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
+	connect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
 };
 
 export type ComentarioUncheckedCreateNestedManyWithoutParrafoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ComentarioCreateWithoutParrafoInput,
-				Prisma.ComentarioUncheckedCreateWithoutParrafoInput
-		  >
+		| Prisma.XOR<Prisma.ComentarioCreateWithoutParrafoInput, Prisma.ComentarioUncheckedCreateWithoutParrafoInput>
 		| Prisma.ComentarioCreateWithoutParrafoInput[]
 		| Prisma.ComentarioUncheckedCreateWithoutParrafoInput[];
-	connectOrCreate?:
-		| Prisma.ComentarioCreateOrConnectWithoutParrafoInput
-		| Prisma.ComentarioCreateOrConnectWithoutParrafoInput[];
+	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutParrafoInput | Prisma.ComentarioCreateOrConnectWithoutParrafoInput[];
 	createMany?: Prisma.ComentarioCreateManyParrafoInputEnvelope;
-	connect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
+	connect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
 };
 
 export type ComentarioUpdateManyWithoutParrafoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ComentarioCreateWithoutParrafoInput,
-				Prisma.ComentarioUncheckedCreateWithoutParrafoInput
-		  >
+		| Prisma.XOR<Prisma.ComentarioCreateWithoutParrafoInput, Prisma.ComentarioUncheckedCreateWithoutParrafoInput>
 		| Prisma.ComentarioCreateWithoutParrafoInput[]
 		| Prisma.ComentarioUncheckedCreateWithoutParrafoInput[];
-	connectOrCreate?:
-		| Prisma.ComentarioCreateOrConnectWithoutParrafoInput
-		| Prisma.ComentarioCreateOrConnectWithoutParrafoInput[];
-	upsert?:
-		| Prisma.ComentarioUpsertWithWhereUniqueWithoutParrafoInput
-		| Prisma.ComentarioUpsertWithWhereUniqueWithoutParrafoInput[];
+	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutParrafoInput | Prisma.ComentarioCreateOrConnectWithoutParrafoInput[];
+	upsert?: Prisma.ComentarioUpsertWithWhereUniqueWithoutParrafoInput | Prisma.ComentarioUpsertWithWhereUniqueWithoutParrafoInput[];
 	createMany?: Prisma.ComentarioCreateManyParrafoInputEnvelope;
 	set?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	delete?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	connect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	update?:
-		| Prisma.ComentarioUpdateWithWhereUniqueWithoutParrafoInput
-		| Prisma.ComentarioUpdateWithWhereUniqueWithoutParrafoInput[];
-	updateMany?:
-		| Prisma.ComentarioUpdateManyWithWhereWithoutParrafoInput
-		| Prisma.ComentarioUpdateManyWithWhereWithoutParrafoInput[];
-	deleteMany?:
-		| Prisma.ComentarioScalarWhereInput
-		| Prisma.ComentarioScalarWhereInput[];
+	disconnect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	delete?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	connect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	update?: Prisma.ComentarioUpdateWithWhereUniqueWithoutParrafoInput | Prisma.ComentarioUpdateWithWhereUniqueWithoutParrafoInput[];
+	updateMany?: Prisma.ComentarioUpdateManyWithWhereWithoutParrafoInput | Prisma.ComentarioUpdateManyWithWhereWithoutParrafoInput[];
+	deleteMany?: Prisma.ComentarioScalarWhereInput | Prisma.ComentarioScalarWhereInput[];
 };
 
 export type ComentarioUncheckedUpdateManyWithoutParrafoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ComentarioCreateWithoutParrafoInput,
-				Prisma.ComentarioUncheckedCreateWithoutParrafoInput
-		  >
+		| Prisma.XOR<Prisma.ComentarioCreateWithoutParrafoInput, Prisma.ComentarioUncheckedCreateWithoutParrafoInput>
 		| Prisma.ComentarioCreateWithoutParrafoInput[]
 		| Prisma.ComentarioUncheckedCreateWithoutParrafoInput[];
-	connectOrCreate?:
-		| Prisma.ComentarioCreateOrConnectWithoutParrafoInput
-		| Prisma.ComentarioCreateOrConnectWithoutParrafoInput[];
-	upsert?:
-		| Prisma.ComentarioUpsertWithWhereUniqueWithoutParrafoInput
-		| Prisma.ComentarioUpsertWithWhereUniqueWithoutParrafoInput[];
+	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutParrafoInput | Prisma.ComentarioCreateOrConnectWithoutParrafoInput[];
+	upsert?: Prisma.ComentarioUpsertWithWhereUniqueWithoutParrafoInput | Prisma.ComentarioUpsertWithWhereUniqueWithoutParrafoInput[];
 	createMany?: Prisma.ComentarioCreateManyParrafoInputEnvelope;
 	set?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	delete?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	connect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	update?:
-		| Prisma.ComentarioUpdateWithWhereUniqueWithoutParrafoInput
-		| Prisma.ComentarioUpdateWithWhereUniqueWithoutParrafoInput[];
-	updateMany?:
-		| Prisma.ComentarioUpdateManyWithWhereWithoutParrafoInput
-		| Prisma.ComentarioUpdateManyWithWhereWithoutParrafoInput[];
-	deleteMany?:
-		| Prisma.ComentarioScalarWhereInput
-		| Prisma.ComentarioScalarWhereInput[];
+	disconnect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	delete?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	connect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	update?: Prisma.ComentarioUpdateWithWhereUniqueWithoutParrafoInput | Prisma.ComentarioUpdateWithWhereUniqueWithoutParrafoInput[];
+	updateMany?: Prisma.ComentarioUpdateManyWithWhereWithoutParrafoInput | Prisma.ComentarioUpdateManyWithWhereWithoutParrafoInput[];
+	deleteMany?: Prisma.ComentarioScalarWhereInput | Prisma.ComentarioScalarWhereInput[];
 };
 
 export type ComentarioCreateNestedOneWithoutRespuestasInput = {
-	create?: Prisma.XOR<
-		Prisma.ComentarioCreateWithoutRespuestasInput,
-		Prisma.ComentarioUncheckedCreateWithoutRespuestasInput
-	>;
+	create?: Prisma.XOR<Prisma.ComentarioCreateWithoutRespuestasInput, Prisma.ComentarioUncheckedCreateWithoutRespuestasInput>;
 	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutRespuestasInput;
 	connect?: Prisma.ComentarioWhereUniqueInput;
 };
 
 export type ComentarioCreateNestedManyWithoutPadreInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ComentarioCreateWithoutPadreInput,
-				Prisma.ComentarioUncheckedCreateWithoutPadreInput
-		  >
+		| Prisma.XOR<Prisma.ComentarioCreateWithoutPadreInput, Prisma.ComentarioUncheckedCreateWithoutPadreInput>
 		| Prisma.ComentarioCreateWithoutPadreInput[]
 		| Prisma.ComentarioUncheckedCreateWithoutPadreInput[];
-	connectOrCreate?:
-		| Prisma.ComentarioCreateOrConnectWithoutPadreInput
-		| Prisma.ComentarioCreateOrConnectWithoutPadreInput[];
+	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutPadreInput | Prisma.ComentarioCreateOrConnectWithoutPadreInput[];
 	createMany?: Prisma.ComentarioCreateManyPadreInputEnvelope;
-	connect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
+	connect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
 };
 
 export type ComentarioUncheckedCreateNestedManyWithoutPadreInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ComentarioCreateWithoutPadreInput,
-				Prisma.ComentarioUncheckedCreateWithoutPadreInput
-		  >
+		| Prisma.XOR<Prisma.ComentarioCreateWithoutPadreInput, Prisma.ComentarioUncheckedCreateWithoutPadreInput>
 		| Prisma.ComentarioCreateWithoutPadreInput[]
 		| Prisma.ComentarioUncheckedCreateWithoutPadreInput[];
-	connectOrCreate?:
-		| Prisma.ComentarioCreateOrConnectWithoutPadreInput
-		| Prisma.ComentarioCreateOrConnectWithoutPadreInput[];
+	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutPadreInput | Prisma.ComentarioCreateOrConnectWithoutPadreInput[];
 	createMany?: Prisma.ComentarioCreateManyPadreInputEnvelope;
-	connect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
+	connect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
 };
 
 export type ComentarioUpdateOneWithoutRespuestasNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.ComentarioCreateWithoutRespuestasInput,
-		Prisma.ComentarioUncheckedCreateWithoutRespuestasInput
-	>;
+	create?: Prisma.XOR<Prisma.ComentarioCreateWithoutRespuestasInput, Prisma.ComentarioUncheckedCreateWithoutRespuestasInput>;
 	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutRespuestasInput;
 	upsert?: Prisma.ComentarioUpsertWithoutRespuestasInput;
 	disconnect?: Prisma.ComentarioWhereInput | boolean;
 	delete?: Prisma.ComentarioWhereInput | boolean;
 	connect?: Prisma.ComentarioWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.ComentarioUpdateToOneWithWhereWithoutRespuestasInput,
-			Prisma.ComentarioUpdateWithoutRespuestasInput
-		>,
-		Prisma.ComentarioUncheckedUpdateWithoutRespuestasInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.ComentarioUpdateToOneWithWhereWithoutRespuestasInput, Prisma.ComentarioUpdateWithoutRespuestasInput>, Prisma.ComentarioUncheckedUpdateWithoutRespuestasInput>;
 };
 
 export type ComentarioUpdateManyWithoutPadreNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ComentarioCreateWithoutPadreInput,
-				Prisma.ComentarioUncheckedCreateWithoutPadreInput
-		  >
+		| Prisma.XOR<Prisma.ComentarioCreateWithoutPadreInput, Prisma.ComentarioUncheckedCreateWithoutPadreInput>
 		| Prisma.ComentarioCreateWithoutPadreInput[]
 		| Prisma.ComentarioUncheckedCreateWithoutPadreInput[];
-	connectOrCreate?:
-		| Prisma.ComentarioCreateOrConnectWithoutPadreInput
-		| Prisma.ComentarioCreateOrConnectWithoutPadreInput[];
-	upsert?:
-		| Prisma.ComentarioUpsertWithWhereUniqueWithoutPadreInput
-		| Prisma.ComentarioUpsertWithWhereUniqueWithoutPadreInput[];
+	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutPadreInput | Prisma.ComentarioCreateOrConnectWithoutPadreInput[];
+	upsert?: Prisma.ComentarioUpsertWithWhereUniqueWithoutPadreInput | Prisma.ComentarioUpsertWithWhereUniqueWithoutPadreInput[];
 	createMany?: Prisma.ComentarioCreateManyPadreInputEnvelope;
 	set?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	delete?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	connect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	update?:
-		| Prisma.ComentarioUpdateWithWhereUniqueWithoutPadreInput
-		| Prisma.ComentarioUpdateWithWhereUniqueWithoutPadreInput[];
-	updateMany?:
-		| Prisma.ComentarioUpdateManyWithWhereWithoutPadreInput
-		| Prisma.ComentarioUpdateManyWithWhereWithoutPadreInput[];
-	deleteMany?:
-		| Prisma.ComentarioScalarWhereInput
-		| Prisma.ComentarioScalarWhereInput[];
+	disconnect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	delete?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	connect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	update?: Prisma.ComentarioUpdateWithWhereUniqueWithoutPadreInput | Prisma.ComentarioUpdateWithWhereUniqueWithoutPadreInput[];
+	updateMany?: Prisma.ComentarioUpdateManyWithWhereWithoutPadreInput | Prisma.ComentarioUpdateManyWithWhereWithoutPadreInput[];
+	deleteMany?: Prisma.ComentarioScalarWhereInput | Prisma.ComentarioScalarWhereInput[];
 };
 
 export type ComentarioUncheckedUpdateManyWithoutPadreNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ComentarioCreateWithoutPadreInput,
-				Prisma.ComentarioUncheckedCreateWithoutPadreInput
-		  >
+		| Prisma.XOR<Prisma.ComentarioCreateWithoutPadreInput, Prisma.ComentarioUncheckedCreateWithoutPadreInput>
 		| Prisma.ComentarioCreateWithoutPadreInput[]
 		| Prisma.ComentarioUncheckedCreateWithoutPadreInput[];
-	connectOrCreate?:
-		| Prisma.ComentarioCreateOrConnectWithoutPadreInput
-		| Prisma.ComentarioCreateOrConnectWithoutPadreInput[];
-	upsert?:
-		| Prisma.ComentarioUpsertWithWhereUniqueWithoutPadreInput
-		| Prisma.ComentarioUpsertWithWhereUniqueWithoutPadreInput[];
+	connectOrCreate?: Prisma.ComentarioCreateOrConnectWithoutPadreInput | Prisma.ComentarioCreateOrConnectWithoutPadreInput[];
+	upsert?: Prisma.ComentarioUpsertWithWhereUniqueWithoutPadreInput | Prisma.ComentarioUpsertWithWhereUniqueWithoutPadreInput[];
 	createMany?: Prisma.ComentarioCreateManyPadreInputEnvelope;
 	set?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	delete?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	connect?:
-		| Prisma.ComentarioWhereUniqueInput
-		| Prisma.ComentarioWhereUniqueInput[];
-	update?:
-		| Prisma.ComentarioUpdateWithWhereUniqueWithoutPadreInput
-		| Prisma.ComentarioUpdateWithWhereUniqueWithoutPadreInput[];
-	updateMany?:
-		| Prisma.ComentarioUpdateManyWithWhereWithoutPadreInput
-		| Prisma.ComentarioUpdateManyWithWhereWithoutPadreInput[];
-	deleteMany?:
-		| Prisma.ComentarioScalarWhereInput
-		| Prisma.ComentarioScalarWhereInput[];
+	disconnect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	delete?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	connect?: Prisma.ComentarioWhereUniqueInput | Prisma.ComentarioWhereUniqueInput[];
+	update?: Prisma.ComentarioUpdateWithWhereUniqueWithoutPadreInput | Prisma.ComentarioUpdateWithWhereUniqueWithoutPadreInput[];
+	updateMany?: Prisma.ComentarioUpdateManyWithWhereWithoutPadreInput | Prisma.ComentarioUpdateManyWithWhereWithoutPadreInput[];
+	deleteMany?: Prisma.ComentarioScalarWhereInput | Prisma.ComentarioScalarWhereInput[];
 };
 
 export type ComentarioCreateWithoutEstadoInput = {
@@ -1129,45 +802,28 @@ export type ComentarioUncheckedCreateWithoutEstadoInput = {
 
 export type ComentarioCreateOrConnectWithoutEstadoInput = {
 	where: Prisma.ComentarioWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.ComentarioCreateWithoutEstadoInput,
-		Prisma.ComentarioUncheckedCreateWithoutEstadoInput
-	>;
+	create: Prisma.XOR<Prisma.ComentarioCreateWithoutEstadoInput, Prisma.ComentarioUncheckedCreateWithoutEstadoInput>;
 };
 
 export type ComentarioCreateManyEstadoInputEnvelope = {
-	data:
-		| Prisma.ComentarioCreateManyEstadoInput
-		| Prisma.ComentarioCreateManyEstadoInput[];
+	data: Prisma.ComentarioCreateManyEstadoInput | Prisma.ComentarioCreateManyEstadoInput[];
 	skipDuplicates?: boolean;
 };
 
 export type ComentarioUpsertWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.ComentarioWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.ComentarioUpdateWithoutEstadoInput,
-		Prisma.ComentarioUncheckedUpdateWithoutEstadoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.ComentarioCreateWithoutEstadoInput,
-		Prisma.ComentarioUncheckedCreateWithoutEstadoInput
-	>;
+	update: Prisma.XOR<Prisma.ComentarioUpdateWithoutEstadoInput, Prisma.ComentarioUncheckedUpdateWithoutEstadoInput>;
+	create: Prisma.XOR<Prisma.ComentarioCreateWithoutEstadoInput, Prisma.ComentarioUncheckedCreateWithoutEstadoInput>;
 };
 
 export type ComentarioUpdateWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.ComentarioWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.ComentarioUpdateWithoutEstadoInput,
-		Prisma.ComentarioUncheckedUpdateWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.ComentarioUpdateWithoutEstadoInput, Prisma.ComentarioUncheckedUpdateWithoutEstadoInput>;
 };
 
 export type ComentarioUpdateManyWithWhereWithoutEstadoInput = {
 	where: Prisma.ComentarioScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.ComentarioUpdateManyMutationInput,
-		Prisma.ComentarioUncheckedUpdateManyWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.ComentarioUpdateManyMutationInput, Prisma.ComentarioUncheckedUpdateManyWithoutEstadoInput>;
 };
 
 export type ComentarioScalarWhereInput = {
@@ -1210,45 +866,28 @@ export type ComentarioUncheckedCreateWithoutTipoInput = {
 
 export type ComentarioCreateOrConnectWithoutTipoInput = {
 	where: Prisma.ComentarioWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.ComentarioCreateWithoutTipoInput,
-		Prisma.ComentarioUncheckedCreateWithoutTipoInput
-	>;
+	create: Prisma.XOR<Prisma.ComentarioCreateWithoutTipoInput, Prisma.ComentarioUncheckedCreateWithoutTipoInput>;
 };
 
 export type ComentarioCreateManyTipoInputEnvelope = {
-	data:
-		| Prisma.ComentarioCreateManyTipoInput
-		| Prisma.ComentarioCreateManyTipoInput[];
+	data: Prisma.ComentarioCreateManyTipoInput | Prisma.ComentarioCreateManyTipoInput[];
 	skipDuplicates?: boolean;
 };
 
 export type ComentarioUpsertWithWhereUniqueWithoutTipoInput = {
 	where: Prisma.ComentarioWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.ComentarioUpdateWithoutTipoInput,
-		Prisma.ComentarioUncheckedUpdateWithoutTipoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.ComentarioCreateWithoutTipoInput,
-		Prisma.ComentarioUncheckedCreateWithoutTipoInput
-	>;
+	update: Prisma.XOR<Prisma.ComentarioUpdateWithoutTipoInput, Prisma.ComentarioUncheckedUpdateWithoutTipoInput>;
+	create: Prisma.XOR<Prisma.ComentarioCreateWithoutTipoInput, Prisma.ComentarioUncheckedCreateWithoutTipoInput>;
 };
 
 export type ComentarioUpdateWithWhereUniqueWithoutTipoInput = {
 	where: Prisma.ComentarioWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.ComentarioUpdateWithoutTipoInput,
-		Prisma.ComentarioUncheckedUpdateWithoutTipoInput
-	>;
+	data: Prisma.XOR<Prisma.ComentarioUpdateWithoutTipoInput, Prisma.ComentarioUncheckedUpdateWithoutTipoInput>;
 };
 
 export type ComentarioUpdateManyWithWhereWithoutTipoInput = {
 	where: Prisma.ComentarioScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.ComentarioUpdateManyMutationInput,
-		Prisma.ComentarioUncheckedUpdateManyWithoutTipoInput
-	>;
+	data: Prisma.XOR<Prisma.ComentarioUpdateManyMutationInput, Prisma.ComentarioUncheckedUpdateManyWithoutTipoInput>;
 };
 
 export type ComentarioCreateWithoutEscritorInput = {
@@ -1276,45 +915,28 @@ export type ComentarioUncheckedCreateWithoutEscritorInput = {
 
 export type ComentarioCreateOrConnectWithoutEscritorInput = {
 	where: Prisma.ComentarioWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.ComentarioCreateWithoutEscritorInput,
-		Prisma.ComentarioUncheckedCreateWithoutEscritorInput
-	>;
+	create: Prisma.XOR<Prisma.ComentarioCreateWithoutEscritorInput, Prisma.ComentarioUncheckedCreateWithoutEscritorInput>;
 };
 
 export type ComentarioCreateManyEscritorInputEnvelope = {
-	data:
-		| Prisma.ComentarioCreateManyEscritorInput
-		| Prisma.ComentarioCreateManyEscritorInput[];
+	data: Prisma.ComentarioCreateManyEscritorInput | Prisma.ComentarioCreateManyEscritorInput[];
 	skipDuplicates?: boolean;
 };
 
 export type ComentarioUpsertWithWhereUniqueWithoutEscritorInput = {
 	where: Prisma.ComentarioWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.ComentarioUpdateWithoutEscritorInput,
-		Prisma.ComentarioUncheckedUpdateWithoutEscritorInput
-	>;
-	create: Prisma.XOR<
-		Prisma.ComentarioCreateWithoutEscritorInput,
-		Prisma.ComentarioUncheckedCreateWithoutEscritorInput
-	>;
+	update: Prisma.XOR<Prisma.ComentarioUpdateWithoutEscritorInput, Prisma.ComentarioUncheckedUpdateWithoutEscritorInput>;
+	create: Prisma.XOR<Prisma.ComentarioCreateWithoutEscritorInput, Prisma.ComentarioUncheckedCreateWithoutEscritorInput>;
 };
 
 export type ComentarioUpdateWithWhereUniqueWithoutEscritorInput = {
 	where: Prisma.ComentarioWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.ComentarioUpdateWithoutEscritorInput,
-		Prisma.ComentarioUncheckedUpdateWithoutEscritorInput
-	>;
+	data: Prisma.XOR<Prisma.ComentarioUpdateWithoutEscritorInput, Prisma.ComentarioUncheckedUpdateWithoutEscritorInput>;
 };
 
 export type ComentarioUpdateManyWithWhereWithoutEscritorInput = {
 	where: Prisma.ComentarioScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.ComentarioUpdateManyMutationInput,
-		Prisma.ComentarioUncheckedUpdateManyWithoutEscritorInput
-	>;
+	data: Prisma.XOR<Prisma.ComentarioUpdateManyMutationInput, Prisma.ComentarioUncheckedUpdateManyWithoutEscritorInput>;
 };
 
 export type ComentarioCreateWithoutParrafoInput = {
@@ -1342,45 +964,28 @@ export type ComentarioUncheckedCreateWithoutParrafoInput = {
 
 export type ComentarioCreateOrConnectWithoutParrafoInput = {
 	where: Prisma.ComentarioWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.ComentarioCreateWithoutParrafoInput,
-		Prisma.ComentarioUncheckedCreateWithoutParrafoInput
-	>;
+	create: Prisma.XOR<Prisma.ComentarioCreateWithoutParrafoInput, Prisma.ComentarioUncheckedCreateWithoutParrafoInput>;
 };
 
 export type ComentarioCreateManyParrafoInputEnvelope = {
-	data:
-		| Prisma.ComentarioCreateManyParrafoInput
-		| Prisma.ComentarioCreateManyParrafoInput[];
+	data: Prisma.ComentarioCreateManyParrafoInput | Prisma.ComentarioCreateManyParrafoInput[];
 	skipDuplicates?: boolean;
 };
 
 export type ComentarioUpsertWithWhereUniqueWithoutParrafoInput = {
 	where: Prisma.ComentarioWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.ComentarioUpdateWithoutParrafoInput,
-		Prisma.ComentarioUncheckedUpdateWithoutParrafoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.ComentarioCreateWithoutParrafoInput,
-		Prisma.ComentarioUncheckedCreateWithoutParrafoInput
-	>;
+	update: Prisma.XOR<Prisma.ComentarioUpdateWithoutParrafoInput, Prisma.ComentarioUncheckedUpdateWithoutParrafoInput>;
+	create: Prisma.XOR<Prisma.ComentarioCreateWithoutParrafoInput, Prisma.ComentarioUncheckedCreateWithoutParrafoInput>;
 };
 
 export type ComentarioUpdateWithWhereUniqueWithoutParrafoInput = {
 	where: Prisma.ComentarioWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.ComentarioUpdateWithoutParrafoInput,
-		Prisma.ComentarioUncheckedUpdateWithoutParrafoInput
-	>;
+	data: Prisma.XOR<Prisma.ComentarioUpdateWithoutParrafoInput, Prisma.ComentarioUncheckedUpdateWithoutParrafoInput>;
 };
 
 export type ComentarioUpdateManyWithWhereWithoutParrafoInput = {
 	where: Prisma.ComentarioScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.ComentarioUpdateManyMutationInput,
-		Prisma.ComentarioUncheckedUpdateManyWithoutParrafoInput
-	>;
+	data: Prisma.XOR<Prisma.ComentarioUpdateManyMutationInput, Prisma.ComentarioUncheckedUpdateManyWithoutParrafoInput>;
 };
 
 export type ComentarioCreateWithoutRespuestasInput = {
@@ -1408,10 +1013,7 @@ export type ComentarioUncheckedCreateWithoutRespuestasInput = {
 
 export type ComentarioCreateOrConnectWithoutRespuestasInput = {
 	where: Prisma.ComentarioWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.ComentarioCreateWithoutRespuestasInput,
-		Prisma.ComentarioUncheckedCreateWithoutRespuestasInput
-	>;
+	create: Prisma.XOR<Prisma.ComentarioCreateWithoutRespuestasInput, Prisma.ComentarioUncheckedCreateWithoutRespuestasInput>;
 };
 
 export type ComentarioCreateWithoutPadreInput = {
@@ -1439,37 +1041,23 @@ export type ComentarioUncheckedCreateWithoutPadreInput = {
 
 export type ComentarioCreateOrConnectWithoutPadreInput = {
 	where: Prisma.ComentarioWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.ComentarioCreateWithoutPadreInput,
-		Prisma.ComentarioUncheckedCreateWithoutPadreInput
-	>;
+	create: Prisma.XOR<Prisma.ComentarioCreateWithoutPadreInput, Prisma.ComentarioUncheckedCreateWithoutPadreInput>;
 };
 
 export type ComentarioCreateManyPadreInputEnvelope = {
-	data:
-		| Prisma.ComentarioCreateManyPadreInput
-		| Prisma.ComentarioCreateManyPadreInput[];
+	data: Prisma.ComentarioCreateManyPadreInput | Prisma.ComentarioCreateManyPadreInput[];
 	skipDuplicates?: boolean;
 };
 
 export type ComentarioUpsertWithoutRespuestasInput = {
-	update: Prisma.XOR<
-		Prisma.ComentarioUpdateWithoutRespuestasInput,
-		Prisma.ComentarioUncheckedUpdateWithoutRespuestasInput
-	>;
-	create: Prisma.XOR<
-		Prisma.ComentarioCreateWithoutRespuestasInput,
-		Prisma.ComentarioUncheckedCreateWithoutRespuestasInput
-	>;
+	update: Prisma.XOR<Prisma.ComentarioUpdateWithoutRespuestasInput, Prisma.ComentarioUncheckedUpdateWithoutRespuestasInput>;
+	create: Prisma.XOR<Prisma.ComentarioCreateWithoutRespuestasInput, Prisma.ComentarioUncheckedCreateWithoutRespuestasInput>;
 	where?: Prisma.ComentarioWhereInput;
 };
 
 export type ComentarioUpdateToOneWithWhereWithoutRespuestasInput = {
 	where?: Prisma.ComentarioWhereInput;
-	data: Prisma.XOR<
-		Prisma.ComentarioUpdateWithoutRespuestasInput,
-		Prisma.ComentarioUncheckedUpdateWithoutRespuestasInput
-	>;
+	data: Prisma.XOR<Prisma.ComentarioUpdateWithoutRespuestasInput, Prisma.ComentarioUncheckedUpdateWithoutRespuestasInput>;
 };
 
 export type ComentarioUpdateWithoutRespuestasInput = {
@@ -1490,40 +1078,25 @@ export type ComentarioUncheckedUpdateWithoutRespuestasInput = {
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	escritorId?: Prisma.IntFieldUpdateOperationsInput | number;
 	parrafoId?: Prisma.IntFieldUpdateOperationsInput | number;
-	comentarioPadreId?:
-		| Prisma.NullableIntFieldUpdateOperationsInput
-		| number
-		| null;
+	comentarioPadreId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
 	tipoId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
 	estadoId?: Prisma.IntFieldUpdateOperationsInput | number;
 };
 
 export type ComentarioUpsertWithWhereUniqueWithoutPadreInput = {
 	where: Prisma.ComentarioWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.ComentarioUpdateWithoutPadreInput,
-		Prisma.ComentarioUncheckedUpdateWithoutPadreInput
-	>;
-	create: Prisma.XOR<
-		Prisma.ComentarioCreateWithoutPadreInput,
-		Prisma.ComentarioUncheckedCreateWithoutPadreInput
-	>;
+	update: Prisma.XOR<Prisma.ComentarioUpdateWithoutPadreInput, Prisma.ComentarioUncheckedUpdateWithoutPadreInput>;
+	create: Prisma.XOR<Prisma.ComentarioCreateWithoutPadreInput, Prisma.ComentarioUncheckedCreateWithoutPadreInput>;
 };
 
 export type ComentarioUpdateWithWhereUniqueWithoutPadreInput = {
 	where: Prisma.ComentarioWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.ComentarioUpdateWithoutPadreInput,
-		Prisma.ComentarioUncheckedUpdateWithoutPadreInput
-	>;
+	data: Prisma.XOR<Prisma.ComentarioUpdateWithoutPadreInput, Prisma.ComentarioUncheckedUpdateWithoutPadreInput>;
 };
 
 export type ComentarioUpdateManyWithWhereWithoutPadreInput = {
 	where: Prisma.ComentarioScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.ComentarioUpdateManyMutationInput,
-		Prisma.ComentarioUncheckedUpdateManyWithoutPadreInput
-	>;
+	data: Prisma.XOR<Prisma.ComentarioUpdateManyMutationInput, Prisma.ComentarioUncheckedUpdateManyWithoutPadreInput>;
 };
 
 export type ComentarioCreateManyEstadoInput = {
@@ -1555,10 +1128,7 @@ export type ComentarioUncheckedUpdateWithoutEstadoInput = {
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	escritorId?: Prisma.IntFieldUpdateOperationsInput | number;
 	parrafoId?: Prisma.IntFieldUpdateOperationsInput | number;
-	comentarioPadreId?:
-		| Prisma.NullableIntFieldUpdateOperationsInput
-		| number
-		| null;
+	comentarioPadreId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
 	tipoId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
 	respuestas?: Prisma.ComentarioUncheckedUpdateManyWithoutPadreNestedInput;
 };
@@ -1570,10 +1140,7 @@ export type ComentarioUncheckedUpdateManyWithoutEstadoInput = {
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	escritorId?: Prisma.IntFieldUpdateOperationsInput | number;
 	parrafoId?: Prisma.IntFieldUpdateOperationsInput | number;
-	comentarioPadreId?:
-		| Prisma.NullableIntFieldUpdateOperationsInput
-		| number
-		| null;
+	comentarioPadreId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
 	tipoId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
 };
 
@@ -1606,10 +1173,7 @@ export type ComentarioUncheckedUpdateWithoutTipoInput = {
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	escritorId?: Prisma.IntFieldUpdateOperationsInput | number;
 	parrafoId?: Prisma.IntFieldUpdateOperationsInput | number;
-	comentarioPadreId?:
-		| Prisma.NullableIntFieldUpdateOperationsInput
-		| number
-		| null;
+	comentarioPadreId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
 	estadoId?: Prisma.IntFieldUpdateOperationsInput | number;
 	respuestas?: Prisma.ComentarioUncheckedUpdateManyWithoutPadreNestedInput;
 };
@@ -1621,10 +1185,7 @@ export type ComentarioUncheckedUpdateManyWithoutTipoInput = {
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	escritorId?: Prisma.IntFieldUpdateOperationsInput | number;
 	parrafoId?: Prisma.IntFieldUpdateOperationsInput | number;
-	comentarioPadreId?:
-		| Prisma.NullableIntFieldUpdateOperationsInput
-		| number
-		| null;
+	comentarioPadreId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
 	estadoId?: Prisma.IntFieldUpdateOperationsInput | number;
 };
 
@@ -1656,10 +1217,7 @@ export type ComentarioUncheckedUpdateWithoutEscritorInput = {
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	parrafoId?: Prisma.IntFieldUpdateOperationsInput | number;
-	comentarioPadreId?:
-		| Prisma.NullableIntFieldUpdateOperationsInput
-		| number
-		| null;
+	comentarioPadreId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
 	tipoId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
 	estadoId?: Prisma.IntFieldUpdateOperationsInput | number;
 	respuestas?: Prisma.ComentarioUncheckedUpdateManyWithoutPadreNestedInput;
@@ -1671,10 +1229,7 @@ export type ComentarioUncheckedUpdateManyWithoutEscritorInput = {
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	parrafoId?: Prisma.IntFieldUpdateOperationsInput | number;
-	comentarioPadreId?:
-		| Prisma.NullableIntFieldUpdateOperationsInput
-		| number
-		| null;
+	comentarioPadreId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
 	tipoId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
 	estadoId?: Prisma.IntFieldUpdateOperationsInput | number;
 };
@@ -1707,10 +1262,7 @@ export type ComentarioUncheckedUpdateWithoutParrafoInput = {
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	escritorId?: Prisma.IntFieldUpdateOperationsInput | number;
-	comentarioPadreId?:
-		| Prisma.NullableIntFieldUpdateOperationsInput
-		| number
-		| null;
+	comentarioPadreId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
 	tipoId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
 	estadoId?: Prisma.IntFieldUpdateOperationsInput | number;
 	respuestas?: Prisma.ComentarioUncheckedUpdateManyWithoutPadreNestedInput;
@@ -1722,10 +1274,7 @@ export type ComentarioUncheckedUpdateManyWithoutParrafoInput = {
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	escritorId?: Prisma.IntFieldUpdateOperationsInput | number;
-	comentarioPadreId?:
-		| Prisma.NullableIntFieldUpdateOperationsInput
-		| number
-		| null;
+	comentarioPadreId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
 	tipoId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
 	estadoId?: Prisma.IntFieldUpdateOperationsInput | number;
 };
@@ -1783,20 +1332,14 @@ export type ComentarioCountOutputType = {
 	respuestas: number;
 };
 
-export type ComentarioCountOutputTypeSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	respuestas?: boolean | ComentarioCountOutputTypeCountRespuestasArgs;
 };
 
 /**
  * ComentarioCountOutputType without action
  */
-export type ComentarioCountOutputTypeDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the ComentarioCountOutputType
 	 */
@@ -1806,17 +1349,11 @@ export type ComentarioCountOutputTypeDefaultArgs<
 /**
  * ComentarioCountOutputType without action
  */
-export type ComentarioCountOutputTypeCountRespuestasArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioCountOutputTypeCountRespuestasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.ComentarioWhereInput;
 };
 
-export type ComentarioSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type ComentarioSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		contenido?: boolean;
@@ -1838,10 +1375,7 @@ export type ComentarioSelect<
 	ExtArgs["result"]["comentario"]
 >;
 
-export type ComentarioSelectCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type ComentarioSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		contenido?: boolean;
@@ -1861,10 +1395,7 @@ export type ComentarioSelectCreateManyAndReturn<
 	ExtArgs["result"]["comentario"]
 >;
 
-export type ComentarioSelectUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type ComentarioSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		contenido?: boolean;
@@ -1896,25 +1427,11 @@ export type ComentarioSelectScalar = {
 	estadoId?: boolean;
 };
 
-export type ComentarioOmit<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetOmit<
-	| "id"
-	| "contenido"
-	| "createdAt"
-	| "updatedAt"
-	| "escritorId"
-	| "parrafoId"
-	| "comentarioPadreId"
-	| "tipoId"
-	| "estadoId",
+export type ComentarioOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<
+	"id" | "contenido" | "createdAt" | "updatedAt" | "escritorId" | "parrafoId" | "comentarioPadreId" | "tipoId" | "estadoId",
 	ExtArgs["result"]["comentario"]
 >;
-export type ComentarioInclude<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	escritor?: boolean | Prisma.EscritorDefaultArgs<ExtArgs>;
 	parrafo?: boolean | Prisma.ParrafoDefaultArgs<ExtArgs>;
 	padre?: boolean | Prisma.Comentario$padreArgs<ExtArgs>;
@@ -1923,20 +1440,14 @@ export type ComentarioInclude<
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 	_count?: boolean | Prisma.ComentarioCountOutputTypeDefaultArgs<ExtArgs>;
 };
-export type ComentarioIncludeCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	escritor?: boolean | Prisma.EscritorDefaultArgs<ExtArgs>;
 	parrafo?: boolean | Prisma.ParrafoDefaultArgs<ExtArgs>;
 	padre?: boolean | Prisma.Comentario$padreArgs<ExtArgs>;
 	tipo?: boolean | Prisma.Comentario$tipoArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
-export type ComentarioIncludeUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	escritor?: boolean | Prisma.EscritorDefaultArgs<ExtArgs>;
 	parrafo?: boolean | Prisma.ParrafoDefaultArgs<ExtArgs>;
 	padre?: boolean | Prisma.Comentario$padreArgs<ExtArgs>;
@@ -1944,10 +1455,7 @@ export type ComentarioIncludeUpdateManyAndReturn<
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
 
-export type $ComentarioPayload<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type $ComentarioPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	name: "Comentario";
 	objects: {
 		escritor: Prisma.$EscritorPayload<ExtArgs>;
@@ -1974,26 +1482,17 @@ export type $ComentarioPayload<
 	composites: {};
 };
 
-export type ComentarioGetPayload<
-	S extends boolean | null | undefined | ComentarioDefaultArgs,
-> = runtime.Types.Result.GetResult<Prisma.$ComentarioPayload, S>;
+export type ComentarioGetPayload<S extends boolean | null | undefined | ComentarioDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$ComentarioPayload, S>;
 
-export type ComentarioCountArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = Omit<ComentarioFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
+export type ComentarioCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<
+	ComentarioFindManyArgs,
+	"select" | "include" | "distinct" | "omit"
+> & {
 	select?: ComentarioCountAggregateInputType | true;
 };
 
-export interface ComentarioDelegate<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> {
-	[K: symbol]: {
-		types: Prisma.TypeMap<ExtArgs>["model"]["Comentario"];
-		meta: { name: "Comentario" };
-	};
+export interface ComentarioDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+	[K: symbol]: { types: Prisma.TypeMap<ExtArgs>["model"]["Comentario"]; meta: { name: "Comentario" } };
 	/**
 	 * Find zero or one Comentario that matches the filter.
 	 * @param {ComentarioFindUniqueArgs} args - Arguments to find a Comentario
@@ -2007,17 +1506,7 @@ export interface ComentarioDelegate<
 	 */
 	findUnique<T extends ComentarioFindUniqueArgs>(
 		args: Prisma.SelectSubset<T, ComentarioFindUniqueArgs<ExtArgs>>,
-	): Prisma.Prisma__ComentarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ComentarioPayload<ExtArgs>,
-			T,
-			"findUnique",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ComentarioClient<runtime.Types.Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find one Comentario that matches the filter or throw an error with `error.code='P2025'`
@@ -2033,17 +1522,7 @@ export interface ComentarioDelegate<
 	 */
 	findUniqueOrThrow<T extends ComentarioFindUniqueOrThrowArgs>(
 		args: Prisma.SelectSubset<T, ComentarioFindUniqueOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__ComentarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ComentarioPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ComentarioClient<runtime.Types.Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Comentario that matches the filter.
@@ -2060,17 +1539,7 @@ export interface ComentarioDelegate<
 	 */
 	findFirst<T extends ComentarioFindFirstArgs>(
 		args?: Prisma.SelectSubset<T, ComentarioFindFirstArgs<ExtArgs>>,
-	): Prisma.Prisma__ComentarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ComentarioPayload<ExtArgs>,
-			T,
-			"findFirst",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ComentarioClient<runtime.Types.Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Comentario that matches the filter or
@@ -2088,17 +1557,7 @@ export interface ComentarioDelegate<
 	 */
 	findFirstOrThrow<T extends ComentarioFindFirstOrThrowArgs>(
 		args?: Prisma.SelectSubset<T, ComentarioFindFirstOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__ComentarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ComentarioPayload<ExtArgs>,
-			T,
-			"findFirstOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ComentarioClient<runtime.Types.Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find zero or more Comentarios that matches the filter.
@@ -2118,14 +1577,7 @@ export interface ComentarioDelegate<
 	 */
 	findMany<T extends ComentarioFindManyArgs>(
 		args?: Prisma.SelectSubset<T, ComentarioFindManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$ComentarioPayload<ExtArgs>,
-			T,
-			"findMany",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
 
 	/**
 	 * Create a Comentario.
@@ -2141,17 +1593,7 @@ export interface ComentarioDelegate<
 	 */
 	create<T extends ComentarioCreateArgs>(
 		args: Prisma.SelectSubset<T, ComentarioCreateArgs<ExtArgs>>,
-	): Prisma.Prisma__ComentarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ComentarioPayload<ExtArgs>,
-			T,
-			"create",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ComentarioClient<runtime.Types.Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Create many Comentarios.
@@ -2165,9 +1607,7 @@ export interface ComentarioDelegate<
 	 * })
 	 *
 	 */
-	createMany<T extends ComentarioCreateManyArgs>(
-		args?: Prisma.SelectSubset<T, ComentarioCreateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	createMany<T extends ComentarioCreateManyArgs>(args?: Prisma.SelectSubset<T, ComentarioCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Create many Comentarios and returns the data saved in the database.
@@ -2193,14 +1633,7 @@ export interface ComentarioDelegate<
 	 */
 	createManyAndReturn<T extends ComentarioCreateManyAndReturnArgs>(
 		args?: Prisma.SelectSubset<T, ComentarioCreateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$ComentarioPayload<ExtArgs>,
-			T,
-			"createManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Delete a Comentario.
@@ -2216,17 +1649,7 @@ export interface ComentarioDelegate<
 	 */
 	delete<T extends ComentarioDeleteArgs>(
 		args: Prisma.SelectSubset<T, ComentarioDeleteArgs<ExtArgs>>,
-	): Prisma.Prisma__ComentarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ComentarioPayload<ExtArgs>,
-			T,
-			"delete",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ComentarioClient<runtime.Types.Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Update one Comentario.
@@ -2245,17 +1668,7 @@ export interface ComentarioDelegate<
 	 */
 	update<T extends ComentarioUpdateArgs>(
 		args: Prisma.SelectSubset<T, ComentarioUpdateArgs<ExtArgs>>,
-	): Prisma.Prisma__ComentarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ComentarioPayload<ExtArgs>,
-			T,
-			"update",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ComentarioClient<runtime.Types.Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Delete zero or more Comentarios.
@@ -2269,9 +1682,7 @@ export interface ComentarioDelegate<
 	 * })
 	 *
 	 */
-	deleteMany<T extends ComentarioDeleteManyArgs>(
-		args?: Prisma.SelectSubset<T, ComentarioDeleteManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	deleteMany<T extends ComentarioDeleteManyArgs>(args?: Prisma.SelectSubset<T, ComentarioDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Comentarios.
@@ -2290,9 +1701,7 @@ export interface ComentarioDelegate<
 	 * })
 	 *
 	 */
-	updateMany<T extends ComentarioUpdateManyArgs>(
-		args: Prisma.SelectSubset<T, ComentarioUpdateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	updateMany<T extends ComentarioUpdateManyArgs>(args: Prisma.SelectSubset<T, ComentarioUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Comentarios and returns the data updated in the database.
@@ -2324,14 +1733,7 @@ export interface ComentarioDelegate<
 	 */
 	updateManyAndReturn<T extends ComentarioUpdateManyAndReturnArgs>(
 		args: Prisma.SelectSubset<T, ComentarioUpdateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$ComentarioPayload<ExtArgs>,
-			T,
-			"updateManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Create or update one Comentario.
@@ -2352,17 +1754,7 @@ export interface ComentarioDelegate<
 	 */
 	upsert<T extends ComentarioUpsertArgs>(
 		args: Prisma.SelectSubset<T, ComentarioUpsertArgs<ExtArgs>>,
-	): Prisma.Prisma__ComentarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ComentarioPayload<ExtArgs>,
-			T,
-			"upsert",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ComentarioClient<runtime.Types.Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Count the number of Comentarios.
@@ -2379,13 +1771,7 @@ export interface ComentarioDelegate<
 	 **/
 	count<T extends ComentarioCountArgs>(
 		args?: Prisma.Subset<T, ComentarioCountArgs>,
-	): Prisma.PrismaPromise<
-		T extends runtime.Types.Utils.Record<"select", any>
-			? T["select"] extends true
-				? number
-				: Prisma.GetScalarType<T["select"], ComentarioCountAggregateOutputType>
-			: number
-	>;
+	): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<"select", any> ? (T["select"] extends true ? number : Prisma.GetScalarType<T["select"], ComentarioCountAggregateOutputType>) : number>;
 
 	/**
 	 * Allows you to perform aggregations operations on a Comentario.
@@ -2411,9 +1797,7 @@ export interface ComentarioDelegate<
 	 *   take: 10,
 	 * })
 	 **/
-	aggregate<T extends ComentarioAggregateArgs>(
-		args: Prisma.Subset<T, ComentarioAggregateArgs>,
-	): Prisma.PrismaPromise<GetComentarioAggregateType<T>>;
+	aggregate<T extends ComentarioAggregateArgs>(args: Prisma.Subset<T, ComentarioAggregateArgs>): Prisma.PrismaPromise<GetComentarioAggregateType<T>>;
 
 	/**
 	 * Group by Comentario.
@@ -2435,16 +1819,9 @@ export interface ComentarioDelegate<
 	 **/
 	groupBy<
 		T extends ComentarioGroupByArgs,
-		HasSelectOrTake extends Prisma.Or<
-			Prisma.Extends<"skip", Prisma.Keys<T>>,
-			Prisma.Extends<"take", Prisma.Keys<T>>
-		>,
-		OrderByArg extends Prisma.True extends HasSelectOrTake
-			? { orderBy: ComentarioGroupByArgs["orderBy"] }
-			: { orderBy?: ComentarioGroupByArgs["orderBy"] },
-		OrderFields extends Prisma.ExcludeUnderscoreKeys<
-			Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>
-		>,
+		HasSelectOrTake extends Prisma.Or<Prisma.Extends<"skip", Prisma.Keys<T>>, Prisma.Extends<"take", Prisma.Keys<T>>>,
+		OrderByArg extends Prisma.True extends HasSelectOrTake ? { orderBy: ComentarioGroupByArgs["orderBy"] } : { orderBy?: ComentarioGroupByArgs["orderBy"] },
+		OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>>,
 		ByFields extends Prisma.MaybeTupleToUnion<T["by"]>,
 		ByValid extends Prisma.Has<ByFields, OrderFields>,
 		HavingFields extends Prisma.GetHavingFields<T["having"]>,
@@ -2458,21 +1835,14 @@ export interface ComentarioDelegate<
 							? never
 							: P extends string
 								? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-								: [
-										Error,
-										"Field ",
-										P,
-										` in "having" needs to be provided in "by"`,
-									];
+								: [Error, "Field ", P, ` in "having" needs to be provided in "by"`];
 					}[HavingFields]
 				: "take" extends Prisma.Keys<T>
 					? "orderBy" extends Prisma.Keys<T>
 						? ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields]
 						: 'Error: If you provide "take", you also need to provide "orderBy"'
 					: "skip" extends Prisma.Keys<T>
@@ -2480,24 +1850,15 @@ export interface ComentarioDelegate<
 							? ByValid extends Prisma.True
 								? {}
 								: {
-										[P in OrderFields]: P extends ByFields
-											? never
-											: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+										[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 									}[OrderFields]
 							: 'Error: If you provide "skip", you also need to provide "orderBy"'
 						: ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields],
-	>(
-		args: Prisma.SubsetIntersection<T, ComentarioGroupByArgs, OrderByArg> &
-			InputErrors,
-	): {} extends InputErrors
-		? GetComentarioGroupByPayload<T>
-		: Prisma.PrismaPromise<InputErrors>;
+	>(args: Prisma.SubsetIntersection<T, ComentarioGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetComentarioGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
 	/**
 	 * Fields of the Comentario model
 	 */
@@ -2510,93 +1871,27 @@ export interface ComentarioDelegate<
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__ComentarioClient<
-	T,
-	Null = never,
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> extends Prisma.PrismaPromise<T> {
+export interface Prisma__ComentarioClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}>
+	extends Prisma.PrismaPromise<T> {
 	readonly [Symbol.toStringTag]: "PrismaPromise";
 	escritor<T extends Prisma.EscritorDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EscritorDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EscritorClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EscritorPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EscritorClient<runtime.Types.Result.GetResult<Prisma.$EscritorPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	parrafo<T extends Prisma.ParrafoDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.ParrafoDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__ParrafoClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$ParrafoPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ParrafoClient<runtime.Types.Result.GetResult<Prisma.$ParrafoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	padre<T extends Prisma.Comentario$padreArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Comentario$padreArgs<ExtArgs>>,
-	): Prisma.Prisma__ComentarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ComentarioPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ComentarioClient<runtime.Types.Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 	respuestas<T extends Prisma.Comentario$respuestasArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Comentario$respuestasArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$ComentarioPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	tipo<T extends Prisma.Comentario$tipoArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Comentario$tipoArgs<ExtArgs>>,
-	): Prisma.Prisma__TipoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$TipoPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__TipoClient<runtime.Types.Result.GetResult<Prisma.$TipoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 	estado<T extends Prisma.EstadoDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EstadoDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EstadoPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	/**
 	 * Attaches callbacks for the resolution and/or rejection of the Promise.
 	 * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2604,35 +1899,22 @@ export interface Prisma__ComentarioClient<
 	 * @returns A Promise for the completion of which ever callback is executed.
 	 */
 	then<TResult1 = T, TResult2 = never>(
-		onfulfilled?:
-			| ((value: T) => TResult1 | PromiseLike<TResult1>)
-			| undefined
-			| null,
-		onrejected?:
-			| ((reason: any) => TResult2 | PromiseLike<TResult2>)
-			| undefined
-			| null,
+		onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+		onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
 	): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
 	/**
 	 * Attaches a callback for only the rejection of the Promise.
 	 * @param onrejected The callback to execute when the Promise is rejected.
 	 * @returns A Promise for the completion of the callback.
 	 */
-	catch<TResult = never>(
-		onrejected?:
-			| ((reason: any) => TResult | PromiseLike<TResult>)
-			| undefined
-			| null,
-	): runtime.Types.Utils.JsPromise<T | TResult>;
+	catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
 	/**
 	 * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
 	 * resolved value cannot be modified from the callback.
 	 * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
 	 * @returns A Promise for the completion of the callback.
 	 */
-	finally(
-		onfinally?: (() => void) | undefined | null,
-	): runtime.Types.Utils.JsPromise<T>;
+	finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
 }
 
 /**
@@ -2654,10 +1936,7 @@ export interface ComentarioFieldRefs {
 /**
  * Comentario findUnique
  */
-export type ComentarioFindUniqueArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Comentario
 	 */
@@ -2679,10 +1958,7 @@ export type ComentarioFindUniqueArgs<
 /**
  * Comentario findUniqueOrThrow
  */
-export type ComentarioFindUniqueOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Comentario
 	 */
@@ -2704,10 +1980,7 @@ export type ComentarioFindUniqueOrThrowArgs<
 /**
  * Comentario findFirst
  */
-export type ComentarioFindFirstArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Comentario
 	 */
@@ -2729,9 +2002,7 @@ export type ComentarioFindFirstArgs<
 	 *
 	 * Determine the order of Comentarios to fetch.
 	 */
-	orderBy?:
-		| Prisma.ComentarioOrderByWithRelationInput
-		| Prisma.ComentarioOrderByWithRelationInput[];
+	orderBy?: Prisma.ComentarioOrderByWithRelationInput | Prisma.ComentarioOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -2755,18 +2026,13 @@ export type ComentarioFindFirstArgs<
 	 *
 	 * Filter by unique combinations of Comentarios.
 	 */
-	distinct?:
-		| Prisma.ComentarioScalarFieldEnum
-		| Prisma.ComentarioScalarFieldEnum[];
+	distinct?: Prisma.ComentarioScalarFieldEnum | Prisma.ComentarioScalarFieldEnum[];
 };
 
 /**
  * Comentario findFirstOrThrow
  */
-export type ComentarioFindFirstOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Comentario
 	 */
@@ -2788,9 +2054,7 @@ export type ComentarioFindFirstOrThrowArgs<
 	 *
 	 * Determine the order of Comentarios to fetch.
 	 */
-	orderBy?:
-		| Prisma.ComentarioOrderByWithRelationInput
-		| Prisma.ComentarioOrderByWithRelationInput[];
+	orderBy?: Prisma.ComentarioOrderByWithRelationInput | Prisma.ComentarioOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -2814,18 +2078,13 @@ export type ComentarioFindFirstOrThrowArgs<
 	 *
 	 * Filter by unique combinations of Comentarios.
 	 */
-	distinct?:
-		| Prisma.ComentarioScalarFieldEnum
-		| Prisma.ComentarioScalarFieldEnum[];
+	distinct?: Prisma.ComentarioScalarFieldEnum | Prisma.ComentarioScalarFieldEnum[];
 };
 
 /**
  * Comentario findMany
  */
-export type ComentarioFindManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Comentario
 	 */
@@ -2847,9 +2106,7 @@ export type ComentarioFindManyArgs<
 	 *
 	 * Determine the order of Comentarios to fetch.
 	 */
-	orderBy?:
-		| Prisma.ComentarioOrderByWithRelationInput
-		| Prisma.ComentarioOrderByWithRelationInput[];
+	orderBy?: Prisma.ComentarioOrderByWithRelationInput | Prisma.ComentarioOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -2873,18 +2130,13 @@ export type ComentarioFindManyArgs<
 	 *
 	 * Filter by unique combinations of Comentarios.
 	 */
-	distinct?:
-		| Prisma.ComentarioScalarFieldEnum
-		| Prisma.ComentarioScalarFieldEnum[];
+	distinct?: Prisma.ComentarioScalarFieldEnum | Prisma.ComentarioScalarFieldEnum[];
 };
 
 /**
  * Comentario create
  */
-export type ComentarioCreateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Comentario
 	 */
@@ -2900,19 +2152,13 @@ export type ComentarioCreateArgs<
 	/**
 	 * The data needed to create a Comentario.
 	 */
-	data: Prisma.XOR<
-		Prisma.ComentarioCreateInput,
-		Prisma.ComentarioUncheckedCreateInput
-	>;
+	data: Prisma.XOR<Prisma.ComentarioCreateInput, Prisma.ComentarioUncheckedCreateInput>;
 };
 
 /**
  * Comentario createMany
  */
-export type ComentarioCreateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to create many Comentarios.
 	 */
@@ -2923,10 +2169,7 @@ export type ComentarioCreateManyArgs<
 /**
  * Comentario createManyAndReturn
  */
-export type ComentarioCreateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Comentario
 	 */
@@ -2949,10 +2192,7 @@ export type ComentarioCreateManyAndReturnArgs<
 /**
  * Comentario update
  */
-export type ComentarioUpdateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Comentario
 	 */
@@ -2968,10 +2208,7 @@ export type ComentarioUpdateArgs<
 	/**
 	 * The data needed to update a Comentario.
 	 */
-	data: Prisma.XOR<
-		Prisma.ComentarioUpdateInput,
-		Prisma.ComentarioUncheckedUpdateInput
-	>;
+	data: Prisma.XOR<Prisma.ComentarioUpdateInput, Prisma.ComentarioUncheckedUpdateInput>;
 	/**
 	 * Choose, which Comentario to update.
 	 */
@@ -2981,17 +2218,11 @@ export type ComentarioUpdateArgs<
 /**
  * Comentario updateMany
  */
-export type ComentarioUpdateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to update Comentarios.
 	 */
-	data: Prisma.XOR<
-		Prisma.ComentarioUpdateManyMutationInput,
-		Prisma.ComentarioUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.ComentarioUpdateManyMutationInput, Prisma.ComentarioUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Comentarios to update
 	 */
@@ -3005,10 +2236,7 @@ export type ComentarioUpdateManyArgs<
 /**
  * Comentario updateManyAndReturn
  */
-export type ComentarioUpdateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Comentario
 	 */
@@ -3020,10 +2248,7 @@ export type ComentarioUpdateManyAndReturnArgs<
 	/**
 	 * The data used to update Comentarios.
 	 */
-	data: Prisma.XOR<
-		Prisma.ComentarioUpdateManyMutationInput,
-		Prisma.ComentarioUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.ComentarioUpdateManyMutationInput, Prisma.ComentarioUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Comentarios to update
 	 */
@@ -3041,10 +2266,7 @@ export type ComentarioUpdateManyAndReturnArgs<
 /**
  * Comentario upsert
  */
-export type ComentarioUpsertArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Comentario
 	 */
@@ -3064,26 +2286,17 @@ export type ComentarioUpsertArgs<
 	/**
 	 * In case the Comentario found by the `where` argument doesn't exist, create a new Comentario with this data.
 	 */
-	create: Prisma.XOR<
-		Prisma.ComentarioCreateInput,
-		Prisma.ComentarioUncheckedCreateInput
-	>;
+	create: Prisma.XOR<Prisma.ComentarioCreateInput, Prisma.ComentarioUncheckedCreateInput>;
 	/**
 	 * In case the Comentario was found with the provided `where` argument, update it with this data.
 	 */
-	update: Prisma.XOR<
-		Prisma.ComentarioUpdateInput,
-		Prisma.ComentarioUncheckedUpdateInput
-	>;
+	update: Prisma.XOR<Prisma.ComentarioUpdateInput, Prisma.ComentarioUncheckedUpdateInput>;
 };
 
 /**
  * Comentario delete
  */
-export type ComentarioDeleteArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Comentario
 	 */
@@ -3105,10 +2318,7 @@ export type ComentarioDeleteArgs<
 /**
  * Comentario deleteMany
  */
-export type ComentarioDeleteManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Comentarios to delete
 	 */
@@ -3122,10 +2332,7 @@ export type ComentarioDeleteManyArgs<
 /**
  * Comentario.padre
  */
-export type Comentario$padreArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Comentario$padreArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Comentario
 	 */
@@ -3144,10 +2351,7 @@ export type Comentario$padreArgs<
 /**
  * Comentario.respuestas
  */
-export type Comentario$respuestasArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Comentario$respuestasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Comentario
 	 */
@@ -3161,24 +2365,17 @@ export type Comentario$respuestasArgs<
 	 */
 	include?: Prisma.ComentarioInclude<ExtArgs> | null;
 	where?: Prisma.ComentarioWhereInput;
-	orderBy?:
-		| Prisma.ComentarioOrderByWithRelationInput
-		| Prisma.ComentarioOrderByWithRelationInput[];
+	orderBy?: Prisma.ComentarioOrderByWithRelationInput | Prisma.ComentarioOrderByWithRelationInput[];
 	cursor?: Prisma.ComentarioWhereUniqueInput;
 	take?: number;
 	skip?: number;
-	distinct?:
-		| Prisma.ComentarioScalarFieldEnum
-		| Prisma.ComentarioScalarFieldEnum[];
+	distinct?: Prisma.ComentarioScalarFieldEnum | Prisma.ComentarioScalarFieldEnum[];
 };
 
 /**
  * Comentario.tipo
  */
-export type Comentario$tipoArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Comentario$tipoArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Tipo
 	 */
@@ -3197,10 +2394,7 @@ export type Comentario$tipoArgs<
 /**
  * Comentario without action
  */
-export type ComentarioDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ComentarioDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Comentario
 	 */

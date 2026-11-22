@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { EntidadTipoSchema } from "../enums/EntidadTipo.schema.ts";
 import { NotificacionTipoSchema } from "../enums/NotificacionTipo.schema.ts";
 import { BoolFieldUpdateOperationsInputObjectSchema as BoolFieldUpdateOperationsInputObjectSchema } from "./BoolFieldUpdateOperationsInput.schema.ts";
@@ -14,66 +14,22 @@ import { UsuarioUpdateOneRequiredWithoutNotificacionsNestedInputObjectSchema as 
 const makeSchema = () =>
 	z
 		.object({
-			titulo: z
-				.union([
-					z.string(),
-					z.lazy(() => StringFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
+			titulo: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputObjectSchema)]).optional(),
 			mensaje: z
-				.union([
-					z.string(),
-					z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema),
-				])
+				.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema)])
 				.optional()
 				.nullable(),
-			tipo: z
-				.union([
-					NotificacionTipoSchema,
-					z.lazy(
-						() => EnumNotificacionTipoFieldUpdateOperationsInputObjectSchema,
-					),
-				])
-				.optional(),
-			leida: z
-				.union([
-					z.boolean(),
-					z.lazy(() => BoolFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
+			tipo: z.union([NotificacionTipoSchema, z.lazy(() => EnumNotificacionTipoFieldUpdateOperationsInputObjectSchema)]).optional(),
+			leida: z.union([z.boolean(), z.lazy(() => BoolFieldUpdateOperationsInputObjectSchema)]).optional(),
 			entidadId: z
-				.union([
-					z.number().int(),
-					z.lazy(() => NullableIntFieldUpdateOperationsInputObjectSchema),
-				])
+				.union([z.number().int(), z.lazy(() => NullableIntFieldUpdateOperationsInputObjectSchema)])
 				.optional()
 				.nullable(),
-			entidadTipo: z
-				.union([
-					EntidadTipoSchema,
-					z.lazy(() => EnumEntidadTipoFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
-			createdAt: z
-				.union([
-					z.coerce.date(),
-					z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
-			updatedAt: z
-				.union([
-					z.coerce.date(),
-					z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
-			usuario: z
-				.lazy(
-					() =>
-						UsuarioUpdateOneRequiredWithoutNotificacionsNestedInputObjectSchema,
-				)
-				.optional(),
+			entidadTipo: z.union([EntidadTipoSchema, z.lazy(() => EnumEntidadTipoFieldUpdateOperationsInputObjectSchema)]).optional(),
+			createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema)]).optional(),
+			updatedAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema)]).optional(),
+			usuario: z.lazy(() => UsuarioUpdateOneRequiredWithoutNotificacionsNestedInputObjectSchema).optional(),
 		})
 		.strict();
-export const NotificacionUpdateInputObjectSchema: z.ZodType<Prisma.NotificacionUpdateInput> =
-	makeSchema() as unknown as z.ZodType<Prisma.NotificacionUpdateInput>;
+export const NotificacionUpdateInputObjectSchema: z.ZodType<Prisma.NotificacionUpdateInput> = makeSchema() as unknown as z.ZodType<Prisma.NotificacionUpdateInput>;
 export const NotificacionUpdateInputObjectZodSchema = makeSchema();

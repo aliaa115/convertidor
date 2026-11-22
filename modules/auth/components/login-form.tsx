@@ -53,8 +53,7 @@ export default function LoginForm() {
 	return (
 		<form
 			onSubmit={handleSubmit(onSubmit)}
-			className="flex flex-col gap-x-35 w-full justify-center items-center mx-auto p-5"
-		>
+			className="flex flex-col gap-x-35 w-full justify-center items-center mx-auto p-5">
 			<GenerateField
 				id="identifier"
 				label="Correo o usuario"
@@ -70,12 +69,17 @@ export default function LoginForm() {
 				errors={errors}
 			/>
 
-			<Button color="primary" type="submit" className="my-5">
+			<Button
+				color="primary"
+				type="submit"
+				className="my-5">
 				Iniciar sesión
 			</Button>
 			<p className="text-center text-sm text-muted-foreground my-2">
 				No tienes cuenta?{" "}
-				<Link href="/register" className="font-semibold underline">
+				<Link
+					href="/register"
+					className="font-semibold underline">
 					Registrarse
 				</Link>
 			</p>

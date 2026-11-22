@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { CategoriaWhereInputObjectSchema as CategoriaWhereInputObjectSchema } from "./CategoriaWhereInput.schema.ts";
 
 const makeSchema = () =>
@@ -10,6 +10,5 @@ const makeSchema = () =>
 			none: z.lazy(() => CategoriaWhereInputObjectSchema).optional(),
 		})
 		.strict();
-export const CategoriaListRelationFilterObjectSchema: z.ZodType<Prisma.CategoriaListRelationFilter> =
-	makeSchema() as unknown as z.ZodType<Prisma.CategoriaListRelationFilter>;
+export const CategoriaListRelationFilterObjectSchema: z.ZodType<Prisma.CategoriaListRelationFilter> = makeSchema() as unknown as z.ZodType<Prisma.CategoriaListRelationFilter>;
 export const CategoriaListRelationFilterObjectZodSchema = makeSchema();

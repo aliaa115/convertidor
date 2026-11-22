@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { DateTimeFieldUpdateOperationsInputObjectSchema as DateTimeFieldUpdateOperationsInputObjectSchema } from "./DateTimeFieldUpdateOperationsInput.schema.ts";
 import { IntFieldUpdateOperationsInputObjectSchema as IntFieldUpdateOperationsInputObjectSchema } from "./IntFieldUpdateOperationsInput.schema.ts";
 import { NullableIntFieldUpdateOperationsInputObjectSchema as NullableIntFieldUpdateOperationsInputObjectSchema } from "./NullableIntFieldUpdateOperationsInput.schema.ts";
@@ -8,48 +8,23 @@ import { NullableStringFieldUpdateOperationsInputObjectSchema as NullableStringF
 const makeSchema = () =>
 	z
 		.object({
-			id: z
-				.union([
-					z.number().int(),
-					z.lazy(() => IntFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
+			id: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputObjectSchema)]).optional(),
 			valor: z
-				.union([
-					z.string(),
-					z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema),
-				])
+				.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema)])
 				.optional()
 				.nullable(),
-			createdAt: z
-				.union([
-					z.coerce.date(),
-					z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
-			updatedAt: z
-				.union([
-					z.coerce.date(),
-					z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
+			createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema)]).optional(),
+			updatedAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema)]).optional(),
 			usuarioId: z
-				.union([
-					z.number().int(),
-					z.lazy(() => NullableIntFieldUpdateOperationsInputObjectSchema),
-				])
+				.union([z.number().int(), z.lazy(() => NullableIntFieldUpdateOperationsInputObjectSchema)])
 				.optional()
 				.nullable(),
 			tipoId: z
-				.union([
-					z.number().int(),
-					z.lazy(() => NullableIntFieldUpdateOperationsInputObjectSchema),
-				])
+				.union([z.number().int(), z.lazy(() => NullableIntFieldUpdateOperationsInputObjectSchema)])
 				.optional()
 				.nullable(),
 		})
 		.strict();
 export const ConfiguracionUncheckedUpdateWithoutEstadoInputObjectSchema: z.ZodType<Prisma.ConfiguracionUncheckedUpdateWithoutEstadoInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.ConfiguracionUncheckedUpdateWithoutEstadoInput>;
-export const ConfiguracionUncheckedUpdateWithoutEstadoInputObjectZodSchema =
-	makeSchema();
+export const ConfiguracionUncheckedUpdateWithoutEstadoInputObjectZodSchema = makeSchema();

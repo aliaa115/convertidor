@@ -15,8 +15,7 @@ import type * as Prisma from "../internal/prismaNamespace.ts";
  * Model Avatar
  *
  */
-export type AvatarModel =
-	runtime.Types.Result.DefaultSelection<Prisma.$AvatarPayload>;
+export type AvatarModel = runtime.Types.Result.DefaultSelection<Prisma.$AvatarPayload>;
 
 export type AggregateAvatar = {
 	_count: AvatarCountAggregateOutputType | null;
@@ -80,10 +79,7 @@ export type AvatarCountAggregateInputType = {
 	_all?: true;
 };
 
-export type AvatarAggregateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type AvatarAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Avatar to aggregate.
 	 */
@@ -93,9 +89,7 @@ export type AvatarAggregateArgs<
 	 *
 	 * Determine the order of Avatars to fetch.
 	 */
-	orderBy?:
-		| Prisma.AvatarOrderByWithRelationInput
-		| Prisma.AvatarOrderByWithRelationInput[];
+	orderBy?: Prisma.AvatarOrderByWithRelationInput | Prisma.AvatarOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -147,21 +141,12 @@ export type AvatarAggregateArgs<
 };
 
 export type GetAvatarAggregateType<T extends AvatarAggregateArgs> = {
-	[P in keyof T & keyof AggregateAvatar]: P extends "_count" | "count"
-		? T[P] extends true
-			? number
-			: Prisma.GetScalarType<T[P], AggregateAvatar[P]>
-		: Prisma.GetScalarType<T[P], AggregateAvatar[P]>;
+	[P in keyof T & keyof AggregateAvatar]: P extends "_count" | "count" ? (T[P] extends true ? number : Prisma.GetScalarType<T[P], AggregateAvatar[P]>) : Prisma.GetScalarType<T[P], AggregateAvatar[P]>;
 };
 
-export type AvatarGroupByArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type AvatarGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.AvatarWhereInput;
-	orderBy?:
-		| Prisma.AvatarOrderByWithAggregationInput
-		| Prisma.AvatarOrderByWithAggregationInput[];
+	orderBy?: Prisma.AvatarOrderByWithAggregationInput | Prisma.AvatarOrderByWithAggregationInput[];
 	by: Prisma.AvatarScalarFieldEnum[] | Prisma.AvatarScalarFieldEnum;
 	having?: Prisma.AvatarScalarWhereWithAggregatesInput;
 	take?: number;
@@ -184,18 +169,17 @@ export type AvatarGroupByOutputType = {
 	_max: AvatarMaxAggregateOutputType | null;
 };
 
-export type GetAvatarGroupByPayload<T extends AvatarGroupByArgs> =
-	Prisma.PrismaPromise<
-		Array<
-			Prisma.PickEnumerable<AvatarGroupByOutputType, T["by"]> & {
-				[P in keyof T & keyof AvatarGroupByOutputType]: P extends "_count"
-					? T[P] extends boolean
-						? number
-						: Prisma.GetScalarType<T[P], AvatarGroupByOutputType[P]>
-					: Prisma.GetScalarType<T[P], AvatarGroupByOutputType[P]>;
-			}
-		>
-	>;
+export type GetAvatarGroupByPayload<T extends AvatarGroupByArgs> = Prisma.PrismaPromise<
+	Array<
+		Prisma.PickEnumerable<AvatarGroupByOutputType, T["by"]> & {
+			[P in keyof T & keyof AvatarGroupByOutputType]: P extends "_count"
+				? T[P] extends boolean
+					? number
+					: Prisma.GetScalarType<T[P], AvatarGroupByOutputType[P]>
+				: Prisma.GetScalarType<T[P], AvatarGroupByOutputType[P]>;
+		}
+	>
+>;
 
 export type AvatarWhereInput = {
 	AND?: Prisma.AvatarWhereInput | Prisma.AvatarWhereInput[];
@@ -239,13 +223,9 @@ export type AvatarOrderByWithAggregationInput = {
 };
 
 export type AvatarScalarWhereWithAggregatesInput = {
-	AND?:
-		| Prisma.AvatarScalarWhereWithAggregatesInput
-		| Prisma.AvatarScalarWhereWithAggregatesInput[];
+	AND?: Prisma.AvatarScalarWhereWithAggregatesInput | Prisma.AvatarScalarWhereWithAggregatesInput[];
 	OR?: Prisma.AvatarScalarWhereWithAggregatesInput[];
-	NOT?:
-		| Prisma.AvatarScalarWhereWithAggregatesInput
-		| Prisma.AvatarScalarWhereWithAggregatesInput[];
+	NOT?: Prisma.AvatarScalarWhereWithAggregatesInput | Prisma.AvatarScalarWhereWithAggregatesInput[];
 	id?: Prisma.IntWithAggregatesFilter<"Avatar"> | number;
 	nombre?: Prisma.StringWithAggregatesFilter<"Avatar"> | string;
 	url?: Prisma.StringWithAggregatesFilter<"Avatar"> | string;
@@ -326,29 +306,17 @@ export type AvatarScalarRelationFilter = {
 };
 
 export type AvatarCreateNestedOneWithoutEscritoresInput = {
-	create?: Prisma.XOR<
-		Prisma.AvatarCreateWithoutEscritoresInput,
-		Prisma.AvatarUncheckedCreateWithoutEscritoresInput
-	>;
+	create?: Prisma.XOR<Prisma.AvatarCreateWithoutEscritoresInput, Prisma.AvatarUncheckedCreateWithoutEscritoresInput>;
 	connectOrCreate?: Prisma.AvatarCreateOrConnectWithoutEscritoresInput;
 	connect?: Prisma.AvatarWhereUniqueInput;
 };
 
 export type AvatarUpdateOneRequiredWithoutEscritoresNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.AvatarCreateWithoutEscritoresInput,
-		Prisma.AvatarUncheckedCreateWithoutEscritoresInput
-	>;
+	create?: Prisma.XOR<Prisma.AvatarCreateWithoutEscritoresInput, Prisma.AvatarUncheckedCreateWithoutEscritoresInput>;
 	connectOrCreate?: Prisma.AvatarCreateOrConnectWithoutEscritoresInput;
 	upsert?: Prisma.AvatarUpsertWithoutEscritoresInput;
 	connect?: Prisma.AvatarWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.AvatarUpdateToOneWithWhereWithoutEscritoresInput,
-			Prisma.AvatarUpdateWithoutEscritoresInput
-		>,
-		Prisma.AvatarUncheckedUpdateWithoutEscritoresInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.AvatarUpdateToOneWithWhereWithoutEscritoresInput, Prisma.AvatarUpdateWithoutEscritoresInput>, Prisma.AvatarUncheckedUpdateWithoutEscritoresInput>;
 };
 
 export type AvatarCreateWithoutEscritoresInput = {
@@ -364,30 +332,18 @@ export type AvatarUncheckedCreateWithoutEscritoresInput = {
 
 export type AvatarCreateOrConnectWithoutEscritoresInput = {
 	where: Prisma.AvatarWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.AvatarCreateWithoutEscritoresInput,
-		Prisma.AvatarUncheckedCreateWithoutEscritoresInput
-	>;
+	create: Prisma.XOR<Prisma.AvatarCreateWithoutEscritoresInput, Prisma.AvatarUncheckedCreateWithoutEscritoresInput>;
 };
 
 export type AvatarUpsertWithoutEscritoresInput = {
-	update: Prisma.XOR<
-		Prisma.AvatarUpdateWithoutEscritoresInput,
-		Prisma.AvatarUncheckedUpdateWithoutEscritoresInput
-	>;
-	create: Prisma.XOR<
-		Prisma.AvatarCreateWithoutEscritoresInput,
-		Prisma.AvatarUncheckedCreateWithoutEscritoresInput
-	>;
+	update: Prisma.XOR<Prisma.AvatarUpdateWithoutEscritoresInput, Prisma.AvatarUncheckedUpdateWithoutEscritoresInput>;
+	create: Prisma.XOR<Prisma.AvatarCreateWithoutEscritoresInput, Prisma.AvatarUncheckedCreateWithoutEscritoresInput>;
 	where?: Prisma.AvatarWhereInput;
 };
 
 export type AvatarUpdateToOneWithWhereWithoutEscritoresInput = {
 	where?: Prisma.AvatarWhereInput;
-	data: Prisma.XOR<
-		Prisma.AvatarUpdateWithoutEscritoresInput,
-		Prisma.AvatarUncheckedUpdateWithoutEscritoresInput
-	>;
+	data: Prisma.XOR<Prisma.AvatarUpdateWithoutEscritoresInput, Prisma.AvatarUncheckedUpdateWithoutEscritoresInput>;
 };
 
 export type AvatarUpdateWithoutEscritoresInput = {
@@ -409,20 +365,14 @@ export type AvatarCountOutputType = {
 	escritores: number;
 };
 
-export type AvatarCountOutputTypeSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type AvatarCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	escritores?: boolean | AvatarCountOutputTypeCountEscritoresArgs;
 };
 
 /**
  * AvatarCountOutputType without action
  */
-export type AvatarCountOutputTypeDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type AvatarCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the AvatarCountOutputType
 	 */
@@ -432,17 +382,11 @@ export type AvatarCountOutputTypeDefaultArgs<
 /**
  * AvatarCountOutputType without action
  */
-export type AvatarCountOutputTypeCountEscritoresArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type AvatarCountOutputTypeCountEscritoresArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.EscritorWhereInput;
 };
 
-export type AvatarSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type AvatarSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -453,10 +397,7 @@ export type AvatarSelect<
 	ExtArgs["result"]["avatar"]
 >;
 
-export type AvatarSelectCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type AvatarSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -465,10 +406,7 @@ export type AvatarSelectCreateManyAndReturn<
 	ExtArgs["result"]["avatar"]
 >;
 
-export type AvatarSelectUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type AvatarSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -483,33 +421,18 @@ export type AvatarSelectScalar = {
 	url?: boolean;
 };
 
-export type AvatarOmit<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetOmit<
+export type AvatarOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<
 	"id" | "nombre" | "url",
 	ExtArgs["result"]["avatar"]
 >;
-export type AvatarInclude<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type AvatarInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	escritores?: boolean | Prisma.Avatar$escritoresArgs<ExtArgs>;
 	_count?: boolean | Prisma.AvatarCountOutputTypeDefaultArgs<ExtArgs>;
 };
-export type AvatarIncludeCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {};
-export type AvatarIncludeUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {};
+export type AvatarIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {};
+export type AvatarIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {};
 
-export type $AvatarPayload<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type $AvatarPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	name: "Avatar";
 	objects: {
 		escritores: Prisma.$EscritorPayload<ExtArgs>[];
@@ -525,26 +448,14 @@ export type $AvatarPayload<
 	composites: {};
 };
 
-export type AvatarGetPayload<
-	S extends boolean | null | undefined | AvatarDefaultArgs,
-> = runtime.Types.Result.GetResult<Prisma.$AvatarPayload, S>;
+export type AvatarGetPayload<S extends boolean | null | undefined | AvatarDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$AvatarPayload, S>;
 
-export type AvatarCountArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = Omit<AvatarFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
+export type AvatarCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<AvatarFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
 	select?: AvatarCountAggregateInputType | true;
 };
 
-export interface AvatarDelegate<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> {
-	[K: symbol]: {
-		types: Prisma.TypeMap<ExtArgs>["model"]["Avatar"];
-		meta: { name: "Avatar" };
-	};
+export interface AvatarDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+	[K: symbol]: { types: Prisma.TypeMap<ExtArgs>["model"]["Avatar"]; meta: { name: "Avatar" } };
 	/**
 	 * Find zero or one Avatar that matches the filter.
 	 * @param {AvatarFindUniqueArgs} args - Arguments to find a Avatar
@@ -558,17 +469,7 @@ export interface AvatarDelegate<
 	 */
 	findUnique<T extends AvatarFindUniqueArgs>(
 		args: Prisma.SelectSubset<T, AvatarFindUniqueArgs<ExtArgs>>,
-	): Prisma.Prisma__AvatarClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$AvatarPayload<ExtArgs>,
-			T,
-			"findUnique",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__AvatarClient<runtime.Types.Result.GetResult<Prisma.$AvatarPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find one Avatar that matches the filter or throw an error with `error.code='P2025'`
@@ -584,17 +485,7 @@ export interface AvatarDelegate<
 	 */
 	findUniqueOrThrow<T extends AvatarFindUniqueOrThrowArgs>(
 		args: Prisma.SelectSubset<T, AvatarFindUniqueOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__AvatarClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$AvatarPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__AvatarClient<runtime.Types.Result.GetResult<Prisma.$AvatarPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Avatar that matches the filter.
@@ -611,17 +502,7 @@ export interface AvatarDelegate<
 	 */
 	findFirst<T extends AvatarFindFirstArgs>(
 		args?: Prisma.SelectSubset<T, AvatarFindFirstArgs<ExtArgs>>,
-	): Prisma.Prisma__AvatarClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$AvatarPayload<ExtArgs>,
-			T,
-			"findFirst",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__AvatarClient<runtime.Types.Result.GetResult<Prisma.$AvatarPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Avatar that matches the filter or
@@ -639,17 +520,7 @@ export interface AvatarDelegate<
 	 */
 	findFirstOrThrow<T extends AvatarFindFirstOrThrowArgs>(
 		args?: Prisma.SelectSubset<T, AvatarFindFirstOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__AvatarClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$AvatarPayload<ExtArgs>,
-			T,
-			"findFirstOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__AvatarClient<runtime.Types.Result.GetResult<Prisma.$AvatarPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find zero or more Avatars that matches the filter.
@@ -669,14 +540,7 @@ export interface AvatarDelegate<
 	 */
 	findMany<T extends AvatarFindManyArgs>(
 		args?: Prisma.SelectSubset<T, AvatarFindManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$AvatarPayload<ExtArgs>,
-			T,
-			"findMany",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AvatarPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
 
 	/**
 	 * Create a Avatar.
@@ -692,17 +556,7 @@ export interface AvatarDelegate<
 	 */
 	create<T extends AvatarCreateArgs>(
 		args: Prisma.SelectSubset<T, AvatarCreateArgs<ExtArgs>>,
-	): Prisma.Prisma__AvatarClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$AvatarPayload<ExtArgs>,
-			T,
-			"create",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__AvatarClient<runtime.Types.Result.GetResult<Prisma.$AvatarPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Create many Avatars.
@@ -716,9 +570,7 @@ export interface AvatarDelegate<
 	 * })
 	 *
 	 */
-	createMany<T extends AvatarCreateManyArgs>(
-		args?: Prisma.SelectSubset<T, AvatarCreateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	createMany<T extends AvatarCreateManyArgs>(args?: Prisma.SelectSubset<T, AvatarCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Create many Avatars and returns the data saved in the database.
@@ -744,14 +596,7 @@ export interface AvatarDelegate<
 	 */
 	createManyAndReturn<T extends AvatarCreateManyAndReturnArgs>(
 		args?: Prisma.SelectSubset<T, AvatarCreateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$AvatarPayload<ExtArgs>,
-			T,
-			"createManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AvatarPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Delete a Avatar.
@@ -767,17 +612,7 @@ export interface AvatarDelegate<
 	 */
 	delete<T extends AvatarDeleteArgs>(
 		args: Prisma.SelectSubset<T, AvatarDeleteArgs<ExtArgs>>,
-	): Prisma.Prisma__AvatarClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$AvatarPayload<ExtArgs>,
-			T,
-			"delete",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__AvatarClient<runtime.Types.Result.GetResult<Prisma.$AvatarPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Update one Avatar.
@@ -796,17 +631,7 @@ export interface AvatarDelegate<
 	 */
 	update<T extends AvatarUpdateArgs>(
 		args: Prisma.SelectSubset<T, AvatarUpdateArgs<ExtArgs>>,
-	): Prisma.Prisma__AvatarClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$AvatarPayload<ExtArgs>,
-			T,
-			"update",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__AvatarClient<runtime.Types.Result.GetResult<Prisma.$AvatarPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Delete zero or more Avatars.
@@ -820,9 +645,7 @@ export interface AvatarDelegate<
 	 * })
 	 *
 	 */
-	deleteMany<T extends AvatarDeleteManyArgs>(
-		args?: Prisma.SelectSubset<T, AvatarDeleteManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	deleteMany<T extends AvatarDeleteManyArgs>(args?: Prisma.SelectSubset<T, AvatarDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Avatars.
@@ -841,9 +664,7 @@ export interface AvatarDelegate<
 	 * })
 	 *
 	 */
-	updateMany<T extends AvatarUpdateManyArgs>(
-		args: Prisma.SelectSubset<T, AvatarUpdateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	updateMany<T extends AvatarUpdateManyArgs>(args: Prisma.SelectSubset<T, AvatarUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Avatars and returns the data updated in the database.
@@ -875,14 +696,7 @@ export interface AvatarDelegate<
 	 */
 	updateManyAndReturn<T extends AvatarUpdateManyAndReturnArgs>(
 		args: Prisma.SelectSubset<T, AvatarUpdateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$AvatarPayload<ExtArgs>,
-			T,
-			"updateManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AvatarPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Create or update one Avatar.
@@ -903,17 +717,7 @@ export interface AvatarDelegate<
 	 */
 	upsert<T extends AvatarUpsertArgs>(
 		args: Prisma.SelectSubset<T, AvatarUpsertArgs<ExtArgs>>,
-	): Prisma.Prisma__AvatarClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$AvatarPayload<ExtArgs>,
-			T,
-			"upsert",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__AvatarClient<runtime.Types.Result.GetResult<Prisma.$AvatarPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Count the number of Avatars.
@@ -930,13 +734,7 @@ export interface AvatarDelegate<
 	 **/
 	count<T extends AvatarCountArgs>(
 		args?: Prisma.Subset<T, AvatarCountArgs>,
-	): Prisma.PrismaPromise<
-		T extends runtime.Types.Utils.Record<"select", any>
-			? T["select"] extends true
-				? number
-				: Prisma.GetScalarType<T["select"], AvatarCountAggregateOutputType>
-			: number
-	>;
+	): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<"select", any> ? (T["select"] extends true ? number : Prisma.GetScalarType<T["select"], AvatarCountAggregateOutputType>) : number>;
 
 	/**
 	 * Allows you to perform aggregations operations on a Avatar.
@@ -962,9 +760,7 @@ export interface AvatarDelegate<
 	 *   take: 10,
 	 * })
 	 **/
-	aggregate<T extends AvatarAggregateArgs>(
-		args: Prisma.Subset<T, AvatarAggregateArgs>,
-	): Prisma.PrismaPromise<GetAvatarAggregateType<T>>;
+	aggregate<T extends AvatarAggregateArgs>(args: Prisma.Subset<T, AvatarAggregateArgs>): Prisma.PrismaPromise<GetAvatarAggregateType<T>>;
 
 	/**
 	 * Group by Avatar.
@@ -986,16 +782,9 @@ export interface AvatarDelegate<
 	 **/
 	groupBy<
 		T extends AvatarGroupByArgs,
-		HasSelectOrTake extends Prisma.Or<
-			Prisma.Extends<"skip", Prisma.Keys<T>>,
-			Prisma.Extends<"take", Prisma.Keys<T>>
-		>,
-		OrderByArg extends Prisma.True extends HasSelectOrTake
-			? { orderBy: AvatarGroupByArgs["orderBy"] }
-			: { orderBy?: AvatarGroupByArgs["orderBy"] },
-		OrderFields extends Prisma.ExcludeUnderscoreKeys<
-			Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>
-		>,
+		HasSelectOrTake extends Prisma.Or<Prisma.Extends<"skip", Prisma.Keys<T>>, Prisma.Extends<"take", Prisma.Keys<T>>>,
+		OrderByArg extends Prisma.True extends HasSelectOrTake ? { orderBy: AvatarGroupByArgs["orderBy"] } : { orderBy?: AvatarGroupByArgs["orderBy"] },
+		OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>>,
 		ByFields extends Prisma.MaybeTupleToUnion<T["by"]>,
 		ByValid extends Prisma.Has<ByFields, OrderFields>,
 		HavingFields extends Prisma.GetHavingFields<T["having"]>,
@@ -1009,21 +798,14 @@ export interface AvatarDelegate<
 							? never
 							: P extends string
 								? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-								: [
-										Error,
-										"Field ",
-										P,
-										` in "having" needs to be provided in "by"`,
-									];
+								: [Error, "Field ", P, ` in "having" needs to be provided in "by"`];
 					}[HavingFields]
 				: "take" extends Prisma.Keys<T>
 					? "orderBy" extends Prisma.Keys<T>
 						? ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields]
 						: 'Error: If you provide "take", you also need to provide "orderBy"'
 					: "skip" extends Prisma.Keys<T>
@@ -1031,24 +813,15 @@ export interface AvatarDelegate<
 							? ByValid extends Prisma.True
 								? {}
 								: {
-										[P in OrderFields]: P extends ByFields
-											? never
-											: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+										[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 									}[OrderFields]
 							: 'Error: If you provide "skip", you also need to provide "orderBy"'
 						: ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields],
-	>(
-		args: Prisma.SubsetIntersection<T, AvatarGroupByArgs, OrderByArg> &
-			InputErrors,
-	): {} extends InputErrors
-		? GetAvatarGroupByPayload<T>
-		: Prisma.PrismaPromise<InputErrors>;
+	>(args: Prisma.SubsetIntersection<T, AvatarGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetAvatarGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
 	/**
 	 * Fields of the Avatar model
 	 */
@@ -1061,25 +834,12 @@ export interface AvatarDelegate<
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__AvatarClient<
-	T,
-	Null = never,
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> extends Prisma.PrismaPromise<T> {
+export interface Prisma__AvatarClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}>
+	extends Prisma.PrismaPromise<T> {
 	readonly [Symbol.toStringTag]: "PrismaPromise";
 	escritores<T extends Prisma.Avatar$escritoresArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Avatar$escritoresArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EscritorPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EscritorPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	/**
 	 * Attaches callbacks for the resolution and/or rejection of the Promise.
 	 * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1087,35 +847,22 @@ export interface Prisma__AvatarClient<
 	 * @returns A Promise for the completion of which ever callback is executed.
 	 */
 	then<TResult1 = T, TResult2 = never>(
-		onfulfilled?:
-			| ((value: T) => TResult1 | PromiseLike<TResult1>)
-			| undefined
-			| null,
-		onrejected?:
-			| ((reason: any) => TResult2 | PromiseLike<TResult2>)
-			| undefined
-			| null,
+		onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+		onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
 	): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
 	/**
 	 * Attaches a callback for only the rejection of the Promise.
 	 * @param onrejected The callback to execute when the Promise is rejected.
 	 * @returns A Promise for the completion of the callback.
 	 */
-	catch<TResult = never>(
-		onrejected?:
-			| ((reason: any) => TResult | PromiseLike<TResult>)
-			| undefined
-			| null,
-	): runtime.Types.Utils.JsPromise<T | TResult>;
+	catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
 	/**
 	 * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
 	 * resolved value cannot be modified from the callback.
 	 * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
 	 * @returns A Promise for the completion of the callback.
 	 */
-	finally(
-		onfinally?: (() => void) | undefined | null,
-	): runtime.Types.Utils.JsPromise<T>;
+	finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
 }
 
 /**
@@ -1131,10 +878,7 @@ export interface AvatarFieldRefs {
 /**
  * Avatar findUnique
  */
-export type AvatarFindUniqueArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type AvatarFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Avatar
 	 */
@@ -1156,10 +900,7 @@ export type AvatarFindUniqueArgs<
 /**
  * Avatar findUniqueOrThrow
  */
-export type AvatarFindUniqueOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type AvatarFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Avatar
 	 */
@@ -1181,10 +922,7 @@ export type AvatarFindUniqueOrThrowArgs<
 /**
  * Avatar findFirst
  */
-export type AvatarFindFirstArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type AvatarFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Avatar
 	 */
@@ -1206,9 +944,7 @@ export type AvatarFindFirstArgs<
 	 *
 	 * Determine the order of Avatars to fetch.
 	 */
-	orderBy?:
-		| Prisma.AvatarOrderByWithRelationInput
-		| Prisma.AvatarOrderByWithRelationInput[];
+	orderBy?: Prisma.AvatarOrderByWithRelationInput | Prisma.AvatarOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1238,10 +974,7 @@ export type AvatarFindFirstArgs<
 /**
  * Avatar findFirstOrThrow
  */
-export type AvatarFindFirstOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type AvatarFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Avatar
 	 */
@@ -1263,9 +996,7 @@ export type AvatarFindFirstOrThrowArgs<
 	 *
 	 * Determine the order of Avatars to fetch.
 	 */
-	orderBy?:
-		| Prisma.AvatarOrderByWithRelationInput
-		| Prisma.AvatarOrderByWithRelationInput[];
+	orderBy?: Prisma.AvatarOrderByWithRelationInput | Prisma.AvatarOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1295,10 +1026,7 @@ export type AvatarFindFirstOrThrowArgs<
 /**
  * Avatar findMany
  */
-export type AvatarFindManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type AvatarFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Avatar
 	 */
@@ -1320,9 +1048,7 @@ export type AvatarFindManyArgs<
 	 *
 	 * Determine the order of Avatars to fetch.
 	 */
-	orderBy?:
-		| Prisma.AvatarOrderByWithRelationInput
-		| Prisma.AvatarOrderByWithRelationInput[];
+	orderBy?: Prisma.AvatarOrderByWithRelationInput | Prisma.AvatarOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1352,10 +1078,7 @@ export type AvatarFindManyArgs<
 /**
  * Avatar create
  */
-export type AvatarCreateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type AvatarCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Avatar
 	 */
@@ -1377,10 +1100,7 @@ export type AvatarCreateArgs<
 /**
  * Avatar createMany
  */
-export type AvatarCreateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type AvatarCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to create many Avatars.
 	 */
@@ -1391,10 +1111,7 @@ export type AvatarCreateManyArgs<
 /**
  * Avatar createManyAndReturn
  */
-export type AvatarCreateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type AvatarCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Avatar
 	 */
@@ -1413,10 +1130,7 @@ export type AvatarCreateManyAndReturnArgs<
 /**
  * Avatar update
  */
-export type AvatarUpdateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type AvatarUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Avatar
 	 */
@@ -1442,17 +1156,11 @@ export type AvatarUpdateArgs<
 /**
  * Avatar updateMany
  */
-export type AvatarUpdateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type AvatarUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to update Avatars.
 	 */
-	data: Prisma.XOR<
-		Prisma.AvatarUpdateManyMutationInput,
-		Prisma.AvatarUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.AvatarUpdateManyMutationInput, Prisma.AvatarUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Avatars to update
 	 */
@@ -1466,10 +1174,7 @@ export type AvatarUpdateManyArgs<
 /**
  * Avatar updateManyAndReturn
  */
-export type AvatarUpdateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type AvatarUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Avatar
 	 */
@@ -1481,10 +1186,7 @@ export type AvatarUpdateManyAndReturnArgs<
 	/**
 	 * The data used to update Avatars.
 	 */
-	data: Prisma.XOR<
-		Prisma.AvatarUpdateManyMutationInput,
-		Prisma.AvatarUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.AvatarUpdateManyMutationInput, Prisma.AvatarUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Avatars to update
 	 */
@@ -1498,10 +1200,7 @@ export type AvatarUpdateManyAndReturnArgs<
 /**
  * Avatar upsert
  */
-export type AvatarUpsertArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type AvatarUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Avatar
 	 */
@@ -1521,26 +1220,17 @@ export type AvatarUpsertArgs<
 	/**
 	 * In case the Avatar found by the `where` argument doesn't exist, create a new Avatar with this data.
 	 */
-	create: Prisma.XOR<
-		Prisma.AvatarCreateInput,
-		Prisma.AvatarUncheckedCreateInput
-	>;
+	create: Prisma.XOR<Prisma.AvatarCreateInput, Prisma.AvatarUncheckedCreateInput>;
 	/**
 	 * In case the Avatar was found with the provided `where` argument, update it with this data.
 	 */
-	update: Prisma.XOR<
-		Prisma.AvatarUpdateInput,
-		Prisma.AvatarUncheckedUpdateInput
-	>;
+	update: Prisma.XOR<Prisma.AvatarUpdateInput, Prisma.AvatarUncheckedUpdateInput>;
 };
 
 /**
  * Avatar delete
  */
-export type AvatarDeleteArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type AvatarDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Avatar
 	 */
@@ -1562,10 +1252,7 @@ export type AvatarDeleteArgs<
 /**
  * Avatar deleteMany
  */
-export type AvatarDeleteManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type AvatarDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Avatars to delete
 	 */
@@ -1579,10 +1266,7 @@ export type AvatarDeleteManyArgs<
 /**
  * Avatar.escritores
  */
-export type Avatar$escritoresArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Avatar$escritoresArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Escritor
 	 */
@@ -1596,9 +1280,7 @@ export type Avatar$escritoresArgs<
 	 */
 	include?: Prisma.EscritorInclude<ExtArgs> | null;
 	where?: Prisma.EscritorWhereInput;
-	orderBy?:
-		| Prisma.EscritorOrderByWithRelationInput
-		| Prisma.EscritorOrderByWithRelationInput[];
+	orderBy?: Prisma.EscritorOrderByWithRelationInput | Prisma.EscritorOrderByWithRelationInput[];
 	cursor?: Prisma.EscritorWhereUniqueInput;
 	take?: number;
 	skip?: number;
@@ -1608,10 +1290,7 @@ export type Avatar$escritoresArgs<
 /**
  * Avatar without action
  */
-export type AvatarDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type AvatarDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Avatar
 	 */

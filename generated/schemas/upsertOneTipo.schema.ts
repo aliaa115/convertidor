@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { TipoCreateInputObjectSchema as TipoCreateInputObjectSchema } from "./objects/TipoCreateInput.schema.ts";
 import { TipoIncludeObjectSchema as TipoIncludeObjectSchema } from "./objects/TipoInclude.schema.ts";
 import { TipoSelectObjectSchema as TipoSelectObjectSchema } from "./objects/TipoSelect.schema.ts";
@@ -13,14 +13,8 @@ export const TipoUpsertOneSchema: z.ZodType<Prisma.TipoUpsertArgs> = z
 		select: TipoSelectObjectSchema.optional(),
 		include: TipoIncludeObjectSchema.optional(),
 		where: TipoWhereUniqueInputObjectSchema,
-		create: z.union([
-			TipoCreateInputObjectSchema,
-			TipoUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			TipoUpdateInputObjectSchema,
-			TipoUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([TipoCreateInputObjectSchema, TipoUncheckedCreateInputObjectSchema]),
+		update: z.union([TipoUpdateInputObjectSchema, TipoUncheckedUpdateInputObjectSchema]),
 	})
 	.strict() as unknown as z.ZodType<Prisma.TipoUpsertArgs>;
 
@@ -29,13 +23,7 @@ export const TipoUpsertOneZodSchema = z
 		select: TipoSelectObjectSchema.optional(),
 		include: TipoIncludeObjectSchema.optional(),
 		where: TipoWhereUniqueInputObjectSchema,
-		create: z.union([
-			TipoCreateInputObjectSchema,
-			TipoUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			TipoUpdateInputObjectSchema,
-			TipoUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([TipoCreateInputObjectSchema, TipoUncheckedCreateInputObjectSchema]),
+		update: z.union([TipoUpdateInputObjectSchema, TipoUncheckedUpdateInputObjectSchema]),
 	})
 	.strict();

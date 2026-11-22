@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { EscritorCreateWithoutEstadoInputObjectSchema as EscritorCreateWithoutEstadoInputObjectSchema } from "./EscritorCreateWithoutEstadoInput.schema.ts";
 import { EscritorUncheckedCreateWithoutEstadoInputObjectSchema as EscritorUncheckedCreateWithoutEstadoInputObjectSchema } from "./EscritorUncheckedCreateWithoutEstadoInput.schema.ts";
 import { EscritorUncheckedUpdateWithoutEstadoInputObjectSchema as EscritorUncheckedUpdateWithoutEstadoInputObjectSchema } from "./EscritorUncheckedUpdateWithoutEstadoInput.schema.ts";
@@ -10,17 +10,10 @@ const makeSchema = () =>
 	z
 		.object({
 			where: z.lazy(() => EscritorWhereUniqueInputObjectSchema),
-			update: z.union([
-				z.lazy(() => EscritorUpdateWithoutEstadoInputObjectSchema),
-				z.lazy(() => EscritorUncheckedUpdateWithoutEstadoInputObjectSchema),
-			]),
-			create: z.union([
-				z.lazy(() => EscritorCreateWithoutEstadoInputObjectSchema),
-				z.lazy(() => EscritorUncheckedCreateWithoutEstadoInputObjectSchema),
-			]),
+			update: z.union([z.lazy(() => EscritorUpdateWithoutEstadoInputObjectSchema), z.lazy(() => EscritorUncheckedUpdateWithoutEstadoInputObjectSchema)]),
+			create: z.union([z.lazy(() => EscritorCreateWithoutEstadoInputObjectSchema), z.lazy(() => EscritorUncheckedCreateWithoutEstadoInputObjectSchema)]),
 		})
 		.strict();
 export const EscritorUpsertWithWhereUniqueWithoutEstadoInputObjectSchema: z.ZodType<Prisma.EscritorUpsertWithWhereUniqueWithoutEstadoInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.EscritorUpsertWithWhereUniqueWithoutEstadoInput>;
-export const EscritorUpsertWithWhereUniqueWithoutEstadoInputObjectZodSchema =
-	makeSchema();
+export const EscritorUpsertWithWhereUniqueWithoutEstadoInputObjectZodSchema = makeSchema();

@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { ComentarioAvgAggregateInputObjectSchema as ComentarioAvgAggregateInputObjectSchema } from "./objects/ComentarioAvgAggregateInput.schema.ts";
 import { ComentarioCountAggregateInputObjectSchema as ComentarioCountAggregateInputObjectSchema } from "./objects/ComentarioCountAggregateInput.schema.ts";
 import { ComentarioMaxAggregateInputObjectSchema as ComentarioMaxAggregateInputObjectSchema } from "./objects/ComentarioMaxAggregateInput.schema.ts";
@@ -9,44 +9,29 @@ import { ComentarioSumAggregateInputObjectSchema as ComentarioSumAggregateInputO
 import { ComentarioWhereInputObjectSchema as ComentarioWhereInputObjectSchema } from "./objects/ComentarioWhereInput.schema.ts";
 import { ComentarioWhereUniqueInputObjectSchema as ComentarioWhereUniqueInputObjectSchema } from "./objects/ComentarioWhereUniqueInput.schema.ts";
 
-export const ComentarioAggregateSchema: z.ZodType<Prisma.ComentarioAggregateArgs> =
-	z
-		.object({
-			orderBy: z
-				.union([
-					ComentarioOrderByWithRelationInputObjectSchema,
-					ComentarioOrderByWithRelationInputObjectSchema.array(),
-				])
-				.optional(),
-			where: ComentarioWhereInputObjectSchema.optional(),
-			cursor: ComentarioWhereUniqueInputObjectSchema.optional(),
-			take: z.number().optional(),
-			skip: z.number().optional(),
-			_count: z
-				.union([z.literal(true), ComentarioCountAggregateInputObjectSchema])
-				.optional(),
-			_min: ComentarioMinAggregateInputObjectSchema.optional(),
-			_max: ComentarioMaxAggregateInputObjectSchema.optional(),
-			_avg: ComentarioAvgAggregateInputObjectSchema.optional(),
-			_sum: ComentarioSumAggregateInputObjectSchema.optional(),
-		})
-		.strict() as unknown as z.ZodType<Prisma.ComentarioAggregateArgs>;
-
-export const ComentarioAggregateZodSchema = z
+export const ComentarioAggregateSchema: z.ZodType<Prisma.ComentarioAggregateArgs> = z
 	.object({
-		orderBy: z
-			.union([
-				ComentarioOrderByWithRelationInputObjectSchema,
-				ComentarioOrderByWithRelationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([ComentarioOrderByWithRelationInputObjectSchema, ComentarioOrderByWithRelationInputObjectSchema.array()]).optional(),
 		where: ComentarioWhereInputObjectSchema.optional(),
 		cursor: ComentarioWhereUniqueInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
-		_count: z
-			.union([z.literal(true), ComentarioCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), ComentarioCountAggregateInputObjectSchema]).optional(),
+		_min: ComentarioMinAggregateInputObjectSchema.optional(),
+		_max: ComentarioMaxAggregateInputObjectSchema.optional(),
+		_avg: ComentarioAvgAggregateInputObjectSchema.optional(),
+		_sum: ComentarioSumAggregateInputObjectSchema.optional(),
+	})
+	.strict() as unknown as z.ZodType<Prisma.ComentarioAggregateArgs>;
+
+export const ComentarioAggregateZodSchema = z
+	.object({
+		orderBy: z.union([ComentarioOrderByWithRelationInputObjectSchema, ComentarioOrderByWithRelationInputObjectSchema.array()]).optional(),
+		where: ComentarioWhereInputObjectSchema.optional(),
+		cursor: ComentarioWhereUniqueInputObjectSchema.optional(),
+		take: z.number().optional(),
+		skip: z.number().optional(),
+		_count: z.union([z.literal(true), ComentarioCountAggregateInputObjectSchema]).optional(),
 		_min: ComentarioMinAggregateInputObjectSchema.optional(),
 		_max: ComentarioMaxAggregateInputObjectSchema.optional(),
 		_avg: ComentarioAvgAggregateInputObjectSchema.optional(),

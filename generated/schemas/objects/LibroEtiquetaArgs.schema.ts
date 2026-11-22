@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { LibroEtiquetaIncludeObjectSchema as LibroEtiquetaIncludeObjectSchema } from "./LibroEtiquetaInclude.schema.ts";
 import { LibroEtiquetaSelectObjectSchema as LibroEtiquetaSelectObjectSchema } from "./LibroEtiquetaSelect.schema.ts";
 

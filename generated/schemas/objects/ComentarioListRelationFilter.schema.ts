@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { ComentarioWhereInputObjectSchema as ComentarioWhereInputObjectSchema } from "./ComentarioWhereInput.schema.ts";
 
 const makeSchema = () =>
@@ -10,6 +10,5 @@ const makeSchema = () =>
 			none: z.lazy(() => ComentarioWhereInputObjectSchema).optional(),
 		})
 		.strict();
-export const ComentarioListRelationFilterObjectSchema: z.ZodType<Prisma.ComentarioListRelationFilter> =
-	makeSchema() as unknown as z.ZodType<Prisma.ComentarioListRelationFilter>;
+export const ComentarioListRelationFilterObjectSchema: z.ZodType<Prisma.ComentarioListRelationFilter> = makeSchema() as unknown as z.ZodType<Prisma.ComentarioListRelationFilter>;
 export const ComentarioListRelationFilterObjectZodSchema = makeSchema();

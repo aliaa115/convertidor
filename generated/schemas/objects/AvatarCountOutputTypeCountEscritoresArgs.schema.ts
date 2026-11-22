@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { EscritorWhereInputObjectSchema as EscritorWhereInputObjectSchema } from "./EscritorWhereInput.schema.ts";
 
 const makeSchema = () =>
@@ -8,7 +7,5 @@ const makeSchema = () =>
 			where: z.lazy(() => EscritorWhereInputObjectSchema).optional(),
 		})
 		.strict();
-export const AvatarCountOutputTypeCountEscritoresArgsObjectSchema =
-	makeSchema();
-export const AvatarCountOutputTypeCountEscritoresArgsObjectZodSchema =
-	makeSchema();
+export const AvatarCountOutputTypeCountEscritoresArgsObjectSchema = makeSchema();
+export const AvatarCountOutputTypeCountEscritoresArgsObjectZodSchema = makeSchema();

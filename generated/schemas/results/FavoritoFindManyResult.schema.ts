@@ -1,4 +1,7 @@
 import * as z from "zod";
+import { EscritorSchema } from "../models/Escritor.schema.ts";
+import { EstadoSchema } from "../models/Estado.schema.ts";
+import { LibroSchema } from "../models/Libro.schema.ts";
 export const FavoritoFindManyResultSchema = z.object({
 	data: z.array(
 		z.object({
@@ -6,11 +9,11 @@ export const FavoritoFindManyResultSchema = z.object({
 			createdAt: z.date(),
 			updatedAt: z.date(),
 			escritorId: z.number().int().optional(),
-			escritor: z.unknown().optional(),
+			escritor: EscritorSchema.optional(),
 			libroId: z.number().int().optional(),
-			libro: z.unknown().optional(),
+			libro: LibroSchema.optional(),
 			estadoId: z.number().int(),
-			estado: z.unknown(),
+			estado: EstadoSchema.optional(),
 		}),
 	),
 	pagination: z.object({

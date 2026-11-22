@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { GlosarioCreateManyEstadoInputEnvelopeObjectSchema as GlosarioCreateManyEstadoInputEnvelopeObjectSchema } from "./GlosarioCreateManyEstadoInputEnvelope.schema.ts";
 import { GlosarioCreateOrConnectWithoutEstadoInputObjectSchema as GlosarioCreateOrConnectWithoutEstadoInputObjectSchema } from "./GlosarioCreateOrConnectWithoutEstadoInput.schema.ts";
 import { GlosarioCreateWithoutEstadoInputObjectSchema as GlosarioCreateWithoutEstadoInputObjectSchema } from "./GlosarioCreateWithoutEstadoInput.schema.ts";
@@ -18,91 +18,21 @@ const makeSchema = () =>
 					z.lazy(() => GlosarioCreateWithoutEstadoInputObjectSchema),
 					z.lazy(() => GlosarioCreateWithoutEstadoInputObjectSchema).array(),
 					z.lazy(() => GlosarioUncheckedCreateWithoutEstadoInputObjectSchema),
-					z
-						.lazy(() => GlosarioUncheckedCreateWithoutEstadoInputObjectSchema)
-						.array(),
+					z.lazy(() => GlosarioUncheckedCreateWithoutEstadoInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(() => GlosarioCreateOrConnectWithoutEstadoInputObjectSchema),
-					z
-						.lazy(() => GlosarioCreateOrConnectWithoutEstadoInputObjectSchema)
-						.array(),
-				])
-				.optional(),
-			upsert: z
-				.union([
-					z.lazy(
-						() => GlosarioUpsertWithWhereUniqueWithoutEstadoInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => GlosarioUpsertWithWhereUniqueWithoutEstadoInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			createMany: z
-				.lazy(() => GlosarioCreateManyEstadoInputEnvelopeObjectSchema)
-				.optional(),
-			set: z
-				.union([
-					z.lazy(() => GlosarioWhereUniqueInputObjectSchema),
-					z.lazy(() => GlosarioWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			disconnect: z
-				.union([
-					z.lazy(() => GlosarioWhereUniqueInputObjectSchema),
-					z.lazy(() => GlosarioWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			delete: z
-				.union([
-					z.lazy(() => GlosarioWhereUniqueInputObjectSchema),
-					z.lazy(() => GlosarioWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => GlosarioWhereUniqueInputObjectSchema),
-					z.lazy(() => GlosarioWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			update: z
-				.union([
-					z.lazy(
-						() => GlosarioUpdateWithWhereUniqueWithoutEstadoInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => GlosarioUpdateWithWhereUniqueWithoutEstadoInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			updateMany: z
-				.union([
-					z.lazy(
-						() => GlosarioUpdateManyWithWhereWithoutEstadoInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => GlosarioUpdateManyWithWhereWithoutEstadoInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			deleteMany: z
-				.union([
-					z.lazy(() => GlosarioScalarWhereInputObjectSchema),
-					z.lazy(() => GlosarioScalarWhereInputObjectSchema).array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => GlosarioCreateOrConnectWithoutEstadoInputObjectSchema), z.lazy(() => GlosarioCreateOrConnectWithoutEstadoInputObjectSchema).array()]).optional(),
+			upsert: z.union([z.lazy(() => GlosarioUpsertWithWhereUniqueWithoutEstadoInputObjectSchema), z.lazy(() => GlosarioUpsertWithWhereUniqueWithoutEstadoInputObjectSchema).array()]).optional(),
+			createMany: z.lazy(() => GlosarioCreateManyEstadoInputEnvelopeObjectSchema).optional(),
+			set: z.union([z.lazy(() => GlosarioWhereUniqueInputObjectSchema), z.lazy(() => GlosarioWhereUniqueInputObjectSchema).array()]).optional(),
+			disconnect: z.union([z.lazy(() => GlosarioWhereUniqueInputObjectSchema), z.lazy(() => GlosarioWhereUniqueInputObjectSchema).array()]).optional(),
+			delete: z.union([z.lazy(() => GlosarioWhereUniqueInputObjectSchema), z.lazy(() => GlosarioWhereUniqueInputObjectSchema).array()]).optional(),
+			connect: z.union([z.lazy(() => GlosarioWhereUniqueInputObjectSchema), z.lazy(() => GlosarioWhereUniqueInputObjectSchema).array()]).optional(),
+			update: z.union([z.lazy(() => GlosarioUpdateWithWhereUniqueWithoutEstadoInputObjectSchema), z.lazy(() => GlosarioUpdateWithWhereUniqueWithoutEstadoInputObjectSchema).array()]).optional(),
+			updateMany: z.union([z.lazy(() => GlosarioUpdateManyWithWhereWithoutEstadoInputObjectSchema), z.lazy(() => GlosarioUpdateManyWithWhereWithoutEstadoInputObjectSchema).array()]).optional(),
+			deleteMany: z.union([z.lazy(() => GlosarioScalarWhereInputObjectSchema), z.lazy(() => GlosarioScalarWhereInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const GlosarioUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema: z.ZodType<Prisma.GlosarioUncheckedUpdateManyWithoutEstadoNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.GlosarioUncheckedUpdateManyWithoutEstadoNestedInput>;
-export const GlosarioUncheckedUpdateManyWithoutEstadoNestedInputObjectZodSchema =
-	makeSchema();
+export const GlosarioUncheckedUpdateManyWithoutEstadoNestedInputObjectZodSchema = makeSchema();

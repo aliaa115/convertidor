@@ -6,10 +6,7 @@ import * as React from "react";
 import { Toaster } from "sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
-export function Providers({
-	children,
-	...props
-}: React.ComponentProps<typeof NextThemesProvider>) {
+export function Providers({ children, ...props }: React.ComponentProps<typeof NextThemesProvider>) {
 	return (
 		<NextThemesProvider {...props}>
 			<TooltipProvider>

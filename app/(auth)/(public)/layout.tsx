@@ -2,11 +2,7 @@ import { redirect } from "next/navigation";
 import AuthNavBar from "@/components/custom/navigation/navbar/auth-navbar";
 import { getCurrentUser } from "@/lib/auth";
 
-export default async function AuthLayout({
-	children,
-}: {
-	children: React.ReactNode;
-}) {
+export default async function AuthLayout({ children }: { children: React.ReactNode }) {
 	const user = await getCurrentUser();
 
 	if (!!user) redirect("/");

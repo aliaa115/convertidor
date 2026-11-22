@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { SortOrderSchema } from "../enums/SortOrder.schema.ts";
 import { SeguirUsuarioAvgOrderByAggregateInputObjectSchema as SeguirUsuarioAvgOrderByAggregateInputObjectSchema } from "./SeguirUsuarioAvgOrderByAggregateInput.schema.ts";
 import { SeguirUsuarioCountOrderByAggregateInputObjectSchema as SeguirUsuarioCountOrderByAggregateInputObjectSchema } from "./SeguirUsuarioCountOrderByAggregateInput.schema.ts";
@@ -16,24 +16,13 @@ const makeSchema = () =>
 			escritorId: SortOrderSchema.optional(),
 			escritorSeguidoId: SortOrderSchema.optional(),
 			estadoId: SortOrderSchema.optional(),
-			_count: z
-				.lazy(() => SeguirUsuarioCountOrderByAggregateInputObjectSchema)
-				.optional(),
-			_avg: z
-				.lazy(() => SeguirUsuarioAvgOrderByAggregateInputObjectSchema)
-				.optional(),
-			_max: z
-				.lazy(() => SeguirUsuarioMaxOrderByAggregateInputObjectSchema)
-				.optional(),
-			_min: z
-				.lazy(() => SeguirUsuarioMinOrderByAggregateInputObjectSchema)
-				.optional(),
-			_sum: z
-				.lazy(() => SeguirUsuarioSumOrderByAggregateInputObjectSchema)
-				.optional(),
+			_count: z.lazy(() => SeguirUsuarioCountOrderByAggregateInputObjectSchema).optional(),
+			_avg: z.lazy(() => SeguirUsuarioAvgOrderByAggregateInputObjectSchema).optional(),
+			_max: z.lazy(() => SeguirUsuarioMaxOrderByAggregateInputObjectSchema).optional(),
+			_min: z.lazy(() => SeguirUsuarioMinOrderByAggregateInputObjectSchema).optional(),
+			_sum: z.lazy(() => SeguirUsuarioSumOrderByAggregateInputObjectSchema).optional(),
 		})
 		.strict();
 export const SeguirUsuarioOrderByWithAggregationInputObjectSchema: z.ZodType<Prisma.SeguirUsuarioOrderByWithAggregationInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.SeguirUsuarioOrderByWithAggregationInput>;
-export const SeguirUsuarioOrderByWithAggregationInputObjectZodSchema =
-	makeSchema();
+export const SeguirUsuarioOrderByWithAggregationInputObjectZodSchema = makeSchema();

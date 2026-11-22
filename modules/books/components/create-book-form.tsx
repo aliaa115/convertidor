@@ -2,10 +2,7 @@
 
 import Image from "next/image";
 import { useActionState, useEffect, useMemo, useState } from "react";
-import {
-	Autocomplete,
-	AutocompleteOption,
-} from "@/components/custom/forms/autocomplete";
+import { Autocomplete, AutocompleteOption } from "@/components/custom/forms/autocomplete";
 import FreeMultiAutocomplete from "@/components/custom/forms/free-multi-autocomplete";
 import { createBookAction } from "../actions/create-book.action";
 
@@ -30,15 +27,11 @@ const initialState = {
 	error: "",
 };
 
-export default function CreateBookForm({
-	idiomas,
-	tipos,
-}: CreateBookFormProps) {
+export default function CreateBookForm({ idiomas, tipos }: CreateBookFormProps) {
 	const [state, formAction] = useActionState(createBookAction, initialState);
 	const [preview, setPreview] = useState<string | null>(null);
 
-	const [selectedIdiomaId, setSelectedIdiomaId] =
-		useState<SingleOptionValue>("");
+	const [selectedIdiomaId, setSelectedIdiomaId] = useState<SingleOptionValue>("");
 	const [selectedTipoId, setSelectedTipoId] = useState<SingleOptionValue>("");
 
 	function handleImageChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -80,8 +73,7 @@ export default function CreateBookForm({
 	return (
 		<form
 			action={formAction}
-			className="grid grid-cols-1 gap-6 lg:grid-cols-[320px_1fr]"
-		>
+			className="grid grid-cols-1 gap-6 lg:grid-cols-[320px_1fr]">
 			<aside className="space-y-4">
 				<div className="aspect-3/4 w-full overflow-hidden rounded-xl border bg-muted">
 					{preview ? (
@@ -91,9 +83,7 @@ export default function CreateBookForm({
 							className="h-full w-full object-cover"
 						/>
 					) : (
-						<div className="flex h-full w-full items-center justify-center text-sm text-muted-foreground">
-							Vista previa de portada
-						</div>
+						<div className="flex h-full w-full items-center justify-center text-sm text-muted-foreground">Vista previa de portada</div>
 					)}
 				</div>
 
@@ -136,7 +126,11 @@ export default function CreateBookForm({
 						value={selectedIdiomaId}
 						onValueChange={setSelectedIdiomaId}
 					/>
-					<input type="hidden" name="idiomaId" value={selectedIdiomaId} />
+					<input
+						type="hidden"
+						name="idiomaId"
+						value={selectedIdiomaId}
+					/>
 				</div>
 
 				<div>
@@ -146,7 +140,11 @@ export default function CreateBookForm({
 						value={selectedTipoId}
 						onValueChange={setSelectedTipoId}
 					/>
-					<input type="hidden" name="tipoId" value={selectedTipoId} />
+					<input
+						type="hidden"
+						name="tipoId"
+						value={selectedTipoId}
+					/>
 				</div>
 
 				<FreeMultiAutocomplete
@@ -164,9 +162,7 @@ export default function CreateBookForm({
 				/>
 
 				<div>
-					<label className="mb-2 block text-sm font-medium">
-						Introducción (opcional)
-					</label>
+					<label className="mb-2 block text-sm font-medium">Introducción (opcional)</label>
 					<textarea
 						name="intro"
 						placeholder="Si no escribes introducción, se usará la descripción."
@@ -174,14 +170,11 @@ export default function CreateBookForm({
 					/>
 				</div>
 
-				{state?.error ? (
-					<p className="text-sm text-red-600">{state.error}</p>
-				) : null}
+				{state?.error ? <p className="text-sm text-red-600">{state.error}</p> : null}
 
 				<button
 					type="submit"
-					className="rounded-lg bg-primary px-6 py-3 text-primary-foreground"
-				>
+					className="rounded-lg bg-primary px-6 py-3 text-primary-foreground">
 					Crear libro
 				</button>
 			</section>

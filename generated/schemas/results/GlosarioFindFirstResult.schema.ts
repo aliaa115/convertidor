@@ -1,4 +1,7 @@
 import * as z from "zod";
+import { EscritorSchema } from "../models/Escritor.schema.ts";
+import { EstadoSchema } from "../models/Estado.schema.ts";
+import { LibroSchema } from "../models/Libro.schema.ts";
 export const GlosarioFindFirstResultSchema = z.nullable(
 	z.object({
 		id: z.number().int(),
@@ -7,10 +10,10 @@ export const GlosarioFindFirstResultSchema = z.nullable(
 		createdAt: z.date(),
 		updatedAt: z.date(),
 		libroId: z.number().int(),
-		libro: z.unknown(),
+		libro: LibroSchema.optional(),
 		escritorId: z.number().int(),
-		escritor: z.unknown(),
+		escritor: EscritorSchema.optional(),
 		estadoId: z.number().int(),
-		estado: z.unknown(),
+		estado: EstadoSchema.optional(),
 	}),
 );

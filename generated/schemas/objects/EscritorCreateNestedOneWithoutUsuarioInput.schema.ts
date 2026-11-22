@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { EscritorCreateOrConnectWithoutUsuarioInputObjectSchema as EscritorCreateOrConnectWithoutUsuarioInputObjectSchema } from "./EscritorCreateOrConnectWithoutUsuarioInput.schema.ts";
 import { EscritorCreateWithoutUsuarioInputObjectSchema as EscritorCreateWithoutUsuarioInputObjectSchema } from "./EscritorCreateWithoutUsuarioInput.schema.ts";
 import { EscritorUncheckedCreateWithoutUsuarioInputObjectSchema as EscritorUncheckedCreateWithoutUsuarioInputObjectSchema } from "./EscritorUncheckedCreateWithoutUsuarioInput.schema.ts";
@@ -8,19 +8,11 @@ import { EscritorWhereUniqueInputObjectSchema as EscritorWhereUniqueInputObjectS
 const makeSchema = () =>
 	z
 		.object({
-			create: z
-				.union([
-					z.lazy(() => EscritorCreateWithoutUsuarioInputObjectSchema),
-					z.lazy(() => EscritorUncheckedCreateWithoutUsuarioInputObjectSchema),
-				])
-				.optional(),
-			connectOrCreate: z
-				.lazy(() => EscritorCreateOrConnectWithoutUsuarioInputObjectSchema)
-				.optional(),
+			create: z.union([z.lazy(() => EscritorCreateWithoutUsuarioInputObjectSchema), z.lazy(() => EscritorUncheckedCreateWithoutUsuarioInputObjectSchema)]).optional(),
+			connectOrCreate: z.lazy(() => EscritorCreateOrConnectWithoutUsuarioInputObjectSchema).optional(),
 			connect: z.lazy(() => EscritorWhereUniqueInputObjectSchema).optional(),
 		})
 		.strict();
 export const EscritorCreateNestedOneWithoutUsuarioInputObjectSchema: z.ZodType<Prisma.EscritorCreateNestedOneWithoutUsuarioInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.EscritorCreateNestedOneWithoutUsuarioInput>;
-export const EscritorCreateNestedOneWithoutUsuarioInputObjectZodSchema =
-	makeSchema();
+export const EscritorCreateNestedOneWithoutUsuarioInputObjectZodSchema = makeSchema();

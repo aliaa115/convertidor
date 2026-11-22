@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { CategoriaScalarFieldEnumSchema } from "./enums/CategoriaScalarFieldEnum.schema.ts";
 import { CategoriaAvgAggregateInputObjectSchema as CategoriaAvgAggregateInputObjectSchema } from "./objects/CategoriaAvgAggregateInput.schema.ts";
 import { CategoriaCountAggregateInputObjectSchema as CategoriaCountAggregateInputObjectSchema } from "./objects/CategoriaCountAggregateInput.schema.ts";
@@ -13,19 +13,12 @@ import { CategoriaWhereInputObjectSchema as CategoriaWhereInputObjectSchema } fr
 export const CategoriaGroupBySchema: z.ZodType<Prisma.CategoriaGroupByArgs> = z
 	.object({
 		where: CategoriaWhereInputObjectSchema.optional(),
-		orderBy: z
-			.union([
-				CategoriaOrderByWithAggregationInputObjectSchema,
-				CategoriaOrderByWithAggregationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([CategoriaOrderByWithAggregationInputObjectSchema, CategoriaOrderByWithAggregationInputObjectSchema.array()]).optional(),
 		having: CategoriaScalarWhereWithAggregatesInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
 		by: z.array(CategoriaScalarFieldEnumSchema),
-		_count: z
-			.union([z.literal(true), CategoriaCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), CategoriaCountAggregateInputObjectSchema]).optional(),
 		_min: CategoriaMinAggregateInputObjectSchema.optional(),
 		_max: CategoriaMaxAggregateInputObjectSchema.optional(),
 		_avg: CategoriaAvgAggregateInputObjectSchema.optional(),
@@ -36,19 +29,12 @@ export const CategoriaGroupBySchema: z.ZodType<Prisma.CategoriaGroupByArgs> = z
 export const CategoriaGroupByZodSchema = z
 	.object({
 		where: CategoriaWhereInputObjectSchema.optional(),
-		orderBy: z
-			.union([
-				CategoriaOrderByWithAggregationInputObjectSchema,
-				CategoriaOrderByWithAggregationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([CategoriaOrderByWithAggregationInputObjectSchema, CategoriaOrderByWithAggregationInputObjectSchema.array()]).optional(),
 		having: CategoriaScalarWhereWithAggregatesInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
 		by: z.array(CategoriaScalarFieldEnumSchema),
-		_count: z
-			.union([z.literal(true), CategoriaCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), CategoriaCountAggregateInputObjectSchema]).optional(),
 		_min: CategoriaMinAggregateInputObjectSchema.optional(),
 		_max: CategoriaMaxAggregateInputObjectSchema.optional(),
 		_avg: CategoriaAvgAggregateInputObjectSchema.optional(),

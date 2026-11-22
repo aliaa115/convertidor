@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { ConfiguracionUncheckedCreateNestedOneWithoutUsuarioInputObjectSchema as ConfiguracionUncheckedCreateNestedOneWithoutUsuarioInputObjectSchema } from "./ConfiguracionUncheckedCreateNestedOneWithoutUsuarioInput.schema.ts";
 import { ListaUncheckedCreateNestedManyWithoutUsuarioInputObjectSchema as ListaUncheckedCreateNestedManyWithoutUsuarioInputObjectSchema } from "./ListaUncheckedCreateNestedManyWithoutUsuarioInput.schema.ts";
 import { NotificacionUncheckedCreateNestedManyWithoutUsuarioInputObjectSchema as NotificacionUncheckedCreateNestedManyWithoutUsuarioInputObjectSchema } from "./NotificacionUncheckedCreateNestedManyWithoutUsuarioInput.schema.ts";
@@ -15,26 +15,11 @@ const makeSchema = () =>
 			createdAt: z.coerce.date().optional(),
 			updatedAt: z.coerce.date().optional(),
 			estadoId: z.number().int().optional(),
-			configuracion: z
-				.lazy(
-					() =>
-						ConfiguracionUncheckedCreateNestedOneWithoutUsuarioInputObjectSchema,
-				)
-				.optional(),
-			listas: z
-				.lazy(
-					() => ListaUncheckedCreateNestedManyWithoutUsuarioInputObjectSchema,
-				)
-				.optional(),
-			notificacions: z
-				.lazy(
-					() =>
-						NotificacionUncheckedCreateNestedManyWithoutUsuarioInputObjectSchema,
-				)
-				.optional(),
+			configuracion: z.lazy(() => ConfiguracionUncheckedCreateNestedOneWithoutUsuarioInputObjectSchema).optional(),
+			listas: z.lazy(() => ListaUncheckedCreateNestedManyWithoutUsuarioInputObjectSchema).optional(),
+			notificacions: z.lazy(() => NotificacionUncheckedCreateNestedManyWithoutUsuarioInputObjectSchema).optional(),
 		})
 		.strict();
 export const UsuarioUncheckedCreateWithoutEscritorInputObjectSchema: z.ZodType<Prisma.UsuarioUncheckedCreateWithoutEscritorInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.UsuarioUncheckedCreateWithoutEscritorInput>;
-export const UsuarioUncheckedCreateWithoutEscritorInputObjectZodSchema =
-	makeSchema();
+export const UsuarioUncheckedCreateWithoutEscritorInputObjectZodSchema = makeSchema();

@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { EstadoAvgAggregateInputObjectSchema as EstadoAvgAggregateInputObjectSchema } from "./objects/EstadoAvgAggregateInput.schema.ts";
 import { EstadoCountAggregateInputObjectSchema as EstadoCountAggregateInputObjectSchema } from "./objects/EstadoCountAggregateInput.schema.ts";
 import { EstadoMaxAggregateInputObjectSchema as EstadoMaxAggregateInputObjectSchema } from "./objects/EstadoMaxAggregateInput.schema.ts";
@@ -11,19 +11,12 @@ import { EstadoWhereUniqueInputObjectSchema as EstadoWhereUniqueInputObjectSchem
 
 export const EstadoAggregateSchema: z.ZodType<Prisma.EstadoAggregateArgs> = z
 	.object({
-		orderBy: z
-			.union([
-				EstadoOrderByWithRelationInputObjectSchema,
-				EstadoOrderByWithRelationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([EstadoOrderByWithRelationInputObjectSchema, EstadoOrderByWithRelationInputObjectSchema.array()]).optional(),
 		where: EstadoWhereInputObjectSchema.optional(),
 		cursor: EstadoWhereUniqueInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
-		_count: z
-			.union([z.literal(true), EstadoCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), EstadoCountAggregateInputObjectSchema]).optional(),
 		_min: EstadoMinAggregateInputObjectSchema.optional(),
 		_max: EstadoMaxAggregateInputObjectSchema.optional(),
 		_avg: EstadoAvgAggregateInputObjectSchema.optional(),
@@ -33,19 +26,12 @@ export const EstadoAggregateSchema: z.ZodType<Prisma.EstadoAggregateArgs> = z
 
 export const EstadoAggregateZodSchema = z
 	.object({
-		orderBy: z
-			.union([
-				EstadoOrderByWithRelationInputObjectSchema,
-				EstadoOrderByWithRelationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([EstadoOrderByWithRelationInputObjectSchema, EstadoOrderByWithRelationInputObjectSchema.array()]).optional(),
 		where: EstadoWhereInputObjectSchema.optional(),
 		cursor: EstadoWhereUniqueInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
-		_count: z
-			.union([z.literal(true), EstadoCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), EstadoCountAggregateInputObjectSchema]).optional(),
 		_min: EstadoMinAggregateInputObjectSchema.optional(),
 		_max: EstadoMaxAggregateInputObjectSchema.optional(),
 		_avg: EstadoAvgAggregateInputObjectSchema.optional(),

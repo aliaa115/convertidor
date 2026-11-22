@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { NotificacionWhereInputObjectSchema as NotificacionWhereInputObjectSchema } from "./NotificacionWhereInput.schema.ts";
 
 const makeSchema = () =>
@@ -8,7 +7,5 @@ const makeSchema = () =>
 			where: z.lazy(() => NotificacionWhereInputObjectSchema).optional(),
 		})
 		.strict();
-export const UsuarioCountOutputTypeCountNotificacionsArgsObjectSchema =
-	makeSchema();
-export const UsuarioCountOutputTypeCountNotificacionsArgsObjectZodSchema =
-	makeSchema();
+export const UsuarioCountOutputTypeCountNotificacionsArgsObjectSchema = makeSchema();
+export const UsuarioCountOutputTypeCountNotificacionsArgsObjectZodSchema = makeSchema();

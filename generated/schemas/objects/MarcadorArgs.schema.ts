@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { MarcadorIncludeObjectSchema as MarcadorIncludeObjectSchema } from "./MarcadorInclude.schema.ts";
 import { MarcadorSelectObjectSchema as MarcadorSelectObjectSchema } from "./MarcadorSelect.schema.ts";
 

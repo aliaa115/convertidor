@@ -25,8 +25,7 @@ const notFound = () => {
 				<p>Vuelve al inicio para seguir leyendo.</p>
 				<Link
 					href="/"
-					className="flex flex-nowrap group z-10 mt-5 p-5 rounded-4xl hover:bg-accent/10 w-fit mx-auto"
-				>
+					className="flex flex-nowrap group z-10 mt-5 p-5 rounded-4xl hover:bg-accent/10 w-fit mx-auto">
 					<ArrowLeftIcon className="group-hover:size-8 transition-all" />
 					<HomeIcon className="group-hover:size-8 transition-all" />
 				</Link>

@@ -5,10 +5,7 @@ export async function PATCH(req: Request) {
 	const user = await getCurrentUser();
 
 	if (!user) {
-		return Response.json(
-			{ success: false, message: "No autorizado" },
-			{ status: 401 },
-		);
+		return Response.json({ success: false, message: "No autorizado" }, { status: 401 });
 	}
 
 	await prisma.notificacion.updateMany({

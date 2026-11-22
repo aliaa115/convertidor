@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { NestedDateTimeNullableFilterObjectSchema as NestedDateTimeNullableFilterObjectSchema } from "./NestedDateTimeNullableFilter.schema.ts";
 import { NestedDateTimeNullableWithAggregatesFilterObjectSchema as NestedDateTimeNullableWithAggregatesFilterObjectSchema } from "./NestedDateTimeNullableWithAggregatesFilter.schema.ts";
 import { NestedIntNullableFilterObjectSchema as NestedIntNullableFilterObjectSchema } from "./NestedIntNullableFilter.schema.ts";
@@ -8,23 +8,14 @@ const makeSchema = () =>
 	z
 		.object({
 			equals: z.date().optional().nullable(),
-			in: z
-				.union([z.date().array(), z.string().datetime().array()])
-				.optional()
-				.nullable(),
-			notIn: z
-				.union([z.date().array(), z.string().datetime().array()])
-				.optional()
-				.nullable(),
+			in: z.union([z.date().array(), z.string().datetime().array()]).optional().nullable(),
+			notIn: z.union([z.date().array(), z.string().datetime().array()]).optional().nullable(),
 			lt: z.date().optional(),
 			lte: z.date().optional(),
 			gt: z.date().optional(),
 			gte: z.date().optional(),
 			not: z
-				.union([
-					z.date(),
-					z.lazy(() => NestedDateTimeNullableWithAggregatesFilterObjectSchema),
-				])
+				.union([z.date(), z.lazy(() => NestedDateTimeNullableWithAggregatesFilterObjectSchema)])
 				.optional()
 				.nullable(),
 			_count: z.lazy(() => NestedIntNullableFilterObjectSchema).optional(),

@@ -1,10 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-	Autocomplete,
-	type AutocompleteOption,
-} from "@/components/custom/forms/autocomplete";
+import { Autocomplete, type AutocompleteOption } from "@/components/custom/forms/autocomplete";
 
 type Estado = "activo" | "inactivo" | "eliminado";
 
@@ -34,9 +31,7 @@ export function AutocompleteExample() {
 		<div className="w-full max-w-md space-y-3">
 			<div className="space-y-1">
 				<h3 className="text-base font-semibold">Selector de estado</h3>
-				<p className="text-sm text-muted-foreground">
-					Ejemplo funcional del componente `Autocomplete`.
-				</p>
+				<p className="text-sm text-muted-foreground">Ejemplo funcional del componente `Autocomplete`.</p>
 			</div>
 
 			<Autocomplete<Estado>

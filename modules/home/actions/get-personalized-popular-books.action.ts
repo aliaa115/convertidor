@@ -28,13 +28,7 @@ export async function getPersonalizedPopularBooks() {
 	});
 
 	// 2. sacar categorias únicas
-	const categoryIds = Array.from(
-		new Set(
-			favorites.flatMap(
-				(f) => f.libro?.categorias.map((c) => c.categoriaId) ?? [],
-			),
-		),
-	);
+	const categoryIds = Array.from(new Set(favorites.flatMap((f) => f.libro?.categorias.map((c) => c.categoriaId) ?? [])));
 
 	if (categoryIds.length === 0) return [];
 

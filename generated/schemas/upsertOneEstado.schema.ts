@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { EstadoCreateInputObjectSchema as EstadoCreateInputObjectSchema } from "./objects/EstadoCreateInput.schema.ts";
 import { EstadoIncludeObjectSchema as EstadoIncludeObjectSchema } from "./objects/EstadoInclude.schema.ts";
 import { EstadoSelectObjectSchema as EstadoSelectObjectSchema } from "./objects/EstadoSelect.schema.ts";
@@ -13,14 +13,8 @@ export const EstadoUpsertOneSchema: z.ZodType<Prisma.EstadoUpsertArgs> = z
 		select: EstadoSelectObjectSchema.optional(),
 		include: EstadoIncludeObjectSchema.optional(),
 		where: EstadoWhereUniqueInputObjectSchema,
-		create: z.union([
-			EstadoCreateInputObjectSchema,
-			EstadoUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			EstadoUpdateInputObjectSchema,
-			EstadoUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([EstadoCreateInputObjectSchema, EstadoUncheckedCreateInputObjectSchema]),
+		update: z.union([EstadoUpdateInputObjectSchema, EstadoUncheckedUpdateInputObjectSchema]),
 	})
 	.strict() as unknown as z.ZodType<Prisma.EstadoUpsertArgs>;
 
@@ -29,13 +23,7 @@ export const EstadoUpsertOneZodSchema = z
 		select: EstadoSelectObjectSchema.optional(),
 		include: EstadoIncludeObjectSchema.optional(),
 		where: EstadoWhereUniqueInputObjectSchema,
-		create: z.union([
-			EstadoCreateInputObjectSchema,
-			EstadoUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			EstadoUpdateInputObjectSchema,
-			EstadoUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([EstadoCreateInputObjectSchema, EstadoUncheckedCreateInputObjectSchema]),
+		update: z.union([EstadoUpdateInputObjectSchema, EstadoUncheckedUpdateInputObjectSchema]),
 	})
 	.strict();

@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { LibroAvgAggregateInputObjectSchema as LibroAvgAggregateInputObjectSchema } from "./objects/LibroAvgAggregateInput.schema.ts";
 import { LibroCountAggregateInputObjectSchema as LibroCountAggregateInputObjectSchema } from "./objects/LibroCountAggregateInput.schema.ts";
 import { LibroMaxAggregateInputObjectSchema as LibroMaxAggregateInputObjectSchema } from "./objects/LibroMaxAggregateInput.schema.ts";
@@ -11,19 +11,12 @@ import { LibroWhereUniqueInputObjectSchema as LibroWhereUniqueInputObjectSchema 
 
 export const LibroAggregateSchema: z.ZodType<Prisma.LibroAggregateArgs> = z
 	.object({
-		orderBy: z
-			.union([
-				LibroOrderByWithRelationInputObjectSchema,
-				LibroOrderByWithRelationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([LibroOrderByWithRelationInputObjectSchema, LibroOrderByWithRelationInputObjectSchema.array()]).optional(),
 		where: LibroWhereInputObjectSchema.optional(),
 		cursor: LibroWhereUniqueInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
-		_count: z
-			.union([z.literal(true), LibroCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), LibroCountAggregateInputObjectSchema]).optional(),
 		_min: LibroMinAggregateInputObjectSchema.optional(),
 		_max: LibroMaxAggregateInputObjectSchema.optional(),
 		_avg: LibroAvgAggregateInputObjectSchema.optional(),
@@ -33,19 +26,12 @@ export const LibroAggregateSchema: z.ZodType<Prisma.LibroAggregateArgs> = z
 
 export const LibroAggregateZodSchema = z
 	.object({
-		orderBy: z
-			.union([
-				LibroOrderByWithRelationInputObjectSchema,
-				LibroOrderByWithRelationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([LibroOrderByWithRelationInputObjectSchema, LibroOrderByWithRelationInputObjectSchema.array()]).optional(),
 		where: LibroWhereInputObjectSchema.optional(),
 		cursor: LibroWhereUniqueInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
-		_count: z
-			.union([z.literal(true), LibroCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), LibroCountAggregateInputObjectSchema]).optional(),
 		_min: LibroMinAggregateInputObjectSchema.optional(),
 		_max: LibroMaxAggregateInputObjectSchema.optional(),
 		_avg: LibroAvgAggregateInputObjectSchema.optional(),

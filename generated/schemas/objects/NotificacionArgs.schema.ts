@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { NotificacionIncludeObjectSchema as NotificacionIncludeObjectSchema } from "./NotificacionInclude.schema.ts";
 import { NotificacionSelectObjectSchema as NotificacionSelectObjectSchema } from "./NotificacionSelect.schema.ts";
 

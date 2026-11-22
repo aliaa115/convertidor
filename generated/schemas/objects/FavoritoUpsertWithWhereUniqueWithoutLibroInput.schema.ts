@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { FavoritoCreateWithoutLibroInputObjectSchema as FavoritoCreateWithoutLibroInputObjectSchema } from "./FavoritoCreateWithoutLibroInput.schema.ts";
 import { FavoritoUncheckedCreateWithoutLibroInputObjectSchema as FavoritoUncheckedCreateWithoutLibroInputObjectSchema } from "./FavoritoUncheckedCreateWithoutLibroInput.schema.ts";
 import { FavoritoUncheckedUpdateWithoutLibroInputObjectSchema as FavoritoUncheckedUpdateWithoutLibroInputObjectSchema } from "./FavoritoUncheckedUpdateWithoutLibroInput.schema.ts";
@@ -10,17 +10,10 @@ const makeSchema = () =>
 	z
 		.object({
 			where: z.lazy(() => FavoritoWhereUniqueInputObjectSchema),
-			update: z.union([
-				z.lazy(() => FavoritoUpdateWithoutLibroInputObjectSchema),
-				z.lazy(() => FavoritoUncheckedUpdateWithoutLibroInputObjectSchema),
-			]),
-			create: z.union([
-				z.lazy(() => FavoritoCreateWithoutLibroInputObjectSchema),
-				z.lazy(() => FavoritoUncheckedCreateWithoutLibroInputObjectSchema),
-			]),
+			update: z.union([z.lazy(() => FavoritoUpdateWithoutLibroInputObjectSchema), z.lazy(() => FavoritoUncheckedUpdateWithoutLibroInputObjectSchema)]),
+			create: z.union([z.lazy(() => FavoritoCreateWithoutLibroInputObjectSchema), z.lazy(() => FavoritoUncheckedCreateWithoutLibroInputObjectSchema)]),
 		})
 		.strict();
 export const FavoritoUpsertWithWhereUniqueWithoutLibroInputObjectSchema: z.ZodType<Prisma.FavoritoUpsertWithWhereUniqueWithoutLibroInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.FavoritoUpsertWithWhereUniqueWithoutLibroInput>;
-export const FavoritoUpsertWithWhereUniqueWithoutLibroInputObjectZodSchema =
-	makeSchema();
+export const FavoritoUpsertWithWhereUniqueWithoutLibroInputObjectZodSchema = makeSchema();

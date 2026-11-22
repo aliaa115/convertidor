@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { LibroEtiquetaCreateManyLibroInputEnvelopeObjectSchema as LibroEtiquetaCreateManyLibroInputEnvelopeObjectSchema } from "./LibroEtiquetaCreateManyLibroInputEnvelope.schema.ts";
 import { LibroEtiquetaCreateOrConnectWithoutLibroInputObjectSchema as LibroEtiquetaCreateOrConnectWithoutLibroInputObjectSchema } from "./LibroEtiquetaCreateOrConnectWithoutLibroInput.schema.ts";
 import { LibroEtiquetaCreateWithoutLibroInputObjectSchema as LibroEtiquetaCreateWithoutLibroInputObjectSchema } from "./LibroEtiquetaCreateWithoutLibroInput.schema.ts";
@@ -12,43 +12,16 @@ const makeSchema = () =>
 			create: z
 				.union([
 					z.lazy(() => LibroEtiquetaCreateWithoutLibroInputObjectSchema),
-					z
-						.lazy(() => LibroEtiquetaCreateWithoutLibroInputObjectSchema)
-						.array(),
-					z.lazy(
-						() => LibroEtiquetaUncheckedCreateWithoutLibroInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => LibroEtiquetaUncheckedCreateWithoutLibroInputObjectSchema,
-						)
-						.array(),
+					z.lazy(() => LibroEtiquetaCreateWithoutLibroInputObjectSchema).array(),
+					z.lazy(() => LibroEtiquetaUncheckedCreateWithoutLibroInputObjectSchema),
+					z.lazy(() => LibroEtiquetaUncheckedCreateWithoutLibroInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(
-						() => LibroEtiquetaCreateOrConnectWithoutLibroInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => LibroEtiquetaCreateOrConnectWithoutLibroInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			createMany: z
-				.lazy(() => LibroEtiquetaCreateManyLibroInputEnvelopeObjectSchema)
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => LibroEtiquetaWhereUniqueInputObjectSchema),
-					z.lazy(() => LibroEtiquetaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => LibroEtiquetaCreateOrConnectWithoutLibroInputObjectSchema), z.lazy(() => LibroEtiquetaCreateOrConnectWithoutLibroInputObjectSchema).array()]).optional(),
+			createMany: z.lazy(() => LibroEtiquetaCreateManyLibroInputEnvelopeObjectSchema).optional(),
+			connect: z.union([z.lazy(() => LibroEtiquetaWhereUniqueInputObjectSchema), z.lazy(() => LibroEtiquetaWhereUniqueInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const LibroEtiquetaCreateNestedManyWithoutLibroInputObjectSchema: z.ZodType<Prisma.LibroEtiquetaCreateNestedManyWithoutLibroInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.LibroEtiquetaCreateNestedManyWithoutLibroInput>;
-export const LibroEtiquetaCreateNestedManyWithoutLibroInputObjectZodSchema =
-	makeSchema();
+export const LibroEtiquetaCreateNestedManyWithoutLibroInputObjectZodSchema = makeSchema();

@@ -29,14 +29,7 @@ function normalizeNames(values: string[]) {
 }
 
 function isFileLike(value: FormDataEntryValue | null): value is File {
-	return (
-		typeof value === "object" &&
-		value !== null &&
-		"arrayBuffer" in value &&
-		"size" in value &&
-		"type" in value &&
-		"name" in value
-	);
+	return typeof value === "object" && value !== null && "arrayBuffer" in value && "size" in value && "type" in value && "name" in value;
 }
 
 async function saveCover(file: File) {
@@ -53,10 +46,7 @@ async function saveCover(file: File) {
 	return `/uploads/books/${filename}`;
 }
 
-export async function createBookAction(
-	_prevState: CreateBookState,
-	formData: FormData,
-): Promise<CreateBookState> {
+export async function createBookAction(_prevState: CreateBookState, formData: FormData): Promise<CreateBookState> {
 	const user = await getCurrentUser();
 
 	if (!user?.escritor?.id) {
@@ -148,15 +138,9 @@ export async function createBookAction(
 			},
 		});
 
-		const existingCategoriaNames = new Set(
-			existingCategorias
-				.map((item) => item.nombre?.trim().toLowerCase())
-				.filter(Boolean),
-		);
+		const existingCategoriaNames = new Set(existingCategorias.map((item) => item.nombre?.trim().toLowerCase()).filter(Boolean));
 
-		const categoriasToCreate = categorias.filter(
-			(nombre) => !existingCategoriaNames.has(nombre.trim().toLowerCase()),
-		);
+		const categoriasToCreate = categorias.filter((nombre) => !existingCategoriaNames.has(nombre.trim().toLowerCase()));
 
 		if (categoriasToCreate.length > 0) {
 			await prisma.categoria.createMany({
@@ -212,15 +196,9 @@ export async function createBookAction(
 			},
 		});
 
-		const existingEtiquetaNames = new Set(
-			existingEtiquetas
-				.map((item) => item.nombre?.trim().toLowerCase())
-				.filter(Boolean),
-		);
+		const existingEtiquetaNames = new Set(existingEtiquetas.map((item) => item.nombre?.trim().toLowerCase()).filter(Boolean));
 
-		const etiquetasToCreate = etiquetas.filter(
-			(nombre) => !existingEtiquetaNames.has(nombre.trim().toLowerCase()),
-		);
+		const etiquetasToCreate = etiquetas.filter((nombre) => !existingEtiquetaNames.has(nombre.trim().toLowerCase()));
 
 		if (etiquetasToCreate.length > 0) {
 			await prisma.etiqueta.createMany({

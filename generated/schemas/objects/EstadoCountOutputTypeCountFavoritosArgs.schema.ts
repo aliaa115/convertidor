@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { FavoritoWhereInputObjectSchema as FavoritoWhereInputObjectSchema } from "./FavoritoWhereInput.schema.ts";
 
 const makeSchema = () =>
@@ -9,5 +8,4 @@ const makeSchema = () =>
 		})
 		.strict();
 export const EstadoCountOutputTypeCountFavoritosArgsObjectSchema = makeSchema();
-export const EstadoCountOutputTypeCountFavoritosArgsObjectZodSchema =
-	makeSchema();
+export const EstadoCountOutputTypeCountFavoritosArgsObjectZodSchema = makeSchema();

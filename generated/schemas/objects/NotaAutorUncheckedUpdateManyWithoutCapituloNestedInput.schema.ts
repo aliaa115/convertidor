@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { NotaAutorCreateManyCapituloInputEnvelopeObjectSchema as NotaAutorCreateManyCapituloInputEnvelopeObjectSchema } from "./NotaAutorCreateManyCapituloInputEnvelope.schema.ts";
 import { NotaAutorCreateOrConnectWithoutCapituloInputObjectSchema as NotaAutorCreateOrConnectWithoutCapituloInputObjectSchema } from "./NotaAutorCreateOrConnectWithoutCapituloInput.schema.ts";
 import { NotaAutorCreateWithoutCapituloInputObjectSchema as NotaAutorCreateWithoutCapituloInputObjectSchema } from "./NotaAutorCreateWithoutCapituloInput.schema.ts";
@@ -17,105 +17,22 @@ const makeSchema = () =>
 				.union([
 					z.lazy(() => NotaAutorCreateWithoutCapituloInputObjectSchema),
 					z.lazy(() => NotaAutorCreateWithoutCapituloInputObjectSchema).array(),
-					z.lazy(
-						() => NotaAutorUncheckedCreateWithoutCapituloInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => NotaAutorUncheckedCreateWithoutCapituloInputObjectSchema,
-						)
-						.array(),
+					z.lazy(() => NotaAutorUncheckedCreateWithoutCapituloInputObjectSchema),
+					z.lazy(() => NotaAutorUncheckedCreateWithoutCapituloInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(
-						() => NotaAutorCreateOrConnectWithoutCapituloInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => NotaAutorCreateOrConnectWithoutCapituloInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			upsert: z
-				.union([
-					z.lazy(
-						() =>
-							NotaAutorUpsertWithWhereUniqueWithoutCapituloInputObjectSchema,
-					),
-					z
-						.lazy(
-							() =>
-								NotaAutorUpsertWithWhereUniqueWithoutCapituloInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			createMany: z
-				.lazy(() => NotaAutorCreateManyCapituloInputEnvelopeObjectSchema)
-				.optional(),
-			set: z
-				.union([
-					z.lazy(() => NotaAutorWhereUniqueInputObjectSchema),
-					z.lazy(() => NotaAutorWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			disconnect: z
-				.union([
-					z.lazy(() => NotaAutorWhereUniqueInputObjectSchema),
-					z.lazy(() => NotaAutorWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			delete: z
-				.union([
-					z.lazy(() => NotaAutorWhereUniqueInputObjectSchema),
-					z.lazy(() => NotaAutorWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => NotaAutorWhereUniqueInputObjectSchema),
-					z.lazy(() => NotaAutorWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			update: z
-				.union([
-					z.lazy(
-						() =>
-							NotaAutorUpdateWithWhereUniqueWithoutCapituloInputObjectSchema,
-					),
-					z
-						.lazy(
-							() =>
-								NotaAutorUpdateWithWhereUniqueWithoutCapituloInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			updateMany: z
-				.union([
-					z.lazy(
-						() => NotaAutorUpdateManyWithWhereWithoutCapituloInputObjectSchema,
-					),
-					z
-						.lazy(
-							() =>
-								NotaAutorUpdateManyWithWhereWithoutCapituloInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			deleteMany: z
-				.union([
-					z.lazy(() => NotaAutorScalarWhereInputObjectSchema),
-					z.lazy(() => NotaAutorScalarWhereInputObjectSchema).array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => NotaAutorCreateOrConnectWithoutCapituloInputObjectSchema), z.lazy(() => NotaAutorCreateOrConnectWithoutCapituloInputObjectSchema).array()]).optional(),
+			upsert: z.union([z.lazy(() => NotaAutorUpsertWithWhereUniqueWithoutCapituloInputObjectSchema), z.lazy(() => NotaAutorUpsertWithWhereUniqueWithoutCapituloInputObjectSchema).array()]).optional(),
+			createMany: z.lazy(() => NotaAutorCreateManyCapituloInputEnvelopeObjectSchema).optional(),
+			set: z.union([z.lazy(() => NotaAutorWhereUniqueInputObjectSchema), z.lazy(() => NotaAutorWhereUniqueInputObjectSchema).array()]).optional(),
+			disconnect: z.union([z.lazy(() => NotaAutorWhereUniqueInputObjectSchema), z.lazy(() => NotaAutorWhereUniqueInputObjectSchema).array()]).optional(),
+			delete: z.union([z.lazy(() => NotaAutorWhereUniqueInputObjectSchema), z.lazy(() => NotaAutorWhereUniqueInputObjectSchema).array()]).optional(),
+			connect: z.union([z.lazy(() => NotaAutorWhereUniqueInputObjectSchema), z.lazy(() => NotaAutorWhereUniqueInputObjectSchema).array()]).optional(),
+			update: z.union([z.lazy(() => NotaAutorUpdateWithWhereUniqueWithoutCapituloInputObjectSchema), z.lazy(() => NotaAutorUpdateWithWhereUniqueWithoutCapituloInputObjectSchema).array()]).optional(),
+			updateMany: z.union([z.lazy(() => NotaAutorUpdateManyWithWhereWithoutCapituloInputObjectSchema), z.lazy(() => NotaAutorUpdateManyWithWhereWithoutCapituloInputObjectSchema).array()]).optional(),
+			deleteMany: z.union([z.lazy(() => NotaAutorScalarWhereInputObjectSchema), z.lazy(() => NotaAutorScalarWhereInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const NotaAutorUncheckedUpdateManyWithoutCapituloNestedInputObjectSchema: z.ZodType<Prisma.NotaAutorUncheckedUpdateManyWithoutCapituloNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.NotaAutorUncheckedUpdateManyWithoutCapituloNestedInput>;
-export const NotaAutorUncheckedUpdateManyWithoutCapituloNestedInputObjectZodSchema =
-	makeSchema();
+export const NotaAutorUncheckedUpdateManyWithoutCapituloNestedInputObjectZodSchema = makeSchema();

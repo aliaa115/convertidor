@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { AvatarCreateInputObjectSchema as AvatarCreateInputObjectSchema } from "./objects/AvatarCreateInput.schema.ts";
 import { AvatarIncludeObjectSchema as AvatarIncludeObjectSchema } from "./objects/AvatarInclude.schema.ts";
 import { AvatarSelectObjectSchema as AvatarSelectObjectSchema } from "./objects/AvatarSelect.schema.ts";
@@ -13,14 +13,8 @@ export const AvatarUpsertOneSchema: z.ZodType<Prisma.AvatarUpsertArgs> = z
 		select: AvatarSelectObjectSchema.optional(),
 		include: AvatarIncludeObjectSchema.optional(),
 		where: AvatarWhereUniqueInputObjectSchema,
-		create: z.union([
-			AvatarCreateInputObjectSchema,
-			AvatarUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			AvatarUpdateInputObjectSchema,
-			AvatarUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([AvatarCreateInputObjectSchema, AvatarUncheckedCreateInputObjectSchema]),
+		update: z.union([AvatarUpdateInputObjectSchema, AvatarUncheckedUpdateInputObjectSchema]),
 	})
 	.strict() as unknown as z.ZodType<Prisma.AvatarUpsertArgs>;
 
@@ -29,13 +23,7 @@ export const AvatarUpsertOneZodSchema = z
 		select: AvatarSelectObjectSchema.optional(),
 		include: AvatarIncludeObjectSchema.optional(),
 		where: AvatarWhereUniqueInputObjectSchema,
-		create: z.union([
-			AvatarCreateInputObjectSchema,
-			AvatarUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			AvatarUpdateInputObjectSchema,
-			AvatarUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([AvatarCreateInputObjectSchema, AvatarUncheckedCreateInputObjectSchema]),
+		update: z.union([AvatarUpdateInputObjectSchema, AvatarUncheckedUpdateInputObjectSchema]),
 	})
 	.strict();

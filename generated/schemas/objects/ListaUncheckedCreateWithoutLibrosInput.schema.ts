@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 
 const makeSchema = () =>
 	z
@@ -15,5 +15,4 @@ const makeSchema = () =>
 		.strict();
 export const ListaUncheckedCreateWithoutLibrosInputObjectSchema: z.ZodType<Prisma.ListaUncheckedCreateWithoutLibrosInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.ListaUncheckedCreateWithoutLibrosInput>;
-export const ListaUncheckedCreateWithoutLibrosInputObjectZodSchema =
-	makeSchema();
+export const ListaUncheckedCreateWithoutLibrosInputObjectZodSchema = makeSchema();

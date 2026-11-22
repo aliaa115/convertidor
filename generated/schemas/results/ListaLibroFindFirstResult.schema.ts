@@ -1,14 +1,17 @@
 import * as z from "zod";
+import { EstadoSchema } from "../models/Estado.schema.ts";
+import { LibroSchema } from "../models/Libro.schema.ts";
+import { ListaSchema } from "../models/Lista.schema.ts";
 export const ListaLibroFindFirstResultSchema = z.nullable(
 	z.object({
 		id: z.number().int(),
 		createdAt: z.date(),
 		updatedAt: z.date(),
 		listaId: z.number().int().optional(),
-		lista: z.unknown().optional(),
+		lista: ListaSchema.optional(),
 		libroId: z.number().int().optional(),
-		libro: z.unknown().optional(),
+		libro: LibroSchema.optional(),
 		estadoId: z.number().int(),
-		estado: z.unknown(),
+		estado: EstadoSchema.optional(),
 	}),
 );

@@ -1,12 +1,14 @@
 import * as z from "zod";
+import { EscritorSchema } from "../models/Escritor.schema.ts";
+import { EstadoSchema } from "../models/Estado.schema.ts";
 export const SeguirUsuarioUpsertResultSchema = z.object({
 	id: z.number().int(),
 	createdAt: z.date(),
 	updatedAt: z.date(),
 	escritorId: z.number().int(),
-	escritor: z.unknown(),
+	escritor: EscritorSchema.optional(),
 	escritorSeguidoId: z.number().int(),
-	seguido: z.unknown(),
+	seguido: EscritorSchema.optional(),
 	estadoId: z.number().int(),
-	estado: z.unknown(),
+	estado: EstadoSchema.optional(),
 });

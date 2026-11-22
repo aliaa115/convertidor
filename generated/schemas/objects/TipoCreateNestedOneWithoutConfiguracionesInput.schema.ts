@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { TipoCreateOrConnectWithoutConfiguracionesInputObjectSchema as TipoCreateOrConnectWithoutConfiguracionesInputObjectSchema } from "./TipoCreateOrConnectWithoutConfiguracionesInput.schema.ts";
 import { TipoCreateWithoutConfiguracionesInputObjectSchema as TipoCreateWithoutConfiguracionesInputObjectSchema } from "./TipoCreateWithoutConfiguracionesInput.schema.ts";
 import { TipoUncheckedCreateWithoutConfiguracionesInputObjectSchema as TipoUncheckedCreateWithoutConfiguracionesInputObjectSchema } from "./TipoUncheckedCreateWithoutConfiguracionesInput.schema.ts";
@@ -8,21 +8,11 @@ import { TipoWhereUniqueInputObjectSchema as TipoWhereUniqueInputObjectSchema } 
 const makeSchema = () =>
 	z
 		.object({
-			create: z
-				.union([
-					z.lazy(() => TipoCreateWithoutConfiguracionesInputObjectSchema),
-					z.lazy(
-						() => TipoUncheckedCreateWithoutConfiguracionesInputObjectSchema,
-					),
-				])
-				.optional(),
-			connectOrCreate: z
-				.lazy(() => TipoCreateOrConnectWithoutConfiguracionesInputObjectSchema)
-				.optional(),
+			create: z.union([z.lazy(() => TipoCreateWithoutConfiguracionesInputObjectSchema), z.lazy(() => TipoUncheckedCreateWithoutConfiguracionesInputObjectSchema)]).optional(),
+			connectOrCreate: z.lazy(() => TipoCreateOrConnectWithoutConfiguracionesInputObjectSchema).optional(),
 			connect: z.lazy(() => TipoWhereUniqueInputObjectSchema).optional(),
 		})
 		.strict();
 export const TipoCreateNestedOneWithoutConfiguracionesInputObjectSchema: z.ZodType<Prisma.TipoCreateNestedOneWithoutConfiguracionesInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.TipoCreateNestedOneWithoutConfiguracionesInput>;
-export const TipoCreateNestedOneWithoutConfiguracionesInputObjectZodSchema =
-	makeSchema();
+export const TipoCreateNestedOneWithoutConfiguracionesInputObjectZodSchema = makeSchema();

@@ -1,16 +1,13 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { NestedBoolFilterObjectSchema as NestedBoolFilterObjectSchema } from "./NestedBoolFilter.schema.ts";
 
 const makeSchema = () =>
 	z
 		.object({
 			equals: z.boolean().optional(),
-			not: z
-				.union([z.boolean(), z.lazy(() => NestedBoolFilterObjectSchema)])
-				.optional(),
+			not: z.union([z.boolean(), z.lazy(() => NestedBoolFilterObjectSchema)]).optional(),
 		})
 		.strict();
-export const BoolFilterObjectSchema: z.ZodType<Prisma.BoolFilter> =
-	makeSchema() as unknown as z.ZodType<Prisma.BoolFilter>;
+export const BoolFilterObjectSchema: z.ZodType<Prisma.BoolFilter> = makeSchema() as unknown as z.ZodType<Prisma.BoolFilter>;
 export const BoolFilterObjectZodSchema = makeSchema();

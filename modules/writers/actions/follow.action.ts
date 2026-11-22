@@ -11,13 +11,7 @@ export type FollowWriterActionState = {
 	fieldErrors?: Partial<Record<"writerId", string[]>>;
 };
 
-export async function followWriterAction({
-	writerId,
-	writerUserId,
-}: {
-	writerId?: number;
-	writerUserId?: number;
-}): Promise<FollowWriterActionState> {
+export async function followWriterAction({ writerId, writerUserId }: { writerId?: number; writerUserId?: number }): Promise<FollowWriterActionState> {
 	const currentUser = await getCurrentUser();
 
 	if (!currentUser) {
@@ -104,9 +98,7 @@ export async function followWriterAction({
 			await createNotificationAction({
 				usuarioId: writerUserId,
 				titulo: "Tienes un nuevo seguidor",
-				mensaje: `${
-					currentUser.escritor?.alias || currentUser.userName
-				} comenzó a seguirte`,
+				mensaje: `${currentUser.escritor?.alias || currentUser.userName} comenzó a seguirte`,
 				tipo: NotificacionTipo.FOLLOW,
 				entidadTipo: EntidadTipo.ESCRITOR,
 				entidadId: currentWriterId,
@@ -127,11 +119,7 @@ export async function followWriterAction({
 	}
 }
 
-export async function unfollowWriterAction({
-	writerId,
-}: {
-	writerId?: number;
-}): Promise<FollowWriterActionState> {
+export async function unfollowWriterAction({ writerId }: { writerId?: number }): Promise<FollowWriterActionState> {
 	const currentUser = await getCurrentUser();
 
 	if (!currentUser) {

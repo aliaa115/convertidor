@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { MarcadorCreateManyEscritorInputEnvelopeObjectSchema as MarcadorCreateManyEscritorInputEnvelopeObjectSchema } from "./MarcadorCreateManyEscritorInputEnvelope.schema.ts";
 import { MarcadorCreateOrConnectWithoutEscritorInputObjectSchema as MarcadorCreateOrConnectWithoutEscritorInputObjectSchema } from "./MarcadorCreateOrConnectWithoutEscritorInput.schema.ts";
 import { MarcadorCreateWithoutEscritorInputObjectSchema as MarcadorCreateWithoutEscritorInputObjectSchema } from "./MarcadorCreateWithoutEscritorInput.schema.ts";
@@ -14,31 +14,14 @@ const makeSchema = () =>
 					z.lazy(() => MarcadorCreateWithoutEscritorInputObjectSchema),
 					z.lazy(() => MarcadorCreateWithoutEscritorInputObjectSchema).array(),
 					z.lazy(() => MarcadorUncheckedCreateWithoutEscritorInputObjectSchema),
-					z
-						.lazy(() => MarcadorUncheckedCreateWithoutEscritorInputObjectSchema)
-						.array(),
+					z.lazy(() => MarcadorUncheckedCreateWithoutEscritorInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(() => MarcadorCreateOrConnectWithoutEscritorInputObjectSchema),
-					z
-						.lazy(() => MarcadorCreateOrConnectWithoutEscritorInputObjectSchema)
-						.array(),
-				])
-				.optional(),
-			createMany: z
-				.lazy(() => MarcadorCreateManyEscritorInputEnvelopeObjectSchema)
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => MarcadorWhereUniqueInputObjectSchema),
-					z.lazy(() => MarcadorWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => MarcadorCreateOrConnectWithoutEscritorInputObjectSchema), z.lazy(() => MarcadorCreateOrConnectWithoutEscritorInputObjectSchema).array()]).optional(),
+			createMany: z.lazy(() => MarcadorCreateManyEscritorInputEnvelopeObjectSchema).optional(),
+			connect: z.union([z.lazy(() => MarcadorWhereUniqueInputObjectSchema), z.lazy(() => MarcadorWhereUniqueInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const MarcadorCreateNestedManyWithoutEscritorInputObjectSchema: z.ZodType<Prisma.MarcadorCreateNestedManyWithoutEscritorInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.MarcadorCreateNestedManyWithoutEscritorInput>;
-export const MarcadorCreateNestedManyWithoutEscritorInputObjectZodSchema =
-	makeSchema();
+export const MarcadorCreateNestedManyWithoutEscritorInputObjectZodSchema = makeSchema();

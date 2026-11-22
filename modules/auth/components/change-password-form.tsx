@@ -8,10 +8,7 @@ import GenerateField from "@/components/custom/forms/generate-field";
 import { Button } from "@/components/ui/button";
 import { CurrentUser } from "@/lib/types";
 import { savePaswordAction } from "../actions/change-password.action";
-import {
-	ChangePaswordInput,
-	changePaswordFormSchema,
-} from "../schema/change-pasword.schema";
+import { ChangePaswordInput, changePaswordFormSchema } from "../schema/change-pasword.schema";
 
 type ChangePasswordProps = {
 	user: CurrentUser | null;
@@ -67,8 +64,7 @@ export default function ChangePaswordForm({ user }: ChangePasswordProps) {
 	return (
 		<form
 			onSubmit={handleSubmit(onSubmit)}
-			className="sm:px-10 bg-background-paper/30 rounded-2xl w-full grid sm:grid-cols-2 p-10 overflow-auto"
-		>
+			className="sm:px-10 bg-background-paper/30 rounded-2xl w-full grid sm:grid-cols-2 p-10 overflow-auto">
 			<div className="col-span-1">
 				<GenerateField
 					id="password"
@@ -91,7 +87,10 @@ export default function ChangePaswordForm({ user }: ChangePasswordProps) {
 
 			<div className="col-span-full flex w-full justify-end">
 				<div className="flex flex-col">
-					<Button color="primary" type="submit" className="mt-5">
+					<Button
+						color="primary"
+						type="submit"
+						className="mt-5">
 						Cambiar contraseña
 					</Button>
 				</div>

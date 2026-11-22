@@ -1,6 +1,9 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { ListaLibroScalarFieldEnumSchema } from "./enums/ListaLibroScalarFieldEnum.schema.ts";
+import { EstadoArgsObjectSchema as EstadoArgsObjectSchema } from "./objects/EstadoArgs.schema.ts";
+import { LibroArgsObjectSchema as LibroArgsObjectSchema } from "./objects/LibroArgs.schema.ts";
+import { ListaArgsObjectSchema as ListaArgsObjectSchema } from "./objects/ListaArgs.schema.ts";
 import { ListaLibroIncludeObjectSchema as ListaLibroIncludeObjectSchema } from "./objects/ListaLibroInclude.schema.ts";
 import { ListaLibroOrderByWithRelationInputObjectSchema as ListaLibroOrderByWithRelationInputObjectSchema } from "./objects/ListaLibroOrderByWithRelationInput.schema.ts";
 import { ListaLibroWhereInputObjectSchema as ListaLibroWhereInputObjectSchema } from "./objects/ListaLibroWhereInput.schema.ts";
@@ -9,20 +12,19 @@ import { ListaLibroWhereUniqueInputObjectSchema as ListaLibroWhereUniqueInputObj
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 
-export const ListaLibroFindFirstOrThrowSelectSchema: z.ZodType<Prisma.ListaLibroSelect> =
-	z
-		.object({
-			id: z.boolean().optional(),
-			createdAt: z.boolean().optional(),
-			updatedAt: z.boolean().optional(),
-			listaId: z.boolean().optional(),
-			lista: z.boolean().optional(),
-			libroId: z.boolean().optional(),
-			libro: z.boolean().optional(),
-			estadoId: z.boolean().optional(),
-			estado: z.boolean().optional(),
-		})
-		.strict() as unknown as z.ZodType<Prisma.ListaLibroSelect>;
+export const ListaLibroFindFirstOrThrowSelectSchema: z.ZodType<Prisma.ListaLibroSelect> = z
+	.object({
+		id: z.boolean().optional(),
+		createdAt: z.boolean().optional(),
+		updatedAt: z.boolean().optional(),
+		listaId: z.boolean().optional(),
+		lista: z.union([z.boolean(), z.lazy(() => ListaArgsObjectSchema)]).optional(),
+		libroId: z.boolean().optional(),
+		libro: z.union([z.boolean(), z.lazy(() => LibroArgsObjectSchema)]).optional(),
+		estadoId: z.boolean().optional(),
+		estado: z.union([z.boolean(), z.lazy(() => EstadoArgsObjectSchema)]).optional(),
+	})
+	.strict() as unknown as z.ZodType<Prisma.ListaLibroSelect>;
 
 export const ListaLibroFindFirstOrThrowSelectZodSchema = z
 	.object({
@@ -30,57 +32,36 @@ export const ListaLibroFindFirstOrThrowSelectZodSchema = z
 		createdAt: z.boolean().optional(),
 		updatedAt: z.boolean().optional(),
 		listaId: z.boolean().optional(),
-		lista: z.boolean().optional(),
+		lista: z.union([z.boolean(), z.lazy(() => ListaArgsObjectSchema)]).optional(),
 		libroId: z.boolean().optional(),
-		libro: z.boolean().optional(),
+		libro: z.union([z.boolean(), z.lazy(() => LibroArgsObjectSchema)]).optional(),
 		estadoId: z.boolean().optional(),
-		estado: z.boolean().optional(),
+		estado: z.union([z.boolean(), z.lazy(() => EstadoArgsObjectSchema)]).optional(),
 	})
 	.strict();
 
-export const ListaLibroFindFirstOrThrowSchema: z.ZodType<Prisma.ListaLibroFindFirstOrThrowArgs> =
-	z
-		.object({
-			select: ListaLibroFindFirstOrThrowSelectSchema.optional(),
-			include: z.lazy(() => ListaLibroIncludeObjectSchema.optional()),
-			orderBy: z
-				.union([
-					ListaLibroOrderByWithRelationInputObjectSchema,
-					ListaLibroOrderByWithRelationInputObjectSchema.array(),
-				])
-				.optional(),
-			where: ListaLibroWhereInputObjectSchema.optional(),
-			cursor: ListaLibroWhereUniqueInputObjectSchema.optional(),
-			take: z.number().optional(),
-			skip: z.number().optional(),
-			distinct: z
-				.union([
-					ListaLibroScalarFieldEnumSchema,
-					ListaLibroScalarFieldEnumSchema.array(),
-				])
-				.optional(),
-		})
-		.strict() as unknown as z.ZodType<Prisma.ListaLibroFindFirstOrThrowArgs>;
+export const ListaLibroFindFirstOrThrowSchema: z.ZodType<Prisma.ListaLibroFindFirstOrThrowArgs> = z
+	.object({
+		select: ListaLibroFindFirstOrThrowSelectSchema.optional(),
+		include: z.lazy(() => ListaLibroIncludeObjectSchema.optional()),
+		orderBy: z.union([ListaLibroOrderByWithRelationInputObjectSchema, ListaLibroOrderByWithRelationInputObjectSchema.array()]).optional(),
+		where: ListaLibroWhereInputObjectSchema.optional(),
+		cursor: ListaLibroWhereUniqueInputObjectSchema.optional(),
+		take: z.number().optional(),
+		skip: z.number().optional(),
+		distinct: z.union([ListaLibroScalarFieldEnumSchema, ListaLibroScalarFieldEnumSchema.array()]).optional(),
+	})
+	.strict() as unknown as z.ZodType<Prisma.ListaLibroFindFirstOrThrowArgs>;
 
 export const ListaLibroFindFirstOrThrowZodSchema = z
 	.object({
 		select: ListaLibroFindFirstOrThrowSelectSchema.optional(),
 		include: z.lazy(() => ListaLibroIncludeObjectSchema.optional()),
-		orderBy: z
-			.union([
-				ListaLibroOrderByWithRelationInputObjectSchema,
-				ListaLibroOrderByWithRelationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([ListaLibroOrderByWithRelationInputObjectSchema, ListaLibroOrderByWithRelationInputObjectSchema.array()]).optional(),
 		where: ListaLibroWhereInputObjectSchema.optional(),
 		cursor: ListaLibroWhereUniqueInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
-		distinct: z
-			.union([
-				ListaLibroScalarFieldEnumSchema,
-				ListaLibroScalarFieldEnumSchema.array(),
-			])
-			.optional(),
+		distinct: z.union([ListaLibroScalarFieldEnumSchema, ListaLibroScalarFieldEnumSchema.array()]).optional(),
 	})
 	.strict();

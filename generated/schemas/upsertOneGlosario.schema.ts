@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { GlosarioCreateInputObjectSchema as GlosarioCreateInputObjectSchema } from "./objects/GlosarioCreateInput.schema.ts";
 import { GlosarioIncludeObjectSchema as GlosarioIncludeObjectSchema } from "./objects/GlosarioInclude.schema.ts";
 import { GlosarioSelectObjectSchema as GlosarioSelectObjectSchema } from "./objects/GlosarioSelect.schema.ts";
@@ -13,14 +13,8 @@ export const GlosarioUpsertOneSchema: z.ZodType<Prisma.GlosarioUpsertArgs> = z
 		select: GlosarioSelectObjectSchema.optional(),
 		include: GlosarioIncludeObjectSchema.optional(),
 		where: GlosarioWhereUniqueInputObjectSchema,
-		create: z.union([
-			GlosarioCreateInputObjectSchema,
-			GlosarioUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			GlosarioUpdateInputObjectSchema,
-			GlosarioUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([GlosarioCreateInputObjectSchema, GlosarioUncheckedCreateInputObjectSchema]),
+		update: z.union([GlosarioUpdateInputObjectSchema, GlosarioUncheckedUpdateInputObjectSchema]),
 	})
 	.strict() as unknown as z.ZodType<Prisma.GlosarioUpsertArgs>;
 
@@ -29,13 +23,7 @@ export const GlosarioUpsertOneZodSchema = z
 		select: GlosarioSelectObjectSchema.optional(),
 		include: GlosarioIncludeObjectSchema.optional(),
 		where: GlosarioWhereUniqueInputObjectSchema,
-		create: z.union([
-			GlosarioCreateInputObjectSchema,
-			GlosarioUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			GlosarioUpdateInputObjectSchema,
-			GlosarioUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([GlosarioCreateInputObjectSchema, GlosarioUncheckedCreateInputObjectSchema]),
+		update: z.union([GlosarioUpdateInputObjectSchema, GlosarioUncheckedUpdateInputObjectSchema]),
 	})
 	.strict();

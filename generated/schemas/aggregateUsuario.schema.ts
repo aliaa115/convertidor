@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { UsuarioAvgAggregateInputObjectSchema as UsuarioAvgAggregateInputObjectSchema } from "./objects/UsuarioAvgAggregateInput.schema.ts";
 import { UsuarioCountAggregateInputObjectSchema as UsuarioCountAggregateInputObjectSchema } from "./objects/UsuarioCountAggregateInput.schema.ts";
 import { UsuarioMaxAggregateInputObjectSchema as UsuarioMaxAggregateInputObjectSchema } from "./objects/UsuarioMaxAggregateInput.schema.ts";
@@ -11,19 +11,12 @@ import { UsuarioWhereUniqueInputObjectSchema as UsuarioWhereUniqueInputObjectSch
 
 export const UsuarioAggregateSchema: z.ZodType<Prisma.UsuarioAggregateArgs> = z
 	.object({
-		orderBy: z
-			.union([
-				UsuarioOrderByWithRelationInputObjectSchema,
-				UsuarioOrderByWithRelationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([UsuarioOrderByWithRelationInputObjectSchema, UsuarioOrderByWithRelationInputObjectSchema.array()]).optional(),
 		where: UsuarioWhereInputObjectSchema.optional(),
 		cursor: UsuarioWhereUniqueInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
-		_count: z
-			.union([z.literal(true), UsuarioCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), UsuarioCountAggregateInputObjectSchema]).optional(),
 		_min: UsuarioMinAggregateInputObjectSchema.optional(),
 		_max: UsuarioMaxAggregateInputObjectSchema.optional(),
 		_avg: UsuarioAvgAggregateInputObjectSchema.optional(),
@@ -33,19 +26,12 @@ export const UsuarioAggregateSchema: z.ZodType<Prisma.UsuarioAggregateArgs> = z
 
 export const UsuarioAggregateZodSchema = z
 	.object({
-		orderBy: z
-			.union([
-				UsuarioOrderByWithRelationInputObjectSchema,
-				UsuarioOrderByWithRelationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([UsuarioOrderByWithRelationInputObjectSchema, UsuarioOrderByWithRelationInputObjectSchema.array()]).optional(),
 		where: UsuarioWhereInputObjectSchema.optional(),
 		cursor: UsuarioWhereUniqueInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
-		_count: z
-			.union([z.literal(true), UsuarioCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), UsuarioCountAggregateInputObjectSchema]).optional(),
 		_min: UsuarioMinAggregateInputObjectSchema.optional(),
 		_max: UsuarioMaxAggregateInputObjectSchema.optional(),
 		_avg: UsuarioAvgAggregateInputObjectSchema.optional(),

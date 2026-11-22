@@ -63,8 +63,7 @@ export default function RegisterForm() {
 	return (
 		<form
 			onSubmit={handleSubmit(onSubmit)}
-			className="flex flex-col gap-x-35  w-full justify-center items-center mx-auto p-5"
-		>
+			className="flex flex-col gap-x-35  w-full justify-center items-center mx-auto p-5">
 			<GenerateField
 				id="email"
 				label="Correo"
@@ -120,12 +119,17 @@ export default function RegisterForm() {
 				errors={errors}
 			/>
 
-			<Button color="primary" type="submit" className=" my-5">
+			<Button
+				color="primary"
+				type="submit"
+				className=" my-5">
 				Registrarse
 			</Button>
 			<p className="text-center text-sm text-muted-foreground my-2">
 				Ya tienes cuenta?{" "}
-				<Link href="/login" className="font-semibold underline">
+				<Link
+					href="/login"
+					className="font-semibold underline">
 					Iniciar sesion
 				</Link>
 			</p>

@@ -11,10 +11,15 @@ export default async function Page({ params }: Props) {
 	const { identifier } = await params;
 	const user = await getCurrentUser();
 
-	const writer = await getWriter(identifier);
+	const writer = await getWriter(identifier, Number(identifier) === user?.id ? undefined : true);
 
 	if (!writer) return notFound();
 	if (writer.estadoId !== 1) return notFound();
 
-	return <WriterProfileWiew writer={writer} user={user} />;
+	return (
+		<WriterProfileWiew
+			writer={writer}
+			user={user}
+		/>
+	);
 }

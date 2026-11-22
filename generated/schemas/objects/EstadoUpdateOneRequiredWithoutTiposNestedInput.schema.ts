@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { EstadoCreateOrConnectWithoutTiposInputObjectSchema as EstadoCreateOrConnectWithoutTiposInputObjectSchema } from "./EstadoCreateOrConnectWithoutTiposInput.schema.ts";
 import { EstadoCreateWithoutTiposInputObjectSchema as EstadoCreateWithoutTiposInputObjectSchema } from "./EstadoCreateWithoutTiposInput.schema.ts";
 import { EstadoUncheckedCreateWithoutTiposInputObjectSchema as EstadoUncheckedCreateWithoutTiposInputObjectSchema } from "./EstadoUncheckedCreateWithoutTiposInput.schema.ts";
@@ -12,18 +12,9 @@ import { EstadoWhereUniqueInputObjectSchema as EstadoWhereUniqueInputObjectSchem
 const makeSchema = () =>
 	z
 		.object({
-			create: z
-				.union([
-					z.lazy(() => EstadoCreateWithoutTiposInputObjectSchema),
-					z.lazy(() => EstadoUncheckedCreateWithoutTiposInputObjectSchema),
-				])
-				.optional(),
-			connectOrCreate: z
-				.lazy(() => EstadoCreateOrConnectWithoutTiposInputObjectSchema)
-				.optional(),
-			upsert: z
-				.lazy(() => EstadoUpsertWithoutTiposInputObjectSchema)
-				.optional(),
+			create: z.union([z.lazy(() => EstadoCreateWithoutTiposInputObjectSchema), z.lazy(() => EstadoUncheckedCreateWithoutTiposInputObjectSchema)]).optional(),
+			connectOrCreate: z.lazy(() => EstadoCreateOrConnectWithoutTiposInputObjectSchema).optional(),
+			upsert: z.lazy(() => EstadoUpsertWithoutTiposInputObjectSchema).optional(),
 			connect: z.lazy(() => EstadoWhereUniqueInputObjectSchema).optional(),
 			update: z
 				.union([
@@ -36,5 +27,4 @@ const makeSchema = () =>
 		.strict();
 export const EstadoUpdateOneRequiredWithoutTiposNestedInputObjectSchema: z.ZodType<Prisma.EstadoUpdateOneRequiredWithoutTiposNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.EstadoUpdateOneRequiredWithoutTiposNestedInput>;
-export const EstadoUpdateOneRequiredWithoutTiposNestedInputObjectZodSchema =
-	makeSchema();
+export const EstadoUpdateOneRequiredWithoutTiposNestedInputObjectZodSchema = makeSchema();

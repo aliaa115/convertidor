@@ -1,14 +1,11 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { LibroCreateManyEscritorInputObjectSchema as LibroCreateManyEscritorInputObjectSchema } from "./LibroCreateManyEscritorInput.schema.ts";
 
 const makeSchema = () =>
 	z
 		.object({
-			data: z.union([
-				z.lazy(() => LibroCreateManyEscritorInputObjectSchema),
-				z.lazy(() => LibroCreateManyEscritorInputObjectSchema).array(),
-			]),
+			data: z.union([z.lazy(() => LibroCreateManyEscritorInputObjectSchema), z.lazy(() => LibroCreateManyEscritorInputObjectSchema).array()]),
 			skipDuplicates: z.boolean().optional(),
 		})
 		.strict();

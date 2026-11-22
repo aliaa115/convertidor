@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { DateTimeFieldUpdateOperationsInputObjectSchema as DateTimeFieldUpdateOperationsInputObjectSchema } from "./DateTimeFieldUpdateOperationsInput.schema.ts";
 import { IntFieldUpdateOperationsInputObjectSchema as IntFieldUpdateOperationsInputObjectSchema } from "./IntFieldUpdateOperationsInput.schema.ts";
 import { NotaAutorUncheckedUpdateManyWithoutCapituloNestedInputObjectSchema as NotaAutorUncheckedUpdateManyWithoutCapituloNestedInputObjectSchema } from "./NotaAutorUncheckedUpdateManyWithoutCapituloNestedInput.schema.ts";
@@ -10,59 +10,22 @@ import { ParrafoUncheckedUpdateManyWithoutCapituloNestedInputObjectSchema as Par
 const makeSchema = () =>
 	z
 		.object({
-			id: z
-				.union([
-					z.number().int(),
-					z.lazy(() => IntFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
+			id: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputObjectSchema)]).optional(),
 			nombre: z
-				.union([
-					z.string(),
-					z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema),
-				])
+				.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema)])
 				.optional()
 				.nullable(),
 			indice: z
-				.union([
-					z.number().int(),
-					z.lazy(() => NullableIntFieldUpdateOperationsInputObjectSchema),
-				])
+				.union([z.number().int(), z.lazy(() => NullableIntFieldUpdateOperationsInputObjectSchema)])
 				.optional()
 				.nullable(),
-			createdAt: z
-				.union([
-					z.coerce.date(),
-					z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
-			updatedAt: z
-				.union([
-					z.coerce.date(),
-					z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
-			estadoId: z
-				.union([
-					z.number().int(),
-					z.lazy(() => IntFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
-			parrafos: z
-				.lazy(
-					() =>
-						ParrafoUncheckedUpdateManyWithoutCapituloNestedInputObjectSchema,
-				)
-				.optional(),
-			notasAutor: z
-				.lazy(
-					() =>
-						NotaAutorUncheckedUpdateManyWithoutCapituloNestedInputObjectSchema,
-				)
-				.optional(),
+			createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema)]).optional(),
+			updatedAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema)]).optional(),
+			estadoId: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputObjectSchema)]).optional(),
+			parrafos: z.lazy(() => ParrafoUncheckedUpdateManyWithoutCapituloNestedInputObjectSchema).optional(),
+			notasAutor: z.lazy(() => NotaAutorUncheckedUpdateManyWithoutCapituloNestedInputObjectSchema).optional(),
 		})
 		.strict();
 export const CapituloUncheckedUpdateWithoutLibroInputObjectSchema: z.ZodType<Prisma.CapituloUncheckedUpdateWithoutLibroInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.CapituloUncheckedUpdateWithoutLibroInput>;
-export const CapituloUncheckedUpdateWithoutLibroInputObjectZodSchema =
-	makeSchema();
+export const CapituloUncheckedUpdateWithoutLibroInputObjectZodSchema = makeSchema();

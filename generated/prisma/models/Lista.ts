@@ -15,8 +15,7 @@ import type * as Prisma from "../internal/prismaNamespace.ts";
  * Model Lista
  *
  */
-export type ListaModel =
-	runtime.Types.Result.DefaultSelection<Prisma.$ListaPayload>;
+export type ListaModel = runtime.Types.Result.DefaultSelection<Prisma.$ListaPayload>;
 
 export type AggregateLista = {
 	_count: ListaCountAggregateOutputType | null;
@@ -112,10 +111,7 @@ export type ListaCountAggregateInputType = {
 	_all?: true;
 };
 
-export type ListaAggregateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Lista to aggregate.
 	 */
@@ -125,9 +121,7 @@ export type ListaAggregateArgs<
 	 *
 	 * Determine the order of Listas to fetch.
 	 */
-	orderBy?:
-		| Prisma.ListaOrderByWithRelationInput
-		| Prisma.ListaOrderByWithRelationInput[];
+	orderBy?: Prisma.ListaOrderByWithRelationInput | Prisma.ListaOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -179,21 +173,12 @@ export type ListaAggregateArgs<
 };
 
 export type GetListaAggregateType<T extends ListaAggregateArgs> = {
-	[P in keyof T & keyof AggregateLista]: P extends "_count" | "count"
-		? T[P] extends true
-			? number
-			: Prisma.GetScalarType<T[P], AggregateLista[P]>
-		: Prisma.GetScalarType<T[P], AggregateLista[P]>;
+	[P in keyof T & keyof AggregateLista]: P extends "_count" | "count" ? (T[P] extends true ? number : Prisma.GetScalarType<T[P], AggregateLista[P]>) : Prisma.GetScalarType<T[P], AggregateLista[P]>;
 };
 
-export type ListaGroupByArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.ListaWhereInput;
-	orderBy?:
-		| Prisma.ListaOrderByWithAggregationInput
-		| Prisma.ListaOrderByWithAggregationInput[];
+	orderBy?: Prisma.ListaOrderByWithAggregationInput | Prisma.ListaOrderByWithAggregationInput[];
 	by: Prisma.ListaScalarFieldEnum[] | Prisma.ListaScalarFieldEnum;
 	having?: Prisma.ListaScalarWhereWithAggregatesInput;
 	take?: number;
@@ -220,18 +205,17 @@ export type ListaGroupByOutputType = {
 	_max: ListaMaxAggregateOutputType | null;
 };
 
-export type GetListaGroupByPayload<T extends ListaGroupByArgs> =
-	Prisma.PrismaPromise<
-		Array<
-			Prisma.PickEnumerable<ListaGroupByOutputType, T["by"]> & {
-				[P in keyof T & keyof ListaGroupByOutputType]: P extends "_count"
-					? T[P] extends boolean
-						? number
-						: Prisma.GetScalarType<T[P], ListaGroupByOutputType[P]>
-					: Prisma.GetScalarType<T[P], ListaGroupByOutputType[P]>;
-			}
-		>
-	>;
+export type GetListaGroupByPayload<T extends ListaGroupByArgs> = Prisma.PrismaPromise<
+	Array<
+		Prisma.PickEnumerable<ListaGroupByOutputType, T["by"]> & {
+			[P in keyof T & keyof ListaGroupByOutputType]: P extends "_count"
+				? T[P] extends boolean
+					? number
+					: Prisma.GetScalarType<T[P], ListaGroupByOutputType[P]>
+				: Prisma.GetScalarType<T[P], ListaGroupByOutputType[P]>;
+		}
+	>
+>;
 
 export type ListaWhereInput = {
 	AND?: Prisma.ListaWhereInput | Prisma.ListaWhereInput[];
@@ -244,14 +228,8 @@ export type ListaWhereInput = {
 	updatedAt?: Prisma.DateTimeFilter<"Lista"> | Date | string;
 	usuarioId?: Prisma.IntNullableFilter<"Lista"> | number | null;
 	estadoId?: Prisma.IntFilter<"Lista"> | number;
-	usuario?: Prisma.XOR<
-		Prisma.UsuarioNullableScalarRelationFilter,
-		Prisma.UsuarioWhereInput
-	> | null;
-	estado?: Prisma.XOR<
-		Prisma.EstadoScalarRelationFilter,
-		Prisma.EstadoWhereInput
-	>;
+	usuario?: Prisma.XOR<Prisma.UsuarioNullableScalarRelationFilter, Prisma.UsuarioWhereInput> | null;
+	estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 	libros?: Prisma.ListaLibroListRelationFilter;
 };
 
@@ -280,14 +258,8 @@ export type ListaWhereUniqueInput = Prisma.AtLeast<
 		updatedAt?: Prisma.DateTimeFilter<"Lista"> | Date | string;
 		usuarioId?: Prisma.IntNullableFilter<"Lista"> | number | null;
 		estadoId?: Prisma.IntFilter<"Lista"> | number;
-		usuario?: Prisma.XOR<
-			Prisma.UsuarioNullableScalarRelationFilter,
-			Prisma.UsuarioWhereInput
-		> | null;
-		estado?: Prisma.XOR<
-			Prisma.EstadoScalarRelationFilter,
-			Prisma.EstadoWhereInput
-		>;
+		usuario?: Prisma.XOR<Prisma.UsuarioNullableScalarRelationFilter, Prisma.UsuarioWhereInput> | null;
+		estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 		libros?: Prisma.ListaLibroListRelationFilter;
 	},
 	"id"
@@ -309,13 +281,9 @@ export type ListaOrderByWithAggregationInput = {
 };
 
 export type ListaScalarWhereWithAggregatesInput = {
-	AND?:
-		| Prisma.ListaScalarWhereWithAggregatesInput
-		| Prisma.ListaScalarWhereWithAggregatesInput[];
+	AND?: Prisma.ListaScalarWhereWithAggregatesInput | Prisma.ListaScalarWhereWithAggregatesInput[];
 	OR?: Prisma.ListaScalarWhereWithAggregatesInput[];
-	NOT?:
-		| Prisma.ListaScalarWhereWithAggregatesInput
-		| Prisma.ListaScalarWhereWithAggregatesInput[];
+	NOT?: Prisma.ListaScalarWhereWithAggregatesInput | Prisma.ListaScalarWhereWithAggregatesInput[];
 	id?: Prisma.IntWithAggregatesFilter<"Lista"> | number;
 	nombre?: Prisma.StringNullableWithAggregatesFilter<"Lista"> | string | null;
 	privada?: Prisma.BoolWithAggregatesFilter<"Lista"> | boolean;
@@ -452,203 +420,115 @@ export type ListaNullableScalarRelationFilter = {
 };
 
 export type ListaCreateNestedManyWithoutEstadoInput = {
-	create?:
-		| Prisma.XOR<
-				Prisma.ListaCreateWithoutEstadoInput,
-				Prisma.ListaUncheckedCreateWithoutEstadoInput
-		  >
-		| Prisma.ListaCreateWithoutEstadoInput[]
-		| Prisma.ListaUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.ListaCreateOrConnectWithoutEstadoInput
-		| Prisma.ListaCreateOrConnectWithoutEstadoInput[];
+	create?: Prisma.XOR<Prisma.ListaCreateWithoutEstadoInput, Prisma.ListaUncheckedCreateWithoutEstadoInput> | Prisma.ListaCreateWithoutEstadoInput[] | Prisma.ListaUncheckedCreateWithoutEstadoInput[];
+	connectOrCreate?: Prisma.ListaCreateOrConnectWithoutEstadoInput | Prisma.ListaCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.ListaCreateManyEstadoInputEnvelope;
 	connect?: Prisma.ListaWhereUniqueInput | Prisma.ListaWhereUniqueInput[];
 };
 
 export type ListaUncheckedCreateNestedManyWithoutEstadoInput = {
-	create?:
-		| Prisma.XOR<
-				Prisma.ListaCreateWithoutEstadoInput,
-				Prisma.ListaUncheckedCreateWithoutEstadoInput
-		  >
-		| Prisma.ListaCreateWithoutEstadoInput[]
-		| Prisma.ListaUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.ListaCreateOrConnectWithoutEstadoInput
-		| Prisma.ListaCreateOrConnectWithoutEstadoInput[];
+	create?: Prisma.XOR<Prisma.ListaCreateWithoutEstadoInput, Prisma.ListaUncheckedCreateWithoutEstadoInput> | Prisma.ListaCreateWithoutEstadoInput[] | Prisma.ListaUncheckedCreateWithoutEstadoInput[];
+	connectOrCreate?: Prisma.ListaCreateOrConnectWithoutEstadoInput | Prisma.ListaCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.ListaCreateManyEstadoInputEnvelope;
 	connect?: Prisma.ListaWhereUniqueInput | Prisma.ListaWhereUniqueInput[];
 };
 
 export type ListaUpdateManyWithoutEstadoNestedInput = {
-	create?:
-		| Prisma.XOR<
-				Prisma.ListaCreateWithoutEstadoInput,
-				Prisma.ListaUncheckedCreateWithoutEstadoInput
-		  >
-		| Prisma.ListaCreateWithoutEstadoInput[]
-		| Prisma.ListaUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.ListaCreateOrConnectWithoutEstadoInput
-		| Prisma.ListaCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.ListaUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.ListaUpsertWithWhereUniqueWithoutEstadoInput[];
+	create?: Prisma.XOR<Prisma.ListaCreateWithoutEstadoInput, Prisma.ListaUncheckedCreateWithoutEstadoInput> | Prisma.ListaCreateWithoutEstadoInput[] | Prisma.ListaUncheckedCreateWithoutEstadoInput[];
+	connectOrCreate?: Prisma.ListaCreateOrConnectWithoutEstadoInput | Prisma.ListaCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.ListaUpsertWithWhereUniqueWithoutEstadoInput | Prisma.ListaUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.ListaCreateManyEstadoInputEnvelope;
 	set?: Prisma.ListaWhereUniqueInput | Prisma.ListaWhereUniqueInput[];
 	disconnect?: Prisma.ListaWhereUniqueInput | Prisma.ListaWhereUniqueInput[];
 	delete?: Prisma.ListaWhereUniqueInput | Prisma.ListaWhereUniqueInput[];
 	connect?: Prisma.ListaWhereUniqueInput | Prisma.ListaWhereUniqueInput[];
-	update?:
-		| Prisma.ListaUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.ListaUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.ListaUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.ListaUpdateManyWithWhereWithoutEstadoInput[];
+	update?: Prisma.ListaUpdateWithWhereUniqueWithoutEstadoInput | Prisma.ListaUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.ListaUpdateManyWithWhereWithoutEstadoInput | Prisma.ListaUpdateManyWithWhereWithoutEstadoInput[];
 	deleteMany?: Prisma.ListaScalarWhereInput | Prisma.ListaScalarWhereInput[];
 };
 
 export type ListaUncheckedUpdateManyWithoutEstadoNestedInput = {
-	create?:
-		| Prisma.XOR<
-				Prisma.ListaCreateWithoutEstadoInput,
-				Prisma.ListaUncheckedCreateWithoutEstadoInput
-		  >
-		| Prisma.ListaCreateWithoutEstadoInput[]
-		| Prisma.ListaUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.ListaCreateOrConnectWithoutEstadoInput
-		| Prisma.ListaCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.ListaUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.ListaUpsertWithWhereUniqueWithoutEstadoInput[];
+	create?: Prisma.XOR<Prisma.ListaCreateWithoutEstadoInput, Prisma.ListaUncheckedCreateWithoutEstadoInput> | Prisma.ListaCreateWithoutEstadoInput[] | Prisma.ListaUncheckedCreateWithoutEstadoInput[];
+	connectOrCreate?: Prisma.ListaCreateOrConnectWithoutEstadoInput | Prisma.ListaCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.ListaUpsertWithWhereUniqueWithoutEstadoInput | Prisma.ListaUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.ListaCreateManyEstadoInputEnvelope;
 	set?: Prisma.ListaWhereUniqueInput | Prisma.ListaWhereUniqueInput[];
 	disconnect?: Prisma.ListaWhereUniqueInput | Prisma.ListaWhereUniqueInput[];
 	delete?: Prisma.ListaWhereUniqueInput | Prisma.ListaWhereUniqueInput[];
 	connect?: Prisma.ListaWhereUniqueInput | Prisma.ListaWhereUniqueInput[];
-	update?:
-		| Prisma.ListaUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.ListaUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.ListaUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.ListaUpdateManyWithWhereWithoutEstadoInput[];
+	update?: Prisma.ListaUpdateWithWhereUniqueWithoutEstadoInput | Prisma.ListaUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.ListaUpdateManyWithWhereWithoutEstadoInput | Prisma.ListaUpdateManyWithWhereWithoutEstadoInput[];
 	deleteMany?: Prisma.ListaScalarWhereInput | Prisma.ListaScalarWhereInput[];
 };
 
 export type ListaCreateNestedManyWithoutUsuarioInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ListaCreateWithoutUsuarioInput,
-				Prisma.ListaUncheckedCreateWithoutUsuarioInput
-		  >
+		| Prisma.XOR<Prisma.ListaCreateWithoutUsuarioInput, Prisma.ListaUncheckedCreateWithoutUsuarioInput>
 		| Prisma.ListaCreateWithoutUsuarioInput[]
 		| Prisma.ListaUncheckedCreateWithoutUsuarioInput[];
-	connectOrCreate?:
-		| Prisma.ListaCreateOrConnectWithoutUsuarioInput
-		| Prisma.ListaCreateOrConnectWithoutUsuarioInput[];
+	connectOrCreate?: Prisma.ListaCreateOrConnectWithoutUsuarioInput | Prisma.ListaCreateOrConnectWithoutUsuarioInput[];
 	createMany?: Prisma.ListaCreateManyUsuarioInputEnvelope;
 	connect?: Prisma.ListaWhereUniqueInput | Prisma.ListaWhereUniqueInput[];
 };
 
 export type ListaUncheckedCreateNestedManyWithoutUsuarioInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ListaCreateWithoutUsuarioInput,
-				Prisma.ListaUncheckedCreateWithoutUsuarioInput
-		  >
+		| Prisma.XOR<Prisma.ListaCreateWithoutUsuarioInput, Prisma.ListaUncheckedCreateWithoutUsuarioInput>
 		| Prisma.ListaCreateWithoutUsuarioInput[]
 		| Prisma.ListaUncheckedCreateWithoutUsuarioInput[];
-	connectOrCreate?:
-		| Prisma.ListaCreateOrConnectWithoutUsuarioInput
-		| Prisma.ListaCreateOrConnectWithoutUsuarioInput[];
+	connectOrCreate?: Prisma.ListaCreateOrConnectWithoutUsuarioInput | Prisma.ListaCreateOrConnectWithoutUsuarioInput[];
 	createMany?: Prisma.ListaCreateManyUsuarioInputEnvelope;
 	connect?: Prisma.ListaWhereUniqueInput | Prisma.ListaWhereUniqueInput[];
 };
 
 export type ListaUpdateManyWithoutUsuarioNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ListaCreateWithoutUsuarioInput,
-				Prisma.ListaUncheckedCreateWithoutUsuarioInput
-		  >
+		| Prisma.XOR<Prisma.ListaCreateWithoutUsuarioInput, Prisma.ListaUncheckedCreateWithoutUsuarioInput>
 		| Prisma.ListaCreateWithoutUsuarioInput[]
 		| Prisma.ListaUncheckedCreateWithoutUsuarioInput[];
-	connectOrCreate?:
-		| Prisma.ListaCreateOrConnectWithoutUsuarioInput
-		| Prisma.ListaCreateOrConnectWithoutUsuarioInput[];
-	upsert?:
-		| Prisma.ListaUpsertWithWhereUniqueWithoutUsuarioInput
-		| Prisma.ListaUpsertWithWhereUniqueWithoutUsuarioInput[];
+	connectOrCreate?: Prisma.ListaCreateOrConnectWithoutUsuarioInput | Prisma.ListaCreateOrConnectWithoutUsuarioInput[];
+	upsert?: Prisma.ListaUpsertWithWhereUniqueWithoutUsuarioInput | Prisma.ListaUpsertWithWhereUniqueWithoutUsuarioInput[];
 	createMany?: Prisma.ListaCreateManyUsuarioInputEnvelope;
 	set?: Prisma.ListaWhereUniqueInput | Prisma.ListaWhereUniqueInput[];
 	disconnect?: Prisma.ListaWhereUniqueInput | Prisma.ListaWhereUniqueInput[];
 	delete?: Prisma.ListaWhereUniqueInput | Prisma.ListaWhereUniqueInput[];
 	connect?: Prisma.ListaWhereUniqueInput | Prisma.ListaWhereUniqueInput[];
-	update?:
-		| Prisma.ListaUpdateWithWhereUniqueWithoutUsuarioInput
-		| Prisma.ListaUpdateWithWhereUniqueWithoutUsuarioInput[];
-	updateMany?:
-		| Prisma.ListaUpdateManyWithWhereWithoutUsuarioInput
-		| Prisma.ListaUpdateManyWithWhereWithoutUsuarioInput[];
+	update?: Prisma.ListaUpdateWithWhereUniqueWithoutUsuarioInput | Prisma.ListaUpdateWithWhereUniqueWithoutUsuarioInput[];
+	updateMany?: Prisma.ListaUpdateManyWithWhereWithoutUsuarioInput | Prisma.ListaUpdateManyWithWhereWithoutUsuarioInput[];
 	deleteMany?: Prisma.ListaScalarWhereInput | Prisma.ListaScalarWhereInput[];
 };
 
 export type ListaUncheckedUpdateManyWithoutUsuarioNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ListaCreateWithoutUsuarioInput,
-				Prisma.ListaUncheckedCreateWithoutUsuarioInput
-		  >
+		| Prisma.XOR<Prisma.ListaCreateWithoutUsuarioInput, Prisma.ListaUncheckedCreateWithoutUsuarioInput>
 		| Prisma.ListaCreateWithoutUsuarioInput[]
 		| Prisma.ListaUncheckedCreateWithoutUsuarioInput[];
-	connectOrCreate?:
-		| Prisma.ListaCreateOrConnectWithoutUsuarioInput
-		| Prisma.ListaCreateOrConnectWithoutUsuarioInput[];
-	upsert?:
-		| Prisma.ListaUpsertWithWhereUniqueWithoutUsuarioInput
-		| Prisma.ListaUpsertWithWhereUniqueWithoutUsuarioInput[];
+	connectOrCreate?: Prisma.ListaCreateOrConnectWithoutUsuarioInput | Prisma.ListaCreateOrConnectWithoutUsuarioInput[];
+	upsert?: Prisma.ListaUpsertWithWhereUniqueWithoutUsuarioInput | Prisma.ListaUpsertWithWhereUniqueWithoutUsuarioInput[];
 	createMany?: Prisma.ListaCreateManyUsuarioInputEnvelope;
 	set?: Prisma.ListaWhereUniqueInput | Prisma.ListaWhereUniqueInput[];
 	disconnect?: Prisma.ListaWhereUniqueInput | Prisma.ListaWhereUniqueInput[];
 	delete?: Prisma.ListaWhereUniqueInput | Prisma.ListaWhereUniqueInput[];
 	connect?: Prisma.ListaWhereUniqueInput | Prisma.ListaWhereUniqueInput[];
-	update?:
-		| Prisma.ListaUpdateWithWhereUniqueWithoutUsuarioInput
-		| Prisma.ListaUpdateWithWhereUniqueWithoutUsuarioInput[];
-	updateMany?:
-		| Prisma.ListaUpdateManyWithWhereWithoutUsuarioInput
-		| Prisma.ListaUpdateManyWithWhereWithoutUsuarioInput[];
+	update?: Prisma.ListaUpdateWithWhereUniqueWithoutUsuarioInput | Prisma.ListaUpdateWithWhereUniqueWithoutUsuarioInput[];
+	updateMany?: Prisma.ListaUpdateManyWithWhereWithoutUsuarioInput | Prisma.ListaUpdateManyWithWhereWithoutUsuarioInput[];
 	deleteMany?: Prisma.ListaScalarWhereInput | Prisma.ListaScalarWhereInput[];
 };
 
 export type ListaCreateNestedOneWithoutLibrosInput = {
-	create?: Prisma.XOR<
-		Prisma.ListaCreateWithoutLibrosInput,
-		Prisma.ListaUncheckedCreateWithoutLibrosInput
-	>;
+	create?: Prisma.XOR<Prisma.ListaCreateWithoutLibrosInput, Prisma.ListaUncheckedCreateWithoutLibrosInput>;
 	connectOrCreate?: Prisma.ListaCreateOrConnectWithoutLibrosInput;
 	connect?: Prisma.ListaWhereUniqueInput;
 };
 
 export type ListaUpdateOneWithoutLibrosNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.ListaCreateWithoutLibrosInput,
-		Prisma.ListaUncheckedCreateWithoutLibrosInput
-	>;
+	create?: Prisma.XOR<Prisma.ListaCreateWithoutLibrosInput, Prisma.ListaUncheckedCreateWithoutLibrosInput>;
 	connectOrCreate?: Prisma.ListaCreateOrConnectWithoutLibrosInput;
 	upsert?: Prisma.ListaUpsertWithoutLibrosInput;
 	disconnect?: Prisma.ListaWhereInput | boolean;
 	delete?: Prisma.ListaWhereInput | boolean;
 	connect?: Prisma.ListaWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.ListaUpdateToOneWithWhereWithoutLibrosInput,
-			Prisma.ListaUpdateWithoutLibrosInput
-		>,
-		Prisma.ListaUncheckedUpdateWithoutLibrosInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.ListaUpdateToOneWithWhereWithoutLibrosInput, Prisma.ListaUpdateWithoutLibrosInput>, Prisma.ListaUncheckedUpdateWithoutLibrosInput>;
 };
 
 export type ListaCreateWithoutEstadoInput = {
@@ -672,10 +552,7 @@ export type ListaUncheckedCreateWithoutEstadoInput = {
 
 export type ListaCreateOrConnectWithoutEstadoInput = {
 	where: Prisma.ListaWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.ListaCreateWithoutEstadoInput,
-		Prisma.ListaUncheckedCreateWithoutEstadoInput
-	>;
+	create: Prisma.XOR<Prisma.ListaCreateWithoutEstadoInput, Prisma.ListaUncheckedCreateWithoutEstadoInput>;
 };
 
 export type ListaCreateManyEstadoInputEnvelope = {
@@ -685,30 +562,18 @@ export type ListaCreateManyEstadoInputEnvelope = {
 
 export type ListaUpsertWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.ListaWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.ListaUpdateWithoutEstadoInput,
-		Prisma.ListaUncheckedUpdateWithoutEstadoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.ListaCreateWithoutEstadoInput,
-		Prisma.ListaUncheckedCreateWithoutEstadoInput
-	>;
+	update: Prisma.XOR<Prisma.ListaUpdateWithoutEstadoInput, Prisma.ListaUncheckedUpdateWithoutEstadoInput>;
+	create: Prisma.XOR<Prisma.ListaCreateWithoutEstadoInput, Prisma.ListaUncheckedCreateWithoutEstadoInput>;
 };
 
 export type ListaUpdateWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.ListaWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.ListaUpdateWithoutEstadoInput,
-		Prisma.ListaUncheckedUpdateWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.ListaUpdateWithoutEstadoInput, Prisma.ListaUncheckedUpdateWithoutEstadoInput>;
 };
 
 export type ListaUpdateManyWithWhereWithoutEstadoInput = {
 	where: Prisma.ListaScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.ListaUpdateManyMutationInput,
-		Prisma.ListaUncheckedUpdateManyWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.ListaUpdateManyMutationInput, Prisma.ListaUncheckedUpdateManyWithoutEstadoInput>;
 };
 
 export type ListaScalarWhereInput = {
@@ -745,45 +610,28 @@ export type ListaUncheckedCreateWithoutUsuarioInput = {
 
 export type ListaCreateOrConnectWithoutUsuarioInput = {
 	where: Prisma.ListaWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.ListaCreateWithoutUsuarioInput,
-		Prisma.ListaUncheckedCreateWithoutUsuarioInput
-	>;
+	create: Prisma.XOR<Prisma.ListaCreateWithoutUsuarioInput, Prisma.ListaUncheckedCreateWithoutUsuarioInput>;
 };
 
 export type ListaCreateManyUsuarioInputEnvelope = {
-	data:
-		| Prisma.ListaCreateManyUsuarioInput
-		| Prisma.ListaCreateManyUsuarioInput[];
+	data: Prisma.ListaCreateManyUsuarioInput | Prisma.ListaCreateManyUsuarioInput[];
 	skipDuplicates?: boolean;
 };
 
 export type ListaUpsertWithWhereUniqueWithoutUsuarioInput = {
 	where: Prisma.ListaWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.ListaUpdateWithoutUsuarioInput,
-		Prisma.ListaUncheckedUpdateWithoutUsuarioInput
-	>;
-	create: Prisma.XOR<
-		Prisma.ListaCreateWithoutUsuarioInput,
-		Prisma.ListaUncheckedCreateWithoutUsuarioInput
-	>;
+	update: Prisma.XOR<Prisma.ListaUpdateWithoutUsuarioInput, Prisma.ListaUncheckedUpdateWithoutUsuarioInput>;
+	create: Prisma.XOR<Prisma.ListaCreateWithoutUsuarioInput, Prisma.ListaUncheckedCreateWithoutUsuarioInput>;
 };
 
 export type ListaUpdateWithWhereUniqueWithoutUsuarioInput = {
 	where: Prisma.ListaWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.ListaUpdateWithoutUsuarioInput,
-		Prisma.ListaUncheckedUpdateWithoutUsuarioInput
-	>;
+	data: Prisma.XOR<Prisma.ListaUpdateWithoutUsuarioInput, Prisma.ListaUncheckedUpdateWithoutUsuarioInput>;
 };
 
 export type ListaUpdateManyWithWhereWithoutUsuarioInput = {
 	where: Prisma.ListaScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.ListaUpdateManyMutationInput,
-		Prisma.ListaUncheckedUpdateManyWithoutUsuarioInput
-	>;
+	data: Prisma.XOR<Prisma.ListaUpdateManyMutationInput, Prisma.ListaUncheckedUpdateManyWithoutUsuarioInput>;
 };
 
 export type ListaCreateWithoutLibrosInput = {
@@ -807,30 +655,18 @@ export type ListaUncheckedCreateWithoutLibrosInput = {
 
 export type ListaCreateOrConnectWithoutLibrosInput = {
 	where: Prisma.ListaWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.ListaCreateWithoutLibrosInput,
-		Prisma.ListaUncheckedCreateWithoutLibrosInput
-	>;
+	create: Prisma.XOR<Prisma.ListaCreateWithoutLibrosInput, Prisma.ListaUncheckedCreateWithoutLibrosInput>;
 };
 
 export type ListaUpsertWithoutLibrosInput = {
-	update: Prisma.XOR<
-		Prisma.ListaUpdateWithoutLibrosInput,
-		Prisma.ListaUncheckedUpdateWithoutLibrosInput
-	>;
-	create: Prisma.XOR<
-		Prisma.ListaCreateWithoutLibrosInput,
-		Prisma.ListaUncheckedCreateWithoutLibrosInput
-	>;
+	update: Prisma.XOR<Prisma.ListaUpdateWithoutLibrosInput, Prisma.ListaUncheckedUpdateWithoutLibrosInput>;
+	create: Prisma.XOR<Prisma.ListaCreateWithoutLibrosInput, Prisma.ListaUncheckedCreateWithoutLibrosInput>;
 	where?: Prisma.ListaWhereInput;
 };
 
 export type ListaUpdateToOneWithWhereWithoutLibrosInput = {
 	where?: Prisma.ListaWhereInput;
-	data: Prisma.XOR<
-		Prisma.ListaUpdateWithoutLibrosInput,
-		Prisma.ListaUncheckedUpdateWithoutLibrosInput
-	>;
+	data: Prisma.XOR<Prisma.ListaUpdateWithoutLibrosInput, Prisma.ListaUncheckedUpdateWithoutLibrosInput>;
 };
 
 export type ListaUpdateWithoutLibrosInput = {
@@ -934,20 +770,14 @@ export type ListaCountOutputType = {
 	libros: number;
 };
 
-export type ListaCountOutputTypeSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	libros?: boolean | ListaCountOutputTypeCountLibrosArgs;
 };
 
 /**
  * ListaCountOutputType without action
  */
-export type ListaCountOutputTypeDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the ListaCountOutputType
 	 */
@@ -957,17 +787,11 @@ export type ListaCountOutputTypeDefaultArgs<
 /**
  * ListaCountOutputType without action
  */
-export type ListaCountOutputTypeCountLibrosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaCountOutputTypeCountLibrosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.ListaLibroWhereInput;
 };
 
-export type ListaSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type ListaSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -984,10 +808,7 @@ export type ListaSelect<
 	ExtArgs["result"]["lista"]
 >;
 
-export type ListaSelectCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type ListaSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -1002,10 +823,7 @@ export type ListaSelectCreateManyAndReturn<
 	ExtArgs["result"]["lista"]
 >;
 
-export type ListaSelectUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type ListaSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -1030,47 +848,26 @@ export type ListaSelectScalar = {
 	estadoId?: boolean;
 };
 
-export type ListaOmit<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetOmit<
-	| "id"
-	| "nombre"
-	| "privada"
-	| "createdAt"
-	| "updatedAt"
-	| "usuarioId"
-	| "estadoId",
+export type ListaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<
+	"id" | "nombre" | "privada" | "createdAt" | "updatedAt" | "usuarioId" | "estadoId",
 	ExtArgs["result"]["lista"]
 >;
-export type ListaInclude<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	usuario?: boolean | Prisma.Lista$usuarioArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 	libros?: boolean | Prisma.Lista$librosArgs<ExtArgs>;
 	_count?: boolean | Prisma.ListaCountOutputTypeDefaultArgs<ExtArgs>;
 };
-export type ListaIncludeCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	usuario?: boolean | Prisma.Lista$usuarioArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
-export type ListaIncludeUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	usuario?: boolean | Prisma.Lista$usuarioArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
 
-export type $ListaPayload<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type $ListaPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	name: "Lista";
 	objects: {
 		usuario: Prisma.$UsuarioPayload<ExtArgs> | null;
@@ -1092,26 +889,14 @@ export type $ListaPayload<
 	composites: {};
 };
 
-export type ListaGetPayload<
-	S extends boolean | null | undefined | ListaDefaultArgs,
-> = runtime.Types.Result.GetResult<Prisma.$ListaPayload, S>;
+export type ListaGetPayload<S extends boolean | null | undefined | ListaDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$ListaPayload, S>;
 
-export type ListaCountArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = Omit<ListaFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
+export type ListaCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<ListaFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
 	select?: ListaCountAggregateInputType | true;
 };
 
-export interface ListaDelegate<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> {
-	[K: symbol]: {
-		types: Prisma.TypeMap<ExtArgs>["model"]["Lista"];
-		meta: { name: "Lista" };
-	};
+export interface ListaDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+	[K: symbol]: { types: Prisma.TypeMap<ExtArgs>["model"]["Lista"]; meta: { name: "Lista" } };
 	/**
 	 * Find zero or one Lista that matches the filter.
 	 * @param {ListaFindUniqueArgs} args - Arguments to find a Lista
@@ -1125,17 +910,7 @@ export interface ListaDelegate<
 	 */
 	findUnique<T extends ListaFindUniqueArgs>(
 		args: Prisma.SelectSubset<T, ListaFindUniqueArgs<ExtArgs>>,
-	): Prisma.Prisma__ListaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ListaPayload<ExtArgs>,
-			T,
-			"findUnique",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ListaClient<runtime.Types.Result.GetResult<Prisma.$ListaPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find one Lista that matches the filter or throw an error with `error.code='P2025'`
@@ -1151,17 +926,7 @@ export interface ListaDelegate<
 	 */
 	findUniqueOrThrow<T extends ListaFindUniqueOrThrowArgs>(
 		args: Prisma.SelectSubset<T, ListaFindUniqueOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__ListaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ListaPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ListaClient<runtime.Types.Result.GetResult<Prisma.$ListaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Lista that matches the filter.
@@ -1178,17 +943,7 @@ export interface ListaDelegate<
 	 */
 	findFirst<T extends ListaFindFirstArgs>(
 		args?: Prisma.SelectSubset<T, ListaFindFirstArgs<ExtArgs>>,
-	): Prisma.Prisma__ListaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ListaPayload<ExtArgs>,
-			T,
-			"findFirst",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ListaClient<runtime.Types.Result.GetResult<Prisma.$ListaPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Lista that matches the filter or
@@ -1206,17 +961,7 @@ export interface ListaDelegate<
 	 */
 	findFirstOrThrow<T extends ListaFindFirstOrThrowArgs>(
 		args?: Prisma.SelectSubset<T, ListaFindFirstOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__ListaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ListaPayload<ExtArgs>,
-			T,
-			"findFirstOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ListaClient<runtime.Types.Result.GetResult<Prisma.$ListaPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find zero or more Listas that matches the filter.
@@ -1236,14 +981,7 @@ export interface ListaDelegate<
 	 */
 	findMany<T extends ListaFindManyArgs>(
 		args?: Prisma.SelectSubset<T, ListaFindManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$ListaPayload<ExtArgs>,
-			T,
-			"findMany",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ListaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
 
 	/**
 	 * Create a Lista.
@@ -1259,17 +997,7 @@ export interface ListaDelegate<
 	 */
 	create<T extends ListaCreateArgs>(
 		args: Prisma.SelectSubset<T, ListaCreateArgs<ExtArgs>>,
-	): Prisma.Prisma__ListaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ListaPayload<ExtArgs>,
-			T,
-			"create",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ListaClient<runtime.Types.Result.GetResult<Prisma.$ListaPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Create many Listas.
@@ -1283,9 +1011,7 @@ export interface ListaDelegate<
 	 * })
 	 *
 	 */
-	createMany<T extends ListaCreateManyArgs>(
-		args?: Prisma.SelectSubset<T, ListaCreateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	createMany<T extends ListaCreateManyArgs>(args?: Prisma.SelectSubset<T, ListaCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Create many Listas and returns the data saved in the database.
@@ -1311,14 +1037,7 @@ export interface ListaDelegate<
 	 */
 	createManyAndReturn<T extends ListaCreateManyAndReturnArgs>(
 		args?: Prisma.SelectSubset<T, ListaCreateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$ListaPayload<ExtArgs>,
-			T,
-			"createManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ListaPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Delete a Lista.
@@ -1334,17 +1053,7 @@ export interface ListaDelegate<
 	 */
 	delete<T extends ListaDeleteArgs>(
 		args: Prisma.SelectSubset<T, ListaDeleteArgs<ExtArgs>>,
-	): Prisma.Prisma__ListaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ListaPayload<ExtArgs>,
-			T,
-			"delete",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ListaClient<runtime.Types.Result.GetResult<Prisma.$ListaPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Update one Lista.
@@ -1363,17 +1072,7 @@ export interface ListaDelegate<
 	 */
 	update<T extends ListaUpdateArgs>(
 		args: Prisma.SelectSubset<T, ListaUpdateArgs<ExtArgs>>,
-	): Prisma.Prisma__ListaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ListaPayload<ExtArgs>,
-			T,
-			"update",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ListaClient<runtime.Types.Result.GetResult<Prisma.$ListaPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Delete zero or more Listas.
@@ -1387,9 +1086,7 @@ export interface ListaDelegate<
 	 * })
 	 *
 	 */
-	deleteMany<T extends ListaDeleteManyArgs>(
-		args?: Prisma.SelectSubset<T, ListaDeleteManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	deleteMany<T extends ListaDeleteManyArgs>(args?: Prisma.SelectSubset<T, ListaDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Listas.
@@ -1408,9 +1105,7 @@ export interface ListaDelegate<
 	 * })
 	 *
 	 */
-	updateMany<T extends ListaUpdateManyArgs>(
-		args: Prisma.SelectSubset<T, ListaUpdateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	updateMany<T extends ListaUpdateManyArgs>(args: Prisma.SelectSubset<T, ListaUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Listas and returns the data updated in the database.
@@ -1442,14 +1137,7 @@ export interface ListaDelegate<
 	 */
 	updateManyAndReturn<T extends ListaUpdateManyAndReturnArgs>(
 		args: Prisma.SelectSubset<T, ListaUpdateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$ListaPayload<ExtArgs>,
-			T,
-			"updateManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ListaPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Create or update one Lista.
@@ -1470,17 +1158,7 @@ export interface ListaDelegate<
 	 */
 	upsert<T extends ListaUpsertArgs>(
 		args: Prisma.SelectSubset<T, ListaUpsertArgs<ExtArgs>>,
-	): Prisma.Prisma__ListaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ListaPayload<ExtArgs>,
-			T,
-			"upsert",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ListaClient<runtime.Types.Result.GetResult<Prisma.$ListaPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Count the number of Listas.
@@ -1497,13 +1175,7 @@ export interface ListaDelegate<
 	 **/
 	count<T extends ListaCountArgs>(
 		args?: Prisma.Subset<T, ListaCountArgs>,
-	): Prisma.PrismaPromise<
-		T extends runtime.Types.Utils.Record<"select", any>
-			? T["select"] extends true
-				? number
-				: Prisma.GetScalarType<T["select"], ListaCountAggregateOutputType>
-			: number
-	>;
+	): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<"select", any> ? (T["select"] extends true ? number : Prisma.GetScalarType<T["select"], ListaCountAggregateOutputType>) : number>;
 
 	/**
 	 * Allows you to perform aggregations operations on a Lista.
@@ -1529,9 +1201,7 @@ export interface ListaDelegate<
 	 *   take: 10,
 	 * })
 	 **/
-	aggregate<T extends ListaAggregateArgs>(
-		args: Prisma.Subset<T, ListaAggregateArgs>,
-	): Prisma.PrismaPromise<GetListaAggregateType<T>>;
+	aggregate<T extends ListaAggregateArgs>(args: Prisma.Subset<T, ListaAggregateArgs>): Prisma.PrismaPromise<GetListaAggregateType<T>>;
 
 	/**
 	 * Group by Lista.
@@ -1553,16 +1223,9 @@ export interface ListaDelegate<
 	 **/
 	groupBy<
 		T extends ListaGroupByArgs,
-		HasSelectOrTake extends Prisma.Or<
-			Prisma.Extends<"skip", Prisma.Keys<T>>,
-			Prisma.Extends<"take", Prisma.Keys<T>>
-		>,
-		OrderByArg extends Prisma.True extends HasSelectOrTake
-			? { orderBy: ListaGroupByArgs["orderBy"] }
-			: { orderBy?: ListaGroupByArgs["orderBy"] },
-		OrderFields extends Prisma.ExcludeUnderscoreKeys<
-			Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>
-		>,
+		HasSelectOrTake extends Prisma.Or<Prisma.Extends<"skip", Prisma.Keys<T>>, Prisma.Extends<"take", Prisma.Keys<T>>>,
+		OrderByArg extends Prisma.True extends HasSelectOrTake ? { orderBy: ListaGroupByArgs["orderBy"] } : { orderBy?: ListaGroupByArgs["orderBy"] },
+		OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>>,
 		ByFields extends Prisma.MaybeTupleToUnion<T["by"]>,
 		ByValid extends Prisma.Has<ByFields, OrderFields>,
 		HavingFields extends Prisma.GetHavingFields<T["having"]>,
@@ -1576,21 +1239,14 @@ export interface ListaDelegate<
 							? never
 							: P extends string
 								? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-								: [
-										Error,
-										"Field ",
-										P,
-										` in "having" needs to be provided in "by"`,
-									];
+								: [Error, "Field ", P, ` in "having" needs to be provided in "by"`];
 					}[HavingFields]
 				: "take" extends Prisma.Keys<T>
 					? "orderBy" extends Prisma.Keys<T>
 						? ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields]
 						: 'Error: If you provide "take", you also need to provide "orderBy"'
 					: "skip" extends Prisma.Keys<T>
@@ -1598,24 +1254,15 @@ export interface ListaDelegate<
 							? ByValid extends Prisma.True
 								? {}
 								: {
-										[P in OrderFields]: P extends ByFields
-											? never
-											: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+										[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 									}[OrderFields]
 							: 'Error: If you provide "skip", you also need to provide "orderBy"'
 						: ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields],
-	>(
-		args: Prisma.SubsetIntersection<T, ListaGroupByArgs, OrderByArg> &
-			InputErrors,
-	): {} extends InputErrors
-		? GetListaGroupByPayload<T>
-		: Prisma.PrismaPromise<InputErrors>;
+	>(args: Prisma.SubsetIntersection<T, ListaGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetListaGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
 	/**
 	 * Fields of the Lista model
 	 */
@@ -1628,52 +1275,18 @@ export interface ListaDelegate<
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__ListaClient<
-	T,
-	Null = never,
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> extends Prisma.PrismaPromise<T> {
+export interface Prisma__ListaClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}>
+	extends Prisma.PrismaPromise<T> {
 	readonly [Symbol.toStringTag]: "PrismaPromise";
 	usuario<T extends Prisma.Lista$usuarioArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Lista$usuarioArgs<ExtArgs>>,
-	): Prisma.Prisma__UsuarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$UsuarioPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__UsuarioClient<runtime.Types.Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 	estado<T extends Prisma.EstadoDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EstadoDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EstadoPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	libros<T extends Prisma.Lista$librosArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Lista$librosArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$ListaLibroPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ListaLibroPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	/**
 	 * Attaches callbacks for the resolution and/or rejection of the Promise.
 	 * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1681,35 +1294,22 @@ export interface Prisma__ListaClient<
 	 * @returns A Promise for the completion of which ever callback is executed.
 	 */
 	then<TResult1 = T, TResult2 = never>(
-		onfulfilled?:
-			| ((value: T) => TResult1 | PromiseLike<TResult1>)
-			| undefined
-			| null,
-		onrejected?:
-			| ((reason: any) => TResult2 | PromiseLike<TResult2>)
-			| undefined
-			| null,
+		onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+		onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
 	): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
 	/**
 	 * Attaches a callback for only the rejection of the Promise.
 	 * @param onrejected The callback to execute when the Promise is rejected.
 	 * @returns A Promise for the completion of the callback.
 	 */
-	catch<TResult = never>(
-		onrejected?:
-			| ((reason: any) => TResult | PromiseLike<TResult>)
-			| undefined
-			| null,
-	): runtime.Types.Utils.JsPromise<T | TResult>;
+	catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
 	/**
 	 * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
 	 * resolved value cannot be modified from the callback.
 	 * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
 	 * @returns A Promise for the completion of the callback.
 	 */
-	finally(
-		onfinally?: (() => void) | undefined | null,
-	): runtime.Types.Utils.JsPromise<T>;
+	finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
 }
 
 /**
@@ -1729,10 +1329,7 @@ export interface ListaFieldRefs {
 /**
  * Lista findUnique
  */
-export type ListaFindUniqueArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Lista
 	 */
@@ -1754,10 +1351,7 @@ export type ListaFindUniqueArgs<
 /**
  * Lista findUniqueOrThrow
  */
-export type ListaFindUniqueOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Lista
 	 */
@@ -1779,10 +1373,7 @@ export type ListaFindUniqueOrThrowArgs<
 /**
  * Lista findFirst
  */
-export type ListaFindFirstArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Lista
 	 */
@@ -1804,9 +1395,7 @@ export type ListaFindFirstArgs<
 	 *
 	 * Determine the order of Listas to fetch.
 	 */
-	orderBy?:
-		| Prisma.ListaOrderByWithRelationInput
-		| Prisma.ListaOrderByWithRelationInput[];
+	orderBy?: Prisma.ListaOrderByWithRelationInput | Prisma.ListaOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1836,10 +1425,7 @@ export type ListaFindFirstArgs<
 /**
  * Lista findFirstOrThrow
  */
-export type ListaFindFirstOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Lista
 	 */
@@ -1861,9 +1447,7 @@ export type ListaFindFirstOrThrowArgs<
 	 *
 	 * Determine the order of Listas to fetch.
 	 */
-	orderBy?:
-		| Prisma.ListaOrderByWithRelationInput
-		| Prisma.ListaOrderByWithRelationInput[];
+	orderBy?: Prisma.ListaOrderByWithRelationInput | Prisma.ListaOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1893,10 +1477,7 @@ export type ListaFindFirstOrThrowArgs<
 /**
  * Lista findMany
  */
-export type ListaFindManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Lista
 	 */
@@ -1918,9 +1499,7 @@ export type ListaFindManyArgs<
 	 *
 	 * Determine the order of Listas to fetch.
 	 */
-	orderBy?:
-		| Prisma.ListaOrderByWithRelationInput
-		| Prisma.ListaOrderByWithRelationInput[];
+	orderBy?: Prisma.ListaOrderByWithRelationInput | Prisma.ListaOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1950,10 +1529,7 @@ export type ListaFindManyArgs<
 /**
  * Lista create
  */
-export type ListaCreateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Lista
 	 */
@@ -1975,10 +1551,7 @@ export type ListaCreateArgs<
 /**
  * Lista createMany
  */
-export type ListaCreateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to create many Listas.
 	 */
@@ -1989,10 +1562,7 @@ export type ListaCreateManyArgs<
 /**
  * Lista createManyAndReturn
  */
-export type ListaCreateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Lista
 	 */
@@ -2015,10 +1585,7 @@ export type ListaCreateManyAndReturnArgs<
 /**
  * Lista update
  */
-export type ListaUpdateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Lista
 	 */
@@ -2044,17 +1611,11 @@ export type ListaUpdateArgs<
 /**
  * Lista updateMany
  */
-export type ListaUpdateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to update Listas.
 	 */
-	data: Prisma.XOR<
-		Prisma.ListaUpdateManyMutationInput,
-		Prisma.ListaUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.ListaUpdateManyMutationInput, Prisma.ListaUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Listas to update
 	 */
@@ -2068,10 +1629,7 @@ export type ListaUpdateManyArgs<
 /**
  * Lista updateManyAndReturn
  */
-export type ListaUpdateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Lista
 	 */
@@ -2083,10 +1641,7 @@ export type ListaUpdateManyAndReturnArgs<
 	/**
 	 * The data used to update Listas.
 	 */
-	data: Prisma.XOR<
-		Prisma.ListaUpdateManyMutationInput,
-		Prisma.ListaUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.ListaUpdateManyMutationInput, Prisma.ListaUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Listas to update
 	 */
@@ -2104,10 +1659,7 @@ export type ListaUpdateManyAndReturnArgs<
 /**
  * Lista upsert
  */
-export type ListaUpsertArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Lista
 	 */
@@ -2137,10 +1689,7 @@ export type ListaUpsertArgs<
 /**
  * Lista delete
  */
-export type ListaDeleteArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Lista
 	 */
@@ -2162,10 +1711,7 @@ export type ListaDeleteArgs<
 /**
  * Lista deleteMany
  */
-export type ListaDeleteManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Listas to delete
 	 */
@@ -2179,10 +1725,7 @@ export type ListaDeleteManyArgs<
 /**
  * Lista.usuario
  */
-export type Lista$usuarioArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Lista$usuarioArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Usuario
 	 */
@@ -2201,10 +1744,7 @@ export type Lista$usuarioArgs<
 /**
  * Lista.libros
  */
-export type Lista$librosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Lista$librosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the ListaLibro
 	 */
@@ -2218,24 +1758,17 @@ export type Lista$librosArgs<
 	 */
 	include?: Prisma.ListaLibroInclude<ExtArgs> | null;
 	where?: Prisma.ListaLibroWhereInput;
-	orderBy?:
-		| Prisma.ListaLibroOrderByWithRelationInput
-		| Prisma.ListaLibroOrderByWithRelationInput[];
+	orderBy?: Prisma.ListaLibroOrderByWithRelationInput | Prisma.ListaLibroOrderByWithRelationInput[];
 	cursor?: Prisma.ListaLibroWhereUniqueInput;
 	take?: number;
 	skip?: number;
-	distinct?:
-		| Prisma.ListaLibroScalarFieldEnum
-		| Prisma.ListaLibroScalarFieldEnum[];
+	distinct?: Prisma.ListaLibroScalarFieldEnum | Prisma.ListaLibroScalarFieldEnum[];
 };
 
 /**
  * Lista without action
  */
-export type ListaDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ListaDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Lista
 	 */

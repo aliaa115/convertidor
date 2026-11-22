@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { SortOrderSchema } from "../enums/SortOrder.schema.ts";
 import { CapituloOrderByRelationAggregateInputObjectSchema as CapituloOrderByRelationAggregateInputObjectSchema } from "./CapituloOrderByRelationAggregateInput.schema.ts";
 import { CategoriaOrderByRelationAggregateInputObjectSchema as CategoriaOrderByRelationAggregateInputObjectSchema } from "./CategoriaOrderByRelationAggregateInput.schema.ts";
@@ -28,76 +28,31 @@ const makeSchema = () =>
 		.object({
 			id: SortOrderSchema.optional(),
 			nombre: SortOrderSchema.optional(),
-			color: z
-				.union([SortOrderSchema, z.lazy(() => SortOrderInputObjectSchema)])
-				.optional(),
-			icon: z
-				.union([SortOrderSchema, z.lazy(() => SortOrderInputObjectSchema)])
-				.optional(),
+			color: z.union([SortOrderSchema, z.lazy(() => SortOrderInputObjectSchema)]).optional(),
+			icon: z.union([SortOrderSchema, z.lazy(() => SortOrderInputObjectSchema)]).optional(),
 			createdAt: SortOrderSchema.optional(),
 			updatedAt: SortOrderSchema.optional(),
-			categorias: z
-				.lazy(() => CategoriaOrderByRelationAggregateInputObjectSchema)
-				.optional(),
-			etiquetas: z
-				.lazy(() => EtiquetaOrderByRelationAggregateInputObjectSchema)
-				.optional(),
-			tipos: z
-				.lazy(() => TipoOrderByRelationAggregateInputObjectSchema)
-				.optional(),
-			usuarios: z
-				.lazy(() => UsuarioOrderByRelationAggregateInputObjectSchema)
-				.optional(),
-			escritores: z
-				.lazy(() => EscritorOrderByRelationAggregateInputObjectSchema)
-				.optional(),
-			configuraciones: z
-				.lazy(() => ConfiguracionOrderByRelationAggregateInputObjectSchema)
-				.optional(),
-			idioma: z
-				.lazy(() => IdiomaOrderByRelationAggregateInputObjectSchema)
-				.optional(),
-			libros: z
-				.lazy(() => LibroOrderByRelationAggregateInputObjectSchema)
-				.optional(),
-			capitulos: z
-				.lazy(() => CapituloOrderByRelationAggregateInputObjectSchema)
-				.optional(),
-			parrafos: z
-				.lazy(() => ParrafoOrderByRelationAggregateInputObjectSchema)
-				.optional(),
-			comentarios: z
-				.lazy(() => ComentarioOrderByRelationAggregateInputObjectSchema)
-				.optional(),
-			libroCategorias: z
-				.lazy(() => LibroCategoriaOrderByRelationAggregateInputObjectSchema)
-				.optional(),
-			libroEtiquetas: z
-				.lazy(() => LibroEtiquetaOrderByRelationAggregateInputObjectSchema)
-				.optional(),
-			favoritos: z
-				.lazy(() => FavoritoOrderByRelationAggregateInputObjectSchema)
-				.optional(),
-			glosarios: z
-				.lazy(() => GlosarioOrderByRelationAggregateInputObjectSchema)
-				.optional(),
-			notasAutor: z
-				.lazy(() => NotaAutorOrderByRelationAggregateInputObjectSchema)
-				.optional(),
-			marcadores: z
-				.lazy(() => MarcadorOrderByRelationAggregateInputObjectSchema)
-				.optional(),
-			listas: z
-				.lazy(() => ListaOrderByRelationAggregateInputObjectSchema)
-				.optional(),
-			listaLibros: z
-				.lazy(() => ListaLibroOrderByRelationAggregateInputObjectSchema)
-				.optional(),
-			seguirUsuarios: z
-				.lazy(() => SeguirUsuarioOrderByRelationAggregateInputObjectSchema)
-				.optional(),
+			categorias: z.lazy(() => CategoriaOrderByRelationAggregateInputObjectSchema).optional(),
+			etiquetas: z.lazy(() => EtiquetaOrderByRelationAggregateInputObjectSchema).optional(),
+			tipos: z.lazy(() => TipoOrderByRelationAggregateInputObjectSchema).optional(),
+			usuarios: z.lazy(() => UsuarioOrderByRelationAggregateInputObjectSchema).optional(),
+			escritores: z.lazy(() => EscritorOrderByRelationAggregateInputObjectSchema).optional(),
+			configuraciones: z.lazy(() => ConfiguracionOrderByRelationAggregateInputObjectSchema).optional(),
+			idioma: z.lazy(() => IdiomaOrderByRelationAggregateInputObjectSchema).optional(),
+			libros: z.lazy(() => LibroOrderByRelationAggregateInputObjectSchema).optional(),
+			capitulos: z.lazy(() => CapituloOrderByRelationAggregateInputObjectSchema).optional(),
+			parrafos: z.lazy(() => ParrafoOrderByRelationAggregateInputObjectSchema).optional(),
+			comentarios: z.lazy(() => ComentarioOrderByRelationAggregateInputObjectSchema).optional(),
+			libroCategorias: z.lazy(() => LibroCategoriaOrderByRelationAggregateInputObjectSchema).optional(),
+			libroEtiquetas: z.lazy(() => LibroEtiquetaOrderByRelationAggregateInputObjectSchema).optional(),
+			favoritos: z.lazy(() => FavoritoOrderByRelationAggregateInputObjectSchema).optional(),
+			glosarios: z.lazy(() => GlosarioOrderByRelationAggregateInputObjectSchema).optional(),
+			notasAutor: z.lazy(() => NotaAutorOrderByRelationAggregateInputObjectSchema).optional(),
+			marcadores: z.lazy(() => MarcadorOrderByRelationAggregateInputObjectSchema).optional(),
+			listas: z.lazy(() => ListaOrderByRelationAggregateInputObjectSchema).optional(),
+			listaLibros: z.lazy(() => ListaLibroOrderByRelationAggregateInputObjectSchema).optional(),
+			seguirUsuarios: z.lazy(() => SeguirUsuarioOrderByRelationAggregateInputObjectSchema).optional(),
 		})
 		.strict();
-export const EstadoOrderByWithRelationInputObjectSchema: z.ZodType<Prisma.EstadoOrderByWithRelationInput> =
-	makeSchema() as unknown as z.ZodType<Prisma.EstadoOrderByWithRelationInput>;
+export const EstadoOrderByWithRelationInputObjectSchema: z.ZodType<Prisma.EstadoOrderByWithRelationInput> = makeSchema() as unknown as z.ZodType<Prisma.EstadoOrderByWithRelationInput>;
 export const EstadoOrderByWithRelationInputObjectZodSchema = makeSchema();

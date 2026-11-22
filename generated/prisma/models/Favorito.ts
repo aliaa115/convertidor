@@ -15,8 +15,7 @@ import type * as Prisma from "../internal/prismaNamespace.ts";
  * Model Favorito
  *
  */
-export type FavoritoModel =
-	runtime.Types.Result.DefaultSelection<Prisma.$FavoritoPayload>;
+export type FavoritoModel = runtime.Types.Result.DefaultSelection<Prisma.$FavoritoPayload>;
 
 export type AggregateFavorito = {
 	_count: FavoritoCountAggregateOutputType | null;
@@ -110,10 +109,7 @@ export type FavoritoCountAggregateInputType = {
 	_all?: true;
 };
 
-export type FavoritoAggregateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type FavoritoAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Favorito to aggregate.
 	 */
@@ -123,9 +119,7 @@ export type FavoritoAggregateArgs<
 	 *
 	 * Determine the order of Favoritos to fetch.
 	 */
-	orderBy?:
-		| Prisma.FavoritoOrderByWithRelationInput
-		| Prisma.FavoritoOrderByWithRelationInput[];
+	orderBy?: Prisma.FavoritoOrderByWithRelationInput | Prisma.FavoritoOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -184,14 +178,9 @@ export type GetFavoritoAggregateType<T extends FavoritoAggregateArgs> = {
 		: Prisma.GetScalarType<T[P], AggregateFavorito[P]>;
 };
 
-export type FavoritoGroupByArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type FavoritoGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.FavoritoWhereInput;
-	orderBy?:
-		| Prisma.FavoritoOrderByWithAggregationInput
-		| Prisma.FavoritoOrderByWithAggregationInput[];
+	orderBy?: Prisma.FavoritoOrderByWithAggregationInput | Prisma.FavoritoOrderByWithAggregationInput[];
 	by: Prisma.FavoritoScalarFieldEnum[] | Prisma.FavoritoScalarFieldEnum;
 	having?: Prisma.FavoritoScalarWhereWithAggregatesInput;
 	take?: number;
@@ -217,18 +206,17 @@ export type FavoritoGroupByOutputType = {
 	_max: FavoritoMaxAggregateOutputType | null;
 };
 
-export type GetFavoritoGroupByPayload<T extends FavoritoGroupByArgs> =
-	Prisma.PrismaPromise<
-		Array<
-			Prisma.PickEnumerable<FavoritoGroupByOutputType, T["by"]> & {
-				[P in keyof T & keyof FavoritoGroupByOutputType]: P extends "_count"
-					? T[P] extends boolean
-						? number
-						: Prisma.GetScalarType<T[P], FavoritoGroupByOutputType[P]>
-					: Prisma.GetScalarType<T[P], FavoritoGroupByOutputType[P]>;
-			}
-		>
-	>;
+export type GetFavoritoGroupByPayload<T extends FavoritoGroupByArgs> = Prisma.PrismaPromise<
+	Array<
+		Prisma.PickEnumerable<FavoritoGroupByOutputType, T["by"]> & {
+			[P in keyof T & keyof FavoritoGroupByOutputType]: P extends "_count"
+				? T[P] extends boolean
+					? number
+					: Prisma.GetScalarType<T[P], FavoritoGroupByOutputType[P]>
+				: Prisma.GetScalarType<T[P], FavoritoGroupByOutputType[P]>;
+		}
+	>
+>;
 
 export type FavoritoWhereInput = {
 	AND?: Prisma.FavoritoWhereInput | Prisma.FavoritoWhereInput[];
@@ -240,18 +228,9 @@ export type FavoritoWhereInput = {
 	escritorId?: Prisma.IntNullableFilter<"Favorito"> | number | null;
 	libroId?: Prisma.IntNullableFilter<"Favorito"> | number | null;
 	estadoId?: Prisma.IntFilter<"Favorito"> | number;
-	escritor?: Prisma.XOR<
-		Prisma.EscritorNullableScalarRelationFilter,
-		Prisma.EscritorWhereInput
-	> | null;
-	libro?: Prisma.XOR<
-		Prisma.LibroNullableScalarRelationFilter,
-		Prisma.LibroWhereInput
-	> | null;
-	estado?: Prisma.XOR<
-		Prisma.EstadoScalarRelationFilter,
-		Prisma.EstadoWhereInput
-	>;
+	escritor?: Prisma.XOR<Prisma.EscritorNullableScalarRelationFilter, Prisma.EscritorWhereInput> | null;
+	libro?: Prisma.XOR<Prisma.LibroNullableScalarRelationFilter, Prisma.LibroWhereInput> | null;
+	estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 };
 
 export type FavoritoOrderByWithRelationInput = {
@@ -277,18 +256,9 @@ export type FavoritoWhereUniqueInput = Prisma.AtLeast<
 		escritorId?: Prisma.IntNullableFilter<"Favorito"> | number | null;
 		libroId?: Prisma.IntNullableFilter<"Favorito"> | number | null;
 		estadoId?: Prisma.IntFilter<"Favorito"> | number;
-		escritor?: Prisma.XOR<
-			Prisma.EscritorNullableScalarRelationFilter,
-			Prisma.EscritorWhereInput
-		> | null;
-		libro?: Prisma.XOR<
-			Prisma.LibroNullableScalarRelationFilter,
-			Prisma.LibroWhereInput
-		> | null;
-		estado?: Prisma.XOR<
-			Prisma.EstadoScalarRelationFilter,
-			Prisma.EstadoWhereInput
-		>;
+		escritor?: Prisma.XOR<Prisma.EscritorNullableScalarRelationFilter, Prisma.EscritorWhereInput> | null;
+		libro?: Prisma.XOR<Prisma.LibroNullableScalarRelationFilter, Prisma.LibroWhereInput> | null;
+		estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 	},
 	"id"
 >;
@@ -308,20 +278,13 @@ export type FavoritoOrderByWithAggregationInput = {
 };
 
 export type FavoritoScalarWhereWithAggregatesInput = {
-	AND?:
-		| Prisma.FavoritoScalarWhereWithAggregatesInput
-		| Prisma.FavoritoScalarWhereWithAggregatesInput[];
+	AND?: Prisma.FavoritoScalarWhereWithAggregatesInput | Prisma.FavoritoScalarWhereWithAggregatesInput[];
 	OR?: Prisma.FavoritoScalarWhereWithAggregatesInput[];
-	NOT?:
-		| Prisma.FavoritoScalarWhereWithAggregatesInput
-		| Prisma.FavoritoScalarWhereWithAggregatesInput[];
+	NOT?: Prisma.FavoritoScalarWhereWithAggregatesInput | Prisma.FavoritoScalarWhereWithAggregatesInput[];
 	id?: Prisma.IntWithAggregatesFilter<"Favorito"> | number;
 	createdAt?: Prisma.DateTimeWithAggregatesFilter<"Favorito"> | Date | string;
 	updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Favorito"> | Date | string;
-	escritorId?:
-		| Prisma.IntNullableWithAggregatesFilter<"Favorito">
-		| number
-		| null;
+	escritorId?: Prisma.IntNullableWithAggregatesFilter<"Favorito"> | number | null;
 	libroId?: Prisma.IntNullableWithAggregatesFilter<"Favorito"> | number | null;
 	estadoId?: Prisma.IntWithAggregatesFilter<"Favorito"> | number;
 };
@@ -436,284 +399,164 @@ export type FavoritoSumOrderByAggregateInput = {
 
 export type FavoritoCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.FavoritoCreateWithoutEstadoInput,
-				Prisma.FavoritoUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.FavoritoCreateWithoutEstadoInput, Prisma.FavoritoUncheckedCreateWithoutEstadoInput>
 		| Prisma.FavoritoCreateWithoutEstadoInput[]
 		| Prisma.FavoritoUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.FavoritoCreateOrConnectWithoutEstadoInput
-		| Prisma.FavoritoCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.FavoritoCreateOrConnectWithoutEstadoInput | Prisma.FavoritoCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.FavoritoCreateManyEstadoInputEnvelope;
 	connect?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
 };
 
 export type FavoritoUncheckedCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.FavoritoCreateWithoutEstadoInput,
-				Prisma.FavoritoUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.FavoritoCreateWithoutEstadoInput, Prisma.FavoritoUncheckedCreateWithoutEstadoInput>
 		| Prisma.FavoritoCreateWithoutEstadoInput[]
 		| Prisma.FavoritoUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.FavoritoCreateOrConnectWithoutEstadoInput
-		| Prisma.FavoritoCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.FavoritoCreateOrConnectWithoutEstadoInput | Prisma.FavoritoCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.FavoritoCreateManyEstadoInputEnvelope;
 	connect?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
 };
 
 export type FavoritoUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.FavoritoCreateWithoutEstadoInput,
-				Prisma.FavoritoUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.FavoritoCreateWithoutEstadoInput, Prisma.FavoritoUncheckedCreateWithoutEstadoInput>
 		| Prisma.FavoritoCreateWithoutEstadoInput[]
 		| Prisma.FavoritoUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.FavoritoCreateOrConnectWithoutEstadoInput
-		| Prisma.FavoritoCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.FavoritoUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.FavoritoUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.FavoritoCreateOrConnectWithoutEstadoInput | Prisma.FavoritoCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.FavoritoUpsertWithWhereUniqueWithoutEstadoInput | Prisma.FavoritoUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.FavoritoCreateManyEstadoInputEnvelope;
 	set?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
-	disconnect?:
-		| Prisma.FavoritoWhereUniqueInput
-		| Prisma.FavoritoWhereUniqueInput[];
+	disconnect?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
 	delete?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
 	connect?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
-	update?:
-		| Prisma.FavoritoUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.FavoritoUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.FavoritoUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.FavoritoUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.FavoritoScalarWhereInput
-		| Prisma.FavoritoScalarWhereInput[];
+	update?: Prisma.FavoritoUpdateWithWhereUniqueWithoutEstadoInput | Prisma.FavoritoUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.FavoritoUpdateManyWithWhereWithoutEstadoInput | Prisma.FavoritoUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.FavoritoScalarWhereInput | Prisma.FavoritoScalarWhereInput[];
 };
 
 export type FavoritoUncheckedUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.FavoritoCreateWithoutEstadoInput,
-				Prisma.FavoritoUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.FavoritoCreateWithoutEstadoInput, Prisma.FavoritoUncheckedCreateWithoutEstadoInput>
 		| Prisma.FavoritoCreateWithoutEstadoInput[]
 		| Prisma.FavoritoUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.FavoritoCreateOrConnectWithoutEstadoInput
-		| Prisma.FavoritoCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.FavoritoUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.FavoritoUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.FavoritoCreateOrConnectWithoutEstadoInput | Prisma.FavoritoCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.FavoritoUpsertWithWhereUniqueWithoutEstadoInput | Prisma.FavoritoUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.FavoritoCreateManyEstadoInputEnvelope;
 	set?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
-	disconnect?:
-		| Prisma.FavoritoWhereUniqueInput
-		| Prisma.FavoritoWhereUniqueInput[];
+	disconnect?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
 	delete?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
 	connect?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
-	update?:
-		| Prisma.FavoritoUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.FavoritoUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.FavoritoUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.FavoritoUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.FavoritoScalarWhereInput
-		| Prisma.FavoritoScalarWhereInput[];
+	update?: Prisma.FavoritoUpdateWithWhereUniqueWithoutEstadoInput | Prisma.FavoritoUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.FavoritoUpdateManyWithWhereWithoutEstadoInput | Prisma.FavoritoUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.FavoritoScalarWhereInput | Prisma.FavoritoScalarWhereInput[];
 };
 
 export type FavoritoCreateNestedManyWithoutEscritorInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.FavoritoCreateWithoutEscritorInput,
-				Prisma.FavoritoUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.FavoritoCreateWithoutEscritorInput, Prisma.FavoritoUncheckedCreateWithoutEscritorInput>
 		| Prisma.FavoritoCreateWithoutEscritorInput[]
 		| Prisma.FavoritoUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.FavoritoCreateOrConnectWithoutEscritorInput
-		| Prisma.FavoritoCreateOrConnectWithoutEscritorInput[];
+	connectOrCreate?: Prisma.FavoritoCreateOrConnectWithoutEscritorInput | Prisma.FavoritoCreateOrConnectWithoutEscritorInput[];
 	createMany?: Prisma.FavoritoCreateManyEscritorInputEnvelope;
 	connect?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
 };
 
 export type FavoritoUncheckedCreateNestedManyWithoutEscritorInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.FavoritoCreateWithoutEscritorInput,
-				Prisma.FavoritoUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.FavoritoCreateWithoutEscritorInput, Prisma.FavoritoUncheckedCreateWithoutEscritorInput>
 		| Prisma.FavoritoCreateWithoutEscritorInput[]
 		| Prisma.FavoritoUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.FavoritoCreateOrConnectWithoutEscritorInput
-		| Prisma.FavoritoCreateOrConnectWithoutEscritorInput[];
+	connectOrCreate?: Prisma.FavoritoCreateOrConnectWithoutEscritorInput | Prisma.FavoritoCreateOrConnectWithoutEscritorInput[];
 	createMany?: Prisma.FavoritoCreateManyEscritorInputEnvelope;
 	connect?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
 };
 
 export type FavoritoUpdateManyWithoutEscritorNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.FavoritoCreateWithoutEscritorInput,
-				Prisma.FavoritoUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.FavoritoCreateWithoutEscritorInput, Prisma.FavoritoUncheckedCreateWithoutEscritorInput>
 		| Prisma.FavoritoCreateWithoutEscritorInput[]
 		| Prisma.FavoritoUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.FavoritoCreateOrConnectWithoutEscritorInput
-		| Prisma.FavoritoCreateOrConnectWithoutEscritorInput[];
-	upsert?:
-		| Prisma.FavoritoUpsertWithWhereUniqueWithoutEscritorInput
-		| Prisma.FavoritoUpsertWithWhereUniqueWithoutEscritorInput[];
+	connectOrCreate?: Prisma.FavoritoCreateOrConnectWithoutEscritorInput | Prisma.FavoritoCreateOrConnectWithoutEscritorInput[];
+	upsert?: Prisma.FavoritoUpsertWithWhereUniqueWithoutEscritorInput | Prisma.FavoritoUpsertWithWhereUniqueWithoutEscritorInput[];
 	createMany?: Prisma.FavoritoCreateManyEscritorInputEnvelope;
 	set?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
-	disconnect?:
-		| Prisma.FavoritoWhereUniqueInput
-		| Prisma.FavoritoWhereUniqueInput[];
+	disconnect?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
 	delete?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
 	connect?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
-	update?:
-		| Prisma.FavoritoUpdateWithWhereUniqueWithoutEscritorInput
-		| Prisma.FavoritoUpdateWithWhereUniqueWithoutEscritorInput[];
-	updateMany?:
-		| Prisma.FavoritoUpdateManyWithWhereWithoutEscritorInput
-		| Prisma.FavoritoUpdateManyWithWhereWithoutEscritorInput[];
-	deleteMany?:
-		| Prisma.FavoritoScalarWhereInput
-		| Prisma.FavoritoScalarWhereInput[];
+	update?: Prisma.FavoritoUpdateWithWhereUniqueWithoutEscritorInput | Prisma.FavoritoUpdateWithWhereUniqueWithoutEscritorInput[];
+	updateMany?: Prisma.FavoritoUpdateManyWithWhereWithoutEscritorInput | Prisma.FavoritoUpdateManyWithWhereWithoutEscritorInput[];
+	deleteMany?: Prisma.FavoritoScalarWhereInput | Prisma.FavoritoScalarWhereInput[];
 };
 
 export type FavoritoUncheckedUpdateManyWithoutEscritorNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.FavoritoCreateWithoutEscritorInput,
-				Prisma.FavoritoUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.FavoritoCreateWithoutEscritorInput, Prisma.FavoritoUncheckedCreateWithoutEscritorInput>
 		| Prisma.FavoritoCreateWithoutEscritorInput[]
 		| Prisma.FavoritoUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.FavoritoCreateOrConnectWithoutEscritorInput
-		| Prisma.FavoritoCreateOrConnectWithoutEscritorInput[];
-	upsert?:
-		| Prisma.FavoritoUpsertWithWhereUniqueWithoutEscritorInput
-		| Prisma.FavoritoUpsertWithWhereUniqueWithoutEscritorInput[];
+	connectOrCreate?: Prisma.FavoritoCreateOrConnectWithoutEscritorInput | Prisma.FavoritoCreateOrConnectWithoutEscritorInput[];
+	upsert?: Prisma.FavoritoUpsertWithWhereUniqueWithoutEscritorInput | Prisma.FavoritoUpsertWithWhereUniqueWithoutEscritorInput[];
 	createMany?: Prisma.FavoritoCreateManyEscritorInputEnvelope;
 	set?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
-	disconnect?:
-		| Prisma.FavoritoWhereUniqueInput
-		| Prisma.FavoritoWhereUniqueInput[];
+	disconnect?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
 	delete?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
 	connect?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
-	update?:
-		| Prisma.FavoritoUpdateWithWhereUniqueWithoutEscritorInput
-		| Prisma.FavoritoUpdateWithWhereUniqueWithoutEscritorInput[];
-	updateMany?:
-		| Prisma.FavoritoUpdateManyWithWhereWithoutEscritorInput
-		| Prisma.FavoritoUpdateManyWithWhereWithoutEscritorInput[];
-	deleteMany?:
-		| Prisma.FavoritoScalarWhereInput
-		| Prisma.FavoritoScalarWhereInput[];
+	update?: Prisma.FavoritoUpdateWithWhereUniqueWithoutEscritorInput | Prisma.FavoritoUpdateWithWhereUniqueWithoutEscritorInput[];
+	updateMany?: Prisma.FavoritoUpdateManyWithWhereWithoutEscritorInput | Prisma.FavoritoUpdateManyWithWhereWithoutEscritorInput[];
+	deleteMany?: Prisma.FavoritoScalarWhereInput | Prisma.FavoritoScalarWhereInput[];
 };
 
 export type FavoritoCreateNestedManyWithoutLibroInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.FavoritoCreateWithoutLibroInput,
-				Prisma.FavoritoUncheckedCreateWithoutLibroInput
-		  >
+		| Prisma.XOR<Prisma.FavoritoCreateWithoutLibroInput, Prisma.FavoritoUncheckedCreateWithoutLibroInput>
 		| Prisma.FavoritoCreateWithoutLibroInput[]
 		| Prisma.FavoritoUncheckedCreateWithoutLibroInput[];
-	connectOrCreate?:
-		| Prisma.FavoritoCreateOrConnectWithoutLibroInput
-		| Prisma.FavoritoCreateOrConnectWithoutLibroInput[];
+	connectOrCreate?: Prisma.FavoritoCreateOrConnectWithoutLibroInput | Prisma.FavoritoCreateOrConnectWithoutLibroInput[];
 	createMany?: Prisma.FavoritoCreateManyLibroInputEnvelope;
 	connect?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
 };
 
 export type FavoritoUncheckedCreateNestedManyWithoutLibroInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.FavoritoCreateWithoutLibroInput,
-				Prisma.FavoritoUncheckedCreateWithoutLibroInput
-		  >
+		| Prisma.XOR<Prisma.FavoritoCreateWithoutLibroInput, Prisma.FavoritoUncheckedCreateWithoutLibroInput>
 		| Prisma.FavoritoCreateWithoutLibroInput[]
 		| Prisma.FavoritoUncheckedCreateWithoutLibroInput[];
-	connectOrCreate?:
-		| Prisma.FavoritoCreateOrConnectWithoutLibroInput
-		| Prisma.FavoritoCreateOrConnectWithoutLibroInput[];
+	connectOrCreate?: Prisma.FavoritoCreateOrConnectWithoutLibroInput | Prisma.FavoritoCreateOrConnectWithoutLibroInput[];
 	createMany?: Prisma.FavoritoCreateManyLibroInputEnvelope;
 	connect?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
 };
 
 export type FavoritoUpdateManyWithoutLibroNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.FavoritoCreateWithoutLibroInput,
-				Prisma.FavoritoUncheckedCreateWithoutLibroInput
-		  >
+		| Prisma.XOR<Prisma.FavoritoCreateWithoutLibroInput, Prisma.FavoritoUncheckedCreateWithoutLibroInput>
 		| Prisma.FavoritoCreateWithoutLibroInput[]
 		| Prisma.FavoritoUncheckedCreateWithoutLibroInput[];
-	connectOrCreate?:
-		| Prisma.FavoritoCreateOrConnectWithoutLibroInput
-		| Prisma.FavoritoCreateOrConnectWithoutLibroInput[];
-	upsert?:
-		| Prisma.FavoritoUpsertWithWhereUniqueWithoutLibroInput
-		| Prisma.FavoritoUpsertWithWhereUniqueWithoutLibroInput[];
+	connectOrCreate?: Prisma.FavoritoCreateOrConnectWithoutLibroInput | Prisma.FavoritoCreateOrConnectWithoutLibroInput[];
+	upsert?: Prisma.FavoritoUpsertWithWhereUniqueWithoutLibroInput | Prisma.FavoritoUpsertWithWhereUniqueWithoutLibroInput[];
 	createMany?: Prisma.FavoritoCreateManyLibroInputEnvelope;
 	set?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
-	disconnect?:
-		| Prisma.FavoritoWhereUniqueInput
-		| Prisma.FavoritoWhereUniqueInput[];
+	disconnect?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
 	delete?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
 	connect?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
-	update?:
-		| Prisma.FavoritoUpdateWithWhereUniqueWithoutLibroInput
-		| Prisma.FavoritoUpdateWithWhereUniqueWithoutLibroInput[];
-	updateMany?:
-		| Prisma.FavoritoUpdateManyWithWhereWithoutLibroInput
-		| Prisma.FavoritoUpdateManyWithWhereWithoutLibroInput[];
-	deleteMany?:
-		| Prisma.FavoritoScalarWhereInput
-		| Prisma.FavoritoScalarWhereInput[];
+	update?: Prisma.FavoritoUpdateWithWhereUniqueWithoutLibroInput | Prisma.FavoritoUpdateWithWhereUniqueWithoutLibroInput[];
+	updateMany?: Prisma.FavoritoUpdateManyWithWhereWithoutLibroInput | Prisma.FavoritoUpdateManyWithWhereWithoutLibroInput[];
+	deleteMany?: Prisma.FavoritoScalarWhereInput | Prisma.FavoritoScalarWhereInput[];
 };
 
 export type FavoritoUncheckedUpdateManyWithoutLibroNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.FavoritoCreateWithoutLibroInput,
-				Prisma.FavoritoUncheckedCreateWithoutLibroInput
-		  >
+		| Prisma.XOR<Prisma.FavoritoCreateWithoutLibroInput, Prisma.FavoritoUncheckedCreateWithoutLibroInput>
 		| Prisma.FavoritoCreateWithoutLibroInput[]
 		| Prisma.FavoritoUncheckedCreateWithoutLibroInput[];
-	connectOrCreate?:
-		| Prisma.FavoritoCreateOrConnectWithoutLibroInput
-		| Prisma.FavoritoCreateOrConnectWithoutLibroInput[];
-	upsert?:
-		| Prisma.FavoritoUpsertWithWhereUniqueWithoutLibroInput
-		| Prisma.FavoritoUpsertWithWhereUniqueWithoutLibroInput[];
+	connectOrCreate?: Prisma.FavoritoCreateOrConnectWithoutLibroInput | Prisma.FavoritoCreateOrConnectWithoutLibroInput[];
+	upsert?: Prisma.FavoritoUpsertWithWhereUniqueWithoutLibroInput | Prisma.FavoritoUpsertWithWhereUniqueWithoutLibroInput[];
 	createMany?: Prisma.FavoritoCreateManyLibroInputEnvelope;
 	set?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
-	disconnect?:
-		| Prisma.FavoritoWhereUniqueInput
-		| Prisma.FavoritoWhereUniqueInput[];
+	disconnect?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
 	delete?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
 	connect?: Prisma.FavoritoWhereUniqueInput | Prisma.FavoritoWhereUniqueInput[];
-	update?:
-		| Prisma.FavoritoUpdateWithWhereUniqueWithoutLibroInput
-		| Prisma.FavoritoUpdateWithWhereUniqueWithoutLibroInput[];
-	updateMany?:
-		| Prisma.FavoritoUpdateManyWithWhereWithoutLibroInput
-		| Prisma.FavoritoUpdateManyWithWhereWithoutLibroInput[];
-	deleteMany?:
-		| Prisma.FavoritoScalarWhereInput
-		| Prisma.FavoritoScalarWhereInput[];
+	update?: Prisma.FavoritoUpdateWithWhereUniqueWithoutLibroInput | Prisma.FavoritoUpdateWithWhereUniqueWithoutLibroInput[];
+	updateMany?: Prisma.FavoritoUpdateManyWithWhereWithoutLibroInput | Prisma.FavoritoUpdateManyWithWhereWithoutLibroInput[];
+	deleteMany?: Prisma.FavoritoScalarWhereInput | Prisma.FavoritoScalarWhereInput[];
 };
 
 export type FavoritoCreateWithoutEstadoInput = {
@@ -733,45 +576,28 @@ export type FavoritoUncheckedCreateWithoutEstadoInput = {
 
 export type FavoritoCreateOrConnectWithoutEstadoInput = {
 	where: Prisma.FavoritoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.FavoritoCreateWithoutEstadoInput,
-		Prisma.FavoritoUncheckedCreateWithoutEstadoInput
-	>;
+	create: Prisma.XOR<Prisma.FavoritoCreateWithoutEstadoInput, Prisma.FavoritoUncheckedCreateWithoutEstadoInput>;
 };
 
 export type FavoritoCreateManyEstadoInputEnvelope = {
-	data:
-		| Prisma.FavoritoCreateManyEstadoInput
-		| Prisma.FavoritoCreateManyEstadoInput[];
+	data: Prisma.FavoritoCreateManyEstadoInput | Prisma.FavoritoCreateManyEstadoInput[];
 	skipDuplicates?: boolean;
 };
 
 export type FavoritoUpsertWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.FavoritoWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.FavoritoUpdateWithoutEstadoInput,
-		Prisma.FavoritoUncheckedUpdateWithoutEstadoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.FavoritoCreateWithoutEstadoInput,
-		Prisma.FavoritoUncheckedCreateWithoutEstadoInput
-	>;
+	update: Prisma.XOR<Prisma.FavoritoUpdateWithoutEstadoInput, Prisma.FavoritoUncheckedUpdateWithoutEstadoInput>;
+	create: Prisma.XOR<Prisma.FavoritoCreateWithoutEstadoInput, Prisma.FavoritoUncheckedCreateWithoutEstadoInput>;
 };
 
 export type FavoritoUpdateWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.FavoritoWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.FavoritoUpdateWithoutEstadoInput,
-		Prisma.FavoritoUncheckedUpdateWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.FavoritoUpdateWithoutEstadoInput, Prisma.FavoritoUncheckedUpdateWithoutEstadoInput>;
 };
 
 export type FavoritoUpdateManyWithWhereWithoutEstadoInput = {
 	where: Prisma.FavoritoScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.FavoritoUpdateManyMutationInput,
-		Prisma.FavoritoUncheckedUpdateManyWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.FavoritoUpdateManyMutationInput, Prisma.FavoritoUncheckedUpdateManyWithoutEstadoInput>;
 };
 
 export type FavoritoScalarWhereInput = {
@@ -803,45 +629,28 @@ export type FavoritoUncheckedCreateWithoutEscritorInput = {
 
 export type FavoritoCreateOrConnectWithoutEscritorInput = {
 	where: Prisma.FavoritoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.FavoritoCreateWithoutEscritorInput,
-		Prisma.FavoritoUncheckedCreateWithoutEscritorInput
-	>;
+	create: Prisma.XOR<Prisma.FavoritoCreateWithoutEscritorInput, Prisma.FavoritoUncheckedCreateWithoutEscritorInput>;
 };
 
 export type FavoritoCreateManyEscritorInputEnvelope = {
-	data:
-		| Prisma.FavoritoCreateManyEscritorInput
-		| Prisma.FavoritoCreateManyEscritorInput[];
+	data: Prisma.FavoritoCreateManyEscritorInput | Prisma.FavoritoCreateManyEscritorInput[];
 	skipDuplicates?: boolean;
 };
 
 export type FavoritoUpsertWithWhereUniqueWithoutEscritorInput = {
 	where: Prisma.FavoritoWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.FavoritoUpdateWithoutEscritorInput,
-		Prisma.FavoritoUncheckedUpdateWithoutEscritorInput
-	>;
-	create: Prisma.XOR<
-		Prisma.FavoritoCreateWithoutEscritorInput,
-		Prisma.FavoritoUncheckedCreateWithoutEscritorInput
-	>;
+	update: Prisma.XOR<Prisma.FavoritoUpdateWithoutEscritorInput, Prisma.FavoritoUncheckedUpdateWithoutEscritorInput>;
+	create: Prisma.XOR<Prisma.FavoritoCreateWithoutEscritorInput, Prisma.FavoritoUncheckedCreateWithoutEscritorInput>;
 };
 
 export type FavoritoUpdateWithWhereUniqueWithoutEscritorInput = {
 	where: Prisma.FavoritoWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.FavoritoUpdateWithoutEscritorInput,
-		Prisma.FavoritoUncheckedUpdateWithoutEscritorInput
-	>;
+	data: Prisma.XOR<Prisma.FavoritoUpdateWithoutEscritorInput, Prisma.FavoritoUncheckedUpdateWithoutEscritorInput>;
 };
 
 export type FavoritoUpdateManyWithWhereWithoutEscritorInput = {
 	where: Prisma.FavoritoScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.FavoritoUpdateManyMutationInput,
-		Prisma.FavoritoUncheckedUpdateManyWithoutEscritorInput
-	>;
+	data: Prisma.XOR<Prisma.FavoritoUpdateManyMutationInput, Prisma.FavoritoUncheckedUpdateManyWithoutEscritorInput>;
 };
 
 export type FavoritoCreateWithoutLibroInput = {
@@ -861,45 +670,28 @@ export type FavoritoUncheckedCreateWithoutLibroInput = {
 
 export type FavoritoCreateOrConnectWithoutLibroInput = {
 	where: Prisma.FavoritoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.FavoritoCreateWithoutLibroInput,
-		Prisma.FavoritoUncheckedCreateWithoutLibroInput
-	>;
+	create: Prisma.XOR<Prisma.FavoritoCreateWithoutLibroInput, Prisma.FavoritoUncheckedCreateWithoutLibroInput>;
 };
 
 export type FavoritoCreateManyLibroInputEnvelope = {
-	data:
-		| Prisma.FavoritoCreateManyLibroInput
-		| Prisma.FavoritoCreateManyLibroInput[];
+	data: Prisma.FavoritoCreateManyLibroInput | Prisma.FavoritoCreateManyLibroInput[];
 	skipDuplicates?: boolean;
 };
 
 export type FavoritoUpsertWithWhereUniqueWithoutLibroInput = {
 	where: Prisma.FavoritoWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.FavoritoUpdateWithoutLibroInput,
-		Prisma.FavoritoUncheckedUpdateWithoutLibroInput
-	>;
-	create: Prisma.XOR<
-		Prisma.FavoritoCreateWithoutLibroInput,
-		Prisma.FavoritoUncheckedCreateWithoutLibroInput
-	>;
+	update: Prisma.XOR<Prisma.FavoritoUpdateWithoutLibroInput, Prisma.FavoritoUncheckedUpdateWithoutLibroInput>;
+	create: Prisma.XOR<Prisma.FavoritoCreateWithoutLibroInput, Prisma.FavoritoUncheckedCreateWithoutLibroInput>;
 };
 
 export type FavoritoUpdateWithWhereUniqueWithoutLibroInput = {
 	where: Prisma.FavoritoWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.FavoritoUpdateWithoutLibroInput,
-		Prisma.FavoritoUncheckedUpdateWithoutLibroInput
-	>;
+	data: Prisma.XOR<Prisma.FavoritoUpdateWithoutLibroInput, Prisma.FavoritoUncheckedUpdateWithoutLibroInput>;
 };
 
 export type FavoritoUpdateManyWithWhereWithoutLibroInput = {
 	where: Prisma.FavoritoScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.FavoritoUpdateManyMutationInput,
-		Prisma.FavoritoUncheckedUpdateManyWithoutLibroInput
-	>;
+	data: Prisma.XOR<Prisma.FavoritoUpdateManyMutationInput, Prisma.FavoritoUncheckedUpdateManyWithoutLibroInput>;
 };
 
 export type FavoritoCreateManyEstadoInput = {
@@ -995,10 +787,7 @@ export type FavoritoUncheckedUpdateManyWithoutLibroInput = {
 	estadoId?: Prisma.IntFieldUpdateOperationsInput | number;
 };
 
-export type FavoritoSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type FavoritoSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		createdAt?: boolean;
@@ -1013,10 +802,7 @@ export type FavoritoSelect<
 	ExtArgs["result"]["favorito"]
 >;
 
-export type FavoritoSelectCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type FavoritoSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		createdAt?: boolean;
@@ -1031,10 +817,7 @@ export type FavoritoSelectCreateManyAndReturn<
 	ExtArgs["result"]["favorito"]
 >;
 
-export type FavoritoSelectUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type FavoritoSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		createdAt?: boolean;
@@ -1058,42 +841,27 @@ export type FavoritoSelectScalar = {
 	estadoId?: boolean;
 };
 
-export type FavoritoOmit<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetOmit<
+export type FavoritoOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<
 	"id" | "createdAt" | "updatedAt" | "escritorId" | "libroId" | "estadoId",
 	ExtArgs["result"]["favorito"]
 >;
-export type FavoritoInclude<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type FavoritoInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	escritor?: boolean | Prisma.Favorito$escritorArgs<ExtArgs>;
 	libro?: boolean | Prisma.Favorito$libroArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
-export type FavoritoIncludeCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type FavoritoIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	escritor?: boolean | Prisma.Favorito$escritorArgs<ExtArgs>;
 	libro?: boolean | Prisma.Favorito$libroArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
-export type FavoritoIncludeUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type FavoritoIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	escritor?: boolean | Prisma.Favorito$escritorArgs<ExtArgs>;
 	libro?: boolean | Prisma.Favorito$libroArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
 
-export type $FavoritoPayload<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type $FavoritoPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	name: "Favorito";
 	objects: {
 		escritor: Prisma.$EscritorPayload<ExtArgs> | null;
@@ -1114,26 +882,14 @@ export type $FavoritoPayload<
 	composites: {};
 };
 
-export type FavoritoGetPayload<
-	S extends boolean | null | undefined | FavoritoDefaultArgs,
-> = runtime.Types.Result.GetResult<Prisma.$FavoritoPayload, S>;
+export type FavoritoGetPayload<S extends boolean | null | undefined | FavoritoDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$FavoritoPayload, S>;
 
-export type FavoritoCountArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = Omit<FavoritoFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
+export type FavoritoCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<FavoritoFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
 	select?: FavoritoCountAggregateInputType | true;
 };
 
-export interface FavoritoDelegate<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> {
-	[K: symbol]: {
-		types: Prisma.TypeMap<ExtArgs>["model"]["Favorito"];
-		meta: { name: "Favorito" };
-	};
+export interface FavoritoDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+	[K: symbol]: { types: Prisma.TypeMap<ExtArgs>["model"]["Favorito"]; meta: { name: "Favorito" } };
 	/**
 	 * Find zero or one Favorito that matches the filter.
 	 * @param {FavoritoFindUniqueArgs} args - Arguments to find a Favorito
@@ -1147,17 +903,7 @@ export interface FavoritoDelegate<
 	 */
 	findUnique<T extends FavoritoFindUniqueArgs>(
 		args: Prisma.SelectSubset<T, FavoritoFindUniqueArgs<ExtArgs>>,
-	): Prisma.Prisma__FavoritoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$FavoritoPayload<ExtArgs>,
-			T,
-			"findUnique",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__FavoritoClient<runtime.Types.Result.GetResult<Prisma.$FavoritoPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find one Favorito that matches the filter or throw an error with `error.code='P2025'`
@@ -1173,17 +919,7 @@ export interface FavoritoDelegate<
 	 */
 	findUniqueOrThrow<T extends FavoritoFindUniqueOrThrowArgs>(
 		args: Prisma.SelectSubset<T, FavoritoFindUniqueOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__FavoritoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$FavoritoPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__FavoritoClient<runtime.Types.Result.GetResult<Prisma.$FavoritoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Favorito that matches the filter.
@@ -1200,17 +936,7 @@ export interface FavoritoDelegate<
 	 */
 	findFirst<T extends FavoritoFindFirstArgs>(
 		args?: Prisma.SelectSubset<T, FavoritoFindFirstArgs<ExtArgs>>,
-	): Prisma.Prisma__FavoritoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$FavoritoPayload<ExtArgs>,
-			T,
-			"findFirst",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__FavoritoClient<runtime.Types.Result.GetResult<Prisma.$FavoritoPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Favorito that matches the filter or
@@ -1228,17 +954,7 @@ export interface FavoritoDelegate<
 	 */
 	findFirstOrThrow<T extends FavoritoFindFirstOrThrowArgs>(
 		args?: Prisma.SelectSubset<T, FavoritoFindFirstOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__FavoritoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$FavoritoPayload<ExtArgs>,
-			T,
-			"findFirstOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__FavoritoClient<runtime.Types.Result.GetResult<Prisma.$FavoritoPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find zero or more Favoritos that matches the filter.
@@ -1258,14 +974,7 @@ export interface FavoritoDelegate<
 	 */
 	findMany<T extends FavoritoFindManyArgs>(
 		args?: Prisma.SelectSubset<T, FavoritoFindManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$FavoritoPayload<ExtArgs>,
-			T,
-			"findMany",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FavoritoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
 
 	/**
 	 * Create a Favorito.
@@ -1281,17 +990,7 @@ export interface FavoritoDelegate<
 	 */
 	create<T extends FavoritoCreateArgs>(
 		args: Prisma.SelectSubset<T, FavoritoCreateArgs<ExtArgs>>,
-	): Prisma.Prisma__FavoritoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$FavoritoPayload<ExtArgs>,
-			T,
-			"create",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__FavoritoClient<runtime.Types.Result.GetResult<Prisma.$FavoritoPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Create many Favoritos.
@@ -1305,9 +1004,7 @@ export interface FavoritoDelegate<
 	 * })
 	 *
 	 */
-	createMany<T extends FavoritoCreateManyArgs>(
-		args?: Prisma.SelectSubset<T, FavoritoCreateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	createMany<T extends FavoritoCreateManyArgs>(args?: Prisma.SelectSubset<T, FavoritoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Create many Favoritos and returns the data saved in the database.
@@ -1333,14 +1030,7 @@ export interface FavoritoDelegate<
 	 */
 	createManyAndReturn<T extends FavoritoCreateManyAndReturnArgs>(
 		args?: Prisma.SelectSubset<T, FavoritoCreateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$FavoritoPayload<ExtArgs>,
-			T,
-			"createManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FavoritoPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Delete a Favorito.
@@ -1356,17 +1046,7 @@ export interface FavoritoDelegate<
 	 */
 	delete<T extends FavoritoDeleteArgs>(
 		args: Prisma.SelectSubset<T, FavoritoDeleteArgs<ExtArgs>>,
-	): Prisma.Prisma__FavoritoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$FavoritoPayload<ExtArgs>,
-			T,
-			"delete",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__FavoritoClient<runtime.Types.Result.GetResult<Prisma.$FavoritoPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Update one Favorito.
@@ -1385,17 +1065,7 @@ export interface FavoritoDelegate<
 	 */
 	update<T extends FavoritoUpdateArgs>(
 		args: Prisma.SelectSubset<T, FavoritoUpdateArgs<ExtArgs>>,
-	): Prisma.Prisma__FavoritoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$FavoritoPayload<ExtArgs>,
-			T,
-			"update",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__FavoritoClient<runtime.Types.Result.GetResult<Prisma.$FavoritoPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Delete zero or more Favoritos.
@@ -1409,9 +1079,7 @@ export interface FavoritoDelegate<
 	 * })
 	 *
 	 */
-	deleteMany<T extends FavoritoDeleteManyArgs>(
-		args?: Prisma.SelectSubset<T, FavoritoDeleteManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	deleteMany<T extends FavoritoDeleteManyArgs>(args?: Prisma.SelectSubset<T, FavoritoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Favoritos.
@@ -1430,9 +1098,7 @@ export interface FavoritoDelegate<
 	 * })
 	 *
 	 */
-	updateMany<T extends FavoritoUpdateManyArgs>(
-		args: Prisma.SelectSubset<T, FavoritoUpdateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	updateMany<T extends FavoritoUpdateManyArgs>(args: Prisma.SelectSubset<T, FavoritoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Favoritos and returns the data updated in the database.
@@ -1464,14 +1130,7 @@ export interface FavoritoDelegate<
 	 */
 	updateManyAndReturn<T extends FavoritoUpdateManyAndReturnArgs>(
 		args: Prisma.SelectSubset<T, FavoritoUpdateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$FavoritoPayload<ExtArgs>,
-			T,
-			"updateManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FavoritoPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Create or update one Favorito.
@@ -1492,17 +1151,7 @@ export interface FavoritoDelegate<
 	 */
 	upsert<T extends FavoritoUpsertArgs>(
 		args: Prisma.SelectSubset<T, FavoritoUpsertArgs<ExtArgs>>,
-	): Prisma.Prisma__FavoritoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$FavoritoPayload<ExtArgs>,
-			T,
-			"upsert",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__FavoritoClient<runtime.Types.Result.GetResult<Prisma.$FavoritoPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Count the number of Favoritos.
@@ -1519,13 +1168,7 @@ export interface FavoritoDelegate<
 	 **/
 	count<T extends FavoritoCountArgs>(
 		args?: Prisma.Subset<T, FavoritoCountArgs>,
-	): Prisma.PrismaPromise<
-		T extends runtime.Types.Utils.Record<"select", any>
-			? T["select"] extends true
-				? number
-				: Prisma.GetScalarType<T["select"], FavoritoCountAggregateOutputType>
-			: number
-	>;
+	): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<"select", any> ? (T["select"] extends true ? number : Prisma.GetScalarType<T["select"], FavoritoCountAggregateOutputType>) : number>;
 
 	/**
 	 * Allows you to perform aggregations operations on a Favorito.
@@ -1551,9 +1194,7 @@ export interface FavoritoDelegate<
 	 *   take: 10,
 	 * })
 	 **/
-	aggregate<T extends FavoritoAggregateArgs>(
-		args: Prisma.Subset<T, FavoritoAggregateArgs>,
-	): Prisma.PrismaPromise<GetFavoritoAggregateType<T>>;
+	aggregate<T extends FavoritoAggregateArgs>(args: Prisma.Subset<T, FavoritoAggregateArgs>): Prisma.PrismaPromise<GetFavoritoAggregateType<T>>;
 
 	/**
 	 * Group by Favorito.
@@ -1575,16 +1216,9 @@ export interface FavoritoDelegate<
 	 **/
 	groupBy<
 		T extends FavoritoGroupByArgs,
-		HasSelectOrTake extends Prisma.Or<
-			Prisma.Extends<"skip", Prisma.Keys<T>>,
-			Prisma.Extends<"take", Prisma.Keys<T>>
-		>,
-		OrderByArg extends Prisma.True extends HasSelectOrTake
-			? { orderBy: FavoritoGroupByArgs["orderBy"] }
-			: { orderBy?: FavoritoGroupByArgs["orderBy"] },
-		OrderFields extends Prisma.ExcludeUnderscoreKeys<
-			Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>
-		>,
+		HasSelectOrTake extends Prisma.Or<Prisma.Extends<"skip", Prisma.Keys<T>>, Prisma.Extends<"take", Prisma.Keys<T>>>,
+		OrderByArg extends Prisma.True extends HasSelectOrTake ? { orderBy: FavoritoGroupByArgs["orderBy"] } : { orderBy?: FavoritoGroupByArgs["orderBy"] },
+		OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>>,
 		ByFields extends Prisma.MaybeTupleToUnion<T["by"]>,
 		ByValid extends Prisma.Has<ByFields, OrderFields>,
 		HavingFields extends Prisma.GetHavingFields<T["having"]>,
@@ -1598,21 +1232,14 @@ export interface FavoritoDelegate<
 							? never
 							: P extends string
 								? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-								: [
-										Error,
-										"Field ",
-										P,
-										` in "having" needs to be provided in "by"`,
-									];
+								: [Error, "Field ", P, ` in "having" needs to be provided in "by"`];
 					}[HavingFields]
 				: "take" extends Prisma.Keys<T>
 					? "orderBy" extends Prisma.Keys<T>
 						? ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields]
 						: 'Error: If you provide "take", you also need to provide "orderBy"'
 					: "skip" extends Prisma.Keys<T>
@@ -1620,24 +1247,15 @@ export interface FavoritoDelegate<
 							? ByValid extends Prisma.True
 								? {}
 								: {
-										[P in OrderFields]: P extends ByFields
-											? never
-											: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+										[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 									}[OrderFields]
 							: 'Error: If you provide "skip", you also need to provide "orderBy"'
 						: ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields],
-	>(
-		args: Prisma.SubsetIntersection<T, FavoritoGroupByArgs, OrderByArg> &
-			InputErrors,
-	): {} extends InputErrors
-		? GetFavoritoGroupByPayload<T>
-		: Prisma.PrismaPromise<InputErrors>;
+	>(args: Prisma.SubsetIntersection<T, FavoritoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFavoritoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
 	/**
 	 * Fields of the Favorito model
 	 */
@@ -1650,54 +1268,18 @@ export interface FavoritoDelegate<
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__FavoritoClient<
-	T,
-	Null = never,
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> extends Prisma.PrismaPromise<T> {
+export interface Prisma__FavoritoClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}>
+	extends Prisma.PrismaPromise<T> {
 	readonly [Symbol.toStringTag]: "PrismaPromise";
 	escritor<T extends Prisma.Favorito$escritorArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Favorito$escritorArgs<ExtArgs>>,
-	): Prisma.Prisma__EscritorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EscritorPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EscritorClient<runtime.Types.Result.GetResult<Prisma.$EscritorPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 	libro<T extends Prisma.Favorito$libroArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Favorito$libroArgs<ExtArgs>>,
-	): Prisma.Prisma__LibroClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__LibroClient<runtime.Types.Result.GetResult<Prisma.$LibroPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 	estado<T extends Prisma.EstadoDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EstadoDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EstadoPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	/**
 	 * Attaches callbacks for the resolution and/or rejection of the Promise.
 	 * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1705,35 +1287,22 @@ export interface Prisma__FavoritoClient<
 	 * @returns A Promise for the completion of which ever callback is executed.
 	 */
 	then<TResult1 = T, TResult2 = never>(
-		onfulfilled?:
-			| ((value: T) => TResult1 | PromiseLike<TResult1>)
-			| undefined
-			| null,
-		onrejected?:
-			| ((reason: any) => TResult2 | PromiseLike<TResult2>)
-			| undefined
-			| null,
+		onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+		onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
 	): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
 	/**
 	 * Attaches a callback for only the rejection of the Promise.
 	 * @param onrejected The callback to execute when the Promise is rejected.
 	 * @returns A Promise for the completion of the callback.
 	 */
-	catch<TResult = never>(
-		onrejected?:
-			| ((reason: any) => TResult | PromiseLike<TResult>)
-			| undefined
-			| null,
-	): runtime.Types.Utils.JsPromise<T | TResult>;
+	catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
 	/**
 	 * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
 	 * resolved value cannot be modified from the callback.
 	 * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
 	 * @returns A Promise for the completion of the callback.
 	 */
-	finally(
-		onfinally?: (() => void) | undefined | null,
-	): runtime.Types.Utils.JsPromise<T>;
+	finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
 }
 
 /**
@@ -1752,10 +1321,7 @@ export interface FavoritoFieldRefs {
 /**
  * Favorito findUnique
  */
-export type FavoritoFindUniqueArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type FavoritoFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Favorito
 	 */
@@ -1777,10 +1343,7 @@ export type FavoritoFindUniqueArgs<
 /**
  * Favorito findUniqueOrThrow
  */
-export type FavoritoFindUniqueOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type FavoritoFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Favorito
 	 */
@@ -1802,10 +1365,7 @@ export type FavoritoFindUniqueOrThrowArgs<
 /**
  * Favorito findFirst
  */
-export type FavoritoFindFirstArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type FavoritoFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Favorito
 	 */
@@ -1827,9 +1387,7 @@ export type FavoritoFindFirstArgs<
 	 *
 	 * Determine the order of Favoritos to fetch.
 	 */
-	orderBy?:
-		| Prisma.FavoritoOrderByWithRelationInput
-		| Prisma.FavoritoOrderByWithRelationInput[];
+	orderBy?: Prisma.FavoritoOrderByWithRelationInput | Prisma.FavoritoOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1859,10 +1417,7 @@ export type FavoritoFindFirstArgs<
 /**
  * Favorito findFirstOrThrow
  */
-export type FavoritoFindFirstOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type FavoritoFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Favorito
 	 */
@@ -1884,9 +1439,7 @@ export type FavoritoFindFirstOrThrowArgs<
 	 *
 	 * Determine the order of Favoritos to fetch.
 	 */
-	orderBy?:
-		| Prisma.FavoritoOrderByWithRelationInput
-		| Prisma.FavoritoOrderByWithRelationInput[];
+	orderBy?: Prisma.FavoritoOrderByWithRelationInput | Prisma.FavoritoOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1916,10 +1469,7 @@ export type FavoritoFindFirstOrThrowArgs<
 /**
  * Favorito findMany
  */
-export type FavoritoFindManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type FavoritoFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Favorito
 	 */
@@ -1941,9 +1491,7 @@ export type FavoritoFindManyArgs<
 	 *
 	 * Determine the order of Favoritos to fetch.
 	 */
-	orderBy?:
-		| Prisma.FavoritoOrderByWithRelationInput
-		| Prisma.FavoritoOrderByWithRelationInput[];
+	orderBy?: Prisma.FavoritoOrderByWithRelationInput | Prisma.FavoritoOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1973,10 +1521,7 @@ export type FavoritoFindManyArgs<
 /**
  * Favorito create
  */
-export type FavoritoCreateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type FavoritoCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Favorito
 	 */
@@ -1992,19 +1537,13 @@ export type FavoritoCreateArgs<
 	/**
 	 * The data needed to create a Favorito.
 	 */
-	data: Prisma.XOR<
-		Prisma.FavoritoCreateInput,
-		Prisma.FavoritoUncheckedCreateInput
-	>;
+	data: Prisma.XOR<Prisma.FavoritoCreateInput, Prisma.FavoritoUncheckedCreateInput>;
 };
 
 /**
  * Favorito createMany
  */
-export type FavoritoCreateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type FavoritoCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to create many Favoritos.
 	 */
@@ -2015,10 +1554,7 @@ export type FavoritoCreateManyArgs<
 /**
  * Favorito createManyAndReturn
  */
-export type FavoritoCreateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type FavoritoCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Favorito
 	 */
@@ -2041,10 +1577,7 @@ export type FavoritoCreateManyAndReturnArgs<
 /**
  * Favorito update
  */
-export type FavoritoUpdateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type FavoritoUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Favorito
 	 */
@@ -2060,10 +1593,7 @@ export type FavoritoUpdateArgs<
 	/**
 	 * The data needed to update a Favorito.
 	 */
-	data: Prisma.XOR<
-		Prisma.FavoritoUpdateInput,
-		Prisma.FavoritoUncheckedUpdateInput
-	>;
+	data: Prisma.XOR<Prisma.FavoritoUpdateInput, Prisma.FavoritoUncheckedUpdateInput>;
 	/**
 	 * Choose, which Favorito to update.
 	 */
@@ -2073,17 +1603,11 @@ export type FavoritoUpdateArgs<
 /**
  * Favorito updateMany
  */
-export type FavoritoUpdateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type FavoritoUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to update Favoritos.
 	 */
-	data: Prisma.XOR<
-		Prisma.FavoritoUpdateManyMutationInput,
-		Prisma.FavoritoUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.FavoritoUpdateManyMutationInput, Prisma.FavoritoUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Favoritos to update
 	 */
@@ -2097,10 +1621,7 @@ export type FavoritoUpdateManyArgs<
 /**
  * Favorito updateManyAndReturn
  */
-export type FavoritoUpdateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type FavoritoUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Favorito
 	 */
@@ -2112,10 +1633,7 @@ export type FavoritoUpdateManyAndReturnArgs<
 	/**
 	 * The data used to update Favoritos.
 	 */
-	data: Prisma.XOR<
-		Prisma.FavoritoUpdateManyMutationInput,
-		Prisma.FavoritoUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.FavoritoUpdateManyMutationInput, Prisma.FavoritoUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Favoritos to update
 	 */
@@ -2133,10 +1651,7 @@ export type FavoritoUpdateManyAndReturnArgs<
 /**
  * Favorito upsert
  */
-export type FavoritoUpsertArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type FavoritoUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Favorito
 	 */
@@ -2156,26 +1671,17 @@ export type FavoritoUpsertArgs<
 	/**
 	 * In case the Favorito found by the `where` argument doesn't exist, create a new Favorito with this data.
 	 */
-	create: Prisma.XOR<
-		Prisma.FavoritoCreateInput,
-		Prisma.FavoritoUncheckedCreateInput
-	>;
+	create: Prisma.XOR<Prisma.FavoritoCreateInput, Prisma.FavoritoUncheckedCreateInput>;
 	/**
 	 * In case the Favorito was found with the provided `where` argument, update it with this data.
 	 */
-	update: Prisma.XOR<
-		Prisma.FavoritoUpdateInput,
-		Prisma.FavoritoUncheckedUpdateInput
-	>;
+	update: Prisma.XOR<Prisma.FavoritoUpdateInput, Prisma.FavoritoUncheckedUpdateInput>;
 };
 
 /**
  * Favorito delete
  */
-export type FavoritoDeleteArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type FavoritoDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Favorito
 	 */
@@ -2197,10 +1703,7 @@ export type FavoritoDeleteArgs<
 /**
  * Favorito deleteMany
  */
-export type FavoritoDeleteManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type FavoritoDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Favoritos to delete
 	 */
@@ -2214,10 +1717,7 @@ export type FavoritoDeleteManyArgs<
 /**
  * Favorito.escritor
  */
-export type Favorito$escritorArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Favorito$escritorArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Escritor
 	 */
@@ -2236,10 +1736,7 @@ export type Favorito$escritorArgs<
 /**
  * Favorito.libro
  */
-export type Favorito$libroArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Favorito$libroArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Libro
 	 */
@@ -2258,10 +1755,7 @@ export type Favorito$libroArgs<
 /**
  * Favorito without action
  */
-export type FavoritoDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type FavoritoDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Favorito
 	 */

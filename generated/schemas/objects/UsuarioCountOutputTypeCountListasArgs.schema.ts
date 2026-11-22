@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { ListaWhereInputObjectSchema as ListaWhereInputObjectSchema } from "./ListaWhereInput.schema.ts";
 
 const makeSchema = () =>
@@ -9,5 +8,4 @@ const makeSchema = () =>
 		})
 		.strict();
 export const UsuarioCountOutputTypeCountListasArgsObjectSchema = makeSchema();
-export const UsuarioCountOutputTypeCountListasArgsObjectZodSchema =
-	makeSchema();
+export const UsuarioCountOutputTypeCountListasArgsObjectZodSchema = makeSchema();

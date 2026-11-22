@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { ListaCreateInputObjectSchema as ListaCreateInputObjectSchema } from "./objects/ListaCreateInput.schema.ts";
 import { ListaIncludeObjectSchema as ListaIncludeObjectSchema } from "./objects/ListaInclude.schema.ts";
 import { ListaSelectObjectSchema as ListaSelectObjectSchema } from "./objects/ListaSelect.schema.ts";
@@ -13,14 +13,8 @@ export const ListaUpsertOneSchema: z.ZodType<Prisma.ListaUpsertArgs> = z
 		select: ListaSelectObjectSchema.optional(),
 		include: ListaIncludeObjectSchema.optional(),
 		where: ListaWhereUniqueInputObjectSchema,
-		create: z.union([
-			ListaCreateInputObjectSchema,
-			ListaUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			ListaUpdateInputObjectSchema,
-			ListaUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([ListaCreateInputObjectSchema, ListaUncheckedCreateInputObjectSchema]),
+		update: z.union([ListaUpdateInputObjectSchema, ListaUncheckedUpdateInputObjectSchema]),
 	})
 	.strict() as unknown as z.ZodType<Prisma.ListaUpsertArgs>;
 
@@ -29,13 +23,7 @@ export const ListaUpsertOneZodSchema = z
 		select: ListaSelectObjectSchema.optional(),
 		include: ListaIncludeObjectSchema.optional(),
 		where: ListaWhereUniqueInputObjectSchema,
-		create: z.union([
-			ListaCreateInputObjectSchema,
-			ListaUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			ListaUpdateInputObjectSchema,
-			ListaUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([ListaCreateInputObjectSchema, ListaUncheckedCreateInputObjectSchema]),
+		update: z.union([ListaUpdateInputObjectSchema, ListaUncheckedUpdateInputObjectSchema]),
 	})
 	.strict();

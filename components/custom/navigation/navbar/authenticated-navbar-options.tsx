@@ -1,25 +1,11 @@
 "use client";
-import {
-	BadgeCheckIcon,
-	BadgeIcon,
-	BellIcon,
-	Library,
-	LogOutIcon,
-	User,
-} from "lucide-react";
+import { BadgeCheckIcon, BadgeIcon, BellIcon, Library, LogOutIcon, User } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuGroup,
-	DropdownMenuItem,
-	DropdownMenuSeparator,
-	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { CurrentUser } from "@/lib/types";
 import { logoutAction } from "@/modules/auth/actions/logout.action";
 import Notification from "./notification";
@@ -29,16 +15,17 @@ type AuthNavbarOptionsProps = {
 };
 
 const AuthNavbarOptions = ({ user }: AuthNavbarOptionsProps) => {
-	const initials =
-		user.escritor?.alias?.slice(0, 2).toUpperCase() ??
-		user.userName.slice(0, 2).toUpperCase();
+	const initials = user.escritor?.alias?.slice(0, 2).toUpperCase() ?? user.userName.slice(0, 2).toUpperCase();
 
 	return (
 		<>
 			<Notification />
 			<DropdownMenu>
 				<DropdownMenuTrigger asChild>
-					<Button variant="ghost" size="icon" className="rounded-full">
+					<Button
+						variant="ghost"
+						size="icon"
+						className="rounded-full">
 						<Avatar>
 							<AvatarImage
 								src={user.escritor?.avatar?.url ?? ""}
@@ -48,14 +35,15 @@ const AuthNavbarOptions = ({ user }: AuthNavbarOptionsProps) => {
 						</Avatar>
 					</Button>
 				</DropdownMenuTrigger>
-				<DropdownMenuContent align="end" className="w-80">
+				<DropdownMenuContent
+					align="end"
+					className="w-80">
 					<DropdownMenuGroup>
 						<DropdownMenuItem className="w-full ">
 							<Link
 								href="/library"
 								type="submit"
-								className="flex gap-x-2 w-full p-0"
-							>
+								className="flex gap-x-2 w-full p-0">
 								<Library />
 								Librería
 							</Link>
@@ -66,8 +54,7 @@ const AuthNavbarOptions = ({ user }: AuthNavbarOptionsProps) => {
 							<Link
 								href="/profile"
 								type="submit"
-								className="flex gap-x-2 w-full p-0"
-							>
+								className="flex gap-x-2 w-full p-0">
 								<User />
 								Perfil
 							</Link>
@@ -79,18 +66,18 @@ const AuthNavbarOptions = ({ user }: AuthNavbarOptionsProps) => {
 							<Link
 								href="/configure"
 								type="submit"
-								className="flex gap-x-2 w-full p-0"
-							>
+								className="flex gap-x-2 w-full p-0">
 								<BadgeCheckIcon />
 								Configuracion
 							</Link>
 						</DropdownMenuItem>
-						<form action={logoutAction} id="logout">
+						<form
+							action={logoutAction}
+							id="logout">
 							<DropdownMenuItem variant="destructive">
 								<button
 									type="submit"
-									className="flex gap-x-2 w-full cursor-pointer"
-								>
+									className="flex gap-x-2 w-full cursor-pointer">
 									<LogOutIcon />
 									Sign Out
 								</button>

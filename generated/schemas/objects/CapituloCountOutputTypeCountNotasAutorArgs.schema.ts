@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { NotaAutorWhereInputObjectSchema as NotaAutorWhereInputObjectSchema } from "./NotaAutorWhereInput.schema.ts";
 
 const makeSchema = () =>
@@ -8,7 +7,5 @@ const makeSchema = () =>
 			where: z.lazy(() => NotaAutorWhereInputObjectSchema).optional(),
 		})
 		.strict();
-export const CapituloCountOutputTypeCountNotasAutorArgsObjectSchema =
-	makeSchema();
-export const CapituloCountOutputTypeCountNotasAutorArgsObjectZodSchema =
-	makeSchema();
+export const CapituloCountOutputTypeCountNotasAutorArgsObjectSchema = makeSchema();
+export const CapituloCountOutputTypeCountNotasAutorArgsObjectZodSchema = makeSchema();

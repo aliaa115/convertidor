@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { CapituloScalarRelationFilterObjectSchema as CapituloScalarRelationFilterObjectSchema } from "./CapituloScalarRelationFilter.schema.ts";
 import { CapituloWhereInputObjectSchema as CapituloWhereInputObjectSchema } from "./CapituloWhereInput.schema.ts";
 import { ComentarioListRelationFilterObjectSchema as ComentarioListRelationFilterObjectSchema } from "./ComentarioListRelationFilter.schema.ts";
@@ -13,25 +13,13 @@ import { StringNullableFilterObjectSchema as StringNullableFilterObjectSchema } 
 
 const parrafowhereinputSchema = z
 	.object({
-		AND: z
-			.union([
-				z.lazy(() => ParrafoWhereInputObjectSchema),
-				z.lazy(() => ParrafoWhereInputObjectSchema).array(),
-			])
-			.optional(),
+		AND: z.union([z.lazy(() => ParrafoWhereInputObjectSchema), z.lazy(() => ParrafoWhereInputObjectSchema).array()]).optional(),
 		OR: z
 			.lazy(() => ParrafoWhereInputObjectSchema)
 			.array()
 			.optional(),
-		NOT: z
-			.union([
-				z.lazy(() => ParrafoWhereInputObjectSchema),
-				z.lazy(() => ParrafoWhereInputObjectSchema).array(),
-			])
-			.optional(),
-		id: z
-			.union([z.lazy(() => IntFilterObjectSchema), z.number().int()])
-			.optional(),
+		NOT: z.union([z.lazy(() => ParrafoWhereInputObjectSchema), z.lazy(() => ParrafoWhereInputObjectSchema).array()]).optional(),
+		id: z.union([z.lazy(() => IntFilterObjectSchema), z.number().int()]).optional(),
 		contenido: z
 			.union([z.lazy(() => StringNullableFilterObjectSchema), z.string()])
 			.optional()
@@ -40,36 +28,15 @@ const parrafowhereinputSchema = z
 			.union([z.lazy(() => IntNullableFilterObjectSchema), z.number().int()])
 			.optional()
 			.nullable(),
-		createdAt: z
-			.union([z.lazy(() => DateTimeFilterObjectSchema), z.coerce.date()])
-			.optional(),
-		updatedAt: z
-			.union([z.lazy(() => DateTimeFilterObjectSchema), z.coerce.date()])
-			.optional(),
-		capituloId: z
-			.union([z.lazy(() => IntFilterObjectSchema), z.number().int()])
-			.optional(),
-		estadoId: z
-			.union([z.lazy(() => IntFilterObjectSchema), z.number().int()])
-			.optional(),
-		capitulo: z
-			.union([
-				z.lazy(() => CapituloScalarRelationFilterObjectSchema),
-				z.lazy(() => CapituloWhereInputObjectSchema),
-			])
-			.optional(),
-		estado: z
-			.union([
-				z.lazy(() => EstadoScalarRelationFilterObjectSchema),
-				z.lazy(() => EstadoWhereInputObjectSchema),
-			])
-			.optional(),
-		comentarios: z
-			.lazy(() => ComentarioListRelationFilterObjectSchema)
-			.optional(),
+		createdAt: z.union([z.lazy(() => DateTimeFilterObjectSchema), z.coerce.date()]).optional(),
+		updatedAt: z.union([z.lazy(() => DateTimeFilterObjectSchema), z.coerce.date()]).optional(),
+		capituloId: z.union([z.lazy(() => IntFilterObjectSchema), z.number().int()]).optional(),
+		estadoId: z.union([z.lazy(() => IntFilterObjectSchema), z.number().int()]).optional(),
+		capitulo: z.union([z.lazy(() => CapituloScalarRelationFilterObjectSchema), z.lazy(() => CapituloWhereInputObjectSchema)]).optional(),
+		estado: z.union([z.lazy(() => EstadoScalarRelationFilterObjectSchema), z.lazy(() => EstadoWhereInputObjectSchema)]).optional(),
+		comentarios: z.lazy(() => ComentarioListRelationFilterObjectSchema).optional(),
 		marcadores: z.lazy(() => MarcadorListRelationFilterObjectSchema).optional(),
 	})
 	.strict();
-export const ParrafoWhereInputObjectSchema: z.ZodType<Prisma.ParrafoWhereInput> =
-	parrafowhereinputSchema as unknown as z.ZodType<Prisma.ParrafoWhereInput>;
+export const ParrafoWhereInputObjectSchema: z.ZodType<Prisma.ParrafoWhereInput> = parrafowhereinputSchema as unknown as z.ZodType<Prisma.ParrafoWhereInput>;
 export const ParrafoWhereInputObjectZodSchema = parrafowhereinputSchema;

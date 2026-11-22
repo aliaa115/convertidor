@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { LibroScalarFieldEnumSchema } from "./enums/LibroScalarFieldEnum.schema.ts";
 import { LibroAvgAggregateInputObjectSchema as LibroAvgAggregateInputObjectSchema } from "./objects/LibroAvgAggregateInput.schema.ts";
 import { LibroCountAggregateInputObjectSchema as LibroCountAggregateInputObjectSchema } from "./objects/LibroCountAggregateInput.schema.ts";
@@ -13,19 +13,12 @@ import { LibroWhereInputObjectSchema as LibroWhereInputObjectSchema } from "./ob
 export const LibroGroupBySchema: z.ZodType<Prisma.LibroGroupByArgs> = z
 	.object({
 		where: LibroWhereInputObjectSchema.optional(),
-		orderBy: z
-			.union([
-				LibroOrderByWithAggregationInputObjectSchema,
-				LibroOrderByWithAggregationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([LibroOrderByWithAggregationInputObjectSchema, LibroOrderByWithAggregationInputObjectSchema.array()]).optional(),
 		having: LibroScalarWhereWithAggregatesInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
 		by: z.array(LibroScalarFieldEnumSchema),
-		_count: z
-			.union([z.literal(true), LibroCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), LibroCountAggregateInputObjectSchema]).optional(),
 		_min: LibroMinAggregateInputObjectSchema.optional(),
 		_max: LibroMaxAggregateInputObjectSchema.optional(),
 		_avg: LibroAvgAggregateInputObjectSchema.optional(),
@@ -36,19 +29,12 @@ export const LibroGroupBySchema: z.ZodType<Prisma.LibroGroupByArgs> = z
 export const LibroGroupByZodSchema = z
 	.object({
 		where: LibroWhereInputObjectSchema.optional(),
-		orderBy: z
-			.union([
-				LibroOrderByWithAggregationInputObjectSchema,
-				LibroOrderByWithAggregationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([LibroOrderByWithAggregationInputObjectSchema, LibroOrderByWithAggregationInputObjectSchema.array()]).optional(),
 		having: LibroScalarWhereWithAggregatesInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
 		by: z.array(LibroScalarFieldEnumSchema),
-		_count: z
-			.union([z.literal(true), LibroCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), LibroCountAggregateInputObjectSchema]).optional(),
 		_min: LibroMinAggregateInputObjectSchema.optional(),
 		_max: LibroMaxAggregateInputObjectSchema.optional(),
 		_avg: LibroAvgAggregateInputObjectSchema.optional(),

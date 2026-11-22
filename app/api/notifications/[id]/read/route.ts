@@ -1,17 +1,11 @@
 import { getCurrentUser } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 
-export async function PATCH(
-	req: Request,
-	{ params }: { params: Promise<{ id: string }> },
-) {
+export async function PATCH(req: Request, { params }: { params: Promise<{ id: string }> }) {
 	const user = await getCurrentUser();
 
 	if (!user) {
-		return Response.json(
-			{ success: false, message: "No autorizado" },
-			{ status: 401 },
-		);
+		return Response.json({ success: false, message: "No autorizado" }, { status: 401 });
 	}
 
 	const { id } = await params;

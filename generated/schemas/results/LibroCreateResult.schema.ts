@@ -1,4 +1,14 @@
 import * as z from "zod";
+import { CapituloSchema } from "../models/Capitulo.schema.ts";
+import { EscritorSchema } from "../models/Escritor.schema.ts";
+import { EstadoSchema } from "../models/Estado.schema.ts";
+import { FavoritoSchema } from "../models/Favorito.schema.ts";
+import { GlosarioSchema } from "../models/Glosario.schema.ts";
+import { IdiomaSchema } from "../models/Idioma.schema.ts";
+import { LibroCategoriaSchema } from "../models/LibroCategoria.schema.ts";
+import { LibroEtiquetaSchema } from "../models/LibroEtiqueta.schema.ts";
+import { ListaLibroSchema } from "../models/ListaLibro.schema.ts";
+import { TipoSchema } from "../models/Tipo.schema.ts";
 export const LibroCreateResultSchema = z.object({
 	id: z.number().int(),
 	titulo: z.string(),
@@ -9,17 +19,17 @@ export const LibroCreateResultSchema = z.object({
 	createdAt: z.date(),
 	updatedAt: z.date(),
 	escritorId: z.number().int(),
-	escritor: z.unknown(),
+	escritor: EscritorSchema.optional(),
 	tipoId: z.number().int(),
-	tipo: z.unknown(),
+	tipo: TipoSchema.optional(),
 	estadoId: z.number().int(),
-	estado: z.unknown(),
+	estado: EstadoSchema.optional(),
 	idiomaId: z.number().int(),
-	idioma: z.unknown(),
-	capitulos: z.array(z.unknown()),
-	categorias: z.array(z.unknown()),
-	etiquetas: z.array(z.unknown()),
-	favoritos: z.array(z.unknown()),
-	glosarios: z.array(z.unknown()),
-	listaLibros: z.array(z.unknown()),
+	idioma: IdiomaSchema.optional(),
+	capitulos: z.array(CapituloSchema).optional(),
+	categorias: z.array(LibroCategoriaSchema).optional(),
+	etiquetas: z.array(LibroEtiquetaSchema).optional(),
+	favoritos: z.array(FavoritoSchema).optional(),
+	glosarios: z.array(GlosarioSchema).optional(),
+	listaLibros: z.array(ListaLibroSchema).optional(),
 });

@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { ConfiguracionCreateManyTipoInputEnvelopeObjectSchema as ConfiguracionCreateManyTipoInputEnvelopeObjectSchema } from "./ConfiguracionCreateManyTipoInputEnvelope.schema.ts";
 import { ConfiguracionCreateOrConnectWithoutTipoInputObjectSchema as ConfiguracionCreateOrConnectWithoutTipoInputObjectSchema } from "./ConfiguracionCreateOrConnectWithoutTipoInput.schema.ts";
 import { ConfiguracionCreateWithoutTipoInputObjectSchema as ConfiguracionCreateWithoutTipoInputObjectSchema } from "./ConfiguracionCreateWithoutTipoInput.schema.ts";
@@ -13,40 +13,15 @@ const makeSchema = () =>
 				.union([
 					z.lazy(() => ConfiguracionCreateWithoutTipoInputObjectSchema),
 					z.lazy(() => ConfiguracionCreateWithoutTipoInputObjectSchema).array(),
-					z.lazy(
-						() => ConfiguracionUncheckedCreateWithoutTipoInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => ConfiguracionUncheckedCreateWithoutTipoInputObjectSchema,
-						)
-						.array(),
+					z.lazy(() => ConfiguracionUncheckedCreateWithoutTipoInputObjectSchema),
+					z.lazy(() => ConfiguracionUncheckedCreateWithoutTipoInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(
-						() => ConfiguracionCreateOrConnectWithoutTipoInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => ConfiguracionCreateOrConnectWithoutTipoInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			createMany: z
-				.lazy(() => ConfiguracionCreateManyTipoInputEnvelopeObjectSchema)
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => ConfiguracionWhereUniqueInputObjectSchema),
-					z.lazy(() => ConfiguracionWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => ConfiguracionCreateOrConnectWithoutTipoInputObjectSchema), z.lazy(() => ConfiguracionCreateOrConnectWithoutTipoInputObjectSchema).array()]).optional(),
+			createMany: z.lazy(() => ConfiguracionCreateManyTipoInputEnvelopeObjectSchema).optional(),
+			connect: z.union([z.lazy(() => ConfiguracionWhereUniqueInputObjectSchema), z.lazy(() => ConfiguracionWhereUniqueInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const ConfiguracionCreateNestedManyWithoutTipoInputObjectSchema: z.ZodType<Prisma.ConfiguracionCreateNestedManyWithoutTipoInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.ConfiguracionCreateNestedManyWithoutTipoInput>;
-export const ConfiguracionCreateNestedManyWithoutTipoInputObjectZodSchema =
-	makeSchema();
+export const ConfiguracionCreateNestedManyWithoutTipoInputObjectZodSchema = makeSchema();

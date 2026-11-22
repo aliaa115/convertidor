@@ -26,5 +26,4 @@ export const NotificacionTipo = {
 	SYSTEM: "SYSTEM",
 } as const;
 
-export type NotificacionTipo =
-	(typeof NotificacionTipo)[keyof typeof NotificacionTipo];
+export type NotificacionTipo = (typeof NotificacionTipo)[keyof typeof NotificacionTipo];

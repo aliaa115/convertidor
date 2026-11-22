@@ -1,4 +1,7 @@
 import * as z from "zod";
+import { EstadoSchema } from "../models/Estado.schema.ts";
+import { EtiquetaSchema } from "../models/Etiqueta.schema.ts";
+import { LibroSchema } from "../models/Libro.schema.ts";
 export const LibroEtiquetaFindUniqueResultSchema = z.nullable(
 	z.object({
 		libroId: z.number().int(),
@@ -6,8 +9,8 @@ export const LibroEtiquetaFindUniqueResultSchema = z.nullable(
 		createdAt: z.date(),
 		updatedAt: z.date(),
 		estadoId: z.number().int(),
-		estado: z.unknown(),
-		libro: z.unknown(),
-		etiqueta: z.unknown(),
+		estado: EstadoSchema.optional(),
+		libro: LibroSchema.optional(),
+		etiqueta: EtiquetaSchema.optional(),
 	}),
 );

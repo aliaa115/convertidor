@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { IdiomaCreateOrConnectWithoutLibrosInputObjectSchema as IdiomaCreateOrConnectWithoutLibrosInputObjectSchema } from "./IdiomaCreateOrConnectWithoutLibrosInput.schema.ts";
 import { IdiomaCreateWithoutLibrosInputObjectSchema as IdiomaCreateWithoutLibrosInputObjectSchema } from "./IdiomaCreateWithoutLibrosInput.schema.ts";
 import { IdiomaUncheckedCreateWithoutLibrosInputObjectSchema as IdiomaUncheckedCreateWithoutLibrosInputObjectSchema } from "./IdiomaUncheckedCreateWithoutLibrosInput.schema.ts";
@@ -12,24 +12,13 @@ import { IdiomaWhereUniqueInputObjectSchema as IdiomaWhereUniqueInputObjectSchem
 const makeSchema = () =>
 	z
 		.object({
-			create: z
-				.union([
-					z.lazy(() => IdiomaCreateWithoutLibrosInputObjectSchema),
-					z.lazy(() => IdiomaUncheckedCreateWithoutLibrosInputObjectSchema),
-				])
-				.optional(),
-			connectOrCreate: z
-				.lazy(() => IdiomaCreateOrConnectWithoutLibrosInputObjectSchema)
-				.optional(),
-			upsert: z
-				.lazy(() => IdiomaUpsertWithoutLibrosInputObjectSchema)
-				.optional(),
+			create: z.union([z.lazy(() => IdiomaCreateWithoutLibrosInputObjectSchema), z.lazy(() => IdiomaUncheckedCreateWithoutLibrosInputObjectSchema)]).optional(),
+			connectOrCreate: z.lazy(() => IdiomaCreateOrConnectWithoutLibrosInputObjectSchema).optional(),
+			upsert: z.lazy(() => IdiomaUpsertWithoutLibrosInputObjectSchema).optional(),
 			connect: z.lazy(() => IdiomaWhereUniqueInputObjectSchema).optional(),
 			update: z
 				.union([
-					z.lazy(
-						() => IdiomaUpdateToOneWithWhereWithoutLibrosInputObjectSchema,
-					),
+					z.lazy(() => IdiomaUpdateToOneWithWhereWithoutLibrosInputObjectSchema),
 					z.lazy(() => IdiomaUpdateWithoutLibrosInputObjectSchema),
 					z.lazy(() => IdiomaUncheckedUpdateWithoutLibrosInputObjectSchema),
 				])
@@ -38,5 +27,4 @@ const makeSchema = () =>
 		.strict();
 export const IdiomaUpdateOneRequiredWithoutLibrosNestedInputObjectSchema: z.ZodType<Prisma.IdiomaUpdateOneRequiredWithoutLibrosNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.IdiomaUpdateOneRequiredWithoutLibrosNestedInput>;
-export const IdiomaUpdateOneRequiredWithoutLibrosNestedInputObjectZodSchema =
-	makeSchema();
+export const IdiomaUpdateOneRequiredWithoutLibrosNestedInputObjectZodSchema = makeSchema();

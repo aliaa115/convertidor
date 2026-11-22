@@ -16,5 +16,10 @@ export function DynamicIcon({ name, className, size = 24 }: Props) {
 		return null;
 	}
 
-	return <Icon className={className} size={size} />;
+	return (
+		<Icon
+			className={className}
+			size={size}
+		/>
+	);
 }

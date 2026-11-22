@@ -15,8 +15,7 @@ import type * as Prisma from "../internal/prismaNamespace.ts";
  * Model Tipo
  *
  */
-export type TipoModel =
-	runtime.Types.Result.DefaultSelection<Prisma.$TipoPayload>;
+export type TipoModel = runtime.Types.Result.DefaultSelection<Prisma.$TipoPayload>;
 
 export type AggregateTipo = {
 	_count: TipoCountAggregateOutputType | null;
@@ -90,10 +89,7 @@ export type TipoCountAggregateInputType = {
 	_all?: true;
 };
 
-export type TipoAggregateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Tipo to aggregate.
 	 */
@@ -103,9 +99,7 @@ export type TipoAggregateArgs<
 	 *
 	 * Determine the order of Tipos to fetch.
 	 */
-	orderBy?:
-		| Prisma.TipoOrderByWithRelationInput
-		| Prisma.TipoOrderByWithRelationInput[];
+	orderBy?: Prisma.TipoOrderByWithRelationInput | Prisma.TipoOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -157,21 +151,12 @@ export type TipoAggregateArgs<
 };
 
 export type GetTipoAggregateType<T extends TipoAggregateArgs> = {
-	[P in keyof T & keyof AggregateTipo]: P extends "_count" | "count"
-		? T[P] extends true
-			? number
-			: Prisma.GetScalarType<T[P], AggregateTipo[P]>
-		: Prisma.GetScalarType<T[P], AggregateTipo[P]>;
+	[P in keyof T & keyof AggregateTipo]: P extends "_count" | "count" ? (T[P] extends true ? number : Prisma.GetScalarType<T[P], AggregateTipo[P]>) : Prisma.GetScalarType<T[P], AggregateTipo[P]>;
 };
 
-export type TipoGroupByArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.TipoWhereInput;
-	orderBy?:
-		| Prisma.TipoOrderByWithAggregationInput
-		| Prisma.TipoOrderByWithAggregationInput[];
+	orderBy?: Prisma.TipoOrderByWithAggregationInput | Prisma.TipoOrderByWithAggregationInput[];
 	by: Prisma.TipoScalarFieldEnum[] | Prisma.TipoScalarFieldEnum;
 	having?: Prisma.TipoScalarWhereWithAggregatesInput;
 	take?: number;
@@ -195,18 +180,17 @@ export type TipoGroupByOutputType = {
 	_max: TipoMaxAggregateOutputType | null;
 };
 
-export type GetTipoGroupByPayload<T extends TipoGroupByArgs> =
-	Prisma.PrismaPromise<
-		Array<
-			Prisma.PickEnumerable<TipoGroupByOutputType, T["by"]> & {
-				[P in keyof T & keyof TipoGroupByOutputType]: P extends "_count"
-					? T[P] extends boolean
-						? number
-						: Prisma.GetScalarType<T[P], TipoGroupByOutputType[P]>
-					: Prisma.GetScalarType<T[P], TipoGroupByOutputType[P]>;
-			}
-		>
-	>;
+export type GetTipoGroupByPayload<T extends TipoGroupByArgs> = Prisma.PrismaPromise<
+	Array<
+		Prisma.PickEnumerable<TipoGroupByOutputType, T["by"]> & {
+			[P in keyof T & keyof TipoGroupByOutputType]: P extends "_count"
+				? T[P] extends boolean
+					? number
+					: Prisma.GetScalarType<T[P], TipoGroupByOutputType[P]>
+				: Prisma.GetScalarType<T[P], TipoGroupByOutputType[P]>;
+		}
+	>
+>;
 
 export type TipoWhereInput = {
 	AND?: Prisma.TipoWhereInput | Prisma.TipoWhereInput[];
@@ -216,10 +200,7 @@ export type TipoWhereInput = {
 	nombre?: Prisma.StringNullableFilter<"Tipo"> | string | null;
 	tabla?: Prisma.StringNullableFilter<"Tipo"> | string | null;
 	estadoId?: Prisma.IntFilter<"Tipo"> | number;
-	estado?: Prisma.XOR<
-		Prisma.EstadoScalarRelationFilter,
-		Prisma.EstadoWhereInput
-	>;
+	estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 	configuraciones?: Prisma.ConfiguracionListRelationFilter;
 	libros?: Prisma.LibroListRelationFilter;
 	comentarios?: Prisma.ComentarioListRelationFilter;
@@ -245,10 +226,7 @@ export type TipoWhereUniqueInput = Prisma.AtLeast<
 		nombre?: Prisma.StringNullableFilter<"Tipo"> | string | null;
 		tabla?: Prisma.StringNullableFilter<"Tipo"> | string | null;
 		estadoId?: Prisma.IntFilter<"Tipo"> | number;
-		estado?: Prisma.XOR<
-			Prisma.EstadoScalarRelationFilter,
-			Prisma.EstadoWhereInput
-		>;
+		estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 		configuraciones?: Prisma.ConfiguracionListRelationFilter;
 		libros?: Prisma.LibroListRelationFilter;
 		comentarios?: Prisma.ComentarioListRelationFilter;
@@ -269,13 +247,9 @@ export type TipoOrderByWithAggregationInput = {
 };
 
 export type TipoScalarWhereWithAggregatesInput = {
-	AND?:
-		| Prisma.TipoScalarWhereWithAggregatesInput
-		| Prisma.TipoScalarWhereWithAggregatesInput[];
+	AND?: Prisma.TipoScalarWhereWithAggregatesInput | Prisma.TipoScalarWhereWithAggregatesInput[];
 	OR?: Prisma.TipoScalarWhereWithAggregatesInput[];
-	NOT?:
-		| Prisma.TipoScalarWhereWithAggregatesInput
-		| Prisma.TipoScalarWhereWithAggregatesInput[];
+	NOT?: Prisma.TipoScalarWhereWithAggregatesInput | Prisma.TipoScalarWhereWithAggregatesInput[];
 	id?: Prisma.IntWithAggregatesFilter<"Tipo"> | number;
 	nombre?: Prisma.StringNullableWithAggregatesFilter<"Tipo"> | string | null;
 	tabla?: Prisma.StringNullableWithAggregatesFilter<"Tipo"> | string | null;
@@ -391,171 +365,91 @@ export type TipoScalarRelationFilter = {
 };
 
 export type TipoCreateNestedManyWithoutEstadoInput = {
-	create?:
-		| Prisma.XOR<
-				Prisma.TipoCreateWithoutEstadoInput,
-				Prisma.TipoUncheckedCreateWithoutEstadoInput
-		  >
-		| Prisma.TipoCreateWithoutEstadoInput[]
-		| Prisma.TipoUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.TipoCreateOrConnectWithoutEstadoInput
-		| Prisma.TipoCreateOrConnectWithoutEstadoInput[];
+	create?: Prisma.XOR<Prisma.TipoCreateWithoutEstadoInput, Prisma.TipoUncheckedCreateWithoutEstadoInput> | Prisma.TipoCreateWithoutEstadoInput[] | Prisma.TipoUncheckedCreateWithoutEstadoInput[];
+	connectOrCreate?: Prisma.TipoCreateOrConnectWithoutEstadoInput | Prisma.TipoCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.TipoCreateManyEstadoInputEnvelope;
 	connect?: Prisma.TipoWhereUniqueInput | Prisma.TipoWhereUniqueInput[];
 };
 
 export type TipoUncheckedCreateNestedManyWithoutEstadoInput = {
-	create?:
-		| Prisma.XOR<
-				Prisma.TipoCreateWithoutEstadoInput,
-				Prisma.TipoUncheckedCreateWithoutEstadoInput
-		  >
-		| Prisma.TipoCreateWithoutEstadoInput[]
-		| Prisma.TipoUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.TipoCreateOrConnectWithoutEstadoInput
-		| Prisma.TipoCreateOrConnectWithoutEstadoInput[];
+	create?: Prisma.XOR<Prisma.TipoCreateWithoutEstadoInput, Prisma.TipoUncheckedCreateWithoutEstadoInput> | Prisma.TipoCreateWithoutEstadoInput[] | Prisma.TipoUncheckedCreateWithoutEstadoInput[];
+	connectOrCreate?: Prisma.TipoCreateOrConnectWithoutEstadoInput | Prisma.TipoCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.TipoCreateManyEstadoInputEnvelope;
 	connect?: Prisma.TipoWhereUniqueInput | Prisma.TipoWhereUniqueInput[];
 };
 
 export type TipoUpdateManyWithoutEstadoNestedInput = {
-	create?:
-		| Prisma.XOR<
-				Prisma.TipoCreateWithoutEstadoInput,
-				Prisma.TipoUncheckedCreateWithoutEstadoInput
-		  >
-		| Prisma.TipoCreateWithoutEstadoInput[]
-		| Prisma.TipoUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.TipoCreateOrConnectWithoutEstadoInput
-		| Prisma.TipoCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.TipoUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.TipoUpsertWithWhereUniqueWithoutEstadoInput[];
+	create?: Prisma.XOR<Prisma.TipoCreateWithoutEstadoInput, Prisma.TipoUncheckedCreateWithoutEstadoInput> | Prisma.TipoCreateWithoutEstadoInput[] | Prisma.TipoUncheckedCreateWithoutEstadoInput[];
+	connectOrCreate?: Prisma.TipoCreateOrConnectWithoutEstadoInput | Prisma.TipoCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.TipoUpsertWithWhereUniqueWithoutEstadoInput | Prisma.TipoUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.TipoCreateManyEstadoInputEnvelope;
 	set?: Prisma.TipoWhereUniqueInput | Prisma.TipoWhereUniqueInput[];
 	disconnect?: Prisma.TipoWhereUniqueInput | Prisma.TipoWhereUniqueInput[];
 	delete?: Prisma.TipoWhereUniqueInput | Prisma.TipoWhereUniqueInput[];
 	connect?: Prisma.TipoWhereUniqueInput | Prisma.TipoWhereUniqueInput[];
-	update?:
-		| Prisma.TipoUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.TipoUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.TipoUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.TipoUpdateManyWithWhereWithoutEstadoInput[];
+	update?: Prisma.TipoUpdateWithWhereUniqueWithoutEstadoInput | Prisma.TipoUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.TipoUpdateManyWithWhereWithoutEstadoInput | Prisma.TipoUpdateManyWithWhereWithoutEstadoInput[];
 	deleteMany?: Prisma.TipoScalarWhereInput | Prisma.TipoScalarWhereInput[];
 };
 
 export type TipoUncheckedUpdateManyWithoutEstadoNestedInput = {
-	create?:
-		| Prisma.XOR<
-				Prisma.TipoCreateWithoutEstadoInput,
-				Prisma.TipoUncheckedCreateWithoutEstadoInput
-		  >
-		| Prisma.TipoCreateWithoutEstadoInput[]
-		| Prisma.TipoUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.TipoCreateOrConnectWithoutEstadoInput
-		| Prisma.TipoCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.TipoUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.TipoUpsertWithWhereUniqueWithoutEstadoInput[];
+	create?: Prisma.XOR<Prisma.TipoCreateWithoutEstadoInput, Prisma.TipoUncheckedCreateWithoutEstadoInput> | Prisma.TipoCreateWithoutEstadoInput[] | Prisma.TipoUncheckedCreateWithoutEstadoInput[];
+	connectOrCreate?: Prisma.TipoCreateOrConnectWithoutEstadoInput | Prisma.TipoCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.TipoUpsertWithWhereUniqueWithoutEstadoInput | Prisma.TipoUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.TipoCreateManyEstadoInputEnvelope;
 	set?: Prisma.TipoWhereUniqueInput | Prisma.TipoWhereUniqueInput[];
 	disconnect?: Prisma.TipoWhereUniqueInput | Prisma.TipoWhereUniqueInput[];
 	delete?: Prisma.TipoWhereUniqueInput | Prisma.TipoWhereUniqueInput[];
 	connect?: Prisma.TipoWhereUniqueInput | Prisma.TipoWhereUniqueInput[];
-	update?:
-		| Prisma.TipoUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.TipoUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.TipoUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.TipoUpdateManyWithWhereWithoutEstadoInput[];
+	update?: Prisma.TipoUpdateWithWhereUniqueWithoutEstadoInput | Prisma.TipoUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.TipoUpdateManyWithWhereWithoutEstadoInput | Prisma.TipoUpdateManyWithWhereWithoutEstadoInput[];
 	deleteMany?: Prisma.TipoScalarWhereInput | Prisma.TipoScalarWhereInput[];
 };
 
 export type TipoCreateNestedOneWithoutConfiguracionesInput = {
-	create?: Prisma.XOR<
-		Prisma.TipoCreateWithoutConfiguracionesInput,
-		Prisma.TipoUncheckedCreateWithoutConfiguracionesInput
-	>;
+	create?: Prisma.XOR<Prisma.TipoCreateWithoutConfiguracionesInput, Prisma.TipoUncheckedCreateWithoutConfiguracionesInput>;
 	connectOrCreate?: Prisma.TipoCreateOrConnectWithoutConfiguracionesInput;
 	connect?: Prisma.TipoWhereUniqueInput;
 };
 
 export type TipoUpdateOneWithoutConfiguracionesNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.TipoCreateWithoutConfiguracionesInput,
-		Prisma.TipoUncheckedCreateWithoutConfiguracionesInput
-	>;
+	create?: Prisma.XOR<Prisma.TipoCreateWithoutConfiguracionesInput, Prisma.TipoUncheckedCreateWithoutConfiguracionesInput>;
 	connectOrCreate?: Prisma.TipoCreateOrConnectWithoutConfiguracionesInput;
 	upsert?: Prisma.TipoUpsertWithoutConfiguracionesInput;
 	disconnect?: Prisma.TipoWhereInput | boolean;
 	delete?: Prisma.TipoWhereInput | boolean;
 	connect?: Prisma.TipoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.TipoUpdateToOneWithWhereWithoutConfiguracionesInput,
-			Prisma.TipoUpdateWithoutConfiguracionesInput
-		>,
-		Prisma.TipoUncheckedUpdateWithoutConfiguracionesInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.TipoUpdateToOneWithWhereWithoutConfiguracionesInput, Prisma.TipoUpdateWithoutConfiguracionesInput>, Prisma.TipoUncheckedUpdateWithoutConfiguracionesInput>;
 };
 
 export type TipoCreateNestedOneWithoutLibrosInput = {
-	create?: Prisma.XOR<
-		Prisma.TipoCreateWithoutLibrosInput,
-		Prisma.TipoUncheckedCreateWithoutLibrosInput
-	>;
+	create?: Prisma.XOR<Prisma.TipoCreateWithoutLibrosInput, Prisma.TipoUncheckedCreateWithoutLibrosInput>;
 	connectOrCreate?: Prisma.TipoCreateOrConnectWithoutLibrosInput;
 	connect?: Prisma.TipoWhereUniqueInput;
 };
 
 export type TipoUpdateOneRequiredWithoutLibrosNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.TipoCreateWithoutLibrosInput,
-		Prisma.TipoUncheckedCreateWithoutLibrosInput
-	>;
+	create?: Prisma.XOR<Prisma.TipoCreateWithoutLibrosInput, Prisma.TipoUncheckedCreateWithoutLibrosInput>;
 	connectOrCreate?: Prisma.TipoCreateOrConnectWithoutLibrosInput;
 	upsert?: Prisma.TipoUpsertWithoutLibrosInput;
 	connect?: Prisma.TipoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.TipoUpdateToOneWithWhereWithoutLibrosInput,
-			Prisma.TipoUpdateWithoutLibrosInput
-		>,
-		Prisma.TipoUncheckedUpdateWithoutLibrosInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.TipoUpdateToOneWithWhereWithoutLibrosInput, Prisma.TipoUpdateWithoutLibrosInput>, Prisma.TipoUncheckedUpdateWithoutLibrosInput>;
 };
 
 export type TipoCreateNestedOneWithoutComentariosInput = {
-	create?: Prisma.XOR<
-		Prisma.TipoCreateWithoutComentariosInput,
-		Prisma.TipoUncheckedCreateWithoutComentariosInput
-	>;
+	create?: Prisma.XOR<Prisma.TipoCreateWithoutComentariosInput, Prisma.TipoUncheckedCreateWithoutComentariosInput>;
 	connectOrCreate?: Prisma.TipoCreateOrConnectWithoutComentariosInput;
 	connect?: Prisma.TipoWhereUniqueInput;
 };
 
 export type TipoUpdateOneWithoutComentariosNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.TipoCreateWithoutComentariosInput,
-		Prisma.TipoUncheckedCreateWithoutComentariosInput
-	>;
+	create?: Prisma.XOR<Prisma.TipoCreateWithoutComentariosInput, Prisma.TipoUncheckedCreateWithoutComentariosInput>;
 	connectOrCreate?: Prisma.TipoCreateOrConnectWithoutComentariosInput;
 	upsert?: Prisma.TipoUpsertWithoutComentariosInput;
 	disconnect?: Prisma.TipoWhereInput | boolean;
 	delete?: Prisma.TipoWhereInput | boolean;
 	connect?: Prisma.TipoWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.TipoUpdateToOneWithWhereWithoutComentariosInput,
-			Prisma.TipoUpdateWithoutComentariosInput
-		>,
-		Prisma.TipoUncheckedUpdateWithoutComentariosInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.TipoUpdateToOneWithWhereWithoutComentariosInput, Prisma.TipoUpdateWithoutComentariosInput>, Prisma.TipoUncheckedUpdateWithoutComentariosInput>;
 };
 
 export type TipoCreateWithoutEstadoInput = {
@@ -577,10 +471,7 @@ export type TipoUncheckedCreateWithoutEstadoInput = {
 
 export type TipoCreateOrConnectWithoutEstadoInput = {
 	where: Prisma.TipoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.TipoCreateWithoutEstadoInput,
-		Prisma.TipoUncheckedCreateWithoutEstadoInput
-	>;
+	create: Prisma.XOR<Prisma.TipoCreateWithoutEstadoInput, Prisma.TipoUncheckedCreateWithoutEstadoInput>;
 };
 
 export type TipoCreateManyEstadoInputEnvelope = {
@@ -590,30 +481,18 @@ export type TipoCreateManyEstadoInputEnvelope = {
 
 export type TipoUpsertWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.TipoWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.TipoUpdateWithoutEstadoInput,
-		Prisma.TipoUncheckedUpdateWithoutEstadoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.TipoCreateWithoutEstadoInput,
-		Prisma.TipoUncheckedCreateWithoutEstadoInput
-	>;
+	update: Prisma.XOR<Prisma.TipoUpdateWithoutEstadoInput, Prisma.TipoUncheckedUpdateWithoutEstadoInput>;
+	create: Prisma.XOR<Prisma.TipoCreateWithoutEstadoInput, Prisma.TipoUncheckedCreateWithoutEstadoInput>;
 };
 
 export type TipoUpdateWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.TipoWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.TipoUpdateWithoutEstadoInput,
-		Prisma.TipoUncheckedUpdateWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.TipoUpdateWithoutEstadoInput, Prisma.TipoUncheckedUpdateWithoutEstadoInput>;
 };
 
 export type TipoUpdateManyWithWhereWithoutEstadoInput = {
 	where: Prisma.TipoScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.TipoUpdateManyMutationInput,
-		Prisma.TipoUncheckedUpdateManyWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.TipoUpdateManyMutationInput, Prisma.TipoUncheckedUpdateManyWithoutEstadoInput>;
 };
 
 export type TipoScalarWhereInput = {
@@ -645,30 +524,18 @@ export type TipoUncheckedCreateWithoutConfiguracionesInput = {
 
 export type TipoCreateOrConnectWithoutConfiguracionesInput = {
 	where: Prisma.TipoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.TipoCreateWithoutConfiguracionesInput,
-		Prisma.TipoUncheckedCreateWithoutConfiguracionesInput
-	>;
+	create: Prisma.XOR<Prisma.TipoCreateWithoutConfiguracionesInput, Prisma.TipoUncheckedCreateWithoutConfiguracionesInput>;
 };
 
 export type TipoUpsertWithoutConfiguracionesInput = {
-	update: Prisma.XOR<
-		Prisma.TipoUpdateWithoutConfiguracionesInput,
-		Prisma.TipoUncheckedUpdateWithoutConfiguracionesInput
-	>;
-	create: Prisma.XOR<
-		Prisma.TipoCreateWithoutConfiguracionesInput,
-		Prisma.TipoUncheckedCreateWithoutConfiguracionesInput
-	>;
+	update: Prisma.XOR<Prisma.TipoUpdateWithoutConfiguracionesInput, Prisma.TipoUncheckedUpdateWithoutConfiguracionesInput>;
+	create: Prisma.XOR<Prisma.TipoCreateWithoutConfiguracionesInput, Prisma.TipoUncheckedCreateWithoutConfiguracionesInput>;
 	where?: Prisma.TipoWhereInput;
 };
 
 export type TipoUpdateToOneWithWhereWithoutConfiguracionesInput = {
 	where?: Prisma.TipoWhereInput;
-	data: Prisma.XOR<
-		Prisma.TipoUpdateWithoutConfiguracionesInput,
-		Prisma.TipoUncheckedUpdateWithoutConfiguracionesInput
-	>;
+	data: Prisma.XOR<Prisma.TipoUpdateWithoutConfiguracionesInput, Prisma.TipoUncheckedUpdateWithoutConfiguracionesInput>;
 };
 
 export type TipoUpdateWithoutConfiguracionesInput = {
@@ -707,30 +574,18 @@ export type TipoUncheckedCreateWithoutLibrosInput = {
 
 export type TipoCreateOrConnectWithoutLibrosInput = {
 	where: Prisma.TipoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.TipoCreateWithoutLibrosInput,
-		Prisma.TipoUncheckedCreateWithoutLibrosInput
-	>;
+	create: Prisma.XOR<Prisma.TipoCreateWithoutLibrosInput, Prisma.TipoUncheckedCreateWithoutLibrosInput>;
 };
 
 export type TipoUpsertWithoutLibrosInput = {
-	update: Prisma.XOR<
-		Prisma.TipoUpdateWithoutLibrosInput,
-		Prisma.TipoUncheckedUpdateWithoutLibrosInput
-	>;
-	create: Prisma.XOR<
-		Prisma.TipoCreateWithoutLibrosInput,
-		Prisma.TipoUncheckedCreateWithoutLibrosInput
-	>;
+	update: Prisma.XOR<Prisma.TipoUpdateWithoutLibrosInput, Prisma.TipoUncheckedUpdateWithoutLibrosInput>;
+	create: Prisma.XOR<Prisma.TipoCreateWithoutLibrosInput, Prisma.TipoUncheckedCreateWithoutLibrosInput>;
 	where?: Prisma.TipoWhereInput;
 };
 
 export type TipoUpdateToOneWithWhereWithoutLibrosInput = {
 	where?: Prisma.TipoWhereInput;
-	data: Prisma.XOR<
-		Prisma.TipoUpdateWithoutLibrosInput,
-		Prisma.TipoUncheckedUpdateWithoutLibrosInput
-	>;
+	data: Prisma.XOR<Prisma.TipoUpdateWithoutLibrosInput, Prisma.TipoUncheckedUpdateWithoutLibrosInput>;
 };
 
 export type TipoUpdateWithoutLibrosInput = {
@@ -769,30 +624,18 @@ export type TipoUncheckedCreateWithoutComentariosInput = {
 
 export type TipoCreateOrConnectWithoutComentariosInput = {
 	where: Prisma.TipoWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.TipoCreateWithoutComentariosInput,
-		Prisma.TipoUncheckedCreateWithoutComentariosInput
-	>;
+	create: Prisma.XOR<Prisma.TipoCreateWithoutComentariosInput, Prisma.TipoUncheckedCreateWithoutComentariosInput>;
 };
 
 export type TipoUpsertWithoutComentariosInput = {
-	update: Prisma.XOR<
-		Prisma.TipoUpdateWithoutComentariosInput,
-		Prisma.TipoUncheckedUpdateWithoutComentariosInput
-	>;
-	create: Prisma.XOR<
-		Prisma.TipoCreateWithoutComentariosInput,
-		Prisma.TipoUncheckedCreateWithoutComentariosInput
-	>;
+	update: Prisma.XOR<Prisma.TipoUpdateWithoutComentariosInput, Prisma.TipoUncheckedUpdateWithoutComentariosInput>;
+	create: Prisma.XOR<Prisma.TipoCreateWithoutComentariosInput, Prisma.TipoUncheckedCreateWithoutComentariosInput>;
 	where?: Prisma.TipoWhereInput;
 };
 
 export type TipoUpdateToOneWithWhereWithoutComentariosInput = {
 	where?: Prisma.TipoWhereInput;
-	data: Prisma.XOR<
-		Prisma.TipoUpdateWithoutComentariosInput,
-		Prisma.TipoUncheckedUpdateWithoutComentariosInput
-	>;
+	data: Prisma.XOR<Prisma.TipoUpdateWithoutComentariosInput, Prisma.TipoUncheckedUpdateWithoutComentariosInput>;
 };
 
 export type TipoUpdateWithoutComentariosInput = {
@@ -851,10 +694,7 @@ export type TipoCountOutputType = {
 	comentarios: number;
 };
 
-export type TipoCountOutputTypeSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	configuraciones?: boolean | TipoCountOutputTypeCountConfiguracionesArgs;
 	libros?: boolean | TipoCountOutputTypeCountLibrosArgs;
 	comentarios?: boolean | TipoCountOutputTypeCountComentariosArgs;
@@ -863,10 +703,7 @@ export type TipoCountOutputTypeSelect<
 /**
  * TipoCountOutputType without action
  */
-export type TipoCountOutputTypeDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the TipoCountOutputType
 	 */
@@ -876,37 +713,25 @@ export type TipoCountOutputTypeDefaultArgs<
 /**
  * TipoCountOutputType without action
  */
-export type TipoCountOutputTypeCountConfiguracionesArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoCountOutputTypeCountConfiguracionesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.ConfiguracionWhereInput;
 };
 
 /**
  * TipoCountOutputType without action
  */
-export type TipoCountOutputTypeCountLibrosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoCountOutputTypeCountLibrosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.LibroWhereInput;
 };
 
 /**
  * TipoCountOutputType without action
  */
-export type TipoCountOutputTypeCountComentariosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoCountOutputTypeCountComentariosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.ComentarioWhereInput;
 };
 
-export type TipoSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type TipoSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -921,10 +746,7 @@ export type TipoSelect<
 	ExtArgs["result"]["tipo"]
 >;
 
-export type TipoSelectCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type TipoSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -935,10 +757,7 @@ export type TipoSelectCreateManyAndReturn<
 	ExtArgs["result"]["tipo"]
 >;
 
-export type TipoSelectUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type TipoSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -956,40 +775,25 @@ export type TipoSelectScalar = {
 	estadoId?: boolean;
 };
 
-export type TipoOmit<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetOmit<
+export type TipoOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<
 	"id" | "nombre" | "tabla" | "estadoId",
 	ExtArgs["result"]["tipo"]
 >;
-export type TipoInclude<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 	configuraciones?: boolean | Prisma.Tipo$configuracionesArgs<ExtArgs>;
 	libros?: boolean | Prisma.Tipo$librosArgs<ExtArgs>;
 	comentarios?: boolean | Prisma.Tipo$comentariosArgs<ExtArgs>;
 	_count?: boolean | Prisma.TipoCountOutputTypeDefaultArgs<ExtArgs>;
 };
-export type TipoIncludeCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
-export type TipoIncludeUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
 
-export type $TipoPayload<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type $TipoPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	name: "Tipo";
 	objects: {
 		estado: Prisma.$EstadoPayload<ExtArgs>;
@@ -1009,26 +813,14 @@ export type $TipoPayload<
 	composites: {};
 };
 
-export type TipoGetPayload<
-	S extends boolean | null | undefined | TipoDefaultArgs,
-> = runtime.Types.Result.GetResult<Prisma.$TipoPayload, S>;
+export type TipoGetPayload<S extends boolean | null | undefined | TipoDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$TipoPayload, S>;
 
-export type TipoCountArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = Omit<TipoFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
+export type TipoCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<TipoFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
 	select?: TipoCountAggregateInputType | true;
 };
 
-export interface TipoDelegate<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> {
-	[K: symbol]: {
-		types: Prisma.TypeMap<ExtArgs>["model"]["Tipo"];
-		meta: { name: "Tipo" };
-	};
+export interface TipoDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+	[K: symbol]: { types: Prisma.TypeMap<ExtArgs>["model"]["Tipo"]; meta: { name: "Tipo" } };
 	/**
 	 * Find zero or one Tipo that matches the filter.
 	 * @param {TipoFindUniqueArgs} args - Arguments to find a Tipo
@@ -1042,17 +834,7 @@ export interface TipoDelegate<
 	 */
 	findUnique<T extends TipoFindUniqueArgs>(
 		args: Prisma.SelectSubset<T, TipoFindUniqueArgs<ExtArgs>>,
-	): Prisma.Prisma__TipoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$TipoPayload<ExtArgs>,
-			T,
-			"findUnique",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__TipoClient<runtime.Types.Result.GetResult<Prisma.$TipoPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find one Tipo that matches the filter or throw an error with `error.code='P2025'`
@@ -1068,17 +850,7 @@ export interface TipoDelegate<
 	 */
 	findUniqueOrThrow<T extends TipoFindUniqueOrThrowArgs>(
 		args: Prisma.SelectSubset<T, TipoFindUniqueOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__TipoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$TipoPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__TipoClient<runtime.Types.Result.GetResult<Prisma.$TipoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Tipo that matches the filter.
@@ -1095,17 +867,7 @@ export interface TipoDelegate<
 	 */
 	findFirst<T extends TipoFindFirstArgs>(
 		args?: Prisma.SelectSubset<T, TipoFindFirstArgs<ExtArgs>>,
-	): Prisma.Prisma__TipoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$TipoPayload<ExtArgs>,
-			T,
-			"findFirst",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__TipoClient<runtime.Types.Result.GetResult<Prisma.$TipoPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Tipo that matches the filter or
@@ -1123,17 +885,7 @@ export interface TipoDelegate<
 	 */
 	findFirstOrThrow<T extends TipoFindFirstOrThrowArgs>(
 		args?: Prisma.SelectSubset<T, TipoFindFirstOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__TipoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$TipoPayload<ExtArgs>,
-			T,
-			"findFirstOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__TipoClient<runtime.Types.Result.GetResult<Prisma.$TipoPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find zero or more Tipos that matches the filter.
@@ -1153,14 +905,7 @@ export interface TipoDelegate<
 	 */
 	findMany<T extends TipoFindManyArgs>(
 		args?: Prisma.SelectSubset<T, TipoFindManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$TipoPayload<ExtArgs>,
-			T,
-			"findMany",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TipoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
 
 	/**
 	 * Create a Tipo.
@@ -1176,17 +921,7 @@ export interface TipoDelegate<
 	 */
 	create<T extends TipoCreateArgs>(
 		args: Prisma.SelectSubset<T, TipoCreateArgs<ExtArgs>>,
-	): Prisma.Prisma__TipoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$TipoPayload<ExtArgs>,
-			T,
-			"create",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__TipoClient<runtime.Types.Result.GetResult<Prisma.$TipoPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Create many Tipos.
@@ -1200,9 +935,7 @@ export interface TipoDelegate<
 	 * })
 	 *
 	 */
-	createMany<T extends TipoCreateManyArgs>(
-		args?: Prisma.SelectSubset<T, TipoCreateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	createMany<T extends TipoCreateManyArgs>(args?: Prisma.SelectSubset<T, TipoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Create many Tipos and returns the data saved in the database.
@@ -1228,14 +961,7 @@ export interface TipoDelegate<
 	 */
 	createManyAndReturn<T extends TipoCreateManyAndReturnArgs>(
 		args?: Prisma.SelectSubset<T, TipoCreateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$TipoPayload<ExtArgs>,
-			T,
-			"createManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TipoPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Delete a Tipo.
@@ -1251,17 +977,7 @@ export interface TipoDelegate<
 	 */
 	delete<T extends TipoDeleteArgs>(
 		args: Prisma.SelectSubset<T, TipoDeleteArgs<ExtArgs>>,
-	): Prisma.Prisma__TipoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$TipoPayload<ExtArgs>,
-			T,
-			"delete",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__TipoClient<runtime.Types.Result.GetResult<Prisma.$TipoPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Update one Tipo.
@@ -1280,17 +996,7 @@ export interface TipoDelegate<
 	 */
 	update<T extends TipoUpdateArgs>(
 		args: Prisma.SelectSubset<T, TipoUpdateArgs<ExtArgs>>,
-	): Prisma.Prisma__TipoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$TipoPayload<ExtArgs>,
-			T,
-			"update",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__TipoClient<runtime.Types.Result.GetResult<Prisma.$TipoPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Delete zero or more Tipos.
@@ -1304,9 +1010,7 @@ export interface TipoDelegate<
 	 * })
 	 *
 	 */
-	deleteMany<T extends TipoDeleteManyArgs>(
-		args?: Prisma.SelectSubset<T, TipoDeleteManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	deleteMany<T extends TipoDeleteManyArgs>(args?: Prisma.SelectSubset<T, TipoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Tipos.
@@ -1325,9 +1029,7 @@ export interface TipoDelegate<
 	 * })
 	 *
 	 */
-	updateMany<T extends TipoUpdateManyArgs>(
-		args: Prisma.SelectSubset<T, TipoUpdateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	updateMany<T extends TipoUpdateManyArgs>(args: Prisma.SelectSubset<T, TipoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Tipos and returns the data updated in the database.
@@ -1359,14 +1061,7 @@ export interface TipoDelegate<
 	 */
 	updateManyAndReturn<T extends TipoUpdateManyAndReturnArgs>(
 		args: Prisma.SelectSubset<T, TipoUpdateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$TipoPayload<ExtArgs>,
-			T,
-			"updateManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TipoPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Create or update one Tipo.
@@ -1387,17 +1082,7 @@ export interface TipoDelegate<
 	 */
 	upsert<T extends TipoUpsertArgs>(
 		args: Prisma.SelectSubset<T, TipoUpsertArgs<ExtArgs>>,
-	): Prisma.Prisma__TipoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$TipoPayload<ExtArgs>,
-			T,
-			"upsert",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__TipoClient<runtime.Types.Result.GetResult<Prisma.$TipoPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Count the number of Tipos.
@@ -1414,13 +1099,7 @@ export interface TipoDelegate<
 	 **/
 	count<T extends TipoCountArgs>(
 		args?: Prisma.Subset<T, TipoCountArgs>,
-	): Prisma.PrismaPromise<
-		T extends runtime.Types.Utils.Record<"select", any>
-			? T["select"] extends true
-				? number
-				: Prisma.GetScalarType<T["select"], TipoCountAggregateOutputType>
-			: number
-	>;
+	): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<"select", any> ? (T["select"] extends true ? number : Prisma.GetScalarType<T["select"], TipoCountAggregateOutputType>) : number>;
 
 	/**
 	 * Allows you to perform aggregations operations on a Tipo.
@@ -1446,9 +1125,7 @@ export interface TipoDelegate<
 	 *   take: 10,
 	 * })
 	 **/
-	aggregate<T extends TipoAggregateArgs>(
-		args: Prisma.Subset<T, TipoAggregateArgs>,
-	): Prisma.PrismaPromise<GetTipoAggregateType<T>>;
+	aggregate<T extends TipoAggregateArgs>(args: Prisma.Subset<T, TipoAggregateArgs>): Prisma.PrismaPromise<GetTipoAggregateType<T>>;
 
 	/**
 	 * Group by Tipo.
@@ -1470,16 +1147,9 @@ export interface TipoDelegate<
 	 **/
 	groupBy<
 		T extends TipoGroupByArgs,
-		HasSelectOrTake extends Prisma.Or<
-			Prisma.Extends<"skip", Prisma.Keys<T>>,
-			Prisma.Extends<"take", Prisma.Keys<T>>
-		>,
-		OrderByArg extends Prisma.True extends HasSelectOrTake
-			? { orderBy: TipoGroupByArgs["orderBy"] }
-			: { orderBy?: TipoGroupByArgs["orderBy"] },
-		OrderFields extends Prisma.ExcludeUnderscoreKeys<
-			Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>
-		>,
+		HasSelectOrTake extends Prisma.Or<Prisma.Extends<"skip", Prisma.Keys<T>>, Prisma.Extends<"take", Prisma.Keys<T>>>,
+		OrderByArg extends Prisma.True extends HasSelectOrTake ? { orderBy: TipoGroupByArgs["orderBy"] } : { orderBy?: TipoGroupByArgs["orderBy"] },
+		OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>>,
 		ByFields extends Prisma.MaybeTupleToUnion<T["by"]>,
 		ByValid extends Prisma.Has<ByFields, OrderFields>,
 		HavingFields extends Prisma.GetHavingFields<T["having"]>,
@@ -1493,21 +1163,14 @@ export interface TipoDelegate<
 							? never
 							: P extends string
 								? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-								: [
-										Error,
-										"Field ",
-										P,
-										` in "having" needs to be provided in "by"`,
-									];
+								: [Error, "Field ", P, ` in "having" needs to be provided in "by"`];
 					}[HavingFields]
 				: "take" extends Prisma.Keys<T>
 					? "orderBy" extends Prisma.Keys<T>
 						? ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields]
 						: 'Error: If you provide "take", you also need to provide "orderBy"'
 					: "skip" extends Prisma.Keys<T>
@@ -1515,24 +1178,15 @@ export interface TipoDelegate<
 							? ByValid extends Prisma.True
 								? {}
 								: {
-										[P in OrderFields]: P extends ByFields
-											? never
-											: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+										[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 									}[OrderFields]
 							: 'Error: If you provide "skip", you also need to provide "orderBy"'
 						: ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields],
-	>(
-		args: Prisma.SubsetIntersection<T, TipoGroupByArgs, OrderByArg> &
-			InputErrors,
-	): {} extends InputErrors
-		? GetTipoGroupByPayload<T>
-		: Prisma.PrismaPromise<InputErrors>;
+	>(args: Prisma.SubsetIntersection<T, TipoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTipoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
 	/**
 	 * Fields of the Tipo model
 	 */
@@ -1545,61 +1199,21 @@ export interface TipoDelegate<
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__TipoClient<
-	T,
-	Null = never,
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> extends Prisma.PrismaPromise<T> {
+export interface Prisma__TipoClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}>
+	extends Prisma.PrismaPromise<T> {
 	readonly [Symbol.toStringTag]: "PrismaPromise";
 	estado<T extends Prisma.EstadoDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EstadoDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EstadoPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	configuraciones<T extends Prisma.Tipo$configuracionesArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Tipo$configuracionesArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$ConfiguracionPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConfiguracionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	libros<T extends Prisma.Tipo$librosArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Tipo$librosArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$LibroPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LibroPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	comentarios<T extends Prisma.Tipo$comentariosArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Tipo$comentariosArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$ComentarioPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	/**
 	 * Attaches callbacks for the resolution and/or rejection of the Promise.
 	 * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1607,35 +1221,22 @@ export interface Prisma__TipoClient<
 	 * @returns A Promise for the completion of which ever callback is executed.
 	 */
 	then<TResult1 = T, TResult2 = never>(
-		onfulfilled?:
-			| ((value: T) => TResult1 | PromiseLike<TResult1>)
-			| undefined
-			| null,
-		onrejected?:
-			| ((reason: any) => TResult2 | PromiseLike<TResult2>)
-			| undefined
-			| null,
+		onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+		onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
 	): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
 	/**
 	 * Attaches a callback for only the rejection of the Promise.
 	 * @param onrejected The callback to execute when the Promise is rejected.
 	 * @returns A Promise for the completion of the callback.
 	 */
-	catch<TResult = never>(
-		onrejected?:
-			| ((reason: any) => TResult | PromiseLike<TResult>)
-			| undefined
-			| null,
-	): runtime.Types.Utils.JsPromise<T | TResult>;
+	catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
 	/**
 	 * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
 	 * resolved value cannot be modified from the callback.
 	 * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
 	 * @returns A Promise for the completion of the callback.
 	 */
-	finally(
-		onfinally?: (() => void) | undefined | null,
-	): runtime.Types.Utils.JsPromise<T>;
+	finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
 }
 
 /**
@@ -1652,10 +1253,7 @@ export interface TipoFieldRefs {
 /**
  * Tipo findUnique
  */
-export type TipoFindUniqueArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Tipo
 	 */
@@ -1677,10 +1275,7 @@ export type TipoFindUniqueArgs<
 /**
  * Tipo findUniqueOrThrow
  */
-export type TipoFindUniqueOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Tipo
 	 */
@@ -1702,10 +1297,7 @@ export type TipoFindUniqueOrThrowArgs<
 /**
  * Tipo findFirst
  */
-export type TipoFindFirstArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Tipo
 	 */
@@ -1727,9 +1319,7 @@ export type TipoFindFirstArgs<
 	 *
 	 * Determine the order of Tipos to fetch.
 	 */
-	orderBy?:
-		| Prisma.TipoOrderByWithRelationInput
-		| Prisma.TipoOrderByWithRelationInput[];
+	orderBy?: Prisma.TipoOrderByWithRelationInput | Prisma.TipoOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1759,10 +1349,7 @@ export type TipoFindFirstArgs<
 /**
  * Tipo findFirstOrThrow
  */
-export type TipoFindFirstOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Tipo
 	 */
@@ -1784,9 +1371,7 @@ export type TipoFindFirstOrThrowArgs<
 	 *
 	 * Determine the order of Tipos to fetch.
 	 */
-	orderBy?:
-		| Prisma.TipoOrderByWithRelationInput
-		| Prisma.TipoOrderByWithRelationInput[];
+	orderBy?: Prisma.TipoOrderByWithRelationInput | Prisma.TipoOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1816,10 +1401,7 @@ export type TipoFindFirstOrThrowArgs<
 /**
  * Tipo findMany
  */
-export type TipoFindManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Tipo
 	 */
@@ -1841,9 +1423,7 @@ export type TipoFindManyArgs<
 	 *
 	 * Determine the order of Tipos to fetch.
 	 */
-	orderBy?:
-		| Prisma.TipoOrderByWithRelationInput
-		| Prisma.TipoOrderByWithRelationInput[];
+	orderBy?: Prisma.TipoOrderByWithRelationInput | Prisma.TipoOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1873,10 +1453,7 @@ export type TipoFindManyArgs<
 /**
  * Tipo create
  */
-export type TipoCreateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Tipo
 	 */
@@ -1898,10 +1475,7 @@ export type TipoCreateArgs<
 /**
  * Tipo createMany
  */
-export type TipoCreateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to create many Tipos.
 	 */
@@ -1912,10 +1486,7 @@ export type TipoCreateManyArgs<
 /**
  * Tipo createManyAndReturn
  */
-export type TipoCreateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Tipo
 	 */
@@ -1938,10 +1509,7 @@ export type TipoCreateManyAndReturnArgs<
 /**
  * Tipo update
  */
-export type TipoUpdateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Tipo
 	 */
@@ -1967,17 +1535,11 @@ export type TipoUpdateArgs<
 /**
  * Tipo updateMany
  */
-export type TipoUpdateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to update Tipos.
 	 */
-	data: Prisma.XOR<
-		Prisma.TipoUpdateManyMutationInput,
-		Prisma.TipoUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.TipoUpdateManyMutationInput, Prisma.TipoUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Tipos to update
 	 */
@@ -1991,10 +1553,7 @@ export type TipoUpdateManyArgs<
 /**
  * Tipo updateManyAndReturn
  */
-export type TipoUpdateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Tipo
 	 */
@@ -2006,10 +1565,7 @@ export type TipoUpdateManyAndReturnArgs<
 	/**
 	 * The data used to update Tipos.
 	 */
-	data: Prisma.XOR<
-		Prisma.TipoUpdateManyMutationInput,
-		Prisma.TipoUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.TipoUpdateManyMutationInput, Prisma.TipoUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Tipos to update
 	 */
@@ -2027,10 +1583,7 @@ export type TipoUpdateManyAndReturnArgs<
 /**
  * Tipo upsert
  */
-export type TipoUpsertArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Tipo
 	 */
@@ -2060,10 +1613,7 @@ export type TipoUpsertArgs<
 /**
  * Tipo delete
  */
-export type TipoDeleteArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Tipo
 	 */
@@ -2085,10 +1635,7 @@ export type TipoDeleteArgs<
 /**
  * Tipo deleteMany
  */
-export type TipoDeleteManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Tipos to delete
 	 */
@@ -2102,10 +1649,7 @@ export type TipoDeleteManyArgs<
 /**
  * Tipo.configuraciones
  */
-export type Tipo$configuracionesArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Tipo$configuracionesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Configuracion
 	 */
@@ -2119,24 +1663,17 @@ export type Tipo$configuracionesArgs<
 	 */
 	include?: Prisma.ConfiguracionInclude<ExtArgs> | null;
 	where?: Prisma.ConfiguracionWhereInput;
-	orderBy?:
-		| Prisma.ConfiguracionOrderByWithRelationInput
-		| Prisma.ConfiguracionOrderByWithRelationInput[];
+	orderBy?: Prisma.ConfiguracionOrderByWithRelationInput | Prisma.ConfiguracionOrderByWithRelationInput[];
 	cursor?: Prisma.ConfiguracionWhereUniqueInput;
 	take?: number;
 	skip?: number;
-	distinct?:
-		| Prisma.ConfiguracionScalarFieldEnum
-		| Prisma.ConfiguracionScalarFieldEnum[];
+	distinct?: Prisma.ConfiguracionScalarFieldEnum | Prisma.ConfiguracionScalarFieldEnum[];
 };
 
 /**
  * Tipo.libros
  */
-export type Tipo$librosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Tipo$librosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Libro
 	 */
@@ -2150,9 +1687,7 @@ export type Tipo$librosArgs<
 	 */
 	include?: Prisma.LibroInclude<ExtArgs> | null;
 	where?: Prisma.LibroWhereInput;
-	orderBy?:
-		| Prisma.LibroOrderByWithRelationInput
-		| Prisma.LibroOrderByWithRelationInput[];
+	orderBy?: Prisma.LibroOrderByWithRelationInput | Prisma.LibroOrderByWithRelationInput[];
 	cursor?: Prisma.LibroWhereUniqueInput;
 	take?: number;
 	skip?: number;
@@ -2162,10 +1697,7 @@ export type Tipo$librosArgs<
 /**
  * Tipo.comentarios
  */
-export type Tipo$comentariosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Tipo$comentariosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Comentario
 	 */
@@ -2179,24 +1711,17 @@ export type Tipo$comentariosArgs<
 	 */
 	include?: Prisma.ComentarioInclude<ExtArgs> | null;
 	where?: Prisma.ComentarioWhereInput;
-	orderBy?:
-		| Prisma.ComentarioOrderByWithRelationInput
-		| Prisma.ComentarioOrderByWithRelationInput[];
+	orderBy?: Prisma.ComentarioOrderByWithRelationInput | Prisma.ComentarioOrderByWithRelationInput[];
 	cursor?: Prisma.ComentarioWhereUniqueInput;
 	take?: number;
 	skip?: number;
-	distinct?:
-		| Prisma.ComentarioScalarFieldEnum
-		| Prisma.ComentarioScalarFieldEnum[];
+	distinct?: Prisma.ComentarioScalarFieldEnum | Prisma.ComentarioScalarFieldEnum[];
 };
 
 /**
  * Tipo without action
  */
-export type TipoDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type TipoDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Tipo
 	 */

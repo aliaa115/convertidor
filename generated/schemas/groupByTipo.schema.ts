@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { TipoScalarFieldEnumSchema } from "./enums/TipoScalarFieldEnum.schema.ts";
 import { TipoAvgAggregateInputObjectSchema as TipoAvgAggregateInputObjectSchema } from "./objects/TipoAvgAggregateInput.schema.ts";
 import { TipoCountAggregateInputObjectSchema as TipoCountAggregateInputObjectSchema } from "./objects/TipoCountAggregateInput.schema.ts";
@@ -13,19 +13,12 @@ import { TipoWhereInputObjectSchema as TipoWhereInputObjectSchema } from "./obje
 export const TipoGroupBySchema: z.ZodType<Prisma.TipoGroupByArgs> = z
 	.object({
 		where: TipoWhereInputObjectSchema.optional(),
-		orderBy: z
-			.union([
-				TipoOrderByWithAggregationInputObjectSchema,
-				TipoOrderByWithAggregationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([TipoOrderByWithAggregationInputObjectSchema, TipoOrderByWithAggregationInputObjectSchema.array()]).optional(),
 		having: TipoScalarWhereWithAggregatesInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
 		by: z.array(TipoScalarFieldEnumSchema),
-		_count: z
-			.union([z.literal(true), TipoCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), TipoCountAggregateInputObjectSchema]).optional(),
 		_min: TipoMinAggregateInputObjectSchema.optional(),
 		_max: TipoMaxAggregateInputObjectSchema.optional(),
 		_avg: TipoAvgAggregateInputObjectSchema.optional(),
@@ -36,19 +29,12 @@ export const TipoGroupBySchema: z.ZodType<Prisma.TipoGroupByArgs> = z
 export const TipoGroupByZodSchema = z
 	.object({
 		where: TipoWhereInputObjectSchema.optional(),
-		orderBy: z
-			.union([
-				TipoOrderByWithAggregationInputObjectSchema,
-				TipoOrderByWithAggregationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([TipoOrderByWithAggregationInputObjectSchema, TipoOrderByWithAggregationInputObjectSchema.array()]).optional(),
 		having: TipoScalarWhereWithAggregatesInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
 		by: z.array(TipoScalarFieldEnumSchema),
-		_count: z
-			.union([z.literal(true), TipoCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), TipoCountAggregateInputObjectSchema]).optional(),
 		_min: TipoMinAggregateInputObjectSchema.optional(),
 		_max: TipoMaxAggregateInputObjectSchema.optional(),
 		_avg: TipoAvgAggregateInputObjectSchema.optional(),

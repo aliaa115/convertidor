@@ -3,19 +3,8 @@
 import { Check, ChevronsUpDown } from "lucide-react";
 import * as React from "react";
 import { Button } from "@/components/ui/button";
-import {
-	Command,
-	CommandEmpty,
-	CommandGroup,
-	CommandInput,
-	CommandItem,
-	CommandList,
-} from "@/components/ui/command";
-import {
-	Popover,
-	PopoverContent,
-	PopoverTrigger,
-} from "@/components/ui/popover";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 
 export type AutocompleteOption<T extends string = string> = {
@@ -53,24 +42,25 @@ export function Autocomplete<T extends string = string>({
 
 	return (
 		<>
-			{name ? <input type="hidden" name={name} value={value ?? ""} /> : null}
+			{name ? (
+				<input
+					type="hidden"
+					name={name}
+					value={value ?? ""}
+				/>
+			) : null}
 
-			<Popover open={open} onOpenChange={setOpen}>
+			<Popover
+				open={open}
+				onOpenChange={setOpen}>
 				<PopoverTrigger asChild>
 					<Button
 						type="button"
 						variant="outline"
 						role="combobox"
 						aria-expanded={open}
-						className={cn(
-							"w-full justify-between font-normal",
-							!selectedOption && "text-muted-foreground",
-							className,
-						)}
-					>
-						<span className="truncate">
-							{selectedOption ? selectedOption.label : placeholder}
-						</span>
+						className={cn("w-full justify-between font-normal", !selectedOption && "text-muted-foreground", className)}>
+						<span className="truncate">{selectedOption ? selectedOption.label : placeholder}</span>
 						<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
 					</Button>
 				</PopoverTrigger>
@@ -82,13 +72,10 @@ export function Autocomplete<T extends string = string>({
 							if (!option) return 0;
 
 							const term = search.toLowerCase().trim();
-							const haystack = [option.value, option.label, ...keywords]
-								.join(" ")
-								.toLowerCase();
+							const haystack = [option.value, option.label, ...keywords].join(" ").toLowerCase();
 
 							return haystack.includes(term) ? 1 : 0;
-						}}
-					>
+						}}>
 						<CommandInput placeholder={searchPlaceholder} />
 						<CommandList>
 							<CommandEmpty>{emptyText}</CommandEmpty>
@@ -104,23 +91,14 @@ export function Autocomplete<T extends string = string>({
 											keywords={[option.label, ...(option.keywords ?? [])]}
 											disabled={option.disabled}
 											onSelect={(currentValue) => {
-												const newValue =
-													currentValue === value ? "" : currentValue;
+												const newValue = currentValue === value ? "" : currentValue;
 
 												onValueChange?.(newValue as T);
 												setOpen(false);
-											}}
-										>
-											<Check
-												className={cn(
-													"mr-2 h-4 w-4 shrink-0",
-													isSelected ? "opacity-100" : "opacity-0",
-												)}
-											/>
+											}}>
+											<Check className={cn("mr-2 h-4 w-4 shrink-0", isSelected ? "opacity-100" : "opacity-0")} />
 
-											<div className="min-w-0 flex-1">
-												{option.render ? option.render(option) : option.label}
-											</div>
+											<div className="min-w-0 flex-1">{option.render ? option.render(option) : option.label}</div>
 										</CommandItem>
 									);
 								})}

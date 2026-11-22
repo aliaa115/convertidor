@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { TipoCreateOrConnectWithoutComentariosInputObjectSchema as TipoCreateOrConnectWithoutComentariosInputObjectSchema } from "./TipoCreateOrConnectWithoutComentariosInput.schema.ts";
 import { TipoCreateWithoutComentariosInputObjectSchema as TipoCreateWithoutComentariosInputObjectSchema } from "./TipoCreateWithoutComentariosInput.schema.ts";
 import { TipoUncheckedCreateWithoutComentariosInputObjectSchema as TipoUncheckedCreateWithoutComentariosInputObjectSchema } from "./TipoUncheckedCreateWithoutComentariosInput.schema.ts";
@@ -13,30 +13,15 @@ import { TipoWhereUniqueInputObjectSchema as TipoWhereUniqueInputObjectSchema } 
 const makeSchema = () =>
 	z
 		.object({
-			create: z
-				.union([
-					z.lazy(() => TipoCreateWithoutComentariosInputObjectSchema),
-					z.lazy(() => TipoUncheckedCreateWithoutComentariosInputObjectSchema),
-				])
-				.optional(),
-			connectOrCreate: z
-				.lazy(() => TipoCreateOrConnectWithoutComentariosInputObjectSchema)
-				.optional(),
-			upsert: z
-				.lazy(() => TipoUpsertWithoutComentariosInputObjectSchema)
-				.optional(),
-			disconnect: z
-				.union([z.boolean(), z.lazy(() => TipoWhereInputObjectSchema)])
-				.optional(),
-			delete: z
-				.union([z.boolean(), z.lazy(() => TipoWhereInputObjectSchema)])
-				.optional(),
+			create: z.union([z.lazy(() => TipoCreateWithoutComentariosInputObjectSchema), z.lazy(() => TipoUncheckedCreateWithoutComentariosInputObjectSchema)]).optional(),
+			connectOrCreate: z.lazy(() => TipoCreateOrConnectWithoutComentariosInputObjectSchema).optional(),
+			upsert: z.lazy(() => TipoUpsertWithoutComentariosInputObjectSchema).optional(),
+			disconnect: z.union([z.boolean(), z.lazy(() => TipoWhereInputObjectSchema)]).optional(),
+			delete: z.union([z.boolean(), z.lazy(() => TipoWhereInputObjectSchema)]).optional(),
 			connect: z.lazy(() => TipoWhereUniqueInputObjectSchema).optional(),
 			update: z
 				.union([
-					z.lazy(
-						() => TipoUpdateToOneWithWhereWithoutComentariosInputObjectSchema,
-					),
+					z.lazy(() => TipoUpdateToOneWithWhereWithoutComentariosInputObjectSchema),
 					z.lazy(() => TipoUpdateWithoutComentariosInputObjectSchema),
 					z.lazy(() => TipoUncheckedUpdateWithoutComentariosInputObjectSchema),
 				])
@@ -45,5 +30,4 @@ const makeSchema = () =>
 		.strict();
 export const TipoUpdateOneWithoutComentariosNestedInputObjectSchema: z.ZodType<Prisma.TipoUpdateOneWithoutComentariosNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.TipoUpdateOneWithoutComentariosNestedInput>;
-export const TipoUpdateOneWithoutComentariosNestedInputObjectZodSchema =
-	makeSchema();
+export const TipoUpdateOneWithoutComentariosNestedInputObjectZodSchema = makeSchema();

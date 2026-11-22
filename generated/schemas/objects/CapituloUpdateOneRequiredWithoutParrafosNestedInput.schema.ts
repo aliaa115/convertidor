@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { CapituloCreateOrConnectWithoutParrafosInputObjectSchema as CapituloCreateOrConnectWithoutParrafosInputObjectSchema } from "./CapituloCreateOrConnectWithoutParrafosInput.schema.ts";
 import { CapituloCreateWithoutParrafosInputObjectSchema as CapituloCreateWithoutParrafosInputObjectSchema } from "./CapituloCreateWithoutParrafosInput.schema.ts";
 import { CapituloUncheckedCreateWithoutParrafosInputObjectSchema as CapituloUncheckedCreateWithoutParrafosInputObjectSchema } from "./CapituloUncheckedCreateWithoutParrafosInput.schema.ts";
@@ -12,24 +12,13 @@ import { CapituloWhereUniqueInputObjectSchema as CapituloWhereUniqueInputObjectS
 const makeSchema = () =>
 	z
 		.object({
-			create: z
-				.union([
-					z.lazy(() => CapituloCreateWithoutParrafosInputObjectSchema),
-					z.lazy(() => CapituloUncheckedCreateWithoutParrafosInputObjectSchema),
-				])
-				.optional(),
-			connectOrCreate: z
-				.lazy(() => CapituloCreateOrConnectWithoutParrafosInputObjectSchema)
-				.optional(),
-			upsert: z
-				.lazy(() => CapituloUpsertWithoutParrafosInputObjectSchema)
-				.optional(),
+			create: z.union([z.lazy(() => CapituloCreateWithoutParrafosInputObjectSchema), z.lazy(() => CapituloUncheckedCreateWithoutParrafosInputObjectSchema)]).optional(),
+			connectOrCreate: z.lazy(() => CapituloCreateOrConnectWithoutParrafosInputObjectSchema).optional(),
+			upsert: z.lazy(() => CapituloUpsertWithoutParrafosInputObjectSchema).optional(),
 			connect: z.lazy(() => CapituloWhereUniqueInputObjectSchema).optional(),
 			update: z
 				.union([
-					z.lazy(
-						() => CapituloUpdateToOneWithWhereWithoutParrafosInputObjectSchema,
-					),
+					z.lazy(() => CapituloUpdateToOneWithWhereWithoutParrafosInputObjectSchema),
 					z.lazy(() => CapituloUpdateWithoutParrafosInputObjectSchema),
 					z.lazy(() => CapituloUncheckedUpdateWithoutParrafosInputObjectSchema),
 				])
@@ -38,5 +27,4 @@ const makeSchema = () =>
 		.strict();
 export const CapituloUpdateOneRequiredWithoutParrafosNestedInputObjectSchema: z.ZodType<Prisma.CapituloUpdateOneRequiredWithoutParrafosNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.CapituloUpdateOneRequiredWithoutParrafosNestedInput>;
-export const CapituloUpdateOneRequiredWithoutParrafosNestedInputObjectZodSchema =
-	makeSchema();
+export const CapituloUpdateOneRequiredWithoutParrafosNestedInputObjectZodSchema = makeSchema();

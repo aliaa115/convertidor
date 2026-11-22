@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 
 const makeSchema = () =>
 	z
@@ -9,6 +9,5 @@ const makeSchema = () =>
 			url: z.literal(true).optional(),
 		})
 		.strict();
-export const AvatarMinAggregateInputObjectSchema: z.ZodType<Prisma.AvatarMinAggregateInputType> =
-	makeSchema() as unknown as z.ZodType<Prisma.AvatarMinAggregateInputType>;
+export const AvatarMinAggregateInputObjectSchema: z.ZodType<Prisma.AvatarMinAggregateInputType> = makeSchema() as unknown as z.ZodType<Prisma.AvatarMinAggregateInputType>;
 export const AvatarMinAggregateInputObjectZodSchema = makeSchema();

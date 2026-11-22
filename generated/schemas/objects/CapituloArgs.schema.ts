@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { CapituloIncludeObjectSchema as CapituloIncludeObjectSchema } from "./CapituloInclude.schema.ts";
 import { CapituloSelectObjectSchema as CapituloSelectObjectSchema } from "./CapituloSelect.schema.ts";
 

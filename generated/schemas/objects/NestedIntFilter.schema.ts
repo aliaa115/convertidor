@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 
 const nestedintfilterSchema = z
 	.object({
@@ -10,11 +10,8 @@ const nestedintfilterSchema = z
 		lte: z.number().int().optional(),
 		gt: z.number().int().optional(),
 		gte: z.number().int().optional(),
-		not: z
-			.union([z.number().int(), z.lazy(() => NestedIntFilterObjectSchema)])
-			.optional(),
+		not: z.union([z.number().int(), z.lazy(() => NestedIntFilterObjectSchema)]).optional(),
 	})
 	.strict();
-export const NestedIntFilterObjectSchema: z.ZodType<Prisma.NestedIntFilter> =
-	nestedintfilterSchema as unknown as z.ZodType<Prisma.NestedIntFilter>;
+export const NestedIntFilterObjectSchema: z.ZodType<Prisma.NestedIntFilter> = nestedintfilterSchema as unknown as z.ZodType<Prisma.NestedIntFilter>;
 export const NestedIntFilterObjectZodSchema = nestedintfilterSchema;

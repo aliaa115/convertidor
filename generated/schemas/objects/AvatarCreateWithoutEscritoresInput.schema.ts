@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 
 const makeSchema = () =>
 	z
@@ -8,6 +8,5 @@ const makeSchema = () =>
 			url: z.string(),
 		})
 		.strict();
-export const AvatarCreateWithoutEscritoresInputObjectSchema: z.ZodType<Prisma.AvatarCreateWithoutEscritoresInput> =
-	makeSchema() as unknown as z.ZodType<Prisma.AvatarCreateWithoutEscritoresInput>;
+export const AvatarCreateWithoutEscritoresInputObjectSchema: z.ZodType<Prisma.AvatarCreateWithoutEscritoresInput> = makeSchema() as unknown as z.ZodType<Prisma.AvatarCreateWithoutEscritoresInput>;
 export const AvatarCreateWithoutEscritoresInputObjectZodSchema = makeSchema();

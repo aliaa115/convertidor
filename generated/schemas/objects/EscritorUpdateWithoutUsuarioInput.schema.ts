@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { AvatarUpdateOneRequiredWithoutEscritoresNestedInputObjectSchema as AvatarUpdateOneRequiredWithoutEscritoresNestedInputObjectSchema } from "./AvatarUpdateOneRequiredWithoutEscritoresNestedInput.schema.ts";
 import { ComentarioUpdateManyWithoutEscritorNestedInputObjectSchema as ComentarioUpdateManyWithoutEscritorNestedInputObjectSchema } from "./ComentarioUpdateManyWithoutEscritorNestedInput.schema.ts";
 import { DateTimeFieldUpdateOperationsInputObjectSchema as DateTimeFieldUpdateOperationsInputObjectSchema } from "./DateTimeFieldUpdateOperationsInput.schema.ts";
@@ -18,92 +18,38 @@ const makeSchema = () =>
 	z
 		.object({
 			nombres: z
-				.union([
-					z.string(),
-					z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema),
-				])
+				.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema)])
 				.optional()
 				.nullable(),
 			apellidos: z
-				.union([
-					z.string(),
-					z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema),
-				])
+				.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema)])
 				.optional()
 				.nullable(),
 			alias: z
-				.union([
-					z.string(),
-					z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema),
-				])
+				.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema)])
 				.optional()
 				.nullable(),
 			descripcion: z
-				.union([
-					z.string().max(255),
-					z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema),
-				])
+				.union([z.string().max(255), z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema)])
 				.optional()
 				.nullable(),
 			fechaNacimiento: z
-				.union([
-					z.coerce.date(),
-					z.lazy(() => NullableDateTimeFieldUpdateOperationsInputObjectSchema),
-				])
+				.union([z.coerce.date(), z.lazy(() => NullableDateTimeFieldUpdateOperationsInputObjectSchema)])
 				.optional()
 				.nullable(),
-			createdAt: z
-				.union([
-					z.coerce.date(),
-					z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
-			updatedAt: z
-				.union([
-					z.coerce.date(),
-					z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
-			avatar: z
-				.lazy(
-					() => AvatarUpdateOneRequiredWithoutEscritoresNestedInputObjectSchema,
-				)
-				.optional(),
-			estado: z
-				.lazy(
-					() => EstadoUpdateOneRequiredWithoutEscritoresNestedInputObjectSchema,
-				)
-				.optional(),
-			libros: z
-				.lazy(() => LibroUpdateManyWithoutEscritorNestedInputObjectSchema)
-				.optional(),
-			comentarios: z
-				.lazy(() => ComentarioUpdateManyWithoutEscritorNestedInputObjectSchema)
-				.optional(),
-			favoritos: z
-				.lazy(() => FavoritoUpdateManyWithoutEscritorNestedInputObjectSchema)
-				.optional(),
-			glosarios: z
-				.lazy(() => GlosarioUpdateManyWithoutEscritorNestedInputObjectSchema)
-				.optional(),
-			notasAutor: z
-				.lazy(() => NotaAutorUpdateManyWithoutEscritorNestedInputObjectSchema)
-				.optional(),
-			marcadores: z
-				.lazy(() => MarcadorUpdateManyWithoutEscritorNestedInputObjectSchema)
-				.optional(),
-			seguidores: z
-				.lazy(
-					() => SeguirUsuarioUpdateManyWithoutSeguidoNestedInputObjectSchema,
-				)
-				.optional(),
-			siguiendo: z
-				.lazy(
-					() => SeguirUsuarioUpdateManyWithoutEscritorNestedInputObjectSchema,
-				)
-				.optional(),
+			createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema)]).optional(),
+			updatedAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema)]).optional(),
+			avatar: z.lazy(() => AvatarUpdateOneRequiredWithoutEscritoresNestedInputObjectSchema).optional(),
+			estado: z.lazy(() => EstadoUpdateOneRequiredWithoutEscritoresNestedInputObjectSchema).optional(),
+			libros: z.lazy(() => LibroUpdateManyWithoutEscritorNestedInputObjectSchema).optional(),
+			comentarios: z.lazy(() => ComentarioUpdateManyWithoutEscritorNestedInputObjectSchema).optional(),
+			favoritos: z.lazy(() => FavoritoUpdateManyWithoutEscritorNestedInputObjectSchema).optional(),
+			glosarios: z.lazy(() => GlosarioUpdateManyWithoutEscritorNestedInputObjectSchema).optional(),
+			notasAutor: z.lazy(() => NotaAutorUpdateManyWithoutEscritorNestedInputObjectSchema).optional(),
+			marcadores: z.lazy(() => MarcadorUpdateManyWithoutEscritorNestedInputObjectSchema).optional(),
+			seguidores: z.lazy(() => SeguirUsuarioUpdateManyWithoutSeguidoNestedInputObjectSchema).optional(),
+			siguiendo: z.lazy(() => SeguirUsuarioUpdateManyWithoutEscritorNestedInputObjectSchema).optional(),
 		})
 		.strict();
-export const EscritorUpdateWithoutUsuarioInputObjectSchema: z.ZodType<Prisma.EscritorUpdateWithoutUsuarioInput> =
-	makeSchema() as unknown as z.ZodType<Prisma.EscritorUpdateWithoutUsuarioInput>;
+export const EscritorUpdateWithoutUsuarioInputObjectSchema: z.ZodType<Prisma.EscritorUpdateWithoutUsuarioInput> = makeSchema() as unknown as z.ZodType<Prisma.EscritorUpdateWithoutUsuarioInput>;
 export const EscritorUpdateWithoutUsuarioInputObjectZodSchema = makeSchema();

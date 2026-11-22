@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { ConfiguracionUncheckedCreateNestedOneWithoutUsuarioInputObjectSchema as ConfiguracionUncheckedCreateNestedOneWithoutUsuarioInputObjectSchema } from "./ConfiguracionUncheckedCreateNestedOneWithoutUsuarioInput.schema.ts";
 import { EscritorUncheckedCreateNestedOneWithoutUsuarioInputObjectSchema as EscritorUncheckedCreateNestedOneWithoutUsuarioInputObjectSchema } from "./EscritorUncheckedCreateNestedOneWithoutUsuarioInput.schema.ts";
 import { ListaUncheckedCreateNestedManyWithoutUsuarioInputObjectSchema as ListaUncheckedCreateNestedManyWithoutUsuarioInputObjectSchema } from "./ListaUncheckedCreateNestedManyWithoutUsuarioInput.schema.ts";
@@ -15,30 +15,11 @@ const makeSchema = () =>
 			nivel: z.number().int().optional(),
 			createdAt: z.coerce.date().optional(),
 			estadoId: z.number().int().optional(),
-			configuracion: z
-				.lazy(
-					() =>
-						ConfiguracionUncheckedCreateNestedOneWithoutUsuarioInputObjectSchema,
-				)
-				.optional(),
-			escritor: z
-				.lazy(
-					() => EscritorUncheckedCreateNestedOneWithoutUsuarioInputObjectSchema,
-				)
-				.optional(),
-			listas: z
-				.lazy(
-					() => ListaUncheckedCreateNestedManyWithoutUsuarioInputObjectSchema,
-				)
-				.optional(),
-			notificacions: z
-				.lazy(
-					() =>
-						NotificacionUncheckedCreateNestedManyWithoutUsuarioInputObjectSchema,
-				)
-				.optional(),
+			configuracion: z.lazy(() => ConfiguracionUncheckedCreateNestedOneWithoutUsuarioInputObjectSchema).optional(),
+			escritor: z.lazy(() => EscritorUncheckedCreateNestedOneWithoutUsuarioInputObjectSchema).optional(),
+			listas: z.lazy(() => ListaUncheckedCreateNestedManyWithoutUsuarioInputObjectSchema).optional(),
+			notificacions: z.lazy(() => NotificacionUncheckedCreateNestedManyWithoutUsuarioInputObjectSchema).optional(),
 		})
 		.strict();
-export const UsuarioUncheckedCreateInputObjectSchema: z.ZodType<Prisma.UsuarioUncheckedCreateInput> =
-	makeSchema() as unknown as z.ZodType<Prisma.UsuarioUncheckedCreateInput>;
+export const UsuarioUncheckedCreateInputObjectSchema: z.ZodType<Prisma.UsuarioUncheckedCreateInput> = makeSchema() as unknown as z.ZodType<Prisma.UsuarioUncheckedCreateInput>;
 export const UsuarioUncheckedCreateInputObjectZodSchema = makeSchema();

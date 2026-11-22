@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { DateTimeFieldUpdateOperationsInputObjectSchema as DateTimeFieldUpdateOperationsInputObjectSchema } from "./DateTimeFieldUpdateOperationsInput.schema.ts";
 import { EscritorUpdateOneRequiredWithoutMarcadoresNestedInputObjectSchema as EscritorUpdateOneRequiredWithoutMarcadoresNestedInputObjectSchema } from "./EscritorUpdateOneRequiredWithoutMarcadoresNestedInput.schema.ts";
 import { EstadoUpdateOneRequiredWithoutMarcadoresNestedInputObjectSchema as EstadoUpdateOneRequiredWithoutMarcadoresNestedInputObjectSchema } from "./EstadoUpdateOneRequiredWithoutMarcadoresNestedInput.schema.ts";
@@ -10,50 +10,19 @@ const makeSchema = () =>
 	z
 		.object({
 			nombre: z
-				.union([
-					z.string(),
-					z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema),
-				])
+				.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema)])
 				.optional()
 				.nullable(),
 			color: z
-				.union([
-					z.string(),
-					z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema),
-				])
+				.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema)])
 				.optional()
 				.nullable(),
-			createdAt: z
-				.union([
-					z.coerce.date(),
-					z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
-			updatedAt: z
-				.union([
-					z.coerce.date(),
-					z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
-			escritor: z
-				.lazy(
-					() =>
-						EscritorUpdateOneRequiredWithoutMarcadoresNestedInputObjectSchema,
-				)
-				.optional(),
-			parrafo: z
-				.lazy(
-					() =>
-						ParrafoUpdateOneRequiredWithoutMarcadoresNestedInputObjectSchema,
-				)
-				.optional(),
-			estado: z
-				.lazy(
-					() => EstadoUpdateOneRequiredWithoutMarcadoresNestedInputObjectSchema,
-				)
-				.optional(),
+			createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema)]).optional(),
+			updatedAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema)]).optional(),
+			escritor: z.lazy(() => EscritorUpdateOneRequiredWithoutMarcadoresNestedInputObjectSchema).optional(),
+			parrafo: z.lazy(() => ParrafoUpdateOneRequiredWithoutMarcadoresNestedInputObjectSchema).optional(),
+			estado: z.lazy(() => EstadoUpdateOneRequiredWithoutMarcadoresNestedInputObjectSchema).optional(),
 		})
 		.strict();
-export const MarcadorUpdateInputObjectSchema: z.ZodType<Prisma.MarcadorUpdateInput> =
-	makeSchema() as unknown as z.ZodType<Prisma.MarcadorUpdateInput>;
+export const MarcadorUpdateInputObjectSchema: z.ZodType<Prisma.MarcadorUpdateInput> = makeSchema() as unknown as z.ZodType<Prisma.MarcadorUpdateInput>;
 export const MarcadorUpdateInputObjectZodSchema = makeSchema();

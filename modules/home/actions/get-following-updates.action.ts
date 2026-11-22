@@ -13,6 +13,7 @@ export async function getFollowingUpdates() {
 
 		where: {
 			estadoId: 1,
+			publicado: true,
 			escritor: {
 				seguidores: {
 					some: {

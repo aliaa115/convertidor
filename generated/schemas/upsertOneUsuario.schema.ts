@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { UsuarioCreateInputObjectSchema as UsuarioCreateInputObjectSchema } from "./objects/UsuarioCreateInput.schema.ts";
 import { UsuarioIncludeObjectSchema as UsuarioIncludeObjectSchema } from "./objects/UsuarioInclude.schema.ts";
 import { UsuarioSelectObjectSchema as UsuarioSelectObjectSchema } from "./objects/UsuarioSelect.schema.ts";
@@ -13,14 +13,8 @@ export const UsuarioUpsertOneSchema: z.ZodType<Prisma.UsuarioUpsertArgs> = z
 		select: UsuarioSelectObjectSchema.optional(),
 		include: UsuarioIncludeObjectSchema.optional(),
 		where: UsuarioWhereUniqueInputObjectSchema,
-		create: z.union([
-			UsuarioCreateInputObjectSchema,
-			UsuarioUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			UsuarioUpdateInputObjectSchema,
-			UsuarioUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([UsuarioCreateInputObjectSchema, UsuarioUncheckedCreateInputObjectSchema]),
+		update: z.union([UsuarioUpdateInputObjectSchema, UsuarioUncheckedUpdateInputObjectSchema]),
 	})
 	.strict() as unknown as z.ZodType<Prisma.UsuarioUpsertArgs>;
 
@@ -29,13 +23,7 @@ export const UsuarioUpsertOneZodSchema = z
 		select: UsuarioSelectObjectSchema.optional(),
 		include: UsuarioIncludeObjectSchema.optional(),
 		where: UsuarioWhereUniqueInputObjectSchema,
-		create: z.union([
-			UsuarioCreateInputObjectSchema,
-			UsuarioUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			UsuarioUpdateInputObjectSchema,
-			UsuarioUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([UsuarioCreateInputObjectSchema, UsuarioUncheckedCreateInputObjectSchema]),
+		update: z.union([UsuarioUpdateInputObjectSchema, UsuarioUncheckedUpdateInputObjectSchema]),
 	})
 	.strict();

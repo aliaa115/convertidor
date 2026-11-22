@@ -1,13 +1,5 @@
 import type { Metadata } from "next";
-import {
-	Atkinson_Hyperlegible,
-	Cherry_Bomb_One,
-	Geist,
-	Geist_Mono,
-	Inter,
-	Open_Sans,
-	Roboto,
-} from "next/font/google";
+import { Atkinson_Hyperlegible, Cherry_Bomb_One, Geist, Geist_Mono, Inter, Open_Sans, Roboto } from "next/font/google";
 import { ScreenSize } from "@/components/custom";
 import { Providers } from "@/providers/provider";
 import "@/app/globals.css";
@@ -64,15 +56,13 @@ export default function RootLayout({
 			lang="es-MX"
 			suppressHydrationWarning
 			data-font="default"
-			className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} ${openSans.variable} ${inter.variable} ${atkinsonHyperlegible.variable} ${cherryBombOne.variable}`}
-		>
+			className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} ${openSans.variable} ${inter.variable} ${atkinsonHyperlegible.variable} ${cherryBombOne.variable}`}>
 			<body className="antialiased min-h-screen max-h-screen w-full overflow-hidden ">
 				<Providers
 					attribute="class"
 					defaultTheme="system"
 					enableSystem
-					disableTransitionOnChange
-				>
+					disableTransitionOnChange>
 					<ScreenSize />
 					{children}
 				</Providers>

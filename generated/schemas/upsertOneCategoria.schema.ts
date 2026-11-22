@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { CategoriaCreateInputObjectSchema as CategoriaCreateInputObjectSchema } from "./objects/CategoriaCreateInput.schema.ts";
 import { CategoriaIncludeObjectSchema as CategoriaIncludeObjectSchema } from "./objects/CategoriaInclude.schema.ts";
 import { CategoriaSelectObjectSchema as CategoriaSelectObjectSchema } from "./objects/CategoriaSelect.schema.ts";
@@ -13,14 +13,8 @@ export const CategoriaUpsertOneSchema: z.ZodType<Prisma.CategoriaUpsertArgs> = z
 		select: CategoriaSelectObjectSchema.optional(),
 		include: CategoriaIncludeObjectSchema.optional(),
 		where: CategoriaWhereUniqueInputObjectSchema,
-		create: z.union([
-			CategoriaCreateInputObjectSchema,
-			CategoriaUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			CategoriaUpdateInputObjectSchema,
-			CategoriaUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([CategoriaCreateInputObjectSchema, CategoriaUncheckedCreateInputObjectSchema]),
+		update: z.union([CategoriaUpdateInputObjectSchema, CategoriaUncheckedUpdateInputObjectSchema]),
 	})
 	.strict() as unknown as z.ZodType<Prisma.CategoriaUpsertArgs>;
 
@@ -29,13 +23,7 @@ export const CategoriaUpsertOneZodSchema = z
 		select: CategoriaSelectObjectSchema.optional(),
 		include: CategoriaIncludeObjectSchema.optional(),
 		where: CategoriaWhereUniqueInputObjectSchema,
-		create: z.union([
-			CategoriaCreateInputObjectSchema,
-			CategoriaUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			CategoriaUpdateInputObjectSchema,
-			CategoriaUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([CategoriaCreateInputObjectSchema, CategoriaUncheckedCreateInputObjectSchema]),
+		update: z.union([CategoriaUpdateInputObjectSchema, CategoriaUncheckedUpdateInputObjectSchema]),
 	})
 	.strict();

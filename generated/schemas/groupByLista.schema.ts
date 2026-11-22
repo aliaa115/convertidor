@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { ListaScalarFieldEnumSchema } from "./enums/ListaScalarFieldEnum.schema.ts";
 import { ListaAvgAggregateInputObjectSchema as ListaAvgAggregateInputObjectSchema } from "./objects/ListaAvgAggregateInput.schema.ts";
 import { ListaCountAggregateInputObjectSchema as ListaCountAggregateInputObjectSchema } from "./objects/ListaCountAggregateInput.schema.ts";
@@ -13,19 +13,12 @@ import { ListaWhereInputObjectSchema as ListaWhereInputObjectSchema } from "./ob
 export const ListaGroupBySchema: z.ZodType<Prisma.ListaGroupByArgs> = z
 	.object({
 		where: ListaWhereInputObjectSchema.optional(),
-		orderBy: z
-			.union([
-				ListaOrderByWithAggregationInputObjectSchema,
-				ListaOrderByWithAggregationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([ListaOrderByWithAggregationInputObjectSchema, ListaOrderByWithAggregationInputObjectSchema.array()]).optional(),
 		having: ListaScalarWhereWithAggregatesInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
 		by: z.array(ListaScalarFieldEnumSchema),
-		_count: z
-			.union([z.literal(true), ListaCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), ListaCountAggregateInputObjectSchema]).optional(),
 		_min: ListaMinAggregateInputObjectSchema.optional(),
 		_max: ListaMaxAggregateInputObjectSchema.optional(),
 		_avg: ListaAvgAggregateInputObjectSchema.optional(),
@@ -36,19 +29,12 @@ export const ListaGroupBySchema: z.ZodType<Prisma.ListaGroupByArgs> = z
 export const ListaGroupByZodSchema = z
 	.object({
 		where: ListaWhereInputObjectSchema.optional(),
-		orderBy: z
-			.union([
-				ListaOrderByWithAggregationInputObjectSchema,
-				ListaOrderByWithAggregationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([ListaOrderByWithAggregationInputObjectSchema, ListaOrderByWithAggregationInputObjectSchema.array()]).optional(),
 		having: ListaScalarWhereWithAggregatesInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
 		by: z.array(ListaScalarFieldEnumSchema),
-		_count: z
-			.union([z.literal(true), ListaCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), ListaCountAggregateInputObjectSchema]).optional(),
 		_min: ListaMinAggregateInputObjectSchema.optional(),
 		_max: ListaMaxAggregateInputObjectSchema.optional(),
 		_avg: ListaAvgAggregateInputObjectSchema.optional(),

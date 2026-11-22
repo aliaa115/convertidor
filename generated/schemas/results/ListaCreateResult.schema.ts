@@ -1,4 +1,7 @@
 import * as z from "zod";
+import { EstadoSchema } from "../models/Estado.schema.ts";
+import { ListaLibroSchema } from "../models/ListaLibro.schema.ts";
+import { UsuarioSchema } from "../models/Usuario.schema.ts";
 export const ListaCreateResultSchema = z.object({
 	id: z.number().int(),
 	nombre: z.string().optional(),
@@ -6,8 +9,8 @@ export const ListaCreateResultSchema = z.object({
 	createdAt: z.date(),
 	updatedAt: z.date(),
 	usuarioId: z.number().int().optional(),
-	usuario: z.unknown().optional(),
+	usuario: UsuarioSchema.optional(),
 	estadoId: z.number().int(),
-	estado: z.unknown(),
-	libros: z.array(z.unknown()),
+	estado: EstadoSchema.optional(),
+	libros: z.array(ListaLibroSchema).optional(),
 });

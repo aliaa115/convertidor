@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { FavoritoCreateManyLibroInputEnvelopeObjectSchema as FavoritoCreateManyLibroInputEnvelopeObjectSchema } from "./FavoritoCreateManyLibroInputEnvelope.schema.ts";
 import { FavoritoCreateOrConnectWithoutLibroInputObjectSchema as FavoritoCreateOrConnectWithoutLibroInputObjectSchema } from "./FavoritoCreateOrConnectWithoutLibroInput.schema.ts";
 import { FavoritoCreateWithoutLibroInputObjectSchema as FavoritoCreateWithoutLibroInputObjectSchema } from "./FavoritoCreateWithoutLibroInput.schema.ts";
@@ -18,91 +18,21 @@ const makeSchema = () =>
 					z.lazy(() => FavoritoCreateWithoutLibroInputObjectSchema),
 					z.lazy(() => FavoritoCreateWithoutLibroInputObjectSchema).array(),
 					z.lazy(() => FavoritoUncheckedCreateWithoutLibroInputObjectSchema),
-					z
-						.lazy(() => FavoritoUncheckedCreateWithoutLibroInputObjectSchema)
-						.array(),
+					z.lazy(() => FavoritoUncheckedCreateWithoutLibroInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(() => FavoritoCreateOrConnectWithoutLibroInputObjectSchema),
-					z
-						.lazy(() => FavoritoCreateOrConnectWithoutLibroInputObjectSchema)
-						.array(),
-				])
-				.optional(),
-			upsert: z
-				.union([
-					z.lazy(
-						() => FavoritoUpsertWithWhereUniqueWithoutLibroInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => FavoritoUpsertWithWhereUniqueWithoutLibroInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			createMany: z
-				.lazy(() => FavoritoCreateManyLibroInputEnvelopeObjectSchema)
-				.optional(),
-			set: z
-				.union([
-					z.lazy(() => FavoritoWhereUniqueInputObjectSchema),
-					z.lazy(() => FavoritoWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			disconnect: z
-				.union([
-					z.lazy(() => FavoritoWhereUniqueInputObjectSchema),
-					z.lazy(() => FavoritoWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			delete: z
-				.union([
-					z.lazy(() => FavoritoWhereUniqueInputObjectSchema),
-					z.lazy(() => FavoritoWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => FavoritoWhereUniqueInputObjectSchema),
-					z.lazy(() => FavoritoWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			update: z
-				.union([
-					z.lazy(
-						() => FavoritoUpdateWithWhereUniqueWithoutLibroInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => FavoritoUpdateWithWhereUniqueWithoutLibroInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			updateMany: z
-				.union([
-					z.lazy(
-						() => FavoritoUpdateManyWithWhereWithoutLibroInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => FavoritoUpdateManyWithWhereWithoutLibroInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			deleteMany: z
-				.union([
-					z.lazy(() => FavoritoScalarWhereInputObjectSchema),
-					z.lazy(() => FavoritoScalarWhereInputObjectSchema).array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => FavoritoCreateOrConnectWithoutLibroInputObjectSchema), z.lazy(() => FavoritoCreateOrConnectWithoutLibroInputObjectSchema).array()]).optional(),
+			upsert: z.union([z.lazy(() => FavoritoUpsertWithWhereUniqueWithoutLibroInputObjectSchema), z.lazy(() => FavoritoUpsertWithWhereUniqueWithoutLibroInputObjectSchema).array()]).optional(),
+			createMany: z.lazy(() => FavoritoCreateManyLibroInputEnvelopeObjectSchema).optional(),
+			set: z.union([z.lazy(() => FavoritoWhereUniqueInputObjectSchema), z.lazy(() => FavoritoWhereUniqueInputObjectSchema).array()]).optional(),
+			disconnect: z.union([z.lazy(() => FavoritoWhereUniqueInputObjectSchema), z.lazy(() => FavoritoWhereUniqueInputObjectSchema).array()]).optional(),
+			delete: z.union([z.lazy(() => FavoritoWhereUniqueInputObjectSchema), z.lazy(() => FavoritoWhereUniqueInputObjectSchema).array()]).optional(),
+			connect: z.union([z.lazy(() => FavoritoWhereUniqueInputObjectSchema), z.lazy(() => FavoritoWhereUniqueInputObjectSchema).array()]).optional(),
+			update: z.union([z.lazy(() => FavoritoUpdateWithWhereUniqueWithoutLibroInputObjectSchema), z.lazy(() => FavoritoUpdateWithWhereUniqueWithoutLibroInputObjectSchema).array()]).optional(),
+			updateMany: z.union([z.lazy(() => FavoritoUpdateManyWithWhereWithoutLibroInputObjectSchema), z.lazy(() => FavoritoUpdateManyWithWhereWithoutLibroInputObjectSchema).array()]).optional(),
+			deleteMany: z.union([z.lazy(() => FavoritoScalarWhereInputObjectSchema), z.lazy(() => FavoritoScalarWhereInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const FavoritoUncheckedUpdateManyWithoutLibroNestedInputObjectSchema: z.ZodType<Prisma.FavoritoUncheckedUpdateManyWithoutLibroNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.FavoritoUncheckedUpdateManyWithoutLibroNestedInput>;
-export const FavoritoUncheckedUpdateManyWithoutLibroNestedInputObjectZodSchema =
-	makeSchema();
+export const FavoritoUncheckedUpdateManyWithoutLibroNestedInputObjectZodSchema = makeSchema();

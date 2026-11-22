@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { NotaAutorScalarFieldEnumSchema } from "./enums/NotaAutorScalarFieldEnum.schema.ts";
 import { NotaAutorAvgAggregateInputObjectSchema as NotaAutorAvgAggregateInputObjectSchema } from "./objects/NotaAutorAvgAggregateInput.schema.ts";
 import { NotaAutorCountAggregateInputObjectSchema as NotaAutorCountAggregateInputObjectSchema } from "./objects/NotaAutorCountAggregateInput.schema.ts";
@@ -13,19 +13,12 @@ import { NotaAutorWhereInputObjectSchema as NotaAutorWhereInputObjectSchema } fr
 export const NotaAutorGroupBySchema: z.ZodType<Prisma.NotaAutorGroupByArgs> = z
 	.object({
 		where: NotaAutorWhereInputObjectSchema.optional(),
-		orderBy: z
-			.union([
-				NotaAutorOrderByWithAggregationInputObjectSchema,
-				NotaAutorOrderByWithAggregationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([NotaAutorOrderByWithAggregationInputObjectSchema, NotaAutorOrderByWithAggregationInputObjectSchema.array()]).optional(),
 		having: NotaAutorScalarWhereWithAggregatesInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
 		by: z.array(NotaAutorScalarFieldEnumSchema),
-		_count: z
-			.union([z.literal(true), NotaAutorCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), NotaAutorCountAggregateInputObjectSchema]).optional(),
 		_min: NotaAutorMinAggregateInputObjectSchema.optional(),
 		_max: NotaAutorMaxAggregateInputObjectSchema.optional(),
 		_avg: NotaAutorAvgAggregateInputObjectSchema.optional(),
@@ -36,19 +29,12 @@ export const NotaAutorGroupBySchema: z.ZodType<Prisma.NotaAutorGroupByArgs> = z
 export const NotaAutorGroupByZodSchema = z
 	.object({
 		where: NotaAutorWhereInputObjectSchema.optional(),
-		orderBy: z
-			.union([
-				NotaAutorOrderByWithAggregationInputObjectSchema,
-				NotaAutorOrderByWithAggregationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([NotaAutorOrderByWithAggregationInputObjectSchema, NotaAutorOrderByWithAggregationInputObjectSchema.array()]).optional(),
 		having: NotaAutorScalarWhereWithAggregatesInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
 		by: z.array(NotaAutorScalarFieldEnumSchema),
-		_count: z
-			.union([z.literal(true), NotaAutorCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), NotaAutorCountAggregateInputObjectSchema]).optional(),
 		_min: NotaAutorMinAggregateInputObjectSchema.optional(),
 		_max: NotaAutorMaxAggregateInputObjectSchema.optional(),
 		_avg: NotaAutorAvgAggregateInputObjectSchema.optional(),

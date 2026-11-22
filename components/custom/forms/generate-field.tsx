@@ -1,11 +1,6 @@
 import { Eye, EyeClosed } from "lucide-react";
 import React from "react";
-import {
-	FieldErrors,
-	FieldValues,
-	Path,
-	UseFormRegister,
-} from "react-hook-form";
+import { FieldErrors, FieldValues, Path, UseFormRegister } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { ButtonGroup } from "@/components/ui/button-group";
 import { Field, FieldDescription, FieldLabel } from "@/components/ui/field";
@@ -22,14 +17,7 @@ export type GenerateFieldProps<T extends FieldValues> = {
 	errors: FieldErrors<T>;
 };
 
-export default function GenerateField<T extends FieldValues>({
-	id,
-	label,
-	placeholder,
-	type = "text",
-	register,
-	errors,
-}: GenerateFieldProps<T>) {
+export default function GenerateField<T extends FieldValues>({ id, label, placeholder, type = "text", register, errors }: GenerateFieldProps<T>) {
 	const isDateField = type === "date";
 	const isPassword = type === "password";
 
@@ -63,16 +51,13 @@ export default function GenerateField<T extends FieldValues>({
 					<Button
 						type="button"
 						variant="ghost"
-						onClick={() => setShowPassword((v) => !v)}
-					>
+						onClick={() => setShowPassword((v) => !v)}>
 						{showPassword ? <EyeClosed /> : <Eye />}
 					</Button>
 				) : null}
 			</ButtonGroup>
 
-			<FieldDescription className="text-destructive">
-				{errors[id] ? String(errors[id]?.message ?? "") : null}
-			</FieldDescription>
+			<FieldDescription className="text-destructive">{errors[id] ? String(errors[id]?.message ?? "") : null}</FieldDescription>
 		</Field>
 	);
 }

@@ -16,9 +16,7 @@ export default async function Template({ children }: AuthTemplateProps) {
 			<div className="z-50 sticky top-0 w-full">
 				<NavBar user={user} />
 			</div>
-			<div className="flex justify-center items-center max-h-full mt-5">
-				{children}
-			</div>
+			<div className="flex justify-center items-center max-h-full mt-5">{children}</div>
 		</main>
 	);
 }

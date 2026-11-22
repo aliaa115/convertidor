@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { AvatarCreateNestedOneWithoutEscritoresInputObjectSchema as AvatarCreateNestedOneWithoutEscritoresInputObjectSchema } from "./AvatarCreateNestedOneWithoutEscritoresInput.schema.ts";
 import { ComentarioCreateNestedManyWithoutEscritorInputObjectSchema as ComentarioCreateNestedManyWithoutEscritorInputObjectSchema } from "./ComentarioCreateNestedManyWithoutEscritorInput.schema.ts";
 import { FavoritoCreateNestedManyWithoutEscritorInputObjectSchema as FavoritoCreateNestedManyWithoutEscritorInputObjectSchema } from "./FavoritoCreateNestedManyWithoutEscritorInput.schema.ts";
@@ -21,42 +21,17 @@ const makeSchema = () =>
 			fechaNacimiento: z.coerce.date().optional().nullable(),
 			createdAt: z.coerce.date().optional(),
 			updatedAt: z.coerce.date().optional(),
-			usuario: z
-				.lazy(() => UsuarioCreateNestedOneWithoutEscritorInputObjectSchema)
-				.optional(),
-			avatar: z
-				.lazy(() => AvatarCreateNestedOneWithoutEscritoresInputObjectSchema)
-				.optional(),
-			libros: z
-				.lazy(() => LibroCreateNestedManyWithoutEscritorInputObjectSchema)
-				.optional(),
-			comentarios: z
-				.lazy(() => ComentarioCreateNestedManyWithoutEscritorInputObjectSchema)
-				.optional(),
-			favoritos: z
-				.lazy(() => FavoritoCreateNestedManyWithoutEscritorInputObjectSchema)
-				.optional(),
-			glosarios: z
-				.lazy(() => GlosarioCreateNestedManyWithoutEscritorInputObjectSchema)
-				.optional(),
-			notasAutor: z
-				.lazy(() => NotaAutorCreateNestedManyWithoutEscritorInputObjectSchema)
-				.optional(),
-			marcadores: z
-				.lazy(() => MarcadorCreateNestedManyWithoutEscritorInputObjectSchema)
-				.optional(),
-			seguidores: z
-				.lazy(
-					() => SeguirUsuarioCreateNestedManyWithoutSeguidoInputObjectSchema,
-				)
-				.optional(),
-			siguiendo: z
-				.lazy(
-					() => SeguirUsuarioCreateNestedManyWithoutEscritorInputObjectSchema,
-				)
-				.optional(),
+			usuario: z.lazy(() => UsuarioCreateNestedOneWithoutEscritorInputObjectSchema).optional(),
+			avatar: z.lazy(() => AvatarCreateNestedOneWithoutEscritoresInputObjectSchema).optional(),
+			libros: z.lazy(() => LibroCreateNestedManyWithoutEscritorInputObjectSchema).optional(),
+			comentarios: z.lazy(() => ComentarioCreateNestedManyWithoutEscritorInputObjectSchema).optional(),
+			favoritos: z.lazy(() => FavoritoCreateNestedManyWithoutEscritorInputObjectSchema).optional(),
+			glosarios: z.lazy(() => GlosarioCreateNestedManyWithoutEscritorInputObjectSchema).optional(),
+			notasAutor: z.lazy(() => NotaAutorCreateNestedManyWithoutEscritorInputObjectSchema).optional(),
+			marcadores: z.lazy(() => MarcadorCreateNestedManyWithoutEscritorInputObjectSchema).optional(),
+			seguidores: z.lazy(() => SeguirUsuarioCreateNestedManyWithoutSeguidoInputObjectSchema).optional(),
+			siguiendo: z.lazy(() => SeguirUsuarioCreateNestedManyWithoutEscritorInputObjectSchema).optional(),
 		})
 		.strict();
-export const EscritorCreateWithoutEstadoInputObjectSchema: z.ZodType<Prisma.EscritorCreateWithoutEstadoInput> =
-	makeSchema() as unknown as z.ZodType<Prisma.EscritorCreateWithoutEstadoInput>;
+export const EscritorCreateWithoutEstadoInputObjectSchema: z.ZodType<Prisma.EscritorCreateWithoutEstadoInput> = makeSchema() as unknown as z.ZodType<Prisma.EscritorCreateWithoutEstadoInput>;
 export const EscritorCreateWithoutEstadoInputObjectZodSchema = makeSchema();

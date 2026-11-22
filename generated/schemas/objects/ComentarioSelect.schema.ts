@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { ComentarioFindManySchema as ComentarioFindManySchema } from "../findManyComentario.schema.ts";
 import { ComentarioArgsObjectSchema as ComentarioArgsObjectSchema } from "./ComentarioArgs.schema.ts";
 import { ComentarioCountOutputTypeArgsObjectSchema as ComentarioCountOutputTypeArgsObjectSchema } from "./ComentarioCountOutputTypeArgs.schema.ts";
@@ -16,36 +16,18 @@ const makeSchema = () =>
 			createdAt: z.boolean().optional(),
 			updatedAt: z.boolean().optional(),
 			escritorId: z.boolean().optional(),
-			escritor: z
-				.union([z.boolean(), z.lazy(() => EscritorArgsObjectSchema)])
-				.optional(),
+			escritor: z.union([z.boolean(), z.lazy(() => EscritorArgsObjectSchema)]).optional(),
 			parrafoId: z.boolean().optional(),
-			parrafo: z
-				.union([z.boolean(), z.lazy(() => ParrafoArgsObjectSchema)])
-				.optional(),
+			parrafo: z.union([z.boolean(), z.lazy(() => ParrafoArgsObjectSchema)]).optional(),
 			comentarioPadreId: z.boolean().optional(),
-			padre: z
-				.union([z.boolean(), z.lazy(() => ComentarioArgsObjectSchema)])
-				.optional(),
-			respuestas: z
-				.union([z.boolean(), z.lazy(() => ComentarioFindManySchema)])
-				.optional(),
+			padre: z.union([z.boolean(), z.lazy(() => ComentarioArgsObjectSchema)]).optional(),
+			respuestas: z.union([z.boolean(), z.lazy(() => ComentarioFindManySchema)]).optional(),
 			tipoId: z.boolean().optional(),
-			tipo: z
-				.union([z.boolean(), z.lazy(() => TipoArgsObjectSchema)])
-				.optional(),
+			tipo: z.union([z.boolean(), z.lazy(() => TipoArgsObjectSchema)]).optional(),
 			estadoId: z.boolean().optional(),
-			estado: z
-				.union([z.boolean(), z.lazy(() => EstadoArgsObjectSchema)])
-				.optional(),
-			_count: z
-				.union([
-					z.boolean(),
-					z.lazy(() => ComentarioCountOutputTypeArgsObjectSchema),
-				])
-				.optional(),
+			estado: z.union([z.boolean(), z.lazy(() => EstadoArgsObjectSchema)]).optional(),
+			_count: z.union([z.boolean(), z.lazy(() => ComentarioCountOutputTypeArgsObjectSchema)]).optional(),
 		})
 		.strict();
-export const ComentarioSelectObjectSchema: z.ZodType<Prisma.ComentarioSelect> =
-	makeSchema() as unknown as z.ZodType<Prisma.ComentarioSelect>;
+export const ComentarioSelectObjectSchema: z.ZodType<Prisma.ComentarioSelect> = makeSchema() as unknown as z.ZodType<Prisma.ComentarioSelect>;
 export const ComentarioSelectObjectZodSchema = makeSchema();

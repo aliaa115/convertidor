@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { ComentarioIncludeObjectSchema as ComentarioIncludeObjectSchema } from "./ComentarioInclude.schema.ts";
 import { ComentarioSelectObjectSchema as ComentarioSelectObjectSchema } from "./ComentarioSelect.schema.ts";
 

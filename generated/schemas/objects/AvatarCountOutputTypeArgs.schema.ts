@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { AvatarCountOutputTypeSelectObjectSchema as AvatarCountOutputTypeSelectObjectSchema } from "./AvatarCountOutputTypeSelect.schema.ts";
 
 const makeSchema = () =>

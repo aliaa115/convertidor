@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { ListaLibroWhereInputObjectSchema as ListaLibroWhereInputObjectSchema } from "./ListaLibroWhereInput.schema.ts";
 
 const makeSchema = () =>
@@ -8,7 +7,5 @@ const makeSchema = () =>
 			where: z.lazy(() => ListaLibroWhereInputObjectSchema).optional(),
 		})
 		.strict();
-export const EstadoCountOutputTypeCountListaLibrosArgsObjectSchema =
-	makeSchema();
-export const EstadoCountOutputTypeCountListaLibrosArgsObjectZodSchema =
-	makeSchema();
+export const EstadoCountOutputTypeCountListaLibrosArgsObjectSchema = makeSchema();
+export const EstadoCountOutputTypeCountListaLibrosArgsObjectZodSchema = makeSchema();

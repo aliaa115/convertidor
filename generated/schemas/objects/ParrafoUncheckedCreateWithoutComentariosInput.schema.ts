@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { MarcadorUncheckedCreateNestedManyWithoutParrafoInputObjectSchema as MarcadorUncheckedCreateNestedManyWithoutParrafoInputObjectSchema } from "./MarcadorUncheckedCreateNestedManyWithoutParrafoInput.schema.ts";
 
 const makeSchema = () =>
@@ -12,15 +12,9 @@ const makeSchema = () =>
 			updatedAt: z.coerce.date().optional(),
 			capituloId: z.number().int(),
 			estadoId: z.number().int().optional(),
-			marcadores: z
-				.lazy(
-					() =>
-						MarcadorUncheckedCreateNestedManyWithoutParrafoInputObjectSchema,
-				)
-				.optional(),
+			marcadores: z.lazy(() => MarcadorUncheckedCreateNestedManyWithoutParrafoInputObjectSchema).optional(),
 		})
 		.strict();
 export const ParrafoUncheckedCreateWithoutComentariosInputObjectSchema: z.ZodType<Prisma.ParrafoUncheckedCreateWithoutComentariosInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.ParrafoUncheckedCreateWithoutComentariosInput>;
-export const ParrafoUncheckedCreateWithoutComentariosInputObjectZodSchema =
-	makeSchema();
+export const ParrafoUncheckedCreateWithoutComentariosInputObjectZodSchema = makeSchema();

@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { FavoritoScalarFieldEnumSchema } from "./enums/FavoritoScalarFieldEnum.schema.ts";
 import { FavoritoAvgAggregateInputObjectSchema as FavoritoAvgAggregateInputObjectSchema } from "./objects/FavoritoAvgAggregateInput.schema.ts";
 import { FavoritoCountAggregateInputObjectSchema as FavoritoCountAggregateInputObjectSchema } from "./objects/FavoritoCountAggregateInput.schema.ts";
@@ -13,19 +13,12 @@ import { FavoritoWhereInputObjectSchema as FavoritoWhereInputObjectSchema } from
 export const FavoritoGroupBySchema: z.ZodType<Prisma.FavoritoGroupByArgs> = z
 	.object({
 		where: FavoritoWhereInputObjectSchema.optional(),
-		orderBy: z
-			.union([
-				FavoritoOrderByWithAggregationInputObjectSchema,
-				FavoritoOrderByWithAggregationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([FavoritoOrderByWithAggregationInputObjectSchema, FavoritoOrderByWithAggregationInputObjectSchema.array()]).optional(),
 		having: FavoritoScalarWhereWithAggregatesInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
 		by: z.array(FavoritoScalarFieldEnumSchema),
-		_count: z
-			.union([z.literal(true), FavoritoCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), FavoritoCountAggregateInputObjectSchema]).optional(),
 		_min: FavoritoMinAggregateInputObjectSchema.optional(),
 		_max: FavoritoMaxAggregateInputObjectSchema.optional(),
 		_avg: FavoritoAvgAggregateInputObjectSchema.optional(),
@@ -36,19 +29,12 @@ export const FavoritoGroupBySchema: z.ZodType<Prisma.FavoritoGroupByArgs> = z
 export const FavoritoGroupByZodSchema = z
 	.object({
 		where: FavoritoWhereInputObjectSchema.optional(),
-		orderBy: z
-			.union([
-				FavoritoOrderByWithAggregationInputObjectSchema,
-				FavoritoOrderByWithAggregationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([FavoritoOrderByWithAggregationInputObjectSchema, FavoritoOrderByWithAggregationInputObjectSchema.array()]).optional(),
 		having: FavoritoScalarWhereWithAggregatesInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
 		by: z.array(FavoritoScalarFieldEnumSchema),
-		_count: z
-			.union([z.literal(true), FavoritoCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), FavoritoCountAggregateInputObjectSchema]).optional(),
 		_min: FavoritoMinAggregateInputObjectSchema.optional(),
 		_max: FavoritoMaxAggregateInputObjectSchema.optional(),
 		_avg: FavoritoAvgAggregateInputObjectSchema.optional(),

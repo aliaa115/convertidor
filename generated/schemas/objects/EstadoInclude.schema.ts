@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { CapituloFindManySchema as CapituloFindManySchema } from "../findManyCapitulo.schema.ts";
 import { CategoriaFindManySchema as CategoriaFindManySchema } from "../findManyCategoria.schema.ts";
 import { ComentarioFindManySchema as ComentarioFindManySchema } from "../findManyComentario.schema.ts";
@@ -25,74 +25,28 @@ import { EstadoCountOutputTypeArgsObjectSchema as EstadoCountOutputTypeArgsObjec
 const makeSchema = () =>
 	z
 		.object({
-			categorias: z
-				.union([z.boolean(), z.lazy(() => CategoriaFindManySchema)])
-				.optional(),
-			etiquetas: z
-				.union([z.boolean(), z.lazy(() => EtiquetaFindManySchema)])
-				.optional(),
-			tipos: z
-				.union([z.boolean(), z.lazy(() => TipoFindManySchema)])
-				.optional(),
-			usuarios: z
-				.union([z.boolean(), z.lazy(() => UsuarioFindManySchema)])
-				.optional(),
-			escritores: z
-				.union([z.boolean(), z.lazy(() => EscritorFindManySchema)])
-				.optional(),
-			configuraciones: z
-				.union([z.boolean(), z.lazy(() => ConfiguracionFindManySchema)])
-				.optional(),
-			idioma: z
-				.union([z.boolean(), z.lazy(() => IdiomaFindManySchema)])
-				.optional(),
-			libros: z
-				.union([z.boolean(), z.lazy(() => LibroFindManySchema)])
-				.optional(),
-			capitulos: z
-				.union([z.boolean(), z.lazy(() => CapituloFindManySchema)])
-				.optional(),
-			parrafos: z
-				.union([z.boolean(), z.lazy(() => ParrafoFindManySchema)])
-				.optional(),
-			comentarios: z
-				.union([z.boolean(), z.lazy(() => ComentarioFindManySchema)])
-				.optional(),
-			libroCategorias: z
-				.union([z.boolean(), z.lazy(() => LibroCategoriaFindManySchema)])
-				.optional(),
-			libroEtiquetas: z
-				.union([z.boolean(), z.lazy(() => LibroEtiquetaFindManySchema)])
-				.optional(),
-			favoritos: z
-				.union([z.boolean(), z.lazy(() => FavoritoFindManySchema)])
-				.optional(),
-			glosarios: z
-				.union([z.boolean(), z.lazy(() => GlosarioFindManySchema)])
-				.optional(),
-			notasAutor: z
-				.union([z.boolean(), z.lazy(() => NotaAutorFindManySchema)])
-				.optional(),
-			marcadores: z
-				.union([z.boolean(), z.lazy(() => MarcadorFindManySchema)])
-				.optional(),
-			listas: z
-				.union([z.boolean(), z.lazy(() => ListaFindManySchema)])
-				.optional(),
-			listaLibros: z
-				.union([z.boolean(), z.lazy(() => ListaLibroFindManySchema)])
-				.optional(),
-			seguirUsuarios: z
-				.union([z.boolean(), z.lazy(() => SeguirUsuarioFindManySchema)])
-				.optional(),
-			_count: z
-				.union([
-					z.boolean(),
-					z.lazy(() => EstadoCountOutputTypeArgsObjectSchema),
-				])
-				.optional(),
+			categorias: z.union([z.boolean(), z.lazy(() => CategoriaFindManySchema)]).optional(),
+			etiquetas: z.union([z.boolean(), z.lazy(() => EtiquetaFindManySchema)]).optional(),
+			tipos: z.union([z.boolean(), z.lazy(() => TipoFindManySchema)]).optional(),
+			usuarios: z.union([z.boolean(), z.lazy(() => UsuarioFindManySchema)]).optional(),
+			escritores: z.union([z.boolean(), z.lazy(() => EscritorFindManySchema)]).optional(),
+			configuraciones: z.union([z.boolean(), z.lazy(() => ConfiguracionFindManySchema)]).optional(),
+			idioma: z.union([z.boolean(), z.lazy(() => IdiomaFindManySchema)]).optional(),
+			libros: z.union([z.boolean(), z.lazy(() => LibroFindManySchema)]).optional(),
+			capitulos: z.union([z.boolean(), z.lazy(() => CapituloFindManySchema)]).optional(),
+			parrafos: z.union([z.boolean(), z.lazy(() => ParrafoFindManySchema)]).optional(),
+			comentarios: z.union([z.boolean(), z.lazy(() => ComentarioFindManySchema)]).optional(),
+			libroCategorias: z.union([z.boolean(), z.lazy(() => LibroCategoriaFindManySchema)]).optional(),
+			libroEtiquetas: z.union([z.boolean(), z.lazy(() => LibroEtiquetaFindManySchema)]).optional(),
+			favoritos: z.union([z.boolean(), z.lazy(() => FavoritoFindManySchema)]).optional(),
+			glosarios: z.union([z.boolean(), z.lazy(() => GlosarioFindManySchema)]).optional(),
+			notasAutor: z.union([z.boolean(), z.lazy(() => NotaAutorFindManySchema)]).optional(),
+			marcadores: z.union([z.boolean(), z.lazy(() => MarcadorFindManySchema)]).optional(),
+			listas: z.union([z.boolean(), z.lazy(() => ListaFindManySchema)]).optional(),
+			listaLibros: z.union([z.boolean(), z.lazy(() => ListaLibroFindManySchema)]).optional(),
+			seguirUsuarios: z.union([z.boolean(), z.lazy(() => SeguirUsuarioFindManySchema)]).optional(),
+			_count: z.union([z.boolean(), z.lazy(() => EstadoCountOutputTypeArgsObjectSchema)]).optional(),
 		})
 		.strict();
-export const EstadoIncludeObjectSchema: z.ZodType<Prisma.EstadoInclude> =
-	makeSchema() as unknown as z.ZodType<Prisma.EstadoInclude>;
+export const EstadoIncludeObjectSchema: z.ZodType<Prisma.EstadoInclude> = makeSchema() as unknown as z.ZodType<Prisma.EstadoInclude>;
 export const EstadoIncludeObjectZodSchema = makeSchema();

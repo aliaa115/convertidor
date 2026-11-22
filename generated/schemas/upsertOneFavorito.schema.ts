@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { FavoritoCreateInputObjectSchema as FavoritoCreateInputObjectSchema } from "./objects/FavoritoCreateInput.schema.ts";
 import { FavoritoIncludeObjectSchema as FavoritoIncludeObjectSchema } from "./objects/FavoritoInclude.schema.ts";
 import { FavoritoSelectObjectSchema as FavoritoSelectObjectSchema } from "./objects/FavoritoSelect.schema.ts";
@@ -13,14 +13,8 @@ export const FavoritoUpsertOneSchema: z.ZodType<Prisma.FavoritoUpsertArgs> = z
 		select: FavoritoSelectObjectSchema.optional(),
 		include: FavoritoIncludeObjectSchema.optional(),
 		where: FavoritoWhereUniqueInputObjectSchema,
-		create: z.union([
-			FavoritoCreateInputObjectSchema,
-			FavoritoUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			FavoritoUpdateInputObjectSchema,
-			FavoritoUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([FavoritoCreateInputObjectSchema, FavoritoUncheckedCreateInputObjectSchema]),
+		update: z.union([FavoritoUpdateInputObjectSchema, FavoritoUncheckedUpdateInputObjectSchema]),
 	})
 	.strict() as unknown as z.ZodType<Prisma.FavoritoUpsertArgs>;
 
@@ -29,13 +23,7 @@ export const FavoritoUpsertOneZodSchema = z
 		select: FavoritoSelectObjectSchema.optional(),
 		include: FavoritoIncludeObjectSchema.optional(),
 		where: FavoritoWhereUniqueInputObjectSchema,
-		create: z.union([
-			FavoritoCreateInputObjectSchema,
-			FavoritoUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			FavoritoUpdateInputObjectSchema,
-			FavoritoUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([FavoritoCreateInputObjectSchema, FavoritoUncheckedCreateInputObjectSchema]),
+		update: z.union([FavoritoUpdateInputObjectSchema, FavoritoUncheckedUpdateInputObjectSchema]),
 	})
 	.strict();

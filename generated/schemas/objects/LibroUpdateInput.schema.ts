@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { BoolFieldUpdateOperationsInputObjectSchema as BoolFieldUpdateOperationsInputObjectSchema } from "./BoolFieldUpdateOperationsInput.schema.ts";
 import { CapituloUpdateManyWithoutLibroNestedInputObjectSchema as CapituloUpdateManyWithoutLibroNestedInputObjectSchema } from "./CapituloUpdateManyWithoutLibroNestedInput.schema.ts";
 import { DateTimeFieldUpdateOperationsInputObjectSchema as DateTimeFieldUpdateOperationsInputObjectSchema } from "./DateTimeFieldUpdateOperationsInput.schema.ts";
@@ -19,84 +19,30 @@ import { TipoUpdateOneRequiredWithoutLibrosNestedInputObjectSchema as TipoUpdate
 const makeSchema = () =>
 	z
 		.object({
-			titulo: z
-				.union([
-					z.string(),
-					z.lazy(() => StringFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
-			resumen: z
-				.union([
-					z.string(),
-					z.lazy(() => StringFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
+			titulo: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputObjectSchema)]).optional(),
+			resumen: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputObjectSchema)]).optional(),
 			portada: z
-				.union([
-					z.string(),
-					z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema),
-				])
+				.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema)])
 				.optional()
 				.nullable(),
-			publicado: z
-				.union([
-					z.boolean(),
-					z.lazy(() => BoolFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
+			publicado: z.union([z.boolean(), z.lazy(() => BoolFieldUpdateOperationsInputObjectSchema)]).optional(),
 			fechaPublicacion: z
-				.union([
-					z.coerce.date(),
-					z.lazy(() => NullableDateTimeFieldUpdateOperationsInputObjectSchema),
-				])
+				.union([z.coerce.date(), z.lazy(() => NullableDateTimeFieldUpdateOperationsInputObjectSchema)])
 				.optional()
 				.nullable(),
-			createdAt: z
-				.union([
-					z.coerce.date(),
-					z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
-			updatedAt: z
-				.union([
-					z.coerce.date(),
-					z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
-			escritor: z
-				.lazy(
-					() => EscritorUpdateOneRequiredWithoutLibrosNestedInputObjectSchema,
-				)
-				.optional(),
-			tipo: z
-				.lazy(() => TipoUpdateOneRequiredWithoutLibrosNestedInputObjectSchema)
-				.optional(),
-			estado: z
-				.lazy(() => EstadoUpdateOneRequiredWithoutLibrosNestedInputObjectSchema)
-				.optional(),
-			idioma: z
-				.lazy(() => IdiomaUpdateOneRequiredWithoutLibrosNestedInputObjectSchema)
-				.optional(),
-			capitulos: z
-				.lazy(() => CapituloUpdateManyWithoutLibroNestedInputObjectSchema)
-				.optional(),
-			categorias: z
-				.lazy(() => LibroCategoriaUpdateManyWithoutLibroNestedInputObjectSchema)
-				.optional(),
-			etiquetas: z
-				.lazy(() => LibroEtiquetaUpdateManyWithoutLibroNestedInputObjectSchema)
-				.optional(),
-			favoritos: z
-				.lazy(() => FavoritoUpdateManyWithoutLibroNestedInputObjectSchema)
-				.optional(),
-			glosarios: z
-				.lazy(() => GlosarioUpdateManyWithoutLibroNestedInputObjectSchema)
-				.optional(),
-			listaLibros: z
-				.lazy(() => ListaLibroUpdateManyWithoutLibroNestedInputObjectSchema)
-				.optional(),
+			createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema)]).optional(),
+			updatedAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema)]).optional(),
+			escritor: z.lazy(() => EscritorUpdateOneRequiredWithoutLibrosNestedInputObjectSchema).optional(),
+			tipo: z.lazy(() => TipoUpdateOneRequiredWithoutLibrosNestedInputObjectSchema).optional(),
+			estado: z.lazy(() => EstadoUpdateOneRequiredWithoutLibrosNestedInputObjectSchema).optional(),
+			idioma: z.lazy(() => IdiomaUpdateOneRequiredWithoutLibrosNestedInputObjectSchema).optional(),
+			capitulos: z.lazy(() => CapituloUpdateManyWithoutLibroNestedInputObjectSchema).optional(),
+			categorias: z.lazy(() => LibroCategoriaUpdateManyWithoutLibroNestedInputObjectSchema).optional(),
+			etiquetas: z.lazy(() => LibroEtiquetaUpdateManyWithoutLibroNestedInputObjectSchema).optional(),
+			favoritos: z.lazy(() => FavoritoUpdateManyWithoutLibroNestedInputObjectSchema).optional(),
+			glosarios: z.lazy(() => GlosarioUpdateManyWithoutLibroNestedInputObjectSchema).optional(),
+			listaLibros: z.lazy(() => ListaLibroUpdateManyWithoutLibroNestedInputObjectSchema).optional(),
 		})
 		.strict();
-export const LibroUpdateInputObjectSchema: z.ZodType<Prisma.LibroUpdateInput> =
-	makeSchema() as unknown as z.ZodType<Prisma.LibroUpdateInput>;
+export const LibroUpdateInputObjectSchema: z.ZodType<Prisma.LibroUpdateInput> = makeSchema() as unknown as z.ZodType<Prisma.LibroUpdateInput>;
 export const LibroUpdateInputObjectZodSchema = makeSchema();

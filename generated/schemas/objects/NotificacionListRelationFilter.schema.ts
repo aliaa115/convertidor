@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { NotificacionWhereInputObjectSchema as NotificacionWhereInputObjectSchema } from "./NotificacionWhereInput.schema.ts";
 
 const makeSchema = () =>
@@ -10,6 +10,5 @@ const makeSchema = () =>
 			none: z.lazy(() => NotificacionWhereInputObjectSchema).optional(),
 		})
 		.strict();
-export const NotificacionListRelationFilterObjectSchema: z.ZodType<Prisma.NotificacionListRelationFilter> =
-	makeSchema() as unknown as z.ZodType<Prisma.NotificacionListRelationFilter>;
+export const NotificacionListRelationFilterObjectSchema: z.ZodType<Prisma.NotificacionListRelationFilter> = makeSchema() as unknown as z.ZodType<Prisma.NotificacionListRelationFilter>;
 export const NotificacionListRelationFilterObjectZodSchema = makeSchema();

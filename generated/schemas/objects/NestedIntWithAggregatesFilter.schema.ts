@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { NestedFloatFilterObjectSchema as NestedFloatFilterObjectSchema } from "./NestedFloatFilter.schema.ts";
 import { NestedIntFilterObjectSchema as NestedIntFilterObjectSchema } from "./NestedIntFilter.schema.ts";
 
@@ -12,12 +12,7 @@ const nestedintwithaggregatesfilterSchema = z
 		lte: z.number().int().optional(),
 		gt: z.number().int().optional(),
 		gte: z.number().int().optional(),
-		not: z
-			.union([
-				z.number().int(),
-				z.lazy(() => NestedIntWithAggregatesFilterObjectSchema),
-			])
-			.optional(),
+		not: z.union([z.number().int(), z.lazy(() => NestedIntWithAggregatesFilterObjectSchema)]).optional(),
 		_count: z.lazy(() => NestedIntFilterObjectSchema).optional(),
 		_avg: z.lazy(() => NestedFloatFilterObjectSchema).optional(),
 		_sum: z.lazy(() => NestedIntFilterObjectSchema).optional(),
@@ -27,5 +22,4 @@ const nestedintwithaggregatesfilterSchema = z
 	.strict();
 export const NestedIntWithAggregatesFilterObjectSchema: z.ZodType<Prisma.NestedIntWithAggregatesFilter> =
 	nestedintwithaggregatesfilterSchema as unknown as z.ZodType<Prisma.NestedIntWithAggregatesFilter>;
-export const NestedIntWithAggregatesFilterObjectZodSchema =
-	nestedintwithaggregatesfilterSchema;
+export const NestedIntWithAggregatesFilterObjectZodSchema = nestedintwithaggregatesfilterSchema;

@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { IdiomaAvgAggregateInputObjectSchema as IdiomaAvgAggregateInputObjectSchema } from "./objects/IdiomaAvgAggregateInput.schema.ts";
 import { IdiomaCountAggregateInputObjectSchema as IdiomaCountAggregateInputObjectSchema } from "./objects/IdiomaCountAggregateInput.schema.ts";
 import { IdiomaMaxAggregateInputObjectSchema as IdiomaMaxAggregateInputObjectSchema } from "./objects/IdiomaMaxAggregateInput.schema.ts";
@@ -11,19 +11,12 @@ import { IdiomaWhereUniqueInputObjectSchema as IdiomaWhereUniqueInputObjectSchem
 
 export const IdiomaAggregateSchema: z.ZodType<Prisma.IdiomaAggregateArgs> = z
 	.object({
-		orderBy: z
-			.union([
-				IdiomaOrderByWithRelationInputObjectSchema,
-				IdiomaOrderByWithRelationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([IdiomaOrderByWithRelationInputObjectSchema, IdiomaOrderByWithRelationInputObjectSchema.array()]).optional(),
 		where: IdiomaWhereInputObjectSchema.optional(),
 		cursor: IdiomaWhereUniqueInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
-		_count: z
-			.union([z.literal(true), IdiomaCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), IdiomaCountAggregateInputObjectSchema]).optional(),
 		_min: IdiomaMinAggregateInputObjectSchema.optional(),
 		_max: IdiomaMaxAggregateInputObjectSchema.optional(),
 		_avg: IdiomaAvgAggregateInputObjectSchema.optional(),
@@ -33,19 +26,12 @@ export const IdiomaAggregateSchema: z.ZodType<Prisma.IdiomaAggregateArgs> = z
 
 export const IdiomaAggregateZodSchema = z
 	.object({
-		orderBy: z
-			.union([
-				IdiomaOrderByWithRelationInputObjectSchema,
-				IdiomaOrderByWithRelationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([IdiomaOrderByWithRelationInputObjectSchema, IdiomaOrderByWithRelationInputObjectSchema.array()]).optional(),
 		where: IdiomaWhereInputObjectSchema.optional(),
 		cursor: IdiomaWhereUniqueInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
-		_count: z
-			.union([z.literal(true), IdiomaCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), IdiomaCountAggregateInputObjectSchema]).optional(),
 		_min: IdiomaMinAggregateInputObjectSchema.optional(),
 		_max: IdiomaMaxAggregateInputObjectSchema.optional(),
 		_avg: IdiomaAvgAggregateInputObjectSchema.optional(),

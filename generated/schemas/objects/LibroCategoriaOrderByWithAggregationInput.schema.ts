@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { SortOrderSchema } from "../enums/SortOrder.schema.ts";
 import { LibroCategoriaAvgOrderByAggregateInputObjectSchema as LibroCategoriaAvgOrderByAggregateInputObjectSchema } from "./LibroCategoriaAvgOrderByAggregateInput.schema.ts";
 import { LibroCategoriaCountOrderByAggregateInputObjectSchema as LibroCategoriaCountOrderByAggregateInputObjectSchema } from "./LibroCategoriaCountOrderByAggregateInput.schema.ts";
@@ -15,24 +15,13 @@ const makeSchema = () =>
 			createdAt: SortOrderSchema.optional(),
 			updatedAt: SortOrderSchema.optional(),
 			estadoId: SortOrderSchema.optional(),
-			_count: z
-				.lazy(() => LibroCategoriaCountOrderByAggregateInputObjectSchema)
-				.optional(),
-			_avg: z
-				.lazy(() => LibroCategoriaAvgOrderByAggregateInputObjectSchema)
-				.optional(),
-			_max: z
-				.lazy(() => LibroCategoriaMaxOrderByAggregateInputObjectSchema)
-				.optional(),
-			_min: z
-				.lazy(() => LibroCategoriaMinOrderByAggregateInputObjectSchema)
-				.optional(),
-			_sum: z
-				.lazy(() => LibroCategoriaSumOrderByAggregateInputObjectSchema)
-				.optional(),
+			_count: z.lazy(() => LibroCategoriaCountOrderByAggregateInputObjectSchema).optional(),
+			_avg: z.lazy(() => LibroCategoriaAvgOrderByAggregateInputObjectSchema).optional(),
+			_max: z.lazy(() => LibroCategoriaMaxOrderByAggregateInputObjectSchema).optional(),
+			_min: z.lazy(() => LibroCategoriaMinOrderByAggregateInputObjectSchema).optional(),
+			_sum: z.lazy(() => LibroCategoriaSumOrderByAggregateInputObjectSchema).optional(),
 		})
 		.strict();
 export const LibroCategoriaOrderByWithAggregationInputObjectSchema: z.ZodType<Prisma.LibroCategoriaOrderByWithAggregationInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.LibroCategoriaOrderByWithAggregationInput>;
-export const LibroCategoriaOrderByWithAggregationInputObjectZodSchema =
-	makeSchema();
+export const LibroCategoriaOrderByWithAggregationInputObjectZodSchema = makeSchema();

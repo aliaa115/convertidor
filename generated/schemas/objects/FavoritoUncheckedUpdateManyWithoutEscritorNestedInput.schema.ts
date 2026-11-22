@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { FavoritoCreateManyEscritorInputEnvelopeObjectSchema as FavoritoCreateManyEscritorInputEnvelopeObjectSchema } from "./FavoritoCreateManyEscritorInputEnvelope.schema.ts";
 import { FavoritoCreateOrConnectWithoutEscritorInputObjectSchema as FavoritoCreateOrConnectWithoutEscritorInputObjectSchema } from "./FavoritoCreateOrConnectWithoutEscritorInput.schema.ts";
 import { FavoritoCreateWithoutEscritorInputObjectSchema as FavoritoCreateWithoutEscritorInputObjectSchema } from "./FavoritoCreateWithoutEscritorInput.schema.ts";
@@ -18,93 +18,21 @@ const makeSchema = () =>
 					z.lazy(() => FavoritoCreateWithoutEscritorInputObjectSchema),
 					z.lazy(() => FavoritoCreateWithoutEscritorInputObjectSchema).array(),
 					z.lazy(() => FavoritoUncheckedCreateWithoutEscritorInputObjectSchema),
-					z
-						.lazy(() => FavoritoUncheckedCreateWithoutEscritorInputObjectSchema)
-						.array(),
+					z.lazy(() => FavoritoUncheckedCreateWithoutEscritorInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(() => FavoritoCreateOrConnectWithoutEscritorInputObjectSchema),
-					z
-						.lazy(() => FavoritoCreateOrConnectWithoutEscritorInputObjectSchema)
-						.array(),
-				])
-				.optional(),
-			upsert: z
-				.union([
-					z.lazy(
-						() => FavoritoUpsertWithWhereUniqueWithoutEscritorInputObjectSchema,
-					),
-					z
-						.lazy(
-							() =>
-								FavoritoUpsertWithWhereUniqueWithoutEscritorInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			createMany: z
-				.lazy(() => FavoritoCreateManyEscritorInputEnvelopeObjectSchema)
-				.optional(),
-			set: z
-				.union([
-					z.lazy(() => FavoritoWhereUniqueInputObjectSchema),
-					z.lazy(() => FavoritoWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			disconnect: z
-				.union([
-					z.lazy(() => FavoritoWhereUniqueInputObjectSchema),
-					z.lazy(() => FavoritoWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			delete: z
-				.union([
-					z.lazy(() => FavoritoWhereUniqueInputObjectSchema),
-					z.lazy(() => FavoritoWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => FavoritoWhereUniqueInputObjectSchema),
-					z.lazy(() => FavoritoWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			update: z
-				.union([
-					z.lazy(
-						() => FavoritoUpdateWithWhereUniqueWithoutEscritorInputObjectSchema,
-					),
-					z
-						.lazy(
-							() =>
-								FavoritoUpdateWithWhereUniqueWithoutEscritorInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			updateMany: z
-				.union([
-					z.lazy(
-						() => FavoritoUpdateManyWithWhereWithoutEscritorInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => FavoritoUpdateManyWithWhereWithoutEscritorInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			deleteMany: z
-				.union([
-					z.lazy(() => FavoritoScalarWhereInputObjectSchema),
-					z.lazy(() => FavoritoScalarWhereInputObjectSchema).array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => FavoritoCreateOrConnectWithoutEscritorInputObjectSchema), z.lazy(() => FavoritoCreateOrConnectWithoutEscritorInputObjectSchema).array()]).optional(),
+			upsert: z.union([z.lazy(() => FavoritoUpsertWithWhereUniqueWithoutEscritorInputObjectSchema), z.lazy(() => FavoritoUpsertWithWhereUniqueWithoutEscritorInputObjectSchema).array()]).optional(),
+			createMany: z.lazy(() => FavoritoCreateManyEscritorInputEnvelopeObjectSchema).optional(),
+			set: z.union([z.lazy(() => FavoritoWhereUniqueInputObjectSchema), z.lazy(() => FavoritoWhereUniqueInputObjectSchema).array()]).optional(),
+			disconnect: z.union([z.lazy(() => FavoritoWhereUniqueInputObjectSchema), z.lazy(() => FavoritoWhereUniqueInputObjectSchema).array()]).optional(),
+			delete: z.union([z.lazy(() => FavoritoWhereUniqueInputObjectSchema), z.lazy(() => FavoritoWhereUniqueInputObjectSchema).array()]).optional(),
+			connect: z.union([z.lazy(() => FavoritoWhereUniqueInputObjectSchema), z.lazy(() => FavoritoWhereUniqueInputObjectSchema).array()]).optional(),
+			update: z.union([z.lazy(() => FavoritoUpdateWithWhereUniqueWithoutEscritorInputObjectSchema), z.lazy(() => FavoritoUpdateWithWhereUniqueWithoutEscritorInputObjectSchema).array()]).optional(),
+			updateMany: z.union([z.lazy(() => FavoritoUpdateManyWithWhereWithoutEscritorInputObjectSchema), z.lazy(() => FavoritoUpdateManyWithWhereWithoutEscritorInputObjectSchema).array()]).optional(),
+			deleteMany: z.union([z.lazy(() => FavoritoScalarWhereInputObjectSchema), z.lazy(() => FavoritoScalarWhereInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const FavoritoUncheckedUpdateManyWithoutEscritorNestedInputObjectSchema: z.ZodType<Prisma.FavoritoUncheckedUpdateManyWithoutEscritorNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.FavoritoUncheckedUpdateManyWithoutEscritorNestedInput>;
-export const FavoritoUncheckedUpdateManyWithoutEscritorNestedInputObjectZodSchema =
-	makeSchema();
+export const FavoritoUncheckedUpdateManyWithoutEscritorNestedInputObjectZodSchema = makeSchema();

@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { EstadoIncludeObjectSchema as EstadoIncludeObjectSchema } from "./EstadoInclude.schema.ts";
 import { EstadoSelectObjectSchema as EstadoSelectObjectSchema } from "./EstadoSelect.schema.ts";
 

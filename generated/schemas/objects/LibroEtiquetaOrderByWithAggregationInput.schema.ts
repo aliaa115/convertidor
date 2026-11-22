@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { SortOrderSchema } from "../enums/SortOrder.schema.ts";
 import { LibroEtiquetaAvgOrderByAggregateInputObjectSchema as LibroEtiquetaAvgOrderByAggregateInputObjectSchema } from "./LibroEtiquetaAvgOrderByAggregateInput.schema.ts";
 import { LibroEtiquetaCountOrderByAggregateInputObjectSchema as LibroEtiquetaCountOrderByAggregateInputObjectSchema } from "./LibroEtiquetaCountOrderByAggregateInput.schema.ts";
@@ -15,24 +15,13 @@ const makeSchema = () =>
 			createdAt: SortOrderSchema.optional(),
 			updatedAt: SortOrderSchema.optional(),
 			estadoId: SortOrderSchema.optional(),
-			_count: z
-				.lazy(() => LibroEtiquetaCountOrderByAggregateInputObjectSchema)
-				.optional(),
-			_avg: z
-				.lazy(() => LibroEtiquetaAvgOrderByAggregateInputObjectSchema)
-				.optional(),
-			_max: z
-				.lazy(() => LibroEtiquetaMaxOrderByAggregateInputObjectSchema)
-				.optional(),
-			_min: z
-				.lazy(() => LibroEtiquetaMinOrderByAggregateInputObjectSchema)
-				.optional(),
-			_sum: z
-				.lazy(() => LibroEtiquetaSumOrderByAggregateInputObjectSchema)
-				.optional(),
+			_count: z.lazy(() => LibroEtiquetaCountOrderByAggregateInputObjectSchema).optional(),
+			_avg: z.lazy(() => LibroEtiquetaAvgOrderByAggregateInputObjectSchema).optional(),
+			_max: z.lazy(() => LibroEtiquetaMaxOrderByAggregateInputObjectSchema).optional(),
+			_min: z.lazy(() => LibroEtiquetaMinOrderByAggregateInputObjectSchema).optional(),
+			_sum: z.lazy(() => LibroEtiquetaSumOrderByAggregateInputObjectSchema).optional(),
 		})
 		.strict();
 export const LibroEtiquetaOrderByWithAggregationInputObjectSchema: z.ZodType<Prisma.LibroEtiquetaOrderByWithAggregationInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.LibroEtiquetaOrderByWithAggregationInput>;
-export const LibroEtiquetaOrderByWithAggregationInputObjectZodSchema =
-	makeSchema();
+export const LibroEtiquetaOrderByWithAggregationInputObjectZodSchema = makeSchema();

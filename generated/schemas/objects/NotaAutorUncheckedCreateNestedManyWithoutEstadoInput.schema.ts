@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { NotaAutorCreateManyEstadoInputEnvelopeObjectSchema as NotaAutorCreateManyEstadoInputEnvelopeObjectSchema } from "./NotaAutorCreateManyEstadoInputEnvelope.schema.ts";
 import { NotaAutorCreateOrConnectWithoutEstadoInputObjectSchema as NotaAutorCreateOrConnectWithoutEstadoInputObjectSchema } from "./NotaAutorCreateOrConnectWithoutEstadoInput.schema.ts";
 import { NotaAutorCreateWithoutEstadoInputObjectSchema as NotaAutorCreateWithoutEstadoInputObjectSchema } from "./NotaAutorCreateWithoutEstadoInput.schema.ts";
@@ -14,31 +14,14 @@ const makeSchema = () =>
 					z.lazy(() => NotaAutorCreateWithoutEstadoInputObjectSchema),
 					z.lazy(() => NotaAutorCreateWithoutEstadoInputObjectSchema).array(),
 					z.lazy(() => NotaAutorUncheckedCreateWithoutEstadoInputObjectSchema),
-					z
-						.lazy(() => NotaAutorUncheckedCreateWithoutEstadoInputObjectSchema)
-						.array(),
+					z.lazy(() => NotaAutorUncheckedCreateWithoutEstadoInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(() => NotaAutorCreateOrConnectWithoutEstadoInputObjectSchema),
-					z
-						.lazy(() => NotaAutorCreateOrConnectWithoutEstadoInputObjectSchema)
-						.array(),
-				])
-				.optional(),
-			createMany: z
-				.lazy(() => NotaAutorCreateManyEstadoInputEnvelopeObjectSchema)
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => NotaAutorWhereUniqueInputObjectSchema),
-					z.lazy(() => NotaAutorWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => NotaAutorCreateOrConnectWithoutEstadoInputObjectSchema), z.lazy(() => NotaAutorCreateOrConnectWithoutEstadoInputObjectSchema).array()]).optional(),
+			createMany: z.lazy(() => NotaAutorCreateManyEstadoInputEnvelopeObjectSchema).optional(),
+			connect: z.union([z.lazy(() => NotaAutorWhereUniqueInputObjectSchema), z.lazy(() => NotaAutorWhereUniqueInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const NotaAutorUncheckedCreateNestedManyWithoutEstadoInputObjectSchema: z.ZodType<Prisma.NotaAutorUncheckedCreateNestedManyWithoutEstadoInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.NotaAutorUncheckedCreateNestedManyWithoutEstadoInput>;
-export const NotaAutorUncheckedCreateNestedManyWithoutEstadoInputObjectZodSchema =
-	makeSchema();
+export const NotaAutorUncheckedCreateNestedManyWithoutEstadoInputObjectZodSchema = makeSchema();

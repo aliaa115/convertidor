@@ -9,12 +9,7 @@ import { getRecentBooks } from "@/modules/home/actions/get-recent-books.action";
 const Page = async () => {
 	const user = await getCurrentUser();
 
-	const [
-		popularBooks,
-		recentBooks,
-		followingUpdates,
-		personalizedPopularBooks,
-	] = await Promise.all([
+	const [popularBooks, recentBooks, followingUpdates, personalizedPopularBooks] = await Promise.all([
 		getPopularBooks(),
 		getRecentBooks(),
 		user ? getFollowingUpdates() : [],
@@ -30,13 +25,7 @@ const Page = async () => {
 			<div className="flex-1 overflow-hidden px-5 pt-[72px]">
 				<div className="px-5 py-6">
 					<h2 className="mb-4 text-xl font-semibold">Populares</h2>
-					{user
-						? personalizedPopularBooks.map((book) => (
-								<div key={book.id}>{book.titulo}</div>
-							))
-						: popularBooks.map((book) => (
-								<div key={book.id}>{book.titulo}</div>
-							))}
+					{user ? personalizedPopularBooks.map((book) => <div key={book.id}>{book.titulo}</div>) : popularBooks.map((book) => <div key={book.id}>{book.titulo}</div>)}
 				</div>
 
 				<div className="px-5 py-6">

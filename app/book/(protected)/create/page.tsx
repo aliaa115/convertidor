@@ -17,7 +17,10 @@ export default async function CreateBookPage() {
 
 	return (
 		<div className="mx-auto max-w-6xl p-6">
-			<CreateBookForm idiomas={idiomas} tipos={tipos} />
+			<CreateBookForm
+				idiomas={idiomas}
+				tipos={tipos}
+			/>
 		</div>
 	);
 }

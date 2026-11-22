@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { ListaCreateManyUsuarioInputEnvelopeObjectSchema as ListaCreateManyUsuarioInputEnvelopeObjectSchema } from "./ListaCreateManyUsuarioInputEnvelope.schema.ts";
 import { ListaCreateOrConnectWithoutUsuarioInputObjectSchema as ListaCreateOrConnectWithoutUsuarioInputObjectSchema } from "./ListaCreateOrConnectWithoutUsuarioInput.schema.ts";
 import { ListaCreateWithoutUsuarioInputObjectSchema as ListaCreateWithoutUsuarioInputObjectSchema } from "./ListaCreateWithoutUsuarioInput.schema.ts";
@@ -18,87 +18,21 @@ const makeSchema = () =>
 					z.lazy(() => ListaCreateWithoutUsuarioInputObjectSchema),
 					z.lazy(() => ListaCreateWithoutUsuarioInputObjectSchema).array(),
 					z.lazy(() => ListaUncheckedCreateWithoutUsuarioInputObjectSchema),
-					z
-						.lazy(() => ListaUncheckedCreateWithoutUsuarioInputObjectSchema)
-						.array(),
+					z.lazy(() => ListaUncheckedCreateWithoutUsuarioInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(() => ListaCreateOrConnectWithoutUsuarioInputObjectSchema),
-					z
-						.lazy(() => ListaCreateOrConnectWithoutUsuarioInputObjectSchema)
-						.array(),
-				])
-				.optional(),
-			upsert: z
-				.union([
-					z.lazy(
-						() => ListaUpsertWithWhereUniqueWithoutUsuarioInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => ListaUpsertWithWhereUniqueWithoutUsuarioInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			createMany: z
-				.lazy(() => ListaCreateManyUsuarioInputEnvelopeObjectSchema)
-				.optional(),
-			set: z
-				.union([
-					z.lazy(() => ListaWhereUniqueInputObjectSchema),
-					z.lazy(() => ListaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			disconnect: z
-				.union([
-					z.lazy(() => ListaWhereUniqueInputObjectSchema),
-					z.lazy(() => ListaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			delete: z
-				.union([
-					z.lazy(() => ListaWhereUniqueInputObjectSchema),
-					z.lazy(() => ListaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => ListaWhereUniqueInputObjectSchema),
-					z.lazy(() => ListaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			update: z
-				.union([
-					z.lazy(
-						() => ListaUpdateWithWhereUniqueWithoutUsuarioInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => ListaUpdateWithWhereUniqueWithoutUsuarioInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			updateMany: z
-				.union([
-					z.lazy(() => ListaUpdateManyWithWhereWithoutUsuarioInputObjectSchema),
-					z
-						.lazy(() => ListaUpdateManyWithWhereWithoutUsuarioInputObjectSchema)
-						.array(),
-				])
-				.optional(),
-			deleteMany: z
-				.union([
-					z.lazy(() => ListaScalarWhereInputObjectSchema),
-					z.lazy(() => ListaScalarWhereInputObjectSchema).array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => ListaCreateOrConnectWithoutUsuarioInputObjectSchema), z.lazy(() => ListaCreateOrConnectWithoutUsuarioInputObjectSchema).array()]).optional(),
+			upsert: z.union([z.lazy(() => ListaUpsertWithWhereUniqueWithoutUsuarioInputObjectSchema), z.lazy(() => ListaUpsertWithWhereUniqueWithoutUsuarioInputObjectSchema).array()]).optional(),
+			createMany: z.lazy(() => ListaCreateManyUsuarioInputEnvelopeObjectSchema).optional(),
+			set: z.union([z.lazy(() => ListaWhereUniqueInputObjectSchema), z.lazy(() => ListaWhereUniqueInputObjectSchema).array()]).optional(),
+			disconnect: z.union([z.lazy(() => ListaWhereUniqueInputObjectSchema), z.lazy(() => ListaWhereUniqueInputObjectSchema).array()]).optional(),
+			delete: z.union([z.lazy(() => ListaWhereUniqueInputObjectSchema), z.lazy(() => ListaWhereUniqueInputObjectSchema).array()]).optional(),
+			connect: z.union([z.lazy(() => ListaWhereUniqueInputObjectSchema), z.lazy(() => ListaWhereUniqueInputObjectSchema).array()]).optional(),
+			update: z.union([z.lazy(() => ListaUpdateWithWhereUniqueWithoutUsuarioInputObjectSchema), z.lazy(() => ListaUpdateWithWhereUniqueWithoutUsuarioInputObjectSchema).array()]).optional(),
+			updateMany: z.union([z.lazy(() => ListaUpdateManyWithWhereWithoutUsuarioInputObjectSchema), z.lazy(() => ListaUpdateManyWithWhereWithoutUsuarioInputObjectSchema).array()]).optional(),
+			deleteMany: z.union([z.lazy(() => ListaScalarWhereInputObjectSchema), z.lazy(() => ListaScalarWhereInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const ListaUncheckedUpdateManyWithoutUsuarioNestedInputObjectSchema: z.ZodType<Prisma.ListaUncheckedUpdateManyWithoutUsuarioNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.ListaUncheckedUpdateManyWithoutUsuarioNestedInput>;
-export const ListaUncheckedUpdateManyWithoutUsuarioNestedInputObjectZodSchema =
-	makeSchema();
+export const ListaUncheckedUpdateManyWithoutUsuarioNestedInputObjectZodSchema = makeSchema();

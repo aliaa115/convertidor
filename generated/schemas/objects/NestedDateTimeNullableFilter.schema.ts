@@ -1,17 +1,11 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 
 const nesteddatetimenullablefilterSchema = z
 	.object({
 		equals: z.date().optional().nullable(),
-		in: z
-			.union([z.date().array(), z.string().datetime().array()])
-			.optional()
-			.nullable(),
-		notIn: z
-			.union([z.date().array(), z.string().datetime().array()])
-			.optional()
-			.nullable(),
+		in: z.union([z.date().array(), z.string().datetime().array()]).optional().nullable(),
+		notIn: z.union([z.date().array(), z.string().datetime().array()]).optional().nullable(),
 		lt: z.date().optional(),
 		lte: z.date().optional(),
 		gt: z.date().optional(),
@@ -22,7 +16,5 @@ const nesteddatetimenullablefilterSchema = z
 			.nullable(),
 	})
 	.strict();
-export const NestedDateTimeNullableFilterObjectSchema: z.ZodType<Prisma.NestedDateTimeNullableFilter> =
-	nesteddatetimenullablefilterSchema as unknown as z.ZodType<Prisma.NestedDateTimeNullableFilter>;
-export const NestedDateTimeNullableFilterObjectZodSchema =
-	nesteddatetimenullablefilterSchema;
+export const NestedDateTimeNullableFilterObjectSchema: z.ZodType<Prisma.NestedDateTimeNullableFilter> = nesteddatetimenullablefilterSchema as unknown as z.ZodType<Prisma.NestedDateTimeNullableFilter>;
+export const NestedDateTimeNullableFilterObjectZodSchema = nesteddatetimenullablefilterSchema;

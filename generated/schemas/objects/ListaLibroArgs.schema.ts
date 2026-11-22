@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { ListaLibroIncludeObjectSchema as ListaLibroIncludeObjectSchema } from "./ListaLibroInclude.schema.ts";
 import { ListaLibroSelectObjectSchema as ListaLibroSelectObjectSchema } from "./ListaLibroSelect.schema.ts";
 

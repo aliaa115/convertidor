@@ -20,15 +20,12 @@ const notFound = () => {
 				/>
 			</div>
 			<div className="text-center z-10 bg-background/90 p-10 rounded-2xl">
-				<h1 className="text-2xl font-bold">
-					410 - No se encontro este escritor
-				</h1>
+				<h1 className="text-2xl font-bold">410 - No se encontro este escritor</h1>
 				<p>Parece que estas perdido...</p>
 				<p>Vuelve al inicio para seguir leyendo.</p>
 				<Link
 					href="/"
-					className="flex flex-nowrap group z-10 mt-5 p-5 rounded-4xl hover:bg-secondary/10 w-fit mx-auto"
-				>
+					className="flex flex-nowrap group z-10 mt-5 p-5 rounded-4xl hover:bg-secondary/10 w-fit mx-auto">
 					<ArrowLeftIcon className="group-hover:size-8 transition-all" />
 					<HomeIcon className="group-hover:size-8 transition-all" />
 				</Link>

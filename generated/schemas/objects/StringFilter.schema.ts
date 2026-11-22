@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { QueryModeSchema } from "../enums/QueryMode.schema.ts";
 import { NestedStringFilterObjectSchema as NestedStringFilterObjectSchema } from "./NestedStringFilter.schema.ts";
 
@@ -17,11 +17,8 @@ const makeSchema = () =>
 			startsWith: z.string().optional(),
 			endsWith: z.string().optional(),
 			mode: QueryModeSchema.optional(),
-			not: z
-				.union([z.string(), z.lazy(() => NestedStringFilterObjectSchema)])
-				.optional(),
+			not: z.union([z.string(), z.lazy(() => NestedStringFilterObjectSchema)]).optional(),
 		})
 		.strict();
-export const StringFilterObjectSchema: z.ZodType<Prisma.StringFilter> =
-	makeSchema() as unknown as z.ZodType<Prisma.StringFilter>;
+export const StringFilterObjectSchema: z.ZodType<Prisma.StringFilter> = makeSchema() as unknown as z.ZodType<Prisma.StringFilter>;
 export const StringFilterObjectZodSchema = makeSchema();

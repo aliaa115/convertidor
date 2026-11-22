@@ -12,14 +12,7 @@ export type CreateNotificationInput = {
 	entidadId?: number | null;
 };
 
-export async function createNotificationAction({
-	usuarioId,
-	titulo,
-	mensaje = null,
-	tipo = NotificacionTipo.SYSTEM,
-	entidadTipo = EntidadTipo.SYSTEM,
-	entidadId = null,
-}: CreateNotificationInput) {
+export async function createNotificationAction({ usuarioId, titulo, mensaje = null, tipo = NotificacionTipo.SYSTEM, entidadTipo = EntidadTipo.SYSTEM, entidadId = null }: CreateNotificationInput) {
 	try {
 		const notification = await prisma.notificacion.create({
 			data: {

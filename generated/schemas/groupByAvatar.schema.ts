@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { AvatarScalarFieldEnumSchema } from "./enums/AvatarScalarFieldEnum.schema.ts";
 import { AvatarAvgAggregateInputObjectSchema as AvatarAvgAggregateInputObjectSchema } from "./objects/AvatarAvgAggregateInput.schema.ts";
 import { AvatarCountAggregateInputObjectSchema as AvatarCountAggregateInputObjectSchema } from "./objects/AvatarCountAggregateInput.schema.ts";
@@ -13,19 +13,12 @@ import { AvatarWhereInputObjectSchema as AvatarWhereInputObjectSchema } from "./
 export const AvatarGroupBySchema: z.ZodType<Prisma.AvatarGroupByArgs> = z
 	.object({
 		where: AvatarWhereInputObjectSchema.optional(),
-		orderBy: z
-			.union([
-				AvatarOrderByWithAggregationInputObjectSchema,
-				AvatarOrderByWithAggregationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([AvatarOrderByWithAggregationInputObjectSchema, AvatarOrderByWithAggregationInputObjectSchema.array()]).optional(),
 		having: AvatarScalarWhereWithAggregatesInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
 		by: z.array(AvatarScalarFieldEnumSchema),
-		_count: z
-			.union([z.literal(true), AvatarCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), AvatarCountAggregateInputObjectSchema]).optional(),
 		_min: AvatarMinAggregateInputObjectSchema.optional(),
 		_max: AvatarMaxAggregateInputObjectSchema.optional(),
 		_avg: AvatarAvgAggregateInputObjectSchema.optional(),
@@ -36,19 +29,12 @@ export const AvatarGroupBySchema: z.ZodType<Prisma.AvatarGroupByArgs> = z
 export const AvatarGroupByZodSchema = z
 	.object({
 		where: AvatarWhereInputObjectSchema.optional(),
-		orderBy: z
-			.union([
-				AvatarOrderByWithAggregationInputObjectSchema,
-				AvatarOrderByWithAggregationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([AvatarOrderByWithAggregationInputObjectSchema, AvatarOrderByWithAggregationInputObjectSchema.array()]).optional(),
 		having: AvatarScalarWhereWithAggregatesInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
 		by: z.array(AvatarScalarFieldEnumSchema),
-		_count: z
-			.union([z.literal(true), AvatarCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), AvatarCountAggregateInputObjectSchema]).optional(),
 		_min: AvatarMinAggregateInputObjectSchema.optional(),
 		_max: AvatarMaxAggregateInputObjectSchema.optional(),
 		_avg: AvatarAvgAggregateInputObjectSchema.optional(),

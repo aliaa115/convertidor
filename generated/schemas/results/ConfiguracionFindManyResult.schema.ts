@@ -1,4 +1,7 @@
 import * as z from "zod";
+import { EstadoSchema } from "../models/Estado.schema.ts";
+import { TipoSchema } from "../models/Tipo.schema.ts";
+import { UsuarioSchema } from "../models/Usuario.schema.ts";
 export const ConfiguracionFindManyResultSchema = z.object({
 	data: z.array(
 		z.object({
@@ -7,11 +10,11 @@ export const ConfiguracionFindManyResultSchema = z.object({
 			createdAt: z.date(),
 			updatedAt: z.date(),
 			usuarioId: z.number().int().optional(),
-			usuario: z.unknown().optional(),
+			usuario: UsuarioSchema.optional(),
 			tipoId: z.number().int().optional(),
-			tipo: z.unknown().optional(),
+			tipo: TipoSchema.optional(),
 			estadoId: z.number().int(),
-			estado: z.unknown(),
+			estado: EstadoSchema.optional(),
 		}),
 	),
 	pagination: z.object({

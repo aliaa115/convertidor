@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { SortOrderSchema } from "../enums/SortOrder.schema.ts";
 import { ConfiguracionOrderByWithRelationInputObjectSchema as ConfiguracionOrderByWithRelationInputObjectSchema } from "./ConfiguracionOrderByWithRelationInput.schema.ts";
 import { EscritorOrderByWithRelationInputObjectSchema as EscritorOrderByWithRelationInputObjectSchema } from "./EscritorOrderByWithRelationInput.schema.ts";
@@ -18,23 +18,12 @@ const makeSchema = () =>
 			createdAt: SortOrderSchema.optional(),
 			updatedAt: SortOrderSchema.optional(),
 			estadoId: SortOrderSchema.optional(),
-			estado: z
-				.lazy(() => EstadoOrderByWithRelationInputObjectSchema)
-				.optional(),
-			configuracion: z
-				.lazy(() => ConfiguracionOrderByWithRelationInputObjectSchema)
-				.optional(),
-			escritor: z
-				.lazy(() => EscritorOrderByWithRelationInputObjectSchema)
-				.optional(),
-			listas: z
-				.lazy(() => ListaOrderByRelationAggregateInputObjectSchema)
-				.optional(),
-			notificacions: z
-				.lazy(() => NotificacionOrderByRelationAggregateInputObjectSchema)
-				.optional(),
+			estado: z.lazy(() => EstadoOrderByWithRelationInputObjectSchema).optional(),
+			configuracion: z.lazy(() => ConfiguracionOrderByWithRelationInputObjectSchema).optional(),
+			escritor: z.lazy(() => EscritorOrderByWithRelationInputObjectSchema).optional(),
+			listas: z.lazy(() => ListaOrderByRelationAggregateInputObjectSchema).optional(),
+			notificacions: z.lazy(() => NotificacionOrderByRelationAggregateInputObjectSchema).optional(),
 		})
 		.strict();
-export const UsuarioOrderByWithRelationInputObjectSchema: z.ZodType<Prisma.UsuarioOrderByWithRelationInput> =
-	makeSchema() as unknown as z.ZodType<Prisma.UsuarioOrderByWithRelationInput>;
+export const UsuarioOrderByWithRelationInputObjectSchema: z.ZodType<Prisma.UsuarioOrderByWithRelationInput> = makeSchema() as unknown as z.ZodType<Prisma.UsuarioOrderByWithRelationInput>;
 export const UsuarioOrderByWithRelationInputObjectZodSchema = makeSchema();

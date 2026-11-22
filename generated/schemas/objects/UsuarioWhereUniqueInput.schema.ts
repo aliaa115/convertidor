@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 
 const makeSchema = () =>
 	z
@@ -9,6 +9,5 @@ const makeSchema = () =>
 			email: z.string().optional(),
 		})
 		.strict();
-export const UsuarioWhereUniqueInputObjectSchema: z.ZodType<Prisma.UsuarioWhereUniqueInput> =
-	makeSchema() as unknown as z.ZodType<Prisma.UsuarioWhereUniqueInput>;
+export const UsuarioWhereUniqueInputObjectSchema: z.ZodType<Prisma.UsuarioWhereUniqueInput> = makeSchema() as unknown as z.ZodType<Prisma.UsuarioWhereUniqueInput>;
 export const UsuarioWhereUniqueInputObjectZodSchema = makeSchema();

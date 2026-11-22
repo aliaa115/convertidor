@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { SeguirUsuarioWhereInputObjectSchema as SeguirUsuarioWhereInputObjectSchema } from "./SeguirUsuarioWhereInput.schema.ts";
 
 const makeSchema = () =>
@@ -8,7 +7,5 @@ const makeSchema = () =>
 			where: z.lazy(() => SeguirUsuarioWhereInputObjectSchema).optional(),
 		})
 		.strict();
-export const EscritorCountOutputTypeCountSiguiendoArgsObjectSchema =
-	makeSchema();
-export const EscritorCountOutputTypeCountSiguiendoArgsObjectZodSchema =
-	makeSchema();
+export const EscritorCountOutputTypeCountSiguiendoArgsObjectSchema = makeSchema();
+export const EscritorCountOutputTypeCountSiguiendoArgsObjectZodSchema = makeSchema();

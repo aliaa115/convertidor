@@ -1,4 +1,6 @@
 import * as z from "zod";
+import { EstadoSchema } from "../models/Estado.schema.ts";
+import { LibroEtiquetaSchema } from "../models/LibroEtiqueta.schema.ts";
 export const EtiquetaDeleteResultSchema = z.nullable(
 	z.object({
 		id: z.number().int(),
@@ -6,7 +8,7 @@ export const EtiquetaDeleteResultSchema = z.nullable(
 		createdAt: z.date(),
 		updatedAt: z.date(),
 		estadoId: z.number().int(),
-		estado: z.unknown(),
-		libros: z.array(z.unknown()),
+		estado: EstadoSchema.optional(),
+		libros: z.array(LibroEtiquetaSchema).optional(),
 	}),
 );

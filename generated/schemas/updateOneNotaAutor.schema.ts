@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { NotaAutorIncludeObjectSchema as NotaAutorIncludeObjectSchema } from "./objects/NotaAutorInclude.schema.ts";
 import { NotaAutorSelectObjectSchema as NotaAutorSelectObjectSchema } from "./objects/NotaAutorSelect.schema.ts";
 import { NotaAutorUncheckedUpdateInputObjectSchema as NotaAutorUncheckedUpdateInputObjectSchema } from "./objects/NotaAutorUncheckedUpdateInput.schema.ts";
@@ -10,10 +10,7 @@ export const NotaAutorUpdateOneSchema: z.ZodType<Prisma.NotaAutorUpdateArgs> = z
 	.object({
 		select: NotaAutorSelectObjectSchema.optional(),
 		include: NotaAutorIncludeObjectSchema.optional(),
-		data: z.union([
-			NotaAutorUpdateInputObjectSchema,
-			NotaAutorUncheckedUpdateInputObjectSchema,
-		]),
+		data: z.union([NotaAutorUpdateInputObjectSchema, NotaAutorUncheckedUpdateInputObjectSchema]),
 		where: NotaAutorWhereUniqueInputObjectSchema,
 	})
 	.strict() as unknown as z.ZodType<Prisma.NotaAutorUpdateArgs>;
@@ -22,10 +19,7 @@ export const NotaAutorUpdateOneZodSchema = z
 	.object({
 		select: NotaAutorSelectObjectSchema.optional(),
 		include: NotaAutorIncludeObjectSchema.optional(),
-		data: z.union([
-			NotaAutorUpdateInputObjectSchema,
-			NotaAutorUncheckedUpdateInputObjectSchema,
-		]),
+		data: z.union([NotaAutorUpdateInputObjectSchema, NotaAutorUncheckedUpdateInputObjectSchema]),
 		where: NotaAutorWhereUniqueInputObjectSchema,
 	})
 	.strict();

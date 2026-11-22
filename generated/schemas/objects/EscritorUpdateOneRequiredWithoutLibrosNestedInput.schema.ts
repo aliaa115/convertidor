@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { EscritorCreateOrConnectWithoutLibrosInputObjectSchema as EscritorCreateOrConnectWithoutLibrosInputObjectSchema } from "./EscritorCreateOrConnectWithoutLibrosInput.schema.ts";
 import { EscritorCreateWithoutLibrosInputObjectSchema as EscritorCreateWithoutLibrosInputObjectSchema } from "./EscritorCreateWithoutLibrosInput.schema.ts";
 import { EscritorUncheckedCreateWithoutLibrosInputObjectSchema as EscritorUncheckedCreateWithoutLibrosInputObjectSchema } from "./EscritorUncheckedCreateWithoutLibrosInput.schema.ts";
@@ -12,24 +12,13 @@ import { EscritorWhereUniqueInputObjectSchema as EscritorWhereUniqueInputObjectS
 const makeSchema = () =>
 	z
 		.object({
-			create: z
-				.union([
-					z.lazy(() => EscritorCreateWithoutLibrosInputObjectSchema),
-					z.lazy(() => EscritorUncheckedCreateWithoutLibrosInputObjectSchema),
-				])
-				.optional(),
-			connectOrCreate: z
-				.lazy(() => EscritorCreateOrConnectWithoutLibrosInputObjectSchema)
-				.optional(),
-			upsert: z
-				.lazy(() => EscritorUpsertWithoutLibrosInputObjectSchema)
-				.optional(),
+			create: z.union([z.lazy(() => EscritorCreateWithoutLibrosInputObjectSchema), z.lazy(() => EscritorUncheckedCreateWithoutLibrosInputObjectSchema)]).optional(),
+			connectOrCreate: z.lazy(() => EscritorCreateOrConnectWithoutLibrosInputObjectSchema).optional(),
+			upsert: z.lazy(() => EscritorUpsertWithoutLibrosInputObjectSchema).optional(),
 			connect: z.lazy(() => EscritorWhereUniqueInputObjectSchema).optional(),
 			update: z
 				.union([
-					z.lazy(
-						() => EscritorUpdateToOneWithWhereWithoutLibrosInputObjectSchema,
-					),
+					z.lazy(() => EscritorUpdateToOneWithWhereWithoutLibrosInputObjectSchema),
 					z.lazy(() => EscritorUpdateWithoutLibrosInputObjectSchema),
 					z.lazy(() => EscritorUncheckedUpdateWithoutLibrosInputObjectSchema),
 				])
@@ -38,5 +27,4 @@ const makeSchema = () =>
 		.strict();
 export const EscritorUpdateOneRequiredWithoutLibrosNestedInputObjectSchema: z.ZodType<Prisma.EscritorUpdateOneRequiredWithoutLibrosNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.EscritorUpdateOneRequiredWithoutLibrosNestedInput>;
-export const EscritorUpdateOneRequiredWithoutLibrosNestedInputObjectZodSchema =
-	makeSchema();
+export const EscritorUpdateOneRequiredWithoutLibrosNestedInputObjectZodSchema = makeSchema();

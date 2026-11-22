@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { EstadoCreateOrConnectWithoutLibroEtiquetasInputObjectSchema as EstadoCreateOrConnectWithoutLibroEtiquetasInputObjectSchema } from "./EstadoCreateOrConnectWithoutLibroEtiquetasInput.schema.ts";
 import { EstadoCreateWithoutLibroEtiquetasInputObjectSchema as EstadoCreateWithoutLibroEtiquetasInputObjectSchema } from "./EstadoCreateWithoutLibroEtiquetasInput.schema.ts";
 import { EstadoUncheckedCreateWithoutLibroEtiquetasInputObjectSchema as EstadoUncheckedCreateWithoutLibroEtiquetasInputObjectSchema } from "./EstadoUncheckedCreateWithoutLibroEtiquetasInput.schema.ts";
@@ -12,36 +12,19 @@ import { EstadoWhereUniqueInputObjectSchema as EstadoWhereUniqueInputObjectSchem
 const makeSchema = () =>
 	z
 		.object({
-			create: z
-				.union([
-					z.lazy(() => EstadoCreateWithoutLibroEtiquetasInputObjectSchema),
-					z.lazy(
-						() => EstadoUncheckedCreateWithoutLibroEtiquetasInputObjectSchema,
-					),
-				])
-				.optional(),
-			connectOrCreate: z
-				.lazy(() => EstadoCreateOrConnectWithoutLibroEtiquetasInputObjectSchema)
-				.optional(),
-			upsert: z
-				.lazy(() => EstadoUpsertWithoutLibroEtiquetasInputObjectSchema)
-				.optional(),
+			create: z.union([z.lazy(() => EstadoCreateWithoutLibroEtiquetasInputObjectSchema), z.lazy(() => EstadoUncheckedCreateWithoutLibroEtiquetasInputObjectSchema)]).optional(),
+			connectOrCreate: z.lazy(() => EstadoCreateOrConnectWithoutLibroEtiquetasInputObjectSchema).optional(),
+			upsert: z.lazy(() => EstadoUpsertWithoutLibroEtiquetasInputObjectSchema).optional(),
 			connect: z.lazy(() => EstadoWhereUniqueInputObjectSchema).optional(),
 			update: z
 				.union([
-					z.lazy(
-						() =>
-							EstadoUpdateToOneWithWhereWithoutLibroEtiquetasInputObjectSchema,
-					),
+					z.lazy(() => EstadoUpdateToOneWithWhereWithoutLibroEtiquetasInputObjectSchema),
 					z.lazy(() => EstadoUpdateWithoutLibroEtiquetasInputObjectSchema),
-					z.lazy(
-						() => EstadoUncheckedUpdateWithoutLibroEtiquetasInputObjectSchema,
-					),
+					z.lazy(() => EstadoUncheckedUpdateWithoutLibroEtiquetasInputObjectSchema),
 				])
 				.optional(),
 		})
 		.strict();
 export const EstadoUpdateOneRequiredWithoutLibroEtiquetasNestedInputObjectSchema: z.ZodType<Prisma.EstadoUpdateOneRequiredWithoutLibroEtiquetasNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.EstadoUpdateOneRequiredWithoutLibroEtiquetasNestedInput>;
-export const EstadoUpdateOneRequiredWithoutLibroEtiquetasNestedInputObjectZodSchema =
-	makeSchema();
+export const EstadoUpdateOneRequiredWithoutLibroEtiquetasNestedInputObjectZodSchema = makeSchema();

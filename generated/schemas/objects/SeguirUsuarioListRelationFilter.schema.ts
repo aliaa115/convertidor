@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { SeguirUsuarioWhereInputObjectSchema as SeguirUsuarioWhereInputObjectSchema } from "./SeguirUsuarioWhereInput.schema.ts";
 
 const makeSchema = () =>
@@ -10,6 +10,5 @@ const makeSchema = () =>
 			none: z.lazy(() => SeguirUsuarioWhereInputObjectSchema).optional(),
 		})
 		.strict();
-export const SeguirUsuarioListRelationFilterObjectSchema: z.ZodType<Prisma.SeguirUsuarioListRelationFilter> =
-	makeSchema() as unknown as z.ZodType<Prisma.SeguirUsuarioListRelationFilter>;
+export const SeguirUsuarioListRelationFilterObjectSchema: z.ZodType<Prisma.SeguirUsuarioListRelationFilter> = makeSchema() as unknown as z.ZodType<Prisma.SeguirUsuarioListRelationFilter>;
 export const SeguirUsuarioListRelationFilterObjectZodSchema = makeSchema();

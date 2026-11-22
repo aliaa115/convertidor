@@ -8,12 +8,15 @@ export async function getPopularBooks() {
 
 		include: {
 			escritor: {
-				select: { id: true, alias: true },
+				select: {
+					id: true,
+					alias: true,
+				},
 			},
 
 			_count: { select: { favoritos: true } },
 		},
-		where: { estadoId: 1 },
+		where: { estadoId: 1, publicado: true },
 		orderBy: { favoritos: { _count: "desc" } },
 	});
 

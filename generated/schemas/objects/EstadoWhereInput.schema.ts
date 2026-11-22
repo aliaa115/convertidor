@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { CapituloListRelationFilterObjectSchema as CapituloListRelationFilterObjectSchema } from "./CapituloListRelationFilter.schema.ts";
 import { CategoriaListRelationFilterObjectSchema as CategoriaListRelationFilterObjectSchema } from "./CategoriaListRelationFilter.schema.ts";
 import { ComentarioListRelationFilterObjectSchema as ComentarioListRelationFilterObjectSchema } from "./ComentarioListRelationFilter.schema.ts";
@@ -27,28 +27,14 @@ import { UsuarioListRelationFilterObjectSchema as UsuarioListRelationFilterObjec
 
 const estadowhereinputSchema = z
 	.object({
-		AND: z
-			.union([
-				z.lazy(() => EstadoWhereInputObjectSchema),
-				z.lazy(() => EstadoWhereInputObjectSchema).array(),
-			])
-			.optional(),
+		AND: z.union([z.lazy(() => EstadoWhereInputObjectSchema), z.lazy(() => EstadoWhereInputObjectSchema).array()]).optional(),
 		OR: z
 			.lazy(() => EstadoWhereInputObjectSchema)
 			.array()
 			.optional(),
-		NOT: z
-			.union([
-				z.lazy(() => EstadoWhereInputObjectSchema),
-				z.lazy(() => EstadoWhereInputObjectSchema).array(),
-			])
-			.optional(),
-		id: z
-			.union([z.lazy(() => IntFilterObjectSchema), z.number().int()])
-			.optional(),
-		nombre: z
-			.union([z.lazy(() => StringFilterObjectSchema), z.string()])
-			.optional(),
+		NOT: z.union([z.lazy(() => EstadoWhereInputObjectSchema), z.lazy(() => EstadoWhereInputObjectSchema).array()]).optional(),
+		id: z.union([z.lazy(() => IntFilterObjectSchema), z.number().int()]).optional(),
+		nombre: z.union([z.lazy(() => StringFilterObjectSchema), z.string()]).optional(),
 		color: z
 			.union([z.lazy(() => StringNullableFilterObjectSchema), z.string()])
 			.optional()
@@ -57,50 +43,29 @@ const estadowhereinputSchema = z
 			.union([z.lazy(() => StringNullableFilterObjectSchema), z.string()])
 			.optional()
 			.nullable(),
-		createdAt: z
-			.union([z.lazy(() => DateTimeFilterObjectSchema), z.coerce.date()])
-			.optional(),
-		updatedAt: z
-			.union([z.lazy(() => DateTimeFilterObjectSchema), z.coerce.date()])
-			.optional(),
-		categorias: z
-			.lazy(() => CategoriaListRelationFilterObjectSchema)
-			.optional(),
+		createdAt: z.union([z.lazy(() => DateTimeFilterObjectSchema), z.coerce.date()]).optional(),
+		updatedAt: z.union([z.lazy(() => DateTimeFilterObjectSchema), z.coerce.date()]).optional(),
+		categorias: z.lazy(() => CategoriaListRelationFilterObjectSchema).optional(),
 		etiquetas: z.lazy(() => EtiquetaListRelationFilterObjectSchema).optional(),
 		tipos: z.lazy(() => TipoListRelationFilterObjectSchema).optional(),
 		usuarios: z.lazy(() => UsuarioListRelationFilterObjectSchema).optional(),
 		escritores: z.lazy(() => EscritorListRelationFilterObjectSchema).optional(),
-		configuraciones: z
-			.lazy(() => ConfiguracionListRelationFilterObjectSchema)
-			.optional(),
+		configuraciones: z.lazy(() => ConfiguracionListRelationFilterObjectSchema).optional(),
 		idioma: z.lazy(() => IdiomaListRelationFilterObjectSchema).optional(),
 		libros: z.lazy(() => LibroListRelationFilterObjectSchema).optional(),
 		capitulos: z.lazy(() => CapituloListRelationFilterObjectSchema).optional(),
 		parrafos: z.lazy(() => ParrafoListRelationFilterObjectSchema).optional(),
-		comentarios: z
-			.lazy(() => ComentarioListRelationFilterObjectSchema)
-			.optional(),
-		libroCategorias: z
-			.lazy(() => LibroCategoriaListRelationFilterObjectSchema)
-			.optional(),
-		libroEtiquetas: z
-			.lazy(() => LibroEtiquetaListRelationFilterObjectSchema)
-			.optional(),
+		comentarios: z.lazy(() => ComentarioListRelationFilterObjectSchema).optional(),
+		libroCategorias: z.lazy(() => LibroCategoriaListRelationFilterObjectSchema).optional(),
+		libroEtiquetas: z.lazy(() => LibroEtiquetaListRelationFilterObjectSchema).optional(),
 		favoritos: z.lazy(() => FavoritoListRelationFilterObjectSchema).optional(),
 		glosarios: z.lazy(() => GlosarioListRelationFilterObjectSchema).optional(),
-		notasAutor: z
-			.lazy(() => NotaAutorListRelationFilterObjectSchema)
-			.optional(),
+		notasAutor: z.lazy(() => NotaAutorListRelationFilterObjectSchema).optional(),
 		marcadores: z.lazy(() => MarcadorListRelationFilterObjectSchema).optional(),
 		listas: z.lazy(() => ListaListRelationFilterObjectSchema).optional(),
-		listaLibros: z
-			.lazy(() => ListaLibroListRelationFilterObjectSchema)
-			.optional(),
-		seguirUsuarios: z
-			.lazy(() => SeguirUsuarioListRelationFilterObjectSchema)
-			.optional(),
+		listaLibros: z.lazy(() => ListaLibroListRelationFilterObjectSchema).optional(),
+		seguirUsuarios: z.lazy(() => SeguirUsuarioListRelationFilterObjectSchema).optional(),
 	})
 	.strict();
-export const EstadoWhereInputObjectSchema: z.ZodType<Prisma.EstadoWhereInput> =
-	estadowhereinputSchema as unknown as z.ZodType<Prisma.EstadoWhereInput>;
+export const EstadoWhereInputObjectSchema: z.ZodType<Prisma.EstadoWhereInput> = estadowhereinputSchema as unknown as z.ZodType<Prisma.EstadoWhereInput>;
 export const EstadoWhereInputObjectZodSchema = estadowhereinputSchema;

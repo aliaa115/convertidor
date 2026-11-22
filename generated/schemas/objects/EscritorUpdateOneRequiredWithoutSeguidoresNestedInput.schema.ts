@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { EscritorCreateOrConnectWithoutSeguidoresInputObjectSchema as EscritorCreateOrConnectWithoutSeguidoresInputObjectSchema } from "./EscritorCreateOrConnectWithoutSeguidoresInput.schema.ts";
 import { EscritorCreateWithoutSeguidoresInputObjectSchema as EscritorCreateWithoutSeguidoresInputObjectSchema } from "./EscritorCreateWithoutSeguidoresInput.schema.ts";
 import { EscritorUncheckedCreateWithoutSeguidoresInputObjectSchema as EscritorUncheckedCreateWithoutSeguidoresInputObjectSchema } from "./EscritorUncheckedCreateWithoutSeguidoresInput.schema.ts";
@@ -12,36 +12,19 @@ import { EscritorWhereUniqueInputObjectSchema as EscritorWhereUniqueInputObjectS
 const makeSchema = () =>
 	z
 		.object({
-			create: z
-				.union([
-					z.lazy(() => EscritorCreateWithoutSeguidoresInputObjectSchema),
-					z.lazy(
-						() => EscritorUncheckedCreateWithoutSeguidoresInputObjectSchema,
-					),
-				])
-				.optional(),
-			connectOrCreate: z
-				.lazy(() => EscritorCreateOrConnectWithoutSeguidoresInputObjectSchema)
-				.optional(),
-			upsert: z
-				.lazy(() => EscritorUpsertWithoutSeguidoresInputObjectSchema)
-				.optional(),
+			create: z.union([z.lazy(() => EscritorCreateWithoutSeguidoresInputObjectSchema), z.lazy(() => EscritorUncheckedCreateWithoutSeguidoresInputObjectSchema)]).optional(),
+			connectOrCreate: z.lazy(() => EscritorCreateOrConnectWithoutSeguidoresInputObjectSchema).optional(),
+			upsert: z.lazy(() => EscritorUpsertWithoutSeguidoresInputObjectSchema).optional(),
 			connect: z.lazy(() => EscritorWhereUniqueInputObjectSchema).optional(),
 			update: z
 				.union([
-					z.lazy(
-						() =>
-							EscritorUpdateToOneWithWhereWithoutSeguidoresInputObjectSchema,
-					),
+					z.lazy(() => EscritorUpdateToOneWithWhereWithoutSeguidoresInputObjectSchema),
 					z.lazy(() => EscritorUpdateWithoutSeguidoresInputObjectSchema),
-					z.lazy(
-						() => EscritorUncheckedUpdateWithoutSeguidoresInputObjectSchema,
-					),
+					z.lazy(() => EscritorUncheckedUpdateWithoutSeguidoresInputObjectSchema),
 				])
 				.optional(),
 		})
 		.strict();
 export const EscritorUpdateOneRequiredWithoutSeguidoresNestedInputObjectSchema: z.ZodType<Prisma.EscritorUpdateOneRequiredWithoutSeguidoresNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.EscritorUpdateOneRequiredWithoutSeguidoresNestedInput>;
-export const EscritorUpdateOneRequiredWithoutSeguidoresNestedInputObjectZodSchema =
-	makeSchema();
+export const EscritorUpdateOneRequiredWithoutSeguidoresNestedInputObjectZodSchema = makeSchema();

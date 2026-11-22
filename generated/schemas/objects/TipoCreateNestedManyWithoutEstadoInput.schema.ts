@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { TipoCreateManyEstadoInputEnvelopeObjectSchema as TipoCreateManyEstadoInputEnvelopeObjectSchema } from "./TipoCreateManyEstadoInputEnvelope.schema.ts";
 import { TipoCreateOrConnectWithoutEstadoInputObjectSchema as TipoCreateOrConnectWithoutEstadoInputObjectSchema } from "./TipoCreateOrConnectWithoutEstadoInput.schema.ts";
 import { TipoCreateWithoutEstadoInputObjectSchema as TipoCreateWithoutEstadoInputObjectSchema } from "./TipoCreateWithoutEstadoInput.schema.ts";
@@ -14,31 +14,14 @@ const makeSchema = () =>
 					z.lazy(() => TipoCreateWithoutEstadoInputObjectSchema),
 					z.lazy(() => TipoCreateWithoutEstadoInputObjectSchema).array(),
 					z.lazy(() => TipoUncheckedCreateWithoutEstadoInputObjectSchema),
-					z
-						.lazy(() => TipoUncheckedCreateWithoutEstadoInputObjectSchema)
-						.array(),
+					z.lazy(() => TipoUncheckedCreateWithoutEstadoInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(() => TipoCreateOrConnectWithoutEstadoInputObjectSchema),
-					z
-						.lazy(() => TipoCreateOrConnectWithoutEstadoInputObjectSchema)
-						.array(),
-				])
-				.optional(),
-			createMany: z
-				.lazy(() => TipoCreateManyEstadoInputEnvelopeObjectSchema)
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => TipoWhereUniqueInputObjectSchema),
-					z.lazy(() => TipoWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => TipoCreateOrConnectWithoutEstadoInputObjectSchema), z.lazy(() => TipoCreateOrConnectWithoutEstadoInputObjectSchema).array()]).optional(),
+			createMany: z.lazy(() => TipoCreateManyEstadoInputEnvelopeObjectSchema).optional(),
+			connect: z.union([z.lazy(() => TipoWhereUniqueInputObjectSchema), z.lazy(() => TipoWhereUniqueInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const TipoCreateNestedManyWithoutEstadoInputObjectSchema: z.ZodType<Prisma.TipoCreateNestedManyWithoutEstadoInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.TipoCreateNestedManyWithoutEstadoInput>;
-export const TipoCreateNestedManyWithoutEstadoInputObjectZodSchema =
-	makeSchema();
+export const TipoCreateNestedManyWithoutEstadoInputObjectZodSchema = makeSchema();

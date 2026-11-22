@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { ComentarioUncheckedCreateNestedManyWithoutPadreInputObjectSchema as ComentarioUncheckedCreateNestedManyWithoutPadreInputObjectSchema } from "./ComentarioUncheckedCreateNestedManyWithoutPadreInput.schema.ts";
 
 const makeSchema = () =>
@@ -13,15 +13,9 @@ const makeSchema = () =>
 			comentarioPadreId: z.number().int().optional().nullable(),
 			tipoId: z.number().int().optional().nullable(),
 			estadoId: z.number().int().optional(),
-			respuestas: z
-				.lazy(
-					() =>
-						ComentarioUncheckedCreateNestedManyWithoutPadreInputObjectSchema,
-				)
-				.optional(),
+			respuestas: z.lazy(() => ComentarioUncheckedCreateNestedManyWithoutPadreInputObjectSchema).optional(),
 		})
 		.strict();
 export const ComentarioUncheckedCreateWithoutEscritorInputObjectSchema: z.ZodType<Prisma.ComentarioUncheckedCreateWithoutEscritorInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.ComentarioUncheckedCreateWithoutEscritorInput>;
-export const ComentarioUncheckedCreateWithoutEscritorInputObjectZodSchema =
-	makeSchema();
+export const ComentarioUncheckedCreateWithoutEscritorInputObjectZodSchema = makeSchema();

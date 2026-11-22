@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { EstadoCreateOrConnectWithoutLibrosInputObjectSchema as EstadoCreateOrConnectWithoutLibrosInputObjectSchema } from "./EstadoCreateOrConnectWithoutLibrosInput.schema.ts";
 import { EstadoCreateWithoutLibrosInputObjectSchema as EstadoCreateWithoutLibrosInputObjectSchema } from "./EstadoCreateWithoutLibrosInput.schema.ts";
 import { EstadoUncheckedCreateWithoutLibrosInputObjectSchema as EstadoUncheckedCreateWithoutLibrosInputObjectSchema } from "./EstadoUncheckedCreateWithoutLibrosInput.schema.ts";
@@ -12,24 +12,13 @@ import { EstadoWhereUniqueInputObjectSchema as EstadoWhereUniqueInputObjectSchem
 const makeSchema = () =>
 	z
 		.object({
-			create: z
-				.union([
-					z.lazy(() => EstadoCreateWithoutLibrosInputObjectSchema),
-					z.lazy(() => EstadoUncheckedCreateWithoutLibrosInputObjectSchema),
-				])
-				.optional(),
-			connectOrCreate: z
-				.lazy(() => EstadoCreateOrConnectWithoutLibrosInputObjectSchema)
-				.optional(),
-			upsert: z
-				.lazy(() => EstadoUpsertWithoutLibrosInputObjectSchema)
-				.optional(),
+			create: z.union([z.lazy(() => EstadoCreateWithoutLibrosInputObjectSchema), z.lazy(() => EstadoUncheckedCreateWithoutLibrosInputObjectSchema)]).optional(),
+			connectOrCreate: z.lazy(() => EstadoCreateOrConnectWithoutLibrosInputObjectSchema).optional(),
+			upsert: z.lazy(() => EstadoUpsertWithoutLibrosInputObjectSchema).optional(),
 			connect: z.lazy(() => EstadoWhereUniqueInputObjectSchema).optional(),
 			update: z
 				.union([
-					z.lazy(
-						() => EstadoUpdateToOneWithWhereWithoutLibrosInputObjectSchema,
-					),
+					z.lazy(() => EstadoUpdateToOneWithWhereWithoutLibrosInputObjectSchema),
 					z.lazy(() => EstadoUpdateWithoutLibrosInputObjectSchema),
 					z.lazy(() => EstadoUncheckedUpdateWithoutLibrosInputObjectSchema),
 				])
@@ -38,5 +27,4 @@ const makeSchema = () =>
 		.strict();
 export const EstadoUpdateOneRequiredWithoutLibrosNestedInputObjectSchema: z.ZodType<Prisma.EstadoUpdateOneRequiredWithoutLibrosNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.EstadoUpdateOneRequiredWithoutLibrosNestedInput>;
-export const EstadoUpdateOneRequiredWithoutLibrosNestedInputObjectZodSchema =
-	makeSchema();
+export const EstadoUpdateOneRequiredWithoutLibrosNestedInputObjectZodSchema = makeSchema();

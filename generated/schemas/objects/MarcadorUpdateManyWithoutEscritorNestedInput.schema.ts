@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { MarcadorCreateManyEscritorInputEnvelopeObjectSchema as MarcadorCreateManyEscritorInputEnvelopeObjectSchema } from "./MarcadorCreateManyEscritorInputEnvelope.schema.ts";
 import { MarcadorCreateOrConnectWithoutEscritorInputObjectSchema as MarcadorCreateOrConnectWithoutEscritorInputObjectSchema } from "./MarcadorCreateOrConnectWithoutEscritorInput.schema.ts";
 import { MarcadorCreateWithoutEscritorInputObjectSchema as MarcadorCreateWithoutEscritorInputObjectSchema } from "./MarcadorCreateWithoutEscritorInput.schema.ts";
@@ -18,93 +18,21 @@ const makeSchema = () =>
 					z.lazy(() => MarcadorCreateWithoutEscritorInputObjectSchema),
 					z.lazy(() => MarcadorCreateWithoutEscritorInputObjectSchema).array(),
 					z.lazy(() => MarcadorUncheckedCreateWithoutEscritorInputObjectSchema),
-					z
-						.lazy(() => MarcadorUncheckedCreateWithoutEscritorInputObjectSchema)
-						.array(),
+					z.lazy(() => MarcadorUncheckedCreateWithoutEscritorInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(() => MarcadorCreateOrConnectWithoutEscritorInputObjectSchema),
-					z
-						.lazy(() => MarcadorCreateOrConnectWithoutEscritorInputObjectSchema)
-						.array(),
-				])
-				.optional(),
-			upsert: z
-				.union([
-					z.lazy(
-						() => MarcadorUpsertWithWhereUniqueWithoutEscritorInputObjectSchema,
-					),
-					z
-						.lazy(
-							() =>
-								MarcadorUpsertWithWhereUniqueWithoutEscritorInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			createMany: z
-				.lazy(() => MarcadorCreateManyEscritorInputEnvelopeObjectSchema)
-				.optional(),
-			set: z
-				.union([
-					z.lazy(() => MarcadorWhereUniqueInputObjectSchema),
-					z.lazy(() => MarcadorWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			disconnect: z
-				.union([
-					z.lazy(() => MarcadorWhereUniqueInputObjectSchema),
-					z.lazy(() => MarcadorWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			delete: z
-				.union([
-					z.lazy(() => MarcadorWhereUniqueInputObjectSchema),
-					z.lazy(() => MarcadorWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => MarcadorWhereUniqueInputObjectSchema),
-					z.lazy(() => MarcadorWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			update: z
-				.union([
-					z.lazy(
-						() => MarcadorUpdateWithWhereUniqueWithoutEscritorInputObjectSchema,
-					),
-					z
-						.lazy(
-							() =>
-								MarcadorUpdateWithWhereUniqueWithoutEscritorInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			updateMany: z
-				.union([
-					z.lazy(
-						() => MarcadorUpdateManyWithWhereWithoutEscritorInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => MarcadorUpdateManyWithWhereWithoutEscritorInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			deleteMany: z
-				.union([
-					z.lazy(() => MarcadorScalarWhereInputObjectSchema),
-					z.lazy(() => MarcadorScalarWhereInputObjectSchema).array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => MarcadorCreateOrConnectWithoutEscritorInputObjectSchema), z.lazy(() => MarcadorCreateOrConnectWithoutEscritorInputObjectSchema).array()]).optional(),
+			upsert: z.union([z.lazy(() => MarcadorUpsertWithWhereUniqueWithoutEscritorInputObjectSchema), z.lazy(() => MarcadorUpsertWithWhereUniqueWithoutEscritorInputObjectSchema).array()]).optional(),
+			createMany: z.lazy(() => MarcadorCreateManyEscritorInputEnvelopeObjectSchema).optional(),
+			set: z.union([z.lazy(() => MarcadorWhereUniqueInputObjectSchema), z.lazy(() => MarcadorWhereUniqueInputObjectSchema).array()]).optional(),
+			disconnect: z.union([z.lazy(() => MarcadorWhereUniqueInputObjectSchema), z.lazy(() => MarcadorWhereUniqueInputObjectSchema).array()]).optional(),
+			delete: z.union([z.lazy(() => MarcadorWhereUniqueInputObjectSchema), z.lazy(() => MarcadorWhereUniqueInputObjectSchema).array()]).optional(),
+			connect: z.union([z.lazy(() => MarcadorWhereUniqueInputObjectSchema), z.lazy(() => MarcadorWhereUniqueInputObjectSchema).array()]).optional(),
+			update: z.union([z.lazy(() => MarcadorUpdateWithWhereUniqueWithoutEscritorInputObjectSchema), z.lazy(() => MarcadorUpdateWithWhereUniqueWithoutEscritorInputObjectSchema).array()]).optional(),
+			updateMany: z.union([z.lazy(() => MarcadorUpdateManyWithWhereWithoutEscritorInputObjectSchema), z.lazy(() => MarcadorUpdateManyWithWhereWithoutEscritorInputObjectSchema).array()]).optional(),
+			deleteMany: z.union([z.lazy(() => MarcadorScalarWhereInputObjectSchema), z.lazy(() => MarcadorScalarWhereInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const MarcadorUpdateManyWithoutEscritorNestedInputObjectSchema: z.ZodType<Prisma.MarcadorUpdateManyWithoutEscritorNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.MarcadorUpdateManyWithoutEscritorNestedInput>;
-export const MarcadorUpdateManyWithoutEscritorNestedInputObjectZodSchema =
-	makeSchema();
+export const MarcadorUpdateManyWithoutEscritorNestedInputObjectZodSchema = makeSchema();

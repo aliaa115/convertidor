@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { SortOrderSchema } from "../enums/SortOrder.schema.ts";
 import { EstadoAvgOrderByAggregateInputObjectSchema as EstadoAvgOrderByAggregateInputObjectSchema } from "./EstadoAvgOrderByAggregateInput.schema.ts";
 import { EstadoCountOrderByAggregateInputObjectSchema as EstadoCountOrderByAggregateInputObjectSchema } from "./EstadoCountOrderByAggregateInput.schema.ts";
@@ -13,23 +13,16 @@ const makeSchema = () =>
 		.object({
 			id: SortOrderSchema.optional(),
 			nombre: SortOrderSchema.optional(),
-			color: z
-				.union([SortOrderSchema, z.lazy(() => SortOrderInputObjectSchema)])
-				.optional(),
-			icon: z
-				.union([SortOrderSchema, z.lazy(() => SortOrderInputObjectSchema)])
-				.optional(),
+			color: z.union([SortOrderSchema, z.lazy(() => SortOrderInputObjectSchema)]).optional(),
+			icon: z.union([SortOrderSchema, z.lazy(() => SortOrderInputObjectSchema)]).optional(),
 			createdAt: SortOrderSchema.optional(),
 			updatedAt: SortOrderSchema.optional(),
-			_count: z
-				.lazy(() => EstadoCountOrderByAggregateInputObjectSchema)
-				.optional(),
+			_count: z.lazy(() => EstadoCountOrderByAggregateInputObjectSchema).optional(),
 			_avg: z.lazy(() => EstadoAvgOrderByAggregateInputObjectSchema).optional(),
 			_max: z.lazy(() => EstadoMaxOrderByAggregateInputObjectSchema).optional(),
 			_min: z.lazy(() => EstadoMinOrderByAggregateInputObjectSchema).optional(),
 			_sum: z.lazy(() => EstadoSumOrderByAggregateInputObjectSchema).optional(),
 		})
 		.strict();
-export const EstadoOrderByWithAggregationInputObjectSchema: z.ZodType<Prisma.EstadoOrderByWithAggregationInput> =
-	makeSchema() as unknown as z.ZodType<Prisma.EstadoOrderByWithAggregationInput>;
+export const EstadoOrderByWithAggregationInputObjectSchema: z.ZodType<Prisma.EstadoOrderByWithAggregationInput> = makeSchema() as unknown as z.ZodType<Prisma.EstadoOrderByWithAggregationInput>;
 export const EstadoOrderByWithAggregationInputObjectZodSchema = makeSchema();

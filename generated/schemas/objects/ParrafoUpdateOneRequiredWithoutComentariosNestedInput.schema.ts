@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { ParrafoCreateOrConnectWithoutComentariosInputObjectSchema as ParrafoCreateOrConnectWithoutComentariosInputObjectSchema } from "./ParrafoCreateOrConnectWithoutComentariosInput.schema.ts";
 import { ParrafoCreateWithoutComentariosInputObjectSchema as ParrafoCreateWithoutComentariosInputObjectSchema } from "./ParrafoCreateWithoutComentariosInput.schema.ts";
 import { ParrafoUncheckedCreateWithoutComentariosInputObjectSchema as ParrafoUncheckedCreateWithoutComentariosInputObjectSchema } from "./ParrafoUncheckedCreateWithoutComentariosInput.schema.ts";
@@ -12,36 +12,19 @@ import { ParrafoWhereUniqueInputObjectSchema as ParrafoWhereUniqueInputObjectSch
 const makeSchema = () =>
 	z
 		.object({
-			create: z
-				.union([
-					z.lazy(() => ParrafoCreateWithoutComentariosInputObjectSchema),
-					z.lazy(
-						() => ParrafoUncheckedCreateWithoutComentariosInputObjectSchema,
-					),
-				])
-				.optional(),
-			connectOrCreate: z
-				.lazy(() => ParrafoCreateOrConnectWithoutComentariosInputObjectSchema)
-				.optional(),
-			upsert: z
-				.lazy(() => ParrafoUpsertWithoutComentariosInputObjectSchema)
-				.optional(),
+			create: z.union([z.lazy(() => ParrafoCreateWithoutComentariosInputObjectSchema), z.lazy(() => ParrafoUncheckedCreateWithoutComentariosInputObjectSchema)]).optional(),
+			connectOrCreate: z.lazy(() => ParrafoCreateOrConnectWithoutComentariosInputObjectSchema).optional(),
+			upsert: z.lazy(() => ParrafoUpsertWithoutComentariosInputObjectSchema).optional(),
 			connect: z.lazy(() => ParrafoWhereUniqueInputObjectSchema).optional(),
 			update: z
 				.union([
-					z.lazy(
-						() =>
-							ParrafoUpdateToOneWithWhereWithoutComentariosInputObjectSchema,
-					),
+					z.lazy(() => ParrafoUpdateToOneWithWhereWithoutComentariosInputObjectSchema),
 					z.lazy(() => ParrafoUpdateWithoutComentariosInputObjectSchema),
-					z.lazy(
-						() => ParrafoUncheckedUpdateWithoutComentariosInputObjectSchema,
-					),
+					z.lazy(() => ParrafoUncheckedUpdateWithoutComentariosInputObjectSchema),
 				])
 				.optional(),
 		})
 		.strict();
 export const ParrafoUpdateOneRequiredWithoutComentariosNestedInputObjectSchema: z.ZodType<Prisma.ParrafoUpdateOneRequiredWithoutComentariosNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.ParrafoUpdateOneRequiredWithoutComentariosNestedInput>;
-export const ParrafoUpdateOneRequiredWithoutComentariosNestedInputObjectZodSchema =
-	makeSchema();
+export const ParrafoUpdateOneRequiredWithoutComentariosNestedInputObjectZodSchema = makeSchema();

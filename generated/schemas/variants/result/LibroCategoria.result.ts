@@ -13,6 +13,4 @@ export const LibroCategoriaResultSchema = z
 	})
 	.strict();
 
-export type LibroCategoriaResultType = z.infer<
-	typeof LibroCategoriaResultSchema
->;
+export type LibroCategoriaResultType = z.infer<typeof LibroCategoriaResultSchema>;

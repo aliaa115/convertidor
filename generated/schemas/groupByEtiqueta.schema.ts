@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { EtiquetaScalarFieldEnumSchema } from "./enums/EtiquetaScalarFieldEnum.schema.ts";
 import { EtiquetaAvgAggregateInputObjectSchema as EtiquetaAvgAggregateInputObjectSchema } from "./objects/EtiquetaAvgAggregateInput.schema.ts";
 import { EtiquetaCountAggregateInputObjectSchema as EtiquetaCountAggregateInputObjectSchema } from "./objects/EtiquetaCountAggregateInput.schema.ts";
@@ -13,19 +13,12 @@ import { EtiquetaWhereInputObjectSchema as EtiquetaWhereInputObjectSchema } from
 export const EtiquetaGroupBySchema: z.ZodType<Prisma.EtiquetaGroupByArgs> = z
 	.object({
 		where: EtiquetaWhereInputObjectSchema.optional(),
-		orderBy: z
-			.union([
-				EtiquetaOrderByWithAggregationInputObjectSchema,
-				EtiquetaOrderByWithAggregationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([EtiquetaOrderByWithAggregationInputObjectSchema, EtiquetaOrderByWithAggregationInputObjectSchema.array()]).optional(),
 		having: EtiquetaScalarWhereWithAggregatesInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
 		by: z.array(EtiquetaScalarFieldEnumSchema),
-		_count: z
-			.union([z.literal(true), EtiquetaCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), EtiquetaCountAggregateInputObjectSchema]).optional(),
 		_min: EtiquetaMinAggregateInputObjectSchema.optional(),
 		_max: EtiquetaMaxAggregateInputObjectSchema.optional(),
 		_avg: EtiquetaAvgAggregateInputObjectSchema.optional(),
@@ -36,19 +29,12 @@ export const EtiquetaGroupBySchema: z.ZodType<Prisma.EtiquetaGroupByArgs> = z
 export const EtiquetaGroupByZodSchema = z
 	.object({
 		where: EtiquetaWhereInputObjectSchema.optional(),
-		orderBy: z
-			.union([
-				EtiquetaOrderByWithAggregationInputObjectSchema,
-				EtiquetaOrderByWithAggregationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([EtiquetaOrderByWithAggregationInputObjectSchema, EtiquetaOrderByWithAggregationInputObjectSchema.array()]).optional(),
 		having: EtiquetaScalarWhereWithAggregatesInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
 		by: z.array(EtiquetaScalarFieldEnumSchema),
-		_count: z
-			.union([z.literal(true), EtiquetaCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), EtiquetaCountAggregateInputObjectSchema]).optional(),
 		_min: EtiquetaMinAggregateInputObjectSchema.optional(),
 		_max: EtiquetaMaxAggregateInputObjectSchema.optional(),
 		_avg: EtiquetaAvgAggregateInputObjectSchema.optional(),

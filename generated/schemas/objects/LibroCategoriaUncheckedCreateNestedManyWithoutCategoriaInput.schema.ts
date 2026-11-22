@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { LibroCategoriaCreateManyCategoriaInputEnvelopeObjectSchema as LibroCategoriaCreateManyCategoriaInputEnvelopeObjectSchema } from "./LibroCategoriaCreateManyCategoriaInputEnvelope.schema.ts";
 import { LibroCategoriaCreateOrConnectWithoutCategoriaInputObjectSchema as LibroCategoriaCreateOrConnectWithoutCategoriaInputObjectSchema } from "./LibroCategoriaCreateOrConnectWithoutCategoriaInput.schema.ts";
 import { LibroCategoriaCreateWithoutCategoriaInputObjectSchema as LibroCategoriaCreateWithoutCategoriaInputObjectSchema } from "./LibroCategoriaCreateWithoutCategoriaInput.schema.ts";
@@ -12,47 +12,18 @@ const makeSchema = () =>
 			create: z
 				.union([
 					z.lazy(() => LibroCategoriaCreateWithoutCategoriaInputObjectSchema),
-					z
-						.lazy(() => LibroCategoriaCreateWithoutCategoriaInputObjectSchema)
-						.array(),
-					z.lazy(
-						() =>
-							LibroCategoriaUncheckedCreateWithoutCategoriaInputObjectSchema,
-					),
-					z
-						.lazy(
-							() =>
-								LibroCategoriaUncheckedCreateWithoutCategoriaInputObjectSchema,
-						)
-						.array(),
+					z.lazy(() => LibroCategoriaCreateWithoutCategoriaInputObjectSchema).array(),
+					z.lazy(() => LibroCategoriaUncheckedCreateWithoutCategoriaInputObjectSchema),
+					z.lazy(() => LibroCategoriaUncheckedCreateWithoutCategoriaInputObjectSchema).array(),
 				])
 				.optional(),
 			connectOrCreate: z
-				.union([
-					z.lazy(
-						() =>
-							LibroCategoriaCreateOrConnectWithoutCategoriaInputObjectSchema,
-					),
-					z
-						.lazy(
-							() =>
-								LibroCategoriaCreateOrConnectWithoutCategoriaInputObjectSchema,
-						)
-						.array(),
-				])
+				.union([z.lazy(() => LibroCategoriaCreateOrConnectWithoutCategoriaInputObjectSchema), z.lazy(() => LibroCategoriaCreateOrConnectWithoutCategoriaInputObjectSchema).array()])
 				.optional(),
-			createMany: z
-				.lazy(() => LibroCategoriaCreateManyCategoriaInputEnvelopeObjectSchema)
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => LibroCategoriaWhereUniqueInputObjectSchema),
-					z.lazy(() => LibroCategoriaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
+			createMany: z.lazy(() => LibroCategoriaCreateManyCategoriaInputEnvelopeObjectSchema).optional(),
+			connect: z.union([z.lazy(() => LibroCategoriaWhereUniqueInputObjectSchema), z.lazy(() => LibroCategoriaWhereUniqueInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const LibroCategoriaUncheckedCreateNestedManyWithoutCategoriaInputObjectSchema: z.ZodType<Prisma.LibroCategoriaUncheckedCreateNestedManyWithoutCategoriaInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.LibroCategoriaUncheckedCreateNestedManyWithoutCategoriaInput>;
-export const LibroCategoriaUncheckedCreateNestedManyWithoutCategoriaInputObjectZodSchema =
-	makeSchema();
+export const LibroCategoriaUncheckedCreateNestedManyWithoutCategoriaInputObjectZodSchema = makeSchema();

@@ -5,12 +5,9 @@ export const changePaswordSchema = z.object({
 	confirmPassword: z.string().min(1, "Debes confirmar la contraseña"),
 });
 
-export const changePaswordFormSchema = changePaswordSchema.refine(
-	(data) => data.password === data.confirmPassword,
-	{
-		message: "Las contraseñas no coinciden",
-		path: ["confirmPassword"],
-	},
-);
+export const changePaswordFormSchema = changePaswordSchema.refine((data) => data.password === data.confirmPassword, {
+	message: "Las contraseñas no coinciden",
+	path: ["confirmPassword"],
+});
 
 export type ChangePaswordInput = z.infer<typeof changePaswordFormSchema>;

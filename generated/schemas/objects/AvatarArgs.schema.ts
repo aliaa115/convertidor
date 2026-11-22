@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { AvatarIncludeObjectSchema as AvatarIncludeObjectSchema } from "./AvatarInclude.schema.ts";
 import { AvatarSelectObjectSchema as AvatarSelectObjectSchema } from "./AvatarSelect.schema.ts";
 

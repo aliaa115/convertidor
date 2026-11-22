@@ -1,4 +1,7 @@
 import * as z from "zod";
+import { CapituloSchema } from "../models/Capitulo.schema.ts";
+import { EscritorSchema } from "../models/Escritor.schema.ts";
+import { EstadoSchema } from "../models/Estado.schema.ts";
 export const NotaAutorFindUniqueResultSchema = z.nullable(
 	z.object({
 		id: z.number().int(),
@@ -6,10 +9,10 @@ export const NotaAutorFindUniqueResultSchema = z.nullable(
 		createdAt: z.date(),
 		updatedAt: z.date(),
 		escritorId: z.number().int(),
-		escritor: z.unknown(),
+		escritor: EscritorSchema.optional(),
 		capituloId: z.number().int(),
-		capitulo: z.unknown(),
+		capitulo: CapituloSchema.optional(),
 		estadoId: z.number().int(),
-		estado: z.unknown(),
+		estado: EstadoSchema.optional(),
 	}),
 );

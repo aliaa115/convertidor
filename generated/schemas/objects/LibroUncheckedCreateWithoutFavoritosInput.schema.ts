@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { CapituloUncheckedCreateNestedManyWithoutLibroInputObjectSchema as CapituloUncheckedCreateNestedManyWithoutLibroInputObjectSchema } from "./CapituloUncheckedCreateNestedManyWithoutLibroInput.schema.ts";
 import { GlosarioUncheckedCreateNestedManyWithoutLibroInputObjectSchema as GlosarioUncheckedCreateNestedManyWithoutLibroInputObjectSchema } from "./GlosarioUncheckedCreateNestedManyWithoutLibroInput.schema.ts";
 import { LibroCategoriaUncheckedCreateNestedManyWithoutLibroInputObjectSchema as LibroCategoriaUncheckedCreateNestedManyWithoutLibroInputObjectSchema } from "./LibroCategoriaUncheckedCreateNestedManyWithoutLibroInput.schema.ts";
@@ -21,37 +21,13 @@ const makeSchema = () =>
 			tipoId: z.number().int(),
 			estadoId: z.number().int().optional(),
 			idiomaId: z.number().int().optional(),
-			capitulos: z
-				.lazy(
-					() => CapituloUncheckedCreateNestedManyWithoutLibroInputObjectSchema,
-				)
-				.optional(),
-			categorias: z
-				.lazy(
-					() =>
-						LibroCategoriaUncheckedCreateNestedManyWithoutLibroInputObjectSchema,
-				)
-				.optional(),
-			etiquetas: z
-				.lazy(
-					() =>
-						LibroEtiquetaUncheckedCreateNestedManyWithoutLibroInputObjectSchema,
-				)
-				.optional(),
-			glosarios: z
-				.lazy(
-					() => GlosarioUncheckedCreateNestedManyWithoutLibroInputObjectSchema,
-				)
-				.optional(),
-			listaLibros: z
-				.lazy(
-					() =>
-						ListaLibroUncheckedCreateNestedManyWithoutLibroInputObjectSchema,
-				)
-				.optional(),
+			capitulos: z.lazy(() => CapituloUncheckedCreateNestedManyWithoutLibroInputObjectSchema).optional(),
+			categorias: z.lazy(() => LibroCategoriaUncheckedCreateNestedManyWithoutLibroInputObjectSchema).optional(),
+			etiquetas: z.lazy(() => LibroEtiquetaUncheckedCreateNestedManyWithoutLibroInputObjectSchema).optional(),
+			glosarios: z.lazy(() => GlosarioUncheckedCreateNestedManyWithoutLibroInputObjectSchema).optional(),
+			listaLibros: z.lazy(() => ListaLibroUncheckedCreateNestedManyWithoutLibroInputObjectSchema).optional(),
 		})
 		.strict();
 export const LibroUncheckedCreateWithoutFavoritosInputObjectSchema: z.ZodType<Prisma.LibroUncheckedCreateWithoutFavoritosInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.LibroUncheckedCreateWithoutFavoritosInput>;
-export const LibroUncheckedCreateWithoutFavoritosInputObjectZodSchema =
-	makeSchema();
+export const LibroUncheckedCreateWithoutFavoritosInputObjectZodSchema = makeSchema();

@@ -1,12 +1,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 
-type _waveClasses =
-	| "text-primary"
-	| "text-background"
-	| "text-foreground"
-	| "text-destructive"
-	| "text-accent";
+type _waveClasses = "text-primary" | "text-background" | "text-foreground" | "text-destructive" | "text-accent";
 
 type LogoAnimatedProps = React.SVGProps<SVGSVGElement> & {
 	waves?: number;
@@ -55,13 +50,28 @@ export const LogoAnimated = ({
 			height={size}
 			style={style}
 			className={cn(waveColorClass, className)}
-			{...restProps}
-		>
+			{...restProps}>
 			<defs>
-				<radialGradient id={gradientId} cx="50%" cy="50%" r="50%">
-					<stop offset="0%" stopColor={waveColorProcessed} stopOpacity="1" />
-					<stop offset="80%" stopColor={waveColorProcessed} stopOpacity="0.2" />
-					<stop offset="100%" stopColor={waveColorProcessed} stopOpacity="0" />
+				<radialGradient
+					id={gradientId}
+					cx="50%"
+					cy="50%"
+					r="50%">
+					<stop
+						offset="0%"
+						stopColor={waveColorProcessed}
+						stopOpacity="1"
+					/>
+					<stop
+						offset="80%"
+						stopColor={waveColorProcessed}
+						stopOpacity="0.2"
+					/>
+					<stop
+						offset="100%"
+						stopColor={waveColorProcessed}
+						stopOpacity="0"
+					/>
 				</radialGradient>
 
 				<clipPath id={clipPathId}>
@@ -90,12 +100,19 @@ export const LogoAnimated = ({
 					}}
 				/>
 
-				<g clipPath={`url(#${clipPathId})`} fill={`url(#${gradientId})`}>
+				<g
+					clipPath={`url(#${clipPathId})`}
+					fill={`url(#${gradientId})`}>
 					{Array.from({ length: safeWaves }).map((_, index) => {
 						const begin = `${index * safeStagger}s`;
 
 						return (
-							<circle key={index} cx={centerX} cy={centerY} r="0" opacity="0">
+							<circle
+								key={index}
+								cx={centerX}
+								cy={centerY}
+								r="0"
+								opacity="0">
 								<animate
 									attributeName="r"
 									values={`${startRadius};${maxRadius}`}

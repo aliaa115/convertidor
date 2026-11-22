@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { EstadoCreateOrConnectWithoutEtiquetasInputObjectSchema as EstadoCreateOrConnectWithoutEtiquetasInputObjectSchema } from "./EstadoCreateOrConnectWithoutEtiquetasInput.schema.ts";
 import { EstadoCreateWithoutEtiquetasInputObjectSchema as EstadoCreateWithoutEtiquetasInputObjectSchema } from "./EstadoCreateWithoutEtiquetasInput.schema.ts";
 import { EstadoUncheckedCreateWithoutEtiquetasInputObjectSchema as EstadoUncheckedCreateWithoutEtiquetasInputObjectSchema } from "./EstadoUncheckedCreateWithoutEtiquetasInput.schema.ts";
@@ -8,19 +8,11 @@ import { EstadoWhereUniqueInputObjectSchema as EstadoWhereUniqueInputObjectSchem
 const makeSchema = () =>
 	z
 		.object({
-			create: z
-				.union([
-					z.lazy(() => EstadoCreateWithoutEtiquetasInputObjectSchema),
-					z.lazy(() => EstadoUncheckedCreateWithoutEtiquetasInputObjectSchema),
-				])
-				.optional(),
-			connectOrCreate: z
-				.lazy(() => EstadoCreateOrConnectWithoutEtiquetasInputObjectSchema)
-				.optional(),
+			create: z.union([z.lazy(() => EstadoCreateWithoutEtiquetasInputObjectSchema), z.lazy(() => EstadoUncheckedCreateWithoutEtiquetasInputObjectSchema)]).optional(),
+			connectOrCreate: z.lazy(() => EstadoCreateOrConnectWithoutEtiquetasInputObjectSchema).optional(),
 			connect: z.lazy(() => EstadoWhereUniqueInputObjectSchema).optional(),
 		})
 		.strict();
 export const EstadoCreateNestedOneWithoutEtiquetasInputObjectSchema: z.ZodType<Prisma.EstadoCreateNestedOneWithoutEtiquetasInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.EstadoCreateNestedOneWithoutEtiquetasInput>;
-export const EstadoCreateNestedOneWithoutEtiquetasInputObjectZodSchema =
-	makeSchema();
+export const EstadoCreateNestedOneWithoutEtiquetasInputObjectZodSchema = makeSchema();

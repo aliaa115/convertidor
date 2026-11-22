@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { MarcadorCreateInputObjectSchema as MarcadorCreateInputObjectSchema } from "./objects/MarcadorCreateInput.schema.ts";
 import { MarcadorIncludeObjectSchema as MarcadorIncludeObjectSchema } from "./objects/MarcadorInclude.schema.ts";
 import { MarcadorSelectObjectSchema as MarcadorSelectObjectSchema } from "./objects/MarcadorSelect.schema.ts";
@@ -13,14 +13,8 @@ export const MarcadorUpsertOneSchema: z.ZodType<Prisma.MarcadorUpsertArgs> = z
 		select: MarcadorSelectObjectSchema.optional(),
 		include: MarcadorIncludeObjectSchema.optional(),
 		where: MarcadorWhereUniqueInputObjectSchema,
-		create: z.union([
-			MarcadorCreateInputObjectSchema,
-			MarcadorUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			MarcadorUpdateInputObjectSchema,
-			MarcadorUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([MarcadorCreateInputObjectSchema, MarcadorUncheckedCreateInputObjectSchema]),
+		update: z.union([MarcadorUpdateInputObjectSchema, MarcadorUncheckedUpdateInputObjectSchema]),
 	})
 	.strict() as unknown as z.ZodType<Prisma.MarcadorUpsertArgs>;
 
@@ -29,13 +23,7 @@ export const MarcadorUpsertOneZodSchema = z
 		select: MarcadorSelectObjectSchema.optional(),
 		include: MarcadorIncludeObjectSchema.optional(),
 		where: MarcadorWhereUniqueInputObjectSchema,
-		create: z.union([
-			MarcadorCreateInputObjectSchema,
-			MarcadorUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			MarcadorUpdateInputObjectSchema,
-			MarcadorUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([MarcadorCreateInputObjectSchema, MarcadorUncheckedCreateInputObjectSchema]),
+		update: z.union([MarcadorUpdateInputObjectSchema, MarcadorUncheckedUpdateInputObjectSchema]),
 	})
 	.strict();

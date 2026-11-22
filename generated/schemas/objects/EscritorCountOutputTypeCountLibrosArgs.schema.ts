@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { LibroWhereInputObjectSchema as LibroWhereInputObjectSchema } from "./LibroWhereInput.schema.ts";
 
 const makeSchema = () =>
@@ -9,5 +8,4 @@ const makeSchema = () =>
 		})
 		.strict();
 export const EscritorCountOutputTypeCountLibrosArgsObjectSchema = makeSchema();
-export const EscritorCountOutputTypeCountLibrosArgsObjectZodSchema =
-	makeSchema();
+export const EscritorCountOutputTypeCountLibrosArgsObjectZodSchema = makeSchema();

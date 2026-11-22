@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { ComentarioCreateWithoutEstadoInputObjectSchema as ComentarioCreateWithoutEstadoInputObjectSchema } from "./ComentarioCreateWithoutEstadoInput.schema.ts";
 import { ComentarioUncheckedCreateWithoutEstadoInputObjectSchema as ComentarioUncheckedCreateWithoutEstadoInputObjectSchema } from "./ComentarioUncheckedCreateWithoutEstadoInput.schema.ts";
 import { ComentarioUncheckedUpdateWithoutEstadoInputObjectSchema as ComentarioUncheckedUpdateWithoutEstadoInputObjectSchema } from "./ComentarioUncheckedUpdateWithoutEstadoInput.schema.ts";
@@ -10,17 +10,10 @@ const makeSchema = () =>
 	z
 		.object({
 			where: z.lazy(() => ComentarioWhereUniqueInputObjectSchema),
-			update: z.union([
-				z.lazy(() => ComentarioUpdateWithoutEstadoInputObjectSchema),
-				z.lazy(() => ComentarioUncheckedUpdateWithoutEstadoInputObjectSchema),
-			]),
-			create: z.union([
-				z.lazy(() => ComentarioCreateWithoutEstadoInputObjectSchema),
-				z.lazy(() => ComentarioUncheckedCreateWithoutEstadoInputObjectSchema),
-			]),
+			update: z.union([z.lazy(() => ComentarioUpdateWithoutEstadoInputObjectSchema), z.lazy(() => ComentarioUncheckedUpdateWithoutEstadoInputObjectSchema)]),
+			create: z.union([z.lazy(() => ComentarioCreateWithoutEstadoInputObjectSchema), z.lazy(() => ComentarioUncheckedCreateWithoutEstadoInputObjectSchema)]),
 		})
 		.strict();
 export const ComentarioUpsertWithWhereUniqueWithoutEstadoInputObjectSchema: z.ZodType<Prisma.ComentarioUpsertWithWhereUniqueWithoutEstadoInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.ComentarioUpsertWithWhereUniqueWithoutEstadoInput>;
-export const ComentarioUpsertWithWhereUniqueWithoutEstadoInputObjectZodSchema =
-	makeSchema();
+export const ComentarioUpsertWithWhereUniqueWithoutEstadoInputObjectZodSchema = makeSchema();

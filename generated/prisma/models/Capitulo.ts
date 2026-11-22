@@ -15,8 +15,7 @@ import type * as Prisma from "../internal/prismaNamespace.ts";
  * Model Capitulo
  *
  */
-export type CapituloModel =
-	runtime.Types.Result.DefaultSelection<Prisma.$CapituloPayload>;
+export type CapituloModel = runtime.Types.Result.DefaultSelection<Prisma.$CapituloPayload>;
 
 export type AggregateCapitulo = {
 	_count: CapituloCountAggregateOutputType | null;
@@ -116,10 +115,7 @@ export type CapituloCountAggregateInputType = {
 	_all?: true;
 };
 
-export type CapituloAggregateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Capitulo to aggregate.
 	 */
@@ -129,9 +125,7 @@ export type CapituloAggregateArgs<
 	 *
 	 * Determine the order of Capitulos to fetch.
 	 */
-	orderBy?:
-		| Prisma.CapituloOrderByWithRelationInput
-		| Prisma.CapituloOrderByWithRelationInput[];
+	orderBy?: Prisma.CapituloOrderByWithRelationInput | Prisma.CapituloOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -190,14 +184,9 @@ export type GetCapituloAggregateType<T extends CapituloAggregateArgs> = {
 		: Prisma.GetScalarType<T[P], AggregateCapitulo[P]>;
 };
 
-export type CapituloGroupByArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.CapituloWhereInput;
-	orderBy?:
-		| Prisma.CapituloOrderByWithAggregationInput
-		| Prisma.CapituloOrderByWithAggregationInput[];
+	orderBy?: Prisma.CapituloOrderByWithAggregationInput | Prisma.CapituloOrderByWithAggregationInput[];
 	by: Prisma.CapituloScalarFieldEnum[] | Prisma.CapituloScalarFieldEnum;
 	having?: Prisma.CapituloScalarWhereWithAggregatesInput;
 	take?: number;
@@ -224,18 +213,17 @@ export type CapituloGroupByOutputType = {
 	_max: CapituloMaxAggregateOutputType | null;
 };
 
-export type GetCapituloGroupByPayload<T extends CapituloGroupByArgs> =
-	Prisma.PrismaPromise<
-		Array<
-			Prisma.PickEnumerable<CapituloGroupByOutputType, T["by"]> & {
-				[P in keyof T & keyof CapituloGroupByOutputType]: P extends "_count"
-					? T[P] extends boolean
-						? number
-						: Prisma.GetScalarType<T[P], CapituloGroupByOutputType[P]>
-					: Prisma.GetScalarType<T[P], CapituloGroupByOutputType[P]>;
-			}
-		>
-	>;
+export type GetCapituloGroupByPayload<T extends CapituloGroupByArgs> = Prisma.PrismaPromise<
+	Array<
+		Prisma.PickEnumerable<CapituloGroupByOutputType, T["by"]> & {
+			[P in keyof T & keyof CapituloGroupByOutputType]: P extends "_count"
+				? T[P] extends boolean
+					? number
+					: Prisma.GetScalarType<T[P], CapituloGroupByOutputType[P]>
+				: Prisma.GetScalarType<T[P], CapituloGroupByOutputType[P]>;
+		}
+	>
+>;
 
 export type CapituloWhereInput = {
 	AND?: Prisma.CapituloWhereInput | Prisma.CapituloWhereInput[];
@@ -249,10 +237,7 @@ export type CapituloWhereInput = {
 	libroId?: Prisma.IntFilter<"Capitulo"> | number;
 	estadoId?: Prisma.IntFilter<"Capitulo"> | number;
 	libro?: Prisma.XOR<Prisma.LibroScalarRelationFilter, Prisma.LibroWhereInput>;
-	estado?: Prisma.XOR<
-		Prisma.EstadoScalarRelationFilter,
-		Prisma.EstadoWhereInput
-	>;
+	estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 	parrafos?: Prisma.ParrafoListRelationFilter;
 	notasAutor?: Prisma.NotaAutorListRelationFilter;
 };
@@ -283,14 +268,8 @@ export type CapituloWhereUniqueInput = Prisma.AtLeast<
 		updatedAt?: Prisma.DateTimeFilter<"Capitulo"> | Date | string;
 		libroId?: Prisma.IntFilter<"Capitulo"> | number;
 		estadoId?: Prisma.IntFilter<"Capitulo"> | number;
-		libro?: Prisma.XOR<
-			Prisma.LibroScalarRelationFilter,
-			Prisma.LibroWhereInput
-		>;
-		estado?: Prisma.XOR<
-			Prisma.EstadoScalarRelationFilter,
-			Prisma.EstadoWhereInput
-		>;
+		libro?: Prisma.XOR<Prisma.LibroScalarRelationFilter, Prisma.LibroWhereInput>;
+		estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 		parrafos?: Prisma.ParrafoListRelationFilter;
 		notasAutor?: Prisma.NotaAutorListRelationFilter;
 	},
@@ -313,18 +292,11 @@ export type CapituloOrderByWithAggregationInput = {
 };
 
 export type CapituloScalarWhereWithAggregatesInput = {
-	AND?:
-		| Prisma.CapituloScalarWhereWithAggregatesInput
-		| Prisma.CapituloScalarWhereWithAggregatesInput[];
+	AND?: Prisma.CapituloScalarWhereWithAggregatesInput | Prisma.CapituloScalarWhereWithAggregatesInput[];
 	OR?: Prisma.CapituloScalarWhereWithAggregatesInput[];
-	NOT?:
-		| Prisma.CapituloScalarWhereWithAggregatesInput
-		| Prisma.CapituloScalarWhereWithAggregatesInput[];
+	NOT?: Prisma.CapituloScalarWhereWithAggregatesInput | Prisma.CapituloScalarWhereWithAggregatesInput[];
 	id?: Prisma.IntWithAggregatesFilter<"Capitulo"> | number;
-	nombre?:
-		| Prisma.StringNullableWithAggregatesFilter<"Capitulo">
-		| string
-		| null;
+	nombre?: Prisma.StringNullableWithAggregatesFilter<"Capitulo"> | string | null;
 	indice?: Prisma.IntNullableWithAggregatesFilter<"Capitulo"> | number | null;
 	createdAt?: Prisma.DateTimeWithAggregatesFilter<"Capitulo"> | Date | string;
 	updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Capitulo"> | Date | string;
@@ -466,242 +438,138 @@ export type CapituloScalarRelationFilter = {
 
 export type CapituloCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.CapituloCreateWithoutEstadoInput,
-				Prisma.CapituloUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.CapituloCreateWithoutEstadoInput, Prisma.CapituloUncheckedCreateWithoutEstadoInput>
 		| Prisma.CapituloCreateWithoutEstadoInput[]
 		| Prisma.CapituloUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.CapituloCreateOrConnectWithoutEstadoInput
-		| Prisma.CapituloCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.CapituloCreateOrConnectWithoutEstadoInput | Prisma.CapituloCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.CapituloCreateManyEstadoInputEnvelope;
 	connect?: Prisma.CapituloWhereUniqueInput | Prisma.CapituloWhereUniqueInput[];
 };
 
 export type CapituloUncheckedCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.CapituloCreateWithoutEstadoInput,
-				Prisma.CapituloUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.CapituloCreateWithoutEstadoInput, Prisma.CapituloUncheckedCreateWithoutEstadoInput>
 		| Prisma.CapituloCreateWithoutEstadoInput[]
 		| Prisma.CapituloUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.CapituloCreateOrConnectWithoutEstadoInput
-		| Prisma.CapituloCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.CapituloCreateOrConnectWithoutEstadoInput | Prisma.CapituloCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.CapituloCreateManyEstadoInputEnvelope;
 	connect?: Prisma.CapituloWhereUniqueInput | Prisma.CapituloWhereUniqueInput[];
 };
 
 export type CapituloUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.CapituloCreateWithoutEstadoInput,
-				Prisma.CapituloUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.CapituloCreateWithoutEstadoInput, Prisma.CapituloUncheckedCreateWithoutEstadoInput>
 		| Prisma.CapituloCreateWithoutEstadoInput[]
 		| Prisma.CapituloUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.CapituloCreateOrConnectWithoutEstadoInput
-		| Prisma.CapituloCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.CapituloUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.CapituloUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.CapituloCreateOrConnectWithoutEstadoInput | Prisma.CapituloCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.CapituloUpsertWithWhereUniqueWithoutEstadoInput | Prisma.CapituloUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.CapituloCreateManyEstadoInputEnvelope;
 	set?: Prisma.CapituloWhereUniqueInput | Prisma.CapituloWhereUniqueInput[];
-	disconnect?:
-		| Prisma.CapituloWhereUniqueInput
-		| Prisma.CapituloWhereUniqueInput[];
+	disconnect?: Prisma.CapituloWhereUniqueInput | Prisma.CapituloWhereUniqueInput[];
 	delete?: Prisma.CapituloWhereUniqueInput | Prisma.CapituloWhereUniqueInput[];
 	connect?: Prisma.CapituloWhereUniqueInput | Prisma.CapituloWhereUniqueInput[];
-	update?:
-		| Prisma.CapituloUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.CapituloUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.CapituloUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.CapituloUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.CapituloScalarWhereInput
-		| Prisma.CapituloScalarWhereInput[];
+	update?: Prisma.CapituloUpdateWithWhereUniqueWithoutEstadoInput | Prisma.CapituloUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.CapituloUpdateManyWithWhereWithoutEstadoInput | Prisma.CapituloUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.CapituloScalarWhereInput | Prisma.CapituloScalarWhereInput[];
 };
 
 export type CapituloUncheckedUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.CapituloCreateWithoutEstadoInput,
-				Prisma.CapituloUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.CapituloCreateWithoutEstadoInput, Prisma.CapituloUncheckedCreateWithoutEstadoInput>
 		| Prisma.CapituloCreateWithoutEstadoInput[]
 		| Prisma.CapituloUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.CapituloCreateOrConnectWithoutEstadoInput
-		| Prisma.CapituloCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.CapituloUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.CapituloUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.CapituloCreateOrConnectWithoutEstadoInput | Prisma.CapituloCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.CapituloUpsertWithWhereUniqueWithoutEstadoInput | Prisma.CapituloUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.CapituloCreateManyEstadoInputEnvelope;
 	set?: Prisma.CapituloWhereUniqueInput | Prisma.CapituloWhereUniqueInput[];
-	disconnect?:
-		| Prisma.CapituloWhereUniqueInput
-		| Prisma.CapituloWhereUniqueInput[];
+	disconnect?: Prisma.CapituloWhereUniqueInput | Prisma.CapituloWhereUniqueInput[];
 	delete?: Prisma.CapituloWhereUniqueInput | Prisma.CapituloWhereUniqueInput[];
 	connect?: Prisma.CapituloWhereUniqueInput | Prisma.CapituloWhereUniqueInput[];
-	update?:
-		| Prisma.CapituloUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.CapituloUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.CapituloUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.CapituloUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.CapituloScalarWhereInput
-		| Prisma.CapituloScalarWhereInput[];
+	update?: Prisma.CapituloUpdateWithWhereUniqueWithoutEstadoInput | Prisma.CapituloUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.CapituloUpdateManyWithWhereWithoutEstadoInput | Prisma.CapituloUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.CapituloScalarWhereInput | Prisma.CapituloScalarWhereInput[];
 };
 
 export type CapituloCreateNestedManyWithoutLibroInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.CapituloCreateWithoutLibroInput,
-				Prisma.CapituloUncheckedCreateWithoutLibroInput
-		  >
+		| Prisma.XOR<Prisma.CapituloCreateWithoutLibroInput, Prisma.CapituloUncheckedCreateWithoutLibroInput>
 		| Prisma.CapituloCreateWithoutLibroInput[]
 		| Prisma.CapituloUncheckedCreateWithoutLibroInput[];
-	connectOrCreate?:
-		| Prisma.CapituloCreateOrConnectWithoutLibroInput
-		| Prisma.CapituloCreateOrConnectWithoutLibroInput[];
+	connectOrCreate?: Prisma.CapituloCreateOrConnectWithoutLibroInput | Prisma.CapituloCreateOrConnectWithoutLibroInput[];
 	createMany?: Prisma.CapituloCreateManyLibroInputEnvelope;
 	connect?: Prisma.CapituloWhereUniqueInput | Prisma.CapituloWhereUniqueInput[];
 };
 
 export type CapituloUncheckedCreateNestedManyWithoutLibroInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.CapituloCreateWithoutLibroInput,
-				Prisma.CapituloUncheckedCreateWithoutLibroInput
-		  >
+		| Prisma.XOR<Prisma.CapituloCreateWithoutLibroInput, Prisma.CapituloUncheckedCreateWithoutLibroInput>
 		| Prisma.CapituloCreateWithoutLibroInput[]
 		| Prisma.CapituloUncheckedCreateWithoutLibroInput[];
-	connectOrCreate?:
-		| Prisma.CapituloCreateOrConnectWithoutLibroInput
-		| Prisma.CapituloCreateOrConnectWithoutLibroInput[];
+	connectOrCreate?: Prisma.CapituloCreateOrConnectWithoutLibroInput | Prisma.CapituloCreateOrConnectWithoutLibroInput[];
 	createMany?: Prisma.CapituloCreateManyLibroInputEnvelope;
 	connect?: Prisma.CapituloWhereUniqueInput | Prisma.CapituloWhereUniqueInput[];
 };
 
 export type CapituloUpdateManyWithoutLibroNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.CapituloCreateWithoutLibroInput,
-				Prisma.CapituloUncheckedCreateWithoutLibroInput
-		  >
+		| Prisma.XOR<Prisma.CapituloCreateWithoutLibroInput, Prisma.CapituloUncheckedCreateWithoutLibroInput>
 		| Prisma.CapituloCreateWithoutLibroInput[]
 		| Prisma.CapituloUncheckedCreateWithoutLibroInput[];
-	connectOrCreate?:
-		| Prisma.CapituloCreateOrConnectWithoutLibroInput
-		| Prisma.CapituloCreateOrConnectWithoutLibroInput[];
-	upsert?:
-		| Prisma.CapituloUpsertWithWhereUniqueWithoutLibroInput
-		| Prisma.CapituloUpsertWithWhereUniqueWithoutLibroInput[];
+	connectOrCreate?: Prisma.CapituloCreateOrConnectWithoutLibroInput | Prisma.CapituloCreateOrConnectWithoutLibroInput[];
+	upsert?: Prisma.CapituloUpsertWithWhereUniqueWithoutLibroInput | Prisma.CapituloUpsertWithWhereUniqueWithoutLibroInput[];
 	createMany?: Prisma.CapituloCreateManyLibroInputEnvelope;
 	set?: Prisma.CapituloWhereUniqueInput | Prisma.CapituloWhereUniqueInput[];
-	disconnect?:
-		| Prisma.CapituloWhereUniqueInput
-		| Prisma.CapituloWhereUniqueInput[];
+	disconnect?: Prisma.CapituloWhereUniqueInput | Prisma.CapituloWhereUniqueInput[];
 	delete?: Prisma.CapituloWhereUniqueInput | Prisma.CapituloWhereUniqueInput[];
 	connect?: Prisma.CapituloWhereUniqueInput | Prisma.CapituloWhereUniqueInput[];
-	update?:
-		| Prisma.CapituloUpdateWithWhereUniqueWithoutLibroInput
-		| Prisma.CapituloUpdateWithWhereUniqueWithoutLibroInput[];
-	updateMany?:
-		| Prisma.CapituloUpdateManyWithWhereWithoutLibroInput
-		| Prisma.CapituloUpdateManyWithWhereWithoutLibroInput[];
-	deleteMany?:
-		| Prisma.CapituloScalarWhereInput
-		| Prisma.CapituloScalarWhereInput[];
+	update?: Prisma.CapituloUpdateWithWhereUniqueWithoutLibroInput | Prisma.CapituloUpdateWithWhereUniqueWithoutLibroInput[];
+	updateMany?: Prisma.CapituloUpdateManyWithWhereWithoutLibroInput | Prisma.CapituloUpdateManyWithWhereWithoutLibroInput[];
+	deleteMany?: Prisma.CapituloScalarWhereInput | Prisma.CapituloScalarWhereInput[];
 };
 
 export type CapituloUncheckedUpdateManyWithoutLibroNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.CapituloCreateWithoutLibroInput,
-				Prisma.CapituloUncheckedCreateWithoutLibroInput
-		  >
+		| Prisma.XOR<Prisma.CapituloCreateWithoutLibroInput, Prisma.CapituloUncheckedCreateWithoutLibroInput>
 		| Prisma.CapituloCreateWithoutLibroInput[]
 		| Prisma.CapituloUncheckedCreateWithoutLibroInput[];
-	connectOrCreate?:
-		| Prisma.CapituloCreateOrConnectWithoutLibroInput
-		| Prisma.CapituloCreateOrConnectWithoutLibroInput[];
-	upsert?:
-		| Prisma.CapituloUpsertWithWhereUniqueWithoutLibroInput
-		| Prisma.CapituloUpsertWithWhereUniqueWithoutLibroInput[];
+	connectOrCreate?: Prisma.CapituloCreateOrConnectWithoutLibroInput | Prisma.CapituloCreateOrConnectWithoutLibroInput[];
+	upsert?: Prisma.CapituloUpsertWithWhereUniqueWithoutLibroInput | Prisma.CapituloUpsertWithWhereUniqueWithoutLibroInput[];
 	createMany?: Prisma.CapituloCreateManyLibroInputEnvelope;
 	set?: Prisma.CapituloWhereUniqueInput | Prisma.CapituloWhereUniqueInput[];
-	disconnect?:
-		| Prisma.CapituloWhereUniqueInput
-		| Prisma.CapituloWhereUniqueInput[];
+	disconnect?: Prisma.CapituloWhereUniqueInput | Prisma.CapituloWhereUniqueInput[];
 	delete?: Prisma.CapituloWhereUniqueInput | Prisma.CapituloWhereUniqueInput[];
 	connect?: Prisma.CapituloWhereUniqueInput | Prisma.CapituloWhereUniqueInput[];
-	update?:
-		| Prisma.CapituloUpdateWithWhereUniqueWithoutLibroInput
-		| Prisma.CapituloUpdateWithWhereUniqueWithoutLibroInput[];
-	updateMany?:
-		| Prisma.CapituloUpdateManyWithWhereWithoutLibroInput
-		| Prisma.CapituloUpdateManyWithWhereWithoutLibroInput[];
-	deleteMany?:
-		| Prisma.CapituloScalarWhereInput
-		| Prisma.CapituloScalarWhereInput[];
+	update?: Prisma.CapituloUpdateWithWhereUniqueWithoutLibroInput | Prisma.CapituloUpdateWithWhereUniqueWithoutLibroInput[];
+	updateMany?: Prisma.CapituloUpdateManyWithWhereWithoutLibroInput | Prisma.CapituloUpdateManyWithWhereWithoutLibroInput[];
+	deleteMany?: Prisma.CapituloScalarWhereInput | Prisma.CapituloScalarWhereInput[];
 };
 
 export type CapituloCreateNestedOneWithoutParrafosInput = {
-	create?: Prisma.XOR<
-		Prisma.CapituloCreateWithoutParrafosInput,
-		Prisma.CapituloUncheckedCreateWithoutParrafosInput
-	>;
+	create?: Prisma.XOR<Prisma.CapituloCreateWithoutParrafosInput, Prisma.CapituloUncheckedCreateWithoutParrafosInput>;
 	connectOrCreate?: Prisma.CapituloCreateOrConnectWithoutParrafosInput;
 	connect?: Prisma.CapituloWhereUniqueInput;
 };
 
 export type CapituloUpdateOneRequiredWithoutParrafosNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.CapituloCreateWithoutParrafosInput,
-		Prisma.CapituloUncheckedCreateWithoutParrafosInput
-	>;
+	create?: Prisma.XOR<Prisma.CapituloCreateWithoutParrafosInput, Prisma.CapituloUncheckedCreateWithoutParrafosInput>;
 	connectOrCreate?: Prisma.CapituloCreateOrConnectWithoutParrafosInput;
 	upsert?: Prisma.CapituloUpsertWithoutParrafosInput;
 	connect?: Prisma.CapituloWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.CapituloUpdateToOneWithWhereWithoutParrafosInput,
-			Prisma.CapituloUpdateWithoutParrafosInput
-		>,
-		Prisma.CapituloUncheckedUpdateWithoutParrafosInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.CapituloUpdateToOneWithWhereWithoutParrafosInput, Prisma.CapituloUpdateWithoutParrafosInput>, Prisma.CapituloUncheckedUpdateWithoutParrafosInput>;
 };
 
 export type CapituloCreateNestedOneWithoutNotasAutorInput = {
-	create?: Prisma.XOR<
-		Prisma.CapituloCreateWithoutNotasAutorInput,
-		Prisma.CapituloUncheckedCreateWithoutNotasAutorInput
-	>;
+	create?: Prisma.XOR<Prisma.CapituloCreateWithoutNotasAutorInput, Prisma.CapituloUncheckedCreateWithoutNotasAutorInput>;
 	connectOrCreate?: Prisma.CapituloCreateOrConnectWithoutNotasAutorInput;
 	connect?: Prisma.CapituloWhereUniqueInput;
 };
 
 export type CapituloUpdateOneRequiredWithoutNotasAutorNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.CapituloCreateWithoutNotasAutorInput,
-		Prisma.CapituloUncheckedCreateWithoutNotasAutorInput
-	>;
+	create?: Prisma.XOR<Prisma.CapituloCreateWithoutNotasAutorInput, Prisma.CapituloUncheckedCreateWithoutNotasAutorInput>;
 	connectOrCreate?: Prisma.CapituloCreateOrConnectWithoutNotasAutorInput;
 	upsert?: Prisma.CapituloUpsertWithoutNotasAutorInput;
 	connect?: Prisma.CapituloWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.CapituloUpdateToOneWithWhereWithoutNotasAutorInput,
-			Prisma.CapituloUpdateWithoutNotasAutorInput
-		>,
-		Prisma.CapituloUncheckedUpdateWithoutNotasAutorInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.CapituloUpdateToOneWithWhereWithoutNotasAutorInput, Prisma.CapituloUpdateWithoutNotasAutorInput>, Prisma.CapituloUncheckedUpdateWithoutNotasAutorInput>;
 };
 
 export type CapituloCreateWithoutEstadoInput = {
@@ -727,45 +595,28 @@ export type CapituloUncheckedCreateWithoutEstadoInput = {
 
 export type CapituloCreateOrConnectWithoutEstadoInput = {
 	where: Prisma.CapituloWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.CapituloCreateWithoutEstadoInput,
-		Prisma.CapituloUncheckedCreateWithoutEstadoInput
-	>;
+	create: Prisma.XOR<Prisma.CapituloCreateWithoutEstadoInput, Prisma.CapituloUncheckedCreateWithoutEstadoInput>;
 };
 
 export type CapituloCreateManyEstadoInputEnvelope = {
-	data:
-		| Prisma.CapituloCreateManyEstadoInput
-		| Prisma.CapituloCreateManyEstadoInput[];
+	data: Prisma.CapituloCreateManyEstadoInput | Prisma.CapituloCreateManyEstadoInput[];
 	skipDuplicates?: boolean;
 };
 
 export type CapituloUpsertWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.CapituloWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.CapituloUpdateWithoutEstadoInput,
-		Prisma.CapituloUncheckedUpdateWithoutEstadoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.CapituloCreateWithoutEstadoInput,
-		Prisma.CapituloUncheckedCreateWithoutEstadoInput
-	>;
+	update: Prisma.XOR<Prisma.CapituloUpdateWithoutEstadoInput, Prisma.CapituloUncheckedUpdateWithoutEstadoInput>;
+	create: Prisma.XOR<Prisma.CapituloCreateWithoutEstadoInput, Prisma.CapituloUncheckedCreateWithoutEstadoInput>;
 };
 
 export type CapituloUpdateWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.CapituloWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.CapituloUpdateWithoutEstadoInput,
-		Prisma.CapituloUncheckedUpdateWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.CapituloUpdateWithoutEstadoInput, Prisma.CapituloUncheckedUpdateWithoutEstadoInput>;
 };
 
 export type CapituloUpdateManyWithWhereWithoutEstadoInput = {
 	where: Prisma.CapituloScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.CapituloUpdateManyMutationInput,
-		Prisma.CapituloUncheckedUpdateManyWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.CapituloUpdateManyMutationInput, Prisma.CapituloUncheckedUpdateManyWithoutEstadoInput>;
 };
 
 export type CapituloScalarWhereInput = {
@@ -804,45 +655,28 @@ export type CapituloUncheckedCreateWithoutLibroInput = {
 
 export type CapituloCreateOrConnectWithoutLibroInput = {
 	where: Prisma.CapituloWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.CapituloCreateWithoutLibroInput,
-		Prisma.CapituloUncheckedCreateWithoutLibroInput
-	>;
+	create: Prisma.XOR<Prisma.CapituloCreateWithoutLibroInput, Prisma.CapituloUncheckedCreateWithoutLibroInput>;
 };
 
 export type CapituloCreateManyLibroInputEnvelope = {
-	data:
-		| Prisma.CapituloCreateManyLibroInput
-		| Prisma.CapituloCreateManyLibroInput[];
+	data: Prisma.CapituloCreateManyLibroInput | Prisma.CapituloCreateManyLibroInput[];
 	skipDuplicates?: boolean;
 };
 
 export type CapituloUpsertWithWhereUniqueWithoutLibroInput = {
 	where: Prisma.CapituloWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.CapituloUpdateWithoutLibroInput,
-		Prisma.CapituloUncheckedUpdateWithoutLibroInput
-	>;
-	create: Prisma.XOR<
-		Prisma.CapituloCreateWithoutLibroInput,
-		Prisma.CapituloUncheckedCreateWithoutLibroInput
-	>;
+	update: Prisma.XOR<Prisma.CapituloUpdateWithoutLibroInput, Prisma.CapituloUncheckedUpdateWithoutLibroInput>;
+	create: Prisma.XOR<Prisma.CapituloCreateWithoutLibroInput, Prisma.CapituloUncheckedCreateWithoutLibroInput>;
 };
 
 export type CapituloUpdateWithWhereUniqueWithoutLibroInput = {
 	where: Prisma.CapituloWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.CapituloUpdateWithoutLibroInput,
-		Prisma.CapituloUncheckedUpdateWithoutLibroInput
-	>;
+	data: Prisma.XOR<Prisma.CapituloUpdateWithoutLibroInput, Prisma.CapituloUncheckedUpdateWithoutLibroInput>;
 };
 
 export type CapituloUpdateManyWithWhereWithoutLibroInput = {
 	where: Prisma.CapituloScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.CapituloUpdateManyMutationInput,
-		Prisma.CapituloUncheckedUpdateManyWithoutLibroInput
-	>;
+	data: Prisma.XOR<Prisma.CapituloUpdateManyMutationInput, Prisma.CapituloUncheckedUpdateManyWithoutLibroInput>;
 };
 
 export type CapituloCreateWithoutParrafosInput = {
@@ -868,30 +702,18 @@ export type CapituloUncheckedCreateWithoutParrafosInput = {
 
 export type CapituloCreateOrConnectWithoutParrafosInput = {
 	where: Prisma.CapituloWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.CapituloCreateWithoutParrafosInput,
-		Prisma.CapituloUncheckedCreateWithoutParrafosInput
-	>;
+	create: Prisma.XOR<Prisma.CapituloCreateWithoutParrafosInput, Prisma.CapituloUncheckedCreateWithoutParrafosInput>;
 };
 
 export type CapituloUpsertWithoutParrafosInput = {
-	update: Prisma.XOR<
-		Prisma.CapituloUpdateWithoutParrafosInput,
-		Prisma.CapituloUncheckedUpdateWithoutParrafosInput
-	>;
-	create: Prisma.XOR<
-		Prisma.CapituloCreateWithoutParrafosInput,
-		Prisma.CapituloUncheckedCreateWithoutParrafosInput
-	>;
+	update: Prisma.XOR<Prisma.CapituloUpdateWithoutParrafosInput, Prisma.CapituloUncheckedUpdateWithoutParrafosInput>;
+	create: Prisma.XOR<Prisma.CapituloCreateWithoutParrafosInput, Prisma.CapituloUncheckedCreateWithoutParrafosInput>;
 	where?: Prisma.CapituloWhereInput;
 };
 
 export type CapituloUpdateToOneWithWhereWithoutParrafosInput = {
 	where?: Prisma.CapituloWhereInput;
-	data: Prisma.XOR<
-		Prisma.CapituloUpdateWithoutParrafosInput,
-		Prisma.CapituloUncheckedUpdateWithoutParrafosInput
-	>;
+	data: Prisma.XOR<Prisma.CapituloUpdateWithoutParrafosInput, Prisma.CapituloUncheckedUpdateWithoutParrafosInput>;
 };
 
 export type CapituloUpdateWithoutParrafosInput = {
@@ -938,30 +760,18 @@ export type CapituloUncheckedCreateWithoutNotasAutorInput = {
 
 export type CapituloCreateOrConnectWithoutNotasAutorInput = {
 	where: Prisma.CapituloWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.CapituloCreateWithoutNotasAutorInput,
-		Prisma.CapituloUncheckedCreateWithoutNotasAutorInput
-	>;
+	create: Prisma.XOR<Prisma.CapituloCreateWithoutNotasAutorInput, Prisma.CapituloUncheckedCreateWithoutNotasAutorInput>;
 };
 
 export type CapituloUpsertWithoutNotasAutorInput = {
-	update: Prisma.XOR<
-		Prisma.CapituloUpdateWithoutNotasAutorInput,
-		Prisma.CapituloUncheckedUpdateWithoutNotasAutorInput
-	>;
-	create: Prisma.XOR<
-		Prisma.CapituloCreateWithoutNotasAutorInput,
-		Prisma.CapituloUncheckedCreateWithoutNotasAutorInput
-	>;
+	update: Prisma.XOR<Prisma.CapituloUpdateWithoutNotasAutorInput, Prisma.CapituloUncheckedUpdateWithoutNotasAutorInput>;
+	create: Prisma.XOR<Prisma.CapituloCreateWithoutNotasAutorInput, Prisma.CapituloUncheckedCreateWithoutNotasAutorInput>;
 	where?: Prisma.CapituloWhereInput;
 };
 
 export type CapituloUpdateToOneWithWhereWithoutNotasAutorInput = {
 	where?: Prisma.CapituloWhereInput;
-	data: Prisma.XOR<
-		Prisma.CapituloUpdateWithoutNotasAutorInput,
-		Prisma.CapituloUncheckedUpdateWithoutNotasAutorInput
-	>;
+	data: Prisma.XOR<Prisma.CapituloUpdateWithoutNotasAutorInput, Prisma.CapituloUncheckedUpdateWithoutNotasAutorInput>;
 };
 
 export type CapituloUpdateWithoutNotasAutorInput = {
@@ -1072,10 +882,7 @@ export type CapituloCountOutputType = {
 	notasAutor: number;
 };
 
-export type CapituloCountOutputTypeSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	parrafos?: boolean | CapituloCountOutputTypeCountParrafosArgs;
 	notasAutor?: boolean | CapituloCountOutputTypeCountNotasAutorArgs;
 };
@@ -1083,10 +890,7 @@ export type CapituloCountOutputTypeSelect<
 /**
  * CapituloCountOutputType without action
  */
-export type CapituloCountOutputTypeDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the CapituloCountOutputType
 	 */
@@ -1096,27 +900,18 @@ export type CapituloCountOutputTypeDefaultArgs<
 /**
  * CapituloCountOutputType without action
  */
-export type CapituloCountOutputTypeCountParrafosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloCountOutputTypeCountParrafosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.ParrafoWhereInput;
 };
 
 /**
  * CapituloCountOutputType without action
  */
-export type CapituloCountOutputTypeCountNotasAutorArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloCountOutputTypeCountNotasAutorArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.NotaAutorWhereInput;
 };
 
-export type CapituloSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type CapituloSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -1134,10 +929,7 @@ export type CapituloSelect<
 	ExtArgs["result"]["capitulo"]
 >;
 
-export type CapituloSelectCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type CapituloSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -1152,10 +944,7 @@ export type CapituloSelectCreateManyAndReturn<
 	ExtArgs["result"]["capitulo"]
 >;
 
-export type CapituloSelectUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type CapituloSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -1180,48 +969,27 @@ export type CapituloSelectScalar = {
 	estadoId?: boolean;
 };
 
-export type CapituloOmit<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetOmit<
-	| "id"
-	| "nombre"
-	| "indice"
-	| "createdAt"
-	| "updatedAt"
-	| "libroId"
-	| "estadoId",
+export type CapituloOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<
+	"id" | "nombre" | "indice" | "createdAt" | "updatedAt" | "libroId" | "estadoId",
 	ExtArgs["result"]["capitulo"]
 >;
-export type CapituloInclude<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	libro?: boolean | Prisma.LibroDefaultArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 	parrafos?: boolean | Prisma.Capitulo$parrafosArgs<ExtArgs>;
 	notasAutor?: boolean | Prisma.Capitulo$notasAutorArgs<ExtArgs>;
 	_count?: boolean | Prisma.CapituloCountOutputTypeDefaultArgs<ExtArgs>;
 };
-export type CapituloIncludeCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	libro?: boolean | Prisma.LibroDefaultArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
-export type CapituloIncludeUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	libro?: boolean | Prisma.LibroDefaultArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
 
-export type $CapituloPayload<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type $CapituloPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	name: "Capitulo";
 	objects: {
 		libro: Prisma.$LibroPayload<ExtArgs>;
@@ -1244,26 +1012,14 @@ export type $CapituloPayload<
 	composites: {};
 };
 
-export type CapituloGetPayload<
-	S extends boolean | null | undefined | CapituloDefaultArgs,
-> = runtime.Types.Result.GetResult<Prisma.$CapituloPayload, S>;
+export type CapituloGetPayload<S extends boolean | null | undefined | CapituloDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$CapituloPayload, S>;
 
-export type CapituloCountArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = Omit<CapituloFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
+export type CapituloCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<CapituloFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
 	select?: CapituloCountAggregateInputType | true;
 };
 
-export interface CapituloDelegate<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> {
-	[K: symbol]: {
-		types: Prisma.TypeMap<ExtArgs>["model"]["Capitulo"];
-		meta: { name: "Capitulo" };
-	};
+export interface CapituloDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+	[K: symbol]: { types: Prisma.TypeMap<ExtArgs>["model"]["Capitulo"]; meta: { name: "Capitulo" } };
 	/**
 	 * Find zero or one Capitulo that matches the filter.
 	 * @param {CapituloFindUniqueArgs} args - Arguments to find a Capitulo
@@ -1277,17 +1033,7 @@ export interface CapituloDelegate<
 	 */
 	findUnique<T extends CapituloFindUniqueArgs>(
 		args: Prisma.SelectSubset<T, CapituloFindUniqueArgs<ExtArgs>>,
-	): Prisma.Prisma__CapituloClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$CapituloPayload<ExtArgs>,
-			T,
-			"findUnique",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__CapituloClient<runtime.Types.Result.GetResult<Prisma.$CapituloPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find one Capitulo that matches the filter or throw an error with `error.code='P2025'`
@@ -1303,17 +1049,7 @@ export interface CapituloDelegate<
 	 */
 	findUniqueOrThrow<T extends CapituloFindUniqueOrThrowArgs>(
 		args: Prisma.SelectSubset<T, CapituloFindUniqueOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__CapituloClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$CapituloPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__CapituloClient<runtime.Types.Result.GetResult<Prisma.$CapituloPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Capitulo that matches the filter.
@@ -1330,17 +1066,7 @@ export interface CapituloDelegate<
 	 */
 	findFirst<T extends CapituloFindFirstArgs>(
 		args?: Prisma.SelectSubset<T, CapituloFindFirstArgs<ExtArgs>>,
-	): Prisma.Prisma__CapituloClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$CapituloPayload<ExtArgs>,
-			T,
-			"findFirst",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__CapituloClient<runtime.Types.Result.GetResult<Prisma.$CapituloPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Capitulo that matches the filter or
@@ -1358,17 +1084,7 @@ export interface CapituloDelegate<
 	 */
 	findFirstOrThrow<T extends CapituloFindFirstOrThrowArgs>(
 		args?: Prisma.SelectSubset<T, CapituloFindFirstOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__CapituloClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$CapituloPayload<ExtArgs>,
-			T,
-			"findFirstOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__CapituloClient<runtime.Types.Result.GetResult<Prisma.$CapituloPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find zero or more Capitulos that matches the filter.
@@ -1388,14 +1104,7 @@ export interface CapituloDelegate<
 	 */
 	findMany<T extends CapituloFindManyArgs>(
 		args?: Prisma.SelectSubset<T, CapituloFindManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$CapituloPayload<ExtArgs>,
-			T,
-			"findMany",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CapituloPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
 
 	/**
 	 * Create a Capitulo.
@@ -1411,17 +1120,7 @@ export interface CapituloDelegate<
 	 */
 	create<T extends CapituloCreateArgs>(
 		args: Prisma.SelectSubset<T, CapituloCreateArgs<ExtArgs>>,
-	): Prisma.Prisma__CapituloClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$CapituloPayload<ExtArgs>,
-			T,
-			"create",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__CapituloClient<runtime.Types.Result.GetResult<Prisma.$CapituloPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Create many Capitulos.
@@ -1435,9 +1134,7 @@ export interface CapituloDelegate<
 	 * })
 	 *
 	 */
-	createMany<T extends CapituloCreateManyArgs>(
-		args?: Prisma.SelectSubset<T, CapituloCreateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	createMany<T extends CapituloCreateManyArgs>(args?: Prisma.SelectSubset<T, CapituloCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Create many Capitulos and returns the data saved in the database.
@@ -1463,14 +1160,7 @@ export interface CapituloDelegate<
 	 */
 	createManyAndReturn<T extends CapituloCreateManyAndReturnArgs>(
 		args?: Prisma.SelectSubset<T, CapituloCreateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$CapituloPayload<ExtArgs>,
-			T,
-			"createManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CapituloPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Delete a Capitulo.
@@ -1486,17 +1176,7 @@ export interface CapituloDelegate<
 	 */
 	delete<T extends CapituloDeleteArgs>(
 		args: Prisma.SelectSubset<T, CapituloDeleteArgs<ExtArgs>>,
-	): Prisma.Prisma__CapituloClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$CapituloPayload<ExtArgs>,
-			T,
-			"delete",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__CapituloClient<runtime.Types.Result.GetResult<Prisma.$CapituloPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Update one Capitulo.
@@ -1515,17 +1195,7 @@ export interface CapituloDelegate<
 	 */
 	update<T extends CapituloUpdateArgs>(
 		args: Prisma.SelectSubset<T, CapituloUpdateArgs<ExtArgs>>,
-	): Prisma.Prisma__CapituloClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$CapituloPayload<ExtArgs>,
-			T,
-			"update",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__CapituloClient<runtime.Types.Result.GetResult<Prisma.$CapituloPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Delete zero or more Capitulos.
@@ -1539,9 +1209,7 @@ export interface CapituloDelegate<
 	 * })
 	 *
 	 */
-	deleteMany<T extends CapituloDeleteManyArgs>(
-		args?: Prisma.SelectSubset<T, CapituloDeleteManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	deleteMany<T extends CapituloDeleteManyArgs>(args?: Prisma.SelectSubset<T, CapituloDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Capitulos.
@@ -1560,9 +1228,7 @@ export interface CapituloDelegate<
 	 * })
 	 *
 	 */
-	updateMany<T extends CapituloUpdateManyArgs>(
-		args: Prisma.SelectSubset<T, CapituloUpdateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	updateMany<T extends CapituloUpdateManyArgs>(args: Prisma.SelectSubset<T, CapituloUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Capitulos and returns the data updated in the database.
@@ -1594,14 +1260,7 @@ export interface CapituloDelegate<
 	 */
 	updateManyAndReturn<T extends CapituloUpdateManyAndReturnArgs>(
 		args: Prisma.SelectSubset<T, CapituloUpdateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$CapituloPayload<ExtArgs>,
-			T,
-			"updateManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CapituloPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Create or update one Capitulo.
@@ -1622,17 +1281,7 @@ export interface CapituloDelegate<
 	 */
 	upsert<T extends CapituloUpsertArgs>(
 		args: Prisma.SelectSubset<T, CapituloUpsertArgs<ExtArgs>>,
-	): Prisma.Prisma__CapituloClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$CapituloPayload<ExtArgs>,
-			T,
-			"upsert",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__CapituloClient<runtime.Types.Result.GetResult<Prisma.$CapituloPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Count the number of Capitulos.
@@ -1649,13 +1298,7 @@ export interface CapituloDelegate<
 	 **/
 	count<T extends CapituloCountArgs>(
 		args?: Prisma.Subset<T, CapituloCountArgs>,
-	): Prisma.PrismaPromise<
-		T extends runtime.Types.Utils.Record<"select", any>
-			? T["select"] extends true
-				? number
-				: Prisma.GetScalarType<T["select"], CapituloCountAggregateOutputType>
-			: number
-	>;
+	): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<"select", any> ? (T["select"] extends true ? number : Prisma.GetScalarType<T["select"], CapituloCountAggregateOutputType>) : number>;
 
 	/**
 	 * Allows you to perform aggregations operations on a Capitulo.
@@ -1681,9 +1324,7 @@ export interface CapituloDelegate<
 	 *   take: 10,
 	 * })
 	 **/
-	aggregate<T extends CapituloAggregateArgs>(
-		args: Prisma.Subset<T, CapituloAggregateArgs>,
-	): Prisma.PrismaPromise<GetCapituloAggregateType<T>>;
+	aggregate<T extends CapituloAggregateArgs>(args: Prisma.Subset<T, CapituloAggregateArgs>): Prisma.PrismaPromise<GetCapituloAggregateType<T>>;
 
 	/**
 	 * Group by Capitulo.
@@ -1705,16 +1346,9 @@ export interface CapituloDelegate<
 	 **/
 	groupBy<
 		T extends CapituloGroupByArgs,
-		HasSelectOrTake extends Prisma.Or<
-			Prisma.Extends<"skip", Prisma.Keys<T>>,
-			Prisma.Extends<"take", Prisma.Keys<T>>
-		>,
-		OrderByArg extends Prisma.True extends HasSelectOrTake
-			? { orderBy: CapituloGroupByArgs["orderBy"] }
-			: { orderBy?: CapituloGroupByArgs["orderBy"] },
-		OrderFields extends Prisma.ExcludeUnderscoreKeys<
-			Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>
-		>,
+		HasSelectOrTake extends Prisma.Or<Prisma.Extends<"skip", Prisma.Keys<T>>, Prisma.Extends<"take", Prisma.Keys<T>>>,
+		OrderByArg extends Prisma.True extends HasSelectOrTake ? { orderBy: CapituloGroupByArgs["orderBy"] } : { orderBy?: CapituloGroupByArgs["orderBy"] },
+		OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>>,
 		ByFields extends Prisma.MaybeTupleToUnion<T["by"]>,
 		ByValid extends Prisma.Has<ByFields, OrderFields>,
 		HavingFields extends Prisma.GetHavingFields<T["having"]>,
@@ -1728,21 +1362,14 @@ export interface CapituloDelegate<
 							? never
 							: P extends string
 								? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-								: [
-										Error,
-										"Field ",
-										P,
-										` in "having" needs to be provided in "by"`,
-									];
+								: [Error, "Field ", P, ` in "having" needs to be provided in "by"`];
 					}[HavingFields]
 				: "take" extends Prisma.Keys<T>
 					? "orderBy" extends Prisma.Keys<T>
 						? ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields]
 						: 'Error: If you provide "take", you also need to provide "orderBy"'
 					: "skip" extends Prisma.Keys<T>
@@ -1750,24 +1377,15 @@ export interface CapituloDelegate<
 							? ByValid extends Prisma.True
 								? {}
 								: {
-										[P in OrderFields]: P extends ByFields
-											? never
-											: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+										[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 									}[OrderFields]
 							: 'Error: If you provide "skip", you also need to provide "orderBy"'
 						: ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields],
-	>(
-		args: Prisma.SubsetIntersection<T, CapituloGroupByArgs, OrderByArg> &
-			InputErrors,
-	): {} extends InputErrors
-		? GetCapituloGroupByPayload<T>
-		: Prisma.PrismaPromise<InputErrors>;
+	>(args: Prisma.SubsetIntersection<T, CapituloGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCapituloGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
 	/**
 	 * Fields of the Capitulo model
 	 */
@@ -1780,64 +1398,21 @@ export interface CapituloDelegate<
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__CapituloClient<
-	T,
-	Null = never,
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> extends Prisma.PrismaPromise<T> {
+export interface Prisma__CapituloClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}>
+	extends Prisma.PrismaPromise<T> {
 	readonly [Symbol.toStringTag]: "PrismaPromise";
 	libro<T extends Prisma.LibroDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.LibroDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__LibroClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$LibroPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__LibroClient<runtime.Types.Result.GetResult<Prisma.$LibroPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	estado<T extends Prisma.EstadoDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EstadoDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EstadoPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	parrafos<T extends Prisma.Capitulo$parrafosArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Capitulo$parrafosArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$ParrafoPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ParrafoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	notasAutor<T extends Prisma.Capitulo$notasAutorArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Capitulo$notasAutorArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$NotaAutorPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotaAutorPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	/**
 	 * Attaches callbacks for the resolution and/or rejection of the Promise.
 	 * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1845,35 +1420,22 @@ export interface Prisma__CapituloClient<
 	 * @returns A Promise for the completion of which ever callback is executed.
 	 */
 	then<TResult1 = T, TResult2 = never>(
-		onfulfilled?:
-			| ((value: T) => TResult1 | PromiseLike<TResult1>)
-			| undefined
-			| null,
-		onrejected?:
-			| ((reason: any) => TResult2 | PromiseLike<TResult2>)
-			| undefined
-			| null,
+		onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+		onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
 	): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
 	/**
 	 * Attaches a callback for only the rejection of the Promise.
 	 * @param onrejected The callback to execute when the Promise is rejected.
 	 * @returns A Promise for the completion of the callback.
 	 */
-	catch<TResult = never>(
-		onrejected?:
-			| ((reason: any) => TResult | PromiseLike<TResult>)
-			| undefined
-			| null,
-	): runtime.Types.Utils.JsPromise<T | TResult>;
+	catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
 	/**
 	 * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
 	 * resolved value cannot be modified from the callback.
 	 * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
 	 * @returns A Promise for the completion of the callback.
 	 */
-	finally(
-		onfinally?: (() => void) | undefined | null,
-	): runtime.Types.Utils.JsPromise<T>;
+	finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
 }
 
 /**
@@ -1893,10 +1455,7 @@ export interface CapituloFieldRefs {
 /**
  * Capitulo findUnique
  */
-export type CapituloFindUniqueArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Capitulo
 	 */
@@ -1918,10 +1477,7 @@ export type CapituloFindUniqueArgs<
 /**
  * Capitulo findUniqueOrThrow
  */
-export type CapituloFindUniqueOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Capitulo
 	 */
@@ -1943,10 +1499,7 @@ export type CapituloFindUniqueOrThrowArgs<
 /**
  * Capitulo findFirst
  */
-export type CapituloFindFirstArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Capitulo
 	 */
@@ -1968,9 +1521,7 @@ export type CapituloFindFirstArgs<
 	 *
 	 * Determine the order of Capitulos to fetch.
 	 */
-	orderBy?:
-		| Prisma.CapituloOrderByWithRelationInput
-		| Prisma.CapituloOrderByWithRelationInput[];
+	orderBy?: Prisma.CapituloOrderByWithRelationInput | Prisma.CapituloOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -2000,10 +1551,7 @@ export type CapituloFindFirstArgs<
 /**
  * Capitulo findFirstOrThrow
  */
-export type CapituloFindFirstOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Capitulo
 	 */
@@ -2025,9 +1573,7 @@ export type CapituloFindFirstOrThrowArgs<
 	 *
 	 * Determine the order of Capitulos to fetch.
 	 */
-	orderBy?:
-		| Prisma.CapituloOrderByWithRelationInput
-		| Prisma.CapituloOrderByWithRelationInput[];
+	orderBy?: Prisma.CapituloOrderByWithRelationInput | Prisma.CapituloOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -2057,10 +1603,7 @@ export type CapituloFindFirstOrThrowArgs<
 /**
  * Capitulo findMany
  */
-export type CapituloFindManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Capitulo
 	 */
@@ -2082,9 +1625,7 @@ export type CapituloFindManyArgs<
 	 *
 	 * Determine the order of Capitulos to fetch.
 	 */
-	orderBy?:
-		| Prisma.CapituloOrderByWithRelationInput
-		| Prisma.CapituloOrderByWithRelationInput[];
+	orderBy?: Prisma.CapituloOrderByWithRelationInput | Prisma.CapituloOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -2114,10 +1655,7 @@ export type CapituloFindManyArgs<
 /**
  * Capitulo create
  */
-export type CapituloCreateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Capitulo
 	 */
@@ -2133,19 +1671,13 @@ export type CapituloCreateArgs<
 	/**
 	 * The data needed to create a Capitulo.
 	 */
-	data: Prisma.XOR<
-		Prisma.CapituloCreateInput,
-		Prisma.CapituloUncheckedCreateInput
-	>;
+	data: Prisma.XOR<Prisma.CapituloCreateInput, Prisma.CapituloUncheckedCreateInput>;
 };
 
 /**
  * Capitulo createMany
  */
-export type CapituloCreateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to create many Capitulos.
 	 */
@@ -2156,10 +1688,7 @@ export type CapituloCreateManyArgs<
 /**
  * Capitulo createManyAndReturn
  */
-export type CapituloCreateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Capitulo
 	 */
@@ -2182,10 +1711,7 @@ export type CapituloCreateManyAndReturnArgs<
 /**
  * Capitulo update
  */
-export type CapituloUpdateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Capitulo
 	 */
@@ -2201,10 +1727,7 @@ export type CapituloUpdateArgs<
 	/**
 	 * The data needed to update a Capitulo.
 	 */
-	data: Prisma.XOR<
-		Prisma.CapituloUpdateInput,
-		Prisma.CapituloUncheckedUpdateInput
-	>;
+	data: Prisma.XOR<Prisma.CapituloUpdateInput, Prisma.CapituloUncheckedUpdateInput>;
 	/**
 	 * Choose, which Capitulo to update.
 	 */
@@ -2214,17 +1737,11 @@ export type CapituloUpdateArgs<
 /**
  * Capitulo updateMany
  */
-export type CapituloUpdateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to update Capitulos.
 	 */
-	data: Prisma.XOR<
-		Prisma.CapituloUpdateManyMutationInput,
-		Prisma.CapituloUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.CapituloUpdateManyMutationInput, Prisma.CapituloUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Capitulos to update
 	 */
@@ -2238,10 +1755,7 @@ export type CapituloUpdateManyArgs<
 /**
  * Capitulo updateManyAndReturn
  */
-export type CapituloUpdateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Capitulo
 	 */
@@ -2253,10 +1767,7 @@ export type CapituloUpdateManyAndReturnArgs<
 	/**
 	 * The data used to update Capitulos.
 	 */
-	data: Prisma.XOR<
-		Prisma.CapituloUpdateManyMutationInput,
-		Prisma.CapituloUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.CapituloUpdateManyMutationInput, Prisma.CapituloUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Capitulos to update
 	 */
@@ -2274,10 +1785,7 @@ export type CapituloUpdateManyAndReturnArgs<
 /**
  * Capitulo upsert
  */
-export type CapituloUpsertArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Capitulo
 	 */
@@ -2297,26 +1805,17 @@ export type CapituloUpsertArgs<
 	/**
 	 * In case the Capitulo found by the `where` argument doesn't exist, create a new Capitulo with this data.
 	 */
-	create: Prisma.XOR<
-		Prisma.CapituloCreateInput,
-		Prisma.CapituloUncheckedCreateInput
-	>;
+	create: Prisma.XOR<Prisma.CapituloCreateInput, Prisma.CapituloUncheckedCreateInput>;
 	/**
 	 * In case the Capitulo was found with the provided `where` argument, update it with this data.
 	 */
-	update: Prisma.XOR<
-		Prisma.CapituloUpdateInput,
-		Prisma.CapituloUncheckedUpdateInput
-	>;
+	update: Prisma.XOR<Prisma.CapituloUpdateInput, Prisma.CapituloUncheckedUpdateInput>;
 };
 
 /**
  * Capitulo delete
  */
-export type CapituloDeleteArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Capitulo
 	 */
@@ -2338,10 +1837,7 @@ export type CapituloDeleteArgs<
 /**
  * Capitulo deleteMany
  */
-export type CapituloDeleteManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Capitulos to delete
 	 */
@@ -2355,10 +1851,7 @@ export type CapituloDeleteManyArgs<
 /**
  * Capitulo.parrafos
  */
-export type Capitulo$parrafosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Capitulo$parrafosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Parrafo
 	 */
@@ -2372,9 +1865,7 @@ export type Capitulo$parrafosArgs<
 	 */
 	include?: Prisma.ParrafoInclude<ExtArgs> | null;
 	where?: Prisma.ParrafoWhereInput;
-	orderBy?:
-		| Prisma.ParrafoOrderByWithRelationInput
-		| Prisma.ParrafoOrderByWithRelationInput[];
+	orderBy?: Prisma.ParrafoOrderByWithRelationInput | Prisma.ParrafoOrderByWithRelationInput[];
 	cursor?: Prisma.ParrafoWhereUniqueInput;
 	take?: number;
 	skip?: number;
@@ -2384,10 +1875,7 @@ export type Capitulo$parrafosArgs<
 /**
  * Capitulo.notasAutor
  */
-export type Capitulo$notasAutorArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Capitulo$notasAutorArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the NotaAutor
 	 */
@@ -2401,24 +1889,17 @@ export type Capitulo$notasAutorArgs<
 	 */
 	include?: Prisma.NotaAutorInclude<ExtArgs> | null;
 	where?: Prisma.NotaAutorWhereInput;
-	orderBy?:
-		| Prisma.NotaAutorOrderByWithRelationInput
-		| Prisma.NotaAutorOrderByWithRelationInput[];
+	orderBy?: Prisma.NotaAutorOrderByWithRelationInput | Prisma.NotaAutorOrderByWithRelationInput[];
 	cursor?: Prisma.NotaAutorWhereUniqueInput;
 	take?: number;
 	skip?: number;
-	distinct?:
-		| Prisma.NotaAutorScalarFieldEnum
-		| Prisma.NotaAutorScalarFieldEnum[];
+	distinct?: Prisma.NotaAutorScalarFieldEnum | Prisma.NotaAutorScalarFieldEnum[];
 };
 
 /**
  * Capitulo without action
  */
-export type CapituloDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type CapituloDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Capitulo
 	 */

@@ -34,15 +34,7 @@ export type GenerateTextImageOptions = {
 	padding?: number | string;
 };
 
-export function generarImagen({
-	text,
-	width = 1200,
-	height = 630,
-	backgroundColor = "#111827",
-	textColor = "#ffffff",
-	fontSize = 64,
-	padding = 50,
-}: GenerateTextImageOptions) {
+export function generarImagen({ text, width = 1200, height = 630, backgroundColor = "#111827", textColor = "#ffffff", fontSize = 64, padding = 50 }: GenerateTextImageOptions) {
 	console.log({ padding });
 
 	return new ImageResponse(
@@ -62,8 +54,7 @@ export function generarImagen({
 				lineHeight: 1.2,
 				whiteSpace: "pre-wrap",
 				wordBreak: "break-word",
-			}}
-		>
+			}}>
 			{text}
 		</div>,
 		{

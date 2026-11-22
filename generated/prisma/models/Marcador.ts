@@ -15,8 +15,7 @@ import type * as Prisma from "../internal/prismaNamespace.ts";
  * Model Marcador
  *
  */
-export type MarcadorModel =
-	runtime.Types.Result.DefaultSelection<Prisma.$MarcadorPayload>;
+export type MarcadorModel = runtime.Types.Result.DefaultSelection<Prisma.$MarcadorPayload>;
 
 export type AggregateMarcador = {
 	_count: MarcadorCountAggregateOutputType | null;
@@ -122,10 +121,7 @@ export type MarcadorCountAggregateInputType = {
 	_all?: true;
 };
 
-export type MarcadorAggregateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type MarcadorAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Marcador to aggregate.
 	 */
@@ -135,9 +131,7 @@ export type MarcadorAggregateArgs<
 	 *
 	 * Determine the order of Marcadors to fetch.
 	 */
-	orderBy?:
-		| Prisma.MarcadorOrderByWithRelationInput
-		| Prisma.MarcadorOrderByWithRelationInput[];
+	orderBy?: Prisma.MarcadorOrderByWithRelationInput | Prisma.MarcadorOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -196,14 +190,9 @@ export type GetMarcadorAggregateType<T extends MarcadorAggregateArgs> = {
 		: Prisma.GetScalarType<T[P], AggregateMarcador[P]>;
 };
 
-export type MarcadorGroupByArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type MarcadorGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.MarcadorWhereInput;
-	orderBy?:
-		| Prisma.MarcadorOrderByWithAggregationInput
-		| Prisma.MarcadorOrderByWithAggregationInput[];
+	orderBy?: Prisma.MarcadorOrderByWithAggregationInput | Prisma.MarcadorOrderByWithAggregationInput[];
 	by: Prisma.MarcadorScalarFieldEnum[] | Prisma.MarcadorScalarFieldEnum;
 	having?: Prisma.MarcadorScalarWhereWithAggregatesInput;
 	take?: number;
@@ -231,18 +220,17 @@ export type MarcadorGroupByOutputType = {
 	_max: MarcadorMaxAggregateOutputType | null;
 };
 
-export type GetMarcadorGroupByPayload<T extends MarcadorGroupByArgs> =
-	Prisma.PrismaPromise<
-		Array<
-			Prisma.PickEnumerable<MarcadorGroupByOutputType, T["by"]> & {
-				[P in keyof T & keyof MarcadorGroupByOutputType]: P extends "_count"
-					? T[P] extends boolean
-						? number
-						: Prisma.GetScalarType<T[P], MarcadorGroupByOutputType[P]>
-					: Prisma.GetScalarType<T[P], MarcadorGroupByOutputType[P]>;
-			}
-		>
-	>;
+export type GetMarcadorGroupByPayload<T extends MarcadorGroupByArgs> = Prisma.PrismaPromise<
+	Array<
+		Prisma.PickEnumerable<MarcadorGroupByOutputType, T["by"]> & {
+			[P in keyof T & keyof MarcadorGroupByOutputType]: P extends "_count"
+				? T[P] extends boolean
+					? number
+					: Prisma.GetScalarType<T[P], MarcadorGroupByOutputType[P]>
+				: Prisma.GetScalarType<T[P], MarcadorGroupByOutputType[P]>;
+		}
+	>
+>;
 
 export type MarcadorWhereInput = {
 	AND?: Prisma.MarcadorWhereInput | Prisma.MarcadorWhereInput[];
@@ -256,18 +244,9 @@ export type MarcadorWhereInput = {
 	escritorId?: Prisma.IntFilter<"Marcador"> | number;
 	parrafoId?: Prisma.IntFilter<"Marcador"> | number;
 	estadoId?: Prisma.IntFilter<"Marcador"> | number;
-	escritor?: Prisma.XOR<
-		Prisma.EscritorScalarRelationFilter,
-		Prisma.EscritorWhereInput
-	>;
-	parrafo?: Prisma.XOR<
-		Prisma.ParrafoScalarRelationFilter,
-		Prisma.ParrafoWhereInput
-	>;
-	estado?: Prisma.XOR<
-		Prisma.EstadoScalarRelationFilter,
-		Prisma.EstadoWhereInput
-	>;
+	escritor?: Prisma.XOR<Prisma.EscritorScalarRelationFilter, Prisma.EscritorWhereInput>;
+	parrafo?: Prisma.XOR<Prisma.ParrafoScalarRelationFilter, Prisma.ParrafoWhereInput>;
+	estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 };
 
 export type MarcadorOrderByWithRelationInput = {
@@ -297,18 +276,9 @@ export type MarcadorWhereUniqueInput = Prisma.AtLeast<
 		escritorId?: Prisma.IntFilter<"Marcador"> | number;
 		parrafoId?: Prisma.IntFilter<"Marcador"> | number;
 		estadoId?: Prisma.IntFilter<"Marcador"> | number;
-		escritor?: Prisma.XOR<
-			Prisma.EscritorScalarRelationFilter,
-			Prisma.EscritorWhereInput
-		>;
-		parrafo?: Prisma.XOR<
-			Prisma.ParrafoScalarRelationFilter,
-			Prisma.ParrafoWhereInput
-		>;
-		estado?: Prisma.XOR<
-			Prisma.EstadoScalarRelationFilter,
-			Prisma.EstadoWhereInput
-		>;
+		escritor?: Prisma.XOR<Prisma.EscritorScalarRelationFilter, Prisma.EscritorWhereInput>;
+		parrafo?: Prisma.XOR<Prisma.ParrafoScalarRelationFilter, Prisma.ParrafoWhereInput>;
+		estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 	},
 	"id"
 >;
@@ -330,18 +300,11 @@ export type MarcadorOrderByWithAggregationInput = {
 };
 
 export type MarcadorScalarWhereWithAggregatesInput = {
-	AND?:
-		| Prisma.MarcadorScalarWhereWithAggregatesInput
-		| Prisma.MarcadorScalarWhereWithAggregatesInput[];
+	AND?: Prisma.MarcadorScalarWhereWithAggregatesInput | Prisma.MarcadorScalarWhereWithAggregatesInput[];
 	OR?: Prisma.MarcadorScalarWhereWithAggregatesInput[];
-	NOT?:
-		| Prisma.MarcadorScalarWhereWithAggregatesInput
-		| Prisma.MarcadorScalarWhereWithAggregatesInput[];
+	NOT?: Prisma.MarcadorScalarWhereWithAggregatesInput | Prisma.MarcadorScalarWhereWithAggregatesInput[];
 	id?: Prisma.IntWithAggregatesFilter<"Marcador"> | number;
-	nombre?:
-		| Prisma.StringNullableWithAggregatesFilter<"Marcador">
-		| string
-		| null;
+	nombre?: Prisma.StringNullableWithAggregatesFilter<"Marcador"> | string | null;
 	color?: Prisma.StringNullableWithAggregatesFilter<"Marcador"> | string | null;
 	createdAt?: Prisma.DateTimeWithAggregatesFilter<"Marcador"> | Date | string;
 	updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Marcador"> | Date | string;
@@ -480,284 +443,164 @@ export type MarcadorSumOrderByAggregateInput = {
 
 export type MarcadorCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.MarcadorCreateWithoutEstadoInput,
-				Prisma.MarcadorUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.MarcadorCreateWithoutEstadoInput, Prisma.MarcadorUncheckedCreateWithoutEstadoInput>
 		| Prisma.MarcadorCreateWithoutEstadoInput[]
 		| Prisma.MarcadorUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.MarcadorCreateOrConnectWithoutEstadoInput
-		| Prisma.MarcadorCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.MarcadorCreateOrConnectWithoutEstadoInput | Prisma.MarcadorCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.MarcadorCreateManyEstadoInputEnvelope;
 	connect?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
 };
 
 export type MarcadorUncheckedCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.MarcadorCreateWithoutEstadoInput,
-				Prisma.MarcadorUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.MarcadorCreateWithoutEstadoInput, Prisma.MarcadorUncheckedCreateWithoutEstadoInput>
 		| Prisma.MarcadorCreateWithoutEstadoInput[]
 		| Prisma.MarcadorUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.MarcadorCreateOrConnectWithoutEstadoInput
-		| Prisma.MarcadorCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.MarcadorCreateOrConnectWithoutEstadoInput | Prisma.MarcadorCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.MarcadorCreateManyEstadoInputEnvelope;
 	connect?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
 };
 
 export type MarcadorUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.MarcadorCreateWithoutEstadoInput,
-				Prisma.MarcadorUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.MarcadorCreateWithoutEstadoInput, Prisma.MarcadorUncheckedCreateWithoutEstadoInput>
 		| Prisma.MarcadorCreateWithoutEstadoInput[]
 		| Prisma.MarcadorUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.MarcadorCreateOrConnectWithoutEstadoInput
-		| Prisma.MarcadorCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.MarcadorUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.MarcadorUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.MarcadorCreateOrConnectWithoutEstadoInput | Prisma.MarcadorCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.MarcadorUpsertWithWhereUniqueWithoutEstadoInput | Prisma.MarcadorUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.MarcadorCreateManyEstadoInputEnvelope;
 	set?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
-	disconnect?:
-		| Prisma.MarcadorWhereUniqueInput
-		| Prisma.MarcadorWhereUniqueInput[];
+	disconnect?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
 	delete?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
 	connect?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
-	update?:
-		| Prisma.MarcadorUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.MarcadorUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.MarcadorUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.MarcadorUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.MarcadorScalarWhereInput
-		| Prisma.MarcadorScalarWhereInput[];
+	update?: Prisma.MarcadorUpdateWithWhereUniqueWithoutEstadoInput | Prisma.MarcadorUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.MarcadorUpdateManyWithWhereWithoutEstadoInput | Prisma.MarcadorUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.MarcadorScalarWhereInput | Prisma.MarcadorScalarWhereInput[];
 };
 
 export type MarcadorUncheckedUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.MarcadorCreateWithoutEstadoInput,
-				Prisma.MarcadorUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.MarcadorCreateWithoutEstadoInput, Prisma.MarcadorUncheckedCreateWithoutEstadoInput>
 		| Prisma.MarcadorCreateWithoutEstadoInput[]
 		| Prisma.MarcadorUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.MarcadorCreateOrConnectWithoutEstadoInput
-		| Prisma.MarcadorCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.MarcadorUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.MarcadorUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.MarcadorCreateOrConnectWithoutEstadoInput | Prisma.MarcadorCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.MarcadorUpsertWithWhereUniqueWithoutEstadoInput | Prisma.MarcadorUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.MarcadorCreateManyEstadoInputEnvelope;
 	set?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
-	disconnect?:
-		| Prisma.MarcadorWhereUniqueInput
-		| Prisma.MarcadorWhereUniqueInput[];
+	disconnect?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
 	delete?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
 	connect?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
-	update?:
-		| Prisma.MarcadorUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.MarcadorUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.MarcadorUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.MarcadorUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.MarcadorScalarWhereInput
-		| Prisma.MarcadorScalarWhereInput[];
+	update?: Prisma.MarcadorUpdateWithWhereUniqueWithoutEstadoInput | Prisma.MarcadorUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.MarcadorUpdateManyWithWhereWithoutEstadoInput | Prisma.MarcadorUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.MarcadorScalarWhereInput | Prisma.MarcadorScalarWhereInput[];
 };
 
 export type MarcadorCreateNestedManyWithoutEscritorInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.MarcadorCreateWithoutEscritorInput,
-				Prisma.MarcadorUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.MarcadorCreateWithoutEscritorInput, Prisma.MarcadorUncheckedCreateWithoutEscritorInput>
 		| Prisma.MarcadorCreateWithoutEscritorInput[]
 		| Prisma.MarcadorUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.MarcadorCreateOrConnectWithoutEscritorInput
-		| Prisma.MarcadorCreateOrConnectWithoutEscritorInput[];
+	connectOrCreate?: Prisma.MarcadorCreateOrConnectWithoutEscritorInput | Prisma.MarcadorCreateOrConnectWithoutEscritorInput[];
 	createMany?: Prisma.MarcadorCreateManyEscritorInputEnvelope;
 	connect?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
 };
 
 export type MarcadorUncheckedCreateNestedManyWithoutEscritorInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.MarcadorCreateWithoutEscritorInput,
-				Prisma.MarcadorUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.MarcadorCreateWithoutEscritorInput, Prisma.MarcadorUncheckedCreateWithoutEscritorInput>
 		| Prisma.MarcadorCreateWithoutEscritorInput[]
 		| Prisma.MarcadorUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.MarcadorCreateOrConnectWithoutEscritorInput
-		| Prisma.MarcadorCreateOrConnectWithoutEscritorInput[];
+	connectOrCreate?: Prisma.MarcadorCreateOrConnectWithoutEscritorInput | Prisma.MarcadorCreateOrConnectWithoutEscritorInput[];
 	createMany?: Prisma.MarcadorCreateManyEscritorInputEnvelope;
 	connect?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
 };
 
 export type MarcadorUpdateManyWithoutEscritorNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.MarcadorCreateWithoutEscritorInput,
-				Prisma.MarcadorUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.MarcadorCreateWithoutEscritorInput, Prisma.MarcadorUncheckedCreateWithoutEscritorInput>
 		| Prisma.MarcadorCreateWithoutEscritorInput[]
 		| Prisma.MarcadorUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.MarcadorCreateOrConnectWithoutEscritorInput
-		| Prisma.MarcadorCreateOrConnectWithoutEscritorInput[];
-	upsert?:
-		| Prisma.MarcadorUpsertWithWhereUniqueWithoutEscritorInput
-		| Prisma.MarcadorUpsertWithWhereUniqueWithoutEscritorInput[];
+	connectOrCreate?: Prisma.MarcadorCreateOrConnectWithoutEscritorInput | Prisma.MarcadorCreateOrConnectWithoutEscritorInput[];
+	upsert?: Prisma.MarcadorUpsertWithWhereUniqueWithoutEscritorInput | Prisma.MarcadorUpsertWithWhereUniqueWithoutEscritorInput[];
 	createMany?: Prisma.MarcadorCreateManyEscritorInputEnvelope;
 	set?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
-	disconnect?:
-		| Prisma.MarcadorWhereUniqueInput
-		| Prisma.MarcadorWhereUniqueInput[];
+	disconnect?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
 	delete?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
 	connect?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
-	update?:
-		| Prisma.MarcadorUpdateWithWhereUniqueWithoutEscritorInput
-		| Prisma.MarcadorUpdateWithWhereUniqueWithoutEscritorInput[];
-	updateMany?:
-		| Prisma.MarcadorUpdateManyWithWhereWithoutEscritorInput
-		| Prisma.MarcadorUpdateManyWithWhereWithoutEscritorInput[];
-	deleteMany?:
-		| Prisma.MarcadorScalarWhereInput
-		| Prisma.MarcadorScalarWhereInput[];
+	update?: Prisma.MarcadorUpdateWithWhereUniqueWithoutEscritorInput | Prisma.MarcadorUpdateWithWhereUniqueWithoutEscritorInput[];
+	updateMany?: Prisma.MarcadorUpdateManyWithWhereWithoutEscritorInput | Prisma.MarcadorUpdateManyWithWhereWithoutEscritorInput[];
+	deleteMany?: Prisma.MarcadorScalarWhereInput | Prisma.MarcadorScalarWhereInput[];
 };
 
 export type MarcadorUncheckedUpdateManyWithoutEscritorNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.MarcadorCreateWithoutEscritorInput,
-				Prisma.MarcadorUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.MarcadorCreateWithoutEscritorInput, Prisma.MarcadorUncheckedCreateWithoutEscritorInput>
 		| Prisma.MarcadorCreateWithoutEscritorInput[]
 		| Prisma.MarcadorUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.MarcadorCreateOrConnectWithoutEscritorInput
-		| Prisma.MarcadorCreateOrConnectWithoutEscritorInput[];
-	upsert?:
-		| Prisma.MarcadorUpsertWithWhereUniqueWithoutEscritorInput
-		| Prisma.MarcadorUpsertWithWhereUniqueWithoutEscritorInput[];
+	connectOrCreate?: Prisma.MarcadorCreateOrConnectWithoutEscritorInput | Prisma.MarcadorCreateOrConnectWithoutEscritorInput[];
+	upsert?: Prisma.MarcadorUpsertWithWhereUniqueWithoutEscritorInput | Prisma.MarcadorUpsertWithWhereUniqueWithoutEscritorInput[];
 	createMany?: Prisma.MarcadorCreateManyEscritorInputEnvelope;
 	set?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
-	disconnect?:
-		| Prisma.MarcadorWhereUniqueInput
-		| Prisma.MarcadorWhereUniqueInput[];
+	disconnect?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
 	delete?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
 	connect?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
-	update?:
-		| Prisma.MarcadorUpdateWithWhereUniqueWithoutEscritorInput
-		| Prisma.MarcadorUpdateWithWhereUniqueWithoutEscritorInput[];
-	updateMany?:
-		| Prisma.MarcadorUpdateManyWithWhereWithoutEscritorInput
-		| Prisma.MarcadorUpdateManyWithWhereWithoutEscritorInput[];
-	deleteMany?:
-		| Prisma.MarcadorScalarWhereInput
-		| Prisma.MarcadorScalarWhereInput[];
+	update?: Prisma.MarcadorUpdateWithWhereUniqueWithoutEscritorInput | Prisma.MarcadorUpdateWithWhereUniqueWithoutEscritorInput[];
+	updateMany?: Prisma.MarcadorUpdateManyWithWhereWithoutEscritorInput | Prisma.MarcadorUpdateManyWithWhereWithoutEscritorInput[];
+	deleteMany?: Prisma.MarcadorScalarWhereInput | Prisma.MarcadorScalarWhereInput[];
 };
 
 export type MarcadorCreateNestedManyWithoutParrafoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.MarcadorCreateWithoutParrafoInput,
-				Prisma.MarcadorUncheckedCreateWithoutParrafoInput
-		  >
+		| Prisma.XOR<Prisma.MarcadorCreateWithoutParrafoInput, Prisma.MarcadorUncheckedCreateWithoutParrafoInput>
 		| Prisma.MarcadorCreateWithoutParrafoInput[]
 		| Prisma.MarcadorUncheckedCreateWithoutParrafoInput[];
-	connectOrCreate?:
-		| Prisma.MarcadorCreateOrConnectWithoutParrafoInput
-		| Prisma.MarcadorCreateOrConnectWithoutParrafoInput[];
+	connectOrCreate?: Prisma.MarcadorCreateOrConnectWithoutParrafoInput | Prisma.MarcadorCreateOrConnectWithoutParrafoInput[];
 	createMany?: Prisma.MarcadorCreateManyParrafoInputEnvelope;
 	connect?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
 };
 
 export type MarcadorUncheckedCreateNestedManyWithoutParrafoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.MarcadorCreateWithoutParrafoInput,
-				Prisma.MarcadorUncheckedCreateWithoutParrafoInput
-		  >
+		| Prisma.XOR<Prisma.MarcadorCreateWithoutParrafoInput, Prisma.MarcadorUncheckedCreateWithoutParrafoInput>
 		| Prisma.MarcadorCreateWithoutParrafoInput[]
 		| Prisma.MarcadorUncheckedCreateWithoutParrafoInput[];
-	connectOrCreate?:
-		| Prisma.MarcadorCreateOrConnectWithoutParrafoInput
-		| Prisma.MarcadorCreateOrConnectWithoutParrafoInput[];
+	connectOrCreate?: Prisma.MarcadorCreateOrConnectWithoutParrafoInput | Prisma.MarcadorCreateOrConnectWithoutParrafoInput[];
 	createMany?: Prisma.MarcadorCreateManyParrafoInputEnvelope;
 	connect?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
 };
 
 export type MarcadorUpdateManyWithoutParrafoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.MarcadorCreateWithoutParrafoInput,
-				Prisma.MarcadorUncheckedCreateWithoutParrafoInput
-		  >
+		| Prisma.XOR<Prisma.MarcadorCreateWithoutParrafoInput, Prisma.MarcadorUncheckedCreateWithoutParrafoInput>
 		| Prisma.MarcadorCreateWithoutParrafoInput[]
 		| Prisma.MarcadorUncheckedCreateWithoutParrafoInput[];
-	connectOrCreate?:
-		| Prisma.MarcadorCreateOrConnectWithoutParrafoInput
-		| Prisma.MarcadorCreateOrConnectWithoutParrafoInput[];
-	upsert?:
-		| Prisma.MarcadorUpsertWithWhereUniqueWithoutParrafoInput
-		| Prisma.MarcadorUpsertWithWhereUniqueWithoutParrafoInput[];
+	connectOrCreate?: Prisma.MarcadorCreateOrConnectWithoutParrafoInput | Prisma.MarcadorCreateOrConnectWithoutParrafoInput[];
+	upsert?: Prisma.MarcadorUpsertWithWhereUniqueWithoutParrafoInput | Prisma.MarcadorUpsertWithWhereUniqueWithoutParrafoInput[];
 	createMany?: Prisma.MarcadorCreateManyParrafoInputEnvelope;
 	set?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
-	disconnect?:
-		| Prisma.MarcadorWhereUniqueInput
-		| Prisma.MarcadorWhereUniqueInput[];
+	disconnect?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
 	delete?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
 	connect?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
-	update?:
-		| Prisma.MarcadorUpdateWithWhereUniqueWithoutParrafoInput
-		| Prisma.MarcadorUpdateWithWhereUniqueWithoutParrafoInput[];
-	updateMany?:
-		| Prisma.MarcadorUpdateManyWithWhereWithoutParrafoInput
-		| Prisma.MarcadorUpdateManyWithWhereWithoutParrafoInput[];
-	deleteMany?:
-		| Prisma.MarcadorScalarWhereInput
-		| Prisma.MarcadorScalarWhereInput[];
+	update?: Prisma.MarcadorUpdateWithWhereUniqueWithoutParrafoInput | Prisma.MarcadorUpdateWithWhereUniqueWithoutParrafoInput[];
+	updateMany?: Prisma.MarcadorUpdateManyWithWhereWithoutParrafoInput | Prisma.MarcadorUpdateManyWithWhereWithoutParrafoInput[];
+	deleteMany?: Prisma.MarcadorScalarWhereInput | Prisma.MarcadorScalarWhereInput[];
 };
 
 export type MarcadorUncheckedUpdateManyWithoutParrafoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.MarcadorCreateWithoutParrafoInput,
-				Prisma.MarcadorUncheckedCreateWithoutParrafoInput
-		  >
+		| Prisma.XOR<Prisma.MarcadorCreateWithoutParrafoInput, Prisma.MarcadorUncheckedCreateWithoutParrafoInput>
 		| Prisma.MarcadorCreateWithoutParrafoInput[]
 		| Prisma.MarcadorUncheckedCreateWithoutParrafoInput[];
-	connectOrCreate?:
-		| Prisma.MarcadorCreateOrConnectWithoutParrafoInput
-		| Prisma.MarcadorCreateOrConnectWithoutParrafoInput[];
-	upsert?:
-		| Prisma.MarcadorUpsertWithWhereUniqueWithoutParrafoInput
-		| Prisma.MarcadorUpsertWithWhereUniqueWithoutParrafoInput[];
+	connectOrCreate?: Prisma.MarcadorCreateOrConnectWithoutParrafoInput | Prisma.MarcadorCreateOrConnectWithoutParrafoInput[];
+	upsert?: Prisma.MarcadorUpsertWithWhereUniqueWithoutParrafoInput | Prisma.MarcadorUpsertWithWhereUniqueWithoutParrafoInput[];
 	createMany?: Prisma.MarcadorCreateManyParrafoInputEnvelope;
 	set?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
-	disconnect?:
-		| Prisma.MarcadorWhereUniqueInput
-		| Prisma.MarcadorWhereUniqueInput[];
+	disconnect?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
 	delete?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
 	connect?: Prisma.MarcadorWhereUniqueInput | Prisma.MarcadorWhereUniqueInput[];
-	update?:
-		| Prisma.MarcadorUpdateWithWhereUniqueWithoutParrafoInput
-		| Prisma.MarcadorUpdateWithWhereUniqueWithoutParrafoInput[];
-	updateMany?:
-		| Prisma.MarcadorUpdateManyWithWhereWithoutParrafoInput
-		| Prisma.MarcadorUpdateManyWithWhereWithoutParrafoInput[];
-	deleteMany?:
-		| Prisma.MarcadorScalarWhereInput
-		| Prisma.MarcadorScalarWhereInput[];
+	update?: Prisma.MarcadorUpdateWithWhereUniqueWithoutParrafoInput | Prisma.MarcadorUpdateWithWhereUniqueWithoutParrafoInput[];
+	updateMany?: Prisma.MarcadorUpdateManyWithWhereWithoutParrafoInput | Prisma.MarcadorUpdateManyWithWhereWithoutParrafoInput[];
+	deleteMany?: Prisma.MarcadorScalarWhereInput | Prisma.MarcadorScalarWhereInput[];
 };
 
 export type MarcadorCreateWithoutEstadoInput = {
@@ -781,45 +624,28 @@ export type MarcadorUncheckedCreateWithoutEstadoInput = {
 
 export type MarcadorCreateOrConnectWithoutEstadoInput = {
 	where: Prisma.MarcadorWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.MarcadorCreateWithoutEstadoInput,
-		Prisma.MarcadorUncheckedCreateWithoutEstadoInput
-	>;
+	create: Prisma.XOR<Prisma.MarcadorCreateWithoutEstadoInput, Prisma.MarcadorUncheckedCreateWithoutEstadoInput>;
 };
 
 export type MarcadorCreateManyEstadoInputEnvelope = {
-	data:
-		| Prisma.MarcadorCreateManyEstadoInput
-		| Prisma.MarcadorCreateManyEstadoInput[];
+	data: Prisma.MarcadorCreateManyEstadoInput | Prisma.MarcadorCreateManyEstadoInput[];
 	skipDuplicates?: boolean;
 };
 
 export type MarcadorUpsertWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.MarcadorWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.MarcadorUpdateWithoutEstadoInput,
-		Prisma.MarcadorUncheckedUpdateWithoutEstadoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.MarcadorCreateWithoutEstadoInput,
-		Prisma.MarcadorUncheckedCreateWithoutEstadoInput
-	>;
+	update: Prisma.XOR<Prisma.MarcadorUpdateWithoutEstadoInput, Prisma.MarcadorUncheckedUpdateWithoutEstadoInput>;
+	create: Prisma.XOR<Prisma.MarcadorCreateWithoutEstadoInput, Prisma.MarcadorUncheckedCreateWithoutEstadoInput>;
 };
 
 export type MarcadorUpdateWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.MarcadorWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.MarcadorUpdateWithoutEstadoInput,
-		Prisma.MarcadorUncheckedUpdateWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.MarcadorUpdateWithoutEstadoInput, Prisma.MarcadorUncheckedUpdateWithoutEstadoInput>;
 };
 
 export type MarcadorUpdateManyWithWhereWithoutEstadoInput = {
 	where: Prisma.MarcadorScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.MarcadorUpdateManyMutationInput,
-		Prisma.MarcadorUncheckedUpdateManyWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.MarcadorUpdateManyMutationInput, Prisma.MarcadorUncheckedUpdateManyWithoutEstadoInput>;
 };
 
 export type MarcadorScalarWhereInput = {
@@ -857,45 +683,28 @@ export type MarcadorUncheckedCreateWithoutEscritorInput = {
 
 export type MarcadorCreateOrConnectWithoutEscritorInput = {
 	where: Prisma.MarcadorWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.MarcadorCreateWithoutEscritorInput,
-		Prisma.MarcadorUncheckedCreateWithoutEscritorInput
-	>;
+	create: Prisma.XOR<Prisma.MarcadorCreateWithoutEscritorInput, Prisma.MarcadorUncheckedCreateWithoutEscritorInput>;
 };
 
 export type MarcadorCreateManyEscritorInputEnvelope = {
-	data:
-		| Prisma.MarcadorCreateManyEscritorInput
-		| Prisma.MarcadorCreateManyEscritorInput[];
+	data: Prisma.MarcadorCreateManyEscritorInput | Prisma.MarcadorCreateManyEscritorInput[];
 	skipDuplicates?: boolean;
 };
 
 export type MarcadorUpsertWithWhereUniqueWithoutEscritorInput = {
 	where: Prisma.MarcadorWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.MarcadorUpdateWithoutEscritorInput,
-		Prisma.MarcadorUncheckedUpdateWithoutEscritorInput
-	>;
-	create: Prisma.XOR<
-		Prisma.MarcadorCreateWithoutEscritorInput,
-		Prisma.MarcadorUncheckedCreateWithoutEscritorInput
-	>;
+	update: Prisma.XOR<Prisma.MarcadorUpdateWithoutEscritorInput, Prisma.MarcadorUncheckedUpdateWithoutEscritorInput>;
+	create: Prisma.XOR<Prisma.MarcadorCreateWithoutEscritorInput, Prisma.MarcadorUncheckedCreateWithoutEscritorInput>;
 };
 
 export type MarcadorUpdateWithWhereUniqueWithoutEscritorInput = {
 	where: Prisma.MarcadorWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.MarcadorUpdateWithoutEscritorInput,
-		Prisma.MarcadorUncheckedUpdateWithoutEscritorInput
-	>;
+	data: Prisma.XOR<Prisma.MarcadorUpdateWithoutEscritorInput, Prisma.MarcadorUncheckedUpdateWithoutEscritorInput>;
 };
 
 export type MarcadorUpdateManyWithWhereWithoutEscritorInput = {
 	where: Prisma.MarcadorScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.MarcadorUpdateManyMutationInput,
-		Prisma.MarcadorUncheckedUpdateManyWithoutEscritorInput
-	>;
+	data: Prisma.XOR<Prisma.MarcadorUpdateManyMutationInput, Prisma.MarcadorUncheckedUpdateManyWithoutEscritorInput>;
 };
 
 export type MarcadorCreateWithoutParrafoInput = {
@@ -919,45 +728,28 @@ export type MarcadorUncheckedCreateWithoutParrafoInput = {
 
 export type MarcadorCreateOrConnectWithoutParrafoInput = {
 	where: Prisma.MarcadorWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.MarcadorCreateWithoutParrafoInput,
-		Prisma.MarcadorUncheckedCreateWithoutParrafoInput
-	>;
+	create: Prisma.XOR<Prisma.MarcadorCreateWithoutParrafoInput, Prisma.MarcadorUncheckedCreateWithoutParrafoInput>;
 };
 
 export type MarcadorCreateManyParrafoInputEnvelope = {
-	data:
-		| Prisma.MarcadorCreateManyParrafoInput
-		| Prisma.MarcadorCreateManyParrafoInput[];
+	data: Prisma.MarcadorCreateManyParrafoInput | Prisma.MarcadorCreateManyParrafoInput[];
 	skipDuplicates?: boolean;
 };
 
 export type MarcadorUpsertWithWhereUniqueWithoutParrafoInput = {
 	where: Prisma.MarcadorWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.MarcadorUpdateWithoutParrafoInput,
-		Prisma.MarcadorUncheckedUpdateWithoutParrafoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.MarcadorCreateWithoutParrafoInput,
-		Prisma.MarcadorUncheckedCreateWithoutParrafoInput
-	>;
+	update: Prisma.XOR<Prisma.MarcadorUpdateWithoutParrafoInput, Prisma.MarcadorUncheckedUpdateWithoutParrafoInput>;
+	create: Prisma.XOR<Prisma.MarcadorCreateWithoutParrafoInput, Prisma.MarcadorUncheckedCreateWithoutParrafoInput>;
 };
 
 export type MarcadorUpdateWithWhereUniqueWithoutParrafoInput = {
 	where: Prisma.MarcadorWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.MarcadorUpdateWithoutParrafoInput,
-		Prisma.MarcadorUncheckedUpdateWithoutParrafoInput
-	>;
+	data: Prisma.XOR<Prisma.MarcadorUpdateWithoutParrafoInput, Prisma.MarcadorUncheckedUpdateWithoutParrafoInput>;
 };
 
 export type MarcadorUpdateManyWithWhereWithoutParrafoInput = {
 	where: Prisma.MarcadorScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.MarcadorUpdateManyMutationInput,
-		Prisma.MarcadorUncheckedUpdateManyWithoutParrafoInput
-	>;
+	data: Prisma.XOR<Prisma.MarcadorUpdateManyMutationInput, Prisma.MarcadorUncheckedUpdateManyWithoutParrafoInput>;
 };
 
 export type MarcadorCreateManyEstadoInput = {
@@ -1077,10 +869,7 @@ export type MarcadorUncheckedUpdateManyWithoutParrafoInput = {
 	estadoId?: Prisma.IntFieldUpdateOperationsInput | number;
 };
 
-export type MarcadorSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type MarcadorSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -1097,10 +886,7 @@ export type MarcadorSelect<
 	ExtArgs["result"]["marcador"]
 >;
 
-export type MarcadorSelectCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type MarcadorSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -1117,10 +903,7 @@ export type MarcadorSelectCreateManyAndReturn<
 	ExtArgs["result"]["marcador"]
 >;
 
-export type MarcadorSelectUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type MarcadorSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -1148,49 +931,27 @@ export type MarcadorSelectScalar = {
 	estadoId?: boolean;
 };
 
-export type MarcadorOmit<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetOmit<
-	| "id"
-	| "nombre"
-	| "color"
-	| "createdAt"
-	| "updatedAt"
-	| "escritorId"
-	| "parrafoId"
-	| "estadoId",
+export type MarcadorOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<
+	"id" | "nombre" | "color" | "createdAt" | "updatedAt" | "escritorId" | "parrafoId" | "estadoId",
 	ExtArgs["result"]["marcador"]
 >;
-export type MarcadorInclude<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type MarcadorInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	escritor?: boolean | Prisma.EscritorDefaultArgs<ExtArgs>;
 	parrafo?: boolean | Prisma.ParrafoDefaultArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
-export type MarcadorIncludeCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type MarcadorIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	escritor?: boolean | Prisma.EscritorDefaultArgs<ExtArgs>;
 	parrafo?: boolean | Prisma.ParrafoDefaultArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
-export type MarcadorIncludeUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type MarcadorIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	escritor?: boolean | Prisma.EscritorDefaultArgs<ExtArgs>;
 	parrafo?: boolean | Prisma.ParrafoDefaultArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
 
-export type $MarcadorPayload<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type $MarcadorPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	name: "Marcador";
 	objects: {
 		escritor: Prisma.$EscritorPayload<ExtArgs>;
@@ -1213,26 +974,14 @@ export type $MarcadorPayload<
 	composites: {};
 };
 
-export type MarcadorGetPayload<
-	S extends boolean | null | undefined | MarcadorDefaultArgs,
-> = runtime.Types.Result.GetResult<Prisma.$MarcadorPayload, S>;
+export type MarcadorGetPayload<S extends boolean | null | undefined | MarcadorDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$MarcadorPayload, S>;
 
-export type MarcadorCountArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = Omit<MarcadorFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
+export type MarcadorCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<MarcadorFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
 	select?: MarcadorCountAggregateInputType | true;
 };
 
-export interface MarcadorDelegate<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> {
-	[K: symbol]: {
-		types: Prisma.TypeMap<ExtArgs>["model"]["Marcador"];
-		meta: { name: "Marcador" };
-	};
+export interface MarcadorDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+	[K: symbol]: { types: Prisma.TypeMap<ExtArgs>["model"]["Marcador"]; meta: { name: "Marcador" } };
 	/**
 	 * Find zero or one Marcador that matches the filter.
 	 * @param {MarcadorFindUniqueArgs} args - Arguments to find a Marcador
@@ -1246,17 +995,7 @@ export interface MarcadorDelegate<
 	 */
 	findUnique<T extends MarcadorFindUniqueArgs>(
 		args: Prisma.SelectSubset<T, MarcadorFindUniqueArgs<ExtArgs>>,
-	): Prisma.Prisma__MarcadorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$MarcadorPayload<ExtArgs>,
-			T,
-			"findUnique",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__MarcadorClient<runtime.Types.Result.GetResult<Prisma.$MarcadorPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find one Marcador that matches the filter or throw an error with `error.code='P2025'`
@@ -1272,17 +1011,7 @@ export interface MarcadorDelegate<
 	 */
 	findUniqueOrThrow<T extends MarcadorFindUniqueOrThrowArgs>(
 		args: Prisma.SelectSubset<T, MarcadorFindUniqueOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__MarcadorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$MarcadorPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__MarcadorClient<runtime.Types.Result.GetResult<Prisma.$MarcadorPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Marcador that matches the filter.
@@ -1299,17 +1028,7 @@ export interface MarcadorDelegate<
 	 */
 	findFirst<T extends MarcadorFindFirstArgs>(
 		args?: Prisma.SelectSubset<T, MarcadorFindFirstArgs<ExtArgs>>,
-	): Prisma.Prisma__MarcadorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$MarcadorPayload<ExtArgs>,
-			T,
-			"findFirst",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__MarcadorClient<runtime.Types.Result.GetResult<Prisma.$MarcadorPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Marcador that matches the filter or
@@ -1327,17 +1046,7 @@ export interface MarcadorDelegate<
 	 */
 	findFirstOrThrow<T extends MarcadorFindFirstOrThrowArgs>(
 		args?: Prisma.SelectSubset<T, MarcadorFindFirstOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__MarcadorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$MarcadorPayload<ExtArgs>,
-			T,
-			"findFirstOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__MarcadorClient<runtime.Types.Result.GetResult<Prisma.$MarcadorPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find zero or more Marcadors that matches the filter.
@@ -1357,14 +1066,7 @@ export interface MarcadorDelegate<
 	 */
 	findMany<T extends MarcadorFindManyArgs>(
 		args?: Prisma.SelectSubset<T, MarcadorFindManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$MarcadorPayload<ExtArgs>,
-			T,
-			"findMany",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MarcadorPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
 
 	/**
 	 * Create a Marcador.
@@ -1380,17 +1082,7 @@ export interface MarcadorDelegate<
 	 */
 	create<T extends MarcadorCreateArgs>(
 		args: Prisma.SelectSubset<T, MarcadorCreateArgs<ExtArgs>>,
-	): Prisma.Prisma__MarcadorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$MarcadorPayload<ExtArgs>,
-			T,
-			"create",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__MarcadorClient<runtime.Types.Result.GetResult<Prisma.$MarcadorPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Create many Marcadors.
@@ -1404,9 +1096,7 @@ export interface MarcadorDelegate<
 	 * })
 	 *
 	 */
-	createMany<T extends MarcadorCreateManyArgs>(
-		args?: Prisma.SelectSubset<T, MarcadorCreateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	createMany<T extends MarcadorCreateManyArgs>(args?: Prisma.SelectSubset<T, MarcadorCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Create many Marcadors and returns the data saved in the database.
@@ -1432,14 +1122,7 @@ export interface MarcadorDelegate<
 	 */
 	createManyAndReturn<T extends MarcadorCreateManyAndReturnArgs>(
 		args?: Prisma.SelectSubset<T, MarcadorCreateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$MarcadorPayload<ExtArgs>,
-			T,
-			"createManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MarcadorPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Delete a Marcador.
@@ -1455,17 +1138,7 @@ export interface MarcadorDelegate<
 	 */
 	delete<T extends MarcadorDeleteArgs>(
 		args: Prisma.SelectSubset<T, MarcadorDeleteArgs<ExtArgs>>,
-	): Prisma.Prisma__MarcadorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$MarcadorPayload<ExtArgs>,
-			T,
-			"delete",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__MarcadorClient<runtime.Types.Result.GetResult<Prisma.$MarcadorPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Update one Marcador.
@@ -1484,17 +1157,7 @@ export interface MarcadorDelegate<
 	 */
 	update<T extends MarcadorUpdateArgs>(
 		args: Prisma.SelectSubset<T, MarcadorUpdateArgs<ExtArgs>>,
-	): Prisma.Prisma__MarcadorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$MarcadorPayload<ExtArgs>,
-			T,
-			"update",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__MarcadorClient<runtime.Types.Result.GetResult<Prisma.$MarcadorPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Delete zero or more Marcadors.
@@ -1508,9 +1171,7 @@ export interface MarcadorDelegate<
 	 * })
 	 *
 	 */
-	deleteMany<T extends MarcadorDeleteManyArgs>(
-		args?: Prisma.SelectSubset<T, MarcadorDeleteManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	deleteMany<T extends MarcadorDeleteManyArgs>(args?: Prisma.SelectSubset<T, MarcadorDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Marcadors.
@@ -1529,9 +1190,7 @@ export interface MarcadorDelegate<
 	 * })
 	 *
 	 */
-	updateMany<T extends MarcadorUpdateManyArgs>(
-		args: Prisma.SelectSubset<T, MarcadorUpdateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	updateMany<T extends MarcadorUpdateManyArgs>(args: Prisma.SelectSubset<T, MarcadorUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Marcadors and returns the data updated in the database.
@@ -1563,14 +1222,7 @@ export interface MarcadorDelegate<
 	 */
 	updateManyAndReturn<T extends MarcadorUpdateManyAndReturnArgs>(
 		args: Prisma.SelectSubset<T, MarcadorUpdateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$MarcadorPayload<ExtArgs>,
-			T,
-			"updateManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MarcadorPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Create or update one Marcador.
@@ -1591,17 +1243,7 @@ export interface MarcadorDelegate<
 	 */
 	upsert<T extends MarcadorUpsertArgs>(
 		args: Prisma.SelectSubset<T, MarcadorUpsertArgs<ExtArgs>>,
-	): Prisma.Prisma__MarcadorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$MarcadorPayload<ExtArgs>,
-			T,
-			"upsert",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__MarcadorClient<runtime.Types.Result.GetResult<Prisma.$MarcadorPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Count the number of Marcadors.
@@ -1618,13 +1260,7 @@ export interface MarcadorDelegate<
 	 **/
 	count<T extends MarcadorCountArgs>(
 		args?: Prisma.Subset<T, MarcadorCountArgs>,
-	): Prisma.PrismaPromise<
-		T extends runtime.Types.Utils.Record<"select", any>
-			? T["select"] extends true
-				? number
-				: Prisma.GetScalarType<T["select"], MarcadorCountAggregateOutputType>
-			: number
-	>;
+	): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<"select", any> ? (T["select"] extends true ? number : Prisma.GetScalarType<T["select"], MarcadorCountAggregateOutputType>) : number>;
 
 	/**
 	 * Allows you to perform aggregations operations on a Marcador.
@@ -1650,9 +1286,7 @@ export interface MarcadorDelegate<
 	 *   take: 10,
 	 * })
 	 **/
-	aggregate<T extends MarcadorAggregateArgs>(
-		args: Prisma.Subset<T, MarcadorAggregateArgs>,
-	): Prisma.PrismaPromise<GetMarcadorAggregateType<T>>;
+	aggregate<T extends MarcadorAggregateArgs>(args: Prisma.Subset<T, MarcadorAggregateArgs>): Prisma.PrismaPromise<GetMarcadorAggregateType<T>>;
 
 	/**
 	 * Group by Marcador.
@@ -1674,16 +1308,9 @@ export interface MarcadorDelegate<
 	 **/
 	groupBy<
 		T extends MarcadorGroupByArgs,
-		HasSelectOrTake extends Prisma.Or<
-			Prisma.Extends<"skip", Prisma.Keys<T>>,
-			Prisma.Extends<"take", Prisma.Keys<T>>
-		>,
-		OrderByArg extends Prisma.True extends HasSelectOrTake
-			? { orderBy: MarcadorGroupByArgs["orderBy"] }
-			: { orderBy?: MarcadorGroupByArgs["orderBy"] },
-		OrderFields extends Prisma.ExcludeUnderscoreKeys<
-			Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>
-		>,
+		HasSelectOrTake extends Prisma.Or<Prisma.Extends<"skip", Prisma.Keys<T>>, Prisma.Extends<"take", Prisma.Keys<T>>>,
+		OrderByArg extends Prisma.True extends HasSelectOrTake ? { orderBy: MarcadorGroupByArgs["orderBy"] } : { orderBy?: MarcadorGroupByArgs["orderBy"] },
+		OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>>,
 		ByFields extends Prisma.MaybeTupleToUnion<T["by"]>,
 		ByValid extends Prisma.Has<ByFields, OrderFields>,
 		HavingFields extends Prisma.GetHavingFields<T["having"]>,
@@ -1697,21 +1324,14 @@ export interface MarcadorDelegate<
 							? never
 							: P extends string
 								? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-								: [
-										Error,
-										"Field ",
-										P,
-										` in "having" needs to be provided in "by"`,
-									];
+								: [Error, "Field ", P, ` in "having" needs to be provided in "by"`];
 					}[HavingFields]
 				: "take" extends Prisma.Keys<T>
 					? "orderBy" extends Prisma.Keys<T>
 						? ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields]
 						: 'Error: If you provide "take", you also need to provide "orderBy"'
 					: "skip" extends Prisma.Keys<T>
@@ -1719,24 +1339,15 @@ export interface MarcadorDelegate<
 							? ByValid extends Prisma.True
 								? {}
 								: {
-										[P in OrderFields]: P extends ByFields
-											? never
-											: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+										[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 									}[OrderFields]
 							: 'Error: If you provide "skip", you also need to provide "orderBy"'
 						: ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields],
-	>(
-		args: Prisma.SubsetIntersection<T, MarcadorGroupByArgs, OrderByArg> &
-			InputErrors,
-	): {} extends InputErrors
-		? GetMarcadorGroupByPayload<T>
-		: Prisma.PrismaPromise<InputErrors>;
+	>(args: Prisma.SubsetIntersection<T, MarcadorGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMarcadorGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
 	/**
 	 * Fields of the Marcador model
 	 */
@@ -1749,56 +1360,18 @@ export interface MarcadorDelegate<
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__MarcadorClient<
-	T,
-	Null = never,
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> extends Prisma.PrismaPromise<T> {
+export interface Prisma__MarcadorClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}>
+	extends Prisma.PrismaPromise<T> {
 	readonly [Symbol.toStringTag]: "PrismaPromise";
 	escritor<T extends Prisma.EscritorDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EscritorDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EscritorClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EscritorPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EscritorClient<runtime.Types.Result.GetResult<Prisma.$EscritorPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	parrafo<T extends Prisma.ParrafoDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.ParrafoDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__ParrafoClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$ParrafoPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ParrafoClient<runtime.Types.Result.GetResult<Prisma.$ParrafoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	estado<T extends Prisma.EstadoDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EstadoDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EstadoPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	/**
 	 * Attaches callbacks for the resolution and/or rejection of the Promise.
 	 * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1806,35 +1379,22 @@ export interface Prisma__MarcadorClient<
 	 * @returns A Promise for the completion of which ever callback is executed.
 	 */
 	then<TResult1 = T, TResult2 = never>(
-		onfulfilled?:
-			| ((value: T) => TResult1 | PromiseLike<TResult1>)
-			| undefined
-			| null,
-		onrejected?:
-			| ((reason: any) => TResult2 | PromiseLike<TResult2>)
-			| undefined
-			| null,
+		onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+		onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
 	): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
 	/**
 	 * Attaches a callback for only the rejection of the Promise.
 	 * @param onrejected The callback to execute when the Promise is rejected.
 	 * @returns A Promise for the completion of the callback.
 	 */
-	catch<TResult = never>(
-		onrejected?:
-			| ((reason: any) => TResult | PromiseLike<TResult>)
-			| undefined
-			| null,
-	): runtime.Types.Utils.JsPromise<T | TResult>;
+	catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
 	/**
 	 * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
 	 * resolved value cannot be modified from the callback.
 	 * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
 	 * @returns A Promise for the completion of the callback.
 	 */
-	finally(
-		onfinally?: (() => void) | undefined | null,
-	): runtime.Types.Utils.JsPromise<T>;
+	finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
 }
 
 /**
@@ -1855,10 +1415,7 @@ export interface MarcadorFieldRefs {
 /**
  * Marcador findUnique
  */
-export type MarcadorFindUniqueArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type MarcadorFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Marcador
 	 */
@@ -1880,10 +1437,7 @@ export type MarcadorFindUniqueArgs<
 /**
  * Marcador findUniqueOrThrow
  */
-export type MarcadorFindUniqueOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type MarcadorFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Marcador
 	 */
@@ -1905,10 +1459,7 @@ export type MarcadorFindUniqueOrThrowArgs<
 /**
  * Marcador findFirst
  */
-export type MarcadorFindFirstArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type MarcadorFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Marcador
 	 */
@@ -1930,9 +1481,7 @@ export type MarcadorFindFirstArgs<
 	 *
 	 * Determine the order of Marcadors to fetch.
 	 */
-	orderBy?:
-		| Prisma.MarcadorOrderByWithRelationInput
-		| Prisma.MarcadorOrderByWithRelationInput[];
+	orderBy?: Prisma.MarcadorOrderByWithRelationInput | Prisma.MarcadorOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1962,10 +1511,7 @@ export type MarcadorFindFirstArgs<
 /**
  * Marcador findFirstOrThrow
  */
-export type MarcadorFindFirstOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type MarcadorFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Marcador
 	 */
@@ -1987,9 +1533,7 @@ export type MarcadorFindFirstOrThrowArgs<
 	 *
 	 * Determine the order of Marcadors to fetch.
 	 */
-	orderBy?:
-		| Prisma.MarcadorOrderByWithRelationInput
-		| Prisma.MarcadorOrderByWithRelationInput[];
+	orderBy?: Prisma.MarcadorOrderByWithRelationInput | Prisma.MarcadorOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -2019,10 +1563,7 @@ export type MarcadorFindFirstOrThrowArgs<
 /**
  * Marcador findMany
  */
-export type MarcadorFindManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type MarcadorFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Marcador
 	 */
@@ -2044,9 +1585,7 @@ export type MarcadorFindManyArgs<
 	 *
 	 * Determine the order of Marcadors to fetch.
 	 */
-	orderBy?:
-		| Prisma.MarcadorOrderByWithRelationInput
-		| Prisma.MarcadorOrderByWithRelationInput[];
+	orderBy?: Prisma.MarcadorOrderByWithRelationInput | Prisma.MarcadorOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -2076,10 +1615,7 @@ export type MarcadorFindManyArgs<
 /**
  * Marcador create
  */
-export type MarcadorCreateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type MarcadorCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Marcador
 	 */
@@ -2095,19 +1631,13 @@ export type MarcadorCreateArgs<
 	/**
 	 * The data needed to create a Marcador.
 	 */
-	data: Prisma.XOR<
-		Prisma.MarcadorCreateInput,
-		Prisma.MarcadorUncheckedCreateInput
-	>;
+	data: Prisma.XOR<Prisma.MarcadorCreateInput, Prisma.MarcadorUncheckedCreateInput>;
 };
 
 /**
  * Marcador createMany
  */
-export type MarcadorCreateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type MarcadorCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to create many Marcadors.
 	 */
@@ -2118,10 +1648,7 @@ export type MarcadorCreateManyArgs<
 /**
  * Marcador createManyAndReturn
  */
-export type MarcadorCreateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type MarcadorCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Marcador
 	 */
@@ -2144,10 +1671,7 @@ export type MarcadorCreateManyAndReturnArgs<
 /**
  * Marcador update
  */
-export type MarcadorUpdateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type MarcadorUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Marcador
 	 */
@@ -2163,10 +1687,7 @@ export type MarcadorUpdateArgs<
 	/**
 	 * The data needed to update a Marcador.
 	 */
-	data: Prisma.XOR<
-		Prisma.MarcadorUpdateInput,
-		Prisma.MarcadorUncheckedUpdateInput
-	>;
+	data: Prisma.XOR<Prisma.MarcadorUpdateInput, Prisma.MarcadorUncheckedUpdateInput>;
 	/**
 	 * Choose, which Marcador to update.
 	 */
@@ -2176,17 +1697,11 @@ export type MarcadorUpdateArgs<
 /**
  * Marcador updateMany
  */
-export type MarcadorUpdateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type MarcadorUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to update Marcadors.
 	 */
-	data: Prisma.XOR<
-		Prisma.MarcadorUpdateManyMutationInput,
-		Prisma.MarcadorUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.MarcadorUpdateManyMutationInput, Prisma.MarcadorUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Marcadors to update
 	 */
@@ -2200,10 +1715,7 @@ export type MarcadorUpdateManyArgs<
 /**
  * Marcador updateManyAndReturn
  */
-export type MarcadorUpdateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type MarcadorUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Marcador
 	 */
@@ -2215,10 +1727,7 @@ export type MarcadorUpdateManyAndReturnArgs<
 	/**
 	 * The data used to update Marcadors.
 	 */
-	data: Prisma.XOR<
-		Prisma.MarcadorUpdateManyMutationInput,
-		Prisma.MarcadorUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.MarcadorUpdateManyMutationInput, Prisma.MarcadorUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Marcadors to update
 	 */
@@ -2236,10 +1745,7 @@ export type MarcadorUpdateManyAndReturnArgs<
 /**
  * Marcador upsert
  */
-export type MarcadorUpsertArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type MarcadorUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Marcador
 	 */
@@ -2259,26 +1765,17 @@ export type MarcadorUpsertArgs<
 	/**
 	 * In case the Marcador found by the `where` argument doesn't exist, create a new Marcador with this data.
 	 */
-	create: Prisma.XOR<
-		Prisma.MarcadorCreateInput,
-		Prisma.MarcadorUncheckedCreateInput
-	>;
+	create: Prisma.XOR<Prisma.MarcadorCreateInput, Prisma.MarcadorUncheckedCreateInput>;
 	/**
 	 * In case the Marcador was found with the provided `where` argument, update it with this data.
 	 */
-	update: Prisma.XOR<
-		Prisma.MarcadorUpdateInput,
-		Prisma.MarcadorUncheckedUpdateInput
-	>;
+	update: Prisma.XOR<Prisma.MarcadorUpdateInput, Prisma.MarcadorUncheckedUpdateInput>;
 };
 
 /**
  * Marcador delete
  */
-export type MarcadorDeleteArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type MarcadorDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Marcador
 	 */
@@ -2300,10 +1797,7 @@ export type MarcadorDeleteArgs<
 /**
  * Marcador deleteMany
  */
-export type MarcadorDeleteManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type MarcadorDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Marcadors to delete
 	 */
@@ -2317,10 +1811,7 @@ export type MarcadorDeleteManyArgs<
 /**
  * Marcador without action
  */
-export type MarcadorDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type MarcadorDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Marcador
 	 */

@@ -1,7 +1,7 @@
 {
 	"version": "1.0",
 	"generatorVersion": "unknown",
-	"generatedAt": "2026-04-07T03:28:39.670Z",
+	"generatedAt": "2026-11-22T20:37:08.708Z",
 	"outputPath": "C:\\Users\\PC\\Documents\\proyectos\\Nextjs\\proyecto\\generated",
 	"files": [
 		"schemas\\enums\\TransactionIsolationLevel.schema.ts",
@@ -2797,15 +2797,6 @@
 		"schemas\\variants\\result\\index.ts",
 		"schemas\\variants\\index.ts"
 	],
-	"directories": [
-		"schemas\\enums",
-		"schemas\\objects",
-		"schemas",
-		"schemas\\results",
-		"schemas\\variants\\pure",
-		"schemas\\variants\\input",
-		"schemas\\variants\\result",
-		"schemas\\variants"
-	],
+	"directories": ["schemas\\enums", "schemas\\objects", "schemas", "schemas\\results", "schemas\\variants\\pure", "schemas\\variants\\input", "schemas\\variants\\result", "schemas\\variants"],
 	"singleFileMode": false
 }

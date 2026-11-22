@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { EscritorCreateOrConnectWithoutFavoritosInputObjectSchema as EscritorCreateOrConnectWithoutFavoritosInputObjectSchema } from "./EscritorCreateOrConnectWithoutFavoritosInput.schema.ts";
 import { EscritorCreateWithoutFavoritosInputObjectSchema as EscritorCreateWithoutFavoritosInputObjectSchema } from "./EscritorCreateWithoutFavoritosInput.schema.ts";
 import { EscritorUncheckedCreateWithoutFavoritosInputObjectSchema as EscritorUncheckedCreateWithoutFavoritosInputObjectSchema } from "./EscritorUncheckedCreateWithoutFavoritosInput.schema.ts";
@@ -13,41 +13,21 @@ import { EscritorWhereUniqueInputObjectSchema as EscritorWhereUniqueInputObjectS
 const makeSchema = () =>
 	z
 		.object({
-			create: z
-				.union([
-					z.lazy(() => EscritorCreateWithoutFavoritosInputObjectSchema),
-					z.lazy(
-						() => EscritorUncheckedCreateWithoutFavoritosInputObjectSchema,
-					),
-				])
-				.optional(),
-			connectOrCreate: z
-				.lazy(() => EscritorCreateOrConnectWithoutFavoritosInputObjectSchema)
-				.optional(),
-			upsert: z
-				.lazy(() => EscritorUpsertWithoutFavoritosInputObjectSchema)
-				.optional(),
-			disconnect: z
-				.union([z.boolean(), z.lazy(() => EscritorWhereInputObjectSchema)])
-				.optional(),
-			delete: z
-				.union([z.boolean(), z.lazy(() => EscritorWhereInputObjectSchema)])
-				.optional(),
+			create: z.union([z.lazy(() => EscritorCreateWithoutFavoritosInputObjectSchema), z.lazy(() => EscritorUncheckedCreateWithoutFavoritosInputObjectSchema)]).optional(),
+			connectOrCreate: z.lazy(() => EscritorCreateOrConnectWithoutFavoritosInputObjectSchema).optional(),
+			upsert: z.lazy(() => EscritorUpsertWithoutFavoritosInputObjectSchema).optional(),
+			disconnect: z.union([z.boolean(), z.lazy(() => EscritorWhereInputObjectSchema)]).optional(),
+			delete: z.union([z.boolean(), z.lazy(() => EscritorWhereInputObjectSchema)]).optional(),
 			connect: z.lazy(() => EscritorWhereUniqueInputObjectSchema).optional(),
 			update: z
 				.union([
-					z.lazy(
-						() => EscritorUpdateToOneWithWhereWithoutFavoritosInputObjectSchema,
-					),
+					z.lazy(() => EscritorUpdateToOneWithWhereWithoutFavoritosInputObjectSchema),
 					z.lazy(() => EscritorUpdateWithoutFavoritosInputObjectSchema),
-					z.lazy(
-						() => EscritorUncheckedUpdateWithoutFavoritosInputObjectSchema,
-					),
+					z.lazy(() => EscritorUncheckedUpdateWithoutFavoritosInputObjectSchema),
 				])
 				.optional(),
 		})
 		.strict();
 export const EscritorUpdateOneWithoutFavoritosNestedInputObjectSchema: z.ZodType<Prisma.EscritorUpdateOneWithoutFavoritosNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.EscritorUpdateOneWithoutFavoritosNestedInput>;
-export const EscritorUpdateOneWithoutFavoritosNestedInputObjectZodSchema =
-	makeSchema();
+export const EscritorUpdateOneWithoutFavoritosNestedInputObjectZodSchema = makeSchema();

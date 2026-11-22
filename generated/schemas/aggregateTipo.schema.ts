@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { TipoAvgAggregateInputObjectSchema as TipoAvgAggregateInputObjectSchema } from "./objects/TipoAvgAggregateInput.schema.ts";
 import { TipoCountAggregateInputObjectSchema as TipoCountAggregateInputObjectSchema } from "./objects/TipoCountAggregateInput.schema.ts";
 import { TipoMaxAggregateInputObjectSchema as TipoMaxAggregateInputObjectSchema } from "./objects/TipoMaxAggregateInput.schema.ts";
@@ -11,19 +11,12 @@ import { TipoWhereUniqueInputObjectSchema as TipoWhereUniqueInputObjectSchema } 
 
 export const TipoAggregateSchema: z.ZodType<Prisma.TipoAggregateArgs> = z
 	.object({
-		orderBy: z
-			.union([
-				TipoOrderByWithRelationInputObjectSchema,
-				TipoOrderByWithRelationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([TipoOrderByWithRelationInputObjectSchema, TipoOrderByWithRelationInputObjectSchema.array()]).optional(),
 		where: TipoWhereInputObjectSchema.optional(),
 		cursor: TipoWhereUniqueInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
-		_count: z
-			.union([z.literal(true), TipoCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), TipoCountAggregateInputObjectSchema]).optional(),
 		_min: TipoMinAggregateInputObjectSchema.optional(),
 		_max: TipoMaxAggregateInputObjectSchema.optional(),
 		_avg: TipoAvgAggregateInputObjectSchema.optional(),
@@ -33,19 +26,12 @@ export const TipoAggregateSchema: z.ZodType<Prisma.TipoAggregateArgs> = z
 
 export const TipoAggregateZodSchema = z
 	.object({
-		orderBy: z
-			.union([
-				TipoOrderByWithRelationInputObjectSchema,
-				TipoOrderByWithRelationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([TipoOrderByWithRelationInputObjectSchema, TipoOrderByWithRelationInputObjectSchema.array()]).optional(),
 		where: TipoWhereInputObjectSchema.optional(),
 		cursor: TipoWhereUniqueInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
-		_count: z
-			.union([z.literal(true), TipoCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), TipoCountAggregateInputObjectSchema]).optional(),
 		_min: TipoMinAggregateInputObjectSchema.optional(),
 		_max: TipoMaxAggregateInputObjectSchema.optional(),
 		_avg: TipoAvgAggregateInputObjectSchema.optional(),

@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 
 const makeSchema = () =>
 	z
@@ -11,5 +11,4 @@ const makeSchema = () =>
 		.strict();
 export const AvatarUncheckedCreateWithoutEscritoresInputObjectSchema: z.ZodType<Prisma.AvatarUncheckedCreateWithoutEscritoresInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.AvatarUncheckedCreateWithoutEscritoresInput>;
-export const AvatarUncheckedCreateWithoutEscritoresInputObjectZodSchema =
-	makeSchema();
+export const AvatarUncheckedCreateWithoutEscritoresInputObjectZodSchema = makeSchema();

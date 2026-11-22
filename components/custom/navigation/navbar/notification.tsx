@@ -1,38 +1,15 @@
 "use client";
 
-import {
-	BadgeCheckIcon,
-	BadgeIcon,
-	BellIcon,
-	BookA,
-	Bubbles,
-	Circle,
-	CircleAlert,
-	ListCheck,
-	ListChevronsDownUp,
-	PersonStanding,
-	Settings,
-	SquareArrowOutUpRight,
-	User2,
-} from "lucide-react";
+import { BadgeCheckIcon, BadgeIcon, BellIcon, BookA, Bubbles, Circle, CircleAlert, ListCheck, ListChevronsDownUp, PersonStanding, Settings, SquareArrowOutUpRight, User2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React, { MouseEvent } from "react";
 import { toast } from "sonner";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuGroup,
-	DropdownMenuItem,
-	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { EntidadTipo, Notificacion } from "@/generated/prisma/browser";
 import { cn } from "@/lib/utils";
-import {
-	getNotificationUrl,
-	ICON_BY_ENTIDAD_TIPO,
-} from "@/modules/notifications/utils";
+import { getNotificationUrl, ICON_BY_ENTIDAD_TIPO } from "@/modules/notifications/utils";
 import { DynamicIcon } from "../../DynamicIcon";
 
 const Notification = () => {
@@ -136,14 +113,16 @@ const Notification = () => {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
-				<Button variant="ghost" size="icon" className="rounded-full relative">
+				<Button
+					variant="ghost"
+					size="icon"
+					className="rounded-full relative">
 					<BellIcon />
 
 					{unreadCount > 0 && (
 						<Badge
 							className="absolute -top-2 -right-2 h-5 w-5 justify-center rounded-full p-0 "
-							variant="secondary"
-						>
+							variant="secondary">
 							{unreadCount}
 						</Badge>
 						// <span className="absolute -top-1 -right-1 min-w-5 h-5 px-1 rounded-full bg-destructive text-destructive-foreground text-xs flex items-center justify-center">
@@ -153,12 +132,12 @@ const Notification = () => {
 				</Button>
 			</DropdownMenuTrigger>
 
-			<DropdownMenuContent align="end" className="w-80">
+			<DropdownMenuContent
+				align="end"
+				className="w-80">
 				<DropdownMenuGroup>
 					{items.length === 0 ? (
-						<DropdownMenuItem disabled>
-							No tienes notificaciones pendientes
-						</DropdownMenuItem>
+						<DropdownMenuItem disabled>No tienes notificaciones pendientes</DropdownMenuItem>
 					) : (
 						items.map((i) => (
 							<DropdownMenuItem
@@ -167,11 +146,7 @@ const Notification = () => {
 								onMouseEnter={setReadNotification}
 								onMouseLeave={handleMouseLeave}
 								onClick={() => handleClickNotification(i)}
-								className={cn(
-									"flex gap-2 my-1 items-center",
-									!i.leida && "bg-muted",
-								)}
-							>
+								className={cn("flex gap-2 my-1 items-center", !i.leida && "bg-muted")}>
 								{!i.leida && <CircleAlert className="text-gray-500/50" />}
 
 								<DynamicIcon
@@ -181,11 +156,7 @@ const Notification = () => {
 
 								<div className="flex flex-col min-w-0">
 									<span className="font-medium">{i.titulo}</span>
-									{i.mensaje && (
-										<span className="text-sm text-muted-foreground wrap-break-word">
-											{i.mensaje}
-										</span>
-									)}
+									{i.mensaje && <span className="text-sm text-muted-foreground wrap-break-word">{i.mensaje}</span>}
 								</div>
 							</DropdownMenuItem>
 						))
@@ -194,9 +165,7 @@ const Notification = () => {
 						<SquareArrowOutUpRight />
 						<div className="flex flex-col min-w-0">
 							<span className="font-medium">Notificaciones</span>
-							<span className="text-sm text-muted-foreground wrap-break-word">
-								Ver todas las notificaciones
-							</span>
+							<span className="text-sm text-muted-foreground wrap-break-word">Ver todas las notificaciones</span>
 						</div>
 					</DropdownMenuItem>
 				</DropdownMenuGroup>

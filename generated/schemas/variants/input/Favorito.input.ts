@@ -3,8 +3,8 @@ import * as z from "zod";
 export const FavoritoInputSchema = z
 	.object({
 		id: z.number().int(),
-		createdAt: z.date(),
-		updatedAt: z.date(),
+		createdAt: z.coerce.date(),
+		updatedAt: z.coerce.date(),
 		escritorId: z.number().int().optional().nullable(),
 		escritor: z.unknown().optional().nullable(),
 		libroId: z.number().int().optional().nullable(),

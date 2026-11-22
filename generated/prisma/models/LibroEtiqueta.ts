@@ -15,8 +15,7 @@ import type * as Prisma from "../internal/prismaNamespace.ts";
  * Model LibroEtiqueta
  *
  */
-export type LibroEtiquetaModel =
-	runtime.Types.Result.DefaultSelection<Prisma.$LibroEtiquetaPayload>;
+export type LibroEtiquetaModel = runtime.Types.Result.DefaultSelection<Prisma.$LibroEtiquetaPayload>;
 
 export type AggregateLibroEtiqueta = {
 	_count: LibroEtiquetaCountAggregateOutputType | null;
@@ -100,10 +99,7 @@ export type LibroEtiquetaCountAggregateInputType = {
 	_all?: true;
 };
 
-export type LibroEtiquetaAggregateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroEtiquetaAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which LibroEtiqueta to aggregate.
 	 */
@@ -113,9 +109,7 @@ export type LibroEtiquetaAggregateArgs<
 	 *
 	 * Determine the order of LibroEtiquetas to fetch.
 	 */
-	orderBy?:
-		| Prisma.LibroEtiquetaOrderByWithRelationInput
-		| Prisma.LibroEtiquetaOrderByWithRelationInput[];
+	orderBy?: Prisma.LibroEtiquetaOrderByWithRelationInput | Prisma.LibroEtiquetaOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -166,9 +160,7 @@ export type LibroEtiquetaAggregateArgs<
 	_max?: LibroEtiquetaMaxAggregateInputType;
 };
 
-export type GetLibroEtiquetaAggregateType<
-	T extends LibroEtiquetaAggregateArgs,
-> = {
+export type GetLibroEtiquetaAggregateType<T extends LibroEtiquetaAggregateArgs> = {
 	[P in keyof T & keyof AggregateLibroEtiqueta]: P extends "_count" | "count"
 		? T[P] extends true
 			? number
@@ -176,17 +168,10 @@ export type GetLibroEtiquetaAggregateType<
 		: Prisma.GetScalarType<T[P], AggregateLibroEtiqueta[P]>;
 };
 
-export type LibroEtiquetaGroupByArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroEtiquetaGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.LibroEtiquetaWhereInput;
-	orderBy?:
-		| Prisma.LibroEtiquetaOrderByWithAggregationInput
-		| Prisma.LibroEtiquetaOrderByWithAggregationInput[];
-	by:
-		| Prisma.LibroEtiquetaScalarFieldEnum[]
-		| Prisma.LibroEtiquetaScalarFieldEnum;
+	orderBy?: Prisma.LibroEtiquetaOrderByWithAggregationInput | Prisma.LibroEtiquetaOrderByWithAggregationInput[];
+	by: Prisma.LibroEtiquetaScalarFieldEnum[] | Prisma.LibroEtiquetaScalarFieldEnum;
 	having?: Prisma.LibroEtiquetaScalarWhereWithAggregatesInput;
 	take?: number;
 	skip?: number;
@@ -210,19 +195,17 @@ export type LibroEtiquetaGroupByOutputType = {
 	_max: LibroEtiquetaMaxAggregateOutputType | null;
 };
 
-export type GetLibroEtiquetaGroupByPayload<T extends LibroEtiquetaGroupByArgs> =
-	Prisma.PrismaPromise<
-		Array<
-			Prisma.PickEnumerable<LibroEtiquetaGroupByOutputType, T["by"]> & {
-				[P in keyof T &
-					keyof LibroEtiquetaGroupByOutputType]: P extends "_count"
-					? T[P] extends boolean
-						? number
-						: Prisma.GetScalarType<T[P], LibroEtiquetaGroupByOutputType[P]>
-					: Prisma.GetScalarType<T[P], LibroEtiquetaGroupByOutputType[P]>;
-			}
-		>
-	>;
+export type GetLibroEtiquetaGroupByPayload<T extends LibroEtiquetaGroupByArgs> = Prisma.PrismaPromise<
+	Array<
+		Prisma.PickEnumerable<LibroEtiquetaGroupByOutputType, T["by"]> & {
+			[P in keyof T & keyof LibroEtiquetaGroupByOutputType]: P extends "_count"
+				? T[P] extends boolean
+					? number
+					: Prisma.GetScalarType<T[P], LibroEtiquetaGroupByOutputType[P]>
+				: Prisma.GetScalarType<T[P], LibroEtiquetaGroupByOutputType[P]>;
+		}
+	>
+>;
 
 export type LibroEtiquetaWhereInput = {
 	AND?: Prisma.LibroEtiquetaWhereInput | Prisma.LibroEtiquetaWhereInput[];
@@ -233,15 +216,9 @@ export type LibroEtiquetaWhereInput = {
 	createdAt?: Prisma.DateTimeFilter<"LibroEtiqueta"> | Date | string;
 	updatedAt?: Prisma.DateTimeFilter<"LibroEtiqueta"> | Date | string;
 	estadoId?: Prisma.IntFilter<"LibroEtiqueta"> | number;
-	estado?: Prisma.XOR<
-		Prisma.EstadoScalarRelationFilter,
-		Prisma.EstadoWhereInput
-	>;
+	estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 	libro?: Prisma.XOR<Prisma.LibroScalarRelationFilter, Prisma.LibroWhereInput>;
-	etiqueta?: Prisma.XOR<
-		Prisma.EtiquetaScalarRelationFilter,
-		Prisma.EtiquetaWhereInput
-	>;
+	etiqueta?: Prisma.XOR<Prisma.EtiquetaScalarRelationFilter, Prisma.EtiquetaWhereInput>;
 };
 
 export type LibroEtiquetaOrderByWithRelationInput = {
@@ -266,18 +243,9 @@ export type LibroEtiquetaWhereUniqueInput = Prisma.AtLeast<
 		createdAt?: Prisma.DateTimeFilter<"LibroEtiqueta"> | Date | string;
 		updatedAt?: Prisma.DateTimeFilter<"LibroEtiqueta"> | Date | string;
 		estadoId?: Prisma.IntFilter<"LibroEtiqueta"> | number;
-		estado?: Prisma.XOR<
-			Prisma.EstadoScalarRelationFilter,
-			Prisma.EstadoWhereInput
-		>;
-		libro?: Prisma.XOR<
-			Prisma.LibroScalarRelationFilter,
-			Prisma.LibroWhereInput
-		>;
-		etiqueta?: Prisma.XOR<
-			Prisma.EtiquetaScalarRelationFilter,
-			Prisma.EtiquetaWhereInput
-		>;
+		estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
+		libro?: Prisma.XOR<Prisma.LibroScalarRelationFilter, Prisma.LibroWhereInput>;
+		etiqueta?: Prisma.XOR<Prisma.EtiquetaScalarRelationFilter, Prisma.EtiquetaWhereInput>;
 	},
 	"libroId_etiquetaId"
 >;
@@ -296,23 +264,13 @@ export type LibroEtiquetaOrderByWithAggregationInput = {
 };
 
 export type LibroEtiquetaScalarWhereWithAggregatesInput = {
-	AND?:
-		| Prisma.LibroEtiquetaScalarWhereWithAggregatesInput
-		| Prisma.LibroEtiquetaScalarWhereWithAggregatesInput[];
+	AND?: Prisma.LibroEtiquetaScalarWhereWithAggregatesInput | Prisma.LibroEtiquetaScalarWhereWithAggregatesInput[];
 	OR?: Prisma.LibroEtiquetaScalarWhereWithAggregatesInput[];
-	NOT?:
-		| Prisma.LibroEtiquetaScalarWhereWithAggregatesInput
-		| Prisma.LibroEtiquetaScalarWhereWithAggregatesInput[];
+	NOT?: Prisma.LibroEtiquetaScalarWhereWithAggregatesInput | Prisma.LibroEtiquetaScalarWhereWithAggregatesInput[];
 	libroId?: Prisma.IntWithAggregatesFilter<"LibroEtiqueta"> | number;
 	etiquetaId?: Prisma.IntWithAggregatesFilter<"LibroEtiqueta"> | number;
-	createdAt?:
-		| Prisma.DateTimeWithAggregatesFilter<"LibroEtiqueta">
-		| Date
-		| string;
-	updatedAt?:
-		| Prisma.DateTimeWithAggregatesFilter<"LibroEtiqueta">
-		| Date
-		| string;
+	createdAt?: Prisma.DateTimeWithAggregatesFilter<"LibroEtiqueta"> | Date | string;
+	updatedAt?: Prisma.DateTimeWithAggregatesFilter<"LibroEtiqueta"> | Date | string;
 	estadoId?: Prisma.IntWithAggregatesFilter<"LibroEtiqueta"> | number;
 };
 
@@ -422,332 +380,164 @@ export type LibroEtiquetaSumOrderByAggregateInput = {
 
 export type LibroEtiquetaCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroEtiquetaCreateWithoutEstadoInput,
-				Prisma.LibroEtiquetaUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.LibroEtiquetaCreateWithoutEstadoInput, Prisma.LibroEtiquetaUncheckedCreateWithoutEstadoInput>
 		| Prisma.LibroEtiquetaCreateWithoutEstadoInput[]
 		| Prisma.LibroEtiquetaUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutEstadoInput
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.LibroEtiquetaCreateOrConnectWithoutEstadoInput | Prisma.LibroEtiquetaCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.LibroEtiquetaCreateManyEstadoInputEnvelope;
-	connect?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
+	connect?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
 };
 
 export type LibroEtiquetaUncheckedCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroEtiquetaCreateWithoutEstadoInput,
-				Prisma.LibroEtiquetaUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.LibroEtiquetaCreateWithoutEstadoInput, Prisma.LibroEtiquetaUncheckedCreateWithoutEstadoInput>
 		| Prisma.LibroEtiquetaCreateWithoutEstadoInput[]
 		| Prisma.LibroEtiquetaUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutEstadoInput
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.LibroEtiquetaCreateOrConnectWithoutEstadoInput | Prisma.LibroEtiquetaCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.LibroEtiquetaCreateManyEstadoInputEnvelope;
-	connect?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
+	connect?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
 };
 
 export type LibroEtiquetaUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroEtiquetaCreateWithoutEstadoInput,
-				Prisma.LibroEtiquetaUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.LibroEtiquetaCreateWithoutEstadoInput, Prisma.LibroEtiquetaUncheckedCreateWithoutEstadoInput>
 		| Prisma.LibroEtiquetaCreateWithoutEstadoInput[]
 		| Prisma.LibroEtiquetaUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutEstadoInput
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.LibroEtiquetaCreateOrConnectWithoutEstadoInput | Prisma.LibroEtiquetaCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutEstadoInput | Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.LibroEtiquetaCreateManyEstadoInputEnvelope;
-	set?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	disconnect?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	delete?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	connect?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	update?:
-		| Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.LibroEtiquetaUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.LibroEtiquetaUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.LibroEtiquetaScalarWhereInput
-		| Prisma.LibroEtiquetaScalarWhereInput[];
+	set?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	disconnect?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	delete?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	connect?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	update?: Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutEstadoInput | Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.LibroEtiquetaUpdateManyWithWhereWithoutEstadoInput | Prisma.LibroEtiquetaUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.LibroEtiquetaScalarWhereInput | Prisma.LibroEtiquetaScalarWhereInput[];
 };
 
 export type LibroEtiquetaUncheckedUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroEtiquetaCreateWithoutEstadoInput,
-				Prisma.LibroEtiquetaUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.LibroEtiquetaCreateWithoutEstadoInput, Prisma.LibroEtiquetaUncheckedCreateWithoutEstadoInput>
 		| Prisma.LibroEtiquetaCreateWithoutEstadoInput[]
 		| Prisma.LibroEtiquetaUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutEstadoInput
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.LibroEtiquetaCreateOrConnectWithoutEstadoInput | Prisma.LibroEtiquetaCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutEstadoInput | Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.LibroEtiquetaCreateManyEstadoInputEnvelope;
-	set?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	disconnect?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	delete?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	connect?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	update?:
-		| Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.LibroEtiquetaUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.LibroEtiquetaUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.LibroEtiquetaScalarWhereInput
-		| Prisma.LibroEtiquetaScalarWhereInput[];
+	set?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	disconnect?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	delete?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	connect?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	update?: Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutEstadoInput | Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.LibroEtiquetaUpdateManyWithWhereWithoutEstadoInput | Prisma.LibroEtiquetaUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.LibroEtiquetaScalarWhereInput | Prisma.LibroEtiquetaScalarWhereInput[];
 };
 
 export type LibroEtiquetaCreateNestedManyWithoutEtiquetaInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroEtiquetaCreateWithoutEtiquetaInput,
-				Prisma.LibroEtiquetaUncheckedCreateWithoutEtiquetaInput
-		  >
+		| Prisma.XOR<Prisma.LibroEtiquetaCreateWithoutEtiquetaInput, Prisma.LibroEtiquetaUncheckedCreateWithoutEtiquetaInput>
 		| Prisma.LibroEtiquetaCreateWithoutEtiquetaInput[]
 		| Prisma.LibroEtiquetaUncheckedCreateWithoutEtiquetaInput[];
-	connectOrCreate?:
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutEtiquetaInput
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutEtiquetaInput[];
+	connectOrCreate?: Prisma.LibroEtiquetaCreateOrConnectWithoutEtiquetaInput | Prisma.LibroEtiquetaCreateOrConnectWithoutEtiquetaInput[];
 	createMany?: Prisma.LibroEtiquetaCreateManyEtiquetaInputEnvelope;
-	connect?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
+	connect?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
 };
 
 export type LibroEtiquetaUncheckedCreateNestedManyWithoutEtiquetaInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroEtiquetaCreateWithoutEtiquetaInput,
-				Prisma.LibroEtiquetaUncheckedCreateWithoutEtiquetaInput
-		  >
+		| Prisma.XOR<Prisma.LibroEtiquetaCreateWithoutEtiquetaInput, Prisma.LibroEtiquetaUncheckedCreateWithoutEtiquetaInput>
 		| Prisma.LibroEtiquetaCreateWithoutEtiquetaInput[]
 		| Prisma.LibroEtiquetaUncheckedCreateWithoutEtiquetaInput[];
-	connectOrCreate?:
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutEtiquetaInput
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutEtiquetaInput[];
+	connectOrCreate?: Prisma.LibroEtiquetaCreateOrConnectWithoutEtiquetaInput | Prisma.LibroEtiquetaCreateOrConnectWithoutEtiquetaInput[];
 	createMany?: Prisma.LibroEtiquetaCreateManyEtiquetaInputEnvelope;
-	connect?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
+	connect?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
 };
 
 export type LibroEtiquetaUpdateManyWithoutEtiquetaNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroEtiquetaCreateWithoutEtiquetaInput,
-				Prisma.LibroEtiquetaUncheckedCreateWithoutEtiquetaInput
-		  >
+		| Prisma.XOR<Prisma.LibroEtiquetaCreateWithoutEtiquetaInput, Prisma.LibroEtiquetaUncheckedCreateWithoutEtiquetaInput>
 		| Prisma.LibroEtiquetaCreateWithoutEtiquetaInput[]
 		| Prisma.LibroEtiquetaUncheckedCreateWithoutEtiquetaInput[];
-	connectOrCreate?:
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutEtiquetaInput
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutEtiquetaInput[];
-	upsert?:
-		| Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutEtiquetaInput
-		| Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutEtiquetaInput[];
+	connectOrCreate?: Prisma.LibroEtiquetaCreateOrConnectWithoutEtiquetaInput | Prisma.LibroEtiquetaCreateOrConnectWithoutEtiquetaInput[];
+	upsert?: Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutEtiquetaInput | Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutEtiquetaInput[];
 	createMany?: Prisma.LibroEtiquetaCreateManyEtiquetaInputEnvelope;
-	set?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	disconnect?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	delete?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	connect?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	update?:
-		| Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutEtiquetaInput
-		| Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutEtiquetaInput[];
-	updateMany?:
-		| Prisma.LibroEtiquetaUpdateManyWithWhereWithoutEtiquetaInput
-		| Prisma.LibroEtiquetaUpdateManyWithWhereWithoutEtiquetaInput[];
-	deleteMany?:
-		| Prisma.LibroEtiquetaScalarWhereInput
-		| Prisma.LibroEtiquetaScalarWhereInput[];
+	set?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	disconnect?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	delete?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	connect?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	update?: Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutEtiquetaInput | Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutEtiquetaInput[];
+	updateMany?: Prisma.LibroEtiquetaUpdateManyWithWhereWithoutEtiquetaInput | Prisma.LibroEtiquetaUpdateManyWithWhereWithoutEtiquetaInput[];
+	deleteMany?: Prisma.LibroEtiquetaScalarWhereInput | Prisma.LibroEtiquetaScalarWhereInput[];
 };
 
 export type LibroEtiquetaUncheckedUpdateManyWithoutEtiquetaNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroEtiquetaCreateWithoutEtiquetaInput,
-				Prisma.LibroEtiquetaUncheckedCreateWithoutEtiquetaInput
-		  >
+		| Prisma.XOR<Prisma.LibroEtiquetaCreateWithoutEtiquetaInput, Prisma.LibroEtiquetaUncheckedCreateWithoutEtiquetaInput>
 		| Prisma.LibroEtiquetaCreateWithoutEtiquetaInput[]
 		| Prisma.LibroEtiquetaUncheckedCreateWithoutEtiquetaInput[];
-	connectOrCreate?:
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutEtiquetaInput
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutEtiquetaInput[];
-	upsert?:
-		| Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutEtiquetaInput
-		| Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutEtiquetaInput[];
+	connectOrCreate?: Prisma.LibroEtiquetaCreateOrConnectWithoutEtiquetaInput | Prisma.LibroEtiquetaCreateOrConnectWithoutEtiquetaInput[];
+	upsert?: Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutEtiquetaInput | Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutEtiquetaInput[];
 	createMany?: Prisma.LibroEtiquetaCreateManyEtiquetaInputEnvelope;
-	set?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	disconnect?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	delete?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	connect?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	update?:
-		| Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutEtiquetaInput
-		| Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutEtiquetaInput[];
-	updateMany?:
-		| Prisma.LibroEtiquetaUpdateManyWithWhereWithoutEtiquetaInput
-		| Prisma.LibroEtiquetaUpdateManyWithWhereWithoutEtiquetaInput[];
-	deleteMany?:
-		| Prisma.LibroEtiquetaScalarWhereInput
-		| Prisma.LibroEtiquetaScalarWhereInput[];
+	set?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	disconnect?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	delete?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	connect?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	update?: Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutEtiquetaInput | Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutEtiquetaInput[];
+	updateMany?: Prisma.LibroEtiquetaUpdateManyWithWhereWithoutEtiquetaInput | Prisma.LibroEtiquetaUpdateManyWithWhereWithoutEtiquetaInput[];
+	deleteMany?: Prisma.LibroEtiquetaScalarWhereInput | Prisma.LibroEtiquetaScalarWhereInput[];
 };
 
 export type LibroEtiquetaCreateNestedManyWithoutLibroInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroEtiquetaCreateWithoutLibroInput,
-				Prisma.LibroEtiquetaUncheckedCreateWithoutLibroInput
-		  >
+		| Prisma.XOR<Prisma.LibroEtiquetaCreateWithoutLibroInput, Prisma.LibroEtiquetaUncheckedCreateWithoutLibroInput>
 		| Prisma.LibroEtiquetaCreateWithoutLibroInput[]
 		| Prisma.LibroEtiquetaUncheckedCreateWithoutLibroInput[];
-	connectOrCreate?:
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutLibroInput
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutLibroInput[];
+	connectOrCreate?: Prisma.LibroEtiquetaCreateOrConnectWithoutLibroInput | Prisma.LibroEtiquetaCreateOrConnectWithoutLibroInput[];
 	createMany?: Prisma.LibroEtiquetaCreateManyLibroInputEnvelope;
-	connect?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
+	connect?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
 };
 
 export type LibroEtiquetaUncheckedCreateNestedManyWithoutLibroInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroEtiquetaCreateWithoutLibroInput,
-				Prisma.LibroEtiquetaUncheckedCreateWithoutLibroInput
-		  >
+		| Prisma.XOR<Prisma.LibroEtiquetaCreateWithoutLibroInput, Prisma.LibroEtiquetaUncheckedCreateWithoutLibroInput>
 		| Prisma.LibroEtiquetaCreateWithoutLibroInput[]
 		| Prisma.LibroEtiquetaUncheckedCreateWithoutLibroInput[];
-	connectOrCreate?:
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutLibroInput
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutLibroInput[];
+	connectOrCreate?: Prisma.LibroEtiquetaCreateOrConnectWithoutLibroInput | Prisma.LibroEtiquetaCreateOrConnectWithoutLibroInput[];
 	createMany?: Prisma.LibroEtiquetaCreateManyLibroInputEnvelope;
-	connect?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
+	connect?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
 };
 
 export type LibroEtiquetaUpdateManyWithoutLibroNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroEtiquetaCreateWithoutLibroInput,
-				Prisma.LibroEtiquetaUncheckedCreateWithoutLibroInput
-		  >
+		| Prisma.XOR<Prisma.LibroEtiquetaCreateWithoutLibroInput, Prisma.LibroEtiquetaUncheckedCreateWithoutLibroInput>
 		| Prisma.LibroEtiquetaCreateWithoutLibroInput[]
 		| Prisma.LibroEtiquetaUncheckedCreateWithoutLibroInput[];
-	connectOrCreate?:
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutLibroInput
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutLibroInput[];
-	upsert?:
-		| Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutLibroInput
-		| Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutLibroInput[];
+	connectOrCreate?: Prisma.LibroEtiquetaCreateOrConnectWithoutLibroInput | Prisma.LibroEtiquetaCreateOrConnectWithoutLibroInput[];
+	upsert?: Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutLibroInput | Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutLibroInput[];
 	createMany?: Prisma.LibroEtiquetaCreateManyLibroInputEnvelope;
-	set?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	disconnect?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	delete?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	connect?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	update?:
-		| Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutLibroInput
-		| Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutLibroInput[];
-	updateMany?:
-		| Prisma.LibroEtiquetaUpdateManyWithWhereWithoutLibroInput
-		| Prisma.LibroEtiquetaUpdateManyWithWhereWithoutLibroInput[];
-	deleteMany?:
-		| Prisma.LibroEtiquetaScalarWhereInput
-		| Prisma.LibroEtiquetaScalarWhereInput[];
+	set?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	disconnect?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	delete?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	connect?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	update?: Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutLibroInput | Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutLibroInput[];
+	updateMany?: Prisma.LibroEtiquetaUpdateManyWithWhereWithoutLibroInput | Prisma.LibroEtiquetaUpdateManyWithWhereWithoutLibroInput[];
+	deleteMany?: Prisma.LibroEtiquetaScalarWhereInput | Prisma.LibroEtiquetaScalarWhereInput[];
 };
 
 export type LibroEtiquetaUncheckedUpdateManyWithoutLibroNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroEtiquetaCreateWithoutLibroInput,
-				Prisma.LibroEtiquetaUncheckedCreateWithoutLibroInput
-		  >
+		| Prisma.XOR<Prisma.LibroEtiquetaCreateWithoutLibroInput, Prisma.LibroEtiquetaUncheckedCreateWithoutLibroInput>
 		| Prisma.LibroEtiquetaCreateWithoutLibroInput[]
 		| Prisma.LibroEtiquetaUncheckedCreateWithoutLibroInput[];
-	connectOrCreate?:
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutLibroInput
-		| Prisma.LibroEtiquetaCreateOrConnectWithoutLibroInput[];
-	upsert?:
-		| Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutLibroInput
-		| Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutLibroInput[];
+	connectOrCreate?: Prisma.LibroEtiquetaCreateOrConnectWithoutLibroInput | Prisma.LibroEtiquetaCreateOrConnectWithoutLibroInput[];
+	upsert?: Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutLibroInput | Prisma.LibroEtiquetaUpsertWithWhereUniqueWithoutLibroInput[];
 	createMany?: Prisma.LibroEtiquetaCreateManyLibroInputEnvelope;
-	set?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	disconnect?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	delete?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	connect?:
-		| Prisma.LibroEtiquetaWhereUniqueInput
-		| Prisma.LibroEtiquetaWhereUniqueInput[];
-	update?:
-		| Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutLibroInput
-		| Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutLibroInput[];
-	updateMany?:
-		| Prisma.LibroEtiquetaUpdateManyWithWhereWithoutLibroInput
-		| Prisma.LibroEtiquetaUpdateManyWithWhereWithoutLibroInput[];
-	deleteMany?:
-		| Prisma.LibroEtiquetaScalarWhereInput
-		| Prisma.LibroEtiquetaScalarWhereInput[];
+	set?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	disconnect?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	delete?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	connect?: Prisma.LibroEtiquetaWhereUniqueInput | Prisma.LibroEtiquetaWhereUniqueInput[];
+	update?: Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutLibroInput | Prisma.LibroEtiquetaUpdateWithWhereUniqueWithoutLibroInput[];
+	updateMany?: Prisma.LibroEtiquetaUpdateManyWithWhereWithoutLibroInput | Prisma.LibroEtiquetaUpdateManyWithWhereWithoutLibroInput[];
+	deleteMany?: Prisma.LibroEtiquetaScalarWhereInput | Prisma.LibroEtiquetaScalarWhereInput[];
 };
 
 export type LibroEtiquetaCreateWithoutEstadoInput = {
@@ -766,55 +556,34 @@ export type LibroEtiquetaUncheckedCreateWithoutEstadoInput = {
 
 export type LibroEtiquetaCreateOrConnectWithoutEstadoInput = {
 	where: Prisma.LibroEtiquetaWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.LibroEtiquetaCreateWithoutEstadoInput,
-		Prisma.LibroEtiquetaUncheckedCreateWithoutEstadoInput
-	>;
+	create: Prisma.XOR<Prisma.LibroEtiquetaCreateWithoutEstadoInput, Prisma.LibroEtiquetaUncheckedCreateWithoutEstadoInput>;
 };
 
 export type LibroEtiquetaCreateManyEstadoInputEnvelope = {
-	data:
-		| Prisma.LibroEtiquetaCreateManyEstadoInput
-		| Prisma.LibroEtiquetaCreateManyEstadoInput[];
+	data: Prisma.LibroEtiquetaCreateManyEstadoInput | Prisma.LibroEtiquetaCreateManyEstadoInput[];
 	skipDuplicates?: boolean;
 };
 
 export type LibroEtiquetaUpsertWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.LibroEtiquetaWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.LibroEtiquetaUpdateWithoutEstadoInput,
-		Prisma.LibroEtiquetaUncheckedUpdateWithoutEstadoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.LibroEtiquetaCreateWithoutEstadoInput,
-		Prisma.LibroEtiquetaUncheckedCreateWithoutEstadoInput
-	>;
+	update: Prisma.XOR<Prisma.LibroEtiquetaUpdateWithoutEstadoInput, Prisma.LibroEtiquetaUncheckedUpdateWithoutEstadoInput>;
+	create: Prisma.XOR<Prisma.LibroEtiquetaCreateWithoutEstadoInput, Prisma.LibroEtiquetaUncheckedCreateWithoutEstadoInput>;
 };
 
 export type LibroEtiquetaUpdateWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.LibroEtiquetaWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.LibroEtiquetaUpdateWithoutEstadoInput,
-		Prisma.LibroEtiquetaUncheckedUpdateWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.LibroEtiquetaUpdateWithoutEstadoInput, Prisma.LibroEtiquetaUncheckedUpdateWithoutEstadoInput>;
 };
 
 export type LibroEtiquetaUpdateManyWithWhereWithoutEstadoInput = {
 	where: Prisma.LibroEtiquetaScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.LibroEtiquetaUpdateManyMutationInput,
-		Prisma.LibroEtiquetaUncheckedUpdateManyWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.LibroEtiquetaUpdateManyMutationInput, Prisma.LibroEtiquetaUncheckedUpdateManyWithoutEstadoInput>;
 };
 
 export type LibroEtiquetaScalarWhereInput = {
-	AND?:
-		| Prisma.LibroEtiquetaScalarWhereInput
-		| Prisma.LibroEtiquetaScalarWhereInput[];
+	AND?: Prisma.LibroEtiquetaScalarWhereInput | Prisma.LibroEtiquetaScalarWhereInput[];
 	OR?: Prisma.LibroEtiquetaScalarWhereInput[];
-	NOT?:
-		| Prisma.LibroEtiquetaScalarWhereInput
-		| Prisma.LibroEtiquetaScalarWhereInput[];
+	NOT?: Prisma.LibroEtiquetaScalarWhereInput | Prisma.LibroEtiquetaScalarWhereInput[];
 	libroId?: Prisma.IntFilter<"LibroEtiqueta"> | number;
 	etiquetaId?: Prisma.IntFilter<"LibroEtiqueta"> | number;
 	createdAt?: Prisma.DateTimeFilter<"LibroEtiqueta"> | Date | string;
@@ -838,45 +607,28 @@ export type LibroEtiquetaUncheckedCreateWithoutEtiquetaInput = {
 
 export type LibroEtiquetaCreateOrConnectWithoutEtiquetaInput = {
 	where: Prisma.LibroEtiquetaWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.LibroEtiquetaCreateWithoutEtiquetaInput,
-		Prisma.LibroEtiquetaUncheckedCreateWithoutEtiquetaInput
-	>;
+	create: Prisma.XOR<Prisma.LibroEtiquetaCreateWithoutEtiquetaInput, Prisma.LibroEtiquetaUncheckedCreateWithoutEtiquetaInput>;
 };
 
 export type LibroEtiquetaCreateManyEtiquetaInputEnvelope = {
-	data:
-		| Prisma.LibroEtiquetaCreateManyEtiquetaInput
-		| Prisma.LibroEtiquetaCreateManyEtiquetaInput[];
+	data: Prisma.LibroEtiquetaCreateManyEtiquetaInput | Prisma.LibroEtiquetaCreateManyEtiquetaInput[];
 	skipDuplicates?: boolean;
 };
 
 export type LibroEtiquetaUpsertWithWhereUniqueWithoutEtiquetaInput = {
 	where: Prisma.LibroEtiquetaWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.LibroEtiquetaUpdateWithoutEtiquetaInput,
-		Prisma.LibroEtiquetaUncheckedUpdateWithoutEtiquetaInput
-	>;
-	create: Prisma.XOR<
-		Prisma.LibroEtiquetaCreateWithoutEtiquetaInput,
-		Prisma.LibroEtiquetaUncheckedCreateWithoutEtiquetaInput
-	>;
+	update: Prisma.XOR<Prisma.LibroEtiquetaUpdateWithoutEtiquetaInput, Prisma.LibroEtiquetaUncheckedUpdateWithoutEtiquetaInput>;
+	create: Prisma.XOR<Prisma.LibroEtiquetaCreateWithoutEtiquetaInput, Prisma.LibroEtiquetaUncheckedCreateWithoutEtiquetaInput>;
 };
 
 export type LibroEtiquetaUpdateWithWhereUniqueWithoutEtiquetaInput = {
 	where: Prisma.LibroEtiquetaWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.LibroEtiquetaUpdateWithoutEtiquetaInput,
-		Prisma.LibroEtiquetaUncheckedUpdateWithoutEtiquetaInput
-	>;
+	data: Prisma.XOR<Prisma.LibroEtiquetaUpdateWithoutEtiquetaInput, Prisma.LibroEtiquetaUncheckedUpdateWithoutEtiquetaInput>;
 };
 
 export type LibroEtiquetaUpdateManyWithWhereWithoutEtiquetaInput = {
 	where: Prisma.LibroEtiquetaScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.LibroEtiquetaUpdateManyMutationInput,
-		Prisma.LibroEtiquetaUncheckedUpdateManyWithoutEtiquetaInput
-	>;
+	data: Prisma.XOR<Prisma.LibroEtiquetaUpdateManyMutationInput, Prisma.LibroEtiquetaUncheckedUpdateManyWithoutEtiquetaInput>;
 };
 
 export type LibroEtiquetaCreateWithoutLibroInput = {
@@ -895,45 +647,28 @@ export type LibroEtiquetaUncheckedCreateWithoutLibroInput = {
 
 export type LibroEtiquetaCreateOrConnectWithoutLibroInput = {
 	where: Prisma.LibroEtiquetaWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.LibroEtiquetaCreateWithoutLibroInput,
-		Prisma.LibroEtiquetaUncheckedCreateWithoutLibroInput
-	>;
+	create: Prisma.XOR<Prisma.LibroEtiquetaCreateWithoutLibroInput, Prisma.LibroEtiquetaUncheckedCreateWithoutLibroInput>;
 };
 
 export type LibroEtiquetaCreateManyLibroInputEnvelope = {
-	data:
-		| Prisma.LibroEtiquetaCreateManyLibroInput
-		| Prisma.LibroEtiquetaCreateManyLibroInput[];
+	data: Prisma.LibroEtiquetaCreateManyLibroInput | Prisma.LibroEtiquetaCreateManyLibroInput[];
 	skipDuplicates?: boolean;
 };
 
 export type LibroEtiquetaUpsertWithWhereUniqueWithoutLibroInput = {
 	where: Prisma.LibroEtiquetaWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.LibroEtiquetaUpdateWithoutLibroInput,
-		Prisma.LibroEtiquetaUncheckedUpdateWithoutLibroInput
-	>;
-	create: Prisma.XOR<
-		Prisma.LibroEtiquetaCreateWithoutLibroInput,
-		Prisma.LibroEtiquetaUncheckedCreateWithoutLibroInput
-	>;
+	update: Prisma.XOR<Prisma.LibroEtiquetaUpdateWithoutLibroInput, Prisma.LibroEtiquetaUncheckedUpdateWithoutLibroInput>;
+	create: Prisma.XOR<Prisma.LibroEtiquetaCreateWithoutLibroInput, Prisma.LibroEtiquetaUncheckedCreateWithoutLibroInput>;
 };
 
 export type LibroEtiquetaUpdateWithWhereUniqueWithoutLibroInput = {
 	where: Prisma.LibroEtiquetaWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.LibroEtiquetaUpdateWithoutLibroInput,
-		Prisma.LibroEtiquetaUncheckedUpdateWithoutLibroInput
-	>;
+	data: Prisma.XOR<Prisma.LibroEtiquetaUpdateWithoutLibroInput, Prisma.LibroEtiquetaUncheckedUpdateWithoutLibroInput>;
 };
 
 export type LibroEtiquetaUpdateManyWithWhereWithoutLibroInput = {
 	where: Prisma.LibroEtiquetaScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.LibroEtiquetaUpdateManyMutationInput,
-		Prisma.LibroEtiquetaUncheckedUpdateManyWithoutLibroInput
-	>;
+	data: Prisma.XOR<Prisma.LibroEtiquetaUpdateManyMutationInput, Prisma.LibroEtiquetaUncheckedUpdateManyWithoutLibroInput>;
 };
 
 export type LibroEtiquetaCreateManyEstadoInput = {
@@ -1020,10 +755,7 @@ export type LibroEtiquetaUncheckedUpdateManyWithoutLibroInput = {
 	estadoId?: Prisma.IntFieldUpdateOperationsInput | number;
 };
 
-export type LibroEtiquetaSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type LibroEtiquetaSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		libroId?: boolean;
 		etiquetaId?: boolean;
@@ -1037,10 +769,7 @@ export type LibroEtiquetaSelect<
 	ExtArgs["result"]["libroEtiqueta"]
 >;
 
-export type LibroEtiquetaSelectCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type LibroEtiquetaSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		libroId?: boolean;
 		etiquetaId?: boolean;
@@ -1054,10 +783,7 @@ export type LibroEtiquetaSelectCreateManyAndReturn<
 	ExtArgs["result"]["libroEtiqueta"]
 >;
 
-export type LibroEtiquetaSelectUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type LibroEtiquetaSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		libroId?: boolean;
 		etiquetaId?: boolean;
@@ -1079,42 +805,27 @@ export type LibroEtiquetaSelectScalar = {
 	estadoId?: boolean;
 };
 
-export type LibroEtiquetaOmit<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetOmit<
+export type LibroEtiquetaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<
 	"libroId" | "etiquetaId" | "createdAt" | "updatedAt" | "estadoId",
 	ExtArgs["result"]["libroEtiqueta"]
 >;
-export type LibroEtiquetaInclude<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroEtiquetaInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 	libro?: boolean | Prisma.LibroDefaultArgs<ExtArgs>;
 	etiqueta?: boolean | Prisma.EtiquetaDefaultArgs<ExtArgs>;
 };
-export type LibroEtiquetaIncludeCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroEtiquetaIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 	libro?: boolean | Prisma.LibroDefaultArgs<ExtArgs>;
 	etiqueta?: boolean | Prisma.EtiquetaDefaultArgs<ExtArgs>;
 };
-export type LibroEtiquetaIncludeUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroEtiquetaIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 	libro?: boolean | Prisma.LibroDefaultArgs<ExtArgs>;
 	etiqueta?: boolean | Prisma.EtiquetaDefaultArgs<ExtArgs>;
 };
 
-export type $LibroEtiquetaPayload<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type $LibroEtiquetaPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	name: "LibroEtiqueta";
 	objects: {
 		estado: Prisma.$EstadoPayload<ExtArgs>;
@@ -1134,29 +845,17 @@ export type $LibroEtiquetaPayload<
 	composites: {};
 };
 
-export type LibroEtiquetaGetPayload<
-	S extends boolean | null | undefined | LibroEtiquetaDefaultArgs,
-> = runtime.Types.Result.GetResult<Prisma.$LibroEtiquetaPayload, S>;
+export type LibroEtiquetaGetPayload<S extends boolean | null | undefined | LibroEtiquetaDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$LibroEtiquetaPayload, S>;
 
-export type LibroEtiquetaCountArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = Omit<
+export type LibroEtiquetaCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<
 	LibroEtiquetaFindManyArgs,
 	"select" | "include" | "distinct" | "omit"
 > & {
 	select?: LibroEtiquetaCountAggregateInputType | true;
 };
 
-export interface LibroEtiquetaDelegate<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> {
-	[K: symbol]: {
-		types: Prisma.TypeMap<ExtArgs>["model"]["LibroEtiqueta"];
-		meta: { name: "LibroEtiqueta" };
-	};
+export interface LibroEtiquetaDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+	[K: symbol]: { types: Prisma.TypeMap<ExtArgs>["model"]["LibroEtiqueta"]; meta: { name: "LibroEtiqueta" } };
 	/**
 	 * Find zero or one LibroEtiqueta that matches the filter.
 	 * @param {LibroEtiquetaFindUniqueArgs} args - Arguments to find a LibroEtiqueta
@@ -1170,17 +869,7 @@ export interface LibroEtiquetaDelegate<
 	 */
 	findUnique<T extends LibroEtiquetaFindUniqueArgs>(
 		args: Prisma.SelectSubset<T, LibroEtiquetaFindUniqueArgs<ExtArgs>>,
-	): Prisma.Prisma__LibroEtiquetaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroEtiquetaPayload<ExtArgs>,
-			T,
-			"findUnique",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__LibroEtiquetaClient<runtime.Types.Result.GetResult<Prisma.$LibroEtiquetaPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find one LibroEtiqueta that matches the filter or throw an error with `error.code='P2025'`
@@ -1196,17 +885,7 @@ export interface LibroEtiquetaDelegate<
 	 */
 	findUniqueOrThrow<T extends LibroEtiquetaFindUniqueOrThrowArgs>(
 		args: Prisma.SelectSubset<T, LibroEtiquetaFindUniqueOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__LibroEtiquetaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroEtiquetaPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__LibroEtiquetaClient<runtime.Types.Result.GetResult<Prisma.$LibroEtiquetaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first LibroEtiqueta that matches the filter.
@@ -1223,17 +902,7 @@ export interface LibroEtiquetaDelegate<
 	 */
 	findFirst<T extends LibroEtiquetaFindFirstArgs>(
 		args?: Prisma.SelectSubset<T, LibroEtiquetaFindFirstArgs<ExtArgs>>,
-	): Prisma.Prisma__LibroEtiquetaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroEtiquetaPayload<ExtArgs>,
-			T,
-			"findFirst",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__LibroEtiquetaClient<runtime.Types.Result.GetResult<Prisma.$LibroEtiquetaPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first LibroEtiqueta that matches the filter or
@@ -1251,17 +920,7 @@ export interface LibroEtiquetaDelegate<
 	 */
 	findFirstOrThrow<T extends LibroEtiquetaFindFirstOrThrowArgs>(
 		args?: Prisma.SelectSubset<T, LibroEtiquetaFindFirstOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__LibroEtiquetaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroEtiquetaPayload<ExtArgs>,
-			T,
-			"findFirstOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__LibroEtiquetaClient<runtime.Types.Result.GetResult<Prisma.$LibroEtiquetaPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find zero or more LibroEtiquetas that matches the filter.
@@ -1281,14 +940,7 @@ export interface LibroEtiquetaDelegate<
 	 */
 	findMany<T extends LibroEtiquetaFindManyArgs>(
 		args?: Prisma.SelectSubset<T, LibroEtiquetaFindManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroEtiquetaPayload<ExtArgs>,
-			T,
-			"findMany",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LibroEtiquetaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
 
 	/**
 	 * Create a LibroEtiqueta.
@@ -1304,17 +956,7 @@ export interface LibroEtiquetaDelegate<
 	 */
 	create<T extends LibroEtiquetaCreateArgs>(
 		args: Prisma.SelectSubset<T, LibroEtiquetaCreateArgs<ExtArgs>>,
-	): Prisma.Prisma__LibroEtiquetaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroEtiquetaPayload<ExtArgs>,
-			T,
-			"create",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__LibroEtiquetaClient<runtime.Types.Result.GetResult<Prisma.$LibroEtiquetaPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Create many LibroEtiquetas.
@@ -1328,9 +970,7 @@ export interface LibroEtiquetaDelegate<
 	 * })
 	 *
 	 */
-	createMany<T extends LibroEtiquetaCreateManyArgs>(
-		args?: Prisma.SelectSubset<T, LibroEtiquetaCreateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	createMany<T extends LibroEtiquetaCreateManyArgs>(args?: Prisma.SelectSubset<T, LibroEtiquetaCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Create many LibroEtiquetas and returns the data saved in the database.
@@ -1355,18 +995,8 @@ export interface LibroEtiquetaDelegate<
 	 *
 	 */
 	createManyAndReturn<T extends LibroEtiquetaCreateManyAndReturnArgs>(
-		args?: Prisma.SelectSubset<
-			T,
-			LibroEtiquetaCreateManyAndReturnArgs<ExtArgs>
-		>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroEtiquetaPayload<ExtArgs>,
-			T,
-			"createManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+		args?: Prisma.SelectSubset<T, LibroEtiquetaCreateManyAndReturnArgs<ExtArgs>>,
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LibroEtiquetaPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Delete a LibroEtiqueta.
@@ -1382,17 +1012,7 @@ export interface LibroEtiquetaDelegate<
 	 */
 	delete<T extends LibroEtiquetaDeleteArgs>(
 		args: Prisma.SelectSubset<T, LibroEtiquetaDeleteArgs<ExtArgs>>,
-	): Prisma.Prisma__LibroEtiquetaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroEtiquetaPayload<ExtArgs>,
-			T,
-			"delete",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__LibroEtiquetaClient<runtime.Types.Result.GetResult<Prisma.$LibroEtiquetaPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Update one LibroEtiqueta.
@@ -1411,17 +1031,7 @@ export interface LibroEtiquetaDelegate<
 	 */
 	update<T extends LibroEtiquetaUpdateArgs>(
 		args: Prisma.SelectSubset<T, LibroEtiquetaUpdateArgs<ExtArgs>>,
-	): Prisma.Prisma__LibroEtiquetaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroEtiquetaPayload<ExtArgs>,
-			T,
-			"update",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__LibroEtiquetaClient<runtime.Types.Result.GetResult<Prisma.$LibroEtiquetaPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Delete zero or more LibroEtiquetas.
@@ -1435,9 +1045,7 @@ export interface LibroEtiquetaDelegate<
 	 * })
 	 *
 	 */
-	deleteMany<T extends LibroEtiquetaDeleteManyArgs>(
-		args?: Prisma.SelectSubset<T, LibroEtiquetaDeleteManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	deleteMany<T extends LibroEtiquetaDeleteManyArgs>(args?: Prisma.SelectSubset<T, LibroEtiquetaDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more LibroEtiquetas.
@@ -1456,9 +1064,7 @@ export interface LibroEtiquetaDelegate<
 	 * })
 	 *
 	 */
-	updateMany<T extends LibroEtiquetaUpdateManyArgs>(
-		args: Prisma.SelectSubset<T, LibroEtiquetaUpdateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	updateMany<T extends LibroEtiquetaUpdateManyArgs>(args: Prisma.SelectSubset<T, LibroEtiquetaUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more LibroEtiquetas and returns the data updated in the database.
@@ -1490,14 +1096,7 @@ export interface LibroEtiquetaDelegate<
 	 */
 	updateManyAndReturn<T extends LibroEtiquetaUpdateManyAndReturnArgs>(
 		args: Prisma.SelectSubset<T, LibroEtiquetaUpdateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroEtiquetaPayload<ExtArgs>,
-			T,
-			"updateManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LibroEtiquetaPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Create or update one LibroEtiqueta.
@@ -1518,17 +1117,7 @@ export interface LibroEtiquetaDelegate<
 	 */
 	upsert<T extends LibroEtiquetaUpsertArgs>(
 		args: Prisma.SelectSubset<T, LibroEtiquetaUpsertArgs<ExtArgs>>,
-	): Prisma.Prisma__LibroEtiquetaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroEtiquetaPayload<ExtArgs>,
-			T,
-			"upsert",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__LibroEtiquetaClient<runtime.Types.Result.GetResult<Prisma.$LibroEtiquetaPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Count the number of LibroEtiquetas.
@@ -1546,14 +1135,7 @@ export interface LibroEtiquetaDelegate<
 	count<T extends LibroEtiquetaCountArgs>(
 		args?: Prisma.Subset<T, LibroEtiquetaCountArgs>,
 	): Prisma.PrismaPromise<
-		T extends runtime.Types.Utils.Record<"select", any>
-			? T["select"] extends true
-				? number
-				: Prisma.GetScalarType<
-						T["select"],
-						LibroEtiquetaCountAggregateOutputType
-					>
-			: number
+		T extends runtime.Types.Utils.Record<"select", any> ? (T["select"] extends true ? number : Prisma.GetScalarType<T["select"], LibroEtiquetaCountAggregateOutputType>) : number
 	>;
 
 	/**
@@ -1580,9 +1162,7 @@ export interface LibroEtiquetaDelegate<
 	 *   take: 10,
 	 * })
 	 **/
-	aggregate<T extends LibroEtiquetaAggregateArgs>(
-		args: Prisma.Subset<T, LibroEtiquetaAggregateArgs>,
-	): Prisma.PrismaPromise<GetLibroEtiquetaAggregateType<T>>;
+	aggregate<T extends LibroEtiquetaAggregateArgs>(args: Prisma.Subset<T, LibroEtiquetaAggregateArgs>): Prisma.PrismaPromise<GetLibroEtiquetaAggregateType<T>>;
 
 	/**
 	 * Group by LibroEtiqueta.
@@ -1604,16 +1184,9 @@ export interface LibroEtiquetaDelegate<
 	 **/
 	groupBy<
 		T extends LibroEtiquetaGroupByArgs,
-		HasSelectOrTake extends Prisma.Or<
-			Prisma.Extends<"skip", Prisma.Keys<T>>,
-			Prisma.Extends<"take", Prisma.Keys<T>>
-		>,
-		OrderByArg extends Prisma.True extends HasSelectOrTake
-			? { orderBy: LibroEtiquetaGroupByArgs["orderBy"] }
-			: { orderBy?: LibroEtiquetaGroupByArgs["orderBy"] },
-		OrderFields extends Prisma.ExcludeUnderscoreKeys<
-			Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>
-		>,
+		HasSelectOrTake extends Prisma.Or<Prisma.Extends<"skip", Prisma.Keys<T>>, Prisma.Extends<"take", Prisma.Keys<T>>>,
+		OrderByArg extends Prisma.True extends HasSelectOrTake ? { orderBy: LibroEtiquetaGroupByArgs["orderBy"] } : { orderBy?: LibroEtiquetaGroupByArgs["orderBy"] },
+		OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>>,
 		ByFields extends Prisma.MaybeTupleToUnion<T["by"]>,
 		ByValid extends Prisma.Has<ByFields, OrderFields>,
 		HavingFields extends Prisma.GetHavingFields<T["having"]>,
@@ -1627,21 +1200,14 @@ export interface LibroEtiquetaDelegate<
 							? never
 							: P extends string
 								? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-								: [
-										Error,
-										"Field ",
-										P,
-										` in "having" needs to be provided in "by"`,
-									];
+								: [Error, "Field ", P, ` in "having" needs to be provided in "by"`];
 					}[HavingFields]
 				: "take" extends Prisma.Keys<T>
 					? "orderBy" extends Prisma.Keys<T>
 						? ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields]
 						: 'Error: If you provide "take", you also need to provide "orderBy"'
 					: "skip" extends Prisma.Keys<T>
@@ -1649,24 +1215,15 @@ export interface LibroEtiquetaDelegate<
 							? ByValid extends Prisma.True
 								? {}
 								: {
-										[P in OrderFields]: P extends ByFields
-											? never
-											: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+										[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 									}[OrderFields]
 							: 'Error: If you provide "skip", you also need to provide "orderBy"'
 						: ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields],
-	>(
-		args: Prisma.SubsetIntersection<T, LibroEtiquetaGroupByArgs, OrderByArg> &
-			InputErrors,
-	): {} extends InputErrors
-		? GetLibroEtiquetaGroupByPayload<T>
-		: Prisma.PrismaPromise<InputErrors>;
+	>(args: Prisma.SubsetIntersection<T, LibroEtiquetaGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetLibroEtiquetaGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
 	/**
 	 * Fields of the LibroEtiqueta model
 	 */
@@ -1679,56 +1236,18 @@ export interface LibroEtiquetaDelegate<
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__LibroEtiquetaClient<
-	T,
-	Null = never,
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> extends Prisma.PrismaPromise<T> {
+export interface Prisma__LibroEtiquetaClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}>
+	extends Prisma.PrismaPromise<T> {
 	readonly [Symbol.toStringTag]: "PrismaPromise";
 	estado<T extends Prisma.EstadoDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EstadoDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EstadoPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	libro<T extends Prisma.LibroDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.LibroDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__LibroClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$LibroPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__LibroClient<runtime.Types.Result.GetResult<Prisma.$LibroPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	etiqueta<T extends Prisma.EtiquetaDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EtiquetaDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EtiquetaClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EtiquetaPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EtiquetaClient<runtime.Types.Result.GetResult<Prisma.$EtiquetaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	/**
 	 * Attaches callbacks for the resolution and/or rejection of the Promise.
 	 * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1736,35 +1255,22 @@ export interface Prisma__LibroEtiquetaClient<
 	 * @returns A Promise for the completion of which ever callback is executed.
 	 */
 	then<TResult1 = T, TResult2 = never>(
-		onfulfilled?:
-			| ((value: T) => TResult1 | PromiseLike<TResult1>)
-			| undefined
-			| null,
-		onrejected?:
-			| ((reason: any) => TResult2 | PromiseLike<TResult2>)
-			| undefined
-			| null,
+		onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+		onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
 	): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
 	/**
 	 * Attaches a callback for only the rejection of the Promise.
 	 * @param onrejected The callback to execute when the Promise is rejected.
 	 * @returns A Promise for the completion of the callback.
 	 */
-	catch<TResult = never>(
-		onrejected?:
-			| ((reason: any) => TResult | PromiseLike<TResult>)
-			| undefined
-			| null,
-	): runtime.Types.Utils.JsPromise<T | TResult>;
+	catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
 	/**
 	 * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
 	 * resolved value cannot be modified from the callback.
 	 * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
 	 * @returns A Promise for the completion of the callback.
 	 */
-	finally(
-		onfinally?: (() => void) | undefined | null,
-	): runtime.Types.Utils.JsPromise<T>;
+	finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
 }
 
 /**
@@ -1782,10 +1288,7 @@ export interface LibroEtiquetaFieldRefs {
 /**
  * LibroEtiqueta findUnique
  */
-export type LibroEtiquetaFindUniqueArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroEtiquetaFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroEtiqueta
 	 */
@@ -1807,10 +1310,7 @@ export type LibroEtiquetaFindUniqueArgs<
 /**
  * LibroEtiqueta findUniqueOrThrow
  */
-export type LibroEtiquetaFindUniqueOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroEtiquetaFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroEtiqueta
 	 */
@@ -1832,10 +1332,7 @@ export type LibroEtiquetaFindUniqueOrThrowArgs<
 /**
  * LibroEtiqueta findFirst
  */
-export type LibroEtiquetaFindFirstArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroEtiquetaFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroEtiqueta
 	 */
@@ -1857,9 +1354,7 @@ export type LibroEtiquetaFindFirstArgs<
 	 *
 	 * Determine the order of LibroEtiquetas to fetch.
 	 */
-	orderBy?:
-		| Prisma.LibroEtiquetaOrderByWithRelationInput
-		| Prisma.LibroEtiquetaOrderByWithRelationInput[];
+	orderBy?: Prisma.LibroEtiquetaOrderByWithRelationInput | Prisma.LibroEtiquetaOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1883,18 +1378,13 @@ export type LibroEtiquetaFindFirstArgs<
 	 *
 	 * Filter by unique combinations of LibroEtiquetas.
 	 */
-	distinct?:
-		| Prisma.LibroEtiquetaScalarFieldEnum
-		| Prisma.LibroEtiquetaScalarFieldEnum[];
+	distinct?: Prisma.LibroEtiquetaScalarFieldEnum | Prisma.LibroEtiquetaScalarFieldEnum[];
 };
 
 /**
  * LibroEtiqueta findFirstOrThrow
  */
-export type LibroEtiquetaFindFirstOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroEtiquetaFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroEtiqueta
 	 */
@@ -1916,9 +1406,7 @@ export type LibroEtiquetaFindFirstOrThrowArgs<
 	 *
 	 * Determine the order of LibroEtiquetas to fetch.
 	 */
-	orderBy?:
-		| Prisma.LibroEtiquetaOrderByWithRelationInput
-		| Prisma.LibroEtiquetaOrderByWithRelationInput[];
+	orderBy?: Prisma.LibroEtiquetaOrderByWithRelationInput | Prisma.LibroEtiquetaOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1942,18 +1430,13 @@ export type LibroEtiquetaFindFirstOrThrowArgs<
 	 *
 	 * Filter by unique combinations of LibroEtiquetas.
 	 */
-	distinct?:
-		| Prisma.LibroEtiquetaScalarFieldEnum
-		| Prisma.LibroEtiquetaScalarFieldEnum[];
+	distinct?: Prisma.LibroEtiquetaScalarFieldEnum | Prisma.LibroEtiquetaScalarFieldEnum[];
 };
 
 /**
  * LibroEtiqueta findMany
  */
-export type LibroEtiquetaFindManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroEtiquetaFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroEtiqueta
 	 */
@@ -1975,9 +1458,7 @@ export type LibroEtiquetaFindManyArgs<
 	 *
 	 * Determine the order of LibroEtiquetas to fetch.
 	 */
-	orderBy?:
-		| Prisma.LibroEtiquetaOrderByWithRelationInput
-		| Prisma.LibroEtiquetaOrderByWithRelationInput[];
+	orderBy?: Prisma.LibroEtiquetaOrderByWithRelationInput | Prisma.LibroEtiquetaOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -2001,18 +1482,13 @@ export type LibroEtiquetaFindManyArgs<
 	 *
 	 * Filter by unique combinations of LibroEtiquetas.
 	 */
-	distinct?:
-		| Prisma.LibroEtiquetaScalarFieldEnum
-		| Prisma.LibroEtiquetaScalarFieldEnum[];
+	distinct?: Prisma.LibroEtiquetaScalarFieldEnum | Prisma.LibroEtiquetaScalarFieldEnum[];
 };
 
 /**
  * LibroEtiqueta create
  */
-export type LibroEtiquetaCreateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroEtiquetaCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroEtiqueta
 	 */
@@ -2028,35 +1504,24 @@ export type LibroEtiquetaCreateArgs<
 	/**
 	 * The data needed to create a LibroEtiqueta.
 	 */
-	data: Prisma.XOR<
-		Prisma.LibroEtiquetaCreateInput,
-		Prisma.LibroEtiquetaUncheckedCreateInput
-	>;
+	data: Prisma.XOR<Prisma.LibroEtiquetaCreateInput, Prisma.LibroEtiquetaUncheckedCreateInput>;
 };
 
 /**
  * LibroEtiqueta createMany
  */
-export type LibroEtiquetaCreateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroEtiquetaCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to create many LibroEtiquetas.
 	 */
-	data:
-		| Prisma.LibroEtiquetaCreateManyInput
-		| Prisma.LibroEtiquetaCreateManyInput[];
+	data: Prisma.LibroEtiquetaCreateManyInput | Prisma.LibroEtiquetaCreateManyInput[];
 	skipDuplicates?: boolean;
 };
 
 /**
  * LibroEtiqueta createManyAndReturn
  */
-export type LibroEtiquetaCreateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroEtiquetaCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroEtiqueta
 	 */
@@ -2068,9 +1533,7 @@ export type LibroEtiquetaCreateManyAndReturnArgs<
 	/**
 	 * The data used to create many LibroEtiquetas.
 	 */
-	data:
-		| Prisma.LibroEtiquetaCreateManyInput
-		| Prisma.LibroEtiquetaCreateManyInput[];
+	data: Prisma.LibroEtiquetaCreateManyInput | Prisma.LibroEtiquetaCreateManyInput[];
 	skipDuplicates?: boolean;
 	/**
 	 * Choose, which related nodes to fetch as well
@@ -2081,10 +1544,7 @@ export type LibroEtiquetaCreateManyAndReturnArgs<
 /**
  * LibroEtiqueta update
  */
-export type LibroEtiquetaUpdateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroEtiquetaUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroEtiqueta
 	 */
@@ -2100,10 +1560,7 @@ export type LibroEtiquetaUpdateArgs<
 	/**
 	 * The data needed to update a LibroEtiqueta.
 	 */
-	data: Prisma.XOR<
-		Prisma.LibroEtiquetaUpdateInput,
-		Prisma.LibroEtiquetaUncheckedUpdateInput
-	>;
+	data: Prisma.XOR<Prisma.LibroEtiquetaUpdateInput, Prisma.LibroEtiquetaUncheckedUpdateInput>;
 	/**
 	 * Choose, which LibroEtiqueta to update.
 	 */
@@ -2113,17 +1570,11 @@ export type LibroEtiquetaUpdateArgs<
 /**
  * LibroEtiqueta updateMany
  */
-export type LibroEtiquetaUpdateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroEtiquetaUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to update LibroEtiquetas.
 	 */
-	data: Prisma.XOR<
-		Prisma.LibroEtiquetaUpdateManyMutationInput,
-		Prisma.LibroEtiquetaUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.LibroEtiquetaUpdateManyMutationInput, Prisma.LibroEtiquetaUncheckedUpdateManyInput>;
 	/**
 	 * Filter which LibroEtiquetas to update
 	 */
@@ -2137,10 +1588,7 @@ export type LibroEtiquetaUpdateManyArgs<
 /**
  * LibroEtiqueta updateManyAndReturn
  */
-export type LibroEtiquetaUpdateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroEtiquetaUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroEtiqueta
 	 */
@@ -2152,10 +1600,7 @@ export type LibroEtiquetaUpdateManyAndReturnArgs<
 	/**
 	 * The data used to update LibroEtiquetas.
 	 */
-	data: Prisma.XOR<
-		Prisma.LibroEtiquetaUpdateManyMutationInput,
-		Prisma.LibroEtiquetaUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.LibroEtiquetaUpdateManyMutationInput, Prisma.LibroEtiquetaUncheckedUpdateManyInput>;
 	/**
 	 * Filter which LibroEtiquetas to update
 	 */
@@ -2173,10 +1618,7 @@ export type LibroEtiquetaUpdateManyAndReturnArgs<
 /**
  * LibroEtiqueta upsert
  */
-export type LibroEtiquetaUpsertArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroEtiquetaUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroEtiqueta
 	 */
@@ -2196,26 +1638,17 @@ export type LibroEtiquetaUpsertArgs<
 	/**
 	 * In case the LibroEtiqueta found by the `where` argument doesn't exist, create a new LibroEtiqueta with this data.
 	 */
-	create: Prisma.XOR<
-		Prisma.LibroEtiquetaCreateInput,
-		Prisma.LibroEtiquetaUncheckedCreateInput
-	>;
+	create: Prisma.XOR<Prisma.LibroEtiquetaCreateInput, Prisma.LibroEtiquetaUncheckedCreateInput>;
 	/**
 	 * In case the LibroEtiqueta was found with the provided `where` argument, update it with this data.
 	 */
-	update: Prisma.XOR<
-		Prisma.LibroEtiquetaUpdateInput,
-		Prisma.LibroEtiquetaUncheckedUpdateInput
-	>;
+	update: Prisma.XOR<Prisma.LibroEtiquetaUpdateInput, Prisma.LibroEtiquetaUncheckedUpdateInput>;
 };
 
 /**
  * LibroEtiqueta delete
  */
-export type LibroEtiquetaDeleteArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroEtiquetaDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroEtiqueta
 	 */
@@ -2237,10 +1670,7 @@ export type LibroEtiquetaDeleteArgs<
 /**
  * LibroEtiqueta deleteMany
  */
-export type LibroEtiquetaDeleteManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroEtiquetaDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which LibroEtiquetas to delete
 	 */
@@ -2254,10 +1684,7 @@ export type LibroEtiquetaDeleteManyArgs<
 /**
  * LibroEtiqueta without action
  */
-export type LibroEtiquetaDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroEtiquetaDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroEtiqueta
 	 */

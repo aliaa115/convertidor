@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 
 const nestedfloatnullablefilterSchema = z
 	.object({
@@ -16,7 +16,5 @@ const nestedfloatnullablefilterSchema = z
 			.nullable(),
 	})
 	.strict();
-export const NestedFloatNullableFilterObjectSchema: z.ZodType<Prisma.NestedFloatNullableFilter> =
-	nestedfloatnullablefilterSchema as unknown as z.ZodType<Prisma.NestedFloatNullableFilter>;
-export const NestedFloatNullableFilterObjectZodSchema =
-	nestedfloatnullablefilterSchema;
+export const NestedFloatNullableFilterObjectSchema: z.ZodType<Prisma.NestedFloatNullableFilter> = nestedfloatnullablefilterSchema as unknown as z.ZodType<Prisma.NestedFloatNullableFilter>;
+export const NestedFloatNullableFilterObjectZodSchema = nestedfloatnullablefilterSchema;

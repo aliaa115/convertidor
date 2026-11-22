@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { NotaAutorUncheckedCreateNestedManyWithoutCapituloInputObjectSchema as NotaAutorUncheckedCreateNestedManyWithoutCapituloInputObjectSchema } from "./NotaAutorUncheckedCreateNestedManyWithoutCapituloInput.schema.ts";
 import { ParrafoUncheckedCreateNestedManyWithoutCapituloInputObjectSchema as ParrafoUncheckedCreateNestedManyWithoutCapituloInputObjectSchema } from "./ParrafoUncheckedCreateNestedManyWithoutCapituloInput.schema.ts";
 
@@ -12,21 +12,10 @@ const makeSchema = () =>
 			createdAt: z.coerce.date().optional(),
 			updatedAt: z.coerce.date().optional(),
 			libroId: z.number().int(),
-			parrafos: z
-				.lazy(
-					() =>
-						ParrafoUncheckedCreateNestedManyWithoutCapituloInputObjectSchema,
-				)
-				.optional(),
-			notasAutor: z
-				.lazy(
-					() =>
-						NotaAutorUncheckedCreateNestedManyWithoutCapituloInputObjectSchema,
-				)
-				.optional(),
+			parrafos: z.lazy(() => ParrafoUncheckedCreateNestedManyWithoutCapituloInputObjectSchema).optional(),
+			notasAutor: z.lazy(() => NotaAutorUncheckedCreateNestedManyWithoutCapituloInputObjectSchema).optional(),
 		})
 		.strict();
 export const CapituloUncheckedCreateWithoutEstadoInputObjectSchema: z.ZodType<Prisma.CapituloUncheckedCreateWithoutEstadoInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.CapituloUncheckedCreateWithoutEstadoInput>;
-export const CapituloUncheckedCreateWithoutEstadoInputObjectZodSchema =
-	makeSchema();
+export const CapituloUncheckedCreateWithoutEstadoInputObjectZodSchema = makeSchema();

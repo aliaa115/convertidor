@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 
 const makeSchema = () =>
 	z
@@ -11,6 +11,5 @@ const makeSchema = () =>
 			estadoId: z.literal(true).optional(),
 		})
 		.strict();
-export const EtiquetaMaxAggregateInputObjectSchema: z.ZodType<Prisma.EtiquetaMaxAggregateInputType> =
-	makeSchema() as unknown as z.ZodType<Prisma.EtiquetaMaxAggregateInputType>;
+export const EtiquetaMaxAggregateInputObjectSchema: z.ZodType<Prisma.EtiquetaMaxAggregateInputType> = makeSchema() as unknown as z.ZodType<Prisma.EtiquetaMaxAggregateInputType>;
 export const EtiquetaMaxAggregateInputObjectZodSchema = makeSchema();

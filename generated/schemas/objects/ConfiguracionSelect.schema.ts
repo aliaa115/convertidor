@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { EstadoArgsObjectSchema as EstadoArgsObjectSchema } from "./EstadoArgs.schema.ts";
 import { TipoArgsObjectSchema as TipoArgsObjectSchema } from "./TipoArgs.schema.ts";
 import { UsuarioArgsObjectSchema as UsuarioArgsObjectSchema } from "./UsuarioArgs.schema.ts";
@@ -12,19 +12,12 @@ const makeSchema = () =>
 			createdAt: z.boolean().optional(),
 			updatedAt: z.boolean().optional(),
 			usuarioId: z.boolean().optional(),
-			usuario: z
-				.union([z.boolean(), z.lazy(() => UsuarioArgsObjectSchema)])
-				.optional(),
+			usuario: z.union([z.boolean(), z.lazy(() => UsuarioArgsObjectSchema)]).optional(),
 			tipoId: z.boolean().optional(),
-			tipo: z
-				.union([z.boolean(), z.lazy(() => TipoArgsObjectSchema)])
-				.optional(),
+			tipo: z.union([z.boolean(), z.lazy(() => TipoArgsObjectSchema)]).optional(),
 			estadoId: z.boolean().optional(),
-			estado: z
-				.union([z.boolean(), z.lazy(() => EstadoArgsObjectSchema)])
-				.optional(),
+			estado: z.union([z.boolean(), z.lazy(() => EstadoArgsObjectSchema)]).optional(),
 		})
 		.strict();
-export const ConfiguracionSelectObjectSchema: z.ZodType<Prisma.ConfiguracionSelect> =
-	makeSchema() as unknown as z.ZodType<Prisma.ConfiguracionSelect>;
+export const ConfiguracionSelectObjectSchema: z.ZodType<Prisma.ConfiguracionSelect> = makeSchema() as unknown as z.ZodType<Prisma.ConfiguracionSelect>;
 export const ConfiguracionSelectObjectZodSchema = makeSchema();

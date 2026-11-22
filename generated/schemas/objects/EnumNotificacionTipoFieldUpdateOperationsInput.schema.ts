@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { NotificacionTipoSchema } from "../enums/NotificacionTipo.schema.ts";
 
 const makeSchema = () =>
@@ -10,5 +10,4 @@ const makeSchema = () =>
 		.strict();
 export const EnumNotificacionTipoFieldUpdateOperationsInputObjectSchema: z.ZodType<Prisma.EnumNotificacionTipoFieldUpdateOperationsInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.EnumNotificacionTipoFieldUpdateOperationsInput>;
-export const EnumNotificacionTipoFieldUpdateOperationsInputObjectZodSchema =
-	makeSchema();
+export const EnumNotificacionTipoFieldUpdateOperationsInputObjectZodSchema = makeSchema();

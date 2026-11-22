@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { SeguirUsuarioCreateManySeguidoInputEnvelopeObjectSchema as SeguirUsuarioCreateManySeguidoInputEnvelopeObjectSchema } from "./SeguirUsuarioCreateManySeguidoInputEnvelope.schema.ts";
 import { SeguirUsuarioCreateOrConnectWithoutSeguidoInputObjectSchema as SeguirUsuarioCreateOrConnectWithoutSeguidoInputObjectSchema } from "./SeguirUsuarioCreateOrConnectWithoutSeguidoInput.schema.ts";
 import { SeguirUsuarioCreateWithoutSeguidoInputObjectSchema as SeguirUsuarioCreateWithoutSeguidoInputObjectSchema } from "./SeguirUsuarioCreateWithoutSeguidoInput.schema.ts";
@@ -12,43 +12,18 @@ const makeSchema = () =>
 			create: z
 				.union([
 					z.lazy(() => SeguirUsuarioCreateWithoutSeguidoInputObjectSchema),
-					z
-						.lazy(() => SeguirUsuarioCreateWithoutSeguidoInputObjectSchema)
-						.array(),
-					z.lazy(
-						() => SeguirUsuarioUncheckedCreateWithoutSeguidoInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => SeguirUsuarioUncheckedCreateWithoutSeguidoInputObjectSchema,
-						)
-						.array(),
+					z.lazy(() => SeguirUsuarioCreateWithoutSeguidoInputObjectSchema).array(),
+					z.lazy(() => SeguirUsuarioUncheckedCreateWithoutSeguidoInputObjectSchema),
+					z.lazy(() => SeguirUsuarioUncheckedCreateWithoutSeguidoInputObjectSchema).array(),
 				])
 				.optional(),
 			connectOrCreate: z
-				.union([
-					z.lazy(
-						() => SeguirUsuarioCreateOrConnectWithoutSeguidoInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => SeguirUsuarioCreateOrConnectWithoutSeguidoInputObjectSchema,
-						)
-						.array(),
-				])
+				.union([z.lazy(() => SeguirUsuarioCreateOrConnectWithoutSeguidoInputObjectSchema), z.lazy(() => SeguirUsuarioCreateOrConnectWithoutSeguidoInputObjectSchema).array()])
 				.optional(),
-			createMany: z
-				.lazy(() => SeguirUsuarioCreateManySeguidoInputEnvelopeObjectSchema)
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => SeguirUsuarioWhereUniqueInputObjectSchema),
-					z.lazy(() => SeguirUsuarioWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
+			createMany: z.lazy(() => SeguirUsuarioCreateManySeguidoInputEnvelopeObjectSchema).optional(),
+			connect: z.union([z.lazy(() => SeguirUsuarioWhereUniqueInputObjectSchema), z.lazy(() => SeguirUsuarioWhereUniqueInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const SeguirUsuarioCreateNestedManyWithoutSeguidoInputObjectSchema: z.ZodType<Prisma.SeguirUsuarioCreateNestedManyWithoutSeguidoInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.SeguirUsuarioCreateNestedManyWithoutSeguidoInput>;
-export const SeguirUsuarioCreateNestedManyWithoutSeguidoInputObjectZodSchema =
-	makeSchema();
+export const SeguirUsuarioCreateNestedManyWithoutSeguidoInputObjectZodSchema = makeSchema();

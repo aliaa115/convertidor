@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { EscritorCreateInputObjectSchema as EscritorCreateInputObjectSchema } from "./objects/EscritorCreateInput.schema.ts";
 import { EscritorIncludeObjectSchema as EscritorIncludeObjectSchema } from "./objects/EscritorInclude.schema.ts";
 import { EscritorSelectObjectSchema as EscritorSelectObjectSchema } from "./objects/EscritorSelect.schema.ts";
@@ -13,14 +13,8 @@ export const EscritorUpsertOneSchema: z.ZodType<Prisma.EscritorUpsertArgs> = z
 		select: EscritorSelectObjectSchema.optional(),
 		include: EscritorIncludeObjectSchema.optional(),
 		where: EscritorWhereUniqueInputObjectSchema,
-		create: z.union([
-			EscritorCreateInputObjectSchema,
-			EscritorUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			EscritorUpdateInputObjectSchema,
-			EscritorUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([EscritorCreateInputObjectSchema, EscritorUncheckedCreateInputObjectSchema]),
+		update: z.union([EscritorUpdateInputObjectSchema, EscritorUncheckedUpdateInputObjectSchema]),
 	})
 	.strict() as unknown as z.ZodType<Prisma.EscritorUpsertArgs>;
 
@@ -29,13 +23,7 @@ export const EscritorUpsertOneZodSchema = z
 		select: EscritorSelectObjectSchema.optional(),
 		include: EscritorIncludeObjectSchema.optional(),
 		where: EscritorWhereUniqueInputObjectSchema,
-		create: z.union([
-			EscritorCreateInputObjectSchema,
-			EscritorUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			EscritorUpdateInputObjectSchema,
-			EscritorUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([EscritorCreateInputObjectSchema, EscritorUncheckedCreateInputObjectSchema]),
+		update: z.union([EscritorUpdateInputObjectSchema, EscritorUncheckedUpdateInputObjectSchema]),
 	})
 	.strict();

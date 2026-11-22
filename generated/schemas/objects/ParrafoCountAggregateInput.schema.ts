@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 
 const makeSchema = () =>
 	z
@@ -14,6 +14,5 @@ const makeSchema = () =>
 			_all: z.literal(true).optional(),
 		})
 		.strict();
-export const ParrafoCountAggregateInputObjectSchema: z.ZodType<Prisma.ParrafoCountAggregateInputType> =
-	makeSchema() as unknown as z.ZodType<Prisma.ParrafoCountAggregateInputType>;
+export const ParrafoCountAggregateInputObjectSchema: z.ZodType<Prisma.ParrafoCountAggregateInputType> = makeSchema() as unknown as z.ZodType<Prisma.ParrafoCountAggregateInputType>;
 export const ParrafoCountAggregateInputObjectZodSchema = makeSchema();

@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 
 const makeSchema = () =>
 	z
@@ -10,5 +10,4 @@ const makeSchema = () =>
 		.strict();
 export const LibroCategoriaLibroIdCategoriaIdCompoundUniqueInputObjectSchema: z.ZodType<Prisma.LibroCategoriaLibroIdCategoriaIdCompoundUniqueInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.LibroCategoriaLibroIdCategoriaIdCompoundUniqueInput>;
-export const LibroCategoriaLibroIdCategoriaIdCompoundUniqueInputObjectZodSchema =
-	makeSchema();
+export const LibroCategoriaLibroIdCategoriaIdCompoundUniqueInputObjectZodSchema = makeSchema();

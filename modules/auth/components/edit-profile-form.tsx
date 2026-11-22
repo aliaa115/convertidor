@@ -7,38 +7,19 @@ import { Path, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import GenerateField from "@/components/custom/forms/generate-field";
 import DebugPageShow from "@/components/custom/navigation/navbar/test";
-import {
-	Alert,
-	AlertAction,
-	AlertDescription,
-	AlertTitle,
-} from "@/components/ui/alert";
+import { Alert, AlertAction, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import {
-	Dialog,
-	DialogContent,
-	DialogTitle,
-	DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { CurrentUser } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { AvatarModel } from "@/types/prisma";
 import { saveProfileAction } from "../actions/profile.actions";
 import { ProfileInput, profileFormSchema } from "../schema/profile.schema";
 
-export default function ProfileForm({
-	user,
-	avatars,
-}: {
-	user: CurrentUser | null;
-	avatars: AvatarModel[];
-}) {
+export default function ProfileForm({ user, avatars }: { user: CurrentUser | null; avatars: AvatarModel[] }) {
 	const router = useRouter();
-	const initials =
-		user?.escritor?.alias?.slice(0, 2).toUpperCase() ??
-		user?.userName.slice(0, 2).toUpperCase() ??
-		"";
+	const initials = user?.escritor?.alias?.slice(0, 2).toUpperCase() ?? user?.userName.slice(0, 2).toUpperCase() ?? "";
 
 	const {
 		register,
@@ -54,9 +35,7 @@ export default function ProfileForm({
 			userName: user?.userName ?? "",
 			nombres: user?.escritor?.nombres ?? "",
 			apellidos: user?.escritor?.apellidos ?? "",
-			fechaNacimiento: user?.escritor?.fechaNacimiento
-				? new Date(user?.escritor.fechaNacimiento).toISOString().split("T")[0]
-				: "",
+			fechaNacimiento: user?.escritor?.fechaNacimiento ? new Date(user?.escritor.fechaNacimiento).toISOString().split("T")[0] : "",
 			avatarId: user?.escritor?.avatar?.id ?? null,
 		},
 	});
@@ -65,10 +44,7 @@ export default function ProfileForm({
 
 	const selectedAvatarId = watch("avatarId");
 
-	const selectedAvatar =
-		avatars.find((avatar) => avatar.id === selectedAvatarId) ??
-		user.escritor?.avatar ??
-		null;
+	const selectedAvatar = avatars.find((avatar) => avatar.id === selectedAvatarId) ?? user.escritor?.avatar ?? null;
 
 	async function onSubmit(data: ProfileInput) {
 		const result = await saveProfileAction(data);
@@ -100,19 +76,23 @@ export default function ProfileForm({
 	return (
 		<form
 			onSubmit={handleSubmit(onSubmit)}
-			className="sm:px-10 bg-background-paper/30 rounded-2xl w-full grid sm:grid-cols-5 p-10 overflow-auto"
-		>
+			className="sm:px-10 bg-background-paper/30 rounded-2xl w-full grid sm:grid-cols-5 p-10 overflow-auto">
 			<DebugPageShow />
 
 			<div className="flex flex-col">
 				<Avatar className="size-32 mx-auto">
-					<AvatarImage src={selectedAvatar?.url ?? ""} alt={user.userName} />
+					<AvatarImage
+						src={selectedAvatar?.url ?? ""}
+						alt={user.userName}
+					/>
 					<AvatarFallback>{initials}</AvatarFallback>
 				</Avatar>
 
 				<Dialog>
 					<DialogTrigger asChild>
-						<Button color="primary" className="my-5">
+						<Button
+							color="primary"
+							className="my-5">
 							Cambiar
 						</Button>
 					</DialogTrigger>
@@ -134,22 +114,19 @@ export default function ProfileForm({
 											isSelected && "bg-primary",
 											"hover:bg-accent/50",
 											"dark:hover:bg-accent/50",
-											avatar.id === user?.escritor?.avatar?.id &&
-												"border-secondary border-4",
+											avatar.id === user?.escritor?.avatar?.id && "border-secondary border-4",
 										)}
 										onClick={() => {
 											setValue("avatarId", avatar.id, {
 												shouldDirty: true,
 												shouldValidate: true,
 											});
-										}}
-									>
-										<Avatar
-											className={cn(
-												"size-20 group-hover:size-25 transition-all duration-300",
-											)}
-										>
-											<AvatarImage src={avatar.url ?? ""} alt={avatar.nombre} />
+										}}>
+										<Avatar className={cn("size-20 group-hover:size-25 transition-all duration-300")}>
+											<AvatarImage
+												src={avatar.url ?? ""}
+												alt={avatar.nombre}
+											/>
 											<AvatarFallback>{initials}</AvatarFallback>
 										</Avatar>
 									</Button>
@@ -162,10 +139,7 @@ export default function ProfileForm({
 					<Alert className="bg-warning/20">
 						<InfoIcon />
 						<AlertTitle>Ojo</AlertTitle>
-						<AlertDescription>
-							Se cambio el avatar, debe guardar cambios para ver reflejado el
-							cambio.
-						</AlertDescription>
+						<AlertDescription>Se cambio el avatar, debe guardar cambios para ver reflejado el cambio.</AlertDescription>
 					</Alert>
 				)}
 			</div>
@@ -235,7 +209,10 @@ export default function ProfileForm({
 
 			<div className="col-span-5 flex w-full justify-end">
 				<div className="flex flex-col">
-					<Button color="primary" type="submit" className="mt-5">
+					<Button
+						color="primary"
+						type="submit"
+						className="mt-5">
 						Guardar cambios
 					</Button>
 				</div>

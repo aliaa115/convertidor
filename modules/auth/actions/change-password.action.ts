@@ -11,9 +11,7 @@ export type SavePasswordActionState = {
 	fieldErrors?: Partial<Record<"password" | "confirmPassword", string[]>>;
 };
 
-export async function savePaswordAction(
-	values: unknown,
-): Promise<SavePasswordActionState> {
+export async function savePaswordAction(values: unknown): Promise<SavePasswordActionState> {
 	const currentUser = await getCurrentUser();
 
 	if (!currentUser) {

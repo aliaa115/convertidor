@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { LibroCategoriaUncheckedCreateNestedManyWithoutCategoriaInputObjectSchema as LibroCategoriaUncheckedCreateNestedManyWithoutCategoriaInputObjectSchema } from "./LibroCategoriaUncheckedCreateNestedManyWithoutCategoriaInput.schema.ts";
 
 const makeSchema = () =>
@@ -9,15 +9,9 @@ const makeSchema = () =>
 			nombre: z.string().optional().nullable(),
 			createdAt: z.coerce.date().optional(),
 			updatedAt: z.coerce.date().optional(),
-			libros: z
-				.lazy(
-					() =>
-						LibroCategoriaUncheckedCreateNestedManyWithoutCategoriaInputObjectSchema,
-				)
-				.optional(),
+			libros: z.lazy(() => LibroCategoriaUncheckedCreateNestedManyWithoutCategoriaInputObjectSchema).optional(),
 		})
 		.strict();
 export const CategoriaUncheckedCreateWithoutEstadoInputObjectSchema: z.ZodType<Prisma.CategoriaUncheckedCreateWithoutEstadoInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.CategoriaUncheckedCreateWithoutEstadoInput>;
-export const CategoriaUncheckedCreateWithoutEstadoInputObjectZodSchema =
-	makeSchema();
+export const CategoriaUncheckedCreateWithoutEstadoInputObjectZodSchema = makeSchema();

@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { EtiquetaCreateOrConnectWithoutLibrosInputObjectSchema as EtiquetaCreateOrConnectWithoutLibrosInputObjectSchema } from "./EtiquetaCreateOrConnectWithoutLibrosInput.schema.ts";
 import { EtiquetaCreateWithoutLibrosInputObjectSchema as EtiquetaCreateWithoutLibrosInputObjectSchema } from "./EtiquetaCreateWithoutLibrosInput.schema.ts";
 import { EtiquetaUncheckedCreateWithoutLibrosInputObjectSchema as EtiquetaUncheckedCreateWithoutLibrosInputObjectSchema } from "./EtiquetaUncheckedCreateWithoutLibrosInput.schema.ts";
@@ -12,24 +12,13 @@ import { EtiquetaWhereUniqueInputObjectSchema as EtiquetaWhereUniqueInputObjectS
 const makeSchema = () =>
 	z
 		.object({
-			create: z
-				.union([
-					z.lazy(() => EtiquetaCreateWithoutLibrosInputObjectSchema),
-					z.lazy(() => EtiquetaUncheckedCreateWithoutLibrosInputObjectSchema),
-				])
-				.optional(),
-			connectOrCreate: z
-				.lazy(() => EtiquetaCreateOrConnectWithoutLibrosInputObjectSchema)
-				.optional(),
-			upsert: z
-				.lazy(() => EtiquetaUpsertWithoutLibrosInputObjectSchema)
-				.optional(),
+			create: z.union([z.lazy(() => EtiquetaCreateWithoutLibrosInputObjectSchema), z.lazy(() => EtiquetaUncheckedCreateWithoutLibrosInputObjectSchema)]).optional(),
+			connectOrCreate: z.lazy(() => EtiquetaCreateOrConnectWithoutLibrosInputObjectSchema).optional(),
+			upsert: z.lazy(() => EtiquetaUpsertWithoutLibrosInputObjectSchema).optional(),
 			connect: z.lazy(() => EtiquetaWhereUniqueInputObjectSchema).optional(),
 			update: z
 				.union([
-					z.lazy(
-						() => EtiquetaUpdateToOneWithWhereWithoutLibrosInputObjectSchema,
-					),
+					z.lazy(() => EtiquetaUpdateToOneWithWhereWithoutLibrosInputObjectSchema),
 					z.lazy(() => EtiquetaUpdateWithoutLibrosInputObjectSchema),
 					z.lazy(() => EtiquetaUncheckedUpdateWithoutLibrosInputObjectSchema),
 				])
@@ -38,5 +27,4 @@ const makeSchema = () =>
 		.strict();
 export const EtiquetaUpdateOneRequiredWithoutLibrosNestedInputObjectSchema: z.ZodType<Prisma.EtiquetaUpdateOneRequiredWithoutLibrosNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.EtiquetaUpdateOneRequiredWithoutLibrosNestedInput>;
-export const EtiquetaUpdateOneRequiredWithoutLibrosNestedInputObjectZodSchema =
-	makeSchema();
+export const EtiquetaUpdateOneRequiredWithoutLibrosNestedInputObjectZodSchema = makeSchema();

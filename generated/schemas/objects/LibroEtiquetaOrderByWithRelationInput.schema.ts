@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { SortOrderSchema } from "../enums/SortOrder.schema.ts";
 import { EstadoOrderByWithRelationInputObjectSchema as EstadoOrderByWithRelationInputObjectSchema } from "./EstadoOrderByWithRelationInput.schema.ts";
 import { EtiquetaOrderByWithRelationInputObjectSchema as EtiquetaOrderByWithRelationInputObjectSchema } from "./EtiquetaOrderByWithRelationInput.schema.ts";
@@ -13,16 +13,11 @@ const makeSchema = () =>
 			createdAt: SortOrderSchema.optional(),
 			updatedAt: SortOrderSchema.optional(),
 			estadoId: SortOrderSchema.optional(),
-			estado: z
-				.lazy(() => EstadoOrderByWithRelationInputObjectSchema)
-				.optional(),
+			estado: z.lazy(() => EstadoOrderByWithRelationInputObjectSchema).optional(),
 			libro: z.lazy(() => LibroOrderByWithRelationInputObjectSchema).optional(),
-			etiqueta: z
-				.lazy(() => EtiquetaOrderByWithRelationInputObjectSchema)
-				.optional(),
+			etiqueta: z.lazy(() => EtiquetaOrderByWithRelationInputObjectSchema).optional(),
 		})
 		.strict();
 export const LibroEtiquetaOrderByWithRelationInputObjectSchema: z.ZodType<Prisma.LibroEtiquetaOrderByWithRelationInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.LibroEtiquetaOrderByWithRelationInput>;
-export const LibroEtiquetaOrderByWithRelationInputObjectZodSchema =
-	makeSchema();
+export const LibroEtiquetaOrderByWithRelationInputObjectZodSchema = makeSchema();

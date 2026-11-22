@@ -4,8 +4,8 @@ export const CategoriaInputSchema = z
 	.object({
 		id: z.number().int(),
 		nombre: z.string().optional().nullable(),
-		createdAt: z.date(),
-		updatedAt: z.date(),
+		createdAt: z.coerce.date(),
+		updatedAt: z.coerce.date(),
 		estadoId: z.number().int(),
 		estado: z.unknown(),
 		libros: z.array(z.unknown()),

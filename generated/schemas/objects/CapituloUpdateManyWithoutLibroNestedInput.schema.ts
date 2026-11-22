@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { CapituloCreateManyLibroInputEnvelopeObjectSchema as CapituloCreateManyLibroInputEnvelopeObjectSchema } from "./CapituloCreateManyLibroInputEnvelope.schema.ts";
 import { CapituloCreateOrConnectWithoutLibroInputObjectSchema as CapituloCreateOrConnectWithoutLibroInputObjectSchema } from "./CapituloCreateOrConnectWithoutLibroInput.schema.ts";
 import { CapituloCreateWithoutLibroInputObjectSchema as CapituloCreateWithoutLibroInputObjectSchema } from "./CapituloCreateWithoutLibroInput.schema.ts";
@@ -18,91 +18,21 @@ const makeSchema = () =>
 					z.lazy(() => CapituloCreateWithoutLibroInputObjectSchema),
 					z.lazy(() => CapituloCreateWithoutLibroInputObjectSchema).array(),
 					z.lazy(() => CapituloUncheckedCreateWithoutLibroInputObjectSchema),
-					z
-						.lazy(() => CapituloUncheckedCreateWithoutLibroInputObjectSchema)
-						.array(),
+					z.lazy(() => CapituloUncheckedCreateWithoutLibroInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(() => CapituloCreateOrConnectWithoutLibroInputObjectSchema),
-					z
-						.lazy(() => CapituloCreateOrConnectWithoutLibroInputObjectSchema)
-						.array(),
-				])
-				.optional(),
-			upsert: z
-				.union([
-					z.lazy(
-						() => CapituloUpsertWithWhereUniqueWithoutLibroInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => CapituloUpsertWithWhereUniqueWithoutLibroInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			createMany: z
-				.lazy(() => CapituloCreateManyLibroInputEnvelopeObjectSchema)
-				.optional(),
-			set: z
-				.union([
-					z.lazy(() => CapituloWhereUniqueInputObjectSchema),
-					z.lazy(() => CapituloWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			disconnect: z
-				.union([
-					z.lazy(() => CapituloWhereUniqueInputObjectSchema),
-					z.lazy(() => CapituloWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			delete: z
-				.union([
-					z.lazy(() => CapituloWhereUniqueInputObjectSchema),
-					z.lazy(() => CapituloWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => CapituloWhereUniqueInputObjectSchema),
-					z.lazy(() => CapituloWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			update: z
-				.union([
-					z.lazy(
-						() => CapituloUpdateWithWhereUniqueWithoutLibroInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => CapituloUpdateWithWhereUniqueWithoutLibroInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			updateMany: z
-				.union([
-					z.lazy(
-						() => CapituloUpdateManyWithWhereWithoutLibroInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => CapituloUpdateManyWithWhereWithoutLibroInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			deleteMany: z
-				.union([
-					z.lazy(() => CapituloScalarWhereInputObjectSchema),
-					z.lazy(() => CapituloScalarWhereInputObjectSchema).array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => CapituloCreateOrConnectWithoutLibroInputObjectSchema), z.lazy(() => CapituloCreateOrConnectWithoutLibroInputObjectSchema).array()]).optional(),
+			upsert: z.union([z.lazy(() => CapituloUpsertWithWhereUniqueWithoutLibroInputObjectSchema), z.lazy(() => CapituloUpsertWithWhereUniqueWithoutLibroInputObjectSchema).array()]).optional(),
+			createMany: z.lazy(() => CapituloCreateManyLibroInputEnvelopeObjectSchema).optional(),
+			set: z.union([z.lazy(() => CapituloWhereUniqueInputObjectSchema), z.lazy(() => CapituloWhereUniqueInputObjectSchema).array()]).optional(),
+			disconnect: z.union([z.lazy(() => CapituloWhereUniqueInputObjectSchema), z.lazy(() => CapituloWhereUniqueInputObjectSchema).array()]).optional(),
+			delete: z.union([z.lazy(() => CapituloWhereUniqueInputObjectSchema), z.lazy(() => CapituloWhereUniqueInputObjectSchema).array()]).optional(),
+			connect: z.union([z.lazy(() => CapituloWhereUniqueInputObjectSchema), z.lazy(() => CapituloWhereUniqueInputObjectSchema).array()]).optional(),
+			update: z.union([z.lazy(() => CapituloUpdateWithWhereUniqueWithoutLibroInputObjectSchema), z.lazy(() => CapituloUpdateWithWhereUniqueWithoutLibroInputObjectSchema).array()]).optional(),
+			updateMany: z.union([z.lazy(() => CapituloUpdateManyWithWhereWithoutLibroInputObjectSchema), z.lazy(() => CapituloUpdateManyWithWhereWithoutLibroInputObjectSchema).array()]).optional(),
+			deleteMany: z.union([z.lazy(() => CapituloScalarWhereInputObjectSchema), z.lazy(() => CapituloScalarWhereInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const CapituloUpdateManyWithoutLibroNestedInputObjectSchema: z.ZodType<Prisma.CapituloUpdateManyWithoutLibroNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.CapituloUpdateManyWithoutLibroNestedInput>;
-export const CapituloUpdateManyWithoutLibroNestedInputObjectZodSchema =
-	makeSchema();
+export const CapituloUpdateManyWithoutLibroNestedInputObjectZodSchema = makeSchema();

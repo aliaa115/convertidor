@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { GlosarioWhereInputObjectSchema as GlosarioWhereInputObjectSchema } from "./GlosarioWhereInput.schema.ts";
 
 const makeSchema = () =>
@@ -8,7 +7,5 @@ const makeSchema = () =>
 			where: z.lazy(() => GlosarioWhereInputObjectSchema).optional(),
 		})
 		.strict();
-export const EscritorCountOutputTypeCountGlosariosArgsObjectSchema =
-	makeSchema();
-export const EscritorCountOutputTypeCountGlosariosArgsObjectZodSchema =
-	makeSchema();
+export const EscritorCountOutputTypeCountGlosariosArgsObjectSchema = makeSchema();
+export const EscritorCountOutputTypeCountGlosariosArgsObjectZodSchema = makeSchema();

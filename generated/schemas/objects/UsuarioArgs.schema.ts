@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { UsuarioIncludeObjectSchema as UsuarioIncludeObjectSchema } from "./UsuarioInclude.schema.ts";
 import { UsuarioSelectObjectSchema as UsuarioSelectObjectSchema } from "./UsuarioSelect.schema.ts";
 

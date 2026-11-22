@@ -12,13 +12,7 @@ import { cn } from "@/lib/utils";
 import { getNotificationUrl, ICON_BY_ENTIDAD_TIPO } from "../utils";
 
 type NotificationFilter = EntidadTipo | "SYSTEM";
-const TIPOS_ENTIDAD: NotificationFilter[] = [
-	"COMENTARIO",
-	"ESCRITOR",
-	"LIBRO",
-	"LISTA",
-	"SYSTEM",
-];
+const TIPOS_ENTIDAD: NotificationFilter[] = ["COMENTARIO", "ESCRITOR", "LIBRO", "LISTA", "SYSTEM"];
 
 const NotificationsView = () => {
 	const router = useRouter();
@@ -26,9 +20,7 @@ const NotificationsView = () => {
 	const hoveredIdRef = React.useRef<number | null>(null);
 
 	const [items, setItems] = React.useState<Notificacion[]>([]);
-	const [tipoEntidadSeleccionada, setTipoEntidadSeleccionada] = React.useState<
-		EntidadTipo[]
-	>(["COMENTARIO", "ESCRITOR", "LIBRO", "LISTA", "SYSTEM"]);
+	const [tipoEntidadSeleccionada, setTipoEntidadSeleccionada] = React.useState<EntidadTipo[]>(["COMENTARIO", "ESCRITOR", "LIBRO", "LISTA", "SYSTEM"]);
 
 	const loadNotifications = React.useCallback(async () => {
 		const res = await fetch("/api/notifications", {
@@ -44,24 +36,16 @@ const NotificationsView = () => {
 			setItems(result.data);
 
 			if (tipoEntidadSeleccionada.length === 0) {
-				setTipoEntidadSeleccionada(
-					result.data
-						.map((i: Notificacion) => i.entidadTipo)
-						.filter(Boolean) as EntidadTipo[],
-				);
+				setTipoEntidadSeleccionada(result.data.map((i: Notificacion) => i.entidadTipo).filter(Boolean) as EntidadTipo[]);
 			}
 		}
 	}, [tipoEntidadSeleccionada]);
 
-	const itemsFiltrados = items.filter(
-		(i) => i.entidadTipo && tipoEntidadSeleccionada.includes(i.entidadTipo),
-	);
+	const itemsFiltrados = items.filter((i) => i.entidadTipo && tipoEntidadSeleccionada.includes(i.entidadTipo));
 
 	const handleChangeTipoEntidad = (tipo: EntidadTipo) => {
 		if (tipoEntidadSeleccionada.includes(tipo)) {
-			setTipoEntidadSeleccionada(
-				tipoEntidadSeleccionada.filter((i) => i !== tipo),
-			);
+			setTipoEntidadSeleccionada(tipoEntidadSeleccionada.filter((i) => i !== tipo));
 		} else {
 			setTipoEntidadSeleccionada([...tipoEntidadSeleccionada, tipo]);
 		}
@@ -166,10 +150,7 @@ const NotificationsView = () => {
 						key={i}
 						variant={tipoEntidadSeleccionada.includes(i) ? "default" : "ghost"}
 						onClick={() => handleChangeTipoEntidad(i)}
-						disabled={
-							items.filter((item) => item.entidadTipo === i).length === 0
-						}
-					>
+						disabled={items.filter((item) => item.entidadTipo === i).length === 0}>
 						{i} ({items.filter((item) => item.entidadTipo === i).length})
 					</Button>
 				))}
@@ -190,13 +171,7 @@ const NotificationsView = () => {
 					onMouseEnter={setReadNotification}
 					onMouseLeave={handleMouseLeave}
 					onClick={() => handleClickNotification(i)}
-					className={cn(
-						"flex gap-2 w-full justify-start px-5 py-7 items-center",
-						!i.leida && "bg-muted",
-						"hover:bg-primary hover:text-primary-foreground text-wrap",
-						"shadow-md",
-					)}
-				>
+					className={cn("flex gap-2 w-full justify-start px-5 py-7 items-center", !i.leida && "bg-muted", "hover:bg-primary hover:text-primary-foreground text-wrap", "shadow-md")}>
 					{/* {!i.leida && <CircleAlert className="text-gray-500/50" />} */}
 					<DynamicIcon
 						name={ICON_BY_ENTIDAD_TIPO[i.entidadTipo]}
@@ -209,9 +184,7 @@ const NotificationsView = () => {
 							</Badge>
 						)}
 						<span className="font-medium text-wrap">{i.titulo}</span>
-						{i.mensaje && (
-							<span className="text-sm wrap-break-word">{i.mensaje}</span>
-						)}
+						{i.mensaje && <span className="text-sm wrap-break-word">{i.mensaje}</span>}
 					</div>
 				</Button>
 			))}

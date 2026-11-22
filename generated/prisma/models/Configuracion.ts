@@ -15,8 +15,7 @@ import type * as Prisma from "../internal/prismaNamespace.ts";
  * Model Configuracion
  *
  */
-export type ConfiguracionModel =
-	runtime.Types.Result.DefaultSelection<Prisma.$ConfiguracionPayload>;
+export type ConfiguracionModel = runtime.Types.Result.DefaultSelection<Prisma.$ConfiguracionPayload>;
 
 export type AggregateConfiguracion = {
 	_count: ConfiguracionCountAggregateOutputType | null;
@@ -116,10 +115,7 @@ export type ConfiguracionCountAggregateInputType = {
 	_all?: true;
 };
 
-export type ConfiguracionAggregateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ConfiguracionAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Configuracion to aggregate.
 	 */
@@ -129,9 +125,7 @@ export type ConfiguracionAggregateArgs<
 	 *
 	 * Determine the order of Configuracions to fetch.
 	 */
-	orderBy?:
-		| Prisma.ConfiguracionOrderByWithRelationInput
-		| Prisma.ConfiguracionOrderByWithRelationInput[];
+	orderBy?: Prisma.ConfiguracionOrderByWithRelationInput | Prisma.ConfiguracionOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -182,9 +176,7 @@ export type ConfiguracionAggregateArgs<
 	_max?: ConfiguracionMaxAggregateInputType;
 };
 
-export type GetConfiguracionAggregateType<
-	T extends ConfiguracionAggregateArgs,
-> = {
+export type GetConfiguracionAggregateType<T extends ConfiguracionAggregateArgs> = {
 	[P in keyof T & keyof AggregateConfiguracion]: P extends "_count" | "count"
 		? T[P] extends true
 			? number
@@ -192,17 +184,10 @@ export type GetConfiguracionAggregateType<
 		: Prisma.GetScalarType<T[P], AggregateConfiguracion[P]>;
 };
 
-export type ConfiguracionGroupByArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ConfiguracionGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.ConfiguracionWhereInput;
-	orderBy?:
-		| Prisma.ConfiguracionOrderByWithAggregationInput
-		| Prisma.ConfiguracionOrderByWithAggregationInput[];
-	by:
-		| Prisma.ConfiguracionScalarFieldEnum[]
-		| Prisma.ConfiguracionScalarFieldEnum;
+	orderBy?: Prisma.ConfiguracionOrderByWithAggregationInput | Prisma.ConfiguracionOrderByWithAggregationInput[];
+	by: Prisma.ConfiguracionScalarFieldEnum[] | Prisma.ConfiguracionScalarFieldEnum;
 	having?: Prisma.ConfiguracionScalarWhereWithAggregatesInput;
 	take?: number;
 	skip?: number;
@@ -228,19 +213,17 @@ export type ConfiguracionGroupByOutputType = {
 	_max: ConfiguracionMaxAggregateOutputType | null;
 };
 
-export type GetConfiguracionGroupByPayload<T extends ConfiguracionGroupByArgs> =
-	Prisma.PrismaPromise<
-		Array<
-			Prisma.PickEnumerable<ConfiguracionGroupByOutputType, T["by"]> & {
-				[P in keyof T &
-					keyof ConfiguracionGroupByOutputType]: P extends "_count"
-					? T[P] extends boolean
-						? number
-						: Prisma.GetScalarType<T[P], ConfiguracionGroupByOutputType[P]>
-					: Prisma.GetScalarType<T[P], ConfiguracionGroupByOutputType[P]>;
-			}
-		>
-	>;
+export type GetConfiguracionGroupByPayload<T extends ConfiguracionGroupByArgs> = Prisma.PrismaPromise<
+	Array<
+		Prisma.PickEnumerable<ConfiguracionGroupByOutputType, T["by"]> & {
+			[P in keyof T & keyof ConfiguracionGroupByOutputType]: P extends "_count"
+				? T[P] extends boolean
+					? number
+					: Prisma.GetScalarType<T[P], ConfiguracionGroupByOutputType[P]>
+				: Prisma.GetScalarType<T[P], ConfiguracionGroupByOutputType[P]>;
+		}
+	>
+>;
 
 export type ConfiguracionWhereInput = {
 	AND?: Prisma.ConfiguracionWhereInput | Prisma.ConfiguracionWhereInput[];
@@ -253,18 +236,9 @@ export type ConfiguracionWhereInput = {
 	usuarioId?: Prisma.IntNullableFilter<"Configuracion"> | number | null;
 	tipoId?: Prisma.IntNullableFilter<"Configuracion"> | number | null;
 	estadoId?: Prisma.IntFilter<"Configuracion"> | number;
-	usuario?: Prisma.XOR<
-		Prisma.UsuarioNullableScalarRelationFilter,
-		Prisma.UsuarioWhereInput
-	> | null;
-	tipo?: Prisma.XOR<
-		Prisma.TipoNullableScalarRelationFilter,
-		Prisma.TipoWhereInput
-	> | null;
-	estado?: Prisma.XOR<
-		Prisma.EstadoScalarRelationFilter,
-		Prisma.EstadoWhereInput
-	>;
+	usuario?: Prisma.XOR<Prisma.UsuarioNullableScalarRelationFilter, Prisma.UsuarioWhereInput> | null;
+	tipo?: Prisma.XOR<Prisma.TipoNullableScalarRelationFilter, Prisma.TipoWhereInput> | null;
+	estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 };
 
 export type ConfiguracionOrderByWithRelationInput = {
@@ -292,18 +266,9 @@ export type ConfiguracionWhereUniqueInput = Prisma.AtLeast<
 		updatedAt?: Prisma.DateTimeFilter<"Configuracion"> | Date | string;
 		tipoId?: Prisma.IntNullableFilter<"Configuracion"> | number | null;
 		estadoId?: Prisma.IntFilter<"Configuracion"> | number;
-		usuario?: Prisma.XOR<
-			Prisma.UsuarioNullableScalarRelationFilter,
-			Prisma.UsuarioWhereInput
-		> | null;
-		tipo?: Prisma.XOR<
-			Prisma.TipoNullableScalarRelationFilter,
-			Prisma.TipoWhereInput
-		> | null;
-		estado?: Prisma.XOR<
-			Prisma.EstadoScalarRelationFilter,
-			Prisma.EstadoWhereInput
-		>;
+		usuario?: Prisma.XOR<Prisma.UsuarioNullableScalarRelationFilter, Prisma.UsuarioWhereInput> | null;
+		tipo?: Prisma.XOR<Prisma.TipoNullableScalarRelationFilter, Prisma.TipoWhereInput> | null;
+		estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 	},
 	"id" | "usuarioId"
 >;
@@ -324,34 +289,15 @@ export type ConfiguracionOrderByWithAggregationInput = {
 };
 
 export type ConfiguracionScalarWhereWithAggregatesInput = {
-	AND?:
-		| Prisma.ConfiguracionScalarWhereWithAggregatesInput
-		| Prisma.ConfiguracionScalarWhereWithAggregatesInput[];
+	AND?: Prisma.ConfiguracionScalarWhereWithAggregatesInput | Prisma.ConfiguracionScalarWhereWithAggregatesInput[];
 	OR?: Prisma.ConfiguracionScalarWhereWithAggregatesInput[];
-	NOT?:
-		| Prisma.ConfiguracionScalarWhereWithAggregatesInput
-		| Prisma.ConfiguracionScalarWhereWithAggregatesInput[];
+	NOT?: Prisma.ConfiguracionScalarWhereWithAggregatesInput | Prisma.ConfiguracionScalarWhereWithAggregatesInput[];
 	id?: Prisma.IntWithAggregatesFilter<"Configuracion"> | number;
-	valor?:
-		| Prisma.StringNullableWithAggregatesFilter<"Configuracion">
-		| string
-		| null;
-	createdAt?:
-		| Prisma.DateTimeWithAggregatesFilter<"Configuracion">
-		| Date
-		| string;
-	updatedAt?:
-		| Prisma.DateTimeWithAggregatesFilter<"Configuracion">
-		| Date
-		| string;
-	usuarioId?:
-		| Prisma.IntNullableWithAggregatesFilter<"Configuracion">
-		| number
-		| null;
-	tipoId?:
-		| Prisma.IntNullableWithAggregatesFilter<"Configuracion">
-		| number
-		| null;
+	valor?: Prisma.StringNullableWithAggregatesFilter<"Configuracion"> | string | null;
+	createdAt?: Prisma.DateTimeWithAggregatesFilter<"Configuracion"> | Date | string;
+	updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Configuracion"> | Date | string;
+	usuarioId?: Prisma.IntNullableWithAggregatesFilter<"Configuracion"> | number | null;
+	tipoId?: Prisma.IntNullableWithAggregatesFilter<"Configuracion"> | number | null;
 	estadoId?: Prisma.IntWithAggregatesFilter<"Configuracion"> | number;
 };
 
@@ -480,278 +426,142 @@ export type ConfiguracionSumOrderByAggregateInput = {
 
 export type ConfiguracionCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ConfiguracionCreateWithoutEstadoInput,
-				Prisma.ConfiguracionUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.ConfiguracionCreateWithoutEstadoInput, Prisma.ConfiguracionUncheckedCreateWithoutEstadoInput>
 		| Prisma.ConfiguracionCreateWithoutEstadoInput[]
 		| Prisma.ConfiguracionUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.ConfiguracionCreateOrConnectWithoutEstadoInput
-		| Prisma.ConfiguracionCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.ConfiguracionCreateOrConnectWithoutEstadoInput | Prisma.ConfiguracionCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.ConfiguracionCreateManyEstadoInputEnvelope;
-	connect?:
-		| Prisma.ConfiguracionWhereUniqueInput
-		| Prisma.ConfiguracionWhereUniqueInput[];
+	connect?: Prisma.ConfiguracionWhereUniqueInput | Prisma.ConfiguracionWhereUniqueInput[];
 };
 
 export type ConfiguracionUncheckedCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ConfiguracionCreateWithoutEstadoInput,
-				Prisma.ConfiguracionUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.ConfiguracionCreateWithoutEstadoInput, Prisma.ConfiguracionUncheckedCreateWithoutEstadoInput>
 		| Prisma.ConfiguracionCreateWithoutEstadoInput[]
 		| Prisma.ConfiguracionUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.ConfiguracionCreateOrConnectWithoutEstadoInput
-		| Prisma.ConfiguracionCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.ConfiguracionCreateOrConnectWithoutEstadoInput | Prisma.ConfiguracionCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.ConfiguracionCreateManyEstadoInputEnvelope;
-	connect?:
-		| Prisma.ConfiguracionWhereUniqueInput
-		| Prisma.ConfiguracionWhereUniqueInput[];
+	connect?: Prisma.ConfiguracionWhereUniqueInput | Prisma.ConfiguracionWhereUniqueInput[];
 };
 
 export type ConfiguracionUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ConfiguracionCreateWithoutEstadoInput,
-				Prisma.ConfiguracionUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.ConfiguracionCreateWithoutEstadoInput, Prisma.ConfiguracionUncheckedCreateWithoutEstadoInput>
 		| Prisma.ConfiguracionCreateWithoutEstadoInput[]
 		| Prisma.ConfiguracionUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.ConfiguracionCreateOrConnectWithoutEstadoInput
-		| Prisma.ConfiguracionCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.ConfiguracionUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.ConfiguracionUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.ConfiguracionCreateOrConnectWithoutEstadoInput | Prisma.ConfiguracionCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.ConfiguracionUpsertWithWhereUniqueWithoutEstadoInput | Prisma.ConfiguracionUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.ConfiguracionCreateManyEstadoInputEnvelope;
-	set?:
-		| Prisma.ConfiguracionWhereUniqueInput
-		| Prisma.ConfiguracionWhereUniqueInput[];
-	disconnect?:
-		| Prisma.ConfiguracionWhereUniqueInput
-		| Prisma.ConfiguracionWhereUniqueInput[];
-	delete?:
-		| Prisma.ConfiguracionWhereUniqueInput
-		| Prisma.ConfiguracionWhereUniqueInput[];
-	connect?:
-		| Prisma.ConfiguracionWhereUniqueInput
-		| Prisma.ConfiguracionWhereUniqueInput[];
-	update?:
-		| Prisma.ConfiguracionUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.ConfiguracionUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.ConfiguracionUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.ConfiguracionUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.ConfiguracionScalarWhereInput
-		| Prisma.ConfiguracionScalarWhereInput[];
+	set?: Prisma.ConfiguracionWhereUniqueInput | Prisma.ConfiguracionWhereUniqueInput[];
+	disconnect?: Prisma.ConfiguracionWhereUniqueInput | Prisma.ConfiguracionWhereUniqueInput[];
+	delete?: Prisma.ConfiguracionWhereUniqueInput | Prisma.ConfiguracionWhereUniqueInput[];
+	connect?: Prisma.ConfiguracionWhereUniqueInput | Prisma.ConfiguracionWhereUniqueInput[];
+	update?: Prisma.ConfiguracionUpdateWithWhereUniqueWithoutEstadoInput | Prisma.ConfiguracionUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.ConfiguracionUpdateManyWithWhereWithoutEstadoInput | Prisma.ConfiguracionUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.ConfiguracionScalarWhereInput | Prisma.ConfiguracionScalarWhereInput[];
 };
 
 export type ConfiguracionUncheckedUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ConfiguracionCreateWithoutEstadoInput,
-				Prisma.ConfiguracionUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.ConfiguracionCreateWithoutEstadoInput, Prisma.ConfiguracionUncheckedCreateWithoutEstadoInput>
 		| Prisma.ConfiguracionCreateWithoutEstadoInput[]
 		| Prisma.ConfiguracionUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.ConfiguracionCreateOrConnectWithoutEstadoInput
-		| Prisma.ConfiguracionCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.ConfiguracionUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.ConfiguracionUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.ConfiguracionCreateOrConnectWithoutEstadoInput | Prisma.ConfiguracionCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.ConfiguracionUpsertWithWhereUniqueWithoutEstadoInput | Prisma.ConfiguracionUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.ConfiguracionCreateManyEstadoInputEnvelope;
-	set?:
-		| Prisma.ConfiguracionWhereUniqueInput
-		| Prisma.ConfiguracionWhereUniqueInput[];
-	disconnect?:
-		| Prisma.ConfiguracionWhereUniqueInput
-		| Prisma.ConfiguracionWhereUniqueInput[];
-	delete?:
-		| Prisma.ConfiguracionWhereUniqueInput
-		| Prisma.ConfiguracionWhereUniqueInput[];
-	connect?:
-		| Prisma.ConfiguracionWhereUniqueInput
-		| Prisma.ConfiguracionWhereUniqueInput[];
-	update?:
-		| Prisma.ConfiguracionUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.ConfiguracionUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.ConfiguracionUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.ConfiguracionUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.ConfiguracionScalarWhereInput
-		| Prisma.ConfiguracionScalarWhereInput[];
+	set?: Prisma.ConfiguracionWhereUniqueInput | Prisma.ConfiguracionWhereUniqueInput[];
+	disconnect?: Prisma.ConfiguracionWhereUniqueInput | Prisma.ConfiguracionWhereUniqueInput[];
+	delete?: Prisma.ConfiguracionWhereUniqueInput | Prisma.ConfiguracionWhereUniqueInput[];
+	connect?: Prisma.ConfiguracionWhereUniqueInput | Prisma.ConfiguracionWhereUniqueInput[];
+	update?: Prisma.ConfiguracionUpdateWithWhereUniqueWithoutEstadoInput | Prisma.ConfiguracionUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.ConfiguracionUpdateManyWithWhereWithoutEstadoInput | Prisma.ConfiguracionUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.ConfiguracionScalarWhereInput | Prisma.ConfiguracionScalarWhereInput[];
 };
 
 export type ConfiguracionCreateNestedManyWithoutTipoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ConfiguracionCreateWithoutTipoInput,
-				Prisma.ConfiguracionUncheckedCreateWithoutTipoInput
-		  >
+		| Prisma.XOR<Prisma.ConfiguracionCreateWithoutTipoInput, Prisma.ConfiguracionUncheckedCreateWithoutTipoInput>
 		| Prisma.ConfiguracionCreateWithoutTipoInput[]
 		| Prisma.ConfiguracionUncheckedCreateWithoutTipoInput[];
-	connectOrCreate?:
-		| Prisma.ConfiguracionCreateOrConnectWithoutTipoInput
-		| Prisma.ConfiguracionCreateOrConnectWithoutTipoInput[];
+	connectOrCreate?: Prisma.ConfiguracionCreateOrConnectWithoutTipoInput | Prisma.ConfiguracionCreateOrConnectWithoutTipoInput[];
 	createMany?: Prisma.ConfiguracionCreateManyTipoInputEnvelope;
-	connect?:
-		| Prisma.ConfiguracionWhereUniqueInput
-		| Prisma.ConfiguracionWhereUniqueInput[];
+	connect?: Prisma.ConfiguracionWhereUniqueInput | Prisma.ConfiguracionWhereUniqueInput[];
 };
 
 export type ConfiguracionUncheckedCreateNestedManyWithoutTipoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ConfiguracionCreateWithoutTipoInput,
-				Prisma.ConfiguracionUncheckedCreateWithoutTipoInput
-		  >
+		| Prisma.XOR<Prisma.ConfiguracionCreateWithoutTipoInput, Prisma.ConfiguracionUncheckedCreateWithoutTipoInput>
 		| Prisma.ConfiguracionCreateWithoutTipoInput[]
 		| Prisma.ConfiguracionUncheckedCreateWithoutTipoInput[];
-	connectOrCreate?:
-		| Prisma.ConfiguracionCreateOrConnectWithoutTipoInput
-		| Prisma.ConfiguracionCreateOrConnectWithoutTipoInput[];
+	connectOrCreate?: Prisma.ConfiguracionCreateOrConnectWithoutTipoInput | Prisma.ConfiguracionCreateOrConnectWithoutTipoInput[];
 	createMany?: Prisma.ConfiguracionCreateManyTipoInputEnvelope;
-	connect?:
-		| Prisma.ConfiguracionWhereUniqueInput
-		| Prisma.ConfiguracionWhereUniqueInput[];
+	connect?: Prisma.ConfiguracionWhereUniqueInput | Prisma.ConfiguracionWhereUniqueInput[];
 };
 
 export type ConfiguracionUpdateManyWithoutTipoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ConfiguracionCreateWithoutTipoInput,
-				Prisma.ConfiguracionUncheckedCreateWithoutTipoInput
-		  >
+		| Prisma.XOR<Prisma.ConfiguracionCreateWithoutTipoInput, Prisma.ConfiguracionUncheckedCreateWithoutTipoInput>
 		| Prisma.ConfiguracionCreateWithoutTipoInput[]
 		| Prisma.ConfiguracionUncheckedCreateWithoutTipoInput[];
-	connectOrCreate?:
-		| Prisma.ConfiguracionCreateOrConnectWithoutTipoInput
-		| Prisma.ConfiguracionCreateOrConnectWithoutTipoInput[];
-	upsert?:
-		| Prisma.ConfiguracionUpsertWithWhereUniqueWithoutTipoInput
-		| Prisma.ConfiguracionUpsertWithWhereUniqueWithoutTipoInput[];
+	connectOrCreate?: Prisma.ConfiguracionCreateOrConnectWithoutTipoInput | Prisma.ConfiguracionCreateOrConnectWithoutTipoInput[];
+	upsert?: Prisma.ConfiguracionUpsertWithWhereUniqueWithoutTipoInput | Prisma.ConfiguracionUpsertWithWhereUniqueWithoutTipoInput[];
 	createMany?: Prisma.ConfiguracionCreateManyTipoInputEnvelope;
-	set?:
-		| Prisma.ConfiguracionWhereUniqueInput
-		| Prisma.ConfiguracionWhereUniqueInput[];
-	disconnect?:
-		| Prisma.ConfiguracionWhereUniqueInput
-		| Prisma.ConfiguracionWhereUniqueInput[];
-	delete?:
-		| Prisma.ConfiguracionWhereUniqueInput
-		| Prisma.ConfiguracionWhereUniqueInput[];
-	connect?:
-		| Prisma.ConfiguracionWhereUniqueInput
-		| Prisma.ConfiguracionWhereUniqueInput[];
-	update?:
-		| Prisma.ConfiguracionUpdateWithWhereUniqueWithoutTipoInput
-		| Prisma.ConfiguracionUpdateWithWhereUniqueWithoutTipoInput[];
-	updateMany?:
-		| Prisma.ConfiguracionUpdateManyWithWhereWithoutTipoInput
-		| Prisma.ConfiguracionUpdateManyWithWhereWithoutTipoInput[];
-	deleteMany?:
-		| Prisma.ConfiguracionScalarWhereInput
-		| Prisma.ConfiguracionScalarWhereInput[];
+	set?: Prisma.ConfiguracionWhereUniqueInput | Prisma.ConfiguracionWhereUniqueInput[];
+	disconnect?: Prisma.ConfiguracionWhereUniqueInput | Prisma.ConfiguracionWhereUniqueInput[];
+	delete?: Prisma.ConfiguracionWhereUniqueInput | Prisma.ConfiguracionWhereUniqueInput[];
+	connect?: Prisma.ConfiguracionWhereUniqueInput | Prisma.ConfiguracionWhereUniqueInput[];
+	update?: Prisma.ConfiguracionUpdateWithWhereUniqueWithoutTipoInput | Prisma.ConfiguracionUpdateWithWhereUniqueWithoutTipoInput[];
+	updateMany?: Prisma.ConfiguracionUpdateManyWithWhereWithoutTipoInput | Prisma.ConfiguracionUpdateManyWithWhereWithoutTipoInput[];
+	deleteMany?: Prisma.ConfiguracionScalarWhereInput | Prisma.ConfiguracionScalarWhereInput[];
 };
 
 export type ConfiguracionUncheckedUpdateManyWithoutTipoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.ConfiguracionCreateWithoutTipoInput,
-				Prisma.ConfiguracionUncheckedCreateWithoutTipoInput
-		  >
+		| Prisma.XOR<Prisma.ConfiguracionCreateWithoutTipoInput, Prisma.ConfiguracionUncheckedCreateWithoutTipoInput>
 		| Prisma.ConfiguracionCreateWithoutTipoInput[]
 		| Prisma.ConfiguracionUncheckedCreateWithoutTipoInput[];
-	connectOrCreate?:
-		| Prisma.ConfiguracionCreateOrConnectWithoutTipoInput
-		| Prisma.ConfiguracionCreateOrConnectWithoutTipoInput[];
-	upsert?:
-		| Prisma.ConfiguracionUpsertWithWhereUniqueWithoutTipoInput
-		| Prisma.ConfiguracionUpsertWithWhereUniqueWithoutTipoInput[];
+	connectOrCreate?: Prisma.ConfiguracionCreateOrConnectWithoutTipoInput | Prisma.ConfiguracionCreateOrConnectWithoutTipoInput[];
+	upsert?: Prisma.ConfiguracionUpsertWithWhereUniqueWithoutTipoInput | Prisma.ConfiguracionUpsertWithWhereUniqueWithoutTipoInput[];
 	createMany?: Prisma.ConfiguracionCreateManyTipoInputEnvelope;
-	set?:
-		| Prisma.ConfiguracionWhereUniqueInput
-		| Prisma.ConfiguracionWhereUniqueInput[];
-	disconnect?:
-		| Prisma.ConfiguracionWhereUniqueInput
-		| Prisma.ConfiguracionWhereUniqueInput[];
-	delete?:
-		| Prisma.ConfiguracionWhereUniqueInput
-		| Prisma.ConfiguracionWhereUniqueInput[];
-	connect?:
-		| Prisma.ConfiguracionWhereUniqueInput
-		| Prisma.ConfiguracionWhereUniqueInput[];
-	update?:
-		| Prisma.ConfiguracionUpdateWithWhereUniqueWithoutTipoInput
-		| Prisma.ConfiguracionUpdateWithWhereUniqueWithoutTipoInput[];
-	updateMany?:
-		| Prisma.ConfiguracionUpdateManyWithWhereWithoutTipoInput
-		| Prisma.ConfiguracionUpdateManyWithWhereWithoutTipoInput[];
-	deleteMany?:
-		| Prisma.ConfiguracionScalarWhereInput
-		| Prisma.ConfiguracionScalarWhereInput[];
+	set?: Prisma.ConfiguracionWhereUniqueInput | Prisma.ConfiguracionWhereUniqueInput[];
+	disconnect?: Prisma.ConfiguracionWhereUniqueInput | Prisma.ConfiguracionWhereUniqueInput[];
+	delete?: Prisma.ConfiguracionWhereUniqueInput | Prisma.ConfiguracionWhereUniqueInput[];
+	connect?: Prisma.ConfiguracionWhereUniqueInput | Prisma.ConfiguracionWhereUniqueInput[];
+	update?: Prisma.ConfiguracionUpdateWithWhereUniqueWithoutTipoInput | Prisma.ConfiguracionUpdateWithWhereUniqueWithoutTipoInput[];
+	updateMany?: Prisma.ConfiguracionUpdateManyWithWhereWithoutTipoInput | Prisma.ConfiguracionUpdateManyWithWhereWithoutTipoInput[];
+	deleteMany?: Prisma.ConfiguracionScalarWhereInput | Prisma.ConfiguracionScalarWhereInput[];
 };
 
 export type ConfiguracionCreateNestedOneWithoutUsuarioInput = {
-	create?: Prisma.XOR<
-		Prisma.ConfiguracionCreateWithoutUsuarioInput,
-		Prisma.ConfiguracionUncheckedCreateWithoutUsuarioInput
-	>;
+	create?: Prisma.XOR<Prisma.ConfiguracionCreateWithoutUsuarioInput, Prisma.ConfiguracionUncheckedCreateWithoutUsuarioInput>;
 	connectOrCreate?: Prisma.ConfiguracionCreateOrConnectWithoutUsuarioInput;
 	connect?: Prisma.ConfiguracionWhereUniqueInput;
 };
 
 export type ConfiguracionUncheckedCreateNestedOneWithoutUsuarioInput = {
-	create?: Prisma.XOR<
-		Prisma.ConfiguracionCreateWithoutUsuarioInput,
-		Prisma.ConfiguracionUncheckedCreateWithoutUsuarioInput
-	>;
+	create?: Prisma.XOR<Prisma.ConfiguracionCreateWithoutUsuarioInput, Prisma.ConfiguracionUncheckedCreateWithoutUsuarioInput>;
 	connectOrCreate?: Prisma.ConfiguracionCreateOrConnectWithoutUsuarioInput;
 	connect?: Prisma.ConfiguracionWhereUniqueInput;
 };
 
 export type ConfiguracionUpdateOneWithoutUsuarioNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.ConfiguracionCreateWithoutUsuarioInput,
-		Prisma.ConfiguracionUncheckedCreateWithoutUsuarioInput
-	>;
+	create?: Prisma.XOR<Prisma.ConfiguracionCreateWithoutUsuarioInput, Prisma.ConfiguracionUncheckedCreateWithoutUsuarioInput>;
 	connectOrCreate?: Prisma.ConfiguracionCreateOrConnectWithoutUsuarioInput;
 	upsert?: Prisma.ConfiguracionUpsertWithoutUsuarioInput;
 	disconnect?: Prisma.ConfiguracionWhereInput | boolean;
 	delete?: Prisma.ConfiguracionWhereInput | boolean;
 	connect?: Prisma.ConfiguracionWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.ConfiguracionUpdateToOneWithWhereWithoutUsuarioInput,
-			Prisma.ConfiguracionUpdateWithoutUsuarioInput
-		>,
-		Prisma.ConfiguracionUncheckedUpdateWithoutUsuarioInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.ConfiguracionUpdateToOneWithWhereWithoutUsuarioInput, Prisma.ConfiguracionUpdateWithoutUsuarioInput>, Prisma.ConfiguracionUncheckedUpdateWithoutUsuarioInput>;
 };
 
 export type ConfiguracionUncheckedUpdateOneWithoutUsuarioNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.ConfiguracionCreateWithoutUsuarioInput,
-		Prisma.ConfiguracionUncheckedCreateWithoutUsuarioInput
-	>;
+	create?: Prisma.XOR<Prisma.ConfiguracionCreateWithoutUsuarioInput, Prisma.ConfiguracionUncheckedCreateWithoutUsuarioInput>;
 	connectOrCreate?: Prisma.ConfiguracionCreateOrConnectWithoutUsuarioInput;
 	upsert?: Prisma.ConfiguracionUpsertWithoutUsuarioInput;
 	disconnect?: Prisma.ConfiguracionWhereInput | boolean;
 	delete?: Prisma.ConfiguracionWhereInput | boolean;
 	connect?: Prisma.ConfiguracionWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.ConfiguracionUpdateToOneWithWhereWithoutUsuarioInput,
-			Prisma.ConfiguracionUpdateWithoutUsuarioInput
-		>,
-		Prisma.ConfiguracionUncheckedUpdateWithoutUsuarioInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.ConfiguracionUpdateToOneWithWhereWithoutUsuarioInput, Prisma.ConfiguracionUpdateWithoutUsuarioInput>, Prisma.ConfiguracionUncheckedUpdateWithoutUsuarioInput>;
 };
 
 export type NullableIntFieldUpdateOperationsInput = {
@@ -781,55 +591,34 @@ export type ConfiguracionUncheckedCreateWithoutEstadoInput = {
 
 export type ConfiguracionCreateOrConnectWithoutEstadoInput = {
 	where: Prisma.ConfiguracionWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.ConfiguracionCreateWithoutEstadoInput,
-		Prisma.ConfiguracionUncheckedCreateWithoutEstadoInput
-	>;
+	create: Prisma.XOR<Prisma.ConfiguracionCreateWithoutEstadoInput, Prisma.ConfiguracionUncheckedCreateWithoutEstadoInput>;
 };
 
 export type ConfiguracionCreateManyEstadoInputEnvelope = {
-	data:
-		| Prisma.ConfiguracionCreateManyEstadoInput
-		| Prisma.ConfiguracionCreateManyEstadoInput[];
+	data: Prisma.ConfiguracionCreateManyEstadoInput | Prisma.ConfiguracionCreateManyEstadoInput[];
 	skipDuplicates?: boolean;
 };
 
 export type ConfiguracionUpsertWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.ConfiguracionWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.ConfiguracionUpdateWithoutEstadoInput,
-		Prisma.ConfiguracionUncheckedUpdateWithoutEstadoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.ConfiguracionCreateWithoutEstadoInput,
-		Prisma.ConfiguracionUncheckedCreateWithoutEstadoInput
-	>;
+	update: Prisma.XOR<Prisma.ConfiguracionUpdateWithoutEstadoInput, Prisma.ConfiguracionUncheckedUpdateWithoutEstadoInput>;
+	create: Prisma.XOR<Prisma.ConfiguracionCreateWithoutEstadoInput, Prisma.ConfiguracionUncheckedCreateWithoutEstadoInput>;
 };
 
 export type ConfiguracionUpdateWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.ConfiguracionWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.ConfiguracionUpdateWithoutEstadoInput,
-		Prisma.ConfiguracionUncheckedUpdateWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.ConfiguracionUpdateWithoutEstadoInput, Prisma.ConfiguracionUncheckedUpdateWithoutEstadoInput>;
 };
 
 export type ConfiguracionUpdateManyWithWhereWithoutEstadoInput = {
 	where: Prisma.ConfiguracionScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.ConfiguracionUpdateManyMutationInput,
-		Prisma.ConfiguracionUncheckedUpdateManyWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.ConfiguracionUpdateManyMutationInput, Prisma.ConfiguracionUncheckedUpdateManyWithoutEstadoInput>;
 };
 
 export type ConfiguracionScalarWhereInput = {
-	AND?:
-		| Prisma.ConfiguracionScalarWhereInput
-		| Prisma.ConfiguracionScalarWhereInput[];
+	AND?: Prisma.ConfiguracionScalarWhereInput | Prisma.ConfiguracionScalarWhereInput[];
 	OR?: Prisma.ConfiguracionScalarWhereInput[];
-	NOT?:
-		| Prisma.ConfiguracionScalarWhereInput
-		| Prisma.ConfiguracionScalarWhereInput[];
+	NOT?: Prisma.ConfiguracionScalarWhereInput | Prisma.ConfiguracionScalarWhereInput[];
 	id?: Prisma.IntFilter<"Configuracion"> | number;
 	valor?: Prisma.StringNullableFilter<"Configuracion"> | string | null;
 	createdAt?: Prisma.DateTimeFilter<"Configuracion"> | Date | string;
@@ -858,45 +647,28 @@ export type ConfiguracionUncheckedCreateWithoutTipoInput = {
 
 export type ConfiguracionCreateOrConnectWithoutTipoInput = {
 	where: Prisma.ConfiguracionWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.ConfiguracionCreateWithoutTipoInput,
-		Prisma.ConfiguracionUncheckedCreateWithoutTipoInput
-	>;
+	create: Prisma.XOR<Prisma.ConfiguracionCreateWithoutTipoInput, Prisma.ConfiguracionUncheckedCreateWithoutTipoInput>;
 };
 
 export type ConfiguracionCreateManyTipoInputEnvelope = {
-	data:
-		| Prisma.ConfiguracionCreateManyTipoInput
-		| Prisma.ConfiguracionCreateManyTipoInput[];
+	data: Prisma.ConfiguracionCreateManyTipoInput | Prisma.ConfiguracionCreateManyTipoInput[];
 	skipDuplicates?: boolean;
 };
 
 export type ConfiguracionUpsertWithWhereUniqueWithoutTipoInput = {
 	where: Prisma.ConfiguracionWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.ConfiguracionUpdateWithoutTipoInput,
-		Prisma.ConfiguracionUncheckedUpdateWithoutTipoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.ConfiguracionCreateWithoutTipoInput,
-		Prisma.ConfiguracionUncheckedCreateWithoutTipoInput
-	>;
+	update: Prisma.XOR<Prisma.ConfiguracionUpdateWithoutTipoInput, Prisma.ConfiguracionUncheckedUpdateWithoutTipoInput>;
+	create: Prisma.XOR<Prisma.ConfiguracionCreateWithoutTipoInput, Prisma.ConfiguracionUncheckedCreateWithoutTipoInput>;
 };
 
 export type ConfiguracionUpdateWithWhereUniqueWithoutTipoInput = {
 	where: Prisma.ConfiguracionWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.ConfiguracionUpdateWithoutTipoInput,
-		Prisma.ConfiguracionUncheckedUpdateWithoutTipoInput
-	>;
+	data: Prisma.XOR<Prisma.ConfiguracionUpdateWithoutTipoInput, Prisma.ConfiguracionUncheckedUpdateWithoutTipoInput>;
 };
 
 export type ConfiguracionUpdateManyWithWhereWithoutTipoInput = {
 	where: Prisma.ConfiguracionScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.ConfiguracionUpdateManyMutationInput,
-		Prisma.ConfiguracionUncheckedUpdateManyWithoutTipoInput
-	>;
+	data: Prisma.XOR<Prisma.ConfiguracionUpdateManyMutationInput, Prisma.ConfiguracionUncheckedUpdateManyWithoutTipoInput>;
 };
 
 export type ConfiguracionCreateWithoutUsuarioInput = {
@@ -918,30 +690,18 @@ export type ConfiguracionUncheckedCreateWithoutUsuarioInput = {
 
 export type ConfiguracionCreateOrConnectWithoutUsuarioInput = {
 	where: Prisma.ConfiguracionWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.ConfiguracionCreateWithoutUsuarioInput,
-		Prisma.ConfiguracionUncheckedCreateWithoutUsuarioInput
-	>;
+	create: Prisma.XOR<Prisma.ConfiguracionCreateWithoutUsuarioInput, Prisma.ConfiguracionUncheckedCreateWithoutUsuarioInput>;
 };
 
 export type ConfiguracionUpsertWithoutUsuarioInput = {
-	update: Prisma.XOR<
-		Prisma.ConfiguracionUpdateWithoutUsuarioInput,
-		Prisma.ConfiguracionUncheckedUpdateWithoutUsuarioInput
-	>;
-	create: Prisma.XOR<
-		Prisma.ConfiguracionCreateWithoutUsuarioInput,
-		Prisma.ConfiguracionUncheckedCreateWithoutUsuarioInput
-	>;
+	update: Prisma.XOR<Prisma.ConfiguracionUpdateWithoutUsuarioInput, Prisma.ConfiguracionUncheckedUpdateWithoutUsuarioInput>;
+	create: Prisma.XOR<Prisma.ConfiguracionCreateWithoutUsuarioInput, Prisma.ConfiguracionUncheckedCreateWithoutUsuarioInput>;
 	where?: Prisma.ConfiguracionWhereInput;
 };
 
 export type ConfiguracionUpdateToOneWithWhereWithoutUsuarioInput = {
 	where?: Prisma.ConfiguracionWhereInput;
-	data: Prisma.XOR<
-		Prisma.ConfiguracionUpdateWithoutUsuarioInput,
-		Prisma.ConfiguracionUncheckedUpdateWithoutUsuarioInput
-	>;
+	data: Prisma.XOR<Prisma.ConfiguracionUpdateWithoutUsuarioInput, Prisma.ConfiguracionUncheckedUpdateWithoutUsuarioInput>;
 };
 
 export type ConfiguracionUpdateWithoutUsuarioInput = {
@@ -1031,10 +791,7 @@ export type ConfiguracionUncheckedUpdateManyWithoutTipoInput = {
 	estadoId?: Prisma.IntFieldUpdateOperationsInput | number;
 };
 
-export type ConfiguracionSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type ConfiguracionSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		valor?: boolean;
@@ -1050,10 +807,7 @@ export type ConfiguracionSelect<
 	ExtArgs["result"]["configuracion"]
 >;
 
-export type ConfiguracionSelectCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type ConfiguracionSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		valor?: boolean;
@@ -1069,10 +823,7 @@ export type ConfiguracionSelectCreateManyAndReturn<
 	ExtArgs["result"]["configuracion"]
 >;
 
-export type ConfiguracionSelectUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type ConfiguracionSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		valor?: boolean;
@@ -1098,48 +849,27 @@ export type ConfiguracionSelectScalar = {
 	estadoId?: boolean;
 };
 
-export type ConfiguracionOmit<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetOmit<
-	| "id"
-	| "valor"
-	| "createdAt"
-	| "updatedAt"
-	| "usuarioId"
-	| "tipoId"
-	| "estadoId",
+export type ConfiguracionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<
+	"id" | "valor" | "createdAt" | "updatedAt" | "usuarioId" | "tipoId" | "estadoId",
 	ExtArgs["result"]["configuracion"]
 >;
-export type ConfiguracionInclude<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ConfiguracionInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	usuario?: boolean | Prisma.Configuracion$usuarioArgs<ExtArgs>;
 	tipo?: boolean | Prisma.Configuracion$tipoArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
-export type ConfiguracionIncludeCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ConfiguracionIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	usuario?: boolean | Prisma.Configuracion$usuarioArgs<ExtArgs>;
 	tipo?: boolean | Prisma.Configuracion$tipoArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
-export type ConfiguracionIncludeUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ConfiguracionIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	usuario?: boolean | Prisma.Configuracion$usuarioArgs<ExtArgs>;
 	tipo?: boolean | Prisma.Configuracion$tipoArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
 
-export type $ConfiguracionPayload<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type $ConfiguracionPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	name: "Configuracion";
 	objects: {
 		usuario: Prisma.$UsuarioPayload<ExtArgs> | null;
@@ -1161,29 +891,17 @@ export type $ConfiguracionPayload<
 	composites: {};
 };
 
-export type ConfiguracionGetPayload<
-	S extends boolean | null | undefined | ConfiguracionDefaultArgs,
-> = runtime.Types.Result.GetResult<Prisma.$ConfiguracionPayload, S>;
+export type ConfiguracionGetPayload<S extends boolean | null | undefined | ConfiguracionDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$ConfiguracionPayload, S>;
 
-export type ConfiguracionCountArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = Omit<
+export type ConfiguracionCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<
 	ConfiguracionFindManyArgs,
 	"select" | "include" | "distinct" | "omit"
 > & {
 	select?: ConfiguracionCountAggregateInputType | true;
 };
 
-export interface ConfiguracionDelegate<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> {
-	[K: symbol]: {
-		types: Prisma.TypeMap<ExtArgs>["model"]["Configuracion"];
-		meta: { name: "Configuracion" };
-	};
+export interface ConfiguracionDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+	[K: symbol]: { types: Prisma.TypeMap<ExtArgs>["model"]["Configuracion"]; meta: { name: "Configuracion" } };
 	/**
 	 * Find zero or one Configuracion that matches the filter.
 	 * @param {ConfiguracionFindUniqueArgs} args - Arguments to find a Configuracion
@@ -1197,17 +915,7 @@ export interface ConfiguracionDelegate<
 	 */
 	findUnique<T extends ConfiguracionFindUniqueArgs>(
 		args: Prisma.SelectSubset<T, ConfiguracionFindUniqueArgs<ExtArgs>>,
-	): Prisma.Prisma__ConfiguracionClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ConfiguracionPayload<ExtArgs>,
-			T,
-			"findUnique",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ConfiguracionClient<runtime.Types.Result.GetResult<Prisma.$ConfiguracionPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find one Configuracion that matches the filter or throw an error with `error.code='P2025'`
@@ -1223,17 +931,7 @@ export interface ConfiguracionDelegate<
 	 */
 	findUniqueOrThrow<T extends ConfiguracionFindUniqueOrThrowArgs>(
 		args: Prisma.SelectSubset<T, ConfiguracionFindUniqueOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__ConfiguracionClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ConfiguracionPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ConfiguracionClient<runtime.Types.Result.GetResult<Prisma.$ConfiguracionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Configuracion that matches the filter.
@@ -1250,17 +948,7 @@ export interface ConfiguracionDelegate<
 	 */
 	findFirst<T extends ConfiguracionFindFirstArgs>(
 		args?: Prisma.SelectSubset<T, ConfiguracionFindFirstArgs<ExtArgs>>,
-	): Prisma.Prisma__ConfiguracionClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ConfiguracionPayload<ExtArgs>,
-			T,
-			"findFirst",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ConfiguracionClient<runtime.Types.Result.GetResult<Prisma.$ConfiguracionPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Configuracion that matches the filter or
@@ -1278,17 +966,7 @@ export interface ConfiguracionDelegate<
 	 */
 	findFirstOrThrow<T extends ConfiguracionFindFirstOrThrowArgs>(
 		args?: Prisma.SelectSubset<T, ConfiguracionFindFirstOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__ConfiguracionClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ConfiguracionPayload<ExtArgs>,
-			T,
-			"findFirstOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ConfiguracionClient<runtime.Types.Result.GetResult<Prisma.$ConfiguracionPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find zero or more Configuracions that matches the filter.
@@ -1308,14 +986,7 @@ export interface ConfiguracionDelegate<
 	 */
 	findMany<T extends ConfiguracionFindManyArgs>(
 		args?: Prisma.SelectSubset<T, ConfiguracionFindManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$ConfiguracionPayload<ExtArgs>,
-			T,
-			"findMany",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConfiguracionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
 
 	/**
 	 * Create a Configuracion.
@@ -1331,17 +1002,7 @@ export interface ConfiguracionDelegate<
 	 */
 	create<T extends ConfiguracionCreateArgs>(
 		args: Prisma.SelectSubset<T, ConfiguracionCreateArgs<ExtArgs>>,
-	): Prisma.Prisma__ConfiguracionClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ConfiguracionPayload<ExtArgs>,
-			T,
-			"create",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ConfiguracionClient<runtime.Types.Result.GetResult<Prisma.$ConfiguracionPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Create many Configuracions.
@@ -1355,9 +1016,7 @@ export interface ConfiguracionDelegate<
 	 * })
 	 *
 	 */
-	createMany<T extends ConfiguracionCreateManyArgs>(
-		args?: Prisma.SelectSubset<T, ConfiguracionCreateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	createMany<T extends ConfiguracionCreateManyArgs>(args?: Prisma.SelectSubset<T, ConfiguracionCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Create many Configuracions and returns the data saved in the database.
@@ -1382,18 +1041,8 @@ export interface ConfiguracionDelegate<
 	 *
 	 */
 	createManyAndReturn<T extends ConfiguracionCreateManyAndReturnArgs>(
-		args?: Prisma.SelectSubset<
-			T,
-			ConfiguracionCreateManyAndReturnArgs<ExtArgs>
-		>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$ConfiguracionPayload<ExtArgs>,
-			T,
-			"createManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+		args?: Prisma.SelectSubset<T, ConfiguracionCreateManyAndReturnArgs<ExtArgs>>,
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConfiguracionPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Delete a Configuracion.
@@ -1409,17 +1058,7 @@ export interface ConfiguracionDelegate<
 	 */
 	delete<T extends ConfiguracionDeleteArgs>(
 		args: Prisma.SelectSubset<T, ConfiguracionDeleteArgs<ExtArgs>>,
-	): Prisma.Prisma__ConfiguracionClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ConfiguracionPayload<ExtArgs>,
-			T,
-			"delete",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ConfiguracionClient<runtime.Types.Result.GetResult<Prisma.$ConfiguracionPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Update one Configuracion.
@@ -1438,17 +1077,7 @@ export interface ConfiguracionDelegate<
 	 */
 	update<T extends ConfiguracionUpdateArgs>(
 		args: Prisma.SelectSubset<T, ConfiguracionUpdateArgs<ExtArgs>>,
-	): Prisma.Prisma__ConfiguracionClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ConfiguracionPayload<ExtArgs>,
-			T,
-			"update",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ConfiguracionClient<runtime.Types.Result.GetResult<Prisma.$ConfiguracionPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Delete zero or more Configuracions.
@@ -1462,9 +1091,7 @@ export interface ConfiguracionDelegate<
 	 * })
 	 *
 	 */
-	deleteMany<T extends ConfiguracionDeleteManyArgs>(
-		args?: Prisma.SelectSubset<T, ConfiguracionDeleteManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	deleteMany<T extends ConfiguracionDeleteManyArgs>(args?: Prisma.SelectSubset<T, ConfiguracionDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Configuracions.
@@ -1483,9 +1110,7 @@ export interface ConfiguracionDelegate<
 	 * })
 	 *
 	 */
-	updateMany<T extends ConfiguracionUpdateManyArgs>(
-		args: Prisma.SelectSubset<T, ConfiguracionUpdateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	updateMany<T extends ConfiguracionUpdateManyArgs>(args: Prisma.SelectSubset<T, ConfiguracionUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Configuracions and returns the data updated in the database.
@@ -1517,14 +1142,7 @@ export interface ConfiguracionDelegate<
 	 */
 	updateManyAndReturn<T extends ConfiguracionUpdateManyAndReturnArgs>(
 		args: Prisma.SelectSubset<T, ConfiguracionUpdateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$ConfiguracionPayload<ExtArgs>,
-			T,
-			"updateManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConfiguracionPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Create or update one Configuracion.
@@ -1545,17 +1163,7 @@ export interface ConfiguracionDelegate<
 	 */
 	upsert<T extends ConfiguracionUpsertArgs>(
 		args: Prisma.SelectSubset<T, ConfiguracionUpsertArgs<ExtArgs>>,
-	): Prisma.Prisma__ConfiguracionClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$ConfiguracionPayload<ExtArgs>,
-			T,
-			"upsert",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__ConfiguracionClient<runtime.Types.Result.GetResult<Prisma.$ConfiguracionPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Count the number of Configuracions.
@@ -1573,14 +1181,7 @@ export interface ConfiguracionDelegate<
 	count<T extends ConfiguracionCountArgs>(
 		args?: Prisma.Subset<T, ConfiguracionCountArgs>,
 	): Prisma.PrismaPromise<
-		T extends runtime.Types.Utils.Record<"select", any>
-			? T["select"] extends true
-				? number
-				: Prisma.GetScalarType<
-						T["select"],
-						ConfiguracionCountAggregateOutputType
-					>
-			: number
+		T extends runtime.Types.Utils.Record<"select", any> ? (T["select"] extends true ? number : Prisma.GetScalarType<T["select"], ConfiguracionCountAggregateOutputType>) : number
 	>;
 
 	/**
@@ -1607,9 +1208,7 @@ export interface ConfiguracionDelegate<
 	 *   take: 10,
 	 * })
 	 **/
-	aggregate<T extends ConfiguracionAggregateArgs>(
-		args: Prisma.Subset<T, ConfiguracionAggregateArgs>,
-	): Prisma.PrismaPromise<GetConfiguracionAggregateType<T>>;
+	aggregate<T extends ConfiguracionAggregateArgs>(args: Prisma.Subset<T, ConfiguracionAggregateArgs>): Prisma.PrismaPromise<GetConfiguracionAggregateType<T>>;
 
 	/**
 	 * Group by Configuracion.
@@ -1631,16 +1230,9 @@ export interface ConfiguracionDelegate<
 	 **/
 	groupBy<
 		T extends ConfiguracionGroupByArgs,
-		HasSelectOrTake extends Prisma.Or<
-			Prisma.Extends<"skip", Prisma.Keys<T>>,
-			Prisma.Extends<"take", Prisma.Keys<T>>
-		>,
-		OrderByArg extends Prisma.True extends HasSelectOrTake
-			? { orderBy: ConfiguracionGroupByArgs["orderBy"] }
-			: { orderBy?: ConfiguracionGroupByArgs["orderBy"] },
-		OrderFields extends Prisma.ExcludeUnderscoreKeys<
-			Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>
-		>,
+		HasSelectOrTake extends Prisma.Or<Prisma.Extends<"skip", Prisma.Keys<T>>, Prisma.Extends<"take", Prisma.Keys<T>>>,
+		OrderByArg extends Prisma.True extends HasSelectOrTake ? { orderBy: ConfiguracionGroupByArgs["orderBy"] } : { orderBy?: ConfiguracionGroupByArgs["orderBy"] },
+		OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>>,
 		ByFields extends Prisma.MaybeTupleToUnion<T["by"]>,
 		ByValid extends Prisma.Has<ByFields, OrderFields>,
 		HavingFields extends Prisma.GetHavingFields<T["having"]>,
@@ -1654,21 +1246,14 @@ export interface ConfiguracionDelegate<
 							? never
 							: P extends string
 								? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-								: [
-										Error,
-										"Field ",
-										P,
-										` in "having" needs to be provided in "by"`,
-									];
+								: [Error, "Field ", P, ` in "having" needs to be provided in "by"`];
 					}[HavingFields]
 				: "take" extends Prisma.Keys<T>
 					? "orderBy" extends Prisma.Keys<T>
 						? ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields]
 						: 'Error: If you provide "take", you also need to provide "orderBy"'
 					: "skip" extends Prisma.Keys<T>
@@ -1676,24 +1261,15 @@ export interface ConfiguracionDelegate<
 							? ByValid extends Prisma.True
 								? {}
 								: {
-										[P in OrderFields]: P extends ByFields
-											? never
-											: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+										[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 									}[OrderFields]
 							: 'Error: If you provide "skip", you also need to provide "orderBy"'
 						: ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields],
-	>(
-		args: Prisma.SubsetIntersection<T, ConfiguracionGroupByArgs, OrderByArg> &
-			InputErrors,
-	): {} extends InputErrors
-		? GetConfiguracionGroupByPayload<T>
-		: Prisma.PrismaPromise<InputErrors>;
+	>(args: Prisma.SubsetIntersection<T, ConfiguracionGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetConfiguracionGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
 	/**
 	 * Fields of the Configuracion model
 	 */
@@ -1706,54 +1282,18 @@ export interface ConfiguracionDelegate<
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__ConfiguracionClient<
-	T,
-	Null = never,
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> extends Prisma.PrismaPromise<T> {
+export interface Prisma__ConfiguracionClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}>
+	extends Prisma.PrismaPromise<T> {
 	readonly [Symbol.toStringTag]: "PrismaPromise";
 	usuario<T extends Prisma.Configuracion$usuarioArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Configuracion$usuarioArgs<ExtArgs>>,
-	): Prisma.Prisma__UsuarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$UsuarioPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__UsuarioClient<runtime.Types.Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 	tipo<T extends Prisma.Configuracion$tipoArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Configuracion$tipoArgs<ExtArgs>>,
-	): Prisma.Prisma__TipoClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$TipoPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__TipoClient<runtime.Types.Result.GetResult<Prisma.$TipoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 	estado<T extends Prisma.EstadoDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EstadoDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EstadoPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	/**
 	 * Attaches callbacks for the resolution and/or rejection of the Promise.
 	 * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1761,35 +1301,22 @@ export interface Prisma__ConfiguracionClient<
 	 * @returns A Promise for the completion of which ever callback is executed.
 	 */
 	then<TResult1 = T, TResult2 = never>(
-		onfulfilled?:
-			| ((value: T) => TResult1 | PromiseLike<TResult1>)
-			| undefined
-			| null,
-		onrejected?:
-			| ((reason: any) => TResult2 | PromiseLike<TResult2>)
-			| undefined
-			| null,
+		onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+		onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
 	): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
 	/**
 	 * Attaches a callback for only the rejection of the Promise.
 	 * @param onrejected The callback to execute when the Promise is rejected.
 	 * @returns A Promise for the completion of the callback.
 	 */
-	catch<TResult = never>(
-		onrejected?:
-			| ((reason: any) => TResult | PromiseLike<TResult>)
-			| undefined
-			| null,
-	): runtime.Types.Utils.JsPromise<T | TResult>;
+	catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
 	/**
 	 * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
 	 * resolved value cannot be modified from the callback.
 	 * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
 	 * @returns A Promise for the completion of the callback.
 	 */
-	finally(
-		onfinally?: (() => void) | undefined | null,
-	): runtime.Types.Utils.JsPromise<T>;
+	finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
 }
 
 /**
@@ -1809,10 +1336,7 @@ export interface ConfiguracionFieldRefs {
 /**
  * Configuracion findUnique
  */
-export type ConfiguracionFindUniqueArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ConfiguracionFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Configuracion
 	 */
@@ -1834,10 +1358,7 @@ export type ConfiguracionFindUniqueArgs<
 /**
  * Configuracion findUniqueOrThrow
  */
-export type ConfiguracionFindUniqueOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ConfiguracionFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Configuracion
 	 */
@@ -1859,10 +1380,7 @@ export type ConfiguracionFindUniqueOrThrowArgs<
 /**
  * Configuracion findFirst
  */
-export type ConfiguracionFindFirstArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ConfiguracionFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Configuracion
 	 */
@@ -1884,9 +1402,7 @@ export type ConfiguracionFindFirstArgs<
 	 *
 	 * Determine the order of Configuracions to fetch.
 	 */
-	orderBy?:
-		| Prisma.ConfiguracionOrderByWithRelationInput
-		| Prisma.ConfiguracionOrderByWithRelationInput[];
+	orderBy?: Prisma.ConfiguracionOrderByWithRelationInput | Prisma.ConfiguracionOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1910,18 +1426,13 @@ export type ConfiguracionFindFirstArgs<
 	 *
 	 * Filter by unique combinations of Configuracions.
 	 */
-	distinct?:
-		| Prisma.ConfiguracionScalarFieldEnum
-		| Prisma.ConfiguracionScalarFieldEnum[];
+	distinct?: Prisma.ConfiguracionScalarFieldEnum | Prisma.ConfiguracionScalarFieldEnum[];
 };
 
 /**
  * Configuracion findFirstOrThrow
  */
-export type ConfiguracionFindFirstOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ConfiguracionFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Configuracion
 	 */
@@ -1943,9 +1454,7 @@ export type ConfiguracionFindFirstOrThrowArgs<
 	 *
 	 * Determine the order of Configuracions to fetch.
 	 */
-	orderBy?:
-		| Prisma.ConfiguracionOrderByWithRelationInput
-		| Prisma.ConfiguracionOrderByWithRelationInput[];
+	orderBy?: Prisma.ConfiguracionOrderByWithRelationInput | Prisma.ConfiguracionOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1969,18 +1478,13 @@ export type ConfiguracionFindFirstOrThrowArgs<
 	 *
 	 * Filter by unique combinations of Configuracions.
 	 */
-	distinct?:
-		| Prisma.ConfiguracionScalarFieldEnum
-		| Prisma.ConfiguracionScalarFieldEnum[];
+	distinct?: Prisma.ConfiguracionScalarFieldEnum | Prisma.ConfiguracionScalarFieldEnum[];
 };
 
 /**
  * Configuracion findMany
  */
-export type ConfiguracionFindManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ConfiguracionFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Configuracion
 	 */
@@ -2002,9 +1506,7 @@ export type ConfiguracionFindManyArgs<
 	 *
 	 * Determine the order of Configuracions to fetch.
 	 */
-	orderBy?:
-		| Prisma.ConfiguracionOrderByWithRelationInput
-		| Prisma.ConfiguracionOrderByWithRelationInput[];
+	orderBy?: Prisma.ConfiguracionOrderByWithRelationInput | Prisma.ConfiguracionOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -2028,18 +1530,13 @@ export type ConfiguracionFindManyArgs<
 	 *
 	 * Filter by unique combinations of Configuracions.
 	 */
-	distinct?:
-		| Prisma.ConfiguracionScalarFieldEnum
-		| Prisma.ConfiguracionScalarFieldEnum[];
+	distinct?: Prisma.ConfiguracionScalarFieldEnum | Prisma.ConfiguracionScalarFieldEnum[];
 };
 
 /**
  * Configuracion create
  */
-export type ConfiguracionCreateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ConfiguracionCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Configuracion
 	 */
@@ -2055,35 +1552,24 @@ export type ConfiguracionCreateArgs<
 	/**
 	 * The data needed to create a Configuracion.
 	 */
-	data: Prisma.XOR<
-		Prisma.ConfiguracionCreateInput,
-		Prisma.ConfiguracionUncheckedCreateInput
-	>;
+	data: Prisma.XOR<Prisma.ConfiguracionCreateInput, Prisma.ConfiguracionUncheckedCreateInput>;
 };
 
 /**
  * Configuracion createMany
  */
-export type ConfiguracionCreateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ConfiguracionCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to create many Configuracions.
 	 */
-	data:
-		| Prisma.ConfiguracionCreateManyInput
-		| Prisma.ConfiguracionCreateManyInput[];
+	data: Prisma.ConfiguracionCreateManyInput | Prisma.ConfiguracionCreateManyInput[];
 	skipDuplicates?: boolean;
 };
 
 /**
  * Configuracion createManyAndReturn
  */
-export type ConfiguracionCreateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ConfiguracionCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Configuracion
 	 */
@@ -2095,9 +1581,7 @@ export type ConfiguracionCreateManyAndReturnArgs<
 	/**
 	 * The data used to create many Configuracions.
 	 */
-	data:
-		| Prisma.ConfiguracionCreateManyInput
-		| Prisma.ConfiguracionCreateManyInput[];
+	data: Prisma.ConfiguracionCreateManyInput | Prisma.ConfiguracionCreateManyInput[];
 	skipDuplicates?: boolean;
 	/**
 	 * Choose, which related nodes to fetch as well
@@ -2108,10 +1592,7 @@ export type ConfiguracionCreateManyAndReturnArgs<
 /**
  * Configuracion update
  */
-export type ConfiguracionUpdateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ConfiguracionUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Configuracion
 	 */
@@ -2127,10 +1608,7 @@ export type ConfiguracionUpdateArgs<
 	/**
 	 * The data needed to update a Configuracion.
 	 */
-	data: Prisma.XOR<
-		Prisma.ConfiguracionUpdateInput,
-		Prisma.ConfiguracionUncheckedUpdateInput
-	>;
+	data: Prisma.XOR<Prisma.ConfiguracionUpdateInput, Prisma.ConfiguracionUncheckedUpdateInput>;
 	/**
 	 * Choose, which Configuracion to update.
 	 */
@@ -2140,17 +1618,11 @@ export type ConfiguracionUpdateArgs<
 /**
  * Configuracion updateMany
  */
-export type ConfiguracionUpdateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ConfiguracionUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to update Configuracions.
 	 */
-	data: Prisma.XOR<
-		Prisma.ConfiguracionUpdateManyMutationInput,
-		Prisma.ConfiguracionUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.ConfiguracionUpdateManyMutationInput, Prisma.ConfiguracionUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Configuracions to update
 	 */
@@ -2164,10 +1636,7 @@ export type ConfiguracionUpdateManyArgs<
 /**
  * Configuracion updateManyAndReturn
  */
-export type ConfiguracionUpdateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ConfiguracionUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Configuracion
 	 */
@@ -2179,10 +1648,7 @@ export type ConfiguracionUpdateManyAndReturnArgs<
 	/**
 	 * The data used to update Configuracions.
 	 */
-	data: Prisma.XOR<
-		Prisma.ConfiguracionUpdateManyMutationInput,
-		Prisma.ConfiguracionUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.ConfiguracionUpdateManyMutationInput, Prisma.ConfiguracionUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Configuracions to update
 	 */
@@ -2200,10 +1666,7 @@ export type ConfiguracionUpdateManyAndReturnArgs<
 /**
  * Configuracion upsert
  */
-export type ConfiguracionUpsertArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ConfiguracionUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Configuracion
 	 */
@@ -2223,26 +1686,17 @@ export type ConfiguracionUpsertArgs<
 	/**
 	 * In case the Configuracion found by the `where` argument doesn't exist, create a new Configuracion with this data.
 	 */
-	create: Prisma.XOR<
-		Prisma.ConfiguracionCreateInput,
-		Prisma.ConfiguracionUncheckedCreateInput
-	>;
+	create: Prisma.XOR<Prisma.ConfiguracionCreateInput, Prisma.ConfiguracionUncheckedCreateInput>;
 	/**
 	 * In case the Configuracion was found with the provided `where` argument, update it with this data.
 	 */
-	update: Prisma.XOR<
-		Prisma.ConfiguracionUpdateInput,
-		Prisma.ConfiguracionUncheckedUpdateInput
-	>;
+	update: Prisma.XOR<Prisma.ConfiguracionUpdateInput, Prisma.ConfiguracionUncheckedUpdateInput>;
 };
 
 /**
  * Configuracion delete
  */
-export type ConfiguracionDeleteArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ConfiguracionDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Configuracion
 	 */
@@ -2264,10 +1718,7 @@ export type ConfiguracionDeleteArgs<
 /**
  * Configuracion deleteMany
  */
-export type ConfiguracionDeleteManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ConfiguracionDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Configuracions to delete
 	 */
@@ -2281,10 +1732,7 @@ export type ConfiguracionDeleteManyArgs<
 /**
  * Configuracion.usuario
  */
-export type Configuracion$usuarioArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Configuracion$usuarioArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Usuario
 	 */
@@ -2303,10 +1751,7 @@ export type Configuracion$usuarioArgs<
 /**
  * Configuracion.tipo
  */
-export type Configuracion$tipoArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Configuracion$tipoArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Tipo
 	 */
@@ -2325,10 +1770,7 @@ export type Configuracion$tipoArgs<
 /**
  * Configuracion without action
  */
-export type ConfiguracionDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type ConfiguracionDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Configuracion
 	 */

@@ -1,4 +1,5 @@
 import * as z from "zod";
+import { UsuarioSchema } from "../models/Usuario.schema.ts";
 export const NotificacionCreateResultSchema = z.object({
 	id: z.number().int(),
 	titulo: z.string(),
@@ -6,7 +7,7 @@ export const NotificacionCreateResultSchema = z.object({
 	tipo: z.unknown(),
 	leida: z.boolean(),
 	usuarioId: z.number().int(),
-	usuario: z.unknown(),
+	usuario: UsuarioSchema.optional(),
 	entidadId: z.number().int().optional(),
 	entidadTipo: z.unknown(),
 	createdAt: z.date(),

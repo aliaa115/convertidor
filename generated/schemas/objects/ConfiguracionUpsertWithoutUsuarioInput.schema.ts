@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { ConfiguracionCreateWithoutUsuarioInputObjectSchema as ConfiguracionCreateWithoutUsuarioInputObjectSchema } from "./ConfiguracionCreateWithoutUsuarioInput.schema.ts";
 import { ConfiguracionUncheckedCreateWithoutUsuarioInputObjectSchema as ConfiguracionUncheckedCreateWithoutUsuarioInputObjectSchema } from "./ConfiguracionUncheckedCreateWithoutUsuarioInput.schema.ts";
 import { ConfiguracionUncheckedUpdateWithoutUsuarioInputObjectSchema as ConfiguracionUncheckedUpdateWithoutUsuarioInputObjectSchema } from "./ConfiguracionUncheckedUpdateWithoutUsuarioInput.schema.ts";
@@ -9,22 +9,11 @@ import { ConfiguracionWhereInputObjectSchema as ConfiguracionWhereInputObjectSch
 const makeSchema = () =>
 	z
 		.object({
-			update: z.union([
-				z.lazy(() => ConfiguracionUpdateWithoutUsuarioInputObjectSchema),
-				z.lazy(
-					() => ConfiguracionUncheckedUpdateWithoutUsuarioInputObjectSchema,
-				),
-			]),
-			create: z.union([
-				z.lazy(() => ConfiguracionCreateWithoutUsuarioInputObjectSchema),
-				z.lazy(
-					() => ConfiguracionUncheckedCreateWithoutUsuarioInputObjectSchema,
-				),
-			]),
+			update: z.union([z.lazy(() => ConfiguracionUpdateWithoutUsuarioInputObjectSchema), z.lazy(() => ConfiguracionUncheckedUpdateWithoutUsuarioInputObjectSchema)]),
+			create: z.union([z.lazy(() => ConfiguracionCreateWithoutUsuarioInputObjectSchema), z.lazy(() => ConfiguracionUncheckedCreateWithoutUsuarioInputObjectSchema)]),
 			where: z.lazy(() => ConfiguracionWhereInputObjectSchema).optional(),
 		})
 		.strict();
 export const ConfiguracionUpsertWithoutUsuarioInputObjectSchema: z.ZodType<Prisma.ConfiguracionUpsertWithoutUsuarioInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.ConfiguracionUpsertWithoutUsuarioInput>;
-export const ConfiguracionUpsertWithoutUsuarioInputObjectZodSchema =
-	makeSchema();
+export const ConfiguracionUpsertWithoutUsuarioInputObjectZodSchema = makeSchema();

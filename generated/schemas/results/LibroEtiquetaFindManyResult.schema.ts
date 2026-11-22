@@ -1,4 +1,7 @@
 import * as z from "zod";
+import { EstadoSchema } from "../models/Estado.schema.ts";
+import { EtiquetaSchema } from "../models/Etiqueta.schema.ts";
+import { LibroSchema } from "../models/Libro.schema.ts";
 export const LibroEtiquetaFindManyResultSchema = z.object({
 	data: z.array(
 		z.object({
@@ -7,9 +10,9 @@ export const LibroEtiquetaFindManyResultSchema = z.object({
 			createdAt: z.date(),
 			updatedAt: z.date(),
 			estadoId: z.number().int(),
-			estado: z.unknown(),
-			libro: z.unknown(),
-			etiqueta: z.unknown(),
+			estado: EstadoSchema.optional(),
+			libro: LibroSchema.optional(),
+			etiqueta: EtiquetaSchema.optional(),
 		}),
 	),
 	pagination: z.object({

@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { CategoriaCreateManyEstadoInputEnvelopeObjectSchema as CategoriaCreateManyEstadoInputEnvelopeObjectSchema } from "./CategoriaCreateManyEstadoInputEnvelope.schema.ts";
 import { CategoriaCreateOrConnectWithoutEstadoInputObjectSchema as CategoriaCreateOrConnectWithoutEstadoInputObjectSchema } from "./CategoriaCreateOrConnectWithoutEstadoInput.schema.ts";
 import { CategoriaCreateWithoutEstadoInputObjectSchema as CategoriaCreateWithoutEstadoInputObjectSchema } from "./CategoriaCreateWithoutEstadoInput.schema.ts";
@@ -18,93 +18,21 @@ const makeSchema = () =>
 					z.lazy(() => CategoriaCreateWithoutEstadoInputObjectSchema),
 					z.lazy(() => CategoriaCreateWithoutEstadoInputObjectSchema).array(),
 					z.lazy(() => CategoriaUncheckedCreateWithoutEstadoInputObjectSchema),
-					z
-						.lazy(() => CategoriaUncheckedCreateWithoutEstadoInputObjectSchema)
-						.array(),
+					z.lazy(() => CategoriaUncheckedCreateWithoutEstadoInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(() => CategoriaCreateOrConnectWithoutEstadoInputObjectSchema),
-					z
-						.lazy(() => CategoriaCreateOrConnectWithoutEstadoInputObjectSchema)
-						.array(),
-				])
-				.optional(),
-			upsert: z
-				.union([
-					z.lazy(
-						() => CategoriaUpsertWithWhereUniqueWithoutEstadoInputObjectSchema,
-					),
-					z
-						.lazy(
-							() =>
-								CategoriaUpsertWithWhereUniqueWithoutEstadoInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			createMany: z
-				.lazy(() => CategoriaCreateManyEstadoInputEnvelopeObjectSchema)
-				.optional(),
-			set: z
-				.union([
-					z.lazy(() => CategoriaWhereUniqueInputObjectSchema),
-					z.lazy(() => CategoriaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			disconnect: z
-				.union([
-					z.lazy(() => CategoriaWhereUniqueInputObjectSchema),
-					z.lazy(() => CategoriaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			delete: z
-				.union([
-					z.lazy(() => CategoriaWhereUniqueInputObjectSchema),
-					z.lazy(() => CategoriaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => CategoriaWhereUniqueInputObjectSchema),
-					z.lazy(() => CategoriaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			update: z
-				.union([
-					z.lazy(
-						() => CategoriaUpdateWithWhereUniqueWithoutEstadoInputObjectSchema,
-					),
-					z
-						.lazy(
-							() =>
-								CategoriaUpdateWithWhereUniqueWithoutEstadoInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			updateMany: z
-				.union([
-					z.lazy(
-						() => CategoriaUpdateManyWithWhereWithoutEstadoInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => CategoriaUpdateManyWithWhereWithoutEstadoInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			deleteMany: z
-				.union([
-					z.lazy(() => CategoriaScalarWhereInputObjectSchema),
-					z.lazy(() => CategoriaScalarWhereInputObjectSchema).array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => CategoriaCreateOrConnectWithoutEstadoInputObjectSchema), z.lazy(() => CategoriaCreateOrConnectWithoutEstadoInputObjectSchema).array()]).optional(),
+			upsert: z.union([z.lazy(() => CategoriaUpsertWithWhereUniqueWithoutEstadoInputObjectSchema), z.lazy(() => CategoriaUpsertWithWhereUniqueWithoutEstadoInputObjectSchema).array()]).optional(),
+			createMany: z.lazy(() => CategoriaCreateManyEstadoInputEnvelopeObjectSchema).optional(),
+			set: z.union([z.lazy(() => CategoriaWhereUniqueInputObjectSchema), z.lazy(() => CategoriaWhereUniqueInputObjectSchema).array()]).optional(),
+			disconnect: z.union([z.lazy(() => CategoriaWhereUniqueInputObjectSchema), z.lazy(() => CategoriaWhereUniqueInputObjectSchema).array()]).optional(),
+			delete: z.union([z.lazy(() => CategoriaWhereUniqueInputObjectSchema), z.lazy(() => CategoriaWhereUniqueInputObjectSchema).array()]).optional(),
+			connect: z.union([z.lazy(() => CategoriaWhereUniqueInputObjectSchema), z.lazy(() => CategoriaWhereUniqueInputObjectSchema).array()]).optional(),
+			update: z.union([z.lazy(() => CategoriaUpdateWithWhereUniqueWithoutEstadoInputObjectSchema), z.lazy(() => CategoriaUpdateWithWhereUniqueWithoutEstadoInputObjectSchema).array()]).optional(),
+			updateMany: z.union([z.lazy(() => CategoriaUpdateManyWithWhereWithoutEstadoInputObjectSchema), z.lazy(() => CategoriaUpdateManyWithWhereWithoutEstadoInputObjectSchema).array()]).optional(),
+			deleteMany: z.union([z.lazy(() => CategoriaScalarWhereInputObjectSchema), z.lazy(() => CategoriaScalarWhereInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const CategoriaUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema: z.ZodType<Prisma.CategoriaUncheckedUpdateManyWithoutEstadoNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.CategoriaUncheckedUpdateManyWithoutEstadoNestedInput>;
-export const CategoriaUncheckedUpdateManyWithoutEstadoNestedInputObjectZodSchema =
-	makeSchema();
+export const CategoriaUncheckedUpdateManyWithoutEstadoNestedInputObjectZodSchema = makeSchema();

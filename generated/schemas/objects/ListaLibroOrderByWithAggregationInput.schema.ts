@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { SortOrderSchema } from "../enums/SortOrder.schema.ts";
 import { ListaLibroAvgOrderByAggregateInputObjectSchema as ListaLibroAvgOrderByAggregateInputObjectSchema } from "./ListaLibroAvgOrderByAggregateInput.schema.ts";
 import { ListaLibroCountOrderByAggregateInputObjectSchema as ListaLibroCountOrderByAggregateInputObjectSchema } from "./ListaLibroCountOrderByAggregateInput.schema.ts";
@@ -14,31 +14,16 @@ const makeSchema = () =>
 			id: SortOrderSchema.optional(),
 			createdAt: SortOrderSchema.optional(),
 			updatedAt: SortOrderSchema.optional(),
-			listaId: z
-				.union([SortOrderSchema, z.lazy(() => SortOrderInputObjectSchema)])
-				.optional(),
-			libroId: z
-				.union([SortOrderSchema, z.lazy(() => SortOrderInputObjectSchema)])
-				.optional(),
+			listaId: z.union([SortOrderSchema, z.lazy(() => SortOrderInputObjectSchema)]).optional(),
+			libroId: z.union([SortOrderSchema, z.lazy(() => SortOrderInputObjectSchema)]).optional(),
 			estadoId: SortOrderSchema.optional(),
-			_count: z
-				.lazy(() => ListaLibroCountOrderByAggregateInputObjectSchema)
-				.optional(),
-			_avg: z
-				.lazy(() => ListaLibroAvgOrderByAggregateInputObjectSchema)
-				.optional(),
-			_max: z
-				.lazy(() => ListaLibroMaxOrderByAggregateInputObjectSchema)
-				.optional(),
-			_min: z
-				.lazy(() => ListaLibroMinOrderByAggregateInputObjectSchema)
-				.optional(),
-			_sum: z
-				.lazy(() => ListaLibroSumOrderByAggregateInputObjectSchema)
-				.optional(),
+			_count: z.lazy(() => ListaLibroCountOrderByAggregateInputObjectSchema).optional(),
+			_avg: z.lazy(() => ListaLibroAvgOrderByAggregateInputObjectSchema).optional(),
+			_max: z.lazy(() => ListaLibroMaxOrderByAggregateInputObjectSchema).optional(),
+			_min: z.lazy(() => ListaLibroMinOrderByAggregateInputObjectSchema).optional(),
+			_sum: z.lazy(() => ListaLibroSumOrderByAggregateInputObjectSchema).optional(),
 		})
 		.strict();
 export const ListaLibroOrderByWithAggregationInputObjectSchema: z.ZodType<Prisma.ListaLibroOrderByWithAggregationInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.ListaLibroOrderByWithAggregationInput>;
-export const ListaLibroOrderByWithAggregationInputObjectZodSchema =
-	makeSchema();
+export const ListaLibroOrderByWithAggregationInputObjectZodSchema = makeSchema();

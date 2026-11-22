@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { NotificacionCreateManyUsuarioInputEnvelopeObjectSchema as NotificacionCreateManyUsuarioInputEnvelopeObjectSchema } from "./NotificacionCreateManyUsuarioInputEnvelope.schema.ts";
 import { NotificacionCreateOrConnectWithoutUsuarioInputObjectSchema as NotificacionCreateOrConnectWithoutUsuarioInputObjectSchema } from "./NotificacionCreateOrConnectWithoutUsuarioInput.schema.ts";
 import { NotificacionCreateWithoutUsuarioInputObjectSchema as NotificacionCreateWithoutUsuarioInputObjectSchema } from "./NotificacionCreateWithoutUsuarioInput.schema.ts";
@@ -12,43 +12,16 @@ const makeSchema = () =>
 			create: z
 				.union([
 					z.lazy(() => NotificacionCreateWithoutUsuarioInputObjectSchema),
-					z
-						.lazy(() => NotificacionCreateWithoutUsuarioInputObjectSchema)
-						.array(),
-					z.lazy(
-						() => NotificacionUncheckedCreateWithoutUsuarioInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => NotificacionUncheckedCreateWithoutUsuarioInputObjectSchema,
-						)
-						.array(),
+					z.lazy(() => NotificacionCreateWithoutUsuarioInputObjectSchema).array(),
+					z.lazy(() => NotificacionUncheckedCreateWithoutUsuarioInputObjectSchema),
+					z.lazy(() => NotificacionUncheckedCreateWithoutUsuarioInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(
-						() => NotificacionCreateOrConnectWithoutUsuarioInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => NotificacionCreateOrConnectWithoutUsuarioInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			createMany: z
-				.lazy(() => NotificacionCreateManyUsuarioInputEnvelopeObjectSchema)
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => NotificacionWhereUniqueInputObjectSchema),
-					z.lazy(() => NotificacionWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => NotificacionCreateOrConnectWithoutUsuarioInputObjectSchema), z.lazy(() => NotificacionCreateOrConnectWithoutUsuarioInputObjectSchema).array()]).optional(),
+			createMany: z.lazy(() => NotificacionCreateManyUsuarioInputEnvelopeObjectSchema).optional(),
+			connect: z.union([z.lazy(() => NotificacionWhereUniqueInputObjectSchema), z.lazy(() => NotificacionWhereUniqueInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const NotificacionCreateNestedManyWithoutUsuarioInputObjectSchema: z.ZodType<Prisma.NotificacionCreateNestedManyWithoutUsuarioInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.NotificacionCreateNestedManyWithoutUsuarioInput>;
-export const NotificacionCreateNestedManyWithoutUsuarioInputObjectZodSchema =
-	makeSchema();
+export const NotificacionCreateNestedManyWithoutUsuarioInputObjectZodSchema = makeSchema();

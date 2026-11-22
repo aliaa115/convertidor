@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { SortOrderSchema } from "../enums/SortOrder.schema.ts";
 
 const makeSchema = () =>
@@ -14,6 +14,5 @@ const makeSchema = () =>
 			estadoId: SortOrderSchema.optional(),
 		})
 		.strict();
-export const CapituloMinOrderByAggregateInputObjectSchema: z.ZodType<Prisma.CapituloMinOrderByAggregateInput> =
-	makeSchema() as unknown as z.ZodType<Prisma.CapituloMinOrderByAggregateInput>;
+export const CapituloMinOrderByAggregateInputObjectSchema: z.ZodType<Prisma.CapituloMinOrderByAggregateInput> = makeSchema() as unknown as z.ZodType<Prisma.CapituloMinOrderByAggregateInput>;
 export const CapituloMinOrderByAggregateInputObjectZodSchema = makeSchema();

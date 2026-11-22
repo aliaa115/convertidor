@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { AvatarAvgAggregateInputObjectSchema as AvatarAvgAggregateInputObjectSchema } from "./objects/AvatarAvgAggregateInput.schema.ts";
 import { AvatarCountAggregateInputObjectSchema as AvatarCountAggregateInputObjectSchema } from "./objects/AvatarCountAggregateInput.schema.ts";
 import { AvatarMaxAggregateInputObjectSchema as AvatarMaxAggregateInputObjectSchema } from "./objects/AvatarMaxAggregateInput.schema.ts";
@@ -11,19 +11,12 @@ import { AvatarWhereUniqueInputObjectSchema as AvatarWhereUniqueInputObjectSchem
 
 export const AvatarAggregateSchema: z.ZodType<Prisma.AvatarAggregateArgs> = z
 	.object({
-		orderBy: z
-			.union([
-				AvatarOrderByWithRelationInputObjectSchema,
-				AvatarOrderByWithRelationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([AvatarOrderByWithRelationInputObjectSchema, AvatarOrderByWithRelationInputObjectSchema.array()]).optional(),
 		where: AvatarWhereInputObjectSchema.optional(),
 		cursor: AvatarWhereUniqueInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
-		_count: z
-			.union([z.literal(true), AvatarCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), AvatarCountAggregateInputObjectSchema]).optional(),
 		_min: AvatarMinAggregateInputObjectSchema.optional(),
 		_max: AvatarMaxAggregateInputObjectSchema.optional(),
 		_avg: AvatarAvgAggregateInputObjectSchema.optional(),
@@ -33,19 +26,12 @@ export const AvatarAggregateSchema: z.ZodType<Prisma.AvatarAggregateArgs> = z
 
 export const AvatarAggregateZodSchema = z
 	.object({
-		orderBy: z
-			.union([
-				AvatarOrderByWithRelationInputObjectSchema,
-				AvatarOrderByWithRelationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([AvatarOrderByWithRelationInputObjectSchema, AvatarOrderByWithRelationInputObjectSchema.array()]).optional(),
 		where: AvatarWhereInputObjectSchema.optional(),
 		cursor: AvatarWhereUniqueInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
-		_count: z
-			.union([z.literal(true), AvatarCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), AvatarCountAggregateInputObjectSchema]).optional(),
 		_min: AvatarMinAggregateInputObjectSchema.optional(),
 		_max: AvatarMaxAggregateInputObjectSchema.optional(),
 		_avg: AvatarAvgAggregateInputObjectSchema.optional(),

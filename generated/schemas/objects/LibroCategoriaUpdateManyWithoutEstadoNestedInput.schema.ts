@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { LibroCategoriaCreateManyEstadoInputEnvelopeObjectSchema as LibroCategoriaCreateManyEstadoInputEnvelopeObjectSchema } from "./LibroCategoriaCreateManyEstadoInputEnvelope.schema.ts";
 import { LibroCategoriaCreateOrConnectWithoutEstadoInputObjectSchema as LibroCategoriaCreateOrConnectWithoutEstadoInputObjectSchema } from "./LibroCategoriaCreateOrConnectWithoutEstadoInput.schema.ts";
 import { LibroCategoriaCreateWithoutEstadoInputObjectSchema as LibroCategoriaCreateWithoutEstadoInputObjectSchema } from "./LibroCategoriaCreateWithoutEstadoInput.schema.ts";
@@ -16,109 +16,31 @@ const makeSchema = () =>
 			create: z
 				.union([
 					z.lazy(() => LibroCategoriaCreateWithoutEstadoInputObjectSchema),
-					z
-						.lazy(() => LibroCategoriaCreateWithoutEstadoInputObjectSchema)
-						.array(),
-					z.lazy(
-						() => LibroCategoriaUncheckedCreateWithoutEstadoInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => LibroCategoriaUncheckedCreateWithoutEstadoInputObjectSchema,
-						)
-						.array(),
+					z.lazy(() => LibroCategoriaCreateWithoutEstadoInputObjectSchema).array(),
+					z.lazy(() => LibroCategoriaUncheckedCreateWithoutEstadoInputObjectSchema),
+					z.lazy(() => LibroCategoriaUncheckedCreateWithoutEstadoInputObjectSchema).array(),
 				])
 				.optional(),
 			connectOrCreate: z
-				.union([
-					z.lazy(
-						() => LibroCategoriaCreateOrConnectWithoutEstadoInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => LibroCategoriaCreateOrConnectWithoutEstadoInputObjectSchema,
-						)
-						.array(),
-				])
+				.union([z.lazy(() => LibroCategoriaCreateOrConnectWithoutEstadoInputObjectSchema), z.lazy(() => LibroCategoriaCreateOrConnectWithoutEstadoInputObjectSchema).array()])
 				.optional(),
 			upsert: z
-				.union([
-					z.lazy(
-						() =>
-							LibroCategoriaUpsertWithWhereUniqueWithoutEstadoInputObjectSchema,
-					),
-					z
-						.lazy(
-							() =>
-								LibroCategoriaUpsertWithWhereUniqueWithoutEstadoInputObjectSchema,
-						)
-						.array(),
-				])
+				.union([z.lazy(() => LibroCategoriaUpsertWithWhereUniqueWithoutEstadoInputObjectSchema), z.lazy(() => LibroCategoriaUpsertWithWhereUniqueWithoutEstadoInputObjectSchema).array()])
 				.optional(),
-			createMany: z
-				.lazy(() => LibroCategoriaCreateManyEstadoInputEnvelopeObjectSchema)
-				.optional(),
-			set: z
-				.union([
-					z.lazy(() => LibroCategoriaWhereUniqueInputObjectSchema),
-					z.lazy(() => LibroCategoriaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			disconnect: z
-				.union([
-					z.lazy(() => LibroCategoriaWhereUniqueInputObjectSchema),
-					z.lazy(() => LibroCategoriaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			delete: z
-				.union([
-					z.lazy(() => LibroCategoriaWhereUniqueInputObjectSchema),
-					z.lazy(() => LibroCategoriaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => LibroCategoriaWhereUniqueInputObjectSchema),
-					z.lazy(() => LibroCategoriaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
+			createMany: z.lazy(() => LibroCategoriaCreateManyEstadoInputEnvelopeObjectSchema).optional(),
+			set: z.union([z.lazy(() => LibroCategoriaWhereUniqueInputObjectSchema), z.lazy(() => LibroCategoriaWhereUniqueInputObjectSchema).array()]).optional(),
+			disconnect: z.union([z.lazy(() => LibroCategoriaWhereUniqueInputObjectSchema), z.lazy(() => LibroCategoriaWhereUniqueInputObjectSchema).array()]).optional(),
+			delete: z.union([z.lazy(() => LibroCategoriaWhereUniqueInputObjectSchema), z.lazy(() => LibroCategoriaWhereUniqueInputObjectSchema).array()]).optional(),
+			connect: z.union([z.lazy(() => LibroCategoriaWhereUniqueInputObjectSchema), z.lazy(() => LibroCategoriaWhereUniqueInputObjectSchema).array()]).optional(),
 			update: z
-				.union([
-					z.lazy(
-						() =>
-							LibroCategoriaUpdateWithWhereUniqueWithoutEstadoInputObjectSchema,
-					),
-					z
-						.lazy(
-							() =>
-								LibroCategoriaUpdateWithWhereUniqueWithoutEstadoInputObjectSchema,
-						)
-						.array(),
-				])
+				.union([z.lazy(() => LibroCategoriaUpdateWithWhereUniqueWithoutEstadoInputObjectSchema), z.lazy(() => LibroCategoriaUpdateWithWhereUniqueWithoutEstadoInputObjectSchema).array()])
 				.optional(),
 			updateMany: z
-				.union([
-					z.lazy(
-						() =>
-							LibroCategoriaUpdateManyWithWhereWithoutEstadoInputObjectSchema,
-					),
-					z
-						.lazy(
-							() =>
-								LibroCategoriaUpdateManyWithWhereWithoutEstadoInputObjectSchema,
-						)
-						.array(),
-				])
+				.union([z.lazy(() => LibroCategoriaUpdateManyWithWhereWithoutEstadoInputObjectSchema), z.lazy(() => LibroCategoriaUpdateManyWithWhereWithoutEstadoInputObjectSchema).array()])
 				.optional(),
-			deleteMany: z
-				.union([
-					z.lazy(() => LibroCategoriaScalarWhereInputObjectSchema),
-					z.lazy(() => LibroCategoriaScalarWhereInputObjectSchema).array(),
-				])
-				.optional(),
+			deleteMany: z.union([z.lazy(() => LibroCategoriaScalarWhereInputObjectSchema), z.lazy(() => LibroCategoriaScalarWhereInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const LibroCategoriaUpdateManyWithoutEstadoNestedInputObjectSchema: z.ZodType<Prisma.LibroCategoriaUpdateManyWithoutEstadoNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.LibroCategoriaUpdateManyWithoutEstadoNestedInput>;
-export const LibroCategoriaUpdateManyWithoutEstadoNestedInputObjectZodSchema =
-	makeSchema();
+export const LibroCategoriaUpdateManyWithoutEstadoNestedInputObjectZodSchema = makeSchema();

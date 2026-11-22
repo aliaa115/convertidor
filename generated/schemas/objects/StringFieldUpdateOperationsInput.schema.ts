@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 
 const makeSchema = () =>
 	z
@@ -7,6 +7,5 @@ const makeSchema = () =>
 			set: z.string().optional(),
 		})
 		.strict();
-export const StringFieldUpdateOperationsInputObjectSchema: z.ZodType<Prisma.StringFieldUpdateOperationsInput> =
-	makeSchema() as unknown as z.ZodType<Prisma.StringFieldUpdateOperationsInput>;
+export const StringFieldUpdateOperationsInputObjectSchema: z.ZodType<Prisma.StringFieldUpdateOperationsInput> = makeSchema() as unknown as z.ZodType<Prisma.StringFieldUpdateOperationsInput>;
 export const StringFieldUpdateOperationsInputObjectZodSchema = makeSchema();

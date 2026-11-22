@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { EscritorWhereInputObjectSchema as EscritorWhereInputObjectSchema } from "./EscritorWhereInput.schema.ts";
 
 const makeSchema = () =>
@@ -9,6 +9,5 @@ const makeSchema = () =>
 			isNot: z.lazy(() => EscritorWhereInputObjectSchema).optional(),
 		})
 		.strict();
-export const EscritorScalarRelationFilterObjectSchema: z.ZodType<Prisma.EscritorScalarRelationFilter> =
-	makeSchema() as unknown as z.ZodType<Prisma.EscritorScalarRelationFilter>;
+export const EscritorScalarRelationFilterObjectSchema: z.ZodType<Prisma.EscritorScalarRelationFilter> = makeSchema() as unknown as z.ZodType<Prisma.EscritorScalarRelationFilter>;
 export const EscritorScalarRelationFilterObjectZodSchema = makeSchema();

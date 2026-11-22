@@ -1,4 +1,9 @@
 import * as z from "zod";
+import { ConfiguracionSchema } from "../models/Configuracion.schema.ts";
+import { EscritorSchema } from "../models/Escritor.schema.ts";
+import { EstadoSchema } from "../models/Estado.schema.ts";
+import { ListaSchema } from "../models/Lista.schema.ts";
+import { NotificacionSchema } from "../models/Notificacion.schema.ts";
 export const UsuarioFindFirstResultSchema = z.nullable(
 	z.object({
 		id: z.number().int(),
@@ -9,10 +14,10 @@ export const UsuarioFindFirstResultSchema = z.nullable(
 		createdAt: z.date(),
 		updatedAt: z.date(),
 		estadoId: z.number().int(),
-		estado: z.unknown(),
-		configuracion: z.unknown().optional(),
-		escritor: z.unknown().optional(),
-		listas: z.array(z.unknown()),
-		notificacions: z.array(z.unknown()),
+		estado: EstadoSchema.optional(),
+		configuracion: ConfiguracionSchema.optional(),
+		escritor: EscritorSchema.optional(),
+		listas: z.array(ListaSchema).optional(),
+		notificacions: z.array(NotificacionSchema).optional(),
 	}),
 );

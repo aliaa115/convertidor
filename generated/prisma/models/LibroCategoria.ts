@@ -15,8 +15,7 @@ import type * as Prisma from "../internal/prismaNamespace.ts";
  * Model LibroCategoria
  *
  */
-export type LibroCategoriaModel =
-	runtime.Types.Result.DefaultSelection<Prisma.$LibroCategoriaPayload>;
+export type LibroCategoriaModel = runtime.Types.Result.DefaultSelection<Prisma.$LibroCategoriaPayload>;
 
 export type AggregateLibroCategoria = {
 	_count: LibroCategoriaCountAggregateOutputType | null;
@@ -100,10 +99,7 @@ export type LibroCategoriaCountAggregateInputType = {
 	_all?: true;
 };
 
-export type LibroCategoriaAggregateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroCategoriaAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which LibroCategoria to aggregate.
 	 */
@@ -113,9 +109,7 @@ export type LibroCategoriaAggregateArgs<
 	 *
 	 * Determine the order of LibroCategorias to fetch.
 	 */
-	orderBy?:
-		| Prisma.LibroCategoriaOrderByWithRelationInput
-		| Prisma.LibroCategoriaOrderByWithRelationInput[];
+	orderBy?: Prisma.LibroCategoriaOrderByWithRelationInput | Prisma.LibroCategoriaOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -166,9 +160,7 @@ export type LibroCategoriaAggregateArgs<
 	_max?: LibroCategoriaMaxAggregateInputType;
 };
 
-export type GetLibroCategoriaAggregateType<
-	T extends LibroCategoriaAggregateArgs,
-> = {
+export type GetLibroCategoriaAggregateType<T extends LibroCategoriaAggregateArgs> = {
 	[P in keyof T & keyof AggregateLibroCategoria]: P extends "_count" | "count"
 		? T[P] extends true
 			? number
@@ -176,17 +168,10 @@ export type GetLibroCategoriaAggregateType<
 		: Prisma.GetScalarType<T[P], AggregateLibroCategoria[P]>;
 };
 
-export type LibroCategoriaGroupByArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroCategoriaGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.LibroCategoriaWhereInput;
-	orderBy?:
-		| Prisma.LibroCategoriaOrderByWithAggregationInput
-		| Prisma.LibroCategoriaOrderByWithAggregationInput[];
-	by:
-		| Prisma.LibroCategoriaScalarFieldEnum[]
-		| Prisma.LibroCategoriaScalarFieldEnum;
+	orderBy?: Prisma.LibroCategoriaOrderByWithAggregationInput | Prisma.LibroCategoriaOrderByWithAggregationInput[];
+	by: Prisma.LibroCategoriaScalarFieldEnum[] | Prisma.LibroCategoriaScalarFieldEnum;
 	having?: Prisma.LibroCategoriaScalarWhereWithAggregatesInput;
 	take?: number;
 	skip?: number;
@@ -210,9 +195,7 @@ export type LibroCategoriaGroupByOutputType = {
 	_max: LibroCategoriaMaxAggregateOutputType | null;
 };
 
-export type GetLibroCategoriaGroupByPayload<
-	T extends LibroCategoriaGroupByArgs,
-> = Prisma.PrismaPromise<
+export type GetLibroCategoriaGroupByPayload<T extends LibroCategoriaGroupByArgs> = Prisma.PrismaPromise<
 	Array<
 		Prisma.PickEnumerable<LibroCategoriaGroupByOutputType, T["by"]> & {
 			[P in keyof T & keyof LibroCategoriaGroupByOutputType]: P extends "_count"
@@ -233,15 +216,9 @@ export type LibroCategoriaWhereInput = {
 	createdAt?: Prisma.DateTimeFilter<"LibroCategoria"> | Date | string;
 	updatedAt?: Prisma.DateTimeFilter<"LibroCategoria"> | Date | string;
 	estadoId?: Prisma.IntFilter<"LibroCategoria"> | number;
-	estado?: Prisma.XOR<
-		Prisma.EstadoScalarRelationFilter,
-		Prisma.EstadoWhereInput
-	>;
+	estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 	libro?: Prisma.XOR<Prisma.LibroScalarRelationFilter, Prisma.LibroWhereInput>;
-	categoria?: Prisma.XOR<
-		Prisma.CategoriaScalarRelationFilter,
-		Prisma.CategoriaWhereInput
-	>;
+	categoria?: Prisma.XOR<Prisma.CategoriaScalarRelationFilter, Prisma.CategoriaWhereInput>;
 };
 
 export type LibroCategoriaOrderByWithRelationInput = {
@@ -266,18 +243,9 @@ export type LibroCategoriaWhereUniqueInput = Prisma.AtLeast<
 		createdAt?: Prisma.DateTimeFilter<"LibroCategoria"> | Date | string;
 		updatedAt?: Prisma.DateTimeFilter<"LibroCategoria"> | Date | string;
 		estadoId?: Prisma.IntFilter<"LibroCategoria"> | number;
-		estado?: Prisma.XOR<
-			Prisma.EstadoScalarRelationFilter,
-			Prisma.EstadoWhereInput
-		>;
-		libro?: Prisma.XOR<
-			Prisma.LibroScalarRelationFilter,
-			Prisma.LibroWhereInput
-		>;
-		categoria?: Prisma.XOR<
-			Prisma.CategoriaScalarRelationFilter,
-			Prisma.CategoriaWhereInput
-		>;
+		estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
+		libro?: Prisma.XOR<Prisma.LibroScalarRelationFilter, Prisma.LibroWhereInput>;
+		categoria?: Prisma.XOR<Prisma.CategoriaScalarRelationFilter, Prisma.CategoriaWhereInput>;
 	},
 	"libroId_categoriaId"
 >;
@@ -296,23 +264,13 @@ export type LibroCategoriaOrderByWithAggregationInput = {
 };
 
 export type LibroCategoriaScalarWhereWithAggregatesInput = {
-	AND?:
-		| Prisma.LibroCategoriaScalarWhereWithAggregatesInput
-		| Prisma.LibroCategoriaScalarWhereWithAggregatesInput[];
+	AND?: Prisma.LibroCategoriaScalarWhereWithAggregatesInput | Prisma.LibroCategoriaScalarWhereWithAggregatesInput[];
 	OR?: Prisma.LibroCategoriaScalarWhereWithAggregatesInput[];
-	NOT?:
-		| Prisma.LibroCategoriaScalarWhereWithAggregatesInput
-		| Prisma.LibroCategoriaScalarWhereWithAggregatesInput[];
+	NOT?: Prisma.LibroCategoriaScalarWhereWithAggregatesInput | Prisma.LibroCategoriaScalarWhereWithAggregatesInput[];
 	libroId?: Prisma.IntWithAggregatesFilter<"LibroCategoria"> | number;
 	categoriaId?: Prisma.IntWithAggregatesFilter<"LibroCategoria"> | number;
-	createdAt?:
-		| Prisma.DateTimeWithAggregatesFilter<"LibroCategoria">
-		| Date
-		| string;
-	updatedAt?:
-		| Prisma.DateTimeWithAggregatesFilter<"LibroCategoria">
-		| Date
-		| string;
+	createdAt?: Prisma.DateTimeWithAggregatesFilter<"LibroCategoria"> | Date | string;
+	updatedAt?: Prisma.DateTimeWithAggregatesFilter<"LibroCategoria"> | Date | string;
 	estadoId?: Prisma.IntWithAggregatesFilter<"LibroCategoria"> | number;
 };
 
@@ -422,332 +380,164 @@ export type LibroCategoriaSumOrderByAggregateInput = {
 
 export type LibroCategoriaCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroCategoriaCreateWithoutEstadoInput,
-				Prisma.LibroCategoriaUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.LibroCategoriaCreateWithoutEstadoInput, Prisma.LibroCategoriaUncheckedCreateWithoutEstadoInput>
 		| Prisma.LibroCategoriaCreateWithoutEstadoInput[]
 		| Prisma.LibroCategoriaUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.LibroCategoriaCreateOrConnectWithoutEstadoInput
-		| Prisma.LibroCategoriaCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.LibroCategoriaCreateOrConnectWithoutEstadoInput | Prisma.LibroCategoriaCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.LibroCategoriaCreateManyEstadoInputEnvelope;
-	connect?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
+	connect?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
 };
 
 export type LibroCategoriaUncheckedCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroCategoriaCreateWithoutEstadoInput,
-				Prisma.LibroCategoriaUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.LibroCategoriaCreateWithoutEstadoInput, Prisma.LibroCategoriaUncheckedCreateWithoutEstadoInput>
 		| Prisma.LibroCategoriaCreateWithoutEstadoInput[]
 		| Prisma.LibroCategoriaUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.LibroCategoriaCreateOrConnectWithoutEstadoInput
-		| Prisma.LibroCategoriaCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.LibroCategoriaCreateOrConnectWithoutEstadoInput | Prisma.LibroCategoriaCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.LibroCategoriaCreateManyEstadoInputEnvelope;
-	connect?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
+	connect?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
 };
 
 export type LibroCategoriaUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroCategoriaCreateWithoutEstadoInput,
-				Prisma.LibroCategoriaUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.LibroCategoriaCreateWithoutEstadoInput, Prisma.LibroCategoriaUncheckedCreateWithoutEstadoInput>
 		| Prisma.LibroCategoriaCreateWithoutEstadoInput[]
 		| Prisma.LibroCategoriaUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.LibroCategoriaCreateOrConnectWithoutEstadoInput
-		| Prisma.LibroCategoriaCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.LibroCategoriaCreateOrConnectWithoutEstadoInput | Prisma.LibroCategoriaCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutEstadoInput | Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.LibroCategoriaCreateManyEstadoInputEnvelope;
-	set?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	disconnect?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	delete?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	connect?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	update?:
-		| Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.LibroCategoriaUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.LibroCategoriaUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.LibroCategoriaScalarWhereInput
-		| Prisma.LibroCategoriaScalarWhereInput[];
+	set?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	disconnect?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	delete?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	connect?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	update?: Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutEstadoInput | Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.LibroCategoriaUpdateManyWithWhereWithoutEstadoInput | Prisma.LibroCategoriaUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.LibroCategoriaScalarWhereInput | Prisma.LibroCategoriaScalarWhereInput[];
 };
 
 export type LibroCategoriaUncheckedUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroCategoriaCreateWithoutEstadoInput,
-				Prisma.LibroCategoriaUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.LibroCategoriaCreateWithoutEstadoInput, Prisma.LibroCategoriaUncheckedCreateWithoutEstadoInput>
 		| Prisma.LibroCategoriaCreateWithoutEstadoInput[]
 		| Prisma.LibroCategoriaUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.LibroCategoriaCreateOrConnectWithoutEstadoInput
-		| Prisma.LibroCategoriaCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.LibroCategoriaCreateOrConnectWithoutEstadoInput | Prisma.LibroCategoriaCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutEstadoInput | Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.LibroCategoriaCreateManyEstadoInputEnvelope;
-	set?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	disconnect?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	delete?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	connect?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	update?:
-		| Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.LibroCategoriaUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.LibroCategoriaUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.LibroCategoriaScalarWhereInput
-		| Prisma.LibroCategoriaScalarWhereInput[];
+	set?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	disconnect?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	delete?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	connect?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	update?: Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutEstadoInput | Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.LibroCategoriaUpdateManyWithWhereWithoutEstadoInput | Prisma.LibroCategoriaUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.LibroCategoriaScalarWhereInput | Prisma.LibroCategoriaScalarWhereInput[];
 };
 
 export type LibroCategoriaCreateNestedManyWithoutCategoriaInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroCategoriaCreateWithoutCategoriaInput,
-				Prisma.LibroCategoriaUncheckedCreateWithoutCategoriaInput
-		  >
+		| Prisma.XOR<Prisma.LibroCategoriaCreateWithoutCategoriaInput, Prisma.LibroCategoriaUncheckedCreateWithoutCategoriaInput>
 		| Prisma.LibroCategoriaCreateWithoutCategoriaInput[]
 		| Prisma.LibroCategoriaUncheckedCreateWithoutCategoriaInput[];
-	connectOrCreate?:
-		| Prisma.LibroCategoriaCreateOrConnectWithoutCategoriaInput
-		| Prisma.LibroCategoriaCreateOrConnectWithoutCategoriaInput[];
+	connectOrCreate?: Prisma.LibroCategoriaCreateOrConnectWithoutCategoriaInput | Prisma.LibroCategoriaCreateOrConnectWithoutCategoriaInput[];
 	createMany?: Prisma.LibroCategoriaCreateManyCategoriaInputEnvelope;
-	connect?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
+	connect?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
 };
 
 export type LibroCategoriaUncheckedCreateNestedManyWithoutCategoriaInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroCategoriaCreateWithoutCategoriaInput,
-				Prisma.LibroCategoriaUncheckedCreateWithoutCategoriaInput
-		  >
+		| Prisma.XOR<Prisma.LibroCategoriaCreateWithoutCategoriaInput, Prisma.LibroCategoriaUncheckedCreateWithoutCategoriaInput>
 		| Prisma.LibroCategoriaCreateWithoutCategoriaInput[]
 		| Prisma.LibroCategoriaUncheckedCreateWithoutCategoriaInput[];
-	connectOrCreate?:
-		| Prisma.LibroCategoriaCreateOrConnectWithoutCategoriaInput
-		| Prisma.LibroCategoriaCreateOrConnectWithoutCategoriaInput[];
+	connectOrCreate?: Prisma.LibroCategoriaCreateOrConnectWithoutCategoriaInput | Prisma.LibroCategoriaCreateOrConnectWithoutCategoriaInput[];
 	createMany?: Prisma.LibroCategoriaCreateManyCategoriaInputEnvelope;
-	connect?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
+	connect?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
 };
 
 export type LibroCategoriaUpdateManyWithoutCategoriaNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroCategoriaCreateWithoutCategoriaInput,
-				Prisma.LibroCategoriaUncheckedCreateWithoutCategoriaInput
-		  >
+		| Prisma.XOR<Prisma.LibroCategoriaCreateWithoutCategoriaInput, Prisma.LibroCategoriaUncheckedCreateWithoutCategoriaInput>
 		| Prisma.LibroCategoriaCreateWithoutCategoriaInput[]
 		| Prisma.LibroCategoriaUncheckedCreateWithoutCategoriaInput[];
-	connectOrCreate?:
-		| Prisma.LibroCategoriaCreateOrConnectWithoutCategoriaInput
-		| Prisma.LibroCategoriaCreateOrConnectWithoutCategoriaInput[];
-	upsert?:
-		| Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutCategoriaInput
-		| Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutCategoriaInput[];
+	connectOrCreate?: Prisma.LibroCategoriaCreateOrConnectWithoutCategoriaInput | Prisma.LibroCategoriaCreateOrConnectWithoutCategoriaInput[];
+	upsert?: Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutCategoriaInput | Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutCategoriaInput[];
 	createMany?: Prisma.LibroCategoriaCreateManyCategoriaInputEnvelope;
-	set?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	disconnect?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	delete?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	connect?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	update?:
-		| Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutCategoriaInput
-		| Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutCategoriaInput[];
-	updateMany?:
-		| Prisma.LibroCategoriaUpdateManyWithWhereWithoutCategoriaInput
-		| Prisma.LibroCategoriaUpdateManyWithWhereWithoutCategoriaInput[];
-	deleteMany?:
-		| Prisma.LibroCategoriaScalarWhereInput
-		| Prisma.LibroCategoriaScalarWhereInput[];
+	set?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	disconnect?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	delete?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	connect?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	update?: Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutCategoriaInput | Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutCategoriaInput[];
+	updateMany?: Prisma.LibroCategoriaUpdateManyWithWhereWithoutCategoriaInput | Prisma.LibroCategoriaUpdateManyWithWhereWithoutCategoriaInput[];
+	deleteMany?: Prisma.LibroCategoriaScalarWhereInput | Prisma.LibroCategoriaScalarWhereInput[];
 };
 
 export type LibroCategoriaUncheckedUpdateManyWithoutCategoriaNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroCategoriaCreateWithoutCategoriaInput,
-				Prisma.LibroCategoriaUncheckedCreateWithoutCategoriaInput
-		  >
+		| Prisma.XOR<Prisma.LibroCategoriaCreateWithoutCategoriaInput, Prisma.LibroCategoriaUncheckedCreateWithoutCategoriaInput>
 		| Prisma.LibroCategoriaCreateWithoutCategoriaInput[]
 		| Prisma.LibroCategoriaUncheckedCreateWithoutCategoriaInput[];
-	connectOrCreate?:
-		| Prisma.LibroCategoriaCreateOrConnectWithoutCategoriaInput
-		| Prisma.LibroCategoriaCreateOrConnectWithoutCategoriaInput[];
-	upsert?:
-		| Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutCategoriaInput
-		| Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutCategoriaInput[];
+	connectOrCreate?: Prisma.LibroCategoriaCreateOrConnectWithoutCategoriaInput | Prisma.LibroCategoriaCreateOrConnectWithoutCategoriaInput[];
+	upsert?: Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutCategoriaInput | Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutCategoriaInput[];
 	createMany?: Prisma.LibroCategoriaCreateManyCategoriaInputEnvelope;
-	set?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	disconnect?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	delete?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	connect?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	update?:
-		| Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutCategoriaInput
-		| Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutCategoriaInput[];
-	updateMany?:
-		| Prisma.LibroCategoriaUpdateManyWithWhereWithoutCategoriaInput
-		| Prisma.LibroCategoriaUpdateManyWithWhereWithoutCategoriaInput[];
-	deleteMany?:
-		| Prisma.LibroCategoriaScalarWhereInput
-		| Prisma.LibroCategoriaScalarWhereInput[];
+	set?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	disconnect?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	delete?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	connect?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	update?: Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutCategoriaInput | Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutCategoriaInput[];
+	updateMany?: Prisma.LibroCategoriaUpdateManyWithWhereWithoutCategoriaInput | Prisma.LibroCategoriaUpdateManyWithWhereWithoutCategoriaInput[];
+	deleteMany?: Prisma.LibroCategoriaScalarWhereInput | Prisma.LibroCategoriaScalarWhereInput[];
 };
 
 export type LibroCategoriaCreateNestedManyWithoutLibroInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroCategoriaCreateWithoutLibroInput,
-				Prisma.LibroCategoriaUncheckedCreateWithoutLibroInput
-		  >
+		| Prisma.XOR<Prisma.LibroCategoriaCreateWithoutLibroInput, Prisma.LibroCategoriaUncheckedCreateWithoutLibroInput>
 		| Prisma.LibroCategoriaCreateWithoutLibroInput[]
 		| Prisma.LibroCategoriaUncheckedCreateWithoutLibroInput[];
-	connectOrCreate?:
-		| Prisma.LibroCategoriaCreateOrConnectWithoutLibroInput
-		| Prisma.LibroCategoriaCreateOrConnectWithoutLibroInput[];
+	connectOrCreate?: Prisma.LibroCategoriaCreateOrConnectWithoutLibroInput | Prisma.LibroCategoriaCreateOrConnectWithoutLibroInput[];
 	createMany?: Prisma.LibroCategoriaCreateManyLibroInputEnvelope;
-	connect?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
+	connect?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
 };
 
 export type LibroCategoriaUncheckedCreateNestedManyWithoutLibroInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroCategoriaCreateWithoutLibroInput,
-				Prisma.LibroCategoriaUncheckedCreateWithoutLibroInput
-		  >
+		| Prisma.XOR<Prisma.LibroCategoriaCreateWithoutLibroInput, Prisma.LibroCategoriaUncheckedCreateWithoutLibroInput>
 		| Prisma.LibroCategoriaCreateWithoutLibroInput[]
 		| Prisma.LibroCategoriaUncheckedCreateWithoutLibroInput[];
-	connectOrCreate?:
-		| Prisma.LibroCategoriaCreateOrConnectWithoutLibroInput
-		| Prisma.LibroCategoriaCreateOrConnectWithoutLibroInput[];
+	connectOrCreate?: Prisma.LibroCategoriaCreateOrConnectWithoutLibroInput | Prisma.LibroCategoriaCreateOrConnectWithoutLibroInput[];
 	createMany?: Prisma.LibroCategoriaCreateManyLibroInputEnvelope;
-	connect?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
+	connect?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
 };
 
 export type LibroCategoriaUpdateManyWithoutLibroNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroCategoriaCreateWithoutLibroInput,
-				Prisma.LibroCategoriaUncheckedCreateWithoutLibroInput
-		  >
+		| Prisma.XOR<Prisma.LibroCategoriaCreateWithoutLibroInput, Prisma.LibroCategoriaUncheckedCreateWithoutLibroInput>
 		| Prisma.LibroCategoriaCreateWithoutLibroInput[]
 		| Prisma.LibroCategoriaUncheckedCreateWithoutLibroInput[];
-	connectOrCreate?:
-		| Prisma.LibroCategoriaCreateOrConnectWithoutLibroInput
-		| Prisma.LibroCategoriaCreateOrConnectWithoutLibroInput[];
-	upsert?:
-		| Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutLibroInput
-		| Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutLibroInput[];
+	connectOrCreate?: Prisma.LibroCategoriaCreateOrConnectWithoutLibroInput | Prisma.LibroCategoriaCreateOrConnectWithoutLibroInput[];
+	upsert?: Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutLibroInput | Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutLibroInput[];
 	createMany?: Prisma.LibroCategoriaCreateManyLibroInputEnvelope;
-	set?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	disconnect?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	delete?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	connect?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	update?:
-		| Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutLibroInput
-		| Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutLibroInput[];
-	updateMany?:
-		| Prisma.LibroCategoriaUpdateManyWithWhereWithoutLibroInput
-		| Prisma.LibroCategoriaUpdateManyWithWhereWithoutLibroInput[];
-	deleteMany?:
-		| Prisma.LibroCategoriaScalarWhereInput
-		| Prisma.LibroCategoriaScalarWhereInput[];
+	set?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	disconnect?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	delete?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	connect?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	update?: Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutLibroInput | Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutLibroInput[];
+	updateMany?: Prisma.LibroCategoriaUpdateManyWithWhereWithoutLibroInput | Prisma.LibroCategoriaUpdateManyWithWhereWithoutLibroInput[];
+	deleteMany?: Prisma.LibroCategoriaScalarWhereInput | Prisma.LibroCategoriaScalarWhereInput[];
 };
 
 export type LibroCategoriaUncheckedUpdateManyWithoutLibroNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.LibroCategoriaCreateWithoutLibroInput,
-				Prisma.LibroCategoriaUncheckedCreateWithoutLibroInput
-		  >
+		| Prisma.XOR<Prisma.LibroCategoriaCreateWithoutLibroInput, Prisma.LibroCategoriaUncheckedCreateWithoutLibroInput>
 		| Prisma.LibroCategoriaCreateWithoutLibroInput[]
 		| Prisma.LibroCategoriaUncheckedCreateWithoutLibroInput[];
-	connectOrCreate?:
-		| Prisma.LibroCategoriaCreateOrConnectWithoutLibroInput
-		| Prisma.LibroCategoriaCreateOrConnectWithoutLibroInput[];
-	upsert?:
-		| Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutLibroInput
-		| Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutLibroInput[];
+	connectOrCreate?: Prisma.LibroCategoriaCreateOrConnectWithoutLibroInput | Prisma.LibroCategoriaCreateOrConnectWithoutLibroInput[];
+	upsert?: Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutLibroInput | Prisma.LibroCategoriaUpsertWithWhereUniqueWithoutLibroInput[];
 	createMany?: Prisma.LibroCategoriaCreateManyLibroInputEnvelope;
-	set?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	disconnect?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	delete?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	connect?:
-		| Prisma.LibroCategoriaWhereUniqueInput
-		| Prisma.LibroCategoriaWhereUniqueInput[];
-	update?:
-		| Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutLibroInput
-		| Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutLibroInput[];
-	updateMany?:
-		| Prisma.LibroCategoriaUpdateManyWithWhereWithoutLibroInput
-		| Prisma.LibroCategoriaUpdateManyWithWhereWithoutLibroInput[];
-	deleteMany?:
-		| Prisma.LibroCategoriaScalarWhereInput
-		| Prisma.LibroCategoriaScalarWhereInput[];
+	set?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	disconnect?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	delete?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	connect?: Prisma.LibroCategoriaWhereUniqueInput | Prisma.LibroCategoriaWhereUniqueInput[];
+	update?: Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutLibroInput | Prisma.LibroCategoriaUpdateWithWhereUniqueWithoutLibroInput[];
+	updateMany?: Prisma.LibroCategoriaUpdateManyWithWhereWithoutLibroInput | Prisma.LibroCategoriaUpdateManyWithWhereWithoutLibroInput[];
+	deleteMany?: Prisma.LibroCategoriaScalarWhereInput | Prisma.LibroCategoriaScalarWhereInput[];
 };
 
 export type LibroCategoriaCreateWithoutEstadoInput = {
@@ -766,55 +556,34 @@ export type LibroCategoriaUncheckedCreateWithoutEstadoInput = {
 
 export type LibroCategoriaCreateOrConnectWithoutEstadoInput = {
 	where: Prisma.LibroCategoriaWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.LibroCategoriaCreateWithoutEstadoInput,
-		Prisma.LibroCategoriaUncheckedCreateWithoutEstadoInput
-	>;
+	create: Prisma.XOR<Prisma.LibroCategoriaCreateWithoutEstadoInput, Prisma.LibroCategoriaUncheckedCreateWithoutEstadoInput>;
 };
 
 export type LibroCategoriaCreateManyEstadoInputEnvelope = {
-	data:
-		| Prisma.LibroCategoriaCreateManyEstadoInput
-		| Prisma.LibroCategoriaCreateManyEstadoInput[];
+	data: Prisma.LibroCategoriaCreateManyEstadoInput | Prisma.LibroCategoriaCreateManyEstadoInput[];
 	skipDuplicates?: boolean;
 };
 
 export type LibroCategoriaUpsertWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.LibroCategoriaWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.LibroCategoriaUpdateWithoutEstadoInput,
-		Prisma.LibroCategoriaUncheckedUpdateWithoutEstadoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.LibroCategoriaCreateWithoutEstadoInput,
-		Prisma.LibroCategoriaUncheckedCreateWithoutEstadoInput
-	>;
+	update: Prisma.XOR<Prisma.LibroCategoriaUpdateWithoutEstadoInput, Prisma.LibroCategoriaUncheckedUpdateWithoutEstadoInput>;
+	create: Prisma.XOR<Prisma.LibroCategoriaCreateWithoutEstadoInput, Prisma.LibroCategoriaUncheckedCreateWithoutEstadoInput>;
 };
 
 export type LibroCategoriaUpdateWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.LibroCategoriaWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.LibroCategoriaUpdateWithoutEstadoInput,
-		Prisma.LibroCategoriaUncheckedUpdateWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.LibroCategoriaUpdateWithoutEstadoInput, Prisma.LibroCategoriaUncheckedUpdateWithoutEstadoInput>;
 };
 
 export type LibroCategoriaUpdateManyWithWhereWithoutEstadoInput = {
 	where: Prisma.LibroCategoriaScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.LibroCategoriaUpdateManyMutationInput,
-		Prisma.LibroCategoriaUncheckedUpdateManyWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.LibroCategoriaUpdateManyMutationInput, Prisma.LibroCategoriaUncheckedUpdateManyWithoutEstadoInput>;
 };
 
 export type LibroCategoriaScalarWhereInput = {
-	AND?:
-		| Prisma.LibroCategoriaScalarWhereInput
-		| Prisma.LibroCategoriaScalarWhereInput[];
+	AND?: Prisma.LibroCategoriaScalarWhereInput | Prisma.LibroCategoriaScalarWhereInput[];
 	OR?: Prisma.LibroCategoriaScalarWhereInput[];
-	NOT?:
-		| Prisma.LibroCategoriaScalarWhereInput
-		| Prisma.LibroCategoriaScalarWhereInput[];
+	NOT?: Prisma.LibroCategoriaScalarWhereInput | Prisma.LibroCategoriaScalarWhereInput[];
 	libroId?: Prisma.IntFilter<"LibroCategoria"> | number;
 	categoriaId?: Prisma.IntFilter<"LibroCategoria"> | number;
 	createdAt?: Prisma.DateTimeFilter<"LibroCategoria"> | Date | string;
@@ -838,45 +607,28 @@ export type LibroCategoriaUncheckedCreateWithoutCategoriaInput = {
 
 export type LibroCategoriaCreateOrConnectWithoutCategoriaInput = {
 	where: Prisma.LibroCategoriaWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.LibroCategoriaCreateWithoutCategoriaInput,
-		Prisma.LibroCategoriaUncheckedCreateWithoutCategoriaInput
-	>;
+	create: Prisma.XOR<Prisma.LibroCategoriaCreateWithoutCategoriaInput, Prisma.LibroCategoriaUncheckedCreateWithoutCategoriaInput>;
 };
 
 export type LibroCategoriaCreateManyCategoriaInputEnvelope = {
-	data:
-		| Prisma.LibroCategoriaCreateManyCategoriaInput
-		| Prisma.LibroCategoriaCreateManyCategoriaInput[];
+	data: Prisma.LibroCategoriaCreateManyCategoriaInput | Prisma.LibroCategoriaCreateManyCategoriaInput[];
 	skipDuplicates?: boolean;
 };
 
 export type LibroCategoriaUpsertWithWhereUniqueWithoutCategoriaInput = {
 	where: Prisma.LibroCategoriaWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.LibroCategoriaUpdateWithoutCategoriaInput,
-		Prisma.LibroCategoriaUncheckedUpdateWithoutCategoriaInput
-	>;
-	create: Prisma.XOR<
-		Prisma.LibroCategoriaCreateWithoutCategoriaInput,
-		Prisma.LibroCategoriaUncheckedCreateWithoutCategoriaInput
-	>;
+	update: Prisma.XOR<Prisma.LibroCategoriaUpdateWithoutCategoriaInput, Prisma.LibroCategoriaUncheckedUpdateWithoutCategoriaInput>;
+	create: Prisma.XOR<Prisma.LibroCategoriaCreateWithoutCategoriaInput, Prisma.LibroCategoriaUncheckedCreateWithoutCategoriaInput>;
 };
 
 export type LibroCategoriaUpdateWithWhereUniqueWithoutCategoriaInput = {
 	where: Prisma.LibroCategoriaWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.LibroCategoriaUpdateWithoutCategoriaInput,
-		Prisma.LibroCategoriaUncheckedUpdateWithoutCategoriaInput
-	>;
+	data: Prisma.XOR<Prisma.LibroCategoriaUpdateWithoutCategoriaInput, Prisma.LibroCategoriaUncheckedUpdateWithoutCategoriaInput>;
 };
 
 export type LibroCategoriaUpdateManyWithWhereWithoutCategoriaInput = {
 	where: Prisma.LibroCategoriaScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.LibroCategoriaUpdateManyMutationInput,
-		Prisma.LibroCategoriaUncheckedUpdateManyWithoutCategoriaInput
-	>;
+	data: Prisma.XOR<Prisma.LibroCategoriaUpdateManyMutationInput, Prisma.LibroCategoriaUncheckedUpdateManyWithoutCategoriaInput>;
 };
 
 export type LibroCategoriaCreateWithoutLibroInput = {
@@ -895,45 +647,28 @@ export type LibroCategoriaUncheckedCreateWithoutLibroInput = {
 
 export type LibroCategoriaCreateOrConnectWithoutLibroInput = {
 	where: Prisma.LibroCategoriaWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.LibroCategoriaCreateWithoutLibroInput,
-		Prisma.LibroCategoriaUncheckedCreateWithoutLibroInput
-	>;
+	create: Prisma.XOR<Prisma.LibroCategoriaCreateWithoutLibroInput, Prisma.LibroCategoriaUncheckedCreateWithoutLibroInput>;
 };
 
 export type LibroCategoriaCreateManyLibroInputEnvelope = {
-	data:
-		| Prisma.LibroCategoriaCreateManyLibroInput
-		| Prisma.LibroCategoriaCreateManyLibroInput[];
+	data: Prisma.LibroCategoriaCreateManyLibroInput | Prisma.LibroCategoriaCreateManyLibroInput[];
 	skipDuplicates?: boolean;
 };
 
 export type LibroCategoriaUpsertWithWhereUniqueWithoutLibroInput = {
 	where: Prisma.LibroCategoriaWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.LibroCategoriaUpdateWithoutLibroInput,
-		Prisma.LibroCategoriaUncheckedUpdateWithoutLibroInput
-	>;
-	create: Prisma.XOR<
-		Prisma.LibroCategoriaCreateWithoutLibroInput,
-		Prisma.LibroCategoriaUncheckedCreateWithoutLibroInput
-	>;
+	update: Prisma.XOR<Prisma.LibroCategoriaUpdateWithoutLibroInput, Prisma.LibroCategoriaUncheckedUpdateWithoutLibroInput>;
+	create: Prisma.XOR<Prisma.LibroCategoriaCreateWithoutLibroInput, Prisma.LibroCategoriaUncheckedCreateWithoutLibroInput>;
 };
 
 export type LibroCategoriaUpdateWithWhereUniqueWithoutLibroInput = {
 	where: Prisma.LibroCategoriaWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.LibroCategoriaUpdateWithoutLibroInput,
-		Prisma.LibroCategoriaUncheckedUpdateWithoutLibroInput
-	>;
+	data: Prisma.XOR<Prisma.LibroCategoriaUpdateWithoutLibroInput, Prisma.LibroCategoriaUncheckedUpdateWithoutLibroInput>;
 };
 
 export type LibroCategoriaUpdateManyWithWhereWithoutLibroInput = {
 	where: Prisma.LibroCategoriaScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.LibroCategoriaUpdateManyMutationInput,
-		Prisma.LibroCategoriaUncheckedUpdateManyWithoutLibroInput
-	>;
+	data: Prisma.XOR<Prisma.LibroCategoriaUpdateManyMutationInput, Prisma.LibroCategoriaUncheckedUpdateManyWithoutLibroInput>;
 };
 
 export type LibroCategoriaCreateManyEstadoInput = {
@@ -1020,10 +755,7 @@ export type LibroCategoriaUncheckedUpdateManyWithoutLibroInput = {
 	estadoId?: Prisma.IntFieldUpdateOperationsInput | number;
 };
 
-export type LibroCategoriaSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type LibroCategoriaSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		libroId?: boolean;
 		categoriaId?: boolean;
@@ -1037,10 +769,7 @@ export type LibroCategoriaSelect<
 	ExtArgs["result"]["libroCategoria"]
 >;
 
-export type LibroCategoriaSelectCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type LibroCategoriaSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		libroId?: boolean;
 		categoriaId?: boolean;
@@ -1054,10 +783,7 @@ export type LibroCategoriaSelectCreateManyAndReturn<
 	ExtArgs["result"]["libroCategoria"]
 >;
 
-export type LibroCategoriaSelectUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type LibroCategoriaSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		libroId?: boolean;
 		categoriaId?: boolean;
@@ -1079,42 +805,27 @@ export type LibroCategoriaSelectScalar = {
 	estadoId?: boolean;
 };
 
-export type LibroCategoriaOmit<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetOmit<
+export type LibroCategoriaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<
 	"libroId" | "categoriaId" | "createdAt" | "updatedAt" | "estadoId",
 	ExtArgs["result"]["libroCategoria"]
 >;
-export type LibroCategoriaInclude<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroCategoriaInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 	libro?: boolean | Prisma.LibroDefaultArgs<ExtArgs>;
 	categoria?: boolean | Prisma.CategoriaDefaultArgs<ExtArgs>;
 };
-export type LibroCategoriaIncludeCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroCategoriaIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 	libro?: boolean | Prisma.LibroDefaultArgs<ExtArgs>;
 	categoria?: boolean | Prisma.CategoriaDefaultArgs<ExtArgs>;
 };
-export type LibroCategoriaIncludeUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroCategoriaIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 	libro?: boolean | Prisma.LibroDefaultArgs<ExtArgs>;
 	categoria?: boolean | Prisma.CategoriaDefaultArgs<ExtArgs>;
 };
 
-export type $LibroCategoriaPayload<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type $LibroCategoriaPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	name: "LibroCategoria";
 	objects: {
 		estado: Prisma.$EstadoPayload<ExtArgs>;
@@ -1134,29 +845,17 @@ export type $LibroCategoriaPayload<
 	composites: {};
 };
 
-export type LibroCategoriaGetPayload<
-	S extends boolean | null | undefined | LibroCategoriaDefaultArgs,
-> = runtime.Types.Result.GetResult<Prisma.$LibroCategoriaPayload, S>;
+export type LibroCategoriaGetPayload<S extends boolean | null | undefined | LibroCategoriaDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$LibroCategoriaPayload, S>;
 
-export type LibroCategoriaCountArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = Omit<
+export type LibroCategoriaCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<
 	LibroCategoriaFindManyArgs,
 	"select" | "include" | "distinct" | "omit"
 > & {
 	select?: LibroCategoriaCountAggregateInputType | true;
 };
 
-export interface LibroCategoriaDelegate<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> {
-	[K: symbol]: {
-		types: Prisma.TypeMap<ExtArgs>["model"]["LibroCategoria"];
-		meta: { name: "LibroCategoria" };
-	};
+export interface LibroCategoriaDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+	[K: symbol]: { types: Prisma.TypeMap<ExtArgs>["model"]["LibroCategoria"]; meta: { name: "LibroCategoria" } };
 	/**
 	 * Find zero or one LibroCategoria that matches the filter.
 	 * @param {LibroCategoriaFindUniqueArgs} args - Arguments to find a LibroCategoria
@@ -1170,17 +869,7 @@ export interface LibroCategoriaDelegate<
 	 */
 	findUnique<T extends LibroCategoriaFindUniqueArgs>(
 		args: Prisma.SelectSubset<T, LibroCategoriaFindUniqueArgs<ExtArgs>>,
-	): Prisma.Prisma__LibroCategoriaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroCategoriaPayload<ExtArgs>,
-			T,
-			"findUnique",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__LibroCategoriaClient<runtime.Types.Result.GetResult<Prisma.$LibroCategoriaPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find one LibroCategoria that matches the filter or throw an error with `error.code='P2025'`
@@ -1196,17 +885,7 @@ export interface LibroCategoriaDelegate<
 	 */
 	findUniqueOrThrow<T extends LibroCategoriaFindUniqueOrThrowArgs>(
 		args: Prisma.SelectSubset<T, LibroCategoriaFindUniqueOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__LibroCategoriaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroCategoriaPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__LibroCategoriaClient<runtime.Types.Result.GetResult<Prisma.$LibroCategoriaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first LibroCategoria that matches the filter.
@@ -1223,17 +902,7 @@ export interface LibroCategoriaDelegate<
 	 */
 	findFirst<T extends LibroCategoriaFindFirstArgs>(
 		args?: Prisma.SelectSubset<T, LibroCategoriaFindFirstArgs<ExtArgs>>,
-	): Prisma.Prisma__LibroCategoriaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroCategoriaPayload<ExtArgs>,
-			T,
-			"findFirst",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__LibroCategoriaClient<runtime.Types.Result.GetResult<Prisma.$LibroCategoriaPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first LibroCategoria that matches the filter or
@@ -1251,17 +920,7 @@ export interface LibroCategoriaDelegate<
 	 */
 	findFirstOrThrow<T extends LibroCategoriaFindFirstOrThrowArgs>(
 		args?: Prisma.SelectSubset<T, LibroCategoriaFindFirstOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__LibroCategoriaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroCategoriaPayload<ExtArgs>,
-			T,
-			"findFirstOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__LibroCategoriaClient<runtime.Types.Result.GetResult<Prisma.$LibroCategoriaPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find zero or more LibroCategorias that matches the filter.
@@ -1281,14 +940,7 @@ export interface LibroCategoriaDelegate<
 	 */
 	findMany<T extends LibroCategoriaFindManyArgs>(
 		args?: Prisma.SelectSubset<T, LibroCategoriaFindManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroCategoriaPayload<ExtArgs>,
-			T,
-			"findMany",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LibroCategoriaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
 
 	/**
 	 * Create a LibroCategoria.
@@ -1304,17 +956,7 @@ export interface LibroCategoriaDelegate<
 	 */
 	create<T extends LibroCategoriaCreateArgs>(
 		args: Prisma.SelectSubset<T, LibroCategoriaCreateArgs<ExtArgs>>,
-	): Prisma.Prisma__LibroCategoriaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroCategoriaPayload<ExtArgs>,
-			T,
-			"create",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__LibroCategoriaClient<runtime.Types.Result.GetResult<Prisma.$LibroCategoriaPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Create many LibroCategorias.
@@ -1328,9 +970,7 @@ export interface LibroCategoriaDelegate<
 	 * })
 	 *
 	 */
-	createMany<T extends LibroCategoriaCreateManyArgs>(
-		args?: Prisma.SelectSubset<T, LibroCategoriaCreateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	createMany<T extends LibroCategoriaCreateManyArgs>(args?: Prisma.SelectSubset<T, LibroCategoriaCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Create many LibroCategorias and returns the data saved in the database.
@@ -1355,18 +995,8 @@ export interface LibroCategoriaDelegate<
 	 *
 	 */
 	createManyAndReturn<T extends LibroCategoriaCreateManyAndReturnArgs>(
-		args?: Prisma.SelectSubset<
-			T,
-			LibroCategoriaCreateManyAndReturnArgs<ExtArgs>
-		>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroCategoriaPayload<ExtArgs>,
-			T,
-			"createManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+		args?: Prisma.SelectSubset<T, LibroCategoriaCreateManyAndReturnArgs<ExtArgs>>,
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LibroCategoriaPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Delete a LibroCategoria.
@@ -1382,17 +1012,7 @@ export interface LibroCategoriaDelegate<
 	 */
 	delete<T extends LibroCategoriaDeleteArgs>(
 		args: Prisma.SelectSubset<T, LibroCategoriaDeleteArgs<ExtArgs>>,
-	): Prisma.Prisma__LibroCategoriaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroCategoriaPayload<ExtArgs>,
-			T,
-			"delete",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__LibroCategoriaClient<runtime.Types.Result.GetResult<Prisma.$LibroCategoriaPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Update one LibroCategoria.
@@ -1411,17 +1031,7 @@ export interface LibroCategoriaDelegate<
 	 */
 	update<T extends LibroCategoriaUpdateArgs>(
 		args: Prisma.SelectSubset<T, LibroCategoriaUpdateArgs<ExtArgs>>,
-	): Prisma.Prisma__LibroCategoriaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroCategoriaPayload<ExtArgs>,
-			T,
-			"update",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__LibroCategoriaClient<runtime.Types.Result.GetResult<Prisma.$LibroCategoriaPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Delete zero or more LibroCategorias.
@@ -1435,9 +1045,7 @@ export interface LibroCategoriaDelegate<
 	 * })
 	 *
 	 */
-	deleteMany<T extends LibroCategoriaDeleteManyArgs>(
-		args?: Prisma.SelectSubset<T, LibroCategoriaDeleteManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	deleteMany<T extends LibroCategoriaDeleteManyArgs>(args?: Prisma.SelectSubset<T, LibroCategoriaDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more LibroCategorias.
@@ -1456,9 +1064,7 @@ export interface LibroCategoriaDelegate<
 	 * })
 	 *
 	 */
-	updateMany<T extends LibroCategoriaUpdateManyArgs>(
-		args: Prisma.SelectSubset<T, LibroCategoriaUpdateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	updateMany<T extends LibroCategoriaUpdateManyArgs>(args: Prisma.SelectSubset<T, LibroCategoriaUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more LibroCategorias and returns the data updated in the database.
@@ -1489,18 +1095,8 @@ export interface LibroCategoriaDelegate<
 	 *
 	 */
 	updateManyAndReturn<T extends LibroCategoriaUpdateManyAndReturnArgs>(
-		args: Prisma.SelectSubset<
-			T,
-			LibroCategoriaUpdateManyAndReturnArgs<ExtArgs>
-		>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroCategoriaPayload<ExtArgs>,
-			T,
-			"updateManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+		args: Prisma.SelectSubset<T, LibroCategoriaUpdateManyAndReturnArgs<ExtArgs>>,
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LibroCategoriaPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Create or update one LibroCategoria.
@@ -1521,17 +1117,7 @@ export interface LibroCategoriaDelegate<
 	 */
 	upsert<T extends LibroCategoriaUpsertArgs>(
 		args: Prisma.SelectSubset<T, LibroCategoriaUpsertArgs<ExtArgs>>,
-	): Prisma.Prisma__LibroCategoriaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$LibroCategoriaPayload<ExtArgs>,
-			T,
-			"upsert",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__LibroCategoriaClient<runtime.Types.Result.GetResult<Prisma.$LibroCategoriaPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Count the number of LibroCategorias.
@@ -1549,14 +1135,7 @@ export interface LibroCategoriaDelegate<
 	count<T extends LibroCategoriaCountArgs>(
 		args?: Prisma.Subset<T, LibroCategoriaCountArgs>,
 	): Prisma.PrismaPromise<
-		T extends runtime.Types.Utils.Record<"select", any>
-			? T["select"] extends true
-				? number
-				: Prisma.GetScalarType<
-						T["select"],
-						LibroCategoriaCountAggregateOutputType
-					>
-			: number
+		T extends runtime.Types.Utils.Record<"select", any> ? (T["select"] extends true ? number : Prisma.GetScalarType<T["select"], LibroCategoriaCountAggregateOutputType>) : number
 	>;
 
 	/**
@@ -1583,9 +1162,7 @@ export interface LibroCategoriaDelegate<
 	 *   take: 10,
 	 * })
 	 **/
-	aggregate<T extends LibroCategoriaAggregateArgs>(
-		args: Prisma.Subset<T, LibroCategoriaAggregateArgs>,
-	): Prisma.PrismaPromise<GetLibroCategoriaAggregateType<T>>;
+	aggregate<T extends LibroCategoriaAggregateArgs>(args: Prisma.Subset<T, LibroCategoriaAggregateArgs>): Prisma.PrismaPromise<GetLibroCategoriaAggregateType<T>>;
 
 	/**
 	 * Group by LibroCategoria.
@@ -1607,16 +1184,9 @@ export interface LibroCategoriaDelegate<
 	 **/
 	groupBy<
 		T extends LibroCategoriaGroupByArgs,
-		HasSelectOrTake extends Prisma.Or<
-			Prisma.Extends<"skip", Prisma.Keys<T>>,
-			Prisma.Extends<"take", Prisma.Keys<T>>
-		>,
-		OrderByArg extends Prisma.True extends HasSelectOrTake
-			? { orderBy: LibroCategoriaGroupByArgs["orderBy"] }
-			: { orderBy?: LibroCategoriaGroupByArgs["orderBy"] },
-		OrderFields extends Prisma.ExcludeUnderscoreKeys<
-			Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>
-		>,
+		HasSelectOrTake extends Prisma.Or<Prisma.Extends<"skip", Prisma.Keys<T>>, Prisma.Extends<"take", Prisma.Keys<T>>>,
+		OrderByArg extends Prisma.True extends HasSelectOrTake ? { orderBy: LibroCategoriaGroupByArgs["orderBy"] } : { orderBy?: LibroCategoriaGroupByArgs["orderBy"] },
+		OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>>,
 		ByFields extends Prisma.MaybeTupleToUnion<T["by"]>,
 		ByValid extends Prisma.Has<ByFields, OrderFields>,
 		HavingFields extends Prisma.GetHavingFields<T["having"]>,
@@ -1630,21 +1200,14 @@ export interface LibroCategoriaDelegate<
 							? never
 							: P extends string
 								? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-								: [
-										Error,
-										"Field ",
-										P,
-										` in "having" needs to be provided in "by"`,
-									];
+								: [Error, "Field ", P, ` in "having" needs to be provided in "by"`];
 					}[HavingFields]
 				: "take" extends Prisma.Keys<T>
 					? "orderBy" extends Prisma.Keys<T>
 						? ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields]
 						: 'Error: If you provide "take", you also need to provide "orderBy"'
 					: "skip" extends Prisma.Keys<T>
@@ -1652,24 +1215,15 @@ export interface LibroCategoriaDelegate<
 							? ByValid extends Prisma.True
 								? {}
 								: {
-										[P in OrderFields]: P extends ByFields
-											? never
-											: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+										[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 									}[OrderFields]
 							: 'Error: If you provide "skip", you also need to provide "orderBy"'
 						: ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields],
-	>(
-		args: Prisma.SubsetIntersection<T, LibroCategoriaGroupByArgs, OrderByArg> &
-			InputErrors,
-	): {} extends InputErrors
-		? GetLibroCategoriaGroupByPayload<T>
-		: Prisma.PrismaPromise<InputErrors>;
+	>(args: Prisma.SubsetIntersection<T, LibroCategoriaGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetLibroCategoriaGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
 	/**
 	 * Fields of the LibroCategoria model
 	 */
@@ -1682,56 +1236,18 @@ export interface LibroCategoriaDelegate<
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__LibroCategoriaClient<
-	T,
-	Null = never,
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> extends Prisma.PrismaPromise<T> {
+export interface Prisma__LibroCategoriaClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}>
+	extends Prisma.PrismaPromise<T> {
 	readonly [Symbol.toStringTag]: "PrismaPromise";
 	estado<T extends Prisma.EstadoDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EstadoDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EstadoPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	libro<T extends Prisma.LibroDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.LibroDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__LibroClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$LibroPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__LibroClient<runtime.Types.Result.GetResult<Prisma.$LibroPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	categoria<T extends Prisma.CategoriaDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.CategoriaDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__CategoriaClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$CategoriaPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__CategoriaClient<runtime.Types.Result.GetResult<Prisma.$CategoriaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	/**
 	 * Attaches callbacks for the resolution and/or rejection of the Promise.
 	 * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1739,35 +1255,22 @@ export interface Prisma__LibroCategoriaClient<
 	 * @returns A Promise for the completion of which ever callback is executed.
 	 */
 	then<TResult1 = T, TResult2 = never>(
-		onfulfilled?:
-			| ((value: T) => TResult1 | PromiseLike<TResult1>)
-			| undefined
-			| null,
-		onrejected?:
-			| ((reason: any) => TResult2 | PromiseLike<TResult2>)
-			| undefined
-			| null,
+		onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+		onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
 	): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
 	/**
 	 * Attaches a callback for only the rejection of the Promise.
 	 * @param onrejected The callback to execute when the Promise is rejected.
 	 * @returns A Promise for the completion of the callback.
 	 */
-	catch<TResult = never>(
-		onrejected?:
-			| ((reason: any) => TResult | PromiseLike<TResult>)
-			| undefined
-			| null,
-	): runtime.Types.Utils.JsPromise<T | TResult>;
+	catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
 	/**
 	 * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
 	 * resolved value cannot be modified from the callback.
 	 * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
 	 * @returns A Promise for the completion of the callback.
 	 */
-	finally(
-		onfinally?: (() => void) | undefined | null,
-	): runtime.Types.Utils.JsPromise<T>;
+	finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
 }
 
 /**
@@ -1785,10 +1288,7 @@ export interface LibroCategoriaFieldRefs {
 /**
  * LibroCategoria findUnique
  */
-export type LibroCategoriaFindUniqueArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroCategoriaFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroCategoria
 	 */
@@ -1810,10 +1310,7 @@ export type LibroCategoriaFindUniqueArgs<
 /**
  * LibroCategoria findUniqueOrThrow
  */
-export type LibroCategoriaFindUniqueOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroCategoriaFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroCategoria
 	 */
@@ -1835,10 +1332,7 @@ export type LibroCategoriaFindUniqueOrThrowArgs<
 /**
  * LibroCategoria findFirst
  */
-export type LibroCategoriaFindFirstArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroCategoriaFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroCategoria
 	 */
@@ -1860,9 +1354,7 @@ export type LibroCategoriaFindFirstArgs<
 	 *
 	 * Determine the order of LibroCategorias to fetch.
 	 */
-	orderBy?:
-		| Prisma.LibroCategoriaOrderByWithRelationInput
-		| Prisma.LibroCategoriaOrderByWithRelationInput[];
+	orderBy?: Prisma.LibroCategoriaOrderByWithRelationInput | Prisma.LibroCategoriaOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1886,18 +1378,13 @@ export type LibroCategoriaFindFirstArgs<
 	 *
 	 * Filter by unique combinations of LibroCategorias.
 	 */
-	distinct?:
-		| Prisma.LibroCategoriaScalarFieldEnum
-		| Prisma.LibroCategoriaScalarFieldEnum[];
+	distinct?: Prisma.LibroCategoriaScalarFieldEnum | Prisma.LibroCategoriaScalarFieldEnum[];
 };
 
 /**
  * LibroCategoria findFirstOrThrow
  */
-export type LibroCategoriaFindFirstOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroCategoriaFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroCategoria
 	 */
@@ -1919,9 +1406,7 @@ export type LibroCategoriaFindFirstOrThrowArgs<
 	 *
 	 * Determine the order of LibroCategorias to fetch.
 	 */
-	orderBy?:
-		| Prisma.LibroCategoriaOrderByWithRelationInput
-		| Prisma.LibroCategoriaOrderByWithRelationInput[];
+	orderBy?: Prisma.LibroCategoriaOrderByWithRelationInput | Prisma.LibroCategoriaOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1945,18 +1430,13 @@ export type LibroCategoriaFindFirstOrThrowArgs<
 	 *
 	 * Filter by unique combinations of LibroCategorias.
 	 */
-	distinct?:
-		| Prisma.LibroCategoriaScalarFieldEnum
-		| Prisma.LibroCategoriaScalarFieldEnum[];
+	distinct?: Prisma.LibroCategoriaScalarFieldEnum | Prisma.LibroCategoriaScalarFieldEnum[];
 };
 
 /**
  * LibroCategoria findMany
  */
-export type LibroCategoriaFindManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroCategoriaFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroCategoria
 	 */
@@ -1978,9 +1458,7 @@ export type LibroCategoriaFindManyArgs<
 	 *
 	 * Determine the order of LibroCategorias to fetch.
 	 */
-	orderBy?:
-		| Prisma.LibroCategoriaOrderByWithRelationInput
-		| Prisma.LibroCategoriaOrderByWithRelationInput[];
+	orderBy?: Prisma.LibroCategoriaOrderByWithRelationInput | Prisma.LibroCategoriaOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -2004,18 +1482,13 @@ export type LibroCategoriaFindManyArgs<
 	 *
 	 * Filter by unique combinations of LibroCategorias.
 	 */
-	distinct?:
-		| Prisma.LibroCategoriaScalarFieldEnum
-		| Prisma.LibroCategoriaScalarFieldEnum[];
+	distinct?: Prisma.LibroCategoriaScalarFieldEnum | Prisma.LibroCategoriaScalarFieldEnum[];
 };
 
 /**
  * LibroCategoria create
  */
-export type LibroCategoriaCreateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroCategoriaCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroCategoria
 	 */
@@ -2031,35 +1504,24 @@ export type LibroCategoriaCreateArgs<
 	/**
 	 * The data needed to create a LibroCategoria.
 	 */
-	data: Prisma.XOR<
-		Prisma.LibroCategoriaCreateInput,
-		Prisma.LibroCategoriaUncheckedCreateInput
-	>;
+	data: Prisma.XOR<Prisma.LibroCategoriaCreateInput, Prisma.LibroCategoriaUncheckedCreateInput>;
 };
 
 /**
  * LibroCategoria createMany
  */
-export type LibroCategoriaCreateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroCategoriaCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to create many LibroCategorias.
 	 */
-	data:
-		| Prisma.LibroCategoriaCreateManyInput
-		| Prisma.LibroCategoriaCreateManyInput[];
+	data: Prisma.LibroCategoriaCreateManyInput | Prisma.LibroCategoriaCreateManyInput[];
 	skipDuplicates?: boolean;
 };
 
 /**
  * LibroCategoria createManyAndReturn
  */
-export type LibroCategoriaCreateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroCategoriaCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroCategoria
 	 */
@@ -2071,9 +1533,7 @@ export type LibroCategoriaCreateManyAndReturnArgs<
 	/**
 	 * The data used to create many LibroCategorias.
 	 */
-	data:
-		| Prisma.LibroCategoriaCreateManyInput
-		| Prisma.LibroCategoriaCreateManyInput[];
+	data: Prisma.LibroCategoriaCreateManyInput | Prisma.LibroCategoriaCreateManyInput[];
 	skipDuplicates?: boolean;
 	/**
 	 * Choose, which related nodes to fetch as well
@@ -2084,10 +1544,7 @@ export type LibroCategoriaCreateManyAndReturnArgs<
 /**
  * LibroCategoria update
  */
-export type LibroCategoriaUpdateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroCategoriaUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroCategoria
 	 */
@@ -2103,10 +1560,7 @@ export type LibroCategoriaUpdateArgs<
 	/**
 	 * The data needed to update a LibroCategoria.
 	 */
-	data: Prisma.XOR<
-		Prisma.LibroCategoriaUpdateInput,
-		Prisma.LibroCategoriaUncheckedUpdateInput
-	>;
+	data: Prisma.XOR<Prisma.LibroCategoriaUpdateInput, Prisma.LibroCategoriaUncheckedUpdateInput>;
 	/**
 	 * Choose, which LibroCategoria to update.
 	 */
@@ -2116,17 +1570,11 @@ export type LibroCategoriaUpdateArgs<
 /**
  * LibroCategoria updateMany
  */
-export type LibroCategoriaUpdateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroCategoriaUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to update LibroCategorias.
 	 */
-	data: Prisma.XOR<
-		Prisma.LibroCategoriaUpdateManyMutationInput,
-		Prisma.LibroCategoriaUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.LibroCategoriaUpdateManyMutationInput, Prisma.LibroCategoriaUncheckedUpdateManyInput>;
 	/**
 	 * Filter which LibroCategorias to update
 	 */
@@ -2140,10 +1588,7 @@ export type LibroCategoriaUpdateManyArgs<
 /**
  * LibroCategoria updateManyAndReturn
  */
-export type LibroCategoriaUpdateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroCategoriaUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroCategoria
 	 */
@@ -2155,10 +1600,7 @@ export type LibroCategoriaUpdateManyAndReturnArgs<
 	/**
 	 * The data used to update LibroCategorias.
 	 */
-	data: Prisma.XOR<
-		Prisma.LibroCategoriaUpdateManyMutationInput,
-		Prisma.LibroCategoriaUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.LibroCategoriaUpdateManyMutationInput, Prisma.LibroCategoriaUncheckedUpdateManyInput>;
 	/**
 	 * Filter which LibroCategorias to update
 	 */
@@ -2176,10 +1618,7 @@ export type LibroCategoriaUpdateManyAndReturnArgs<
 /**
  * LibroCategoria upsert
  */
-export type LibroCategoriaUpsertArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroCategoriaUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroCategoria
 	 */
@@ -2199,26 +1638,17 @@ export type LibroCategoriaUpsertArgs<
 	/**
 	 * In case the LibroCategoria found by the `where` argument doesn't exist, create a new LibroCategoria with this data.
 	 */
-	create: Prisma.XOR<
-		Prisma.LibroCategoriaCreateInput,
-		Prisma.LibroCategoriaUncheckedCreateInput
-	>;
+	create: Prisma.XOR<Prisma.LibroCategoriaCreateInput, Prisma.LibroCategoriaUncheckedCreateInput>;
 	/**
 	 * In case the LibroCategoria was found with the provided `where` argument, update it with this data.
 	 */
-	update: Prisma.XOR<
-		Prisma.LibroCategoriaUpdateInput,
-		Prisma.LibroCategoriaUncheckedUpdateInput
-	>;
+	update: Prisma.XOR<Prisma.LibroCategoriaUpdateInput, Prisma.LibroCategoriaUncheckedUpdateInput>;
 };
 
 /**
  * LibroCategoria delete
  */
-export type LibroCategoriaDeleteArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroCategoriaDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroCategoria
 	 */
@@ -2240,10 +1670,7 @@ export type LibroCategoriaDeleteArgs<
 /**
  * LibroCategoria deleteMany
  */
-export type LibroCategoriaDeleteManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroCategoriaDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which LibroCategorias to delete
 	 */
@@ -2257,10 +1684,7 @@ export type LibroCategoriaDeleteManyArgs<
 /**
  * LibroCategoria without action
  */
-export type LibroCategoriaDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type LibroCategoriaDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroCategoria
 	 */

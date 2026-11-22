@@ -15,8 +15,7 @@ import type * as Prisma from "../internal/prismaNamespace.ts";
  * Model Idioma
  *
  */
-export type IdiomaModel =
-	runtime.Types.Result.DefaultSelection<Prisma.$IdiomaPayload>;
+export type IdiomaModel = runtime.Types.Result.DefaultSelection<Prisma.$IdiomaPayload>;
 
 export type AggregateIdioma = {
 	_count: IdiomaCountAggregateOutputType | null;
@@ -102,10 +101,7 @@ export type IdiomaCountAggregateInputType = {
 	_all?: true;
 };
 
-export type IdiomaAggregateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Idioma to aggregate.
 	 */
@@ -115,9 +111,7 @@ export type IdiomaAggregateArgs<
 	 *
 	 * Determine the order of Idiomas to fetch.
 	 */
-	orderBy?:
-		| Prisma.IdiomaOrderByWithRelationInput
-		| Prisma.IdiomaOrderByWithRelationInput[];
+	orderBy?: Prisma.IdiomaOrderByWithRelationInput | Prisma.IdiomaOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -169,21 +163,12 @@ export type IdiomaAggregateArgs<
 };
 
 export type GetIdiomaAggregateType<T extends IdiomaAggregateArgs> = {
-	[P in keyof T & keyof AggregateIdioma]: P extends "_count" | "count"
-		? T[P] extends true
-			? number
-			: Prisma.GetScalarType<T[P], AggregateIdioma[P]>
-		: Prisma.GetScalarType<T[P], AggregateIdioma[P]>;
+	[P in keyof T & keyof AggregateIdioma]: P extends "_count" | "count" ? (T[P] extends true ? number : Prisma.GetScalarType<T[P], AggregateIdioma[P]>) : Prisma.GetScalarType<T[P], AggregateIdioma[P]>;
 };
 
-export type IdiomaGroupByArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.IdiomaWhereInput;
-	orderBy?:
-		| Prisma.IdiomaOrderByWithAggregationInput
-		| Prisma.IdiomaOrderByWithAggregationInput[];
+	orderBy?: Prisma.IdiomaOrderByWithAggregationInput | Prisma.IdiomaOrderByWithAggregationInput[];
 	by: Prisma.IdiomaScalarFieldEnum[] | Prisma.IdiomaScalarFieldEnum;
 	having?: Prisma.IdiomaScalarWhereWithAggregatesInput;
 	take?: number;
@@ -209,18 +194,17 @@ export type IdiomaGroupByOutputType = {
 	_max: IdiomaMaxAggregateOutputType | null;
 };
 
-export type GetIdiomaGroupByPayload<T extends IdiomaGroupByArgs> =
-	Prisma.PrismaPromise<
-		Array<
-			Prisma.PickEnumerable<IdiomaGroupByOutputType, T["by"]> & {
-				[P in keyof T & keyof IdiomaGroupByOutputType]: P extends "_count"
-					? T[P] extends boolean
-						? number
-						: Prisma.GetScalarType<T[P], IdiomaGroupByOutputType[P]>
-					: Prisma.GetScalarType<T[P], IdiomaGroupByOutputType[P]>;
-			}
-		>
-	>;
+export type GetIdiomaGroupByPayload<T extends IdiomaGroupByArgs> = Prisma.PrismaPromise<
+	Array<
+		Prisma.PickEnumerable<IdiomaGroupByOutputType, T["by"]> & {
+			[P in keyof T & keyof IdiomaGroupByOutputType]: P extends "_count"
+				? T[P] extends boolean
+					? number
+					: Prisma.GetScalarType<T[P], IdiomaGroupByOutputType[P]>
+				: Prisma.GetScalarType<T[P], IdiomaGroupByOutputType[P]>;
+		}
+	>
+>;
 
 export type IdiomaWhereInput = {
 	AND?: Prisma.IdiomaWhereInput | Prisma.IdiomaWhereInput[];
@@ -232,10 +216,7 @@ export type IdiomaWhereInput = {
 	createdAt?: Prisma.DateTimeFilter<"Idioma"> | Date | string;
 	updatedAt?: Prisma.DateTimeFilter<"Idioma"> | Date | string;
 	estadoId?: Prisma.IntFilter<"Idioma"> | number;
-	estado?: Prisma.XOR<
-		Prisma.EstadoScalarRelationFilter,
-		Prisma.EstadoWhereInput
-	>;
+	estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 	libros?: Prisma.LibroListRelationFilter;
 };
 
@@ -261,10 +242,7 @@ export type IdiomaWhereUniqueInput = Prisma.AtLeast<
 		createdAt?: Prisma.DateTimeFilter<"Idioma"> | Date | string;
 		updatedAt?: Prisma.DateTimeFilter<"Idioma"> | Date | string;
 		estadoId?: Prisma.IntFilter<"Idioma"> | number;
-		estado?: Prisma.XOR<
-			Prisma.EstadoScalarRelationFilter,
-			Prisma.EstadoWhereInput
-		>;
+		estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 		libros?: Prisma.LibroListRelationFilter;
 	},
 	"id"
@@ -285,13 +263,9 @@ export type IdiomaOrderByWithAggregationInput = {
 };
 
 export type IdiomaScalarWhereWithAggregatesInput = {
-	AND?:
-		| Prisma.IdiomaScalarWhereWithAggregatesInput
-		| Prisma.IdiomaScalarWhereWithAggregatesInput[];
+	AND?: Prisma.IdiomaScalarWhereWithAggregatesInput | Prisma.IdiomaScalarWhereWithAggregatesInput[];
 	OR?: Prisma.IdiomaScalarWhereWithAggregatesInput[];
-	NOT?:
-		| Prisma.IdiomaScalarWhereWithAggregatesInput
-		| Prisma.IdiomaScalarWhereWithAggregatesInput[];
+	NOT?: Prisma.IdiomaScalarWhereWithAggregatesInput | Prisma.IdiomaScalarWhereWithAggregatesInput[];
 	id?: Prisma.IntWithAggregatesFilter<"Idioma"> | number;
 	nombre?: Prisma.StringNullableWithAggregatesFilter<"Idioma"> | string | null;
 	siglas?: Prisma.StringNullableWithAggregatesFilter<"Idioma"> | string | null;
@@ -417,114 +391,70 @@ export type IdiomaScalarRelationFilter = {
 
 export type IdiomaCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.IdiomaCreateWithoutEstadoInput,
-				Prisma.IdiomaUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.IdiomaCreateWithoutEstadoInput, Prisma.IdiomaUncheckedCreateWithoutEstadoInput>
 		| Prisma.IdiomaCreateWithoutEstadoInput[]
 		| Prisma.IdiomaUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.IdiomaCreateOrConnectWithoutEstadoInput
-		| Prisma.IdiomaCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.IdiomaCreateOrConnectWithoutEstadoInput | Prisma.IdiomaCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.IdiomaCreateManyEstadoInputEnvelope;
 	connect?: Prisma.IdiomaWhereUniqueInput | Prisma.IdiomaWhereUniqueInput[];
 };
 
 export type IdiomaUncheckedCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.IdiomaCreateWithoutEstadoInput,
-				Prisma.IdiomaUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.IdiomaCreateWithoutEstadoInput, Prisma.IdiomaUncheckedCreateWithoutEstadoInput>
 		| Prisma.IdiomaCreateWithoutEstadoInput[]
 		| Prisma.IdiomaUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.IdiomaCreateOrConnectWithoutEstadoInput
-		| Prisma.IdiomaCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.IdiomaCreateOrConnectWithoutEstadoInput | Prisma.IdiomaCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.IdiomaCreateManyEstadoInputEnvelope;
 	connect?: Prisma.IdiomaWhereUniqueInput | Prisma.IdiomaWhereUniqueInput[];
 };
 
 export type IdiomaUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.IdiomaCreateWithoutEstadoInput,
-				Prisma.IdiomaUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.IdiomaCreateWithoutEstadoInput, Prisma.IdiomaUncheckedCreateWithoutEstadoInput>
 		| Prisma.IdiomaCreateWithoutEstadoInput[]
 		| Prisma.IdiomaUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.IdiomaCreateOrConnectWithoutEstadoInput
-		| Prisma.IdiomaCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.IdiomaUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.IdiomaUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.IdiomaCreateOrConnectWithoutEstadoInput | Prisma.IdiomaCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.IdiomaUpsertWithWhereUniqueWithoutEstadoInput | Prisma.IdiomaUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.IdiomaCreateManyEstadoInputEnvelope;
 	set?: Prisma.IdiomaWhereUniqueInput | Prisma.IdiomaWhereUniqueInput[];
 	disconnect?: Prisma.IdiomaWhereUniqueInput | Prisma.IdiomaWhereUniqueInput[];
 	delete?: Prisma.IdiomaWhereUniqueInput | Prisma.IdiomaWhereUniqueInput[];
 	connect?: Prisma.IdiomaWhereUniqueInput | Prisma.IdiomaWhereUniqueInput[];
-	update?:
-		| Prisma.IdiomaUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.IdiomaUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.IdiomaUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.IdiomaUpdateManyWithWhereWithoutEstadoInput[];
+	update?: Prisma.IdiomaUpdateWithWhereUniqueWithoutEstadoInput | Prisma.IdiomaUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.IdiomaUpdateManyWithWhereWithoutEstadoInput | Prisma.IdiomaUpdateManyWithWhereWithoutEstadoInput[];
 	deleteMany?: Prisma.IdiomaScalarWhereInput | Prisma.IdiomaScalarWhereInput[];
 };
 
 export type IdiomaUncheckedUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.IdiomaCreateWithoutEstadoInput,
-				Prisma.IdiomaUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.IdiomaCreateWithoutEstadoInput, Prisma.IdiomaUncheckedCreateWithoutEstadoInput>
 		| Prisma.IdiomaCreateWithoutEstadoInput[]
 		| Prisma.IdiomaUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.IdiomaCreateOrConnectWithoutEstadoInput
-		| Prisma.IdiomaCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.IdiomaUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.IdiomaUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.IdiomaCreateOrConnectWithoutEstadoInput | Prisma.IdiomaCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.IdiomaUpsertWithWhereUniqueWithoutEstadoInput | Prisma.IdiomaUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.IdiomaCreateManyEstadoInputEnvelope;
 	set?: Prisma.IdiomaWhereUniqueInput | Prisma.IdiomaWhereUniqueInput[];
 	disconnect?: Prisma.IdiomaWhereUniqueInput | Prisma.IdiomaWhereUniqueInput[];
 	delete?: Prisma.IdiomaWhereUniqueInput | Prisma.IdiomaWhereUniqueInput[];
 	connect?: Prisma.IdiomaWhereUniqueInput | Prisma.IdiomaWhereUniqueInput[];
-	update?:
-		| Prisma.IdiomaUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.IdiomaUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.IdiomaUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.IdiomaUpdateManyWithWhereWithoutEstadoInput[];
+	update?: Prisma.IdiomaUpdateWithWhereUniqueWithoutEstadoInput | Prisma.IdiomaUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.IdiomaUpdateManyWithWhereWithoutEstadoInput | Prisma.IdiomaUpdateManyWithWhereWithoutEstadoInput[];
 	deleteMany?: Prisma.IdiomaScalarWhereInput | Prisma.IdiomaScalarWhereInput[];
 };
 
 export type IdiomaCreateNestedOneWithoutLibrosInput = {
-	create?: Prisma.XOR<
-		Prisma.IdiomaCreateWithoutLibrosInput,
-		Prisma.IdiomaUncheckedCreateWithoutLibrosInput
-	>;
+	create?: Prisma.XOR<Prisma.IdiomaCreateWithoutLibrosInput, Prisma.IdiomaUncheckedCreateWithoutLibrosInput>;
 	connectOrCreate?: Prisma.IdiomaCreateOrConnectWithoutLibrosInput;
 	connect?: Prisma.IdiomaWhereUniqueInput;
 };
 
 export type IdiomaUpdateOneRequiredWithoutLibrosNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.IdiomaCreateWithoutLibrosInput,
-		Prisma.IdiomaUncheckedCreateWithoutLibrosInput
-	>;
+	create?: Prisma.XOR<Prisma.IdiomaCreateWithoutLibrosInput, Prisma.IdiomaUncheckedCreateWithoutLibrosInput>;
 	connectOrCreate?: Prisma.IdiomaCreateOrConnectWithoutLibrosInput;
 	upsert?: Prisma.IdiomaUpsertWithoutLibrosInput;
 	connect?: Prisma.IdiomaWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.IdiomaUpdateToOneWithWhereWithoutLibrosInput,
-			Prisma.IdiomaUpdateWithoutLibrosInput
-		>,
-		Prisma.IdiomaUncheckedUpdateWithoutLibrosInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.IdiomaUpdateToOneWithWhereWithoutLibrosInput, Prisma.IdiomaUpdateWithoutLibrosInput>, Prisma.IdiomaUncheckedUpdateWithoutLibrosInput>;
 };
 
 export type IdiomaCreateWithoutEstadoInput = {
@@ -546,45 +476,28 @@ export type IdiomaUncheckedCreateWithoutEstadoInput = {
 
 export type IdiomaCreateOrConnectWithoutEstadoInput = {
 	where: Prisma.IdiomaWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.IdiomaCreateWithoutEstadoInput,
-		Prisma.IdiomaUncheckedCreateWithoutEstadoInput
-	>;
+	create: Prisma.XOR<Prisma.IdiomaCreateWithoutEstadoInput, Prisma.IdiomaUncheckedCreateWithoutEstadoInput>;
 };
 
 export type IdiomaCreateManyEstadoInputEnvelope = {
-	data:
-		| Prisma.IdiomaCreateManyEstadoInput
-		| Prisma.IdiomaCreateManyEstadoInput[];
+	data: Prisma.IdiomaCreateManyEstadoInput | Prisma.IdiomaCreateManyEstadoInput[];
 	skipDuplicates?: boolean;
 };
 
 export type IdiomaUpsertWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.IdiomaWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.IdiomaUpdateWithoutEstadoInput,
-		Prisma.IdiomaUncheckedUpdateWithoutEstadoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.IdiomaCreateWithoutEstadoInput,
-		Prisma.IdiomaUncheckedCreateWithoutEstadoInput
-	>;
+	update: Prisma.XOR<Prisma.IdiomaUpdateWithoutEstadoInput, Prisma.IdiomaUncheckedUpdateWithoutEstadoInput>;
+	create: Prisma.XOR<Prisma.IdiomaCreateWithoutEstadoInput, Prisma.IdiomaUncheckedCreateWithoutEstadoInput>;
 };
 
 export type IdiomaUpdateWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.IdiomaWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.IdiomaUpdateWithoutEstadoInput,
-		Prisma.IdiomaUncheckedUpdateWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.IdiomaUpdateWithoutEstadoInput, Prisma.IdiomaUncheckedUpdateWithoutEstadoInput>;
 };
 
 export type IdiomaUpdateManyWithWhereWithoutEstadoInput = {
 	where: Prisma.IdiomaScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.IdiomaUpdateManyMutationInput,
-		Prisma.IdiomaUncheckedUpdateManyWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.IdiomaUpdateManyMutationInput, Prisma.IdiomaUncheckedUpdateManyWithoutEstadoInput>;
 };
 
 export type IdiomaScalarWhereInput = {
@@ -618,30 +531,18 @@ export type IdiomaUncheckedCreateWithoutLibrosInput = {
 
 export type IdiomaCreateOrConnectWithoutLibrosInput = {
 	where: Prisma.IdiomaWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.IdiomaCreateWithoutLibrosInput,
-		Prisma.IdiomaUncheckedCreateWithoutLibrosInput
-	>;
+	create: Prisma.XOR<Prisma.IdiomaCreateWithoutLibrosInput, Prisma.IdiomaUncheckedCreateWithoutLibrosInput>;
 };
 
 export type IdiomaUpsertWithoutLibrosInput = {
-	update: Prisma.XOR<
-		Prisma.IdiomaUpdateWithoutLibrosInput,
-		Prisma.IdiomaUncheckedUpdateWithoutLibrosInput
-	>;
-	create: Prisma.XOR<
-		Prisma.IdiomaCreateWithoutLibrosInput,
-		Prisma.IdiomaUncheckedCreateWithoutLibrosInput
-	>;
+	update: Prisma.XOR<Prisma.IdiomaUpdateWithoutLibrosInput, Prisma.IdiomaUncheckedUpdateWithoutLibrosInput>;
+	create: Prisma.XOR<Prisma.IdiomaCreateWithoutLibrosInput, Prisma.IdiomaUncheckedCreateWithoutLibrosInput>;
 	where?: Prisma.IdiomaWhereInput;
 };
 
 export type IdiomaUpdateToOneWithWhereWithoutLibrosInput = {
 	where?: Prisma.IdiomaWhereInput;
-	data: Prisma.XOR<
-		Prisma.IdiomaUpdateWithoutLibrosInput,
-		Prisma.IdiomaUncheckedUpdateWithoutLibrosInput
-	>;
+	data: Prisma.XOR<Prisma.IdiomaUpdateWithoutLibrosInput, Prisma.IdiomaUncheckedUpdateWithoutLibrosInput>;
 };
 
 export type IdiomaUpdateWithoutLibrosInput = {
@@ -702,20 +603,14 @@ export type IdiomaCountOutputType = {
 	libros: number;
 };
 
-export type IdiomaCountOutputTypeSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	libros?: boolean | IdiomaCountOutputTypeCountLibrosArgs;
 };
 
 /**
  * IdiomaCountOutputType without action
  */
-export type IdiomaCountOutputTypeDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the IdiomaCountOutputType
 	 */
@@ -725,17 +620,11 @@ export type IdiomaCountOutputTypeDefaultArgs<
 /**
  * IdiomaCountOutputType without action
  */
-export type IdiomaCountOutputTypeCountLibrosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaCountOutputTypeCountLibrosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.LibroWhereInput;
 };
 
-export type IdiomaSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type IdiomaSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -750,10 +639,7 @@ export type IdiomaSelect<
 	ExtArgs["result"]["idioma"]
 >;
 
-export type IdiomaSelectCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type IdiomaSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -766,10 +652,7 @@ export type IdiomaSelectCreateManyAndReturn<
 	ExtArgs["result"]["idioma"]
 >;
 
-export type IdiomaSelectUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type IdiomaSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -791,38 +674,23 @@ export type IdiomaSelectScalar = {
 	estadoId?: boolean;
 };
 
-export type IdiomaOmit<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetOmit<
+export type IdiomaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<
 	"id" | "nombre" | "siglas" | "createdAt" | "updatedAt" | "estadoId",
 	ExtArgs["result"]["idioma"]
 >;
-export type IdiomaInclude<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 	libros?: boolean | Prisma.Idioma$librosArgs<ExtArgs>;
 	_count?: boolean | Prisma.IdiomaCountOutputTypeDefaultArgs<ExtArgs>;
 };
-export type IdiomaIncludeCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
-export type IdiomaIncludeUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
 
-export type $IdiomaPayload<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type $IdiomaPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	name: "Idioma";
 	objects: {
 		estado: Prisma.$EstadoPayload<ExtArgs>;
@@ -842,26 +710,14 @@ export type $IdiomaPayload<
 	composites: {};
 };
 
-export type IdiomaGetPayload<
-	S extends boolean | null | undefined | IdiomaDefaultArgs,
-> = runtime.Types.Result.GetResult<Prisma.$IdiomaPayload, S>;
+export type IdiomaGetPayload<S extends boolean | null | undefined | IdiomaDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$IdiomaPayload, S>;
 
-export type IdiomaCountArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = Omit<IdiomaFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
+export type IdiomaCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<IdiomaFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
 	select?: IdiomaCountAggregateInputType | true;
 };
 
-export interface IdiomaDelegate<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> {
-	[K: symbol]: {
-		types: Prisma.TypeMap<ExtArgs>["model"]["Idioma"];
-		meta: { name: "Idioma" };
-	};
+export interface IdiomaDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+	[K: symbol]: { types: Prisma.TypeMap<ExtArgs>["model"]["Idioma"]; meta: { name: "Idioma" } };
 	/**
 	 * Find zero or one Idioma that matches the filter.
 	 * @param {IdiomaFindUniqueArgs} args - Arguments to find a Idioma
@@ -875,17 +731,7 @@ export interface IdiomaDelegate<
 	 */
 	findUnique<T extends IdiomaFindUniqueArgs>(
 		args: Prisma.SelectSubset<T, IdiomaFindUniqueArgs<ExtArgs>>,
-	): Prisma.Prisma__IdiomaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$IdiomaPayload<ExtArgs>,
-			T,
-			"findUnique",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__IdiomaClient<runtime.Types.Result.GetResult<Prisma.$IdiomaPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find one Idioma that matches the filter or throw an error with `error.code='P2025'`
@@ -901,17 +747,7 @@ export interface IdiomaDelegate<
 	 */
 	findUniqueOrThrow<T extends IdiomaFindUniqueOrThrowArgs>(
 		args: Prisma.SelectSubset<T, IdiomaFindUniqueOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__IdiomaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$IdiomaPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__IdiomaClient<runtime.Types.Result.GetResult<Prisma.$IdiomaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Idioma that matches the filter.
@@ -928,17 +764,7 @@ export interface IdiomaDelegate<
 	 */
 	findFirst<T extends IdiomaFindFirstArgs>(
 		args?: Prisma.SelectSubset<T, IdiomaFindFirstArgs<ExtArgs>>,
-	): Prisma.Prisma__IdiomaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$IdiomaPayload<ExtArgs>,
-			T,
-			"findFirst",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__IdiomaClient<runtime.Types.Result.GetResult<Prisma.$IdiomaPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Idioma that matches the filter or
@@ -956,17 +782,7 @@ export interface IdiomaDelegate<
 	 */
 	findFirstOrThrow<T extends IdiomaFindFirstOrThrowArgs>(
 		args?: Prisma.SelectSubset<T, IdiomaFindFirstOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__IdiomaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$IdiomaPayload<ExtArgs>,
-			T,
-			"findFirstOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__IdiomaClient<runtime.Types.Result.GetResult<Prisma.$IdiomaPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find zero or more Idiomas that matches the filter.
@@ -986,14 +802,7 @@ export interface IdiomaDelegate<
 	 */
 	findMany<T extends IdiomaFindManyArgs>(
 		args?: Prisma.SelectSubset<T, IdiomaFindManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$IdiomaPayload<ExtArgs>,
-			T,
-			"findMany",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$IdiomaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
 
 	/**
 	 * Create a Idioma.
@@ -1009,17 +818,7 @@ export interface IdiomaDelegate<
 	 */
 	create<T extends IdiomaCreateArgs>(
 		args: Prisma.SelectSubset<T, IdiomaCreateArgs<ExtArgs>>,
-	): Prisma.Prisma__IdiomaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$IdiomaPayload<ExtArgs>,
-			T,
-			"create",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__IdiomaClient<runtime.Types.Result.GetResult<Prisma.$IdiomaPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Create many Idiomas.
@@ -1033,9 +832,7 @@ export interface IdiomaDelegate<
 	 * })
 	 *
 	 */
-	createMany<T extends IdiomaCreateManyArgs>(
-		args?: Prisma.SelectSubset<T, IdiomaCreateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	createMany<T extends IdiomaCreateManyArgs>(args?: Prisma.SelectSubset<T, IdiomaCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Create many Idiomas and returns the data saved in the database.
@@ -1061,14 +858,7 @@ export interface IdiomaDelegate<
 	 */
 	createManyAndReturn<T extends IdiomaCreateManyAndReturnArgs>(
 		args?: Prisma.SelectSubset<T, IdiomaCreateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$IdiomaPayload<ExtArgs>,
-			T,
-			"createManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$IdiomaPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Delete a Idioma.
@@ -1084,17 +874,7 @@ export interface IdiomaDelegate<
 	 */
 	delete<T extends IdiomaDeleteArgs>(
 		args: Prisma.SelectSubset<T, IdiomaDeleteArgs<ExtArgs>>,
-	): Prisma.Prisma__IdiomaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$IdiomaPayload<ExtArgs>,
-			T,
-			"delete",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__IdiomaClient<runtime.Types.Result.GetResult<Prisma.$IdiomaPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Update one Idioma.
@@ -1113,17 +893,7 @@ export interface IdiomaDelegate<
 	 */
 	update<T extends IdiomaUpdateArgs>(
 		args: Prisma.SelectSubset<T, IdiomaUpdateArgs<ExtArgs>>,
-	): Prisma.Prisma__IdiomaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$IdiomaPayload<ExtArgs>,
-			T,
-			"update",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__IdiomaClient<runtime.Types.Result.GetResult<Prisma.$IdiomaPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Delete zero or more Idiomas.
@@ -1137,9 +907,7 @@ export interface IdiomaDelegate<
 	 * })
 	 *
 	 */
-	deleteMany<T extends IdiomaDeleteManyArgs>(
-		args?: Prisma.SelectSubset<T, IdiomaDeleteManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	deleteMany<T extends IdiomaDeleteManyArgs>(args?: Prisma.SelectSubset<T, IdiomaDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Idiomas.
@@ -1158,9 +926,7 @@ export interface IdiomaDelegate<
 	 * })
 	 *
 	 */
-	updateMany<T extends IdiomaUpdateManyArgs>(
-		args: Prisma.SelectSubset<T, IdiomaUpdateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	updateMany<T extends IdiomaUpdateManyArgs>(args: Prisma.SelectSubset<T, IdiomaUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Idiomas and returns the data updated in the database.
@@ -1192,14 +958,7 @@ export interface IdiomaDelegate<
 	 */
 	updateManyAndReturn<T extends IdiomaUpdateManyAndReturnArgs>(
 		args: Prisma.SelectSubset<T, IdiomaUpdateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$IdiomaPayload<ExtArgs>,
-			T,
-			"updateManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$IdiomaPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Create or update one Idioma.
@@ -1220,17 +979,7 @@ export interface IdiomaDelegate<
 	 */
 	upsert<T extends IdiomaUpsertArgs>(
 		args: Prisma.SelectSubset<T, IdiomaUpsertArgs<ExtArgs>>,
-	): Prisma.Prisma__IdiomaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$IdiomaPayload<ExtArgs>,
-			T,
-			"upsert",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__IdiomaClient<runtime.Types.Result.GetResult<Prisma.$IdiomaPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Count the number of Idiomas.
@@ -1247,13 +996,7 @@ export interface IdiomaDelegate<
 	 **/
 	count<T extends IdiomaCountArgs>(
 		args?: Prisma.Subset<T, IdiomaCountArgs>,
-	): Prisma.PrismaPromise<
-		T extends runtime.Types.Utils.Record<"select", any>
-			? T["select"] extends true
-				? number
-				: Prisma.GetScalarType<T["select"], IdiomaCountAggregateOutputType>
-			: number
-	>;
+	): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<"select", any> ? (T["select"] extends true ? number : Prisma.GetScalarType<T["select"], IdiomaCountAggregateOutputType>) : number>;
 
 	/**
 	 * Allows you to perform aggregations operations on a Idioma.
@@ -1279,9 +1022,7 @@ export interface IdiomaDelegate<
 	 *   take: 10,
 	 * })
 	 **/
-	aggregate<T extends IdiomaAggregateArgs>(
-		args: Prisma.Subset<T, IdiomaAggregateArgs>,
-	): Prisma.PrismaPromise<GetIdiomaAggregateType<T>>;
+	aggregate<T extends IdiomaAggregateArgs>(args: Prisma.Subset<T, IdiomaAggregateArgs>): Prisma.PrismaPromise<GetIdiomaAggregateType<T>>;
 
 	/**
 	 * Group by Idioma.
@@ -1303,16 +1044,9 @@ export interface IdiomaDelegate<
 	 **/
 	groupBy<
 		T extends IdiomaGroupByArgs,
-		HasSelectOrTake extends Prisma.Or<
-			Prisma.Extends<"skip", Prisma.Keys<T>>,
-			Prisma.Extends<"take", Prisma.Keys<T>>
-		>,
-		OrderByArg extends Prisma.True extends HasSelectOrTake
-			? { orderBy: IdiomaGroupByArgs["orderBy"] }
-			: { orderBy?: IdiomaGroupByArgs["orderBy"] },
-		OrderFields extends Prisma.ExcludeUnderscoreKeys<
-			Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>
-		>,
+		HasSelectOrTake extends Prisma.Or<Prisma.Extends<"skip", Prisma.Keys<T>>, Prisma.Extends<"take", Prisma.Keys<T>>>,
+		OrderByArg extends Prisma.True extends HasSelectOrTake ? { orderBy: IdiomaGroupByArgs["orderBy"] } : { orderBy?: IdiomaGroupByArgs["orderBy"] },
+		OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>>,
 		ByFields extends Prisma.MaybeTupleToUnion<T["by"]>,
 		ByValid extends Prisma.Has<ByFields, OrderFields>,
 		HavingFields extends Prisma.GetHavingFields<T["having"]>,
@@ -1326,21 +1060,14 @@ export interface IdiomaDelegate<
 							? never
 							: P extends string
 								? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-								: [
-										Error,
-										"Field ",
-										P,
-										` in "having" needs to be provided in "by"`,
-									];
+								: [Error, "Field ", P, ` in "having" needs to be provided in "by"`];
 					}[HavingFields]
 				: "take" extends Prisma.Keys<T>
 					? "orderBy" extends Prisma.Keys<T>
 						? ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields]
 						: 'Error: If you provide "take", you also need to provide "orderBy"'
 					: "skip" extends Prisma.Keys<T>
@@ -1348,24 +1075,15 @@ export interface IdiomaDelegate<
 							? ByValid extends Prisma.True
 								? {}
 								: {
-										[P in OrderFields]: P extends ByFields
-											? never
-											: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+										[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 									}[OrderFields]
 							: 'Error: If you provide "skip", you also need to provide "orderBy"'
 						: ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields],
-	>(
-		args: Prisma.SubsetIntersection<T, IdiomaGroupByArgs, OrderByArg> &
-			InputErrors,
-	): {} extends InputErrors
-		? GetIdiomaGroupByPayload<T>
-		: Prisma.PrismaPromise<InputErrors>;
+	>(args: Prisma.SubsetIntersection<T, IdiomaGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetIdiomaGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
 	/**
 	 * Fields of the Idioma model
 	 */
@@ -1378,39 +1096,15 @@ export interface IdiomaDelegate<
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__IdiomaClient<
-	T,
-	Null = never,
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> extends Prisma.PrismaPromise<T> {
+export interface Prisma__IdiomaClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}>
+	extends Prisma.PrismaPromise<T> {
 	readonly [Symbol.toStringTag]: "PrismaPromise";
 	estado<T extends Prisma.EstadoDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EstadoDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EstadoPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	libros<T extends Prisma.Idioma$librosArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Idioma$librosArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$LibroPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LibroPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	/**
 	 * Attaches callbacks for the resolution and/or rejection of the Promise.
 	 * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1418,35 +1112,22 @@ export interface Prisma__IdiomaClient<
 	 * @returns A Promise for the completion of which ever callback is executed.
 	 */
 	then<TResult1 = T, TResult2 = never>(
-		onfulfilled?:
-			| ((value: T) => TResult1 | PromiseLike<TResult1>)
-			| undefined
-			| null,
-		onrejected?:
-			| ((reason: any) => TResult2 | PromiseLike<TResult2>)
-			| undefined
-			| null,
+		onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+		onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
 	): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
 	/**
 	 * Attaches a callback for only the rejection of the Promise.
 	 * @param onrejected The callback to execute when the Promise is rejected.
 	 * @returns A Promise for the completion of the callback.
 	 */
-	catch<TResult = never>(
-		onrejected?:
-			| ((reason: any) => TResult | PromiseLike<TResult>)
-			| undefined
-			| null,
-	): runtime.Types.Utils.JsPromise<T | TResult>;
+	catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
 	/**
 	 * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
 	 * resolved value cannot be modified from the callback.
 	 * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
 	 * @returns A Promise for the completion of the callback.
 	 */
-	finally(
-		onfinally?: (() => void) | undefined | null,
-	): runtime.Types.Utils.JsPromise<T>;
+	finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
 }
 
 /**
@@ -1465,10 +1146,7 @@ export interface IdiomaFieldRefs {
 /**
  * Idioma findUnique
  */
-export type IdiomaFindUniqueArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Idioma
 	 */
@@ -1490,10 +1168,7 @@ export type IdiomaFindUniqueArgs<
 /**
  * Idioma findUniqueOrThrow
  */
-export type IdiomaFindUniqueOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Idioma
 	 */
@@ -1515,10 +1190,7 @@ export type IdiomaFindUniqueOrThrowArgs<
 /**
  * Idioma findFirst
  */
-export type IdiomaFindFirstArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Idioma
 	 */
@@ -1540,9 +1212,7 @@ export type IdiomaFindFirstArgs<
 	 *
 	 * Determine the order of Idiomas to fetch.
 	 */
-	orderBy?:
-		| Prisma.IdiomaOrderByWithRelationInput
-		| Prisma.IdiomaOrderByWithRelationInput[];
+	orderBy?: Prisma.IdiomaOrderByWithRelationInput | Prisma.IdiomaOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1572,10 +1242,7 @@ export type IdiomaFindFirstArgs<
 /**
  * Idioma findFirstOrThrow
  */
-export type IdiomaFindFirstOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Idioma
 	 */
@@ -1597,9 +1264,7 @@ export type IdiomaFindFirstOrThrowArgs<
 	 *
 	 * Determine the order of Idiomas to fetch.
 	 */
-	orderBy?:
-		| Prisma.IdiomaOrderByWithRelationInput
-		| Prisma.IdiomaOrderByWithRelationInput[];
+	orderBy?: Prisma.IdiomaOrderByWithRelationInput | Prisma.IdiomaOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1629,10 +1294,7 @@ export type IdiomaFindFirstOrThrowArgs<
 /**
  * Idioma findMany
  */
-export type IdiomaFindManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Idioma
 	 */
@@ -1654,9 +1316,7 @@ export type IdiomaFindManyArgs<
 	 *
 	 * Determine the order of Idiomas to fetch.
 	 */
-	orderBy?:
-		| Prisma.IdiomaOrderByWithRelationInput
-		| Prisma.IdiomaOrderByWithRelationInput[];
+	orderBy?: Prisma.IdiomaOrderByWithRelationInput | Prisma.IdiomaOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1686,10 +1346,7 @@ export type IdiomaFindManyArgs<
 /**
  * Idioma create
  */
-export type IdiomaCreateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Idioma
 	 */
@@ -1711,10 +1368,7 @@ export type IdiomaCreateArgs<
 /**
  * Idioma createMany
  */
-export type IdiomaCreateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to create many Idiomas.
 	 */
@@ -1725,10 +1379,7 @@ export type IdiomaCreateManyArgs<
 /**
  * Idioma createManyAndReturn
  */
-export type IdiomaCreateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Idioma
 	 */
@@ -1751,10 +1402,7 @@ export type IdiomaCreateManyAndReturnArgs<
 /**
  * Idioma update
  */
-export type IdiomaUpdateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Idioma
 	 */
@@ -1780,17 +1428,11 @@ export type IdiomaUpdateArgs<
 /**
  * Idioma updateMany
  */
-export type IdiomaUpdateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to update Idiomas.
 	 */
-	data: Prisma.XOR<
-		Prisma.IdiomaUpdateManyMutationInput,
-		Prisma.IdiomaUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.IdiomaUpdateManyMutationInput, Prisma.IdiomaUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Idiomas to update
 	 */
@@ -1804,10 +1446,7 @@ export type IdiomaUpdateManyArgs<
 /**
  * Idioma updateManyAndReturn
  */
-export type IdiomaUpdateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Idioma
 	 */
@@ -1819,10 +1458,7 @@ export type IdiomaUpdateManyAndReturnArgs<
 	/**
 	 * The data used to update Idiomas.
 	 */
-	data: Prisma.XOR<
-		Prisma.IdiomaUpdateManyMutationInput,
-		Prisma.IdiomaUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.IdiomaUpdateManyMutationInput, Prisma.IdiomaUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Idiomas to update
 	 */
@@ -1840,10 +1476,7 @@ export type IdiomaUpdateManyAndReturnArgs<
 /**
  * Idioma upsert
  */
-export type IdiomaUpsertArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Idioma
 	 */
@@ -1863,26 +1496,17 @@ export type IdiomaUpsertArgs<
 	/**
 	 * In case the Idioma found by the `where` argument doesn't exist, create a new Idioma with this data.
 	 */
-	create: Prisma.XOR<
-		Prisma.IdiomaCreateInput,
-		Prisma.IdiomaUncheckedCreateInput
-	>;
+	create: Prisma.XOR<Prisma.IdiomaCreateInput, Prisma.IdiomaUncheckedCreateInput>;
 	/**
 	 * In case the Idioma was found with the provided `where` argument, update it with this data.
 	 */
-	update: Prisma.XOR<
-		Prisma.IdiomaUpdateInput,
-		Prisma.IdiomaUncheckedUpdateInput
-	>;
+	update: Prisma.XOR<Prisma.IdiomaUpdateInput, Prisma.IdiomaUncheckedUpdateInput>;
 };
 
 /**
  * Idioma delete
  */
-export type IdiomaDeleteArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Idioma
 	 */
@@ -1904,10 +1528,7 @@ export type IdiomaDeleteArgs<
 /**
  * Idioma deleteMany
  */
-export type IdiomaDeleteManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Idiomas to delete
 	 */
@@ -1921,10 +1542,7 @@ export type IdiomaDeleteManyArgs<
 /**
  * Idioma.libros
  */
-export type Idioma$librosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Idioma$librosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Libro
 	 */
@@ -1938,9 +1556,7 @@ export type Idioma$librosArgs<
 	 */
 	include?: Prisma.LibroInclude<ExtArgs> | null;
 	where?: Prisma.LibroWhereInput;
-	orderBy?:
-		| Prisma.LibroOrderByWithRelationInput
-		| Prisma.LibroOrderByWithRelationInput[];
+	orderBy?: Prisma.LibroOrderByWithRelationInput | Prisma.LibroOrderByWithRelationInput[];
 	cursor?: Prisma.LibroWhereUniqueInput;
 	take?: number;
 	skip?: number;
@@ -1950,10 +1566,7 @@ export type Idioma$librosArgs<
 /**
  * Idioma without action
  */
-export type IdiomaDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type IdiomaDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Idioma
 	 */

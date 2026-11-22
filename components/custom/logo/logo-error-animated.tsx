@@ -1,29 +1,11 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 
-type _strokeClasses =
-	| "stroke-primary"
-	| "stroke-secondary"
-	| "stroke-background"
-	| "stroke-foreground"
-	| "stroke-destructive"
-	| "stroke-accent";
+type _strokeClasses = "stroke-primary" | "stroke-secondary" | "stroke-background" | "stroke-foreground" | "stroke-destructive" | "stroke-accent" | "stroke-warning";
 
-type _fillClasses =
-	| "fill-primary"
-	| "fill-secondary"
-	| "fill-background"
-	| "fill-foreground"
-	| "fill-destructive"
-	| "fill-accent";
+type _fillClasses = "fill-primary" | "fill-secondary" | "fill-background" | "fill-foreground" | "fill-destructive" | "fill-accent" | "fill-warning";
 
-type _waveClasses =
-	| "text-primary"
-	| "text-secondary"
-	| "text-background"
-	| "text-foreground"
-	| "text-destructive"
-	| "text-accent";
+type _waveClasses = "text-primary" | "text-secondary" | "text-background" | "text-foreground" | "text-destructive" | "text-accent" | "text-warning";
 
 type LogoErrorAnimatedProps = React.SVGProps<SVGSVGElement> & {
 	waves?: number;
@@ -34,11 +16,17 @@ type LogoErrorAnimatedProps = React.SVGProps<SVGSVGElement> & {
 	centerY?: number;
 	waveColor?: string;
 	waveColorClass?: _waveClasses;
+	waveColors?: _waveClasses[];
 	errorFill?: _fillClasses;
 	errorStroke?: _strokeClasses;
+	errorTextFill?: _fillClasses;
+	errorTextStroke?: _strokeClasses;
 	stagger?: number;
 	size?: number | string;
-	tipo?: number;
+	tipoFontSize?: number | string;
+	tipo?: number | string;
+	textoFontSize?: number | string;
+	texto?: number | string;
 };
 
 const BOOK_FRAME_PATH =
@@ -59,23 +47,41 @@ export const LogoErrorAnimated = ({
 	centerY = 90,
 	waveColor = "#D4AF37",
 	waveColorClass,
+	waveColors,
 	errorFill = "fill-primary",
 	errorStroke = "stroke-background",
+	errorTextFill = "fill-primary",
+	errorTextStroke = "stroke-background",
 	stagger,
 	size = 500,
 	style,
+	tipoFontSize = "4rem",
 	tipo = 404,
+	textoFontSize = "1rem",
+	texto,
 	...props
 }: LogoErrorAnimatedProps) => {
 	const { className, ...restProps } = props;
-	const safeWaves = Math.max(1, waves);
+
+	const safeWaves = Math.max(1, Math.floor(waves));
 	const safeDuration = Math.max(0.1, duration);
 	const safeStagger = stagger ?? safeDuration / safeWaves;
 
 	const gradientId = React.useId();
 	const clipPathId = React.useId();
 
+	const useMultipleColors = Boolean(waveColors?.length);
+
+	const colors = useMultipleColors ? waveColors! : waveColorClass ? [waveColorClass] : [];
+
 	const waveColorProcessed = waveColorClass ? "currentColor" : waveColor;
+
+	const textLines = String(texto).split(/\r?\n/);
+	const textCenterX = 92.2;
+	const textCenterY = 140;
+	const lineHeight = 12;
+
+	const textStartY = textCenterY - ((textLines.length - 1) * lineHeight) / 2;
 
 	return (
 		<svg
@@ -84,15 +90,58 @@ export const LogoErrorAnimated = ({
 			width={size}
 			height={size}
 			style={style}
-			className={cn(waveColorClass, className)}
-			{...restProps}
-		>
+			className={cn("select-none", waveColorClass, className)}
+			{...restProps}>
 			<defs>
-				<radialGradient id={gradientId} cx="50%" cy="50%" r="50%">
-					<stop offset="0%" stopColor={waveColorProcessed} stopOpacity="1" />
-					<stop offset="80%" stopColor={waveColorProcessed} stopOpacity="0.2" />
-					<stop offset="100%" stopColor={waveColorProcessed} stopOpacity="0" />
-				</radialGradient>
+				{useMultipleColors ? (
+					colors.map((color, index) => (
+						<radialGradient
+							key={index}
+							id={`${gradientId}-${index}`}
+							cx="50%"
+							cy="50%"
+							r="50%"
+							className={cn(color)}>
+							<stop
+								offset="0%"
+								stopColor="currentColor"
+								stopOpacity="1"
+							/>
+							<stop
+								offset="50%"
+								stopColor="currentColor"
+								stopOpacity="0.5"
+							/>
+							<stop
+								offset="100%"
+								stopColor="currentColor"
+								stopOpacity="0.1"
+							/>
+						</radialGradient>
+					))
+				) : (
+					<radialGradient
+						id={gradientId}
+						cx="50%"
+						cy="50%"
+						r="50%">
+						<stop
+							offset="0%"
+							stopColor={waveColorProcessed}
+							stopOpacity="1"
+						/>
+						<stop
+							offset="50%"
+							stopColor={waveColorProcessed}
+							stopOpacity="0.5"
+						/>
+						<stop
+							offset="100%"
+							stopColor={waveColorProcessed}
+							stopOpacity="0.1"
+						/>
+					</radialGradient>
+				)}
 
 				<clipPath id={clipPathId}>
 					<path d={LEFT_PAGE_PATH} />
@@ -100,6 +149,7 @@ export const LogoErrorAnimated = ({
 				</clipPath>
 			</defs>
 
+			{/* Marco del libro */}
 			<path
 				fillRule="evenodd"
 				d={BOOK_FRAME_PATH}
@@ -110,12 +160,21 @@ export const LogoErrorAnimated = ({
 				}}
 			/>
 
-			<g clipPath={`url(#${clipPathId})`} fill={`url(#${gradientId})`}>
+			{/* Ondas animadas */}
+			<g clipPath={`url(#${clipPathId})`}>
 				{Array.from({ length: safeWaves }).map((_, index) => {
 					const begin = `${index * safeStagger}s`;
 
+					const currentGradientId = useMultipleColors ? `${gradientId}-${index % colors.length}` : gradientId;
+
 					return (
-						<circle key={index} cx={centerX} cy={centerY} r="0" opacity="0">
+						<circle
+							key={index}
+							cx={centerX}
+							cy={centerY}
+							r="0"
+							opacity="0"
+							fill={`url(#${currentGradientId})`}>
 							<animate
 								attributeName="r"
 								values={`${startRadius};${maxRadius}`}
@@ -134,32 +193,84 @@ export const LogoErrorAnimated = ({
 					);
 				})}
 			</g>
+
+			{/* Tipo de error - borde */}
 			<text
+				textAnchor="middle"
+				className={cn(errorStroke)}
 				style={{
 					fontFamily: "var(--font-cherry-bomb-one)",
-					fontSize: "4rem",
+					fontSize: tipoFontSize,
 				}}
-				x="32.2"
+				x="92.2"
 				y="67"
 				strokeWidth="6"
-				stroke="rgb(255, 255, 255)"
 				fill="none"
-				transform="translate(0, 40)"
-			>
+				strokeLinejoin="round"
+				transform="translate(0, 40)">
 				{tipo}
 			</text>
+
+			{/* Tipo de error - relleno */}
 			<text
+				textAnchor="middle"
 				className={cn(errorFill)}
 				style={{
 					fontFamily: "var(--font-cherry-bomb-one)",
-					fontSize: "4rem",
+					fontSize: tipoFontSize,
 				}}
-				x="32.5"
+				x="92.2"
 				y="67"
-				transform="translate(0, 40)"
-			>
+				transform="translate(0, 40)">
 				{tipo}
 			</text>
+
+			{/* Texto secundario - borde */}
+			{texto && (
+				<text
+					className={cn(errorTextStroke)}
+					x={textCenterX}
+					y={textStartY}
+					textAnchor="middle"
+					strokeWidth="1"
+					fill="none"
+					strokeLinejoin="round"
+					style={{
+						fontFamily: "var(--font-cherry-bomb-one)",
+						fontSize: textoFontSize,
+					}}>
+					{textLines.map((line, index) => (
+						<tspan
+							key={index}
+							x={textCenterX}
+							dy={index === 0 ? 0 : lineHeight}>
+							{line}
+						</tspan>
+					))}
+				</text>
+			)}
+
+			{/* Texto secundario - relleno */}
+			{texto && (
+				<text
+					className={cn(errorTextFill)}
+					x={textCenterX}
+					y={textStartY}
+					textAnchor="middle"
+					style={{
+						fontFamily: "var(--font-cherry-bomb-one)",
+						fontSize: textoFontSize,
+					}}>
+					{textLines.map((line, index) => (
+						<tspan
+							key={index}
+							x={textCenterX}
+							dy={index === 0 ? 0 : lineHeight}>
+							{line}
+						</tspan>
+					))}
+				</text>
+			)}
 		</svg>
 	);
 };

@@ -10,9 +10,14 @@ import WriterProfileWiew from "@/modules/writers/views/writer-profile-view";
 // };
 
 export default async function Page() {
-	const writer = await getWriter();
+	const writer = await getWriter(undefined, undefined);
 
 	if (!writer) return notFound();
 
-	return <WriterProfileWiew writer={writer} personal />;
+	return (
+		<WriterProfileWiew
+			writer={writer}
+			personal
+		/>
+	);
 }

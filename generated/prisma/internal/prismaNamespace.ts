@@ -28,23 +28,17 @@ export type PrismaPromise<T> = runtime.Types.Public.PrismaPromise<T>;
  * Prisma Errors
  */
 
-export const PrismaClientKnownRequestError =
-	runtime.PrismaClientKnownRequestError;
-export type PrismaClientKnownRequestError =
-	runtime.PrismaClientKnownRequestError;
+export const PrismaClientKnownRequestError = runtime.PrismaClientKnownRequestError;
+export type PrismaClientKnownRequestError = runtime.PrismaClientKnownRequestError;
 
-export const PrismaClientUnknownRequestError =
-	runtime.PrismaClientUnknownRequestError;
-export type PrismaClientUnknownRequestError =
-	runtime.PrismaClientUnknownRequestError;
+export const PrismaClientUnknownRequestError = runtime.PrismaClientUnknownRequestError;
+export type PrismaClientUnknownRequestError = runtime.PrismaClientUnknownRequestError;
 
 export const PrismaClientRustPanicError = runtime.PrismaClientRustPanicError;
 export type PrismaClientRustPanicError = runtime.PrismaClientRustPanicError;
 
-export const PrismaClientInitializationError =
-	runtime.PrismaClientInitializationError;
-export type PrismaClientInitializationError =
-	runtime.PrismaClientInitializationError;
+export const PrismaClientInitializationError = runtime.PrismaClientInitializationError;
+export type PrismaClientInitializationError = runtime.PrismaClientInitializationError;
 
 export const PrismaClientValidationError = runtime.PrismaClientValidationError;
 export type PrismaClientValidationError = runtime.PrismaClientValidationError;
@@ -72,19 +66,9 @@ export type DecimalJsLike = runtime.DecimalJsLike;
  */
 export type Extension = runtime.Types.Extensions.UserArgs;
 export const getExtensionContext = runtime.Extensions.getExtensionContext;
-export type Args<T, F extends runtime.Operation> = runtime.Types.Public.Args<
-	T,
-	F
->;
-export type Payload<
-	T,
-	F extends runtime.Operation = never,
-> = runtime.Types.Public.Payload<T, F>;
-export type Result<
-	T,
-	A,
-	F extends runtime.Operation,
-> = runtime.Types.Public.Result<T, A, F>;
+export type Args<T, F extends runtime.Operation> = runtime.Types.Public.Args<T, F>;
+export type Payload<T, F extends runtime.Operation = never> = runtime.Types.Public.Payload<T, F>;
+export type Result<T, A, F extends runtime.Operation> = runtime.Types.Public.Result<T, A, F>;
 export type Exact<A, W> = runtime.Types.Public.Exact<A, W>;
 
 export type PrismaVersion = {
@@ -93,12 +77,12 @@ export type PrismaVersion = {
 };
 
 /**
- * Prisma Client JS version: 7.6.0
- * Query Engine version: 75cbdc1eb7150937890ad5465d861175c6624711
+ * Prisma Client JS version: 7.10.1
+ * Query Engine version: d1b3f377ca835d73fd50954a5e22128b9ebdd6b8
  */
 export const prismaVersion: PrismaVersion = {
-	client: "7.6.0",
-	engine: "75cbdc1eb7150937890ad5465d861175c6624711",
+	client: "7.10.1",
+	engine: "d1b3f377ca835d73fd50954a5e22128b9ebdd6b8",
 };
 
 /**
@@ -114,15 +98,9 @@ export type InputJsonArray = runtime.InputJsonArray;
 export type InputJsonValue = runtime.InputJsonValue;
 
 export const NullTypes = {
-	DbNull: runtime.NullTypes.DbNull as new (
-		secret: never,
-	) => typeof runtime.DbNull,
-	JsonNull: runtime.NullTypes.JsonNull as new (
-		secret: never,
-	) => typeof runtime.JsonNull,
-	AnyNull: runtime.NullTypes.AnyNull as new (
-		secret: never,
-	) => typeof runtime.AnyNull,
+	DbNull: runtime.NullTypes.DbNull as new (secret: never) => typeof runtime.DbNull,
+	JsonNull: runtime.NullTypes.JsonNull as new (secret: never) => typeof runtime.JsonNull,
+	AnyNull: runtime.NullTypes.AnyNull as new (secret: never) => typeof runtime.AnyNull,
 };
 /**
  * Helper for filtering JSON entries that have `null` on the database (empty on the db)
@@ -173,17 +151,25 @@ export type Subset<T, U> = {
 };
 
 /**
+ * Resolved type of the argument passed to the `PrismaClient` constructor.
+ *
+ * When called without a narrower options type (the common case), this resolves
+ * to `PrismaClientOptions` directly, which produces a clear TypeScript error
+ * message (`not assignable to parameter of type 'PrismaClientOptions'`) when
+ * the argument is missing or incomplete. When the user supplies a narrower
+ * options type (e.g. via a literal), it falls back to `Subset` to keep
+ * filtering out unknown properties.
+ */
+export type PrismaClientConstructorArgs<Options extends PrismaClientOptions> = [PrismaClientOptions] extends [Options] ? PrismaClientOptions : Subset<Options, PrismaClientOptions>;
+
+/**
  * SelectSubset
  * @desc From `T` pick properties that exist in `U`. Simple version of Intersection.
  * Additionally, it validates, if both select and include are present. If the case, it errors.
  */
 export type SelectSubset<T, U> = {
 	[key in keyof T]: key extends keyof U ? T[key] : never;
-} & (T extends SelectAndInclude
-	? "Please either choose `select` or `include`."
-	: T extends SelectAndOmit
-		? "Please either choose `select` or `omit`."
-		: {});
+} & (T extends SelectAndInclude ? "Please either choose `select` or `include`." : T extends SelectAndOmit ? "Please either choose `select` or `omit`." : {});
 
 /**
  * Subset + Intersection
@@ -199,27 +185,12 @@ type Without<T, U> = { [P in Exclude<keyof T, keyof U>]?: never };
  * XOR is needed to have a real mutually exclusive union type
  * https://stackoverflow.com/questions/42123407/does-typescript-support-mutually-exclusive-types
  */
-export type XOR<T, U> = T extends object
-	? U extends object
-		? (Without<T, U> & U) | (Without<U, T> & T)
-		: U
-	: T;
+export type XOR<T, U> = T extends object ? (U extends object ? ((Without<T, U> & U) | (Without<U, T> & T)) & object : U) : T;
 
 /**
  * Is T a Record?
  */
-type IsObject<T extends any> =
-	T extends Array<any>
-		? False
-		: T extends Date
-			? False
-			: T extends Uint8Array
-				? False
-				: T extends BigInt
-					? False
-					: T extends object
-						? True
-						: False;
+type IsObject<T extends any> = T extends Array<any> ? False : T extends Date ? False : T extends Uint8Array ? False : T extends BigInt ? False : T extends object ? True : False;
 
 /**
  * If it's T[], return T
@@ -245,11 +216,7 @@ type _Either<O extends object, K extends Key, strict extends Boolean> = {
 	0: EitherLoose<O, K>;
 }[strict];
 
-export type Either<
-	O extends object,
-	K extends Key,
-	strict extends Boolean = 1,
-> = O extends unknown ? _Either<O, K, strict> : never;
+export type Either<O extends object, K extends Key, strict extends Boolean = 1> = O extends unknown ? _Either<O, K, strict> : never;
 
 export type Union = any;
 
@@ -258,13 +225,7 @@ export type PatchUndefined<O extends object, O1 extends object> = {
 } & {};
 
 /** Helper Types for "Merge" **/
-export type IntersectOf<U extends Union> = (
-	U extends unknown
-		? (k: U) => void
-		: never
-) extends (k: infer I) => void
-	? I
-	: never;
+export type IntersectOf<U extends Union> = (U extends unknown ? (k: U) => void : never) extends (k: infer I) => void ? I : never;
 
 export type Overwrite<O extends object, O1 extends object> = {
 	[K in keyof O]: K extends keyof O1 ? O1[K] : O[K];
@@ -281,9 +242,7 @@ type _Merge<U extends object> = IntersectOf<
 
 type Key = string | number | symbol;
 type AtStrict<O extends object, K extends Key> = O[K & keyof O];
-type AtLoose<O extends object, K extends Key> = O extends unknown
-	? AtStrict<O, K>
-	: never;
+type AtLoose<O extends object, K extends Key> = O extends unknown ? AtStrict<O, K> : never;
 export type At<O extends object, K extends Key, strict extends Boolean = 1> = {
 	1: AtStrict<O, K>;
 	0: AtLoose<O, K>;
@@ -308,16 +267,10 @@ type NoExpand<T> = T extends unknown ? T : never;
 
 // this type assumes the passed object is entirely optional
 export type AtLeast<O extends object, K extends string> = NoExpand<
-	O extends unknown
-		?
-				| (K extends keyof O ? { [P in K]: O[P] } & O : O)
-				| ({ [P in keyof O as P extends K ? P : never]-?: O[P] } & O)
-		: never
+	O extends unknown ? (K extends keyof O ? { [P in K]: O[P] } & O : O) | ({ [P in keyof O as P extends K ? P : never]-?: O[P] } & O) : never
 >;
 
-type _Strict<U, _U = U> = U extends unknown
-	? U & OptionalFlat<_Record<Exclude<Keys<_U>, keyof U>, never>>
-	: never;
+type _Strict<U, _U = U> = U extends unknown ? U & OptionalFlat<_Record<Exclude<Keys<_U>, keyof U>, never>> : never;
 
 export type Strict<U extends object> = ComputeRaw<_Strict<U>>;
 /** End Helper Types for "Merge" **/
@@ -341,9 +294,7 @@ export type Extends<A1 extends any, A2 extends any> = [A1] extends [never]
 		? 1
 		: 0;
 
-export type Has<U extends Union, U1 extends Union> = Not<
-	Extends<Exclude<U1, U>, U1>
->;
+export type Has<U extends Union, U1 extends Union> = Not<Extends<Exclude<U1, U>, U1>>;
 
 export type Or<B1 extends Boolean, B2 extends Boolean> = {
 	0: {
@@ -364,21 +315,15 @@ export type GetScalarType<T, O> = O extends object
 		}
 	: never;
 
-type FieldPaths<T, U = Omit<T, "_avg" | "_sum" | "_count" | "_min" | "_max">> =
-	IsObject<T> extends True ? U : T;
+type FieldPaths<T, U = Omit<T, "_avg" | "_sum" | "_count" | "_min" | "_max">> = IsObject<T> extends True ? U : T;
 
 export type GetHavingFields<T> = {
-	[K in keyof T]: Or<
-		Or<Extends<"OR", K>, Extends<"AND", K>>,
-		Extends<"NOT", K>
-	> extends True
+	[K in keyof T]: Or<Or<Extends<"OR", K>, Extends<"AND", K>>, Extends<"NOT", K>> extends True
 		? // infer is only needed to not hit TS limit
 			// based on the brilliant idea of Pierre-Antoine Mills
 			// https://github.com/microsoft/TypeScript/issues/30188#issuecomment-478938437
 			T[K] extends infer TK
-			? GetHavingFields<
-					UnEnumerate<TK> extends object ? Merge<UnEnumerate<TK>> : never
-				>
+			? GetHavingFields<UnEnumerate<TK> extends object ? Merge<UnEnumerate<TK>> : never>
 			: never
 		: {} extends FieldPaths<T[K]>
 			? never
@@ -395,23 +340,16 @@ export type MaybeTupleToUnion<T> = T extends any[] ? TupleToUnion<T> : T;
 /**
  * Like `Pick`, but additionally can also accept an array of keys
  */
-export type PickEnumerable<
-	T,
-	K extends Enumerable<keyof T> | keyof T,
-> = Prisma__Pick<T, MaybeTupleToUnion<K>>;
+export type PickEnumerable<T, K extends Enumerable<keyof T> | keyof T> = Prisma__Pick<T, MaybeTupleToUnion<K>>;
 
 /**
  * Exclude all keys with underscores
  */
-export type ExcludeUnderscoreKeys<T extends string> = T extends `_${string}`
-	? never
-	: T;
+export type ExcludeUnderscoreKeys<T extends string> = T extends `_${string}` ? never : T;
 
 export type FieldRef<Model, FieldType> = runtime.FieldRef<Model, FieldType>;
 
-type FieldRefInputType<Model, FieldType> = Model extends never
-	? never
-	: FieldRef<Model, FieldType>;
+type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRef<Model, FieldType>;
 
 export const ModelName = {
 	Estado: "Estado",
@@ -441,19 +379,11 @@ export const ModelName = {
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName];
 
-export interface TypeMapCb<GlobalOmitOptions = {}>
-	extends runtime.Types.Utils.Fn<
-		{ extArgs: runtime.Types.Extensions.InternalArgs },
-		runtime.Types.Utils.Record<string, any>
-	> {
+export interface TypeMapCb<GlobalOmitOptions = {}> extends runtime.Types.Utils.Fn<{ extArgs: runtime.Types.Extensions.InternalArgs }, runtime.Types.Utils.Record<string, any>> {
 	returns: TypeMap<this["params"]["extArgs"], GlobalOmitOptions>;
 }
 
-export type TypeMap<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> = {
+export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> = {
 	globalOmitOptions: {
 		omit: GlobalOmitOptions;
 	};
@@ -555,9 +485,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.EstadoCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.EstadoCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.EstadoCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -631,9 +559,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.AvatarCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.AvatarCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.AvatarCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -707,9 +633,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.CategoriaCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.CategoriaCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.CategoriaCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -783,9 +707,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.EtiquetaCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.EtiquetaCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.EtiquetaCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -859,9 +781,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.TipoCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.TipoCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.TipoCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -935,9 +855,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.UsuarioCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.UsuarioCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.UsuarioCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -1011,9 +929,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.ConfiguracionCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.ConfiguracionCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.ConfiguracionCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -1087,9 +1003,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.EscritorCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.EscritorCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.EscritorCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -1163,9 +1077,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.IdiomaCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.IdiomaCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.IdiomaCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -1239,9 +1151,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.LibroCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.LibroCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.LibroCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -1315,9 +1225,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.LibroCategoriaCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.LibroCategoriaCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.LibroCategoriaCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -1391,9 +1299,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.LibroEtiquetaCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.LibroEtiquetaCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.LibroEtiquetaCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -1467,9 +1373,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.CapituloCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.CapituloCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.CapituloCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -1543,9 +1447,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.ParrafoCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.ParrafoCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.ParrafoCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -1619,9 +1521,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.ComentarioCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.ComentarioCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.ComentarioCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -1695,9 +1595,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.FavoritoCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.FavoritoCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.FavoritoCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -1771,9 +1669,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.ListaCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.ListaCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.ListaCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -1847,9 +1743,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.ListaLibroCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.ListaLibroCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.ListaLibroCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -1923,9 +1817,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.GlosarioCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.GlosarioCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.GlosarioCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -1999,9 +1891,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.NotaAutorCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.NotaAutorCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.NotaAutorCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -2075,9 +1965,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.MarcadorCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.MarcadorCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.MarcadorCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -2151,9 +2039,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.SeguirUsuarioCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.SeguirUsuarioCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.SeguirUsuarioCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -2227,9 +2113,7 @@ export type TypeMap<
 				};
 				count: {
 					args: Prisma.NotificacionCountArgs<ExtArgs>;
-					result:
-						| runtime.Types.Utils.Optional<Prisma.NotificacionCountAggregateOutputType>
-						| number;
+					result: runtime.Types.Utils.Optional<Prisma.NotificacionCountAggregateOutputType> | number;
 				};
 			};
 		};
@@ -2269,8 +2153,7 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 	Serializable: "Serializable",
 } as const);
 
-export type TransactionIsolationLevel =
-	(typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel];
+export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel];
 
 export const EstadoScalarFieldEnum = {
 	id: "id",
@@ -2281,8 +2164,7 @@ export const EstadoScalarFieldEnum = {
 	updatedAt: "updatedAt",
 } as const;
 
-export type EstadoScalarFieldEnum =
-	(typeof EstadoScalarFieldEnum)[keyof typeof EstadoScalarFieldEnum];
+export type EstadoScalarFieldEnum = (typeof EstadoScalarFieldEnum)[keyof typeof EstadoScalarFieldEnum];
 
 export const AvatarScalarFieldEnum = {
 	id: "id",
@@ -2290,8 +2172,7 @@ export const AvatarScalarFieldEnum = {
 	url: "url",
 } as const;
 
-export type AvatarScalarFieldEnum =
-	(typeof AvatarScalarFieldEnum)[keyof typeof AvatarScalarFieldEnum];
+export type AvatarScalarFieldEnum = (typeof AvatarScalarFieldEnum)[keyof typeof AvatarScalarFieldEnum];
 
 export const CategoriaScalarFieldEnum = {
 	id: "id",
@@ -2301,8 +2182,7 @@ export const CategoriaScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type CategoriaScalarFieldEnum =
-	(typeof CategoriaScalarFieldEnum)[keyof typeof CategoriaScalarFieldEnum];
+export type CategoriaScalarFieldEnum = (typeof CategoriaScalarFieldEnum)[keyof typeof CategoriaScalarFieldEnum];
 
 export const EtiquetaScalarFieldEnum = {
 	id: "id",
@@ -2312,8 +2192,7 @@ export const EtiquetaScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type EtiquetaScalarFieldEnum =
-	(typeof EtiquetaScalarFieldEnum)[keyof typeof EtiquetaScalarFieldEnum];
+export type EtiquetaScalarFieldEnum = (typeof EtiquetaScalarFieldEnum)[keyof typeof EtiquetaScalarFieldEnum];
 
 export const TipoScalarFieldEnum = {
 	id: "id",
@@ -2322,8 +2201,7 @@ export const TipoScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type TipoScalarFieldEnum =
-	(typeof TipoScalarFieldEnum)[keyof typeof TipoScalarFieldEnum];
+export type TipoScalarFieldEnum = (typeof TipoScalarFieldEnum)[keyof typeof TipoScalarFieldEnum];
 
 export const UsuarioScalarFieldEnum = {
 	id: "id",
@@ -2336,8 +2214,7 @@ export const UsuarioScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type UsuarioScalarFieldEnum =
-	(typeof UsuarioScalarFieldEnum)[keyof typeof UsuarioScalarFieldEnum];
+export type UsuarioScalarFieldEnum = (typeof UsuarioScalarFieldEnum)[keyof typeof UsuarioScalarFieldEnum];
 
 export const ConfiguracionScalarFieldEnum = {
 	id: "id",
@@ -2349,8 +2226,7 @@ export const ConfiguracionScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type ConfiguracionScalarFieldEnum =
-	(typeof ConfiguracionScalarFieldEnum)[keyof typeof ConfiguracionScalarFieldEnum];
+export type ConfiguracionScalarFieldEnum = (typeof ConfiguracionScalarFieldEnum)[keyof typeof ConfiguracionScalarFieldEnum];
 
 export const EscritorScalarFieldEnum = {
 	id: "id",
@@ -2366,8 +2242,7 @@ export const EscritorScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type EscritorScalarFieldEnum =
-	(typeof EscritorScalarFieldEnum)[keyof typeof EscritorScalarFieldEnum];
+export type EscritorScalarFieldEnum = (typeof EscritorScalarFieldEnum)[keyof typeof EscritorScalarFieldEnum];
 
 export const IdiomaScalarFieldEnum = {
 	id: "id",
@@ -2378,8 +2253,7 @@ export const IdiomaScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type IdiomaScalarFieldEnum =
-	(typeof IdiomaScalarFieldEnum)[keyof typeof IdiomaScalarFieldEnum];
+export type IdiomaScalarFieldEnum = (typeof IdiomaScalarFieldEnum)[keyof typeof IdiomaScalarFieldEnum];
 
 export const LibroScalarFieldEnum = {
 	id: "id",
@@ -2396,8 +2270,7 @@ export const LibroScalarFieldEnum = {
 	idiomaId: "idiomaId",
 } as const;
 
-export type LibroScalarFieldEnum =
-	(typeof LibroScalarFieldEnum)[keyof typeof LibroScalarFieldEnum];
+export type LibroScalarFieldEnum = (typeof LibroScalarFieldEnum)[keyof typeof LibroScalarFieldEnum];
 
 export const LibroCategoriaScalarFieldEnum = {
 	libroId: "libroId",
@@ -2407,8 +2280,7 @@ export const LibroCategoriaScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type LibroCategoriaScalarFieldEnum =
-	(typeof LibroCategoriaScalarFieldEnum)[keyof typeof LibroCategoriaScalarFieldEnum];
+export type LibroCategoriaScalarFieldEnum = (typeof LibroCategoriaScalarFieldEnum)[keyof typeof LibroCategoriaScalarFieldEnum];
 
 export const LibroEtiquetaScalarFieldEnum = {
 	libroId: "libroId",
@@ -2418,8 +2290,7 @@ export const LibroEtiquetaScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type LibroEtiquetaScalarFieldEnum =
-	(typeof LibroEtiquetaScalarFieldEnum)[keyof typeof LibroEtiquetaScalarFieldEnum];
+export type LibroEtiquetaScalarFieldEnum = (typeof LibroEtiquetaScalarFieldEnum)[keyof typeof LibroEtiquetaScalarFieldEnum];
 
 export const CapituloScalarFieldEnum = {
 	id: "id",
@@ -2431,8 +2302,7 @@ export const CapituloScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type CapituloScalarFieldEnum =
-	(typeof CapituloScalarFieldEnum)[keyof typeof CapituloScalarFieldEnum];
+export type CapituloScalarFieldEnum = (typeof CapituloScalarFieldEnum)[keyof typeof CapituloScalarFieldEnum];
 
 export const ParrafoScalarFieldEnum = {
 	id: "id",
@@ -2444,8 +2314,7 @@ export const ParrafoScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type ParrafoScalarFieldEnum =
-	(typeof ParrafoScalarFieldEnum)[keyof typeof ParrafoScalarFieldEnum];
+export type ParrafoScalarFieldEnum = (typeof ParrafoScalarFieldEnum)[keyof typeof ParrafoScalarFieldEnum];
 
 export const ComentarioScalarFieldEnum = {
 	id: "id",
@@ -2459,8 +2328,7 @@ export const ComentarioScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type ComentarioScalarFieldEnum =
-	(typeof ComentarioScalarFieldEnum)[keyof typeof ComentarioScalarFieldEnum];
+export type ComentarioScalarFieldEnum = (typeof ComentarioScalarFieldEnum)[keyof typeof ComentarioScalarFieldEnum];
 
 export const FavoritoScalarFieldEnum = {
 	id: "id",
@@ -2471,8 +2339,7 @@ export const FavoritoScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type FavoritoScalarFieldEnum =
-	(typeof FavoritoScalarFieldEnum)[keyof typeof FavoritoScalarFieldEnum];
+export type FavoritoScalarFieldEnum = (typeof FavoritoScalarFieldEnum)[keyof typeof FavoritoScalarFieldEnum];
 
 export const ListaScalarFieldEnum = {
 	id: "id",
@@ -2484,8 +2351,7 @@ export const ListaScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type ListaScalarFieldEnum =
-	(typeof ListaScalarFieldEnum)[keyof typeof ListaScalarFieldEnum];
+export type ListaScalarFieldEnum = (typeof ListaScalarFieldEnum)[keyof typeof ListaScalarFieldEnum];
 
 export const ListaLibroScalarFieldEnum = {
 	id: "id",
@@ -2496,8 +2362,7 @@ export const ListaLibroScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type ListaLibroScalarFieldEnum =
-	(typeof ListaLibroScalarFieldEnum)[keyof typeof ListaLibroScalarFieldEnum];
+export type ListaLibroScalarFieldEnum = (typeof ListaLibroScalarFieldEnum)[keyof typeof ListaLibroScalarFieldEnum];
 
 export const GlosarioScalarFieldEnum = {
 	id: "id",
@@ -2510,8 +2375,7 @@ export const GlosarioScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type GlosarioScalarFieldEnum =
-	(typeof GlosarioScalarFieldEnum)[keyof typeof GlosarioScalarFieldEnum];
+export type GlosarioScalarFieldEnum = (typeof GlosarioScalarFieldEnum)[keyof typeof GlosarioScalarFieldEnum];
 
 export const NotaAutorScalarFieldEnum = {
 	id: "id",
@@ -2523,8 +2387,7 @@ export const NotaAutorScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type NotaAutorScalarFieldEnum =
-	(typeof NotaAutorScalarFieldEnum)[keyof typeof NotaAutorScalarFieldEnum];
+export type NotaAutorScalarFieldEnum = (typeof NotaAutorScalarFieldEnum)[keyof typeof NotaAutorScalarFieldEnum];
 
 export const MarcadorScalarFieldEnum = {
 	id: "id",
@@ -2537,8 +2400,7 @@ export const MarcadorScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type MarcadorScalarFieldEnum =
-	(typeof MarcadorScalarFieldEnum)[keyof typeof MarcadorScalarFieldEnum];
+export type MarcadorScalarFieldEnum = (typeof MarcadorScalarFieldEnum)[keyof typeof MarcadorScalarFieldEnum];
 
 export const SeguirUsuarioScalarFieldEnum = {
 	id: "id",
@@ -2549,8 +2411,7 @@ export const SeguirUsuarioScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type SeguirUsuarioScalarFieldEnum =
-	(typeof SeguirUsuarioScalarFieldEnum)[keyof typeof SeguirUsuarioScalarFieldEnum];
+export type SeguirUsuarioScalarFieldEnum = (typeof SeguirUsuarioScalarFieldEnum)[keyof typeof SeguirUsuarioScalarFieldEnum];
 
 export const NotificacionScalarFieldEnum = {
 	id: "id",
@@ -2565,8 +2426,7 @@ export const NotificacionScalarFieldEnum = {
 	updatedAt: "updatedAt",
 } as const;
 
-export type NotificacionScalarFieldEnum =
-	(typeof NotificacionScalarFieldEnum)[keyof typeof NotificacionScalarFieldEnum];
+export type NotificacionScalarFieldEnum = (typeof NotificacionScalarFieldEnum)[keyof typeof NotificacionScalarFieldEnum];
 
 export const SortOrder = {
 	asc: "asc",
@@ -2596,104 +2456,67 @@ export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder];
 /**
  * Reference to a field of type 'Int'
  */
-export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<
-	$PrismaModel,
-	"Int"
->;
+export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, "Int">;
 
 /**
  * Reference to a field of type 'Int[]'
  */
-export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<
-	$PrismaModel,
-	"Int[]"
->;
+export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, "Int[]">;
 
 /**
  * Reference to a field of type 'String'
  */
-export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<
-	$PrismaModel,
-	"String"
->;
+export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, "String">;
 
 /**
  * Reference to a field of type 'String[]'
  */
-export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<
-	$PrismaModel,
-	"String[]"
->;
+export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, "String[]">;
 
 /**
  * Reference to a field of type 'DateTime'
  */
-export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<
-	$PrismaModel,
-	"DateTime"
->;
+export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, "DateTime">;
 
 /**
  * Reference to a field of type 'DateTime[]'
  */
-export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<
-	$PrismaModel,
-	"DateTime[]"
->;
+export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, "DateTime[]">;
 
 /**
  * Reference to a field of type 'Boolean'
  */
-export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<
-	$PrismaModel,
-	"Boolean"
->;
+export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, "Boolean">;
 
 /**
  * Reference to a field of type 'NotificacionTipo'
  */
-export type EnumNotificacionTipoFieldRefInput<$PrismaModel> = FieldRefInputType<
-	$PrismaModel,
-	"NotificacionTipo"
->;
+export type EnumNotificacionTipoFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, "NotificacionTipo">;
 
 /**
  * Reference to a field of type 'NotificacionTipo[]'
  */
-export type ListEnumNotificacionTipoFieldRefInput<$PrismaModel> =
-	FieldRefInputType<$PrismaModel, "NotificacionTipo[]">;
+export type ListEnumNotificacionTipoFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, "NotificacionTipo[]">;
 
 /**
  * Reference to a field of type 'EntidadTipo'
  */
-export type EnumEntidadTipoFieldRefInput<$PrismaModel> = FieldRefInputType<
-	$PrismaModel,
-	"EntidadTipo"
->;
+export type EnumEntidadTipoFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, "EntidadTipo">;
 
 /**
  * Reference to a field of type 'EntidadTipo[]'
  */
-export type ListEnumEntidadTipoFieldRefInput<$PrismaModel> = FieldRefInputType<
-	$PrismaModel,
-	"EntidadTipo[]"
->;
+export type ListEnumEntidadTipoFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, "EntidadTipo[]">;
 
 /**
  * Reference to a field of type 'Float'
  */
-export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<
-	$PrismaModel,
-	"Float"
->;
+export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, "Float">;
 
 /**
  * Reference to a field of type 'Float[]'
  */
-export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<
-	$PrismaModel,
-	"Float[]"
->;
+export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, "Float[]">;
 
 /**
  * Batch Payload for updateMany & deleteMany & createMany
@@ -2702,30 +2525,13 @@ export type BatchPayload = {
 	count: number;
 };
 
-export const defineExtension = runtime.Extensions
-	.defineExtension as unknown as runtime.Types.Extensions.ExtendsHook<
-	"define",
-	TypeMapCb,
-	runtime.Types.Extensions.DefaultArgs
->;
+export const defineExtension = runtime.Extensions.defineExtension as unknown as runtime.Types.Extensions.ExtendsHook<"define", TypeMapCb, runtime.Types.Extensions.DefaultArgs>;
 export type DefaultPrismaClient = PrismaClient;
 export type ErrorFormat = "pretty" | "colorless" | "minimal";
-export type PrismaClientOptions = (
-	| {
-			/**
-			 * Instance of a Driver Adapter, e.g., like one provided by `@prisma/adapter-pg`.
-			 */
-			adapter: runtime.SqlDriverAdapterFactory;
-			accelerateUrl?: never;
-	  }
-	| {
-			/**
-			 * Prisma Accelerate URL allowing the client to connect through Accelerate instead of a direct database.
-			 */
-			accelerateUrl: string;
-			adapter?: never;
-	  }
-) & {
+/**
+ * Options common to all variants of `PrismaClientOptions`, regardless of whether you connect to your database through a driver adapter or through Prisma Accelerate.
+ */
+export interface PrismaClientBaseOptions {
 	/**
 	 * @default "colorless"
 	 */
@@ -2796,7 +2602,72 @@ export type PrismaClientOptions = (
 	 * ```
 	 */
 	comments?: runtime.SqlCommenterPlugin[];
-};
+	/**
+	 * Optional maximum size for the query plan cache. If not provided, a default size will be used.
+	 * A value of `0` can be used to disable the cache entirely. A higher cache size can improve
+	 * performance for applications that execute a large number of unique queries, while a smaller
+	 * cache size can reduce memory usage.
+	 *
+	 * @example
+	 * ```
+	 * const prisma = new PrismaClient({
+	 *   adapter,
+	 *   queryPlanCacheMaxSize: 100,
+	 * })
+	 * ```
+	 */
+	queryPlanCacheMaxSize?: number;
+}
+
+/**
+ * `PrismaClient` options for connecting to your database through Prisma Accelerate instead of a driver adapter.
+ *
+ * Learn more: https://pris.ly/d/accelerate
+ */
+export interface PrismaClientOptionsWithAccelerateUrl extends PrismaClientBaseOptions {
+	/**
+	 * The Prisma Accelerate connection URL. Use this option to connect to your database through Prisma Accelerate instead of using a driver adapter to connect directly.
+	 *
+	 * Learn more: https://pris.ly/d/accelerate
+	 */
+	accelerateUrl: string;
+	adapter?: never;
+}
+
+/**
+ * `PrismaClient` options for connecting to your database through a driver adapter. This is the common case in Prisma 7.
+ *
+ * Learn more: https://pris.ly/d/driver-adapters
+ */
+export interface PrismaClientOptionsWithAdapter extends PrismaClientBaseOptions {
+	/**
+	 * A driver adapter that PrismaClient uses to connect to your database, such as the ones provided by `@prisma/adapter-pg`, `@prisma/adapter-libsql`, `@prisma/adapter-planetscale`, etc.
+	 *
+	 * A driver adapter is **required** unless you connect to your database through Prisma Accelerate (in which case use `accelerateUrl` instead).
+	 *
+	 * Learn more: https://pris.ly/d/driver-adapters
+	 *
+	 * @example
+	 * ```ts
+	 * import { PrismaPg } from '@prisma/adapter-pg'
+	 * import { PrismaClient } from './generated/prisma/client'
+	 *
+	 * const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL })
+	 * const prisma = new PrismaClient({ adapter })
+	 * ```
+	 */
+	adapter: runtime.SqlDriverAdapterFactory;
+	accelerateUrl?: never;
+}
+
+/**
+ * Options passed to the `PrismaClient` constructor.
+ *
+ * A driver adapter (or, alternatively, a Prisma Accelerate URL) is **required**. See {@link PrismaClientOptionsWithAdapter} and {@link PrismaClientOptionsWithAccelerateUrl} for the two variants. All other properties live in {@link PrismaClientBaseOptions} and are optional.
+ *
+ * Learn more about driver adapters: https://pris.ly/d/driver-adapters
+ */
+export type PrismaClientOptions = PrismaClientOptionsWithAccelerateUrl | PrismaClientOptionsWithAdapter;
 export type GlobalOmitConfig = {
 	estado?: Prisma.EstadoOmit;
 	avatar?: Prisma.AvatarOmit;
@@ -2832,12 +2703,9 @@ export type LogDefinition = {
 
 export type CheckIsLogLevel<T> = T extends LogLevel ? T : never;
 
-export type GetLogType<T> = CheckIsLogLevel<
-	T extends LogDefinition ? T["level"] : T
->;
+export type GetLogType<T> = CheckIsLogLevel<T extends LogDefinition ? T["level"] : T>;
 
-export type GetEvents<T extends any[]> =
-	T extends Array<LogLevel | LogDefinition> ? GetLogType<T[number]> : never;
+export type GetEvents<T extends any[]> = T extends Array<LogLevel | LogDefinition> ? GetLogType<T[number]> : never;
 
 export type QueryEvent = {
 	timestamp: Date;
@@ -2880,7 +2748,4 @@ export type PrismaAction =
 /**
  * `PrismaClient` proxy available in interactive transactions.
  */
-export type TransactionClient = Omit<
-	DefaultPrismaClient,
-	runtime.ITXClientDenyList
->;
+export type TransactionClient = Omit<DefaultPrismaClient, runtime.ITXClientDenyList>;

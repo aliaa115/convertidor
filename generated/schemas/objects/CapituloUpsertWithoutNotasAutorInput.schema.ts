@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { CapituloCreateWithoutNotasAutorInputObjectSchema as CapituloCreateWithoutNotasAutorInputObjectSchema } from "./CapituloCreateWithoutNotasAutorInput.schema.ts";
 import { CapituloUncheckedCreateWithoutNotasAutorInputObjectSchema as CapituloUncheckedCreateWithoutNotasAutorInputObjectSchema } from "./CapituloUncheckedCreateWithoutNotasAutorInput.schema.ts";
 import { CapituloUncheckedUpdateWithoutNotasAutorInputObjectSchema as CapituloUncheckedUpdateWithoutNotasAutorInputObjectSchema } from "./CapituloUncheckedUpdateWithoutNotasAutorInput.schema.ts";
@@ -9,14 +9,8 @@ import { CapituloWhereInputObjectSchema as CapituloWhereInputObjectSchema } from
 const makeSchema = () =>
 	z
 		.object({
-			update: z.union([
-				z.lazy(() => CapituloUpdateWithoutNotasAutorInputObjectSchema),
-				z.lazy(() => CapituloUncheckedUpdateWithoutNotasAutorInputObjectSchema),
-			]),
-			create: z.union([
-				z.lazy(() => CapituloCreateWithoutNotasAutorInputObjectSchema),
-				z.lazy(() => CapituloUncheckedCreateWithoutNotasAutorInputObjectSchema),
-			]),
+			update: z.union([z.lazy(() => CapituloUpdateWithoutNotasAutorInputObjectSchema), z.lazy(() => CapituloUncheckedUpdateWithoutNotasAutorInputObjectSchema)]),
+			create: z.union([z.lazy(() => CapituloCreateWithoutNotasAutorInputObjectSchema), z.lazy(() => CapituloUncheckedCreateWithoutNotasAutorInputObjectSchema)]),
 			where: z.lazy(() => CapituloWhereInputObjectSchema).optional(),
 		})
 		.strict();

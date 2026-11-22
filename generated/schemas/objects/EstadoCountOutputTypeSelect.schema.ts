@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { EstadoCountOutputTypeCountCapitulosArgsObjectSchema as EstadoCountOutputTypeCountCapitulosArgsObjectSchema } from "./EstadoCountOutputTypeCountCapitulosArgs.schema.ts";
 import { EstadoCountOutputTypeCountCategoriasArgsObjectSchema as EstadoCountOutputTypeCountCategoriasArgsObjectSchema } from "./EstadoCountOutputTypeCountCategoriasArgs.schema.ts";
 import { EstadoCountOutputTypeCountComentariosArgsObjectSchema as EstadoCountOutputTypeCountComentariosArgsObjectSchema } from "./EstadoCountOutputTypeCountComentariosArgs.schema.ts";
@@ -24,136 +24,27 @@ import { EstadoCountOutputTypeCountUsuariosArgsObjectSchema as EstadoCountOutput
 const makeSchema = () =>
 	z
 		.object({
-			categorias: z
-				.union([
-					z.boolean(),
-					z.lazy(() => EstadoCountOutputTypeCountCategoriasArgsObjectSchema),
-				])
-				.optional(),
-			etiquetas: z
-				.union([
-					z.boolean(),
-					z.lazy(() => EstadoCountOutputTypeCountEtiquetasArgsObjectSchema),
-				])
-				.optional(),
-			tipos: z
-				.union([
-					z.boolean(),
-					z.lazy(() => EstadoCountOutputTypeCountTiposArgsObjectSchema),
-				])
-				.optional(),
-			usuarios: z
-				.union([
-					z.boolean(),
-					z.lazy(() => EstadoCountOutputTypeCountUsuariosArgsObjectSchema),
-				])
-				.optional(),
-			escritores: z
-				.union([
-					z.boolean(),
-					z.lazy(() => EstadoCountOutputTypeCountEscritoresArgsObjectSchema),
-				])
-				.optional(),
-			configuraciones: z
-				.union([
-					z.boolean(),
-					z.lazy(
-						() => EstadoCountOutputTypeCountConfiguracionesArgsObjectSchema,
-					),
-				])
-				.optional(),
-			idioma: z
-				.union([
-					z.boolean(),
-					z.lazy(() => EstadoCountOutputTypeCountIdiomaArgsObjectSchema),
-				])
-				.optional(),
-			libros: z
-				.union([
-					z.boolean(),
-					z.lazy(() => EstadoCountOutputTypeCountLibrosArgsObjectSchema),
-				])
-				.optional(),
-			capitulos: z
-				.union([
-					z.boolean(),
-					z.lazy(() => EstadoCountOutputTypeCountCapitulosArgsObjectSchema),
-				])
-				.optional(),
-			parrafos: z
-				.union([
-					z.boolean(),
-					z.lazy(() => EstadoCountOutputTypeCountParrafosArgsObjectSchema),
-				])
-				.optional(),
-			comentarios: z
-				.union([
-					z.boolean(),
-					z.lazy(() => EstadoCountOutputTypeCountComentariosArgsObjectSchema),
-				])
-				.optional(),
-			libroCategorias: z
-				.union([
-					z.boolean(),
-					z.lazy(
-						() => EstadoCountOutputTypeCountLibroCategoriasArgsObjectSchema,
-					),
-				])
-				.optional(),
-			libroEtiquetas: z
-				.union([
-					z.boolean(),
-					z.lazy(
-						() => EstadoCountOutputTypeCountLibroEtiquetasArgsObjectSchema,
-					),
-				])
-				.optional(),
-			favoritos: z
-				.union([
-					z.boolean(),
-					z.lazy(() => EstadoCountOutputTypeCountFavoritosArgsObjectSchema),
-				])
-				.optional(),
-			glosarios: z
-				.union([
-					z.boolean(),
-					z.lazy(() => EstadoCountOutputTypeCountGlosariosArgsObjectSchema),
-				])
-				.optional(),
-			notasAutor: z
-				.union([
-					z.boolean(),
-					z.lazy(() => EstadoCountOutputTypeCountNotasAutorArgsObjectSchema),
-				])
-				.optional(),
-			marcadores: z
-				.union([
-					z.boolean(),
-					z.lazy(() => EstadoCountOutputTypeCountMarcadoresArgsObjectSchema),
-				])
-				.optional(),
-			listas: z
-				.union([
-					z.boolean(),
-					z.lazy(() => EstadoCountOutputTypeCountListasArgsObjectSchema),
-				])
-				.optional(),
-			listaLibros: z
-				.union([
-					z.boolean(),
-					z.lazy(() => EstadoCountOutputTypeCountListaLibrosArgsObjectSchema),
-				])
-				.optional(),
-			seguirUsuarios: z
-				.union([
-					z.boolean(),
-					z.lazy(
-						() => EstadoCountOutputTypeCountSeguirUsuariosArgsObjectSchema,
-					),
-				])
-				.optional(),
+			categorias: z.union([z.boolean(), z.lazy(() => EstadoCountOutputTypeCountCategoriasArgsObjectSchema)]).optional(),
+			etiquetas: z.union([z.boolean(), z.lazy(() => EstadoCountOutputTypeCountEtiquetasArgsObjectSchema)]).optional(),
+			tipos: z.union([z.boolean(), z.lazy(() => EstadoCountOutputTypeCountTiposArgsObjectSchema)]).optional(),
+			usuarios: z.union([z.boolean(), z.lazy(() => EstadoCountOutputTypeCountUsuariosArgsObjectSchema)]).optional(),
+			escritores: z.union([z.boolean(), z.lazy(() => EstadoCountOutputTypeCountEscritoresArgsObjectSchema)]).optional(),
+			configuraciones: z.union([z.boolean(), z.lazy(() => EstadoCountOutputTypeCountConfiguracionesArgsObjectSchema)]).optional(),
+			idioma: z.union([z.boolean(), z.lazy(() => EstadoCountOutputTypeCountIdiomaArgsObjectSchema)]).optional(),
+			libros: z.union([z.boolean(), z.lazy(() => EstadoCountOutputTypeCountLibrosArgsObjectSchema)]).optional(),
+			capitulos: z.union([z.boolean(), z.lazy(() => EstadoCountOutputTypeCountCapitulosArgsObjectSchema)]).optional(),
+			parrafos: z.union([z.boolean(), z.lazy(() => EstadoCountOutputTypeCountParrafosArgsObjectSchema)]).optional(),
+			comentarios: z.union([z.boolean(), z.lazy(() => EstadoCountOutputTypeCountComentariosArgsObjectSchema)]).optional(),
+			libroCategorias: z.union([z.boolean(), z.lazy(() => EstadoCountOutputTypeCountLibroCategoriasArgsObjectSchema)]).optional(),
+			libroEtiquetas: z.union([z.boolean(), z.lazy(() => EstadoCountOutputTypeCountLibroEtiquetasArgsObjectSchema)]).optional(),
+			favoritos: z.union([z.boolean(), z.lazy(() => EstadoCountOutputTypeCountFavoritosArgsObjectSchema)]).optional(),
+			glosarios: z.union([z.boolean(), z.lazy(() => EstadoCountOutputTypeCountGlosariosArgsObjectSchema)]).optional(),
+			notasAutor: z.union([z.boolean(), z.lazy(() => EstadoCountOutputTypeCountNotasAutorArgsObjectSchema)]).optional(),
+			marcadores: z.union([z.boolean(), z.lazy(() => EstadoCountOutputTypeCountMarcadoresArgsObjectSchema)]).optional(),
+			listas: z.union([z.boolean(), z.lazy(() => EstadoCountOutputTypeCountListasArgsObjectSchema)]).optional(),
+			listaLibros: z.union([z.boolean(), z.lazy(() => EstadoCountOutputTypeCountListaLibrosArgsObjectSchema)]).optional(),
+			seguirUsuarios: z.union([z.boolean(), z.lazy(() => EstadoCountOutputTypeCountSeguirUsuariosArgsObjectSchema)]).optional(),
 		})
 		.strict();
-export const EstadoCountOutputTypeSelectObjectSchema: z.ZodType<Prisma.EstadoCountOutputTypeSelect> =
-	makeSchema() as unknown as z.ZodType<Prisma.EstadoCountOutputTypeSelect>;
+export const EstadoCountOutputTypeSelectObjectSchema: z.ZodType<Prisma.EstadoCountOutputTypeSelect> = makeSchema() as unknown as z.ZodType<Prisma.EstadoCountOutputTypeSelect>;
 export const EstadoCountOutputTypeSelectObjectZodSchema = makeSchema();

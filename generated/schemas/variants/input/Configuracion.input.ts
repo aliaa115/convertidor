@@ -4,8 +4,8 @@ export const ConfiguracionInputSchema = z
 	.object({
 		id: z.number().int(),
 		valor: z.string().optional().nullable(),
-		createdAt: z.date(),
-		updatedAt: z.date(),
+		createdAt: z.coerce.date(),
+		updatedAt: z.coerce.date(),
 		usuarioId: z.number().int().optional().nullable(),
 		usuario: z.unknown().optional().nullable(),
 		tipoId: z.number().int().optional().nullable(),

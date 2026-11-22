@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { EscritorCreateManyAvatarInputEnvelopeObjectSchema as EscritorCreateManyAvatarInputEnvelopeObjectSchema } from "./EscritorCreateManyAvatarInputEnvelope.schema.ts";
 import { EscritorCreateOrConnectWithoutAvatarInputObjectSchema as EscritorCreateOrConnectWithoutAvatarInputObjectSchema } from "./EscritorCreateOrConnectWithoutAvatarInput.schema.ts";
 import { EscritorCreateWithoutAvatarInputObjectSchema as EscritorCreateWithoutAvatarInputObjectSchema } from "./EscritorCreateWithoutAvatarInput.schema.ts";
@@ -18,91 +18,21 @@ const makeSchema = () =>
 					z.lazy(() => EscritorCreateWithoutAvatarInputObjectSchema),
 					z.lazy(() => EscritorCreateWithoutAvatarInputObjectSchema).array(),
 					z.lazy(() => EscritorUncheckedCreateWithoutAvatarInputObjectSchema),
-					z
-						.lazy(() => EscritorUncheckedCreateWithoutAvatarInputObjectSchema)
-						.array(),
+					z.lazy(() => EscritorUncheckedCreateWithoutAvatarInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(() => EscritorCreateOrConnectWithoutAvatarInputObjectSchema),
-					z
-						.lazy(() => EscritorCreateOrConnectWithoutAvatarInputObjectSchema)
-						.array(),
-				])
-				.optional(),
-			upsert: z
-				.union([
-					z.lazy(
-						() => EscritorUpsertWithWhereUniqueWithoutAvatarInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => EscritorUpsertWithWhereUniqueWithoutAvatarInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			createMany: z
-				.lazy(() => EscritorCreateManyAvatarInputEnvelopeObjectSchema)
-				.optional(),
-			set: z
-				.union([
-					z.lazy(() => EscritorWhereUniqueInputObjectSchema),
-					z.lazy(() => EscritorWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			disconnect: z
-				.union([
-					z.lazy(() => EscritorWhereUniqueInputObjectSchema),
-					z.lazy(() => EscritorWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			delete: z
-				.union([
-					z.lazy(() => EscritorWhereUniqueInputObjectSchema),
-					z.lazy(() => EscritorWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => EscritorWhereUniqueInputObjectSchema),
-					z.lazy(() => EscritorWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			update: z
-				.union([
-					z.lazy(
-						() => EscritorUpdateWithWhereUniqueWithoutAvatarInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => EscritorUpdateWithWhereUniqueWithoutAvatarInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			updateMany: z
-				.union([
-					z.lazy(
-						() => EscritorUpdateManyWithWhereWithoutAvatarInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => EscritorUpdateManyWithWhereWithoutAvatarInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			deleteMany: z
-				.union([
-					z.lazy(() => EscritorScalarWhereInputObjectSchema),
-					z.lazy(() => EscritorScalarWhereInputObjectSchema).array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => EscritorCreateOrConnectWithoutAvatarInputObjectSchema), z.lazy(() => EscritorCreateOrConnectWithoutAvatarInputObjectSchema).array()]).optional(),
+			upsert: z.union([z.lazy(() => EscritorUpsertWithWhereUniqueWithoutAvatarInputObjectSchema), z.lazy(() => EscritorUpsertWithWhereUniqueWithoutAvatarInputObjectSchema).array()]).optional(),
+			createMany: z.lazy(() => EscritorCreateManyAvatarInputEnvelopeObjectSchema).optional(),
+			set: z.union([z.lazy(() => EscritorWhereUniqueInputObjectSchema), z.lazy(() => EscritorWhereUniqueInputObjectSchema).array()]).optional(),
+			disconnect: z.union([z.lazy(() => EscritorWhereUniqueInputObjectSchema), z.lazy(() => EscritorWhereUniqueInputObjectSchema).array()]).optional(),
+			delete: z.union([z.lazy(() => EscritorWhereUniqueInputObjectSchema), z.lazy(() => EscritorWhereUniqueInputObjectSchema).array()]).optional(),
+			connect: z.union([z.lazy(() => EscritorWhereUniqueInputObjectSchema), z.lazy(() => EscritorWhereUniqueInputObjectSchema).array()]).optional(),
+			update: z.union([z.lazy(() => EscritorUpdateWithWhereUniqueWithoutAvatarInputObjectSchema), z.lazy(() => EscritorUpdateWithWhereUniqueWithoutAvatarInputObjectSchema).array()]).optional(),
+			updateMany: z.union([z.lazy(() => EscritorUpdateManyWithWhereWithoutAvatarInputObjectSchema), z.lazy(() => EscritorUpdateManyWithWhereWithoutAvatarInputObjectSchema).array()]).optional(),
+			deleteMany: z.union([z.lazy(() => EscritorScalarWhereInputObjectSchema), z.lazy(() => EscritorScalarWhereInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const EscritorUncheckedUpdateManyWithoutAvatarNestedInputObjectSchema: z.ZodType<Prisma.EscritorUncheckedUpdateManyWithoutAvatarNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.EscritorUncheckedUpdateManyWithoutAvatarNestedInput>;
-export const EscritorUncheckedUpdateManyWithoutAvatarNestedInputObjectZodSchema =
-	makeSchema();
+export const EscritorUncheckedUpdateManyWithoutAvatarNestedInputObjectZodSchema = makeSchema();

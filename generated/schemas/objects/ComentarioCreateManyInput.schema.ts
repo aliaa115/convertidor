@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 
 const makeSchema = () =>
 	z
@@ -15,6 +15,5 @@ const makeSchema = () =>
 			estadoId: z.number().int().optional(),
 		})
 		.strict();
-export const ComentarioCreateManyInputObjectSchema: z.ZodType<Prisma.ComentarioCreateManyInput> =
-	makeSchema() as unknown as z.ZodType<Prisma.ComentarioCreateManyInput>;
+export const ComentarioCreateManyInputObjectSchema: z.ZodType<Prisma.ComentarioCreateManyInput> = makeSchema() as unknown as z.ZodType<Prisma.ComentarioCreateManyInput>;
 export const ComentarioCreateManyInputObjectZodSchema = makeSchema();

@@ -54,9 +54,7 @@ const options = [
 	{
 		value: "opendyslexic",
 		label: "Open Dyslexic",
-		render: (option) => (
-			<span style={{ fontFamily: option.value }}>{option.label}</span>
-		),
+		render: (option) => <span style={{ fontFamily: option.value }}>{option.label}</span>,
 	},
 ];
 ```

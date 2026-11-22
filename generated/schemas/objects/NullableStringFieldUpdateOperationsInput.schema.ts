@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 
 const makeSchema = () =>
 	z
@@ -9,5 +9,4 @@ const makeSchema = () =>
 		.strict();
 export const NullableStringFieldUpdateOperationsInputObjectSchema: z.ZodType<Prisma.NullableStringFieldUpdateOperationsInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.NullableStringFieldUpdateOperationsInput>;
-export const NullableStringFieldUpdateOperationsInputObjectZodSchema =
-	makeSchema();
+export const NullableStringFieldUpdateOperationsInputObjectZodSchema = makeSchema();

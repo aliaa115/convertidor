@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 
 const makeSchema = () =>
 	z
@@ -7,6 +7,5 @@ const makeSchema = () =>
 			set: z.coerce.date().optional(),
 		})
 		.strict();
-export const DateTimeFieldUpdateOperationsInputObjectSchema: z.ZodType<Prisma.DateTimeFieldUpdateOperationsInput> =
-	makeSchema() as unknown as z.ZodType<Prisma.DateTimeFieldUpdateOperationsInput>;
+export const DateTimeFieldUpdateOperationsInputObjectSchema: z.ZodType<Prisma.DateTimeFieldUpdateOperationsInput> = makeSchema() as unknown as z.ZodType<Prisma.DateTimeFieldUpdateOperationsInput>;
 export const DateTimeFieldUpdateOperationsInputObjectZodSchema = makeSchema();

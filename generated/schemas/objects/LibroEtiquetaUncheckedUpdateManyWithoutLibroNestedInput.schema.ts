@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { LibroEtiquetaCreateManyLibroInputEnvelopeObjectSchema as LibroEtiquetaCreateManyLibroInputEnvelopeObjectSchema } from "./LibroEtiquetaCreateManyLibroInputEnvelope.schema.ts";
 import { LibroEtiquetaCreateOrConnectWithoutLibroInputObjectSchema as LibroEtiquetaCreateOrConnectWithoutLibroInputObjectSchema } from "./LibroEtiquetaCreateOrConnectWithoutLibroInput.schema.ts";
 import { LibroEtiquetaCreateWithoutLibroInputObjectSchema as LibroEtiquetaCreateWithoutLibroInputObjectSchema } from "./LibroEtiquetaCreateWithoutLibroInput.schema.ts";
@@ -16,108 +16,29 @@ const makeSchema = () =>
 			create: z
 				.union([
 					z.lazy(() => LibroEtiquetaCreateWithoutLibroInputObjectSchema),
-					z
-						.lazy(() => LibroEtiquetaCreateWithoutLibroInputObjectSchema)
-						.array(),
-					z.lazy(
-						() => LibroEtiquetaUncheckedCreateWithoutLibroInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => LibroEtiquetaUncheckedCreateWithoutLibroInputObjectSchema,
-						)
-						.array(),
+					z.lazy(() => LibroEtiquetaCreateWithoutLibroInputObjectSchema).array(),
+					z.lazy(() => LibroEtiquetaUncheckedCreateWithoutLibroInputObjectSchema),
+					z.lazy(() => LibroEtiquetaUncheckedCreateWithoutLibroInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(
-						() => LibroEtiquetaCreateOrConnectWithoutLibroInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => LibroEtiquetaCreateOrConnectWithoutLibroInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => LibroEtiquetaCreateOrConnectWithoutLibroInputObjectSchema), z.lazy(() => LibroEtiquetaCreateOrConnectWithoutLibroInputObjectSchema).array()]).optional(),
 			upsert: z
-				.union([
-					z.lazy(
-						() =>
-							LibroEtiquetaUpsertWithWhereUniqueWithoutLibroInputObjectSchema,
-					),
-					z
-						.lazy(
-							() =>
-								LibroEtiquetaUpsertWithWhereUniqueWithoutLibroInputObjectSchema,
-						)
-						.array(),
-				])
+				.union([z.lazy(() => LibroEtiquetaUpsertWithWhereUniqueWithoutLibroInputObjectSchema), z.lazy(() => LibroEtiquetaUpsertWithWhereUniqueWithoutLibroInputObjectSchema).array()])
 				.optional(),
-			createMany: z
-				.lazy(() => LibroEtiquetaCreateManyLibroInputEnvelopeObjectSchema)
-				.optional(),
-			set: z
-				.union([
-					z.lazy(() => LibroEtiquetaWhereUniqueInputObjectSchema),
-					z.lazy(() => LibroEtiquetaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			disconnect: z
-				.union([
-					z.lazy(() => LibroEtiquetaWhereUniqueInputObjectSchema),
-					z.lazy(() => LibroEtiquetaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			delete: z
-				.union([
-					z.lazy(() => LibroEtiquetaWhereUniqueInputObjectSchema),
-					z.lazy(() => LibroEtiquetaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => LibroEtiquetaWhereUniqueInputObjectSchema),
-					z.lazy(() => LibroEtiquetaWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
+			createMany: z.lazy(() => LibroEtiquetaCreateManyLibroInputEnvelopeObjectSchema).optional(),
+			set: z.union([z.lazy(() => LibroEtiquetaWhereUniqueInputObjectSchema), z.lazy(() => LibroEtiquetaWhereUniqueInputObjectSchema).array()]).optional(),
+			disconnect: z.union([z.lazy(() => LibroEtiquetaWhereUniqueInputObjectSchema), z.lazy(() => LibroEtiquetaWhereUniqueInputObjectSchema).array()]).optional(),
+			delete: z.union([z.lazy(() => LibroEtiquetaWhereUniqueInputObjectSchema), z.lazy(() => LibroEtiquetaWhereUniqueInputObjectSchema).array()]).optional(),
+			connect: z.union([z.lazy(() => LibroEtiquetaWhereUniqueInputObjectSchema), z.lazy(() => LibroEtiquetaWhereUniqueInputObjectSchema).array()]).optional(),
 			update: z
-				.union([
-					z.lazy(
-						() =>
-							LibroEtiquetaUpdateWithWhereUniqueWithoutLibroInputObjectSchema,
-					),
-					z
-						.lazy(
-							() =>
-								LibroEtiquetaUpdateWithWhereUniqueWithoutLibroInputObjectSchema,
-						)
-						.array(),
-				])
+				.union([z.lazy(() => LibroEtiquetaUpdateWithWhereUniqueWithoutLibroInputObjectSchema), z.lazy(() => LibroEtiquetaUpdateWithWhereUniqueWithoutLibroInputObjectSchema).array()])
 				.optional(),
 			updateMany: z
-				.union([
-					z.lazy(
-						() => LibroEtiquetaUpdateManyWithWhereWithoutLibroInputObjectSchema,
-					),
-					z
-						.lazy(
-							() =>
-								LibroEtiquetaUpdateManyWithWhereWithoutLibroInputObjectSchema,
-						)
-						.array(),
-				])
+				.union([z.lazy(() => LibroEtiquetaUpdateManyWithWhereWithoutLibroInputObjectSchema), z.lazy(() => LibroEtiquetaUpdateManyWithWhereWithoutLibroInputObjectSchema).array()])
 				.optional(),
-			deleteMany: z
-				.union([
-					z.lazy(() => LibroEtiquetaScalarWhereInputObjectSchema),
-					z.lazy(() => LibroEtiquetaScalarWhereInputObjectSchema).array(),
-				])
-				.optional(),
+			deleteMany: z.union([z.lazy(() => LibroEtiquetaScalarWhereInputObjectSchema), z.lazy(() => LibroEtiquetaScalarWhereInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const LibroEtiquetaUncheckedUpdateManyWithoutLibroNestedInputObjectSchema: z.ZodType<Prisma.LibroEtiquetaUncheckedUpdateManyWithoutLibroNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.LibroEtiquetaUncheckedUpdateManyWithoutLibroNestedInput>;
-export const LibroEtiquetaUncheckedUpdateManyWithoutLibroNestedInputObjectZodSchema =
-	makeSchema();
+export const LibroEtiquetaUncheckedUpdateManyWithoutLibroNestedInputObjectZodSchema = makeSchema();

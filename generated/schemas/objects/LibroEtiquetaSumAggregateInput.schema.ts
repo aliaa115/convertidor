@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 
 const makeSchema = () =>
 	z
@@ -9,6 +9,5 @@ const makeSchema = () =>
 			estadoId: z.literal(true).optional(),
 		})
 		.strict();
-export const LibroEtiquetaSumAggregateInputObjectSchema: z.ZodType<Prisma.LibroEtiquetaSumAggregateInputType> =
-	makeSchema() as unknown as z.ZodType<Prisma.LibroEtiquetaSumAggregateInputType>;
+export const LibroEtiquetaSumAggregateInputObjectSchema: z.ZodType<Prisma.LibroEtiquetaSumAggregateInputType> = makeSchema() as unknown as z.ZodType<Prisma.LibroEtiquetaSumAggregateInputType>;
 export const LibroEtiquetaSumAggregateInputObjectZodSchema = makeSchema();

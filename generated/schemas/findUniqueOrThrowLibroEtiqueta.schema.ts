@@ -1,22 +1,13 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { LibroEtiquetaIncludeObjectSchema as LibroEtiquetaIncludeObjectSchema } from "./objects/LibroEtiquetaInclude.schema.ts";
 import { LibroEtiquetaSelectObjectSchema as LibroEtiquetaSelectObjectSchema } from "./objects/LibroEtiquetaSelect.schema.ts";
 import { LibroEtiquetaWhereUniqueInputObjectSchema as LibroEtiquetaWhereUniqueInputObjectSchema } from "./objects/LibroEtiquetaWhereUniqueInput.schema.ts";
 
-export const LibroEtiquetaFindUniqueOrThrowSchema: z.ZodType<Prisma.LibroEtiquetaFindUniqueOrThrowArgs> =
-	z
-		.object({
-			select: LibroEtiquetaSelectObjectSchema.optional(),
-			include: LibroEtiquetaIncludeObjectSchema.optional(),
-			where: LibroEtiquetaWhereUniqueInputObjectSchema,
-		})
-		.strict() as unknown as z.ZodType<Prisma.LibroEtiquetaFindUniqueOrThrowArgs>;
+export const LibroEtiquetaFindUniqueOrThrowSchema: z.ZodType<Prisma.LibroEtiquetaFindUniqueOrThrowArgs> = z
+	.object({ select: LibroEtiquetaSelectObjectSchema.optional(), include: LibroEtiquetaIncludeObjectSchema.optional(), where: LibroEtiquetaWhereUniqueInputObjectSchema })
+	.strict() as unknown as z.ZodType<Prisma.LibroEtiquetaFindUniqueOrThrowArgs>;
 
 export const LibroEtiquetaFindUniqueOrThrowZodSchema = z
-	.object({
-		select: LibroEtiquetaSelectObjectSchema.optional(),
-		include: LibroEtiquetaIncludeObjectSchema.optional(),
-		where: LibroEtiquetaWhereUniqueInputObjectSchema,
-	})
+	.object({ select: LibroEtiquetaSelectObjectSchema.optional(), include: LibroEtiquetaIncludeObjectSchema.optional(), where: LibroEtiquetaWhereUniqueInputObjectSchema })
 	.strict();

@@ -7,11 +7,7 @@ const SESSION_COOKIE = "session_token";
 const LEGACY_SESSION_COOKIE = "auth-token";
 const SESSION_MAX_AGE = 60 * 60 * 24; //1 dia * 7// 7 días
 
-const SESSION_SECRET =
-	process.env.JWT_SECRET ??
-	process.env.AUTH_SECRET ??
-	process.env.SESSION_SECRET ??
-	"dev-session-secret-change-me";
+const SESSION_SECRET = process.env.JWT_SECRET ?? process.env.AUTH_SECRET ?? process.env.SESSION_SECRET ?? "dev-session-secret-change-me";
 
 type SessionPayload = {
 	sub: number;
@@ -20,9 +16,7 @@ type SessionPayload = {
 
 function encodeSession(payload: SessionPayload) {
 	const body = Buffer.from(JSON.stringify(payload)).toString("base64url");
-	const signature = createHmac("sha256", SESSION_SECRET)
-		.update(body)
-		.digest("base64url");
+	const signature = createHmac("sha256", SESSION_SECRET).update(body).digest("base64url");
 
 	return `${body}.${signature}`;
 }
@@ -32,32 +26,19 @@ function decodeSession(token: string): SessionPayload | null {
 
 	if (!body || !signature) return null;
 
-	const expectedSignature = createHmac("sha256", SESSION_SECRET)
-		.update(body)
-		.digest("base64url");
+	const expectedSignature = createHmac("sha256", SESSION_SECRET).update(body).digest("base64url");
 
 	const providedBuffer = Buffer.from(signature);
 	const expectedBuffer = Buffer.from(expectedSignature);
 
-	if (
-		providedBuffer.length !== expectedBuffer.length ||
-		!timingSafeEqual(providedBuffer, expectedBuffer)
-	) {
+	if (providedBuffer.length !== expectedBuffer.length || !timingSafeEqual(providedBuffer, expectedBuffer)) {
 		return null;
 	}
 
 	try {
-		const payload = JSON.parse(
-			Buffer.from(body, "base64url").toString("utf8"),
-		) as SessionPayload;
+		const payload = JSON.parse(Buffer.from(body, "base64url").toString("utf8")) as SessionPayload;
 
-		if (
-			!payload ||
-			typeof payload.sub !== "number" ||
-			!Number.isInteger(payload.sub) ||
-			typeof payload.exp !== "number" ||
-			payload.exp * 1000 <= Date.now()
-		) {
+		if (!payload || typeof payload.sub !== "number" || !Number.isInteger(payload.sub) || typeof payload.exp !== "number" || payload.exp * 1000 <= Date.now()) {
 			return null;
 		}
 
@@ -99,9 +80,7 @@ export async function setSession(userId: number) {
 
 export async function getSession() {
 	const cookieStore = await cookies();
-	const sessionToken =
-		cookieStore.get(SESSION_COOKIE)?.value ||
-		cookieStore.get(LEGACY_SESSION_COOKIE)?.value;
+	const sessionToken = cookieStore.get(SESSION_COOKIE)?.value || cookieStore.get(LEGACY_SESSION_COOKIE)?.value;
 
 	if (!sessionToken) return null;
 
@@ -112,6 +91,8 @@ export async function getCurrentUser() {
 	const session = await getSession();
 
 	if (!session) return null;
+
+	if (session.exp * 1000 <= Date.now()) return null;
 
 	return prisma.usuario.findUnique({
 		where: { id: session.sub },
@@ -149,7 +130,7 @@ export async function logout() {
 	await clearSession();
 }
 
-export const getWriter = async (id?: number | string) => {
+export const getWriter = async (id?: number | string, mostrarPublicados?: boolean) => {
 	const isNumeric = !isNaN(Number(id));
 	const session = await getSession();
 
@@ -158,13 +139,7 @@ export const getWriter = async (id?: number | string) => {
 	return id || session
 		? await prisma.escritor.findFirst({
 				where: {
-					...(id
-						? isNumeric
-							? { id: Number(id) }
-							: { usuario: { userName: id } }
-						: session
-							? { usuario: { id: session.sub } }
-							: {}),
+					...(id ? (isNumeric ? { id: Number(id) } : { usuario: { userName: id } }) : session ? { usuario: { id: session.sub } } : {}),
 				},
 				include: {
 					usuario: {
@@ -177,7 +152,7 @@ export const getWriter = async (id?: number | string) => {
 					},
 					avatar: true,
 					// Solo muestra libros publicados
-					libros: true,
+					libros: { where: { publicado: mostrarPublicados } },
 					siguiendo: { include: { escritor: { include: { usuario: true } } } },
 					seguidores: { include: { escritor: { include: { usuario: true } } } },
 				},

@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { DateTimeFilterObjectSchema as DateTimeFilterObjectSchema } from "./DateTimeFilter.schema.ts";
 import { EstadoScalarRelationFilterObjectSchema as EstadoScalarRelationFilterObjectSchema } from "./EstadoScalarRelationFilter.schema.ts";
 import { EstadoWhereInputObjectSchema as EstadoWhereInputObjectSchema } from "./EstadoWhereInput.schema.ts";
@@ -9,25 +9,13 @@ import { StringNullableFilterObjectSchema as StringNullableFilterObjectSchema } 
 
 const idiomawhereinputSchema = z
 	.object({
-		AND: z
-			.union([
-				z.lazy(() => IdiomaWhereInputObjectSchema),
-				z.lazy(() => IdiomaWhereInputObjectSchema).array(),
-			])
-			.optional(),
+		AND: z.union([z.lazy(() => IdiomaWhereInputObjectSchema), z.lazy(() => IdiomaWhereInputObjectSchema).array()]).optional(),
 		OR: z
 			.lazy(() => IdiomaWhereInputObjectSchema)
 			.array()
 			.optional(),
-		NOT: z
-			.union([
-				z.lazy(() => IdiomaWhereInputObjectSchema),
-				z.lazy(() => IdiomaWhereInputObjectSchema).array(),
-			])
-			.optional(),
-		id: z
-			.union([z.lazy(() => IntFilterObjectSchema), z.number().int()])
-			.optional(),
+		NOT: z.union([z.lazy(() => IdiomaWhereInputObjectSchema), z.lazy(() => IdiomaWhereInputObjectSchema).array()]).optional(),
+		id: z.union([z.lazy(() => IntFilterObjectSchema), z.number().int()]).optional(),
 		nombre: z
 			.union([z.lazy(() => StringNullableFilterObjectSchema), z.string()])
 			.optional()
@@ -36,24 +24,12 @@ const idiomawhereinputSchema = z
 			.union([z.lazy(() => StringNullableFilterObjectSchema), z.string()])
 			.optional()
 			.nullable(),
-		createdAt: z
-			.union([z.lazy(() => DateTimeFilterObjectSchema), z.coerce.date()])
-			.optional(),
-		updatedAt: z
-			.union([z.lazy(() => DateTimeFilterObjectSchema), z.coerce.date()])
-			.optional(),
-		estadoId: z
-			.union([z.lazy(() => IntFilterObjectSchema), z.number().int()])
-			.optional(),
-		estado: z
-			.union([
-				z.lazy(() => EstadoScalarRelationFilterObjectSchema),
-				z.lazy(() => EstadoWhereInputObjectSchema),
-			])
-			.optional(),
+		createdAt: z.union([z.lazy(() => DateTimeFilterObjectSchema), z.coerce.date()]).optional(),
+		updatedAt: z.union([z.lazy(() => DateTimeFilterObjectSchema), z.coerce.date()]).optional(),
+		estadoId: z.union([z.lazy(() => IntFilterObjectSchema), z.number().int()]).optional(),
+		estado: z.union([z.lazy(() => EstadoScalarRelationFilterObjectSchema), z.lazy(() => EstadoWhereInputObjectSchema)]).optional(),
 		libros: z.lazy(() => LibroListRelationFilterObjectSchema).optional(),
 	})
 	.strict();
-export const IdiomaWhereInputObjectSchema: z.ZodType<Prisma.IdiomaWhereInput> =
-	idiomawhereinputSchema as unknown as z.ZodType<Prisma.IdiomaWhereInput>;
+export const IdiomaWhereInputObjectSchema: z.ZodType<Prisma.IdiomaWhereInput> = idiomawhereinputSchema as unknown as z.ZodType<Prisma.IdiomaWhereInput>;
 export const IdiomaWhereInputObjectZodSchema = idiomawhereinputSchema;

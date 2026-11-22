@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 
 const makeSchema = () =>
 	z
@@ -12,6 +12,5 @@ const makeSchema = () =>
 			estadoId: z.number().int().optional(),
 		})
 		.strict();
-export const NotaAutorUncheckedCreateInputObjectSchema: z.ZodType<Prisma.NotaAutorUncheckedCreateInput> =
-	makeSchema() as unknown as z.ZodType<Prisma.NotaAutorUncheckedCreateInput>;
+export const NotaAutorUncheckedCreateInputObjectSchema: z.ZodType<Prisma.NotaAutorUncheckedCreateInput> = makeSchema() as unknown as z.ZodType<Prisma.NotaAutorUncheckedCreateInput>;
 export const NotaAutorUncheckedCreateInputObjectZodSchema = makeSchema();

@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { ListaLibroCreateManyLibroInputEnvelopeObjectSchema as ListaLibroCreateManyLibroInputEnvelopeObjectSchema } from "./ListaLibroCreateManyLibroInputEnvelope.schema.ts";
 import { ListaLibroCreateOrConnectWithoutLibroInputObjectSchema as ListaLibroCreateOrConnectWithoutLibroInputObjectSchema } from "./ListaLibroCreateOrConnectWithoutLibroInput.schema.ts";
 import { ListaLibroCreateWithoutLibroInputObjectSchema as ListaLibroCreateWithoutLibroInputObjectSchema } from "./ListaLibroCreateWithoutLibroInput.schema.ts";
@@ -14,31 +14,14 @@ const makeSchema = () =>
 					z.lazy(() => ListaLibroCreateWithoutLibroInputObjectSchema),
 					z.lazy(() => ListaLibroCreateWithoutLibroInputObjectSchema).array(),
 					z.lazy(() => ListaLibroUncheckedCreateWithoutLibroInputObjectSchema),
-					z
-						.lazy(() => ListaLibroUncheckedCreateWithoutLibroInputObjectSchema)
-						.array(),
+					z.lazy(() => ListaLibroUncheckedCreateWithoutLibroInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(() => ListaLibroCreateOrConnectWithoutLibroInputObjectSchema),
-					z
-						.lazy(() => ListaLibroCreateOrConnectWithoutLibroInputObjectSchema)
-						.array(),
-				])
-				.optional(),
-			createMany: z
-				.lazy(() => ListaLibroCreateManyLibroInputEnvelopeObjectSchema)
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => ListaLibroWhereUniqueInputObjectSchema),
-					z.lazy(() => ListaLibroWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => ListaLibroCreateOrConnectWithoutLibroInputObjectSchema), z.lazy(() => ListaLibroCreateOrConnectWithoutLibroInputObjectSchema).array()]).optional(),
+			createMany: z.lazy(() => ListaLibroCreateManyLibroInputEnvelopeObjectSchema).optional(),
+			connect: z.union([z.lazy(() => ListaLibroWhereUniqueInputObjectSchema), z.lazy(() => ListaLibroWhereUniqueInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const ListaLibroUncheckedCreateNestedManyWithoutLibroInputObjectSchema: z.ZodType<Prisma.ListaLibroUncheckedCreateNestedManyWithoutLibroInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.ListaLibroUncheckedCreateNestedManyWithoutLibroInput>;
-export const ListaLibroUncheckedCreateNestedManyWithoutLibroInputObjectZodSchema =
-	makeSchema();
+export const ListaLibroUncheckedCreateNestedManyWithoutLibroInputObjectZodSchema = makeSchema();

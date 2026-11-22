@@ -3,12 +3,7 @@
 import { useEffect, useState } from "react";
 import { Autocomplete, AutocompleteOption } from "../forms/autocomplete";
 
-type FontOption =
-	| "default"
-	| "roboto"
-	| "opendyslexic"
-	| "atkinson-hyperlegible"
-	| "open-sans";
+type FontOption = "default" | "roboto" | "opendyslexic" | "atkinson-hyperlegible" | "open-sans";
 
 type Props = {
 	className?: string;
@@ -18,9 +13,7 @@ export function FontSelector({ className }: Props) {
 	const [font, setFont] = useState<FontOption>("default");
 
 	useEffect(() => {
-		const savedFont = localStorage.getItem(
-			"font-preference",
-		) as FontOption | null;
+		const savedFont = localStorage.getItem("font-preference") as FontOption | null;
 
 		if (savedFont) {
 			setFont(savedFont);
@@ -47,8 +40,7 @@ export function FontSelector({ className }: Props) {
 	const renderOption = (op: AutocompleteOption<FontOption>) => (
 		<span
 			style={{ fontFamily: fontPreviewMap[op.value] }}
-			className="overflow-hidden text-ellipsis whitespace-nowrap"
-		>
+			className="overflow-hidden text-ellipsis whitespace-nowrap">
 			{op.label}
 		</span>
 	);

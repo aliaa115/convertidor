@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { LibroCreateOrConnectWithoutFavoritosInputObjectSchema as LibroCreateOrConnectWithoutFavoritosInputObjectSchema } from "./LibroCreateOrConnectWithoutFavoritosInput.schema.ts";
 import { LibroCreateWithoutFavoritosInputObjectSchema as LibroCreateWithoutFavoritosInputObjectSchema } from "./LibroCreateWithoutFavoritosInput.schema.ts";
 import { LibroUncheckedCreateWithoutFavoritosInputObjectSchema as LibroUncheckedCreateWithoutFavoritosInputObjectSchema } from "./LibroUncheckedCreateWithoutFavoritosInput.schema.ts";
@@ -13,30 +13,15 @@ import { LibroWhereUniqueInputObjectSchema as LibroWhereUniqueInputObjectSchema 
 const makeSchema = () =>
 	z
 		.object({
-			create: z
-				.union([
-					z.lazy(() => LibroCreateWithoutFavoritosInputObjectSchema),
-					z.lazy(() => LibroUncheckedCreateWithoutFavoritosInputObjectSchema),
-				])
-				.optional(),
-			connectOrCreate: z
-				.lazy(() => LibroCreateOrConnectWithoutFavoritosInputObjectSchema)
-				.optional(),
-			upsert: z
-				.lazy(() => LibroUpsertWithoutFavoritosInputObjectSchema)
-				.optional(),
-			disconnect: z
-				.union([z.boolean(), z.lazy(() => LibroWhereInputObjectSchema)])
-				.optional(),
-			delete: z
-				.union([z.boolean(), z.lazy(() => LibroWhereInputObjectSchema)])
-				.optional(),
+			create: z.union([z.lazy(() => LibroCreateWithoutFavoritosInputObjectSchema), z.lazy(() => LibroUncheckedCreateWithoutFavoritosInputObjectSchema)]).optional(),
+			connectOrCreate: z.lazy(() => LibroCreateOrConnectWithoutFavoritosInputObjectSchema).optional(),
+			upsert: z.lazy(() => LibroUpsertWithoutFavoritosInputObjectSchema).optional(),
+			disconnect: z.union([z.boolean(), z.lazy(() => LibroWhereInputObjectSchema)]).optional(),
+			delete: z.union([z.boolean(), z.lazy(() => LibroWhereInputObjectSchema)]).optional(),
 			connect: z.lazy(() => LibroWhereUniqueInputObjectSchema).optional(),
 			update: z
 				.union([
-					z.lazy(
-						() => LibroUpdateToOneWithWhereWithoutFavoritosInputObjectSchema,
-					),
+					z.lazy(() => LibroUpdateToOneWithWhereWithoutFavoritosInputObjectSchema),
 					z.lazy(() => LibroUpdateWithoutFavoritosInputObjectSchema),
 					z.lazy(() => LibroUncheckedUpdateWithoutFavoritosInputObjectSchema),
 				])
@@ -45,5 +30,4 @@ const makeSchema = () =>
 		.strict();
 export const LibroUpdateOneWithoutFavoritosNestedInputObjectSchema: z.ZodType<Prisma.LibroUpdateOneWithoutFavoritosNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.LibroUpdateOneWithoutFavoritosNestedInput>;
-export const LibroUpdateOneWithoutFavoritosNestedInputObjectZodSchema =
-	makeSchema();
+export const LibroUpdateOneWithoutFavoritosNestedInputObjectZodSchema = makeSchema();

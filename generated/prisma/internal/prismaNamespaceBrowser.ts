@@ -22,15 +22,9 @@ export type * from "./prismaNamespace.ts";
 export const Decimal = runtime.Decimal;
 
 export const NullTypes = {
-	DbNull: runtime.NullTypes.DbNull as new (
-		secret: never,
-	) => typeof runtime.DbNull,
-	JsonNull: runtime.NullTypes.JsonNull as new (
-		secret: never,
-	) => typeof runtime.JsonNull,
-	AnyNull: runtime.NullTypes.AnyNull as new (
-		secret: never,
-	) => typeof runtime.AnyNull,
+	DbNull: runtime.NullTypes.DbNull as new (secret: never) => typeof runtime.DbNull,
+	JsonNull: runtime.NullTypes.JsonNull as new (secret: never) => typeof runtime.JsonNull,
+	AnyNull: runtime.NullTypes.AnyNull as new (secret: never) => typeof runtime.AnyNull,
 };
 /**
  * Helper for filtering JSON entries that have `null` on the database (empty on the db)
@@ -92,8 +86,7 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 	Serializable: "Serializable",
 } as const);
 
-export type TransactionIsolationLevel =
-	(typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel];
+export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel];
 
 export const EstadoScalarFieldEnum = {
 	id: "id",
@@ -104,8 +97,7 @@ export const EstadoScalarFieldEnum = {
 	updatedAt: "updatedAt",
 } as const;
 
-export type EstadoScalarFieldEnum =
-	(typeof EstadoScalarFieldEnum)[keyof typeof EstadoScalarFieldEnum];
+export type EstadoScalarFieldEnum = (typeof EstadoScalarFieldEnum)[keyof typeof EstadoScalarFieldEnum];
 
 export const AvatarScalarFieldEnum = {
 	id: "id",
@@ -113,8 +105,7 @@ export const AvatarScalarFieldEnum = {
 	url: "url",
 } as const;
 
-export type AvatarScalarFieldEnum =
-	(typeof AvatarScalarFieldEnum)[keyof typeof AvatarScalarFieldEnum];
+export type AvatarScalarFieldEnum = (typeof AvatarScalarFieldEnum)[keyof typeof AvatarScalarFieldEnum];
 
 export const CategoriaScalarFieldEnum = {
 	id: "id",
@@ -124,8 +115,7 @@ export const CategoriaScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type CategoriaScalarFieldEnum =
-	(typeof CategoriaScalarFieldEnum)[keyof typeof CategoriaScalarFieldEnum];
+export type CategoriaScalarFieldEnum = (typeof CategoriaScalarFieldEnum)[keyof typeof CategoriaScalarFieldEnum];
 
 export const EtiquetaScalarFieldEnum = {
 	id: "id",
@@ -135,8 +125,7 @@ export const EtiquetaScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type EtiquetaScalarFieldEnum =
-	(typeof EtiquetaScalarFieldEnum)[keyof typeof EtiquetaScalarFieldEnum];
+export type EtiquetaScalarFieldEnum = (typeof EtiquetaScalarFieldEnum)[keyof typeof EtiquetaScalarFieldEnum];
 
 export const TipoScalarFieldEnum = {
 	id: "id",
@@ -145,8 +134,7 @@ export const TipoScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type TipoScalarFieldEnum =
-	(typeof TipoScalarFieldEnum)[keyof typeof TipoScalarFieldEnum];
+export type TipoScalarFieldEnum = (typeof TipoScalarFieldEnum)[keyof typeof TipoScalarFieldEnum];
 
 export const UsuarioScalarFieldEnum = {
 	id: "id",
@@ -159,8 +147,7 @@ export const UsuarioScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type UsuarioScalarFieldEnum =
-	(typeof UsuarioScalarFieldEnum)[keyof typeof UsuarioScalarFieldEnum];
+export type UsuarioScalarFieldEnum = (typeof UsuarioScalarFieldEnum)[keyof typeof UsuarioScalarFieldEnum];
 
 export const ConfiguracionScalarFieldEnum = {
 	id: "id",
@@ -172,8 +159,7 @@ export const ConfiguracionScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type ConfiguracionScalarFieldEnum =
-	(typeof ConfiguracionScalarFieldEnum)[keyof typeof ConfiguracionScalarFieldEnum];
+export type ConfiguracionScalarFieldEnum = (typeof ConfiguracionScalarFieldEnum)[keyof typeof ConfiguracionScalarFieldEnum];
 
 export const EscritorScalarFieldEnum = {
 	id: "id",
@@ -189,8 +175,7 @@ export const EscritorScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type EscritorScalarFieldEnum =
-	(typeof EscritorScalarFieldEnum)[keyof typeof EscritorScalarFieldEnum];
+export type EscritorScalarFieldEnum = (typeof EscritorScalarFieldEnum)[keyof typeof EscritorScalarFieldEnum];
 
 export const IdiomaScalarFieldEnum = {
 	id: "id",
@@ -201,8 +186,7 @@ export const IdiomaScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type IdiomaScalarFieldEnum =
-	(typeof IdiomaScalarFieldEnum)[keyof typeof IdiomaScalarFieldEnum];
+export type IdiomaScalarFieldEnum = (typeof IdiomaScalarFieldEnum)[keyof typeof IdiomaScalarFieldEnum];
 
 export const LibroScalarFieldEnum = {
 	id: "id",
@@ -219,8 +203,7 @@ export const LibroScalarFieldEnum = {
 	idiomaId: "idiomaId",
 } as const;
 
-export type LibroScalarFieldEnum =
-	(typeof LibroScalarFieldEnum)[keyof typeof LibroScalarFieldEnum];
+export type LibroScalarFieldEnum = (typeof LibroScalarFieldEnum)[keyof typeof LibroScalarFieldEnum];
 
 export const LibroCategoriaScalarFieldEnum = {
 	libroId: "libroId",
@@ -230,8 +213,7 @@ export const LibroCategoriaScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type LibroCategoriaScalarFieldEnum =
-	(typeof LibroCategoriaScalarFieldEnum)[keyof typeof LibroCategoriaScalarFieldEnum];
+export type LibroCategoriaScalarFieldEnum = (typeof LibroCategoriaScalarFieldEnum)[keyof typeof LibroCategoriaScalarFieldEnum];
 
 export const LibroEtiquetaScalarFieldEnum = {
 	libroId: "libroId",
@@ -241,8 +223,7 @@ export const LibroEtiquetaScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type LibroEtiquetaScalarFieldEnum =
-	(typeof LibroEtiquetaScalarFieldEnum)[keyof typeof LibroEtiquetaScalarFieldEnum];
+export type LibroEtiquetaScalarFieldEnum = (typeof LibroEtiquetaScalarFieldEnum)[keyof typeof LibroEtiquetaScalarFieldEnum];
 
 export const CapituloScalarFieldEnum = {
 	id: "id",
@@ -254,8 +235,7 @@ export const CapituloScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type CapituloScalarFieldEnum =
-	(typeof CapituloScalarFieldEnum)[keyof typeof CapituloScalarFieldEnum];
+export type CapituloScalarFieldEnum = (typeof CapituloScalarFieldEnum)[keyof typeof CapituloScalarFieldEnum];
 
 export const ParrafoScalarFieldEnum = {
 	id: "id",
@@ -267,8 +247,7 @@ export const ParrafoScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type ParrafoScalarFieldEnum =
-	(typeof ParrafoScalarFieldEnum)[keyof typeof ParrafoScalarFieldEnum];
+export type ParrafoScalarFieldEnum = (typeof ParrafoScalarFieldEnum)[keyof typeof ParrafoScalarFieldEnum];
 
 export const ComentarioScalarFieldEnum = {
 	id: "id",
@@ -282,8 +261,7 @@ export const ComentarioScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type ComentarioScalarFieldEnum =
-	(typeof ComentarioScalarFieldEnum)[keyof typeof ComentarioScalarFieldEnum];
+export type ComentarioScalarFieldEnum = (typeof ComentarioScalarFieldEnum)[keyof typeof ComentarioScalarFieldEnum];
 
 export const FavoritoScalarFieldEnum = {
 	id: "id",
@@ -294,8 +272,7 @@ export const FavoritoScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type FavoritoScalarFieldEnum =
-	(typeof FavoritoScalarFieldEnum)[keyof typeof FavoritoScalarFieldEnum];
+export type FavoritoScalarFieldEnum = (typeof FavoritoScalarFieldEnum)[keyof typeof FavoritoScalarFieldEnum];
 
 export const ListaScalarFieldEnum = {
 	id: "id",
@@ -307,8 +284,7 @@ export const ListaScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type ListaScalarFieldEnum =
-	(typeof ListaScalarFieldEnum)[keyof typeof ListaScalarFieldEnum];
+export type ListaScalarFieldEnum = (typeof ListaScalarFieldEnum)[keyof typeof ListaScalarFieldEnum];
 
 export const ListaLibroScalarFieldEnum = {
 	id: "id",
@@ -319,8 +295,7 @@ export const ListaLibroScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type ListaLibroScalarFieldEnum =
-	(typeof ListaLibroScalarFieldEnum)[keyof typeof ListaLibroScalarFieldEnum];
+export type ListaLibroScalarFieldEnum = (typeof ListaLibroScalarFieldEnum)[keyof typeof ListaLibroScalarFieldEnum];
 
 export const GlosarioScalarFieldEnum = {
 	id: "id",
@@ -333,8 +308,7 @@ export const GlosarioScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type GlosarioScalarFieldEnum =
-	(typeof GlosarioScalarFieldEnum)[keyof typeof GlosarioScalarFieldEnum];
+export type GlosarioScalarFieldEnum = (typeof GlosarioScalarFieldEnum)[keyof typeof GlosarioScalarFieldEnum];
 
 export const NotaAutorScalarFieldEnum = {
 	id: "id",
@@ -346,8 +320,7 @@ export const NotaAutorScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type NotaAutorScalarFieldEnum =
-	(typeof NotaAutorScalarFieldEnum)[keyof typeof NotaAutorScalarFieldEnum];
+export type NotaAutorScalarFieldEnum = (typeof NotaAutorScalarFieldEnum)[keyof typeof NotaAutorScalarFieldEnum];
 
 export const MarcadorScalarFieldEnum = {
 	id: "id",
@@ -360,8 +333,7 @@ export const MarcadorScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type MarcadorScalarFieldEnum =
-	(typeof MarcadorScalarFieldEnum)[keyof typeof MarcadorScalarFieldEnum];
+export type MarcadorScalarFieldEnum = (typeof MarcadorScalarFieldEnum)[keyof typeof MarcadorScalarFieldEnum];
 
 export const SeguirUsuarioScalarFieldEnum = {
 	id: "id",
@@ -372,8 +344,7 @@ export const SeguirUsuarioScalarFieldEnum = {
 	estadoId: "estadoId",
 } as const;
 
-export type SeguirUsuarioScalarFieldEnum =
-	(typeof SeguirUsuarioScalarFieldEnum)[keyof typeof SeguirUsuarioScalarFieldEnum];
+export type SeguirUsuarioScalarFieldEnum = (typeof SeguirUsuarioScalarFieldEnum)[keyof typeof SeguirUsuarioScalarFieldEnum];
 
 export const NotificacionScalarFieldEnum = {
 	id: "id",
@@ -388,8 +359,7 @@ export const NotificacionScalarFieldEnum = {
 	updatedAt: "updatedAt",
 } as const;
 
-export type NotificacionScalarFieldEnum =
-	(typeof NotificacionScalarFieldEnum)[keyof typeof NotificacionScalarFieldEnum];
+export type NotificacionScalarFieldEnum = (typeof NotificacionScalarFieldEnum)[keyof typeof NotificacionScalarFieldEnum];
 
 export const SortOrder = {
 	asc: "asc",

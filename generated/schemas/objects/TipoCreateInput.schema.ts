@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { ComentarioCreateNestedManyWithoutTipoInputObjectSchema as ComentarioCreateNestedManyWithoutTipoInputObjectSchema } from "./ComentarioCreateNestedManyWithoutTipoInput.schema.ts";
 import { ConfiguracionCreateNestedManyWithoutTipoInputObjectSchema as ConfiguracionCreateNestedManyWithoutTipoInputObjectSchema } from "./ConfiguracionCreateNestedManyWithoutTipoInput.schema.ts";
 import { EstadoCreateNestedOneWithoutTiposInputObjectSchema as EstadoCreateNestedOneWithoutTiposInputObjectSchema } from "./EstadoCreateNestedOneWithoutTiposInput.schema.ts";
@@ -10,18 +10,11 @@ const makeSchema = () =>
 		.object({
 			nombre: z.string().optional().nullable(),
 			tabla: z.string().optional().nullable(),
-			estado: z.lazy(() => EstadoCreateNestedOneWithoutTiposInputObjectSchema),
-			configuraciones: z
-				.lazy(() => ConfiguracionCreateNestedManyWithoutTipoInputObjectSchema)
-				.optional(),
-			libros: z
-				.lazy(() => LibroCreateNestedManyWithoutTipoInputObjectSchema)
-				.optional(),
-			comentarios: z
-				.lazy(() => ComentarioCreateNestedManyWithoutTipoInputObjectSchema)
-				.optional(),
+			estado: z.lazy(() => EstadoCreateNestedOneWithoutTiposInputObjectSchema).optional(),
+			configuraciones: z.lazy(() => ConfiguracionCreateNestedManyWithoutTipoInputObjectSchema).optional(),
+			libros: z.lazy(() => LibroCreateNestedManyWithoutTipoInputObjectSchema).optional(),
+			comentarios: z.lazy(() => ComentarioCreateNestedManyWithoutTipoInputObjectSchema).optional(),
 		})
 		.strict();
-export const TipoCreateInputObjectSchema: z.ZodType<Prisma.TipoCreateInput> =
-	makeSchema() as unknown as z.ZodType<Prisma.TipoCreateInput>;
+export const TipoCreateInputObjectSchema: z.ZodType<Prisma.TipoCreateInput> = makeSchema() as unknown as z.ZodType<Prisma.TipoCreateInput>;
 export const TipoCreateInputObjectZodSchema = makeSchema();

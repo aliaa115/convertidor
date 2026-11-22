@@ -15,8 +15,7 @@ import type * as Prisma from "../internal/prismaNamespace.ts";
  * Model SeguirUsuario
  *
  */
-export type SeguirUsuarioModel =
-	runtime.Types.Result.DefaultSelection<Prisma.$SeguirUsuarioPayload>;
+export type SeguirUsuarioModel = runtime.Types.Result.DefaultSelection<Prisma.$SeguirUsuarioPayload>;
 
 export type AggregateSeguirUsuario = {
 	_count: SeguirUsuarioCountAggregateOutputType | null;
@@ -110,10 +109,7 @@ export type SeguirUsuarioCountAggregateInputType = {
 	_all?: true;
 };
 
-export type SeguirUsuarioAggregateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type SeguirUsuarioAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which SeguirUsuario to aggregate.
 	 */
@@ -123,9 +119,7 @@ export type SeguirUsuarioAggregateArgs<
 	 *
 	 * Determine the order of SeguirUsuarios to fetch.
 	 */
-	orderBy?:
-		| Prisma.SeguirUsuarioOrderByWithRelationInput
-		| Prisma.SeguirUsuarioOrderByWithRelationInput[];
+	orderBy?: Prisma.SeguirUsuarioOrderByWithRelationInput | Prisma.SeguirUsuarioOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -176,9 +170,7 @@ export type SeguirUsuarioAggregateArgs<
 	_max?: SeguirUsuarioMaxAggregateInputType;
 };
 
-export type GetSeguirUsuarioAggregateType<
-	T extends SeguirUsuarioAggregateArgs,
-> = {
+export type GetSeguirUsuarioAggregateType<T extends SeguirUsuarioAggregateArgs> = {
 	[P in keyof T & keyof AggregateSeguirUsuario]: P extends "_count" | "count"
 		? T[P] extends true
 			? number
@@ -186,17 +178,10 @@ export type GetSeguirUsuarioAggregateType<
 		: Prisma.GetScalarType<T[P], AggregateSeguirUsuario[P]>;
 };
 
-export type SeguirUsuarioGroupByArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type SeguirUsuarioGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.SeguirUsuarioWhereInput;
-	orderBy?:
-		| Prisma.SeguirUsuarioOrderByWithAggregationInput
-		| Prisma.SeguirUsuarioOrderByWithAggregationInput[];
-	by:
-		| Prisma.SeguirUsuarioScalarFieldEnum[]
-		| Prisma.SeguirUsuarioScalarFieldEnum;
+	orderBy?: Prisma.SeguirUsuarioOrderByWithAggregationInput | Prisma.SeguirUsuarioOrderByWithAggregationInput[];
+	by: Prisma.SeguirUsuarioScalarFieldEnum[] | Prisma.SeguirUsuarioScalarFieldEnum;
 	having?: Prisma.SeguirUsuarioScalarWhereWithAggregatesInput;
 	take?: number;
 	skip?: number;
@@ -221,19 +206,17 @@ export type SeguirUsuarioGroupByOutputType = {
 	_max: SeguirUsuarioMaxAggregateOutputType | null;
 };
 
-export type GetSeguirUsuarioGroupByPayload<T extends SeguirUsuarioGroupByArgs> =
-	Prisma.PrismaPromise<
-		Array<
-			Prisma.PickEnumerable<SeguirUsuarioGroupByOutputType, T["by"]> & {
-				[P in keyof T &
-					keyof SeguirUsuarioGroupByOutputType]: P extends "_count"
-					? T[P] extends boolean
-						? number
-						: Prisma.GetScalarType<T[P], SeguirUsuarioGroupByOutputType[P]>
-					: Prisma.GetScalarType<T[P], SeguirUsuarioGroupByOutputType[P]>;
-			}
-		>
-	>;
+export type GetSeguirUsuarioGroupByPayload<T extends SeguirUsuarioGroupByArgs> = Prisma.PrismaPromise<
+	Array<
+		Prisma.PickEnumerable<SeguirUsuarioGroupByOutputType, T["by"]> & {
+			[P in keyof T & keyof SeguirUsuarioGroupByOutputType]: P extends "_count"
+				? T[P] extends boolean
+					? number
+					: Prisma.GetScalarType<T[P], SeguirUsuarioGroupByOutputType[P]>
+				: Prisma.GetScalarType<T[P], SeguirUsuarioGroupByOutputType[P]>;
+		}
+	>
+>;
 
 export type SeguirUsuarioWhereInput = {
 	AND?: Prisma.SeguirUsuarioWhereInput | Prisma.SeguirUsuarioWhereInput[];
@@ -245,18 +228,9 @@ export type SeguirUsuarioWhereInput = {
 	escritorId?: Prisma.IntFilter<"SeguirUsuario"> | number;
 	escritorSeguidoId?: Prisma.IntFilter<"SeguirUsuario"> | number;
 	estadoId?: Prisma.IntFilter<"SeguirUsuario"> | number;
-	escritor?: Prisma.XOR<
-		Prisma.EscritorScalarRelationFilter,
-		Prisma.EscritorWhereInput
-	>;
-	seguido?: Prisma.XOR<
-		Prisma.EscritorScalarRelationFilter,
-		Prisma.EscritorWhereInput
-	>;
-	estado?: Prisma.XOR<
-		Prisma.EstadoScalarRelationFilter,
-		Prisma.EstadoWhereInput
-	>;
+	escritor?: Prisma.XOR<Prisma.EscritorScalarRelationFilter, Prisma.EscritorWhereInput>;
+	seguido?: Prisma.XOR<Prisma.EscritorScalarRelationFilter, Prisma.EscritorWhereInput>;
+	estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 };
 
 export type SeguirUsuarioOrderByWithRelationInput = {
@@ -282,18 +256,9 @@ export type SeguirUsuarioWhereUniqueInput = Prisma.AtLeast<
 		escritorId?: Prisma.IntFilter<"SeguirUsuario"> | number;
 		escritorSeguidoId?: Prisma.IntFilter<"SeguirUsuario"> | number;
 		estadoId?: Prisma.IntFilter<"SeguirUsuario"> | number;
-		escritor?: Prisma.XOR<
-			Prisma.EscritorScalarRelationFilter,
-			Prisma.EscritorWhereInput
-		>;
-		seguido?: Prisma.XOR<
-			Prisma.EscritorScalarRelationFilter,
-			Prisma.EscritorWhereInput
-		>;
-		estado?: Prisma.XOR<
-			Prisma.EstadoScalarRelationFilter,
-			Prisma.EstadoWhereInput
-		>;
+		escritor?: Prisma.XOR<Prisma.EscritorScalarRelationFilter, Prisma.EscritorWhereInput>;
+		seguido?: Prisma.XOR<Prisma.EscritorScalarRelationFilter, Prisma.EscritorWhereInput>;
+		estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 	},
 	"id"
 >;
@@ -313,22 +278,12 @@ export type SeguirUsuarioOrderByWithAggregationInput = {
 };
 
 export type SeguirUsuarioScalarWhereWithAggregatesInput = {
-	AND?:
-		| Prisma.SeguirUsuarioScalarWhereWithAggregatesInput
-		| Prisma.SeguirUsuarioScalarWhereWithAggregatesInput[];
+	AND?: Prisma.SeguirUsuarioScalarWhereWithAggregatesInput | Prisma.SeguirUsuarioScalarWhereWithAggregatesInput[];
 	OR?: Prisma.SeguirUsuarioScalarWhereWithAggregatesInput[];
-	NOT?:
-		| Prisma.SeguirUsuarioScalarWhereWithAggregatesInput
-		| Prisma.SeguirUsuarioScalarWhereWithAggregatesInput[];
+	NOT?: Prisma.SeguirUsuarioScalarWhereWithAggregatesInput | Prisma.SeguirUsuarioScalarWhereWithAggregatesInput[];
 	id?: Prisma.IntWithAggregatesFilter<"SeguirUsuario"> | number;
-	createdAt?:
-		| Prisma.DateTimeWithAggregatesFilter<"SeguirUsuario">
-		| Date
-		| string;
-	updatedAt?:
-		| Prisma.DateTimeWithAggregatesFilter<"SeguirUsuario">
-		| Date
-		| string;
+	createdAt?: Prisma.DateTimeWithAggregatesFilter<"SeguirUsuario"> | Date | string;
+	updatedAt?: Prisma.DateTimeWithAggregatesFilter<"SeguirUsuario"> | Date | string;
 	escritorId?: Prisma.IntWithAggregatesFilter<"SeguirUsuario"> | number;
 	escritorSeguidoId?: Prisma.IntWithAggregatesFilter<"SeguirUsuario"> | number;
 	estadoId?: Prisma.IntWithAggregatesFilter<"SeguirUsuario"> | number;
@@ -444,332 +399,164 @@ export type SeguirUsuarioSumOrderByAggregateInput = {
 
 export type SeguirUsuarioCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.SeguirUsuarioCreateWithoutEstadoInput,
-				Prisma.SeguirUsuarioUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.SeguirUsuarioCreateWithoutEstadoInput, Prisma.SeguirUsuarioUncheckedCreateWithoutEstadoInput>
 		| Prisma.SeguirUsuarioCreateWithoutEstadoInput[]
 		| Prisma.SeguirUsuarioUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutEstadoInput
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.SeguirUsuarioCreateOrConnectWithoutEstadoInput | Prisma.SeguirUsuarioCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.SeguirUsuarioCreateManyEstadoInputEnvelope;
-	connect?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
+	connect?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
 };
 
 export type SeguirUsuarioUncheckedCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.SeguirUsuarioCreateWithoutEstadoInput,
-				Prisma.SeguirUsuarioUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.SeguirUsuarioCreateWithoutEstadoInput, Prisma.SeguirUsuarioUncheckedCreateWithoutEstadoInput>
 		| Prisma.SeguirUsuarioCreateWithoutEstadoInput[]
 		| Prisma.SeguirUsuarioUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutEstadoInput
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.SeguirUsuarioCreateOrConnectWithoutEstadoInput | Prisma.SeguirUsuarioCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.SeguirUsuarioCreateManyEstadoInputEnvelope;
-	connect?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
+	connect?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
 };
 
 export type SeguirUsuarioUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.SeguirUsuarioCreateWithoutEstadoInput,
-				Prisma.SeguirUsuarioUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.SeguirUsuarioCreateWithoutEstadoInput, Prisma.SeguirUsuarioUncheckedCreateWithoutEstadoInput>
 		| Prisma.SeguirUsuarioCreateWithoutEstadoInput[]
 		| Prisma.SeguirUsuarioUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutEstadoInput
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.SeguirUsuarioCreateOrConnectWithoutEstadoInput | Prisma.SeguirUsuarioCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutEstadoInput | Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.SeguirUsuarioCreateManyEstadoInputEnvelope;
-	set?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	delete?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	connect?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	update?:
-		| Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.SeguirUsuarioUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.SeguirUsuarioUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.SeguirUsuarioScalarWhereInput
-		| Prisma.SeguirUsuarioScalarWhereInput[];
+	set?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	disconnect?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	delete?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	connect?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	update?: Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutEstadoInput | Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.SeguirUsuarioUpdateManyWithWhereWithoutEstadoInput | Prisma.SeguirUsuarioUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.SeguirUsuarioScalarWhereInput | Prisma.SeguirUsuarioScalarWhereInput[];
 };
 
 export type SeguirUsuarioUncheckedUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.SeguirUsuarioCreateWithoutEstadoInput,
-				Prisma.SeguirUsuarioUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.SeguirUsuarioCreateWithoutEstadoInput, Prisma.SeguirUsuarioUncheckedCreateWithoutEstadoInput>
 		| Prisma.SeguirUsuarioCreateWithoutEstadoInput[]
 		| Prisma.SeguirUsuarioUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutEstadoInput
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.SeguirUsuarioCreateOrConnectWithoutEstadoInput | Prisma.SeguirUsuarioCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutEstadoInput | Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.SeguirUsuarioCreateManyEstadoInputEnvelope;
-	set?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	delete?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	connect?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	update?:
-		| Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.SeguirUsuarioUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.SeguirUsuarioUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.SeguirUsuarioScalarWhereInput
-		| Prisma.SeguirUsuarioScalarWhereInput[];
+	set?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	disconnect?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	delete?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	connect?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	update?: Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutEstadoInput | Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.SeguirUsuarioUpdateManyWithWhereWithoutEstadoInput | Prisma.SeguirUsuarioUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.SeguirUsuarioScalarWhereInput | Prisma.SeguirUsuarioScalarWhereInput[];
 };
 
 export type SeguirUsuarioCreateNestedManyWithoutSeguidoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.SeguirUsuarioCreateWithoutSeguidoInput,
-				Prisma.SeguirUsuarioUncheckedCreateWithoutSeguidoInput
-		  >
+		| Prisma.XOR<Prisma.SeguirUsuarioCreateWithoutSeguidoInput, Prisma.SeguirUsuarioUncheckedCreateWithoutSeguidoInput>
 		| Prisma.SeguirUsuarioCreateWithoutSeguidoInput[]
 		| Prisma.SeguirUsuarioUncheckedCreateWithoutSeguidoInput[];
-	connectOrCreate?:
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutSeguidoInput
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutSeguidoInput[];
+	connectOrCreate?: Prisma.SeguirUsuarioCreateOrConnectWithoutSeguidoInput | Prisma.SeguirUsuarioCreateOrConnectWithoutSeguidoInput[];
 	createMany?: Prisma.SeguirUsuarioCreateManySeguidoInputEnvelope;
-	connect?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
+	connect?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
 };
 
 export type SeguirUsuarioCreateNestedManyWithoutEscritorInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.SeguirUsuarioCreateWithoutEscritorInput,
-				Prisma.SeguirUsuarioUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.SeguirUsuarioCreateWithoutEscritorInput, Prisma.SeguirUsuarioUncheckedCreateWithoutEscritorInput>
 		| Prisma.SeguirUsuarioCreateWithoutEscritorInput[]
 		| Prisma.SeguirUsuarioUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutEscritorInput
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutEscritorInput[];
+	connectOrCreate?: Prisma.SeguirUsuarioCreateOrConnectWithoutEscritorInput | Prisma.SeguirUsuarioCreateOrConnectWithoutEscritorInput[];
 	createMany?: Prisma.SeguirUsuarioCreateManyEscritorInputEnvelope;
-	connect?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
+	connect?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
 };
 
 export type SeguirUsuarioUncheckedCreateNestedManyWithoutSeguidoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.SeguirUsuarioCreateWithoutSeguidoInput,
-				Prisma.SeguirUsuarioUncheckedCreateWithoutSeguidoInput
-		  >
+		| Prisma.XOR<Prisma.SeguirUsuarioCreateWithoutSeguidoInput, Prisma.SeguirUsuarioUncheckedCreateWithoutSeguidoInput>
 		| Prisma.SeguirUsuarioCreateWithoutSeguidoInput[]
 		| Prisma.SeguirUsuarioUncheckedCreateWithoutSeguidoInput[];
-	connectOrCreate?:
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutSeguidoInput
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutSeguidoInput[];
+	connectOrCreate?: Prisma.SeguirUsuarioCreateOrConnectWithoutSeguidoInput | Prisma.SeguirUsuarioCreateOrConnectWithoutSeguidoInput[];
 	createMany?: Prisma.SeguirUsuarioCreateManySeguidoInputEnvelope;
-	connect?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
+	connect?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
 };
 
 export type SeguirUsuarioUncheckedCreateNestedManyWithoutEscritorInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.SeguirUsuarioCreateWithoutEscritorInput,
-				Prisma.SeguirUsuarioUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.SeguirUsuarioCreateWithoutEscritorInput, Prisma.SeguirUsuarioUncheckedCreateWithoutEscritorInput>
 		| Prisma.SeguirUsuarioCreateWithoutEscritorInput[]
 		| Prisma.SeguirUsuarioUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutEscritorInput
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutEscritorInput[];
+	connectOrCreate?: Prisma.SeguirUsuarioCreateOrConnectWithoutEscritorInput | Prisma.SeguirUsuarioCreateOrConnectWithoutEscritorInput[];
 	createMany?: Prisma.SeguirUsuarioCreateManyEscritorInputEnvelope;
-	connect?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
+	connect?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
 };
 
 export type SeguirUsuarioUpdateManyWithoutSeguidoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.SeguirUsuarioCreateWithoutSeguidoInput,
-				Prisma.SeguirUsuarioUncheckedCreateWithoutSeguidoInput
-		  >
+		| Prisma.XOR<Prisma.SeguirUsuarioCreateWithoutSeguidoInput, Prisma.SeguirUsuarioUncheckedCreateWithoutSeguidoInput>
 		| Prisma.SeguirUsuarioCreateWithoutSeguidoInput[]
 		| Prisma.SeguirUsuarioUncheckedCreateWithoutSeguidoInput[];
-	connectOrCreate?:
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutSeguidoInput
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutSeguidoInput[];
-	upsert?:
-		| Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutSeguidoInput
-		| Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutSeguidoInput[];
+	connectOrCreate?: Prisma.SeguirUsuarioCreateOrConnectWithoutSeguidoInput | Prisma.SeguirUsuarioCreateOrConnectWithoutSeguidoInput[];
+	upsert?: Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutSeguidoInput | Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutSeguidoInput[];
 	createMany?: Prisma.SeguirUsuarioCreateManySeguidoInputEnvelope;
-	set?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	delete?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	connect?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	update?:
-		| Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutSeguidoInput
-		| Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutSeguidoInput[];
-	updateMany?:
-		| Prisma.SeguirUsuarioUpdateManyWithWhereWithoutSeguidoInput
-		| Prisma.SeguirUsuarioUpdateManyWithWhereWithoutSeguidoInput[];
-	deleteMany?:
-		| Prisma.SeguirUsuarioScalarWhereInput
-		| Prisma.SeguirUsuarioScalarWhereInput[];
+	set?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	disconnect?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	delete?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	connect?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	update?: Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutSeguidoInput | Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutSeguidoInput[];
+	updateMany?: Prisma.SeguirUsuarioUpdateManyWithWhereWithoutSeguidoInput | Prisma.SeguirUsuarioUpdateManyWithWhereWithoutSeguidoInput[];
+	deleteMany?: Prisma.SeguirUsuarioScalarWhereInput | Prisma.SeguirUsuarioScalarWhereInput[];
 };
 
 export type SeguirUsuarioUpdateManyWithoutEscritorNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.SeguirUsuarioCreateWithoutEscritorInput,
-				Prisma.SeguirUsuarioUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.SeguirUsuarioCreateWithoutEscritorInput, Prisma.SeguirUsuarioUncheckedCreateWithoutEscritorInput>
 		| Prisma.SeguirUsuarioCreateWithoutEscritorInput[]
 		| Prisma.SeguirUsuarioUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutEscritorInput
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutEscritorInput[];
-	upsert?:
-		| Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutEscritorInput
-		| Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutEscritorInput[];
+	connectOrCreate?: Prisma.SeguirUsuarioCreateOrConnectWithoutEscritorInput | Prisma.SeguirUsuarioCreateOrConnectWithoutEscritorInput[];
+	upsert?: Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutEscritorInput | Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutEscritorInput[];
 	createMany?: Prisma.SeguirUsuarioCreateManyEscritorInputEnvelope;
-	set?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	delete?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	connect?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	update?:
-		| Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutEscritorInput
-		| Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutEscritorInput[];
-	updateMany?:
-		| Prisma.SeguirUsuarioUpdateManyWithWhereWithoutEscritorInput
-		| Prisma.SeguirUsuarioUpdateManyWithWhereWithoutEscritorInput[];
-	deleteMany?:
-		| Prisma.SeguirUsuarioScalarWhereInput
-		| Prisma.SeguirUsuarioScalarWhereInput[];
+	set?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	disconnect?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	delete?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	connect?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	update?: Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutEscritorInput | Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutEscritorInput[];
+	updateMany?: Prisma.SeguirUsuarioUpdateManyWithWhereWithoutEscritorInput | Prisma.SeguirUsuarioUpdateManyWithWhereWithoutEscritorInput[];
+	deleteMany?: Prisma.SeguirUsuarioScalarWhereInput | Prisma.SeguirUsuarioScalarWhereInput[];
 };
 
 export type SeguirUsuarioUncheckedUpdateManyWithoutSeguidoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.SeguirUsuarioCreateWithoutSeguidoInput,
-				Prisma.SeguirUsuarioUncheckedCreateWithoutSeguidoInput
-		  >
+		| Prisma.XOR<Prisma.SeguirUsuarioCreateWithoutSeguidoInput, Prisma.SeguirUsuarioUncheckedCreateWithoutSeguidoInput>
 		| Prisma.SeguirUsuarioCreateWithoutSeguidoInput[]
 		| Prisma.SeguirUsuarioUncheckedCreateWithoutSeguidoInput[];
-	connectOrCreate?:
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutSeguidoInput
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutSeguidoInput[];
-	upsert?:
-		| Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutSeguidoInput
-		| Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutSeguidoInput[];
+	connectOrCreate?: Prisma.SeguirUsuarioCreateOrConnectWithoutSeguidoInput | Prisma.SeguirUsuarioCreateOrConnectWithoutSeguidoInput[];
+	upsert?: Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutSeguidoInput | Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutSeguidoInput[];
 	createMany?: Prisma.SeguirUsuarioCreateManySeguidoInputEnvelope;
-	set?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	delete?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	connect?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	update?:
-		| Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutSeguidoInput
-		| Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutSeguidoInput[];
-	updateMany?:
-		| Prisma.SeguirUsuarioUpdateManyWithWhereWithoutSeguidoInput
-		| Prisma.SeguirUsuarioUpdateManyWithWhereWithoutSeguidoInput[];
-	deleteMany?:
-		| Prisma.SeguirUsuarioScalarWhereInput
-		| Prisma.SeguirUsuarioScalarWhereInput[];
+	set?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	disconnect?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	delete?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	connect?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	update?: Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutSeguidoInput | Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutSeguidoInput[];
+	updateMany?: Prisma.SeguirUsuarioUpdateManyWithWhereWithoutSeguidoInput | Prisma.SeguirUsuarioUpdateManyWithWhereWithoutSeguidoInput[];
+	deleteMany?: Prisma.SeguirUsuarioScalarWhereInput | Prisma.SeguirUsuarioScalarWhereInput[];
 };
 
 export type SeguirUsuarioUncheckedUpdateManyWithoutEscritorNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.SeguirUsuarioCreateWithoutEscritorInput,
-				Prisma.SeguirUsuarioUncheckedCreateWithoutEscritorInput
-		  >
+		| Prisma.XOR<Prisma.SeguirUsuarioCreateWithoutEscritorInput, Prisma.SeguirUsuarioUncheckedCreateWithoutEscritorInput>
 		| Prisma.SeguirUsuarioCreateWithoutEscritorInput[]
 		| Prisma.SeguirUsuarioUncheckedCreateWithoutEscritorInput[];
-	connectOrCreate?:
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutEscritorInput
-		| Prisma.SeguirUsuarioCreateOrConnectWithoutEscritorInput[];
-	upsert?:
-		| Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutEscritorInput
-		| Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutEscritorInput[];
+	connectOrCreate?: Prisma.SeguirUsuarioCreateOrConnectWithoutEscritorInput | Prisma.SeguirUsuarioCreateOrConnectWithoutEscritorInput[];
+	upsert?: Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutEscritorInput | Prisma.SeguirUsuarioUpsertWithWhereUniqueWithoutEscritorInput[];
 	createMany?: Prisma.SeguirUsuarioCreateManyEscritorInputEnvelope;
-	set?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	disconnect?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	delete?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	connect?:
-		| Prisma.SeguirUsuarioWhereUniqueInput
-		| Prisma.SeguirUsuarioWhereUniqueInput[];
-	update?:
-		| Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutEscritorInput
-		| Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutEscritorInput[];
-	updateMany?:
-		| Prisma.SeguirUsuarioUpdateManyWithWhereWithoutEscritorInput
-		| Prisma.SeguirUsuarioUpdateManyWithWhereWithoutEscritorInput[];
-	deleteMany?:
-		| Prisma.SeguirUsuarioScalarWhereInput
-		| Prisma.SeguirUsuarioScalarWhereInput[];
+	set?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	disconnect?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	delete?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	connect?: Prisma.SeguirUsuarioWhereUniqueInput | Prisma.SeguirUsuarioWhereUniqueInput[];
+	update?: Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutEscritorInput | Prisma.SeguirUsuarioUpdateWithWhereUniqueWithoutEscritorInput[];
+	updateMany?: Prisma.SeguirUsuarioUpdateManyWithWhereWithoutEscritorInput | Prisma.SeguirUsuarioUpdateManyWithWhereWithoutEscritorInput[];
+	deleteMany?: Prisma.SeguirUsuarioScalarWhereInput | Prisma.SeguirUsuarioScalarWhereInput[];
 };
 
 export type SeguirUsuarioCreateWithoutEstadoInput = {
@@ -789,55 +576,34 @@ export type SeguirUsuarioUncheckedCreateWithoutEstadoInput = {
 
 export type SeguirUsuarioCreateOrConnectWithoutEstadoInput = {
 	where: Prisma.SeguirUsuarioWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.SeguirUsuarioCreateWithoutEstadoInput,
-		Prisma.SeguirUsuarioUncheckedCreateWithoutEstadoInput
-	>;
+	create: Prisma.XOR<Prisma.SeguirUsuarioCreateWithoutEstadoInput, Prisma.SeguirUsuarioUncheckedCreateWithoutEstadoInput>;
 };
 
 export type SeguirUsuarioCreateManyEstadoInputEnvelope = {
-	data:
-		| Prisma.SeguirUsuarioCreateManyEstadoInput
-		| Prisma.SeguirUsuarioCreateManyEstadoInput[];
+	data: Prisma.SeguirUsuarioCreateManyEstadoInput | Prisma.SeguirUsuarioCreateManyEstadoInput[];
 	skipDuplicates?: boolean;
 };
 
 export type SeguirUsuarioUpsertWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.SeguirUsuarioWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.SeguirUsuarioUpdateWithoutEstadoInput,
-		Prisma.SeguirUsuarioUncheckedUpdateWithoutEstadoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.SeguirUsuarioCreateWithoutEstadoInput,
-		Prisma.SeguirUsuarioUncheckedCreateWithoutEstadoInput
-	>;
+	update: Prisma.XOR<Prisma.SeguirUsuarioUpdateWithoutEstadoInput, Prisma.SeguirUsuarioUncheckedUpdateWithoutEstadoInput>;
+	create: Prisma.XOR<Prisma.SeguirUsuarioCreateWithoutEstadoInput, Prisma.SeguirUsuarioUncheckedCreateWithoutEstadoInput>;
 };
 
 export type SeguirUsuarioUpdateWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.SeguirUsuarioWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.SeguirUsuarioUpdateWithoutEstadoInput,
-		Prisma.SeguirUsuarioUncheckedUpdateWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.SeguirUsuarioUpdateWithoutEstadoInput, Prisma.SeguirUsuarioUncheckedUpdateWithoutEstadoInput>;
 };
 
 export type SeguirUsuarioUpdateManyWithWhereWithoutEstadoInput = {
 	where: Prisma.SeguirUsuarioScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.SeguirUsuarioUpdateManyMutationInput,
-		Prisma.SeguirUsuarioUncheckedUpdateManyWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.SeguirUsuarioUpdateManyMutationInput, Prisma.SeguirUsuarioUncheckedUpdateManyWithoutEstadoInput>;
 };
 
 export type SeguirUsuarioScalarWhereInput = {
-	AND?:
-		| Prisma.SeguirUsuarioScalarWhereInput
-		| Prisma.SeguirUsuarioScalarWhereInput[];
+	AND?: Prisma.SeguirUsuarioScalarWhereInput | Prisma.SeguirUsuarioScalarWhereInput[];
 	OR?: Prisma.SeguirUsuarioScalarWhereInput[];
-	NOT?:
-		| Prisma.SeguirUsuarioScalarWhereInput
-		| Prisma.SeguirUsuarioScalarWhereInput[];
+	NOT?: Prisma.SeguirUsuarioScalarWhereInput | Prisma.SeguirUsuarioScalarWhereInput[];
 	id?: Prisma.IntFilter<"SeguirUsuario"> | number;
 	createdAt?: Prisma.DateTimeFilter<"SeguirUsuario"> | Date | string;
 	updatedAt?: Prisma.DateTimeFilter<"SeguirUsuario"> | Date | string;
@@ -863,16 +629,11 @@ export type SeguirUsuarioUncheckedCreateWithoutSeguidoInput = {
 
 export type SeguirUsuarioCreateOrConnectWithoutSeguidoInput = {
 	where: Prisma.SeguirUsuarioWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.SeguirUsuarioCreateWithoutSeguidoInput,
-		Prisma.SeguirUsuarioUncheckedCreateWithoutSeguidoInput
-	>;
+	create: Prisma.XOR<Prisma.SeguirUsuarioCreateWithoutSeguidoInput, Prisma.SeguirUsuarioUncheckedCreateWithoutSeguidoInput>;
 };
 
 export type SeguirUsuarioCreateManySeguidoInputEnvelope = {
-	data:
-		| Prisma.SeguirUsuarioCreateManySeguidoInput
-		| Prisma.SeguirUsuarioCreateManySeguidoInput[];
+	data: Prisma.SeguirUsuarioCreateManySeguidoInput | Prisma.SeguirUsuarioCreateManySeguidoInput[];
 	skipDuplicates?: boolean;
 };
 
@@ -893,73 +654,44 @@ export type SeguirUsuarioUncheckedCreateWithoutEscritorInput = {
 
 export type SeguirUsuarioCreateOrConnectWithoutEscritorInput = {
 	where: Prisma.SeguirUsuarioWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.SeguirUsuarioCreateWithoutEscritorInput,
-		Prisma.SeguirUsuarioUncheckedCreateWithoutEscritorInput
-	>;
+	create: Prisma.XOR<Prisma.SeguirUsuarioCreateWithoutEscritorInput, Prisma.SeguirUsuarioUncheckedCreateWithoutEscritorInput>;
 };
 
 export type SeguirUsuarioCreateManyEscritorInputEnvelope = {
-	data:
-		| Prisma.SeguirUsuarioCreateManyEscritorInput
-		| Prisma.SeguirUsuarioCreateManyEscritorInput[];
+	data: Prisma.SeguirUsuarioCreateManyEscritorInput | Prisma.SeguirUsuarioCreateManyEscritorInput[];
 	skipDuplicates?: boolean;
 };
 
 export type SeguirUsuarioUpsertWithWhereUniqueWithoutSeguidoInput = {
 	where: Prisma.SeguirUsuarioWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.SeguirUsuarioUpdateWithoutSeguidoInput,
-		Prisma.SeguirUsuarioUncheckedUpdateWithoutSeguidoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.SeguirUsuarioCreateWithoutSeguidoInput,
-		Prisma.SeguirUsuarioUncheckedCreateWithoutSeguidoInput
-	>;
+	update: Prisma.XOR<Prisma.SeguirUsuarioUpdateWithoutSeguidoInput, Prisma.SeguirUsuarioUncheckedUpdateWithoutSeguidoInput>;
+	create: Prisma.XOR<Prisma.SeguirUsuarioCreateWithoutSeguidoInput, Prisma.SeguirUsuarioUncheckedCreateWithoutSeguidoInput>;
 };
 
 export type SeguirUsuarioUpdateWithWhereUniqueWithoutSeguidoInput = {
 	where: Prisma.SeguirUsuarioWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.SeguirUsuarioUpdateWithoutSeguidoInput,
-		Prisma.SeguirUsuarioUncheckedUpdateWithoutSeguidoInput
-	>;
+	data: Prisma.XOR<Prisma.SeguirUsuarioUpdateWithoutSeguidoInput, Prisma.SeguirUsuarioUncheckedUpdateWithoutSeguidoInput>;
 };
 
 export type SeguirUsuarioUpdateManyWithWhereWithoutSeguidoInput = {
 	where: Prisma.SeguirUsuarioScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.SeguirUsuarioUpdateManyMutationInput,
-		Prisma.SeguirUsuarioUncheckedUpdateManyWithoutSeguidoInput
-	>;
+	data: Prisma.XOR<Prisma.SeguirUsuarioUpdateManyMutationInput, Prisma.SeguirUsuarioUncheckedUpdateManyWithoutSeguidoInput>;
 };
 
 export type SeguirUsuarioUpsertWithWhereUniqueWithoutEscritorInput = {
 	where: Prisma.SeguirUsuarioWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.SeguirUsuarioUpdateWithoutEscritorInput,
-		Prisma.SeguirUsuarioUncheckedUpdateWithoutEscritorInput
-	>;
-	create: Prisma.XOR<
-		Prisma.SeguirUsuarioCreateWithoutEscritorInput,
-		Prisma.SeguirUsuarioUncheckedCreateWithoutEscritorInput
-	>;
+	update: Prisma.XOR<Prisma.SeguirUsuarioUpdateWithoutEscritorInput, Prisma.SeguirUsuarioUncheckedUpdateWithoutEscritorInput>;
+	create: Prisma.XOR<Prisma.SeguirUsuarioCreateWithoutEscritorInput, Prisma.SeguirUsuarioUncheckedCreateWithoutEscritorInput>;
 };
 
 export type SeguirUsuarioUpdateWithWhereUniqueWithoutEscritorInput = {
 	where: Prisma.SeguirUsuarioWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.SeguirUsuarioUpdateWithoutEscritorInput,
-		Prisma.SeguirUsuarioUncheckedUpdateWithoutEscritorInput
-	>;
+	data: Prisma.XOR<Prisma.SeguirUsuarioUpdateWithoutEscritorInput, Prisma.SeguirUsuarioUncheckedUpdateWithoutEscritorInput>;
 };
 
 export type SeguirUsuarioUpdateManyWithWhereWithoutEscritorInput = {
 	where: Prisma.SeguirUsuarioScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.SeguirUsuarioUpdateManyMutationInput,
-		Prisma.SeguirUsuarioUncheckedUpdateManyWithoutEscritorInput
-	>;
+	data: Prisma.XOR<Prisma.SeguirUsuarioUpdateManyMutationInput, Prisma.SeguirUsuarioUncheckedUpdateManyWithoutEscritorInput>;
 };
 
 export type SeguirUsuarioCreateManyEstadoInput = {
@@ -1055,10 +787,7 @@ export type SeguirUsuarioUncheckedUpdateManyWithoutEscritorInput = {
 	estadoId?: Prisma.IntFieldUpdateOperationsInput | number;
 };
 
-export type SeguirUsuarioSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type SeguirUsuarioSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		createdAt?: boolean;
@@ -1073,10 +802,7 @@ export type SeguirUsuarioSelect<
 	ExtArgs["result"]["seguirUsuario"]
 >;
 
-export type SeguirUsuarioSelectCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type SeguirUsuarioSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		createdAt?: boolean;
@@ -1091,10 +817,7 @@ export type SeguirUsuarioSelectCreateManyAndReturn<
 	ExtArgs["result"]["seguirUsuario"]
 >;
 
-export type SeguirUsuarioSelectUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type SeguirUsuarioSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		createdAt?: boolean;
@@ -1118,47 +841,27 @@ export type SeguirUsuarioSelectScalar = {
 	estadoId?: boolean;
 };
 
-export type SeguirUsuarioOmit<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetOmit<
-	| "id"
-	| "createdAt"
-	| "updatedAt"
-	| "escritorId"
-	| "escritorSeguidoId"
-	| "estadoId",
+export type SeguirUsuarioOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<
+	"id" | "createdAt" | "updatedAt" | "escritorId" | "escritorSeguidoId" | "estadoId",
 	ExtArgs["result"]["seguirUsuario"]
 >;
-export type SeguirUsuarioInclude<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type SeguirUsuarioInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	escritor?: boolean | Prisma.EscritorDefaultArgs<ExtArgs>;
 	seguido?: boolean | Prisma.EscritorDefaultArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
-export type SeguirUsuarioIncludeCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type SeguirUsuarioIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	escritor?: boolean | Prisma.EscritorDefaultArgs<ExtArgs>;
 	seguido?: boolean | Prisma.EscritorDefaultArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
-export type SeguirUsuarioIncludeUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type SeguirUsuarioIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	escritor?: boolean | Prisma.EscritorDefaultArgs<ExtArgs>;
 	seguido?: boolean | Prisma.EscritorDefaultArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
 
-export type $SeguirUsuarioPayload<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type $SeguirUsuarioPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	name: "SeguirUsuario";
 	objects: {
 		escritor: Prisma.$EscritorPayload<ExtArgs>;
@@ -1179,29 +882,17 @@ export type $SeguirUsuarioPayload<
 	composites: {};
 };
 
-export type SeguirUsuarioGetPayload<
-	S extends boolean | null | undefined | SeguirUsuarioDefaultArgs,
-> = runtime.Types.Result.GetResult<Prisma.$SeguirUsuarioPayload, S>;
+export type SeguirUsuarioGetPayload<S extends boolean | null | undefined | SeguirUsuarioDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$SeguirUsuarioPayload, S>;
 
-export type SeguirUsuarioCountArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = Omit<
+export type SeguirUsuarioCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<
 	SeguirUsuarioFindManyArgs,
 	"select" | "include" | "distinct" | "omit"
 > & {
 	select?: SeguirUsuarioCountAggregateInputType | true;
 };
 
-export interface SeguirUsuarioDelegate<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> {
-	[K: symbol]: {
-		types: Prisma.TypeMap<ExtArgs>["model"]["SeguirUsuario"];
-		meta: { name: "SeguirUsuario" };
-	};
+export interface SeguirUsuarioDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+	[K: symbol]: { types: Prisma.TypeMap<ExtArgs>["model"]["SeguirUsuario"]; meta: { name: "SeguirUsuario" } };
 	/**
 	 * Find zero or one SeguirUsuario that matches the filter.
 	 * @param {SeguirUsuarioFindUniqueArgs} args - Arguments to find a SeguirUsuario
@@ -1215,17 +906,7 @@ export interface SeguirUsuarioDelegate<
 	 */
 	findUnique<T extends SeguirUsuarioFindUniqueArgs>(
 		args: Prisma.SelectSubset<T, SeguirUsuarioFindUniqueArgs<ExtArgs>>,
-	): Prisma.Prisma__SeguirUsuarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$SeguirUsuarioPayload<ExtArgs>,
-			T,
-			"findUnique",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__SeguirUsuarioClient<runtime.Types.Result.GetResult<Prisma.$SeguirUsuarioPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find one SeguirUsuario that matches the filter or throw an error with `error.code='P2025'`
@@ -1241,17 +922,7 @@ export interface SeguirUsuarioDelegate<
 	 */
 	findUniqueOrThrow<T extends SeguirUsuarioFindUniqueOrThrowArgs>(
 		args: Prisma.SelectSubset<T, SeguirUsuarioFindUniqueOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__SeguirUsuarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$SeguirUsuarioPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__SeguirUsuarioClient<runtime.Types.Result.GetResult<Prisma.$SeguirUsuarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first SeguirUsuario that matches the filter.
@@ -1268,17 +939,7 @@ export interface SeguirUsuarioDelegate<
 	 */
 	findFirst<T extends SeguirUsuarioFindFirstArgs>(
 		args?: Prisma.SelectSubset<T, SeguirUsuarioFindFirstArgs<ExtArgs>>,
-	): Prisma.Prisma__SeguirUsuarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$SeguirUsuarioPayload<ExtArgs>,
-			T,
-			"findFirst",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__SeguirUsuarioClient<runtime.Types.Result.GetResult<Prisma.$SeguirUsuarioPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first SeguirUsuario that matches the filter or
@@ -1296,17 +957,7 @@ export interface SeguirUsuarioDelegate<
 	 */
 	findFirstOrThrow<T extends SeguirUsuarioFindFirstOrThrowArgs>(
 		args?: Prisma.SelectSubset<T, SeguirUsuarioFindFirstOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__SeguirUsuarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$SeguirUsuarioPayload<ExtArgs>,
-			T,
-			"findFirstOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__SeguirUsuarioClient<runtime.Types.Result.GetResult<Prisma.$SeguirUsuarioPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find zero or more SeguirUsuarios that matches the filter.
@@ -1326,14 +977,7 @@ export interface SeguirUsuarioDelegate<
 	 */
 	findMany<T extends SeguirUsuarioFindManyArgs>(
 		args?: Prisma.SelectSubset<T, SeguirUsuarioFindManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$SeguirUsuarioPayload<ExtArgs>,
-			T,
-			"findMany",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SeguirUsuarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
 
 	/**
 	 * Create a SeguirUsuario.
@@ -1349,17 +993,7 @@ export interface SeguirUsuarioDelegate<
 	 */
 	create<T extends SeguirUsuarioCreateArgs>(
 		args: Prisma.SelectSubset<T, SeguirUsuarioCreateArgs<ExtArgs>>,
-	): Prisma.Prisma__SeguirUsuarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$SeguirUsuarioPayload<ExtArgs>,
-			T,
-			"create",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__SeguirUsuarioClient<runtime.Types.Result.GetResult<Prisma.$SeguirUsuarioPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Create many SeguirUsuarios.
@@ -1373,9 +1007,7 @@ export interface SeguirUsuarioDelegate<
 	 * })
 	 *
 	 */
-	createMany<T extends SeguirUsuarioCreateManyArgs>(
-		args?: Prisma.SelectSubset<T, SeguirUsuarioCreateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	createMany<T extends SeguirUsuarioCreateManyArgs>(args?: Prisma.SelectSubset<T, SeguirUsuarioCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Create many SeguirUsuarios and returns the data saved in the database.
@@ -1400,18 +1032,8 @@ export interface SeguirUsuarioDelegate<
 	 *
 	 */
 	createManyAndReturn<T extends SeguirUsuarioCreateManyAndReturnArgs>(
-		args?: Prisma.SelectSubset<
-			T,
-			SeguirUsuarioCreateManyAndReturnArgs<ExtArgs>
-		>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$SeguirUsuarioPayload<ExtArgs>,
-			T,
-			"createManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+		args?: Prisma.SelectSubset<T, SeguirUsuarioCreateManyAndReturnArgs<ExtArgs>>,
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SeguirUsuarioPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Delete a SeguirUsuario.
@@ -1427,17 +1049,7 @@ export interface SeguirUsuarioDelegate<
 	 */
 	delete<T extends SeguirUsuarioDeleteArgs>(
 		args: Prisma.SelectSubset<T, SeguirUsuarioDeleteArgs<ExtArgs>>,
-	): Prisma.Prisma__SeguirUsuarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$SeguirUsuarioPayload<ExtArgs>,
-			T,
-			"delete",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__SeguirUsuarioClient<runtime.Types.Result.GetResult<Prisma.$SeguirUsuarioPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Update one SeguirUsuario.
@@ -1456,17 +1068,7 @@ export interface SeguirUsuarioDelegate<
 	 */
 	update<T extends SeguirUsuarioUpdateArgs>(
 		args: Prisma.SelectSubset<T, SeguirUsuarioUpdateArgs<ExtArgs>>,
-	): Prisma.Prisma__SeguirUsuarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$SeguirUsuarioPayload<ExtArgs>,
-			T,
-			"update",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__SeguirUsuarioClient<runtime.Types.Result.GetResult<Prisma.$SeguirUsuarioPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Delete zero or more SeguirUsuarios.
@@ -1480,9 +1082,7 @@ export interface SeguirUsuarioDelegate<
 	 * })
 	 *
 	 */
-	deleteMany<T extends SeguirUsuarioDeleteManyArgs>(
-		args?: Prisma.SelectSubset<T, SeguirUsuarioDeleteManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	deleteMany<T extends SeguirUsuarioDeleteManyArgs>(args?: Prisma.SelectSubset<T, SeguirUsuarioDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more SeguirUsuarios.
@@ -1501,9 +1101,7 @@ export interface SeguirUsuarioDelegate<
 	 * })
 	 *
 	 */
-	updateMany<T extends SeguirUsuarioUpdateManyArgs>(
-		args: Prisma.SelectSubset<T, SeguirUsuarioUpdateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	updateMany<T extends SeguirUsuarioUpdateManyArgs>(args: Prisma.SelectSubset<T, SeguirUsuarioUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more SeguirUsuarios and returns the data updated in the database.
@@ -1535,14 +1133,7 @@ export interface SeguirUsuarioDelegate<
 	 */
 	updateManyAndReturn<T extends SeguirUsuarioUpdateManyAndReturnArgs>(
 		args: Prisma.SelectSubset<T, SeguirUsuarioUpdateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$SeguirUsuarioPayload<ExtArgs>,
-			T,
-			"updateManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SeguirUsuarioPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Create or update one SeguirUsuario.
@@ -1563,17 +1154,7 @@ export interface SeguirUsuarioDelegate<
 	 */
 	upsert<T extends SeguirUsuarioUpsertArgs>(
 		args: Prisma.SelectSubset<T, SeguirUsuarioUpsertArgs<ExtArgs>>,
-	): Prisma.Prisma__SeguirUsuarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$SeguirUsuarioPayload<ExtArgs>,
-			T,
-			"upsert",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__SeguirUsuarioClient<runtime.Types.Result.GetResult<Prisma.$SeguirUsuarioPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Count the number of SeguirUsuarios.
@@ -1591,14 +1172,7 @@ export interface SeguirUsuarioDelegate<
 	count<T extends SeguirUsuarioCountArgs>(
 		args?: Prisma.Subset<T, SeguirUsuarioCountArgs>,
 	): Prisma.PrismaPromise<
-		T extends runtime.Types.Utils.Record<"select", any>
-			? T["select"] extends true
-				? number
-				: Prisma.GetScalarType<
-						T["select"],
-						SeguirUsuarioCountAggregateOutputType
-					>
-			: number
+		T extends runtime.Types.Utils.Record<"select", any> ? (T["select"] extends true ? number : Prisma.GetScalarType<T["select"], SeguirUsuarioCountAggregateOutputType>) : number
 	>;
 
 	/**
@@ -1625,9 +1199,7 @@ export interface SeguirUsuarioDelegate<
 	 *   take: 10,
 	 * })
 	 **/
-	aggregate<T extends SeguirUsuarioAggregateArgs>(
-		args: Prisma.Subset<T, SeguirUsuarioAggregateArgs>,
-	): Prisma.PrismaPromise<GetSeguirUsuarioAggregateType<T>>;
+	aggregate<T extends SeguirUsuarioAggregateArgs>(args: Prisma.Subset<T, SeguirUsuarioAggregateArgs>): Prisma.PrismaPromise<GetSeguirUsuarioAggregateType<T>>;
 
 	/**
 	 * Group by SeguirUsuario.
@@ -1649,16 +1221,9 @@ export interface SeguirUsuarioDelegate<
 	 **/
 	groupBy<
 		T extends SeguirUsuarioGroupByArgs,
-		HasSelectOrTake extends Prisma.Or<
-			Prisma.Extends<"skip", Prisma.Keys<T>>,
-			Prisma.Extends<"take", Prisma.Keys<T>>
-		>,
-		OrderByArg extends Prisma.True extends HasSelectOrTake
-			? { orderBy: SeguirUsuarioGroupByArgs["orderBy"] }
-			: { orderBy?: SeguirUsuarioGroupByArgs["orderBy"] },
-		OrderFields extends Prisma.ExcludeUnderscoreKeys<
-			Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>
-		>,
+		HasSelectOrTake extends Prisma.Or<Prisma.Extends<"skip", Prisma.Keys<T>>, Prisma.Extends<"take", Prisma.Keys<T>>>,
+		OrderByArg extends Prisma.True extends HasSelectOrTake ? { orderBy: SeguirUsuarioGroupByArgs["orderBy"] } : { orderBy?: SeguirUsuarioGroupByArgs["orderBy"] },
+		OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>>,
 		ByFields extends Prisma.MaybeTupleToUnion<T["by"]>,
 		ByValid extends Prisma.Has<ByFields, OrderFields>,
 		HavingFields extends Prisma.GetHavingFields<T["having"]>,
@@ -1672,21 +1237,14 @@ export interface SeguirUsuarioDelegate<
 							? never
 							: P extends string
 								? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-								: [
-										Error,
-										"Field ",
-										P,
-										` in "having" needs to be provided in "by"`,
-									];
+								: [Error, "Field ", P, ` in "having" needs to be provided in "by"`];
 					}[HavingFields]
 				: "take" extends Prisma.Keys<T>
 					? "orderBy" extends Prisma.Keys<T>
 						? ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields]
 						: 'Error: If you provide "take", you also need to provide "orderBy"'
 					: "skip" extends Prisma.Keys<T>
@@ -1694,24 +1252,15 @@ export interface SeguirUsuarioDelegate<
 							? ByValid extends Prisma.True
 								? {}
 								: {
-										[P in OrderFields]: P extends ByFields
-											? never
-											: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+										[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 									}[OrderFields]
 							: 'Error: If you provide "skip", you also need to provide "orderBy"'
 						: ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields],
-	>(
-		args: Prisma.SubsetIntersection<T, SeguirUsuarioGroupByArgs, OrderByArg> &
-			InputErrors,
-	): {} extends InputErrors
-		? GetSeguirUsuarioGroupByPayload<T>
-		: Prisma.PrismaPromise<InputErrors>;
+	>(args: Prisma.SubsetIntersection<T, SeguirUsuarioGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSeguirUsuarioGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
 	/**
 	 * Fields of the SeguirUsuario model
 	 */
@@ -1724,56 +1273,18 @@ export interface SeguirUsuarioDelegate<
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__SeguirUsuarioClient<
-	T,
-	Null = never,
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> extends Prisma.PrismaPromise<T> {
+export interface Prisma__SeguirUsuarioClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}>
+	extends Prisma.PrismaPromise<T> {
 	readonly [Symbol.toStringTag]: "PrismaPromise";
 	escritor<T extends Prisma.EscritorDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EscritorDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EscritorClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EscritorPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EscritorClient<runtime.Types.Result.GetResult<Prisma.$EscritorPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	seguido<T extends Prisma.EscritorDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EscritorDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EscritorClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EscritorPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EscritorClient<runtime.Types.Result.GetResult<Prisma.$EscritorPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	estado<T extends Prisma.EstadoDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EstadoDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EstadoPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	/**
 	 * Attaches callbacks for the resolution and/or rejection of the Promise.
 	 * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1781,35 +1292,22 @@ export interface Prisma__SeguirUsuarioClient<
 	 * @returns A Promise for the completion of which ever callback is executed.
 	 */
 	then<TResult1 = T, TResult2 = never>(
-		onfulfilled?:
-			| ((value: T) => TResult1 | PromiseLike<TResult1>)
-			| undefined
-			| null,
-		onrejected?:
-			| ((reason: any) => TResult2 | PromiseLike<TResult2>)
-			| undefined
-			| null,
+		onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+		onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
 	): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
 	/**
 	 * Attaches a callback for only the rejection of the Promise.
 	 * @param onrejected The callback to execute when the Promise is rejected.
 	 * @returns A Promise for the completion of the callback.
 	 */
-	catch<TResult = never>(
-		onrejected?:
-			| ((reason: any) => TResult | PromiseLike<TResult>)
-			| undefined
-			| null,
-	): runtime.Types.Utils.JsPromise<T | TResult>;
+	catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
 	/**
 	 * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
 	 * resolved value cannot be modified from the callback.
 	 * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
 	 * @returns A Promise for the completion of the callback.
 	 */
-	finally(
-		onfinally?: (() => void) | undefined | null,
-	): runtime.Types.Utils.JsPromise<T>;
+	finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
 }
 
 /**
@@ -1828,10 +1326,7 @@ export interface SeguirUsuarioFieldRefs {
 /**
  * SeguirUsuario findUnique
  */
-export type SeguirUsuarioFindUniqueArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type SeguirUsuarioFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the SeguirUsuario
 	 */
@@ -1853,10 +1348,7 @@ export type SeguirUsuarioFindUniqueArgs<
 /**
  * SeguirUsuario findUniqueOrThrow
  */
-export type SeguirUsuarioFindUniqueOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type SeguirUsuarioFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the SeguirUsuario
 	 */
@@ -1878,10 +1370,7 @@ export type SeguirUsuarioFindUniqueOrThrowArgs<
 /**
  * SeguirUsuario findFirst
  */
-export type SeguirUsuarioFindFirstArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type SeguirUsuarioFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the SeguirUsuario
 	 */
@@ -1903,9 +1392,7 @@ export type SeguirUsuarioFindFirstArgs<
 	 *
 	 * Determine the order of SeguirUsuarios to fetch.
 	 */
-	orderBy?:
-		| Prisma.SeguirUsuarioOrderByWithRelationInput
-		| Prisma.SeguirUsuarioOrderByWithRelationInput[];
+	orderBy?: Prisma.SeguirUsuarioOrderByWithRelationInput | Prisma.SeguirUsuarioOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1929,18 +1416,13 @@ export type SeguirUsuarioFindFirstArgs<
 	 *
 	 * Filter by unique combinations of SeguirUsuarios.
 	 */
-	distinct?:
-		| Prisma.SeguirUsuarioScalarFieldEnum
-		| Prisma.SeguirUsuarioScalarFieldEnum[];
+	distinct?: Prisma.SeguirUsuarioScalarFieldEnum | Prisma.SeguirUsuarioScalarFieldEnum[];
 };
 
 /**
  * SeguirUsuario findFirstOrThrow
  */
-export type SeguirUsuarioFindFirstOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type SeguirUsuarioFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the SeguirUsuario
 	 */
@@ -1962,9 +1444,7 @@ export type SeguirUsuarioFindFirstOrThrowArgs<
 	 *
 	 * Determine the order of SeguirUsuarios to fetch.
 	 */
-	orderBy?:
-		| Prisma.SeguirUsuarioOrderByWithRelationInput
-		| Prisma.SeguirUsuarioOrderByWithRelationInput[];
+	orderBy?: Prisma.SeguirUsuarioOrderByWithRelationInput | Prisma.SeguirUsuarioOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1988,18 +1468,13 @@ export type SeguirUsuarioFindFirstOrThrowArgs<
 	 *
 	 * Filter by unique combinations of SeguirUsuarios.
 	 */
-	distinct?:
-		| Prisma.SeguirUsuarioScalarFieldEnum
-		| Prisma.SeguirUsuarioScalarFieldEnum[];
+	distinct?: Prisma.SeguirUsuarioScalarFieldEnum | Prisma.SeguirUsuarioScalarFieldEnum[];
 };
 
 /**
  * SeguirUsuario findMany
  */
-export type SeguirUsuarioFindManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type SeguirUsuarioFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the SeguirUsuario
 	 */
@@ -2021,9 +1496,7 @@ export type SeguirUsuarioFindManyArgs<
 	 *
 	 * Determine the order of SeguirUsuarios to fetch.
 	 */
-	orderBy?:
-		| Prisma.SeguirUsuarioOrderByWithRelationInput
-		| Prisma.SeguirUsuarioOrderByWithRelationInput[];
+	orderBy?: Prisma.SeguirUsuarioOrderByWithRelationInput | Prisma.SeguirUsuarioOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -2047,18 +1520,13 @@ export type SeguirUsuarioFindManyArgs<
 	 *
 	 * Filter by unique combinations of SeguirUsuarios.
 	 */
-	distinct?:
-		| Prisma.SeguirUsuarioScalarFieldEnum
-		| Prisma.SeguirUsuarioScalarFieldEnum[];
+	distinct?: Prisma.SeguirUsuarioScalarFieldEnum | Prisma.SeguirUsuarioScalarFieldEnum[];
 };
 
 /**
  * SeguirUsuario create
  */
-export type SeguirUsuarioCreateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type SeguirUsuarioCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the SeguirUsuario
 	 */
@@ -2074,35 +1542,24 @@ export type SeguirUsuarioCreateArgs<
 	/**
 	 * The data needed to create a SeguirUsuario.
 	 */
-	data: Prisma.XOR<
-		Prisma.SeguirUsuarioCreateInput,
-		Prisma.SeguirUsuarioUncheckedCreateInput
-	>;
+	data: Prisma.XOR<Prisma.SeguirUsuarioCreateInput, Prisma.SeguirUsuarioUncheckedCreateInput>;
 };
 
 /**
  * SeguirUsuario createMany
  */
-export type SeguirUsuarioCreateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type SeguirUsuarioCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to create many SeguirUsuarios.
 	 */
-	data:
-		| Prisma.SeguirUsuarioCreateManyInput
-		| Prisma.SeguirUsuarioCreateManyInput[];
+	data: Prisma.SeguirUsuarioCreateManyInput | Prisma.SeguirUsuarioCreateManyInput[];
 	skipDuplicates?: boolean;
 };
 
 /**
  * SeguirUsuario createManyAndReturn
  */
-export type SeguirUsuarioCreateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type SeguirUsuarioCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the SeguirUsuario
 	 */
@@ -2114,9 +1571,7 @@ export type SeguirUsuarioCreateManyAndReturnArgs<
 	/**
 	 * The data used to create many SeguirUsuarios.
 	 */
-	data:
-		| Prisma.SeguirUsuarioCreateManyInput
-		| Prisma.SeguirUsuarioCreateManyInput[];
+	data: Prisma.SeguirUsuarioCreateManyInput | Prisma.SeguirUsuarioCreateManyInput[];
 	skipDuplicates?: boolean;
 	/**
 	 * Choose, which related nodes to fetch as well
@@ -2127,10 +1582,7 @@ export type SeguirUsuarioCreateManyAndReturnArgs<
 /**
  * SeguirUsuario update
  */
-export type SeguirUsuarioUpdateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type SeguirUsuarioUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the SeguirUsuario
 	 */
@@ -2146,10 +1598,7 @@ export type SeguirUsuarioUpdateArgs<
 	/**
 	 * The data needed to update a SeguirUsuario.
 	 */
-	data: Prisma.XOR<
-		Prisma.SeguirUsuarioUpdateInput,
-		Prisma.SeguirUsuarioUncheckedUpdateInput
-	>;
+	data: Prisma.XOR<Prisma.SeguirUsuarioUpdateInput, Prisma.SeguirUsuarioUncheckedUpdateInput>;
 	/**
 	 * Choose, which SeguirUsuario to update.
 	 */
@@ -2159,17 +1608,11 @@ export type SeguirUsuarioUpdateArgs<
 /**
  * SeguirUsuario updateMany
  */
-export type SeguirUsuarioUpdateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type SeguirUsuarioUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to update SeguirUsuarios.
 	 */
-	data: Prisma.XOR<
-		Prisma.SeguirUsuarioUpdateManyMutationInput,
-		Prisma.SeguirUsuarioUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.SeguirUsuarioUpdateManyMutationInput, Prisma.SeguirUsuarioUncheckedUpdateManyInput>;
 	/**
 	 * Filter which SeguirUsuarios to update
 	 */
@@ -2183,10 +1626,7 @@ export type SeguirUsuarioUpdateManyArgs<
 /**
  * SeguirUsuario updateManyAndReturn
  */
-export type SeguirUsuarioUpdateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type SeguirUsuarioUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the SeguirUsuario
 	 */
@@ -2198,10 +1638,7 @@ export type SeguirUsuarioUpdateManyAndReturnArgs<
 	/**
 	 * The data used to update SeguirUsuarios.
 	 */
-	data: Prisma.XOR<
-		Prisma.SeguirUsuarioUpdateManyMutationInput,
-		Prisma.SeguirUsuarioUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.SeguirUsuarioUpdateManyMutationInput, Prisma.SeguirUsuarioUncheckedUpdateManyInput>;
 	/**
 	 * Filter which SeguirUsuarios to update
 	 */
@@ -2219,10 +1656,7 @@ export type SeguirUsuarioUpdateManyAndReturnArgs<
 /**
  * SeguirUsuario upsert
  */
-export type SeguirUsuarioUpsertArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type SeguirUsuarioUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the SeguirUsuario
 	 */
@@ -2242,26 +1676,17 @@ export type SeguirUsuarioUpsertArgs<
 	/**
 	 * In case the SeguirUsuario found by the `where` argument doesn't exist, create a new SeguirUsuario with this data.
 	 */
-	create: Prisma.XOR<
-		Prisma.SeguirUsuarioCreateInput,
-		Prisma.SeguirUsuarioUncheckedCreateInput
-	>;
+	create: Prisma.XOR<Prisma.SeguirUsuarioCreateInput, Prisma.SeguirUsuarioUncheckedCreateInput>;
 	/**
 	 * In case the SeguirUsuario was found with the provided `where` argument, update it with this data.
 	 */
-	update: Prisma.XOR<
-		Prisma.SeguirUsuarioUpdateInput,
-		Prisma.SeguirUsuarioUncheckedUpdateInput
-	>;
+	update: Prisma.XOR<Prisma.SeguirUsuarioUpdateInput, Prisma.SeguirUsuarioUncheckedUpdateInput>;
 };
 
 /**
  * SeguirUsuario delete
  */
-export type SeguirUsuarioDeleteArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type SeguirUsuarioDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the SeguirUsuario
 	 */
@@ -2283,10 +1708,7 @@ export type SeguirUsuarioDeleteArgs<
 /**
  * SeguirUsuario deleteMany
  */
-export type SeguirUsuarioDeleteManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type SeguirUsuarioDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which SeguirUsuarios to delete
 	 */
@@ -2300,10 +1722,7 @@ export type SeguirUsuarioDeleteManyArgs<
 /**
  * SeguirUsuario without action
  */
-export type SeguirUsuarioDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type SeguirUsuarioDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the SeguirUsuario
 	 */

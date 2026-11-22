@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { ListaLibroCreateManyLibroInputEnvelopeObjectSchema as ListaLibroCreateManyLibroInputEnvelopeObjectSchema } from "./ListaLibroCreateManyLibroInputEnvelope.schema.ts";
 import { ListaLibroCreateOrConnectWithoutLibroInputObjectSchema as ListaLibroCreateOrConnectWithoutLibroInputObjectSchema } from "./ListaLibroCreateOrConnectWithoutLibroInput.schema.ts";
 import { ListaLibroCreateWithoutLibroInputObjectSchema as ListaLibroCreateWithoutLibroInputObjectSchema } from "./ListaLibroCreateWithoutLibroInput.schema.ts";
@@ -18,93 +18,21 @@ const makeSchema = () =>
 					z.lazy(() => ListaLibroCreateWithoutLibroInputObjectSchema),
 					z.lazy(() => ListaLibroCreateWithoutLibroInputObjectSchema).array(),
 					z.lazy(() => ListaLibroUncheckedCreateWithoutLibroInputObjectSchema),
-					z
-						.lazy(() => ListaLibroUncheckedCreateWithoutLibroInputObjectSchema)
-						.array(),
+					z.lazy(() => ListaLibroUncheckedCreateWithoutLibroInputObjectSchema).array(),
 				])
 				.optional(),
-			connectOrCreate: z
-				.union([
-					z.lazy(() => ListaLibroCreateOrConnectWithoutLibroInputObjectSchema),
-					z
-						.lazy(() => ListaLibroCreateOrConnectWithoutLibroInputObjectSchema)
-						.array(),
-				])
-				.optional(),
-			upsert: z
-				.union([
-					z.lazy(
-						() => ListaLibroUpsertWithWhereUniqueWithoutLibroInputObjectSchema,
-					),
-					z
-						.lazy(
-							() =>
-								ListaLibroUpsertWithWhereUniqueWithoutLibroInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			createMany: z
-				.lazy(() => ListaLibroCreateManyLibroInputEnvelopeObjectSchema)
-				.optional(),
-			set: z
-				.union([
-					z.lazy(() => ListaLibroWhereUniqueInputObjectSchema),
-					z.lazy(() => ListaLibroWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			disconnect: z
-				.union([
-					z.lazy(() => ListaLibroWhereUniqueInputObjectSchema),
-					z.lazy(() => ListaLibroWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			delete: z
-				.union([
-					z.lazy(() => ListaLibroWhereUniqueInputObjectSchema),
-					z.lazy(() => ListaLibroWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			connect: z
-				.union([
-					z.lazy(() => ListaLibroWhereUniqueInputObjectSchema),
-					z.lazy(() => ListaLibroWhereUniqueInputObjectSchema).array(),
-				])
-				.optional(),
-			update: z
-				.union([
-					z.lazy(
-						() => ListaLibroUpdateWithWhereUniqueWithoutLibroInputObjectSchema,
-					),
-					z
-						.lazy(
-							() =>
-								ListaLibroUpdateWithWhereUniqueWithoutLibroInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			updateMany: z
-				.union([
-					z.lazy(
-						() => ListaLibroUpdateManyWithWhereWithoutLibroInputObjectSchema,
-					),
-					z
-						.lazy(
-							() => ListaLibroUpdateManyWithWhereWithoutLibroInputObjectSchema,
-						)
-						.array(),
-				])
-				.optional(),
-			deleteMany: z
-				.union([
-					z.lazy(() => ListaLibroScalarWhereInputObjectSchema),
-					z.lazy(() => ListaLibroScalarWhereInputObjectSchema).array(),
-				])
-				.optional(),
+			connectOrCreate: z.union([z.lazy(() => ListaLibroCreateOrConnectWithoutLibroInputObjectSchema), z.lazy(() => ListaLibroCreateOrConnectWithoutLibroInputObjectSchema).array()]).optional(),
+			upsert: z.union([z.lazy(() => ListaLibroUpsertWithWhereUniqueWithoutLibroInputObjectSchema), z.lazy(() => ListaLibroUpsertWithWhereUniqueWithoutLibroInputObjectSchema).array()]).optional(),
+			createMany: z.lazy(() => ListaLibroCreateManyLibroInputEnvelopeObjectSchema).optional(),
+			set: z.union([z.lazy(() => ListaLibroWhereUniqueInputObjectSchema), z.lazy(() => ListaLibroWhereUniqueInputObjectSchema).array()]).optional(),
+			disconnect: z.union([z.lazy(() => ListaLibroWhereUniqueInputObjectSchema), z.lazy(() => ListaLibroWhereUniqueInputObjectSchema).array()]).optional(),
+			delete: z.union([z.lazy(() => ListaLibroWhereUniqueInputObjectSchema), z.lazy(() => ListaLibroWhereUniqueInputObjectSchema).array()]).optional(),
+			connect: z.union([z.lazy(() => ListaLibroWhereUniqueInputObjectSchema), z.lazy(() => ListaLibroWhereUniqueInputObjectSchema).array()]).optional(),
+			update: z.union([z.lazy(() => ListaLibroUpdateWithWhereUniqueWithoutLibroInputObjectSchema), z.lazy(() => ListaLibroUpdateWithWhereUniqueWithoutLibroInputObjectSchema).array()]).optional(),
+			updateMany: z.union([z.lazy(() => ListaLibroUpdateManyWithWhereWithoutLibroInputObjectSchema), z.lazy(() => ListaLibroUpdateManyWithWhereWithoutLibroInputObjectSchema).array()]).optional(),
+			deleteMany: z.union([z.lazy(() => ListaLibroScalarWhereInputObjectSchema), z.lazy(() => ListaLibroScalarWhereInputObjectSchema).array()]).optional(),
 		})
 		.strict();
 export const ListaLibroUpdateManyWithoutLibroNestedInputObjectSchema: z.ZodType<Prisma.ListaLibroUpdateManyWithoutLibroNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.ListaLibroUpdateManyWithoutLibroNestedInput>;
-export const ListaLibroUpdateManyWithoutLibroNestedInputObjectZodSchema =
-	makeSchema();
+export const ListaLibroUpdateManyWithoutLibroNestedInputObjectZodSchema = makeSchema();

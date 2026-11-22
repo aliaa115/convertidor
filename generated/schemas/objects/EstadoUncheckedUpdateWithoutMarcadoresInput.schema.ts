@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { CapituloUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema as CapituloUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema } from "./CapituloUncheckedUpdateManyWithoutEstadoNestedInput.schema.ts";
 import { CategoriaUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema as CategoriaUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema } from "./CategoriaUncheckedUpdateManyWithoutEstadoNestedInput.schema.ts";
 import { ComentarioUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema as ComentarioUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema } from "./ComentarioUncheckedUpdateManyWithoutEstadoNestedInput.schema.ts";
@@ -27,148 +27,39 @@ import { UsuarioUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema as Usuar
 const makeSchema = () =>
 	z
 		.object({
-			id: z
-				.union([
-					z.number().int(),
-					z.lazy(() => IntFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
-			nombre: z
-				.union([
-					z.string(),
-					z.lazy(() => StringFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
+			id: z.union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputObjectSchema)]).optional(),
+			nombre: z.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputObjectSchema)]).optional(),
 			color: z
-				.union([
-					z.string(),
-					z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema),
-				])
+				.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema)])
 				.optional()
 				.nullable(),
 			icon: z
-				.union([
-					z.string(),
-					z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema),
-				])
+				.union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputObjectSchema)])
 				.optional()
 				.nullable(),
-			createdAt: z
-				.union([
-					z.coerce.date(),
-					z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
-			updatedAt: z
-				.union([
-					z.coerce.date(),
-					z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema),
-				])
-				.optional(),
-			categorias: z
-				.lazy(
-					() =>
-						CategoriaUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema,
-				)
-				.optional(),
-			etiquetas: z
-				.lazy(
-					() => EtiquetaUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema,
-				)
-				.optional(),
-			tipos: z
-				.lazy(() => TipoUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema)
-				.optional(),
-			usuarios: z
-				.lazy(
-					() => UsuarioUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema,
-				)
-				.optional(),
-			escritores: z
-				.lazy(
-					() => EscritorUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema,
-				)
-				.optional(),
-			configuraciones: z
-				.lazy(
-					() =>
-						ConfiguracionUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema,
-				)
-				.optional(),
-			idioma: z
-				.lazy(
-					() => IdiomaUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema,
-				)
-				.optional(),
-			libros: z
-				.lazy(
-					() => LibroUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema,
-				)
-				.optional(),
-			capitulos: z
-				.lazy(
-					() => CapituloUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema,
-				)
-				.optional(),
-			parrafos: z
-				.lazy(
-					() => ParrafoUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema,
-				)
-				.optional(),
-			comentarios: z
-				.lazy(
-					() =>
-						ComentarioUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema,
-				)
-				.optional(),
-			libroCategorias: z
-				.lazy(
-					() =>
-						LibroCategoriaUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema,
-				)
-				.optional(),
-			libroEtiquetas: z
-				.lazy(
-					() =>
-						LibroEtiquetaUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema,
-				)
-				.optional(),
-			favoritos: z
-				.lazy(
-					() => FavoritoUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema,
-				)
-				.optional(),
-			glosarios: z
-				.lazy(
-					() => GlosarioUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema,
-				)
-				.optional(),
-			notasAutor: z
-				.lazy(
-					() =>
-						NotaAutorUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema,
-				)
-				.optional(),
-			listas: z
-				.lazy(
-					() => ListaUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema,
-				)
-				.optional(),
-			listaLibros: z
-				.lazy(
-					() =>
-						ListaLibroUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema,
-				)
-				.optional(),
-			seguirUsuarios: z
-				.lazy(
-					() =>
-						SeguirUsuarioUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema,
-				)
-				.optional(),
+			createdAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema)]).optional(),
+			updatedAt: z.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputObjectSchema)]).optional(),
+			categorias: z.lazy(() => CategoriaUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema).optional(),
+			etiquetas: z.lazy(() => EtiquetaUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema).optional(),
+			tipos: z.lazy(() => TipoUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema).optional(),
+			usuarios: z.lazy(() => UsuarioUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema).optional(),
+			escritores: z.lazy(() => EscritorUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema).optional(),
+			configuraciones: z.lazy(() => ConfiguracionUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema).optional(),
+			idioma: z.lazy(() => IdiomaUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema).optional(),
+			libros: z.lazy(() => LibroUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema).optional(),
+			capitulos: z.lazy(() => CapituloUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema).optional(),
+			parrafos: z.lazy(() => ParrafoUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema).optional(),
+			comentarios: z.lazy(() => ComentarioUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema).optional(),
+			libroCategorias: z.lazy(() => LibroCategoriaUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema).optional(),
+			libroEtiquetas: z.lazy(() => LibroEtiquetaUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema).optional(),
+			favoritos: z.lazy(() => FavoritoUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema).optional(),
+			glosarios: z.lazy(() => GlosarioUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema).optional(),
+			notasAutor: z.lazy(() => NotaAutorUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema).optional(),
+			listas: z.lazy(() => ListaUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema).optional(),
+			listaLibros: z.lazy(() => ListaLibroUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema).optional(),
+			seguirUsuarios: z.lazy(() => SeguirUsuarioUncheckedUpdateManyWithoutEstadoNestedInputObjectSchema).optional(),
 		})
 		.strict();
 export const EstadoUncheckedUpdateWithoutMarcadoresInputObjectSchema: z.ZodType<Prisma.EstadoUncheckedUpdateWithoutMarcadoresInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.EstadoUncheckedUpdateWithoutMarcadoresInput>;
-export const EstadoUncheckedUpdateWithoutMarcadoresInputObjectZodSchema =
-	makeSchema();
+export const EstadoUncheckedUpdateWithoutMarcadoresInputObjectZodSchema = makeSchema();

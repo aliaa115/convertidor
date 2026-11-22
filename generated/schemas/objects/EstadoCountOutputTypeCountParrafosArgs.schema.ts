@@ -1,5 +1,4 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
 import { ParrafoWhereInputObjectSchema as ParrafoWhereInputObjectSchema } from "./ParrafoWhereInput.schema.ts";
 
 const makeSchema = () =>
@@ -9,5 +8,4 @@ const makeSchema = () =>
 		})
 		.strict();
 export const EstadoCountOutputTypeCountParrafosArgsObjectSchema = makeSchema();
-export const EstadoCountOutputTypeCountParrafosArgsObjectZodSchema =
-	makeSchema();
+export const EstadoCountOutputTypeCountParrafosArgsObjectZodSchema = makeSchema();

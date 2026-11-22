@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { IdiomaCreateInputObjectSchema as IdiomaCreateInputObjectSchema } from "./objects/IdiomaCreateInput.schema.ts";
 import { IdiomaIncludeObjectSchema as IdiomaIncludeObjectSchema } from "./objects/IdiomaInclude.schema.ts";
 import { IdiomaSelectObjectSchema as IdiomaSelectObjectSchema } from "./objects/IdiomaSelect.schema.ts";
@@ -13,14 +13,8 @@ export const IdiomaUpsertOneSchema: z.ZodType<Prisma.IdiomaUpsertArgs> = z
 		select: IdiomaSelectObjectSchema.optional(),
 		include: IdiomaIncludeObjectSchema.optional(),
 		where: IdiomaWhereUniqueInputObjectSchema,
-		create: z.union([
-			IdiomaCreateInputObjectSchema,
-			IdiomaUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			IdiomaUpdateInputObjectSchema,
-			IdiomaUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([IdiomaCreateInputObjectSchema, IdiomaUncheckedCreateInputObjectSchema]),
+		update: z.union([IdiomaUpdateInputObjectSchema, IdiomaUncheckedUpdateInputObjectSchema]),
 	})
 	.strict() as unknown as z.ZodType<Prisma.IdiomaUpsertArgs>;
 
@@ -29,13 +23,7 @@ export const IdiomaUpsertOneZodSchema = z
 		select: IdiomaSelectObjectSchema.optional(),
 		include: IdiomaIncludeObjectSchema.optional(),
 		where: IdiomaWhereUniqueInputObjectSchema,
-		create: z.union([
-			IdiomaCreateInputObjectSchema,
-			IdiomaUncheckedCreateInputObjectSchema,
-		]),
-		update: z.union([
-			IdiomaUpdateInputObjectSchema,
-			IdiomaUncheckedUpdateInputObjectSchema,
-		]),
+		create: z.union([IdiomaCreateInputObjectSchema, IdiomaUncheckedCreateInputObjectSchema]),
+		update: z.union([IdiomaUpdateInputObjectSchema, IdiomaUncheckedUpdateInputObjectSchema]),
 	})
 	.strict();

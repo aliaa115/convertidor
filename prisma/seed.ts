@@ -70,7 +70,7 @@ async function main() {
 				userName: "user",
 				email: "user@example.com",
 				password: await bcrypt.hash("12345678", 10),
-				nivel: 1,
+				nivel: 2,
 				estadoId: 1,
 			},
 		],

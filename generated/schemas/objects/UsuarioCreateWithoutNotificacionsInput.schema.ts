@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { ConfiguracionCreateNestedOneWithoutUsuarioInputObjectSchema as ConfiguracionCreateNestedOneWithoutUsuarioInputObjectSchema } from "./ConfiguracionCreateNestedOneWithoutUsuarioInput.schema.ts";
 import { EscritorCreateNestedOneWithoutUsuarioInputObjectSchema as EscritorCreateNestedOneWithoutUsuarioInputObjectSchema } from "./EscritorCreateNestedOneWithoutUsuarioInput.schema.ts";
 import { EstadoCreateNestedOneWithoutUsuariosInputObjectSchema as EstadoCreateNestedOneWithoutUsuariosInputObjectSchema } from "./EstadoCreateNestedOneWithoutUsuariosInput.schema.ts";
@@ -14,21 +14,12 @@ const makeSchema = () =>
 			nivel: z.number().int().optional(),
 			createdAt: z.coerce.date().optional(),
 			updatedAt: z.coerce.date().optional(),
-			estado: z
-				.lazy(() => EstadoCreateNestedOneWithoutUsuariosInputObjectSchema)
-				.optional(),
-			configuracion: z
-				.lazy(() => ConfiguracionCreateNestedOneWithoutUsuarioInputObjectSchema)
-				.optional(),
-			escritor: z
-				.lazy(() => EscritorCreateNestedOneWithoutUsuarioInputObjectSchema)
-				.optional(),
-			listas: z
-				.lazy(() => ListaCreateNestedManyWithoutUsuarioInputObjectSchema)
-				.optional(),
+			estado: z.lazy(() => EstadoCreateNestedOneWithoutUsuariosInputObjectSchema).optional(),
+			configuracion: z.lazy(() => ConfiguracionCreateNestedOneWithoutUsuarioInputObjectSchema).optional(),
+			escritor: z.lazy(() => EscritorCreateNestedOneWithoutUsuarioInputObjectSchema).optional(),
+			listas: z.lazy(() => ListaCreateNestedManyWithoutUsuarioInputObjectSchema).optional(),
 		})
 		.strict();
 export const UsuarioCreateWithoutNotificacionsInputObjectSchema: z.ZodType<Prisma.UsuarioCreateWithoutNotificacionsInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.UsuarioCreateWithoutNotificacionsInput>;
-export const UsuarioCreateWithoutNotificacionsInputObjectZodSchema =
-	makeSchema();
+export const UsuarioCreateWithoutNotificacionsInputObjectZodSchema = makeSchema();

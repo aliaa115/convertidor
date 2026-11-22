@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { CapituloAvgAggregateInputObjectSchema as CapituloAvgAggregateInputObjectSchema } from "./objects/CapituloAvgAggregateInput.schema.ts";
 import { CapituloCountAggregateInputObjectSchema as CapituloCountAggregateInputObjectSchema } from "./objects/CapituloCountAggregateInput.schema.ts";
 import { CapituloMaxAggregateInputObjectSchema as CapituloMaxAggregateInputObjectSchema } from "./objects/CapituloMaxAggregateInput.schema.ts";
@@ -9,44 +9,29 @@ import { CapituloSumAggregateInputObjectSchema as CapituloSumAggregateInputObjec
 import { CapituloWhereInputObjectSchema as CapituloWhereInputObjectSchema } from "./objects/CapituloWhereInput.schema.ts";
 import { CapituloWhereUniqueInputObjectSchema as CapituloWhereUniqueInputObjectSchema } from "./objects/CapituloWhereUniqueInput.schema.ts";
 
-export const CapituloAggregateSchema: z.ZodType<Prisma.CapituloAggregateArgs> =
-	z
-		.object({
-			orderBy: z
-				.union([
-					CapituloOrderByWithRelationInputObjectSchema,
-					CapituloOrderByWithRelationInputObjectSchema.array(),
-				])
-				.optional(),
-			where: CapituloWhereInputObjectSchema.optional(),
-			cursor: CapituloWhereUniqueInputObjectSchema.optional(),
-			take: z.number().optional(),
-			skip: z.number().optional(),
-			_count: z
-				.union([z.literal(true), CapituloCountAggregateInputObjectSchema])
-				.optional(),
-			_min: CapituloMinAggregateInputObjectSchema.optional(),
-			_max: CapituloMaxAggregateInputObjectSchema.optional(),
-			_avg: CapituloAvgAggregateInputObjectSchema.optional(),
-			_sum: CapituloSumAggregateInputObjectSchema.optional(),
-		})
-		.strict() as unknown as z.ZodType<Prisma.CapituloAggregateArgs>;
-
-export const CapituloAggregateZodSchema = z
+export const CapituloAggregateSchema: z.ZodType<Prisma.CapituloAggregateArgs> = z
 	.object({
-		orderBy: z
-			.union([
-				CapituloOrderByWithRelationInputObjectSchema,
-				CapituloOrderByWithRelationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([CapituloOrderByWithRelationInputObjectSchema, CapituloOrderByWithRelationInputObjectSchema.array()]).optional(),
 		where: CapituloWhereInputObjectSchema.optional(),
 		cursor: CapituloWhereUniqueInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
-		_count: z
-			.union([z.literal(true), CapituloCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), CapituloCountAggregateInputObjectSchema]).optional(),
+		_min: CapituloMinAggregateInputObjectSchema.optional(),
+		_max: CapituloMaxAggregateInputObjectSchema.optional(),
+		_avg: CapituloAvgAggregateInputObjectSchema.optional(),
+		_sum: CapituloSumAggregateInputObjectSchema.optional(),
+	})
+	.strict() as unknown as z.ZodType<Prisma.CapituloAggregateArgs>;
+
+export const CapituloAggregateZodSchema = z
+	.object({
+		orderBy: z.union([CapituloOrderByWithRelationInputObjectSchema, CapituloOrderByWithRelationInputObjectSchema.array()]).optional(),
+		where: CapituloWhereInputObjectSchema.optional(),
+		cursor: CapituloWhereUniqueInputObjectSchema.optional(),
+		take: z.number().optional(),
+		skip: z.number().optional(),
+		_count: z.union([z.literal(true), CapituloCountAggregateInputObjectSchema]).optional(),
 		_min: CapituloMinAggregateInputObjectSchema.optional(),
 		_max: CapituloMaxAggregateInputObjectSchema.optional(),
 		_avg: CapituloAvgAggregateInputObjectSchema.optional(),

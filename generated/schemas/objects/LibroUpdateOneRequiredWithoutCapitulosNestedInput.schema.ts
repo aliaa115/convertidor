@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { LibroCreateOrConnectWithoutCapitulosInputObjectSchema as LibroCreateOrConnectWithoutCapitulosInputObjectSchema } from "./LibroCreateOrConnectWithoutCapitulosInput.schema.ts";
 import { LibroCreateWithoutCapitulosInputObjectSchema as LibroCreateWithoutCapitulosInputObjectSchema } from "./LibroCreateWithoutCapitulosInput.schema.ts";
 import { LibroUncheckedCreateWithoutCapitulosInputObjectSchema as LibroUncheckedCreateWithoutCapitulosInputObjectSchema } from "./LibroUncheckedCreateWithoutCapitulosInput.schema.ts";
@@ -12,24 +12,13 @@ import { LibroWhereUniqueInputObjectSchema as LibroWhereUniqueInputObjectSchema 
 const makeSchema = () =>
 	z
 		.object({
-			create: z
-				.union([
-					z.lazy(() => LibroCreateWithoutCapitulosInputObjectSchema),
-					z.lazy(() => LibroUncheckedCreateWithoutCapitulosInputObjectSchema),
-				])
-				.optional(),
-			connectOrCreate: z
-				.lazy(() => LibroCreateOrConnectWithoutCapitulosInputObjectSchema)
-				.optional(),
-			upsert: z
-				.lazy(() => LibroUpsertWithoutCapitulosInputObjectSchema)
-				.optional(),
+			create: z.union([z.lazy(() => LibroCreateWithoutCapitulosInputObjectSchema), z.lazy(() => LibroUncheckedCreateWithoutCapitulosInputObjectSchema)]).optional(),
+			connectOrCreate: z.lazy(() => LibroCreateOrConnectWithoutCapitulosInputObjectSchema).optional(),
+			upsert: z.lazy(() => LibroUpsertWithoutCapitulosInputObjectSchema).optional(),
 			connect: z.lazy(() => LibroWhereUniqueInputObjectSchema).optional(),
 			update: z
 				.union([
-					z.lazy(
-						() => LibroUpdateToOneWithWhereWithoutCapitulosInputObjectSchema,
-					),
+					z.lazy(() => LibroUpdateToOneWithWhereWithoutCapitulosInputObjectSchema),
 					z.lazy(() => LibroUpdateWithoutCapitulosInputObjectSchema),
 					z.lazy(() => LibroUncheckedUpdateWithoutCapitulosInputObjectSchema),
 				])
@@ -38,5 +27,4 @@ const makeSchema = () =>
 		.strict();
 export const LibroUpdateOneRequiredWithoutCapitulosNestedInputObjectSchema: z.ZodType<Prisma.LibroUpdateOneRequiredWithoutCapitulosNestedInput> =
 	makeSchema() as unknown as z.ZodType<Prisma.LibroUpdateOneRequiredWithoutCapitulosNestedInput>;
-export const LibroUpdateOneRequiredWithoutCapitulosNestedInputObjectZodSchema =
-	makeSchema();
+export const LibroUpdateOneRequiredWithoutCapitulosNestedInputObjectZodSchema = makeSchema();

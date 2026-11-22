@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../../prisma/client.ts";
+import type { Prisma } from "../../prisma/browser.ts";
 import { ComentarioWhereInputObjectSchema as ComentarioWhereInputObjectSchema } from "./ComentarioWhereInput.schema.ts";
 
 const makeSchema = () =>
@@ -17,5 +17,4 @@ const makeSchema = () =>
 		.strict();
 export const ComentarioNullableScalarRelationFilterObjectSchema: z.ZodType<Prisma.ComentarioNullableScalarRelationFilter> =
 	makeSchema() as unknown as z.ZodType<Prisma.ComentarioNullableScalarRelationFilter>;
-export const ComentarioNullableScalarRelationFilterObjectZodSchema =
-	makeSchema();
+export const ComentarioNullableScalarRelationFilterObjectZodSchema = makeSchema();

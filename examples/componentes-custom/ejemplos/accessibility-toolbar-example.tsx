@@ -7,9 +7,7 @@ export function AccessibilityToolbarExample() {
 		<div className="flex w-full max-w-xl flex-col gap-3 rounded-xl border bg-card p-4 sm:flex-row sm:items-center">
 			<div className="flex-1 space-y-1">
 				<h3 className="text-base font-semibold">Barra de accesibilidad</h3>
-				<p className="text-sm text-muted-foreground">
-					Ejemplo funcional con selector de fuente y cambio de tema.
-				</p>
+				<p className="text-sm text-muted-foreground">Ejemplo funcional con selector de fuente y cambio de tema.</p>
 			</div>
 
 			<div className="flex items-center gap-2">

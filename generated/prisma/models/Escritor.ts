@@ -15,8 +15,7 @@ import type * as Prisma from "../internal/prismaNamespace.ts";
  * Model Escritor
  *
  */
-export type EscritorModel =
-	runtime.Types.Result.DefaultSelection<Prisma.$EscritorPayload>;
+export type EscritorModel = runtime.Types.Result.DefaultSelection<Prisma.$EscritorPayload>;
 
 export type AggregateEscritor = {
 	_count: EscritorCountAggregateOutputType | null;
@@ -140,10 +139,7 @@ export type EscritorCountAggregateInputType = {
 	_all?: true;
 };
 
-export type EscritorAggregateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Escritor to aggregate.
 	 */
@@ -153,9 +149,7 @@ export type EscritorAggregateArgs<
 	 *
 	 * Determine the order of Escritors to fetch.
 	 */
-	orderBy?:
-		| Prisma.EscritorOrderByWithRelationInput
-		| Prisma.EscritorOrderByWithRelationInput[];
+	orderBy?: Prisma.EscritorOrderByWithRelationInput | Prisma.EscritorOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -214,14 +208,9 @@ export type GetEscritorAggregateType<T extends EscritorAggregateArgs> = {
 		: Prisma.GetScalarType<T[P], AggregateEscritor[P]>;
 };
 
-export type EscritorGroupByArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.EscritorWhereInput;
-	orderBy?:
-		| Prisma.EscritorOrderByWithAggregationInput
-		| Prisma.EscritorOrderByWithAggregationInput[];
+	orderBy?: Prisma.EscritorOrderByWithAggregationInput | Prisma.EscritorOrderByWithAggregationInput[];
 	by: Prisma.EscritorScalarFieldEnum[] | Prisma.EscritorScalarFieldEnum;
 	having?: Prisma.EscritorScalarWhereWithAggregatesInput;
 	take?: number;
@@ -252,18 +241,17 @@ export type EscritorGroupByOutputType = {
 	_max: EscritorMaxAggregateOutputType | null;
 };
 
-export type GetEscritorGroupByPayload<T extends EscritorGroupByArgs> =
-	Prisma.PrismaPromise<
-		Array<
-			Prisma.PickEnumerable<EscritorGroupByOutputType, T["by"]> & {
-				[P in keyof T & keyof EscritorGroupByOutputType]: P extends "_count"
-					? T[P] extends boolean
-						? number
-						: Prisma.GetScalarType<T[P], EscritorGroupByOutputType[P]>
-					: Prisma.GetScalarType<T[P], EscritorGroupByOutputType[P]>;
-			}
-		>
-	>;
+export type GetEscritorGroupByPayload<T extends EscritorGroupByArgs> = Prisma.PrismaPromise<
+	Array<
+		Prisma.PickEnumerable<EscritorGroupByOutputType, T["by"]> & {
+			[P in keyof T & keyof EscritorGroupByOutputType]: P extends "_count"
+				? T[P] extends boolean
+					? number
+					: Prisma.GetScalarType<T[P], EscritorGroupByOutputType[P]>
+				: Prisma.GetScalarType<T[P], EscritorGroupByOutputType[P]>;
+		}
+	>
+>;
 
 export type EscritorWhereInput = {
 	AND?: Prisma.EscritorWhereInput | Prisma.EscritorWhereInput[];
@@ -274,28 +262,15 @@ export type EscritorWhereInput = {
 	apellidos?: Prisma.StringNullableFilter<"Escritor"> | string | null;
 	alias?: Prisma.StringNullableFilter<"Escritor"> | string | null;
 	descripcion?: Prisma.StringNullableFilter<"Escritor"> | string | null;
-	fechaNacimiento?:
-		| Prisma.DateTimeNullableFilter<"Escritor">
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.DateTimeNullableFilter<"Escritor"> | Date | string | null;
 	createdAt?: Prisma.DateTimeFilter<"Escritor"> | Date | string;
 	updatedAt?: Prisma.DateTimeFilter<"Escritor"> | Date | string;
 	usuarioId?: Prisma.IntNullableFilter<"Escritor"> | number | null;
 	avatarId?: Prisma.IntFilter<"Escritor"> | number;
 	estadoId?: Prisma.IntFilter<"Escritor"> | number;
-	usuario?: Prisma.XOR<
-		Prisma.UsuarioNullableScalarRelationFilter,
-		Prisma.UsuarioWhereInput
-	> | null;
-	avatar?: Prisma.XOR<
-		Prisma.AvatarScalarRelationFilter,
-		Prisma.AvatarWhereInput
-	>;
-	estado?: Prisma.XOR<
-		Prisma.EstadoScalarRelationFilter,
-		Prisma.EstadoWhereInput
-	>;
+	usuario?: Prisma.XOR<Prisma.UsuarioNullableScalarRelationFilter, Prisma.UsuarioWhereInput> | null;
+	avatar?: Prisma.XOR<Prisma.AvatarScalarRelationFilter, Prisma.AvatarWhereInput>;
+	estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 	libros?: Prisma.LibroListRelationFilter;
 	comentarios?: Prisma.ComentarioListRelationFilter;
 	favoritos?: Prisma.FavoritoListRelationFilter;
@@ -342,27 +317,14 @@ export type EscritorWhereUniqueInput = Prisma.AtLeast<
 		apellidos?: Prisma.StringNullableFilter<"Escritor"> | string | null;
 		alias?: Prisma.StringNullableFilter<"Escritor"> | string | null;
 		descripcion?: Prisma.StringNullableFilter<"Escritor"> | string | null;
-		fechaNacimiento?:
-			| Prisma.DateTimeNullableFilter<"Escritor">
-			| Date
-			| string
-			| null;
+		fechaNacimiento?: Prisma.DateTimeNullableFilter<"Escritor"> | Date | string | null;
 		createdAt?: Prisma.DateTimeFilter<"Escritor"> | Date | string;
 		updatedAt?: Prisma.DateTimeFilter<"Escritor"> | Date | string;
 		avatarId?: Prisma.IntFilter<"Escritor"> | number;
 		estadoId?: Prisma.IntFilter<"Escritor"> | number;
-		usuario?: Prisma.XOR<
-			Prisma.UsuarioNullableScalarRelationFilter,
-			Prisma.UsuarioWhereInput
-		> | null;
-		avatar?: Prisma.XOR<
-			Prisma.AvatarScalarRelationFilter,
-			Prisma.AvatarWhereInput
-		>;
-		estado?: Prisma.XOR<
-			Prisma.EstadoScalarRelationFilter,
-			Prisma.EstadoWhereInput
-		>;
+		usuario?: Prisma.XOR<Prisma.UsuarioNullableScalarRelationFilter, Prisma.UsuarioWhereInput> | null;
+		avatar?: Prisma.XOR<Prisma.AvatarScalarRelationFilter, Prisma.AvatarWhereInput>;
+		estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 		libros?: Prisma.LibroListRelationFilter;
 		comentarios?: Prisma.ComentarioListRelationFilter;
 		favoritos?: Prisma.FavoritoListRelationFilter;
@@ -395,38 +357,18 @@ export type EscritorOrderByWithAggregationInput = {
 };
 
 export type EscritorScalarWhereWithAggregatesInput = {
-	AND?:
-		| Prisma.EscritorScalarWhereWithAggregatesInput
-		| Prisma.EscritorScalarWhereWithAggregatesInput[];
+	AND?: Prisma.EscritorScalarWhereWithAggregatesInput | Prisma.EscritorScalarWhereWithAggregatesInput[];
 	OR?: Prisma.EscritorScalarWhereWithAggregatesInput[];
-	NOT?:
-		| Prisma.EscritorScalarWhereWithAggregatesInput
-		| Prisma.EscritorScalarWhereWithAggregatesInput[];
+	NOT?: Prisma.EscritorScalarWhereWithAggregatesInput | Prisma.EscritorScalarWhereWithAggregatesInput[];
 	id?: Prisma.IntWithAggregatesFilter<"Escritor"> | number;
-	nombres?:
-		| Prisma.StringNullableWithAggregatesFilter<"Escritor">
-		| string
-		| null;
-	apellidos?:
-		| Prisma.StringNullableWithAggregatesFilter<"Escritor">
-		| string
-		| null;
+	nombres?: Prisma.StringNullableWithAggregatesFilter<"Escritor"> | string | null;
+	apellidos?: Prisma.StringNullableWithAggregatesFilter<"Escritor"> | string | null;
 	alias?: Prisma.StringNullableWithAggregatesFilter<"Escritor"> | string | null;
-	descripcion?:
-		| Prisma.StringNullableWithAggregatesFilter<"Escritor">
-		| string
-		| null;
-	fechaNacimiento?:
-		| Prisma.DateTimeNullableWithAggregatesFilter<"Escritor">
-		| Date
-		| string
-		| null;
+	descripcion?: Prisma.StringNullableWithAggregatesFilter<"Escritor"> | string | null;
+	fechaNacimiento?: Prisma.DateTimeNullableWithAggregatesFilter<"Escritor"> | Date | string | null;
 	createdAt?: Prisma.DateTimeWithAggregatesFilter<"Escritor"> | Date | string;
 	updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Escritor"> | Date | string;
-	usuarioId?:
-		| Prisma.IntNullableWithAggregatesFilter<"Escritor">
-		| number
-		| null;
+	usuarioId?: Prisma.IntNullableWithAggregatesFilter<"Escritor"> | number | null;
 	avatarId?: Prisma.IntWithAggregatesFilter<"Escritor"> | number;
 	estadoId?: Prisma.IntWithAggregatesFilter<"Escritor"> | number;
 };
@@ -479,11 +421,7 @@ export type EscritorUpdateInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuario?: Prisma.UsuarioUpdateOneWithoutEscritorNestedInput;
@@ -505,11 +443,7 @@ export type EscritorUncheckedUpdateInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuarioId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
@@ -544,11 +478,7 @@ export type EscritorUpdateManyMutationInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
@@ -559,11 +489,7 @@ export type EscritorUncheckedUpdateManyInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuarioId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
@@ -649,246 +575,142 @@ export type EscritorScalarRelationFilter = {
 
 export type EscritorCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.EscritorCreateWithoutEstadoInput,
-				Prisma.EscritorUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.EscritorCreateWithoutEstadoInput, Prisma.EscritorUncheckedCreateWithoutEstadoInput>
 		| Prisma.EscritorCreateWithoutEstadoInput[]
 		| Prisma.EscritorUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.EscritorCreateOrConnectWithoutEstadoInput
-		| Prisma.EscritorCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutEstadoInput | Prisma.EscritorCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.EscritorCreateManyEstadoInputEnvelope;
 	connect?: Prisma.EscritorWhereUniqueInput | Prisma.EscritorWhereUniqueInput[];
 };
 
 export type EscritorUncheckedCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.EscritorCreateWithoutEstadoInput,
-				Prisma.EscritorUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.EscritorCreateWithoutEstadoInput, Prisma.EscritorUncheckedCreateWithoutEstadoInput>
 		| Prisma.EscritorCreateWithoutEstadoInput[]
 		| Prisma.EscritorUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.EscritorCreateOrConnectWithoutEstadoInput
-		| Prisma.EscritorCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutEstadoInput | Prisma.EscritorCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.EscritorCreateManyEstadoInputEnvelope;
 	connect?: Prisma.EscritorWhereUniqueInput | Prisma.EscritorWhereUniqueInput[];
 };
 
 export type EscritorUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.EscritorCreateWithoutEstadoInput,
-				Prisma.EscritorUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.EscritorCreateWithoutEstadoInput, Prisma.EscritorUncheckedCreateWithoutEstadoInput>
 		| Prisma.EscritorCreateWithoutEstadoInput[]
 		| Prisma.EscritorUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.EscritorCreateOrConnectWithoutEstadoInput
-		| Prisma.EscritorCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.EscritorUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.EscritorUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutEstadoInput | Prisma.EscritorCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.EscritorUpsertWithWhereUniqueWithoutEstadoInput | Prisma.EscritorUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.EscritorCreateManyEstadoInputEnvelope;
 	set?: Prisma.EscritorWhereUniqueInput | Prisma.EscritorWhereUniqueInput[];
-	disconnect?:
-		| Prisma.EscritorWhereUniqueInput
-		| Prisma.EscritorWhereUniqueInput[];
+	disconnect?: Prisma.EscritorWhereUniqueInput | Prisma.EscritorWhereUniqueInput[];
 	delete?: Prisma.EscritorWhereUniqueInput | Prisma.EscritorWhereUniqueInput[];
 	connect?: Prisma.EscritorWhereUniqueInput | Prisma.EscritorWhereUniqueInput[];
-	update?:
-		| Prisma.EscritorUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.EscritorUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.EscritorUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.EscritorUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.EscritorScalarWhereInput
-		| Prisma.EscritorScalarWhereInput[];
+	update?: Prisma.EscritorUpdateWithWhereUniqueWithoutEstadoInput | Prisma.EscritorUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.EscritorUpdateManyWithWhereWithoutEstadoInput | Prisma.EscritorUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.EscritorScalarWhereInput | Prisma.EscritorScalarWhereInput[];
 };
 
 export type EscritorUncheckedUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.EscritorCreateWithoutEstadoInput,
-				Prisma.EscritorUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.EscritorCreateWithoutEstadoInput, Prisma.EscritorUncheckedCreateWithoutEstadoInput>
 		| Prisma.EscritorCreateWithoutEstadoInput[]
 		| Prisma.EscritorUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.EscritorCreateOrConnectWithoutEstadoInput
-		| Prisma.EscritorCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.EscritorUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.EscritorUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutEstadoInput | Prisma.EscritorCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.EscritorUpsertWithWhereUniqueWithoutEstadoInput | Prisma.EscritorUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.EscritorCreateManyEstadoInputEnvelope;
 	set?: Prisma.EscritorWhereUniqueInput | Prisma.EscritorWhereUniqueInput[];
-	disconnect?:
-		| Prisma.EscritorWhereUniqueInput
-		| Prisma.EscritorWhereUniqueInput[];
+	disconnect?: Prisma.EscritorWhereUniqueInput | Prisma.EscritorWhereUniqueInput[];
 	delete?: Prisma.EscritorWhereUniqueInput | Prisma.EscritorWhereUniqueInput[];
 	connect?: Prisma.EscritorWhereUniqueInput | Prisma.EscritorWhereUniqueInput[];
-	update?:
-		| Prisma.EscritorUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.EscritorUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.EscritorUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.EscritorUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.EscritorScalarWhereInput
-		| Prisma.EscritorScalarWhereInput[];
+	update?: Prisma.EscritorUpdateWithWhereUniqueWithoutEstadoInput | Prisma.EscritorUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.EscritorUpdateManyWithWhereWithoutEstadoInput | Prisma.EscritorUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.EscritorScalarWhereInput | Prisma.EscritorScalarWhereInput[];
 };
 
 export type EscritorCreateNestedManyWithoutAvatarInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.EscritorCreateWithoutAvatarInput,
-				Prisma.EscritorUncheckedCreateWithoutAvatarInput
-		  >
+		| Prisma.XOR<Prisma.EscritorCreateWithoutAvatarInput, Prisma.EscritorUncheckedCreateWithoutAvatarInput>
 		| Prisma.EscritorCreateWithoutAvatarInput[]
 		| Prisma.EscritorUncheckedCreateWithoutAvatarInput[];
-	connectOrCreate?:
-		| Prisma.EscritorCreateOrConnectWithoutAvatarInput
-		| Prisma.EscritorCreateOrConnectWithoutAvatarInput[];
+	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutAvatarInput | Prisma.EscritorCreateOrConnectWithoutAvatarInput[];
 	createMany?: Prisma.EscritorCreateManyAvatarInputEnvelope;
 	connect?: Prisma.EscritorWhereUniqueInput | Prisma.EscritorWhereUniqueInput[];
 };
 
 export type EscritorUncheckedCreateNestedManyWithoutAvatarInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.EscritorCreateWithoutAvatarInput,
-				Prisma.EscritorUncheckedCreateWithoutAvatarInput
-		  >
+		| Prisma.XOR<Prisma.EscritorCreateWithoutAvatarInput, Prisma.EscritorUncheckedCreateWithoutAvatarInput>
 		| Prisma.EscritorCreateWithoutAvatarInput[]
 		| Prisma.EscritorUncheckedCreateWithoutAvatarInput[];
-	connectOrCreate?:
-		| Prisma.EscritorCreateOrConnectWithoutAvatarInput
-		| Prisma.EscritorCreateOrConnectWithoutAvatarInput[];
+	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutAvatarInput | Prisma.EscritorCreateOrConnectWithoutAvatarInput[];
 	createMany?: Prisma.EscritorCreateManyAvatarInputEnvelope;
 	connect?: Prisma.EscritorWhereUniqueInput | Prisma.EscritorWhereUniqueInput[];
 };
 
 export type EscritorUpdateManyWithoutAvatarNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.EscritorCreateWithoutAvatarInput,
-				Prisma.EscritorUncheckedCreateWithoutAvatarInput
-		  >
+		| Prisma.XOR<Prisma.EscritorCreateWithoutAvatarInput, Prisma.EscritorUncheckedCreateWithoutAvatarInput>
 		| Prisma.EscritorCreateWithoutAvatarInput[]
 		| Prisma.EscritorUncheckedCreateWithoutAvatarInput[];
-	connectOrCreate?:
-		| Prisma.EscritorCreateOrConnectWithoutAvatarInput
-		| Prisma.EscritorCreateOrConnectWithoutAvatarInput[];
-	upsert?:
-		| Prisma.EscritorUpsertWithWhereUniqueWithoutAvatarInput
-		| Prisma.EscritorUpsertWithWhereUniqueWithoutAvatarInput[];
+	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutAvatarInput | Prisma.EscritorCreateOrConnectWithoutAvatarInput[];
+	upsert?: Prisma.EscritorUpsertWithWhereUniqueWithoutAvatarInput | Prisma.EscritorUpsertWithWhereUniqueWithoutAvatarInput[];
 	createMany?: Prisma.EscritorCreateManyAvatarInputEnvelope;
 	set?: Prisma.EscritorWhereUniqueInput | Prisma.EscritorWhereUniqueInput[];
-	disconnect?:
-		| Prisma.EscritorWhereUniqueInput
-		| Prisma.EscritorWhereUniqueInput[];
+	disconnect?: Prisma.EscritorWhereUniqueInput | Prisma.EscritorWhereUniqueInput[];
 	delete?: Prisma.EscritorWhereUniqueInput | Prisma.EscritorWhereUniqueInput[];
 	connect?: Prisma.EscritorWhereUniqueInput | Prisma.EscritorWhereUniqueInput[];
-	update?:
-		| Prisma.EscritorUpdateWithWhereUniqueWithoutAvatarInput
-		| Prisma.EscritorUpdateWithWhereUniqueWithoutAvatarInput[];
-	updateMany?:
-		| Prisma.EscritorUpdateManyWithWhereWithoutAvatarInput
-		| Prisma.EscritorUpdateManyWithWhereWithoutAvatarInput[];
-	deleteMany?:
-		| Prisma.EscritorScalarWhereInput
-		| Prisma.EscritorScalarWhereInput[];
+	update?: Prisma.EscritorUpdateWithWhereUniqueWithoutAvatarInput | Prisma.EscritorUpdateWithWhereUniqueWithoutAvatarInput[];
+	updateMany?: Prisma.EscritorUpdateManyWithWhereWithoutAvatarInput | Prisma.EscritorUpdateManyWithWhereWithoutAvatarInput[];
+	deleteMany?: Prisma.EscritorScalarWhereInput | Prisma.EscritorScalarWhereInput[];
 };
 
 export type EscritorUncheckedUpdateManyWithoutAvatarNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.EscritorCreateWithoutAvatarInput,
-				Prisma.EscritorUncheckedCreateWithoutAvatarInput
-		  >
+		| Prisma.XOR<Prisma.EscritorCreateWithoutAvatarInput, Prisma.EscritorUncheckedCreateWithoutAvatarInput>
 		| Prisma.EscritorCreateWithoutAvatarInput[]
 		| Prisma.EscritorUncheckedCreateWithoutAvatarInput[];
-	connectOrCreate?:
-		| Prisma.EscritorCreateOrConnectWithoutAvatarInput
-		| Prisma.EscritorCreateOrConnectWithoutAvatarInput[];
-	upsert?:
-		| Prisma.EscritorUpsertWithWhereUniqueWithoutAvatarInput
-		| Prisma.EscritorUpsertWithWhereUniqueWithoutAvatarInput[];
+	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutAvatarInput | Prisma.EscritorCreateOrConnectWithoutAvatarInput[];
+	upsert?: Prisma.EscritorUpsertWithWhereUniqueWithoutAvatarInput | Prisma.EscritorUpsertWithWhereUniqueWithoutAvatarInput[];
 	createMany?: Prisma.EscritorCreateManyAvatarInputEnvelope;
 	set?: Prisma.EscritorWhereUniqueInput | Prisma.EscritorWhereUniqueInput[];
-	disconnect?:
-		| Prisma.EscritorWhereUniqueInput
-		| Prisma.EscritorWhereUniqueInput[];
+	disconnect?: Prisma.EscritorWhereUniqueInput | Prisma.EscritorWhereUniqueInput[];
 	delete?: Prisma.EscritorWhereUniqueInput | Prisma.EscritorWhereUniqueInput[];
 	connect?: Prisma.EscritorWhereUniqueInput | Prisma.EscritorWhereUniqueInput[];
-	update?:
-		| Prisma.EscritorUpdateWithWhereUniqueWithoutAvatarInput
-		| Prisma.EscritorUpdateWithWhereUniqueWithoutAvatarInput[];
-	updateMany?:
-		| Prisma.EscritorUpdateManyWithWhereWithoutAvatarInput
-		| Prisma.EscritorUpdateManyWithWhereWithoutAvatarInput[];
-	deleteMany?:
-		| Prisma.EscritorScalarWhereInput
-		| Prisma.EscritorScalarWhereInput[];
+	update?: Prisma.EscritorUpdateWithWhereUniqueWithoutAvatarInput | Prisma.EscritorUpdateWithWhereUniqueWithoutAvatarInput[];
+	updateMany?: Prisma.EscritorUpdateManyWithWhereWithoutAvatarInput | Prisma.EscritorUpdateManyWithWhereWithoutAvatarInput[];
+	deleteMany?: Prisma.EscritorScalarWhereInput | Prisma.EscritorScalarWhereInput[];
 };
 
 export type EscritorCreateNestedOneWithoutUsuarioInput = {
-	create?: Prisma.XOR<
-		Prisma.EscritorCreateWithoutUsuarioInput,
-		Prisma.EscritorUncheckedCreateWithoutUsuarioInput
-	>;
+	create?: Prisma.XOR<Prisma.EscritorCreateWithoutUsuarioInput, Prisma.EscritorUncheckedCreateWithoutUsuarioInput>;
 	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutUsuarioInput;
 	connect?: Prisma.EscritorWhereUniqueInput;
 };
 
 export type EscritorUncheckedCreateNestedOneWithoutUsuarioInput = {
-	create?: Prisma.XOR<
-		Prisma.EscritorCreateWithoutUsuarioInput,
-		Prisma.EscritorUncheckedCreateWithoutUsuarioInput
-	>;
+	create?: Prisma.XOR<Prisma.EscritorCreateWithoutUsuarioInput, Prisma.EscritorUncheckedCreateWithoutUsuarioInput>;
 	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutUsuarioInput;
 	connect?: Prisma.EscritorWhereUniqueInput;
 };
 
 export type EscritorUpdateOneWithoutUsuarioNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EscritorCreateWithoutUsuarioInput,
-		Prisma.EscritorUncheckedCreateWithoutUsuarioInput
-	>;
+	create?: Prisma.XOR<Prisma.EscritorCreateWithoutUsuarioInput, Prisma.EscritorUncheckedCreateWithoutUsuarioInput>;
 	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutUsuarioInput;
 	upsert?: Prisma.EscritorUpsertWithoutUsuarioInput;
 	disconnect?: Prisma.EscritorWhereInput | boolean;
 	delete?: Prisma.EscritorWhereInput | boolean;
 	connect?: Prisma.EscritorWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EscritorUpdateToOneWithWhereWithoutUsuarioInput,
-			Prisma.EscritorUpdateWithoutUsuarioInput
-		>,
-		Prisma.EscritorUncheckedUpdateWithoutUsuarioInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EscritorUpdateToOneWithWhereWithoutUsuarioInput, Prisma.EscritorUpdateWithoutUsuarioInput>, Prisma.EscritorUncheckedUpdateWithoutUsuarioInput>;
 };
 
 export type EscritorUncheckedUpdateOneWithoutUsuarioNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EscritorCreateWithoutUsuarioInput,
-		Prisma.EscritorUncheckedCreateWithoutUsuarioInput
-	>;
+	create?: Prisma.XOR<Prisma.EscritorCreateWithoutUsuarioInput, Prisma.EscritorUncheckedCreateWithoutUsuarioInput>;
 	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutUsuarioInput;
 	upsert?: Prisma.EscritorUpsertWithoutUsuarioInput;
 	disconnect?: Prisma.EscritorWhereInput | boolean;
 	delete?: Prisma.EscritorWhereInput | boolean;
 	connect?: Prisma.EscritorWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EscritorUpdateToOneWithWhereWithoutUsuarioInput,
-			Prisma.EscritorUpdateWithoutUsuarioInput
-		>,
-		Prisma.EscritorUncheckedUpdateWithoutUsuarioInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EscritorUpdateToOneWithWhereWithoutUsuarioInput, Prisma.EscritorUpdateWithoutUsuarioInput>, Prisma.EscritorUncheckedUpdateWithoutUsuarioInput>;
 };
 
 export type NullableDateTimeFieldUpdateOperationsInput = {
@@ -896,213 +718,117 @@ export type NullableDateTimeFieldUpdateOperationsInput = {
 };
 
 export type EscritorCreateNestedOneWithoutLibrosInput = {
-	create?: Prisma.XOR<
-		Prisma.EscritorCreateWithoutLibrosInput,
-		Prisma.EscritorUncheckedCreateWithoutLibrosInput
-	>;
+	create?: Prisma.XOR<Prisma.EscritorCreateWithoutLibrosInput, Prisma.EscritorUncheckedCreateWithoutLibrosInput>;
 	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutLibrosInput;
 	connect?: Prisma.EscritorWhereUniqueInput;
 };
 
 export type EscritorUpdateOneRequiredWithoutLibrosNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EscritorCreateWithoutLibrosInput,
-		Prisma.EscritorUncheckedCreateWithoutLibrosInput
-	>;
+	create?: Prisma.XOR<Prisma.EscritorCreateWithoutLibrosInput, Prisma.EscritorUncheckedCreateWithoutLibrosInput>;
 	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutLibrosInput;
 	upsert?: Prisma.EscritorUpsertWithoutLibrosInput;
 	connect?: Prisma.EscritorWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EscritorUpdateToOneWithWhereWithoutLibrosInput,
-			Prisma.EscritorUpdateWithoutLibrosInput
-		>,
-		Prisma.EscritorUncheckedUpdateWithoutLibrosInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EscritorUpdateToOneWithWhereWithoutLibrosInput, Prisma.EscritorUpdateWithoutLibrosInput>, Prisma.EscritorUncheckedUpdateWithoutLibrosInput>;
 };
 
 export type EscritorCreateNestedOneWithoutComentariosInput = {
-	create?: Prisma.XOR<
-		Prisma.EscritorCreateWithoutComentariosInput,
-		Prisma.EscritorUncheckedCreateWithoutComentariosInput
-	>;
+	create?: Prisma.XOR<Prisma.EscritorCreateWithoutComentariosInput, Prisma.EscritorUncheckedCreateWithoutComentariosInput>;
 	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutComentariosInput;
 	connect?: Prisma.EscritorWhereUniqueInput;
 };
 
 export type EscritorUpdateOneRequiredWithoutComentariosNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EscritorCreateWithoutComentariosInput,
-		Prisma.EscritorUncheckedCreateWithoutComentariosInput
-	>;
+	create?: Prisma.XOR<Prisma.EscritorCreateWithoutComentariosInput, Prisma.EscritorUncheckedCreateWithoutComentariosInput>;
 	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutComentariosInput;
 	upsert?: Prisma.EscritorUpsertWithoutComentariosInput;
 	connect?: Prisma.EscritorWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EscritorUpdateToOneWithWhereWithoutComentariosInput,
-			Prisma.EscritorUpdateWithoutComentariosInput
-		>,
-		Prisma.EscritorUncheckedUpdateWithoutComentariosInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EscritorUpdateToOneWithWhereWithoutComentariosInput, Prisma.EscritorUpdateWithoutComentariosInput>, Prisma.EscritorUncheckedUpdateWithoutComentariosInput>;
 };
 
 export type EscritorCreateNestedOneWithoutFavoritosInput = {
-	create?: Prisma.XOR<
-		Prisma.EscritorCreateWithoutFavoritosInput,
-		Prisma.EscritorUncheckedCreateWithoutFavoritosInput
-	>;
+	create?: Prisma.XOR<Prisma.EscritorCreateWithoutFavoritosInput, Prisma.EscritorUncheckedCreateWithoutFavoritosInput>;
 	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutFavoritosInput;
 	connect?: Prisma.EscritorWhereUniqueInput;
 };
 
 export type EscritorUpdateOneWithoutFavoritosNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EscritorCreateWithoutFavoritosInput,
-		Prisma.EscritorUncheckedCreateWithoutFavoritosInput
-	>;
+	create?: Prisma.XOR<Prisma.EscritorCreateWithoutFavoritosInput, Prisma.EscritorUncheckedCreateWithoutFavoritosInput>;
 	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutFavoritosInput;
 	upsert?: Prisma.EscritorUpsertWithoutFavoritosInput;
 	disconnect?: Prisma.EscritorWhereInput | boolean;
 	delete?: Prisma.EscritorWhereInput | boolean;
 	connect?: Prisma.EscritorWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EscritorUpdateToOneWithWhereWithoutFavoritosInput,
-			Prisma.EscritorUpdateWithoutFavoritosInput
-		>,
-		Prisma.EscritorUncheckedUpdateWithoutFavoritosInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EscritorUpdateToOneWithWhereWithoutFavoritosInput, Prisma.EscritorUpdateWithoutFavoritosInput>, Prisma.EscritorUncheckedUpdateWithoutFavoritosInput>;
 };
 
 export type EscritorCreateNestedOneWithoutGlosariosInput = {
-	create?: Prisma.XOR<
-		Prisma.EscritorCreateWithoutGlosariosInput,
-		Prisma.EscritorUncheckedCreateWithoutGlosariosInput
-	>;
+	create?: Prisma.XOR<Prisma.EscritorCreateWithoutGlosariosInput, Prisma.EscritorUncheckedCreateWithoutGlosariosInput>;
 	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutGlosariosInput;
 	connect?: Prisma.EscritorWhereUniqueInput;
 };
 
 export type EscritorUpdateOneRequiredWithoutGlosariosNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EscritorCreateWithoutGlosariosInput,
-		Prisma.EscritorUncheckedCreateWithoutGlosariosInput
-	>;
+	create?: Prisma.XOR<Prisma.EscritorCreateWithoutGlosariosInput, Prisma.EscritorUncheckedCreateWithoutGlosariosInput>;
 	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutGlosariosInput;
 	upsert?: Prisma.EscritorUpsertWithoutGlosariosInput;
 	connect?: Prisma.EscritorWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EscritorUpdateToOneWithWhereWithoutGlosariosInput,
-			Prisma.EscritorUpdateWithoutGlosariosInput
-		>,
-		Prisma.EscritorUncheckedUpdateWithoutGlosariosInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EscritorUpdateToOneWithWhereWithoutGlosariosInput, Prisma.EscritorUpdateWithoutGlosariosInput>, Prisma.EscritorUncheckedUpdateWithoutGlosariosInput>;
 };
 
 export type EscritorCreateNestedOneWithoutNotasAutorInput = {
-	create?: Prisma.XOR<
-		Prisma.EscritorCreateWithoutNotasAutorInput,
-		Prisma.EscritorUncheckedCreateWithoutNotasAutorInput
-	>;
+	create?: Prisma.XOR<Prisma.EscritorCreateWithoutNotasAutorInput, Prisma.EscritorUncheckedCreateWithoutNotasAutorInput>;
 	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutNotasAutorInput;
 	connect?: Prisma.EscritorWhereUniqueInput;
 };
 
 export type EscritorUpdateOneRequiredWithoutNotasAutorNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EscritorCreateWithoutNotasAutorInput,
-		Prisma.EscritorUncheckedCreateWithoutNotasAutorInput
-	>;
+	create?: Prisma.XOR<Prisma.EscritorCreateWithoutNotasAutorInput, Prisma.EscritorUncheckedCreateWithoutNotasAutorInput>;
 	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutNotasAutorInput;
 	upsert?: Prisma.EscritorUpsertWithoutNotasAutorInput;
 	connect?: Prisma.EscritorWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EscritorUpdateToOneWithWhereWithoutNotasAutorInput,
-			Prisma.EscritorUpdateWithoutNotasAutorInput
-		>,
-		Prisma.EscritorUncheckedUpdateWithoutNotasAutorInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EscritorUpdateToOneWithWhereWithoutNotasAutorInput, Prisma.EscritorUpdateWithoutNotasAutorInput>, Prisma.EscritorUncheckedUpdateWithoutNotasAutorInput>;
 };
 
 export type EscritorCreateNestedOneWithoutMarcadoresInput = {
-	create?: Prisma.XOR<
-		Prisma.EscritorCreateWithoutMarcadoresInput,
-		Prisma.EscritorUncheckedCreateWithoutMarcadoresInput
-	>;
+	create?: Prisma.XOR<Prisma.EscritorCreateWithoutMarcadoresInput, Prisma.EscritorUncheckedCreateWithoutMarcadoresInput>;
 	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutMarcadoresInput;
 	connect?: Prisma.EscritorWhereUniqueInput;
 };
 
 export type EscritorUpdateOneRequiredWithoutMarcadoresNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EscritorCreateWithoutMarcadoresInput,
-		Prisma.EscritorUncheckedCreateWithoutMarcadoresInput
-	>;
+	create?: Prisma.XOR<Prisma.EscritorCreateWithoutMarcadoresInput, Prisma.EscritorUncheckedCreateWithoutMarcadoresInput>;
 	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutMarcadoresInput;
 	upsert?: Prisma.EscritorUpsertWithoutMarcadoresInput;
 	connect?: Prisma.EscritorWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EscritorUpdateToOneWithWhereWithoutMarcadoresInput,
-			Prisma.EscritorUpdateWithoutMarcadoresInput
-		>,
-		Prisma.EscritorUncheckedUpdateWithoutMarcadoresInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EscritorUpdateToOneWithWhereWithoutMarcadoresInput, Prisma.EscritorUpdateWithoutMarcadoresInput>, Prisma.EscritorUncheckedUpdateWithoutMarcadoresInput>;
 };
 
 export type EscritorCreateNestedOneWithoutSiguiendoInput = {
-	create?: Prisma.XOR<
-		Prisma.EscritorCreateWithoutSiguiendoInput,
-		Prisma.EscritorUncheckedCreateWithoutSiguiendoInput
-	>;
+	create?: Prisma.XOR<Prisma.EscritorCreateWithoutSiguiendoInput, Prisma.EscritorUncheckedCreateWithoutSiguiendoInput>;
 	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutSiguiendoInput;
 	connect?: Prisma.EscritorWhereUniqueInput;
 };
 
 export type EscritorCreateNestedOneWithoutSeguidoresInput = {
-	create?: Prisma.XOR<
-		Prisma.EscritorCreateWithoutSeguidoresInput,
-		Prisma.EscritorUncheckedCreateWithoutSeguidoresInput
-	>;
+	create?: Prisma.XOR<Prisma.EscritorCreateWithoutSeguidoresInput, Prisma.EscritorUncheckedCreateWithoutSeguidoresInput>;
 	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutSeguidoresInput;
 	connect?: Prisma.EscritorWhereUniqueInput;
 };
 
 export type EscritorUpdateOneRequiredWithoutSiguiendoNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EscritorCreateWithoutSiguiendoInput,
-		Prisma.EscritorUncheckedCreateWithoutSiguiendoInput
-	>;
+	create?: Prisma.XOR<Prisma.EscritorCreateWithoutSiguiendoInput, Prisma.EscritorUncheckedCreateWithoutSiguiendoInput>;
 	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutSiguiendoInput;
 	upsert?: Prisma.EscritorUpsertWithoutSiguiendoInput;
 	connect?: Prisma.EscritorWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EscritorUpdateToOneWithWhereWithoutSiguiendoInput,
-			Prisma.EscritorUpdateWithoutSiguiendoInput
-		>,
-		Prisma.EscritorUncheckedUpdateWithoutSiguiendoInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EscritorUpdateToOneWithWhereWithoutSiguiendoInput, Prisma.EscritorUpdateWithoutSiguiendoInput>, Prisma.EscritorUncheckedUpdateWithoutSiguiendoInput>;
 };
 
 export type EscritorUpdateOneRequiredWithoutSeguidoresNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EscritorCreateWithoutSeguidoresInput,
-		Prisma.EscritorUncheckedCreateWithoutSeguidoresInput
-	>;
+	create?: Prisma.XOR<Prisma.EscritorCreateWithoutSeguidoresInput, Prisma.EscritorUncheckedCreateWithoutSeguidoresInput>;
 	connectOrCreate?: Prisma.EscritorCreateOrConnectWithoutSeguidoresInput;
 	upsert?: Prisma.EscritorUpsertWithoutSeguidoresInput;
 	connect?: Prisma.EscritorWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EscritorUpdateToOneWithWhereWithoutSeguidoresInput,
-			Prisma.EscritorUpdateWithoutSeguidoresInput
-		>,
-		Prisma.EscritorUncheckedUpdateWithoutSeguidoresInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EscritorUpdateToOneWithWhereWithoutSeguidoresInput, Prisma.EscritorUpdateWithoutSeguidoresInput>, Prisma.EscritorUncheckedUpdateWithoutSeguidoresInput>;
 };
 
 export type EscritorCreateWithoutEstadoInput = {
@@ -1148,45 +874,28 @@ export type EscritorUncheckedCreateWithoutEstadoInput = {
 
 export type EscritorCreateOrConnectWithoutEstadoInput = {
 	where: Prisma.EscritorWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutEstadoInput,
-		Prisma.EscritorUncheckedCreateWithoutEstadoInput
-	>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutEstadoInput, Prisma.EscritorUncheckedCreateWithoutEstadoInput>;
 };
 
 export type EscritorCreateManyEstadoInputEnvelope = {
-	data:
-		| Prisma.EscritorCreateManyEstadoInput
-		| Prisma.EscritorCreateManyEstadoInput[];
+	data: Prisma.EscritorCreateManyEstadoInput | Prisma.EscritorCreateManyEstadoInput[];
 	skipDuplicates?: boolean;
 };
 
 export type EscritorUpsertWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.EscritorWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutEstadoInput,
-		Prisma.EscritorUncheckedUpdateWithoutEstadoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutEstadoInput,
-		Prisma.EscritorUncheckedCreateWithoutEstadoInput
-	>;
+	update: Prisma.XOR<Prisma.EscritorUpdateWithoutEstadoInput, Prisma.EscritorUncheckedUpdateWithoutEstadoInput>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutEstadoInput, Prisma.EscritorUncheckedCreateWithoutEstadoInput>;
 };
 
 export type EscritorUpdateWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.EscritorWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutEstadoInput,
-		Prisma.EscritorUncheckedUpdateWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.EscritorUpdateWithoutEstadoInput, Prisma.EscritorUncheckedUpdateWithoutEstadoInput>;
 };
 
 export type EscritorUpdateManyWithWhereWithoutEstadoInput = {
 	where: Prisma.EscritorScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.EscritorUpdateManyMutationInput,
-		Prisma.EscritorUncheckedUpdateManyWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.EscritorUpdateManyMutationInput, Prisma.EscritorUncheckedUpdateManyWithoutEstadoInput>;
 };
 
 export type EscritorScalarWhereInput = {
@@ -1198,11 +907,7 @@ export type EscritorScalarWhereInput = {
 	apellidos?: Prisma.StringNullableFilter<"Escritor"> | string | null;
 	alias?: Prisma.StringNullableFilter<"Escritor"> | string | null;
 	descripcion?: Prisma.StringNullableFilter<"Escritor"> | string | null;
-	fechaNacimiento?:
-		| Prisma.DateTimeNullableFilter<"Escritor">
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.DateTimeNullableFilter<"Escritor"> | Date | string | null;
 	createdAt?: Prisma.DateTimeFilter<"Escritor"> | Date | string;
 	updatedAt?: Prisma.DateTimeFilter<"Escritor"> | Date | string;
 	usuarioId?: Prisma.IntNullableFilter<"Escritor"> | number | null;
@@ -1253,45 +958,28 @@ export type EscritorUncheckedCreateWithoutAvatarInput = {
 
 export type EscritorCreateOrConnectWithoutAvatarInput = {
 	where: Prisma.EscritorWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutAvatarInput,
-		Prisma.EscritorUncheckedCreateWithoutAvatarInput
-	>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutAvatarInput, Prisma.EscritorUncheckedCreateWithoutAvatarInput>;
 };
 
 export type EscritorCreateManyAvatarInputEnvelope = {
-	data:
-		| Prisma.EscritorCreateManyAvatarInput
-		| Prisma.EscritorCreateManyAvatarInput[];
+	data: Prisma.EscritorCreateManyAvatarInput | Prisma.EscritorCreateManyAvatarInput[];
 	skipDuplicates?: boolean;
 };
 
 export type EscritorUpsertWithWhereUniqueWithoutAvatarInput = {
 	where: Prisma.EscritorWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutAvatarInput,
-		Prisma.EscritorUncheckedUpdateWithoutAvatarInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutAvatarInput,
-		Prisma.EscritorUncheckedCreateWithoutAvatarInput
-	>;
+	update: Prisma.XOR<Prisma.EscritorUpdateWithoutAvatarInput, Prisma.EscritorUncheckedUpdateWithoutAvatarInput>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutAvatarInput, Prisma.EscritorUncheckedCreateWithoutAvatarInput>;
 };
 
 export type EscritorUpdateWithWhereUniqueWithoutAvatarInput = {
 	where: Prisma.EscritorWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutAvatarInput,
-		Prisma.EscritorUncheckedUpdateWithoutAvatarInput
-	>;
+	data: Prisma.XOR<Prisma.EscritorUpdateWithoutAvatarInput, Prisma.EscritorUncheckedUpdateWithoutAvatarInput>;
 };
 
 export type EscritorUpdateManyWithWhereWithoutAvatarInput = {
 	where: Prisma.EscritorScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.EscritorUpdateManyMutationInput,
-		Prisma.EscritorUncheckedUpdateManyWithoutAvatarInput
-	>;
+	data: Prisma.XOR<Prisma.EscritorUpdateManyMutationInput, Prisma.EscritorUncheckedUpdateManyWithoutAvatarInput>;
 };
 
 export type EscritorCreateWithoutUsuarioInput = {
@@ -1337,30 +1025,18 @@ export type EscritorUncheckedCreateWithoutUsuarioInput = {
 
 export type EscritorCreateOrConnectWithoutUsuarioInput = {
 	where: Prisma.EscritorWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutUsuarioInput,
-		Prisma.EscritorUncheckedCreateWithoutUsuarioInput
-	>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutUsuarioInput, Prisma.EscritorUncheckedCreateWithoutUsuarioInput>;
 };
 
 export type EscritorUpsertWithoutUsuarioInput = {
-	update: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutUsuarioInput,
-		Prisma.EscritorUncheckedUpdateWithoutUsuarioInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutUsuarioInput,
-		Prisma.EscritorUncheckedCreateWithoutUsuarioInput
-	>;
+	update: Prisma.XOR<Prisma.EscritorUpdateWithoutUsuarioInput, Prisma.EscritorUncheckedUpdateWithoutUsuarioInput>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutUsuarioInput, Prisma.EscritorUncheckedCreateWithoutUsuarioInput>;
 	where?: Prisma.EscritorWhereInput;
 };
 
 export type EscritorUpdateToOneWithWhereWithoutUsuarioInput = {
 	where?: Prisma.EscritorWhereInput;
-	data: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutUsuarioInput,
-		Prisma.EscritorUncheckedUpdateWithoutUsuarioInput
-	>;
+	data: Prisma.XOR<Prisma.EscritorUpdateWithoutUsuarioInput, Prisma.EscritorUncheckedUpdateWithoutUsuarioInput>;
 };
 
 export type EscritorUpdateWithoutUsuarioInput = {
@@ -1368,11 +1044,7 @@ export type EscritorUpdateWithoutUsuarioInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	avatar?: Prisma.AvatarUpdateOneRequiredWithoutEscritoresNestedInput;
@@ -1393,11 +1065,7 @@ export type EscritorUncheckedUpdateWithoutUsuarioInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	avatarId?: Prisma.IntFieldUpdateOperationsInput | number;
@@ -1455,30 +1123,18 @@ export type EscritorUncheckedCreateWithoutLibrosInput = {
 
 export type EscritorCreateOrConnectWithoutLibrosInput = {
 	where: Prisma.EscritorWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutLibrosInput,
-		Prisma.EscritorUncheckedCreateWithoutLibrosInput
-	>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutLibrosInput, Prisma.EscritorUncheckedCreateWithoutLibrosInput>;
 };
 
 export type EscritorUpsertWithoutLibrosInput = {
-	update: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutLibrosInput,
-		Prisma.EscritorUncheckedUpdateWithoutLibrosInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutLibrosInput,
-		Prisma.EscritorUncheckedCreateWithoutLibrosInput
-	>;
+	update: Prisma.XOR<Prisma.EscritorUpdateWithoutLibrosInput, Prisma.EscritorUncheckedUpdateWithoutLibrosInput>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutLibrosInput, Prisma.EscritorUncheckedCreateWithoutLibrosInput>;
 	where?: Prisma.EscritorWhereInput;
 };
 
 export type EscritorUpdateToOneWithWhereWithoutLibrosInput = {
 	where?: Prisma.EscritorWhereInput;
-	data: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutLibrosInput,
-		Prisma.EscritorUncheckedUpdateWithoutLibrosInput
-	>;
+	data: Prisma.XOR<Prisma.EscritorUpdateWithoutLibrosInput, Prisma.EscritorUncheckedUpdateWithoutLibrosInput>;
 };
 
 export type EscritorUpdateWithoutLibrosInput = {
@@ -1486,11 +1142,7 @@ export type EscritorUpdateWithoutLibrosInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuario?: Prisma.UsuarioUpdateOneWithoutEscritorNestedInput;
@@ -1511,11 +1163,7 @@ export type EscritorUncheckedUpdateWithoutLibrosInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuarioId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
@@ -1573,30 +1221,18 @@ export type EscritorUncheckedCreateWithoutComentariosInput = {
 
 export type EscritorCreateOrConnectWithoutComentariosInput = {
 	where: Prisma.EscritorWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutComentariosInput,
-		Prisma.EscritorUncheckedCreateWithoutComentariosInput
-	>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutComentariosInput, Prisma.EscritorUncheckedCreateWithoutComentariosInput>;
 };
 
 export type EscritorUpsertWithoutComentariosInput = {
-	update: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutComentariosInput,
-		Prisma.EscritorUncheckedUpdateWithoutComentariosInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutComentariosInput,
-		Prisma.EscritorUncheckedCreateWithoutComentariosInput
-	>;
+	update: Prisma.XOR<Prisma.EscritorUpdateWithoutComentariosInput, Prisma.EscritorUncheckedUpdateWithoutComentariosInput>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutComentariosInput, Prisma.EscritorUncheckedCreateWithoutComentariosInput>;
 	where?: Prisma.EscritorWhereInput;
 };
 
 export type EscritorUpdateToOneWithWhereWithoutComentariosInput = {
 	where?: Prisma.EscritorWhereInput;
-	data: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutComentariosInput,
-		Prisma.EscritorUncheckedUpdateWithoutComentariosInput
-	>;
+	data: Prisma.XOR<Prisma.EscritorUpdateWithoutComentariosInput, Prisma.EscritorUncheckedUpdateWithoutComentariosInput>;
 };
 
 export type EscritorUpdateWithoutComentariosInput = {
@@ -1604,11 +1240,7 @@ export type EscritorUpdateWithoutComentariosInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuario?: Prisma.UsuarioUpdateOneWithoutEscritorNestedInput;
@@ -1629,11 +1261,7 @@ export type EscritorUncheckedUpdateWithoutComentariosInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuarioId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
@@ -1691,30 +1319,18 @@ export type EscritorUncheckedCreateWithoutFavoritosInput = {
 
 export type EscritorCreateOrConnectWithoutFavoritosInput = {
 	where: Prisma.EscritorWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutFavoritosInput,
-		Prisma.EscritorUncheckedCreateWithoutFavoritosInput
-	>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutFavoritosInput, Prisma.EscritorUncheckedCreateWithoutFavoritosInput>;
 };
 
 export type EscritorUpsertWithoutFavoritosInput = {
-	update: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutFavoritosInput,
-		Prisma.EscritorUncheckedUpdateWithoutFavoritosInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutFavoritosInput,
-		Prisma.EscritorUncheckedCreateWithoutFavoritosInput
-	>;
+	update: Prisma.XOR<Prisma.EscritorUpdateWithoutFavoritosInput, Prisma.EscritorUncheckedUpdateWithoutFavoritosInput>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutFavoritosInput, Prisma.EscritorUncheckedCreateWithoutFavoritosInput>;
 	where?: Prisma.EscritorWhereInput;
 };
 
 export type EscritorUpdateToOneWithWhereWithoutFavoritosInput = {
 	where?: Prisma.EscritorWhereInput;
-	data: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutFavoritosInput,
-		Prisma.EscritorUncheckedUpdateWithoutFavoritosInput
-	>;
+	data: Prisma.XOR<Prisma.EscritorUpdateWithoutFavoritosInput, Prisma.EscritorUncheckedUpdateWithoutFavoritosInput>;
 };
 
 export type EscritorUpdateWithoutFavoritosInput = {
@@ -1722,11 +1338,7 @@ export type EscritorUpdateWithoutFavoritosInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuario?: Prisma.UsuarioUpdateOneWithoutEscritorNestedInput;
@@ -1747,11 +1359,7 @@ export type EscritorUncheckedUpdateWithoutFavoritosInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuarioId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
@@ -1809,30 +1417,18 @@ export type EscritorUncheckedCreateWithoutGlosariosInput = {
 
 export type EscritorCreateOrConnectWithoutGlosariosInput = {
 	where: Prisma.EscritorWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutGlosariosInput,
-		Prisma.EscritorUncheckedCreateWithoutGlosariosInput
-	>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutGlosariosInput, Prisma.EscritorUncheckedCreateWithoutGlosariosInput>;
 };
 
 export type EscritorUpsertWithoutGlosariosInput = {
-	update: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutGlosariosInput,
-		Prisma.EscritorUncheckedUpdateWithoutGlosariosInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutGlosariosInput,
-		Prisma.EscritorUncheckedCreateWithoutGlosariosInput
-	>;
+	update: Prisma.XOR<Prisma.EscritorUpdateWithoutGlosariosInput, Prisma.EscritorUncheckedUpdateWithoutGlosariosInput>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutGlosariosInput, Prisma.EscritorUncheckedCreateWithoutGlosariosInput>;
 	where?: Prisma.EscritorWhereInput;
 };
 
 export type EscritorUpdateToOneWithWhereWithoutGlosariosInput = {
 	where?: Prisma.EscritorWhereInput;
-	data: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutGlosariosInput,
-		Prisma.EscritorUncheckedUpdateWithoutGlosariosInput
-	>;
+	data: Prisma.XOR<Prisma.EscritorUpdateWithoutGlosariosInput, Prisma.EscritorUncheckedUpdateWithoutGlosariosInput>;
 };
 
 export type EscritorUpdateWithoutGlosariosInput = {
@@ -1840,11 +1436,7 @@ export type EscritorUpdateWithoutGlosariosInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuario?: Prisma.UsuarioUpdateOneWithoutEscritorNestedInput;
@@ -1865,11 +1457,7 @@ export type EscritorUncheckedUpdateWithoutGlosariosInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuarioId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
@@ -1927,30 +1515,18 @@ export type EscritorUncheckedCreateWithoutNotasAutorInput = {
 
 export type EscritorCreateOrConnectWithoutNotasAutorInput = {
 	where: Prisma.EscritorWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutNotasAutorInput,
-		Prisma.EscritorUncheckedCreateWithoutNotasAutorInput
-	>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutNotasAutorInput, Prisma.EscritorUncheckedCreateWithoutNotasAutorInput>;
 };
 
 export type EscritorUpsertWithoutNotasAutorInput = {
-	update: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutNotasAutorInput,
-		Prisma.EscritorUncheckedUpdateWithoutNotasAutorInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutNotasAutorInput,
-		Prisma.EscritorUncheckedCreateWithoutNotasAutorInput
-	>;
+	update: Prisma.XOR<Prisma.EscritorUpdateWithoutNotasAutorInput, Prisma.EscritorUncheckedUpdateWithoutNotasAutorInput>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutNotasAutorInput, Prisma.EscritorUncheckedCreateWithoutNotasAutorInput>;
 	where?: Prisma.EscritorWhereInput;
 };
 
 export type EscritorUpdateToOneWithWhereWithoutNotasAutorInput = {
 	where?: Prisma.EscritorWhereInput;
-	data: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutNotasAutorInput,
-		Prisma.EscritorUncheckedUpdateWithoutNotasAutorInput
-	>;
+	data: Prisma.XOR<Prisma.EscritorUpdateWithoutNotasAutorInput, Prisma.EscritorUncheckedUpdateWithoutNotasAutorInput>;
 };
 
 export type EscritorUpdateWithoutNotasAutorInput = {
@@ -1958,11 +1534,7 @@ export type EscritorUpdateWithoutNotasAutorInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuario?: Prisma.UsuarioUpdateOneWithoutEscritorNestedInput;
@@ -1983,11 +1555,7 @@ export type EscritorUncheckedUpdateWithoutNotasAutorInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuarioId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
@@ -2045,30 +1613,18 @@ export type EscritorUncheckedCreateWithoutMarcadoresInput = {
 
 export type EscritorCreateOrConnectWithoutMarcadoresInput = {
 	where: Prisma.EscritorWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutMarcadoresInput,
-		Prisma.EscritorUncheckedCreateWithoutMarcadoresInput
-	>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutMarcadoresInput, Prisma.EscritorUncheckedCreateWithoutMarcadoresInput>;
 };
 
 export type EscritorUpsertWithoutMarcadoresInput = {
-	update: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutMarcadoresInput,
-		Prisma.EscritorUncheckedUpdateWithoutMarcadoresInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutMarcadoresInput,
-		Prisma.EscritorUncheckedCreateWithoutMarcadoresInput
-	>;
+	update: Prisma.XOR<Prisma.EscritorUpdateWithoutMarcadoresInput, Prisma.EscritorUncheckedUpdateWithoutMarcadoresInput>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutMarcadoresInput, Prisma.EscritorUncheckedCreateWithoutMarcadoresInput>;
 	where?: Prisma.EscritorWhereInput;
 };
 
 export type EscritorUpdateToOneWithWhereWithoutMarcadoresInput = {
 	where?: Prisma.EscritorWhereInput;
-	data: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutMarcadoresInput,
-		Prisma.EscritorUncheckedUpdateWithoutMarcadoresInput
-	>;
+	data: Prisma.XOR<Prisma.EscritorUpdateWithoutMarcadoresInput, Prisma.EscritorUncheckedUpdateWithoutMarcadoresInput>;
 };
 
 export type EscritorUpdateWithoutMarcadoresInput = {
@@ -2076,11 +1632,7 @@ export type EscritorUpdateWithoutMarcadoresInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuario?: Prisma.UsuarioUpdateOneWithoutEscritorNestedInput;
@@ -2101,11 +1653,7 @@ export type EscritorUncheckedUpdateWithoutMarcadoresInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuarioId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
@@ -2163,10 +1711,7 @@ export type EscritorUncheckedCreateWithoutSiguiendoInput = {
 
 export type EscritorCreateOrConnectWithoutSiguiendoInput = {
 	where: Prisma.EscritorWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutSiguiendoInput,
-		Prisma.EscritorUncheckedCreateWithoutSiguiendoInput
-	>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutSiguiendoInput, Prisma.EscritorUncheckedCreateWithoutSiguiendoInput>;
 };
 
 export type EscritorCreateWithoutSeguidoresInput = {
@@ -2212,30 +1757,18 @@ export type EscritorUncheckedCreateWithoutSeguidoresInput = {
 
 export type EscritorCreateOrConnectWithoutSeguidoresInput = {
 	where: Prisma.EscritorWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutSeguidoresInput,
-		Prisma.EscritorUncheckedCreateWithoutSeguidoresInput
-	>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutSeguidoresInput, Prisma.EscritorUncheckedCreateWithoutSeguidoresInput>;
 };
 
 export type EscritorUpsertWithoutSiguiendoInput = {
-	update: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutSiguiendoInput,
-		Prisma.EscritorUncheckedUpdateWithoutSiguiendoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutSiguiendoInput,
-		Prisma.EscritorUncheckedCreateWithoutSiguiendoInput
-	>;
+	update: Prisma.XOR<Prisma.EscritorUpdateWithoutSiguiendoInput, Prisma.EscritorUncheckedUpdateWithoutSiguiendoInput>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutSiguiendoInput, Prisma.EscritorUncheckedCreateWithoutSiguiendoInput>;
 	where?: Prisma.EscritorWhereInput;
 };
 
 export type EscritorUpdateToOneWithWhereWithoutSiguiendoInput = {
 	where?: Prisma.EscritorWhereInput;
-	data: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutSiguiendoInput,
-		Prisma.EscritorUncheckedUpdateWithoutSiguiendoInput
-	>;
+	data: Prisma.XOR<Prisma.EscritorUpdateWithoutSiguiendoInput, Prisma.EscritorUncheckedUpdateWithoutSiguiendoInput>;
 };
 
 export type EscritorUpdateWithoutSiguiendoInput = {
@@ -2243,11 +1776,7 @@ export type EscritorUpdateWithoutSiguiendoInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuario?: Prisma.UsuarioUpdateOneWithoutEscritorNestedInput;
@@ -2268,11 +1797,7 @@ export type EscritorUncheckedUpdateWithoutSiguiendoInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuarioId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
@@ -2288,23 +1813,14 @@ export type EscritorUncheckedUpdateWithoutSiguiendoInput = {
 };
 
 export type EscritorUpsertWithoutSeguidoresInput = {
-	update: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutSeguidoresInput,
-		Prisma.EscritorUncheckedUpdateWithoutSeguidoresInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EscritorCreateWithoutSeguidoresInput,
-		Prisma.EscritorUncheckedCreateWithoutSeguidoresInput
-	>;
+	update: Prisma.XOR<Prisma.EscritorUpdateWithoutSeguidoresInput, Prisma.EscritorUncheckedUpdateWithoutSeguidoresInput>;
+	create: Prisma.XOR<Prisma.EscritorCreateWithoutSeguidoresInput, Prisma.EscritorUncheckedCreateWithoutSeguidoresInput>;
 	where?: Prisma.EscritorWhereInput;
 };
 
 export type EscritorUpdateToOneWithWhereWithoutSeguidoresInput = {
 	where?: Prisma.EscritorWhereInput;
-	data: Prisma.XOR<
-		Prisma.EscritorUpdateWithoutSeguidoresInput,
-		Prisma.EscritorUncheckedUpdateWithoutSeguidoresInput
-	>;
+	data: Prisma.XOR<Prisma.EscritorUpdateWithoutSeguidoresInput, Prisma.EscritorUncheckedUpdateWithoutSeguidoresInput>;
 };
 
 export type EscritorUpdateWithoutSeguidoresInput = {
@@ -2312,11 +1828,7 @@ export type EscritorUpdateWithoutSeguidoresInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuario?: Prisma.UsuarioUpdateOneWithoutEscritorNestedInput;
@@ -2337,11 +1849,7 @@ export type EscritorUncheckedUpdateWithoutSeguidoresInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuarioId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
@@ -2374,11 +1882,7 @@ export type EscritorUpdateWithoutEstadoInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuario?: Prisma.UsuarioUpdateOneWithoutEscritorNestedInput;
@@ -2399,11 +1903,7 @@ export type EscritorUncheckedUpdateWithoutEstadoInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuarioId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
@@ -2424,11 +1924,7 @@ export type EscritorUncheckedUpdateManyWithoutEstadoInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuarioId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
@@ -2453,11 +1949,7 @@ export type EscritorUpdateWithoutAvatarInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuario?: Prisma.UsuarioUpdateOneWithoutEscritorNestedInput;
@@ -2478,11 +1970,7 @@ export type EscritorUncheckedUpdateWithoutAvatarInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuarioId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
@@ -2503,11 +1991,7 @@ export type EscritorUncheckedUpdateManyWithoutAvatarInput = {
 	apellidos?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	alias?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
 	descripcion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
-	fechaNacimiento?:
-		| Prisma.NullableDateTimeFieldUpdateOperationsInput
-		| Date
-		| string
-		| null;
+	fechaNacimiento?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
 	createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 	usuarioId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null;
@@ -2529,10 +2013,7 @@ export type EscritorCountOutputType = {
 	siguiendo: number;
 };
 
-export type EscritorCountOutputTypeSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	libros?: boolean | EscritorCountOutputTypeCountLibrosArgs;
 	comentarios?: boolean | EscritorCountOutputTypeCountComentariosArgs;
 	favoritos?: boolean | EscritorCountOutputTypeCountFavoritosArgs;
@@ -2546,10 +2027,7 @@ export type EscritorCountOutputTypeSelect<
 /**
  * EscritorCountOutputType without action
  */
-export type EscritorCountOutputTypeDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the EscritorCountOutputType
 	 */
@@ -2559,87 +2037,60 @@ export type EscritorCountOutputTypeDefaultArgs<
 /**
  * EscritorCountOutputType without action
  */
-export type EscritorCountOutputTypeCountLibrosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorCountOutputTypeCountLibrosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.LibroWhereInput;
 };
 
 /**
  * EscritorCountOutputType without action
  */
-export type EscritorCountOutputTypeCountComentariosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorCountOutputTypeCountComentariosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.ComentarioWhereInput;
 };
 
 /**
  * EscritorCountOutputType without action
  */
-export type EscritorCountOutputTypeCountFavoritosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorCountOutputTypeCountFavoritosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.FavoritoWhereInput;
 };
 
 /**
  * EscritorCountOutputType without action
  */
-export type EscritorCountOutputTypeCountGlosariosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorCountOutputTypeCountGlosariosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.GlosarioWhereInput;
 };
 
 /**
  * EscritorCountOutputType without action
  */
-export type EscritorCountOutputTypeCountNotasAutorArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorCountOutputTypeCountNotasAutorArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.NotaAutorWhereInput;
 };
 
 /**
  * EscritorCountOutputType without action
  */
-export type EscritorCountOutputTypeCountMarcadoresArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorCountOutputTypeCountMarcadoresArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.MarcadorWhereInput;
 };
 
 /**
  * EscritorCountOutputType without action
  */
-export type EscritorCountOutputTypeCountSeguidoresArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorCountOutputTypeCountSeguidoresArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.SeguirUsuarioWhereInput;
 };
 
 /**
  * EscritorCountOutputType without action
  */
-export type EscritorCountOutputTypeCountSiguiendoArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorCountOutputTypeCountSiguiendoArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.SeguirUsuarioWhereInput;
 };
 
-export type EscritorSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type EscritorSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombres?: boolean;
@@ -2668,10 +2119,7 @@ export type EscritorSelect<
 	ExtArgs["result"]["escritor"]
 >;
 
-export type EscritorSelectCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type EscritorSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombres?: boolean;
@@ -2691,10 +2139,7 @@ export type EscritorSelectCreateManyAndReturn<
 	ExtArgs["result"]["escritor"]
 >;
 
-export type EscritorSelectUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type EscritorSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombres?: boolean;
@@ -2728,27 +2173,11 @@ export type EscritorSelectScalar = {
 	estadoId?: boolean;
 };
 
-export type EscritorOmit<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetOmit<
-	| "id"
-	| "nombres"
-	| "apellidos"
-	| "alias"
-	| "descripcion"
-	| "fechaNacimiento"
-	| "createdAt"
-	| "updatedAt"
-	| "usuarioId"
-	| "avatarId"
-	| "estadoId",
+export type EscritorOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<
+	"id" | "nombres" | "apellidos" | "alias" | "descripcion" | "fechaNacimiento" | "createdAt" | "updatedAt" | "usuarioId" | "avatarId" | "estadoId",
 	ExtArgs["result"]["escritor"]
 >;
-export type EscritorInclude<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	usuario?: boolean | Prisma.Escritor$usuarioArgs<ExtArgs>;
 	avatar?: boolean | Prisma.AvatarDefaultArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
@@ -2762,27 +2191,18 @@ export type EscritorInclude<
 	siguiendo?: boolean | Prisma.Escritor$siguiendoArgs<ExtArgs>;
 	_count?: boolean | Prisma.EscritorCountOutputTypeDefaultArgs<ExtArgs>;
 };
-export type EscritorIncludeCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	usuario?: boolean | Prisma.Escritor$usuarioArgs<ExtArgs>;
 	avatar?: boolean | Prisma.AvatarDefaultArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
-export type EscritorIncludeUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	usuario?: boolean | Prisma.Escritor$usuarioArgs<ExtArgs>;
 	avatar?: boolean | Prisma.AvatarDefaultArgs<ExtArgs>;
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
 
-export type $EscritorPayload<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type $EscritorPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	name: "Escritor";
 	objects: {
 		usuario: Prisma.$UsuarioPayload<ExtArgs> | null;
@@ -2816,26 +2236,14 @@ export type $EscritorPayload<
 	composites: {};
 };
 
-export type EscritorGetPayload<
-	S extends boolean | null | undefined | EscritorDefaultArgs,
-> = runtime.Types.Result.GetResult<Prisma.$EscritorPayload, S>;
+export type EscritorGetPayload<S extends boolean | null | undefined | EscritorDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$EscritorPayload, S>;
 
-export type EscritorCountArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = Omit<EscritorFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
+export type EscritorCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<EscritorFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
 	select?: EscritorCountAggregateInputType | true;
 };
 
-export interface EscritorDelegate<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> {
-	[K: symbol]: {
-		types: Prisma.TypeMap<ExtArgs>["model"]["Escritor"];
-		meta: { name: "Escritor" };
-	};
+export interface EscritorDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+	[K: symbol]: { types: Prisma.TypeMap<ExtArgs>["model"]["Escritor"]; meta: { name: "Escritor" } };
 	/**
 	 * Find zero or one Escritor that matches the filter.
 	 * @param {EscritorFindUniqueArgs} args - Arguments to find a Escritor
@@ -2849,17 +2257,7 @@ export interface EscritorDelegate<
 	 */
 	findUnique<T extends EscritorFindUniqueArgs>(
 		args: Prisma.SelectSubset<T, EscritorFindUniqueArgs<ExtArgs>>,
-	): Prisma.Prisma__EscritorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EscritorPayload<ExtArgs>,
-			T,
-			"findUnique",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EscritorClient<runtime.Types.Result.GetResult<Prisma.$EscritorPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find one Escritor that matches the filter or throw an error with `error.code='P2025'`
@@ -2875,17 +2273,7 @@ export interface EscritorDelegate<
 	 */
 	findUniqueOrThrow<T extends EscritorFindUniqueOrThrowArgs>(
 		args: Prisma.SelectSubset<T, EscritorFindUniqueOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__EscritorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EscritorPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EscritorClient<runtime.Types.Result.GetResult<Prisma.$EscritorPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Escritor that matches the filter.
@@ -2902,17 +2290,7 @@ export interface EscritorDelegate<
 	 */
 	findFirst<T extends EscritorFindFirstArgs>(
 		args?: Prisma.SelectSubset<T, EscritorFindFirstArgs<ExtArgs>>,
-	): Prisma.Prisma__EscritorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EscritorPayload<ExtArgs>,
-			T,
-			"findFirst",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EscritorClient<runtime.Types.Result.GetResult<Prisma.$EscritorPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Escritor that matches the filter or
@@ -2930,17 +2308,7 @@ export interface EscritorDelegate<
 	 */
 	findFirstOrThrow<T extends EscritorFindFirstOrThrowArgs>(
 		args?: Prisma.SelectSubset<T, EscritorFindFirstOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__EscritorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EscritorPayload<ExtArgs>,
-			T,
-			"findFirstOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EscritorClient<runtime.Types.Result.GetResult<Prisma.$EscritorPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find zero or more Escritors that matches the filter.
@@ -2960,14 +2328,7 @@ export interface EscritorDelegate<
 	 */
 	findMany<T extends EscritorFindManyArgs>(
 		args?: Prisma.SelectSubset<T, EscritorFindManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$EscritorPayload<ExtArgs>,
-			T,
-			"findMany",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EscritorPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
 
 	/**
 	 * Create a Escritor.
@@ -2983,17 +2344,7 @@ export interface EscritorDelegate<
 	 */
 	create<T extends EscritorCreateArgs>(
 		args: Prisma.SelectSubset<T, EscritorCreateArgs<ExtArgs>>,
-	): Prisma.Prisma__EscritorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EscritorPayload<ExtArgs>,
-			T,
-			"create",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EscritorClient<runtime.Types.Result.GetResult<Prisma.$EscritorPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Create many Escritors.
@@ -3007,9 +2358,7 @@ export interface EscritorDelegate<
 	 * })
 	 *
 	 */
-	createMany<T extends EscritorCreateManyArgs>(
-		args?: Prisma.SelectSubset<T, EscritorCreateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	createMany<T extends EscritorCreateManyArgs>(args?: Prisma.SelectSubset<T, EscritorCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Create many Escritors and returns the data saved in the database.
@@ -3035,14 +2384,7 @@ export interface EscritorDelegate<
 	 */
 	createManyAndReturn<T extends EscritorCreateManyAndReturnArgs>(
 		args?: Prisma.SelectSubset<T, EscritorCreateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$EscritorPayload<ExtArgs>,
-			T,
-			"createManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EscritorPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Delete a Escritor.
@@ -3058,17 +2400,7 @@ export interface EscritorDelegate<
 	 */
 	delete<T extends EscritorDeleteArgs>(
 		args: Prisma.SelectSubset<T, EscritorDeleteArgs<ExtArgs>>,
-	): Prisma.Prisma__EscritorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EscritorPayload<ExtArgs>,
-			T,
-			"delete",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EscritorClient<runtime.Types.Result.GetResult<Prisma.$EscritorPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Update one Escritor.
@@ -3087,17 +2419,7 @@ export interface EscritorDelegate<
 	 */
 	update<T extends EscritorUpdateArgs>(
 		args: Prisma.SelectSubset<T, EscritorUpdateArgs<ExtArgs>>,
-	): Prisma.Prisma__EscritorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EscritorPayload<ExtArgs>,
-			T,
-			"update",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EscritorClient<runtime.Types.Result.GetResult<Prisma.$EscritorPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Delete zero or more Escritors.
@@ -3111,9 +2433,7 @@ export interface EscritorDelegate<
 	 * })
 	 *
 	 */
-	deleteMany<T extends EscritorDeleteManyArgs>(
-		args?: Prisma.SelectSubset<T, EscritorDeleteManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	deleteMany<T extends EscritorDeleteManyArgs>(args?: Prisma.SelectSubset<T, EscritorDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Escritors.
@@ -3132,9 +2452,7 @@ export interface EscritorDelegate<
 	 * })
 	 *
 	 */
-	updateMany<T extends EscritorUpdateManyArgs>(
-		args: Prisma.SelectSubset<T, EscritorUpdateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	updateMany<T extends EscritorUpdateManyArgs>(args: Prisma.SelectSubset<T, EscritorUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Escritors and returns the data updated in the database.
@@ -3166,14 +2484,7 @@ export interface EscritorDelegate<
 	 */
 	updateManyAndReturn<T extends EscritorUpdateManyAndReturnArgs>(
 		args: Prisma.SelectSubset<T, EscritorUpdateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$EscritorPayload<ExtArgs>,
-			T,
-			"updateManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EscritorPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Create or update one Escritor.
@@ -3194,17 +2505,7 @@ export interface EscritorDelegate<
 	 */
 	upsert<T extends EscritorUpsertArgs>(
 		args: Prisma.SelectSubset<T, EscritorUpsertArgs<ExtArgs>>,
-	): Prisma.Prisma__EscritorClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EscritorPayload<ExtArgs>,
-			T,
-			"upsert",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EscritorClient<runtime.Types.Result.GetResult<Prisma.$EscritorPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Count the number of Escritors.
@@ -3221,13 +2522,7 @@ export interface EscritorDelegate<
 	 **/
 	count<T extends EscritorCountArgs>(
 		args?: Prisma.Subset<T, EscritorCountArgs>,
-	): Prisma.PrismaPromise<
-		T extends runtime.Types.Utils.Record<"select", any>
-			? T["select"] extends true
-				? number
-				: Prisma.GetScalarType<T["select"], EscritorCountAggregateOutputType>
-			: number
-	>;
+	): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<"select", any> ? (T["select"] extends true ? number : Prisma.GetScalarType<T["select"], EscritorCountAggregateOutputType>) : number>;
 
 	/**
 	 * Allows you to perform aggregations operations on a Escritor.
@@ -3253,9 +2548,7 @@ export interface EscritorDelegate<
 	 *   take: 10,
 	 * })
 	 **/
-	aggregate<T extends EscritorAggregateArgs>(
-		args: Prisma.Subset<T, EscritorAggregateArgs>,
-	): Prisma.PrismaPromise<GetEscritorAggregateType<T>>;
+	aggregate<T extends EscritorAggregateArgs>(args: Prisma.Subset<T, EscritorAggregateArgs>): Prisma.PrismaPromise<GetEscritorAggregateType<T>>;
 
 	/**
 	 * Group by Escritor.
@@ -3277,16 +2570,9 @@ export interface EscritorDelegate<
 	 **/
 	groupBy<
 		T extends EscritorGroupByArgs,
-		HasSelectOrTake extends Prisma.Or<
-			Prisma.Extends<"skip", Prisma.Keys<T>>,
-			Prisma.Extends<"take", Prisma.Keys<T>>
-		>,
-		OrderByArg extends Prisma.True extends HasSelectOrTake
-			? { orderBy: EscritorGroupByArgs["orderBy"] }
-			: { orderBy?: EscritorGroupByArgs["orderBy"] },
-		OrderFields extends Prisma.ExcludeUnderscoreKeys<
-			Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>
-		>,
+		HasSelectOrTake extends Prisma.Or<Prisma.Extends<"skip", Prisma.Keys<T>>, Prisma.Extends<"take", Prisma.Keys<T>>>,
+		OrderByArg extends Prisma.True extends HasSelectOrTake ? { orderBy: EscritorGroupByArgs["orderBy"] } : { orderBy?: EscritorGroupByArgs["orderBy"] },
+		OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>>,
 		ByFields extends Prisma.MaybeTupleToUnion<T["by"]>,
 		ByValid extends Prisma.Has<ByFields, OrderFields>,
 		HavingFields extends Prisma.GetHavingFields<T["having"]>,
@@ -3300,21 +2586,14 @@ export interface EscritorDelegate<
 							? never
 							: P extends string
 								? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-								: [
-										Error,
-										"Field ",
-										P,
-										` in "having" needs to be provided in "by"`,
-									];
+								: [Error, "Field ", P, ` in "having" needs to be provided in "by"`];
 					}[HavingFields]
 				: "take" extends Prisma.Keys<T>
 					? "orderBy" extends Prisma.Keys<T>
 						? ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields]
 						: 'Error: If you provide "take", you also need to provide "orderBy"'
 					: "skip" extends Prisma.Keys<T>
@@ -3322,24 +2601,15 @@ export interface EscritorDelegate<
 							? ByValid extends Prisma.True
 								? {}
 								: {
-										[P in OrderFields]: P extends ByFields
-											? never
-											: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+										[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 									}[OrderFields]
 							: 'Error: If you provide "skip", you also need to provide "orderBy"'
 						: ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields],
-	>(
-		args: Prisma.SubsetIntersection<T, EscritorGroupByArgs, OrderByArg> &
-			InputErrors,
-	): {} extends InputErrors
-		? GetEscritorGroupByPayload<T>
-		: Prisma.PrismaPromise<InputErrors>;
+	>(args: Prisma.SubsetIntersection<T, EscritorGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetEscritorGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
 	/**
 	 * Fields of the Escritor model
 	 */
@@ -3352,143 +2622,42 @@ export interface EscritorDelegate<
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__EscritorClient<
-	T,
-	Null = never,
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> extends Prisma.PrismaPromise<T> {
+export interface Prisma__EscritorClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}>
+	extends Prisma.PrismaPromise<T> {
 	readonly [Symbol.toStringTag]: "PrismaPromise";
 	usuario<T extends Prisma.Escritor$usuarioArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Escritor$usuarioArgs<ExtArgs>>,
-	): Prisma.Prisma__UsuarioClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$UsuarioPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__UsuarioClient<runtime.Types.Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 	avatar<T extends Prisma.AvatarDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.AvatarDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__AvatarClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$AvatarPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__AvatarClient<runtime.Types.Result.GetResult<Prisma.$AvatarPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	estado<T extends Prisma.EstadoDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EstadoDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EstadoPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	libros<T extends Prisma.Escritor$librosArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Escritor$librosArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$LibroPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LibroPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	comentarios<T extends Prisma.Escritor$comentariosArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Escritor$comentariosArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$ComentarioPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	favoritos<T extends Prisma.Escritor$favoritosArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Escritor$favoritosArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$FavoritoPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FavoritoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	glosarios<T extends Prisma.Escritor$glosariosArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Escritor$glosariosArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$GlosarioPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GlosarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	notasAutor<T extends Prisma.Escritor$notasAutorArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Escritor$notasAutorArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$NotaAutorPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotaAutorPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	marcadores<T extends Prisma.Escritor$marcadoresArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Escritor$marcadoresArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$MarcadorPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MarcadorPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	seguidores<T extends Prisma.Escritor$seguidoresArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Escritor$seguidoresArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$SeguirUsuarioPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SeguirUsuarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	siguiendo<T extends Prisma.Escritor$siguiendoArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Escritor$siguiendoArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$SeguirUsuarioPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SeguirUsuarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	/**
 	 * Attaches callbacks for the resolution and/or rejection of the Promise.
 	 * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3496,35 +2665,22 @@ export interface Prisma__EscritorClient<
 	 * @returns A Promise for the completion of which ever callback is executed.
 	 */
 	then<TResult1 = T, TResult2 = never>(
-		onfulfilled?:
-			| ((value: T) => TResult1 | PromiseLike<TResult1>)
-			| undefined
-			| null,
-		onrejected?:
-			| ((reason: any) => TResult2 | PromiseLike<TResult2>)
-			| undefined
-			| null,
+		onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+		onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
 	): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
 	/**
 	 * Attaches a callback for only the rejection of the Promise.
 	 * @param onrejected The callback to execute when the Promise is rejected.
 	 * @returns A Promise for the completion of the callback.
 	 */
-	catch<TResult = never>(
-		onrejected?:
-			| ((reason: any) => TResult | PromiseLike<TResult>)
-			| undefined
-			| null,
-	): runtime.Types.Utils.JsPromise<T | TResult>;
+	catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
 	/**
 	 * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
 	 * resolved value cannot be modified from the callback.
 	 * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
 	 * @returns A Promise for the completion of the callback.
 	 */
-	finally(
-		onfinally?: (() => void) | undefined | null,
-	): runtime.Types.Utils.JsPromise<T>;
+	finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
 }
 
 /**
@@ -3548,10 +2704,7 @@ export interface EscritorFieldRefs {
 /**
  * Escritor findUnique
  */
-export type EscritorFindUniqueArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Escritor
 	 */
@@ -3573,10 +2726,7 @@ export type EscritorFindUniqueArgs<
 /**
  * Escritor findUniqueOrThrow
  */
-export type EscritorFindUniqueOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Escritor
 	 */
@@ -3598,10 +2748,7 @@ export type EscritorFindUniqueOrThrowArgs<
 /**
  * Escritor findFirst
  */
-export type EscritorFindFirstArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Escritor
 	 */
@@ -3623,9 +2770,7 @@ export type EscritorFindFirstArgs<
 	 *
 	 * Determine the order of Escritors to fetch.
 	 */
-	orderBy?:
-		| Prisma.EscritorOrderByWithRelationInput
-		| Prisma.EscritorOrderByWithRelationInput[];
+	orderBy?: Prisma.EscritorOrderByWithRelationInput | Prisma.EscritorOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -3655,10 +2800,7 @@ export type EscritorFindFirstArgs<
 /**
  * Escritor findFirstOrThrow
  */
-export type EscritorFindFirstOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Escritor
 	 */
@@ -3680,9 +2822,7 @@ export type EscritorFindFirstOrThrowArgs<
 	 *
 	 * Determine the order of Escritors to fetch.
 	 */
-	orderBy?:
-		| Prisma.EscritorOrderByWithRelationInput
-		| Prisma.EscritorOrderByWithRelationInput[];
+	orderBy?: Prisma.EscritorOrderByWithRelationInput | Prisma.EscritorOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -3712,10 +2852,7 @@ export type EscritorFindFirstOrThrowArgs<
 /**
  * Escritor findMany
  */
-export type EscritorFindManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Escritor
 	 */
@@ -3737,9 +2874,7 @@ export type EscritorFindManyArgs<
 	 *
 	 * Determine the order of Escritors to fetch.
 	 */
-	orderBy?:
-		| Prisma.EscritorOrderByWithRelationInput
-		| Prisma.EscritorOrderByWithRelationInput[];
+	orderBy?: Prisma.EscritorOrderByWithRelationInput | Prisma.EscritorOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -3769,10 +2904,7 @@ export type EscritorFindManyArgs<
 /**
  * Escritor create
  */
-export type EscritorCreateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Escritor
 	 */
@@ -3788,19 +2920,13 @@ export type EscritorCreateArgs<
 	/**
 	 * The data needed to create a Escritor.
 	 */
-	data: Prisma.XOR<
-		Prisma.EscritorCreateInput,
-		Prisma.EscritorUncheckedCreateInput
-	>;
+	data: Prisma.XOR<Prisma.EscritorCreateInput, Prisma.EscritorUncheckedCreateInput>;
 };
 
 /**
  * Escritor createMany
  */
-export type EscritorCreateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to create many Escritors.
 	 */
@@ -3811,10 +2937,7 @@ export type EscritorCreateManyArgs<
 /**
  * Escritor createManyAndReturn
  */
-export type EscritorCreateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Escritor
 	 */
@@ -3837,10 +2960,7 @@ export type EscritorCreateManyAndReturnArgs<
 /**
  * Escritor update
  */
-export type EscritorUpdateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Escritor
 	 */
@@ -3856,10 +2976,7 @@ export type EscritorUpdateArgs<
 	/**
 	 * The data needed to update a Escritor.
 	 */
-	data: Prisma.XOR<
-		Prisma.EscritorUpdateInput,
-		Prisma.EscritorUncheckedUpdateInput
-	>;
+	data: Prisma.XOR<Prisma.EscritorUpdateInput, Prisma.EscritorUncheckedUpdateInput>;
 	/**
 	 * Choose, which Escritor to update.
 	 */
@@ -3869,17 +2986,11 @@ export type EscritorUpdateArgs<
 /**
  * Escritor updateMany
  */
-export type EscritorUpdateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to update Escritors.
 	 */
-	data: Prisma.XOR<
-		Prisma.EscritorUpdateManyMutationInput,
-		Prisma.EscritorUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.EscritorUpdateManyMutationInput, Prisma.EscritorUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Escritors to update
 	 */
@@ -3893,10 +3004,7 @@ export type EscritorUpdateManyArgs<
 /**
  * Escritor updateManyAndReturn
  */
-export type EscritorUpdateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Escritor
 	 */
@@ -3908,10 +3016,7 @@ export type EscritorUpdateManyAndReturnArgs<
 	/**
 	 * The data used to update Escritors.
 	 */
-	data: Prisma.XOR<
-		Prisma.EscritorUpdateManyMutationInput,
-		Prisma.EscritorUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.EscritorUpdateManyMutationInput, Prisma.EscritorUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Escritors to update
 	 */
@@ -3929,10 +3034,7 @@ export type EscritorUpdateManyAndReturnArgs<
 /**
  * Escritor upsert
  */
-export type EscritorUpsertArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Escritor
 	 */
@@ -3952,26 +3054,17 @@ export type EscritorUpsertArgs<
 	/**
 	 * In case the Escritor found by the `where` argument doesn't exist, create a new Escritor with this data.
 	 */
-	create: Prisma.XOR<
-		Prisma.EscritorCreateInput,
-		Prisma.EscritorUncheckedCreateInput
-	>;
+	create: Prisma.XOR<Prisma.EscritorCreateInput, Prisma.EscritorUncheckedCreateInput>;
 	/**
 	 * In case the Escritor was found with the provided `where` argument, update it with this data.
 	 */
-	update: Prisma.XOR<
-		Prisma.EscritorUpdateInput,
-		Prisma.EscritorUncheckedUpdateInput
-	>;
+	update: Prisma.XOR<Prisma.EscritorUpdateInput, Prisma.EscritorUncheckedUpdateInput>;
 };
 
 /**
  * Escritor delete
  */
-export type EscritorDeleteArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Escritor
 	 */
@@ -3993,10 +3086,7 @@ export type EscritorDeleteArgs<
 /**
  * Escritor deleteMany
  */
-export type EscritorDeleteManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Escritors to delete
 	 */
@@ -4010,10 +3100,7 @@ export type EscritorDeleteManyArgs<
 /**
  * Escritor.usuario
  */
-export type Escritor$usuarioArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Escritor$usuarioArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Usuario
 	 */
@@ -4032,10 +3119,7 @@ export type Escritor$usuarioArgs<
 /**
  * Escritor.libros
  */
-export type Escritor$librosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Escritor$librosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Libro
 	 */
@@ -4049,9 +3133,7 @@ export type Escritor$librosArgs<
 	 */
 	include?: Prisma.LibroInclude<ExtArgs> | null;
 	where?: Prisma.LibroWhereInput;
-	orderBy?:
-		| Prisma.LibroOrderByWithRelationInput
-		| Prisma.LibroOrderByWithRelationInput[];
+	orderBy?: Prisma.LibroOrderByWithRelationInput | Prisma.LibroOrderByWithRelationInput[];
 	cursor?: Prisma.LibroWhereUniqueInput;
 	take?: number;
 	skip?: number;
@@ -4061,10 +3143,7 @@ export type Escritor$librosArgs<
 /**
  * Escritor.comentarios
  */
-export type Escritor$comentariosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Escritor$comentariosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Comentario
 	 */
@@ -4078,24 +3157,17 @@ export type Escritor$comentariosArgs<
 	 */
 	include?: Prisma.ComentarioInclude<ExtArgs> | null;
 	where?: Prisma.ComentarioWhereInput;
-	orderBy?:
-		| Prisma.ComentarioOrderByWithRelationInput
-		| Prisma.ComentarioOrderByWithRelationInput[];
+	orderBy?: Prisma.ComentarioOrderByWithRelationInput | Prisma.ComentarioOrderByWithRelationInput[];
 	cursor?: Prisma.ComentarioWhereUniqueInput;
 	take?: number;
 	skip?: number;
-	distinct?:
-		| Prisma.ComentarioScalarFieldEnum
-		| Prisma.ComentarioScalarFieldEnum[];
+	distinct?: Prisma.ComentarioScalarFieldEnum | Prisma.ComentarioScalarFieldEnum[];
 };
 
 /**
  * Escritor.favoritos
  */
-export type Escritor$favoritosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Escritor$favoritosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Favorito
 	 */
@@ -4109,9 +3181,7 @@ export type Escritor$favoritosArgs<
 	 */
 	include?: Prisma.FavoritoInclude<ExtArgs> | null;
 	where?: Prisma.FavoritoWhereInput;
-	orderBy?:
-		| Prisma.FavoritoOrderByWithRelationInput
-		| Prisma.FavoritoOrderByWithRelationInput[];
+	orderBy?: Prisma.FavoritoOrderByWithRelationInput | Prisma.FavoritoOrderByWithRelationInput[];
 	cursor?: Prisma.FavoritoWhereUniqueInput;
 	take?: number;
 	skip?: number;
@@ -4121,10 +3191,7 @@ export type Escritor$favoritosArgs<
 /**
  * Escritor.glosarios
  */
-export type Escritor$glosariosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Escritor$glosariosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Glosario
 	 */
@@ -4138,9 +3205,7 @@ export type Escritor$glosariosArgs<
 	 */
 	include?: Prisma.GlosarioInclude<ExtArgs> | null;
 	where?: Prisma.GlosarioWhereInput;
-	orderBy?:
-		| Prisma.GlosarioOrderByWithRelationInput
-		| Prisma.GlosarioOrderByWithRelationInput[];
+	orderBy?: Prisma.GlosarioOrderByWithRelationInput | Prisma.GlosarioOrderByWithRelationInput[];
 	cursor?: Prisma.GlosarioWhereUniqueInput;
 	take?: number;
 	skip?: number;
@@ -4150,10 +3215,7 @@ export type Escritor$glosariosArgs<
 /**
  * Escritor.notasAutor
  */
-export type Escritor$notasAutorArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Escritor$notasAutorArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the NotaAutor
 	 */
@@ -4167,24 +3229,17 @@ export type Escritor$notasAutorArgs<
 	 */
 	include?: Prisma.NotaAutorInclude<ExtArgs> | null;
 	where?: Prisma.NotaAutorWhereInput;
-	orderBy?:
-		| Prisma.NotaAutorOrderByWithRelationInput
-		| Prisma.NotaAutorOrderByWithRelationInput[];
+	orderBy?: Prisma.NotaAutorOrderByWithRelationInput | Prisma.NotaAutorOrderByWithRelationInput[];
 	cursor?: Prisma.NotaAutorWhereUniqueInput;
 	take?: number;
 	skip?: number;
-	distinct?:
-		| Prisma.NotaAutorScalarFieldEnum
-		| Prisma.NotaAutorScalarFieldEnum[];
+	distinct?: Prisma.NotaAutorScalarFieldEnum | Prisma.NotaAutorScalarFieldEnum[];
 };
 
 /**
  * Escritor.marcadores
  */
-export type Escritor$marcadoresArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Escritor$marcadoresArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Marcador
 	 */
@@ -4198,9 +3253,7 @@ export type Escritor$marcadoresArgs<
 	 */
 	include?: Prisma.MarcadorInclude<ExtArgs> | null;
 	where?: Prisma.MarcadorWhereInput;
-	orderBy?:
-		| Prisma.MarcadorOrderByWithRelationInput
-		| Prisma.MarcadorOrderByWithRelationInput[];
+	orderBy?: Prisma.MarcadorOrderByWithRelationInput | Prisma.MarcadorOrderByWithRelationInput[];
 	cursor?: Prisma.MarcadorWhereUniqueInput;
 	take?: number;
 	skip?: number;
@@ -4210,10 +3263,7 @@ export type Escritor$marcadoresArgs<
 /**
  * Escritor.seguidores
  */
-export type Escritor$seguidoresArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Escritor$seguidoresArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the SeguirUsuario
 	 */
@@ -4227,24 +3277,17 @@ export type Escritor$seguidoresArgs<
 	 */
 	include?: Prisma.SeguirUsuarioInclude<ExtArgs> | null;
 	where?: Prisma.SeguirUsuarioWhereInput;
-	orderBy?:
-		| Prisma.SeguirUsuarioOrderByWithRelationInput
-		| Prisma.SeguirUsuarioOrderByWithRelationInput[];
+	orderBy?: Prisma.SeguirUsuarioOrderByWithRelationInput | Prisma.SeguirUsuarioOrderByWithRelationInput[];
 	cursor?: Prisma.SeguirUsuarioWhereUniqueInput;
 	take?: number;
 	skip?: number;
-	distinct?:
-		| Prisma.SeguirUsuarioScalarFieldEnum
-		| Prisma.SeguirUsuarioScalarFieldEnum[];
+	distinct?: Prisma.SeguirUsuarioScalarFieldEnum | Prisma.SeguirUsuarioScalarFieldEnum[];
 };
 
 /**
  * Escritor.siguiendo
  */
-export type Escritor$siguiendoArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Escritor$siguiendoArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the SeguirUsuario
 	 */
@@ -4258,24 +3301,17 @@ export type Escritor$siguiendoArgs<
 	 */
 	include?: Prisma.SeguirUsuarioInclude<ExtArgs> | null;
 	where?: Prisma.SeguirUsuarioWhereInput;
-	orderBy?:
-		| Prisma.SeguirUsuarioOrderByWithRelationInput
-		| Prisma.SeguirUsuarioOrderByWithRelationInput[];
+	orderBy?: Prisma.SeguirUsuarioOrderByWithRelationInput | Prisma.SeguirUsuarioOrderByWithRelationInput[];
 	cursor?: Prisma.SeguirUsuarioWhereUniqueInput;
 	take?: number;
 	skip?: number;
-	distinct?:
-		| Prisma.SeguirUsuarioScalarFieldEnum
-		| Prisma.SeguirUsuarioScalarFieldEnum[];
+	distinct?: Prisma.SeguirUsuarioScalarFieldEnum | Prisma.SeguirUsuarioScalarFieldEnum[];
 };
 
 /**
  * Escritor without action
  */
-export type EscritorDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EscritorDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Escritor
 	 */

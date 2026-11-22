@@ -1,5 +1,5 @@
 import * as z from "zod";
-import type { Prisma } from "../prisma/client.ts";
+import type { Prisma } from "../prisma/browser.ts";
 import { MarcadorScalarFieldEnumSchema } from "./enums/MarcadorScalarFieldEnum.schema.ts";
 import { MarcadorAvgAggregateInputObjectSchema as MarcadorAvgAggregateInputObjectSchema } from "./objects/MarcadorAvgAggregateInput.schema.ts";
 import { MarcadorCountAggregateInputObjectSchema as MarcadorCountAggregateInputObjectSchema } from "./objects/MarcadorCountAggregateInput.schema.ts";
@@ -13,19 +13,12 @@ import { MarcadorWhereInputObjectSchema as MarcadorWhereInputObjectSchema } from
 export const MarcadorGroupBySchema: z.ZodType<Prisma.MarcadorGroupByArgs> = z
 	.object({
 		where: MarcadorWhereInputObjectSchema.optional(),
-		orderBy: z
-			.union([
-				MarcadorOrderByWithAggregationInputObjectSchema,
-				MarcadorOrderByWithAggregationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([MarcadorOrderByWithAggregationInputObjectSchema, MarcadorOrderByWithAggregationInputObjectSchema.array()]).optional(),
 		having: MarcadorScalarWhereWithAggregatesInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
 		by: z.array(MarcadorScalarFieldEnumSchema),
-		_count: z
-			.union([z.literal(true), MarcadorCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), MarcadorCountAggregateInputObjectSchema]).optional(),
 		_min: MarcadorMinAggregateInputObjectSchema.optional(),
 		_max: MarcadorMaxAggregateInputObjectSchema.optional(),
 		_avg: MarcadorAvgAggregateInputObjectSchema.optional(),
@@ -36,19 +29,12 @@ export const MarcadorGroupBySchema: z.ZodType<Prisma.MarcadorGroupByArgs> = z
 export const MarcadorGroupByZodSchema = z
 	.object({
 		where: MarcadorWhereInputObjectSchema.optional(),
-		orderBy: z
-			.union([
-				MarcadorOrderByWithAggregationInputObjectSchema,
-				MarcadorOrderByWithAggregationInputObjectSchema.array(),
-			])
-			.optional(),
+		orderBy: z.union([MarcadorOrderByWithAggregationInputObjectSchema, MarcadorOrderByWithAggregationInputObjectSchema.array()]).optional(),
 		having: MarcadorScalarWhereWithAggregatesInputObjectSchema.optional(),
 		take: z.number().optional(),
 		skip: z.number().optional(),
 		by: z.array(MarcadorScalarFieldEnumSchema),
-		_count: z
-			.union([z.literal(true), MarcadorCountAggregateInputObjectSchema])
-			.optional(),
+		_count: z.union([z.literal(true), MarcadorCountAggregateInputObjectSchema]).optional(),
 		_min: MarcadorMinAggregateInputObjectSchema.optional(),
 		_max: MarcadorMaxAggregateInputObjectSchema.optional(),
 		_avg: MarcadorAvgAggregateInputObjectSchema.optional(),

@@ -15,8 +15,7 @@ import type * as Prisma from "../internal/prismaNamespace.ts";
  * Model Etiqueta
  *
  */
-export type EtiquetaModel =
-	runtime.Types.Result.DefaultSelection<Prisma.$EtiquetaPayload>;
+export type EtiquetaModel = runtime.Types.Result.DefaultSelection<Prisma.$EtiquetaPayload>;
 
 export type AggregateEtiqueta = {
 	_count: EtiquetaCountAggregateOutputType | null;
@@ -96,10 +95,7 @@ export type EtiquetaCountAggregateInputType = {
 	_all?: true;
 };
 
-export type EtiquetaAggregateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Etiqueta to aggregate.
 	 */
@@ -109,9 +105,7 @@ export type EtiquetaAggregateArgs<
 	 *
 	 * Determine the order of Etiquetas to fetch.
 	 */
-	orderBy?:
-		| Prisma.EtiquetaOrderByWithRelationInput
-		| Prisma.EtiquetaOrderByWithRelationInput[];
+	orderBy?: Prisma.EtiquetaOrderByWithRelationInput | Prisma.EtiquetaOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -170,14 +164,9 @@ export type GetEtiquetaAggregateType<T extends EtiquetaAggregateArgs> = {
 		: Prisma.GetScalarType<T[P], AggregateEtiqueta[P]>;
 };
 
-export type EtiquetaGroupByArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.EtiquetaWhereInput;
-	orderBy?:
-		| Prisma.EtiquetaOrderByWithAggregationInput
-		| Prisma.EtiquetaOrderByWithAggregationInput[];
+	orderBy?: Prisma.EtiquetaOrderByWithAggregationInput | Prisma.EtiquetaOrderByWithAggregationInput[];
 	by: Prisma.EtiquetaScalarFieldEnum[] | Prisma.EtiquetaScalarFieldEnum;
 	having?: Prisma.EtiquetaScalarWhereWithAggregatesInput;
 	take?: number;
@@ -202,18 +191,17 @@ export type EtiquetaGroupByOutputType = {
 	_max: EtiquetaMaxAggregateOutputType | null;
 };
 
-export type GetEtiquetaGroupByPayload<T extends EtiquetaGroupByArgs> =
-	Prisma.PrismaPromise<
-		Array<
-			Prisma.PickEnumerable<EtiquetaGroupByOutputType, T["by"]> & {
-				[P in keyof T & keyof EtiquetaGroupByOutputType]: P extends "_count"
-					? T[P] extends boolean
-						? number
-						: Prisma.GetScalarType<T[P], EtiquetaGroupByOutputType[P]>
-					: Prisma.GetScalarType<T[P], EtiquetaGroupByOutputType[P]>;
-			}
-		>
-	>;
+export type GetEtiquetaGroupByPayload<T extends EtiquetaGroupByArgs> = Prisma.PrismaPromise<
+	Array<
+		Prisma.PickEnumerable<EtiquetaGroupByOutputType, T["by"]> & {
+			[P in keyof T & keyof EtiquetaGroupByOutputType]: P extends "_count"
+				? T[P] extends boolean
+					? number
+					: Prisma.GetScalarType<T[P], EtiquetaGroupByOutputType[P]>
+				: Prisma.GetScalarType<T[P], EtiquetaGroupByOutputType[P]>;
+		}
+	>
+>;
 
 export type EtiquetaWhereInput = {
 	AND?: Prisma.EtiquetaWhereInput | Prisma.EtiquetaWhereInput[];
@@ -224,10 +212,7 @@ export type EtiquetaWhereInput = {
 	createdAt?: Prisma.DateTimeFilter<"Etiqueta"> | Date | string;
 	updatedAt?: Prisma.DateTimeFilter<"Etiqueta"> | Date | string;
 	estadoId?: Prisma.IntFilter<"Etiqueta"> | number;
-	estado?: Prisma.XOR<
-		Prisma.EstadoScalarRelationFilter,
-		Prisma.EstadoWhereInput
-	>;
+	estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 	libros?: Prisma.LibroEtiquetaListRelationFilter;
 };
 
@@ -251,10 +236,7 @@ export type EtiquetaWhereUniqueInput = Prisma.AtLeast<
 		createdAt?: Prisma.DateTimeFilter<"Etiqueta"> | Date | string;
 		updatedAt?: Prisma.DateTimeFilter<"Etiqueta"> | Date | string;
 		estadoId?: Prisma.IntFilter<"Etiqueta"> | number;
-		estado?: Prisma.XOR<
-			Prisma.EstadoScalarRelationFilter,
-			Prisma.EstadoWhereInput
-		>;
+		estado?: Prisma.XOR<Prisma.EstadoScalarRelationFilter, Prisma.EstadoWhereInput>;
 		libros?: Prisma.LibroEtiquetaListRelationFilter;
 	},
 	"id"
@@ -274,18 +256,11 @@ export type EtiquetaOrderByWithAggregationInput = {
 };
 
 export type EtiquetaScalarWhereWithAggregatesInput = {
-	AND?:
-		| Prisma.EtiquetaScalarWhereWithAggregatesInput
-		| Prisma.EtiquetaScalarWhereWithAggregatesInput[];
+	AND?: Prisma.EtiquetaScalarWhereWithAggregatesInput | Prisma.EtiquetaScalarWhereWithAggregatesInput[];
 	OR?: Prisma.EtiquetaScalarWhereWithAggregatesInput[];
-	NOT?:
-		| Prisma.EtiquetaScalarWhereWithAggregatesInput
-		| Prisma.EtiquetaScalarWhereWithAggregatesInput[];
+	NOT?: Prisma.EtiquetaScalarWhereWithAggregatesInput | Prisma.EtiquetaScalarWhereWithAggregatesInput[];
 	id?: Prisma.IntWithAggregatesFilter<"Etiqueta"> | number;
-	nombre?:
-		| Prisma.StringNullableWithAggregatesFilter<"Etiqueta">
-		| string
-		| null;
+	nombre?: Prisma.StringNullableWithAggregatesFilter<"Etiqueta"> | string | null;
 	createdAt?: Prisma.DateTimeWithAggregatesFilter<"Etiqueta"> | Date | string;
 	updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Etiqueta"> | Date | string;
 	estadoId?: Prisma.IntWithAggregatesFilter<"Etiqueta"> | number;
@@ -398,122 +373,70 @@ export type EtiquetaScalarRelationFilter = {
 
 export type EtiquetaCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.EtiquetaCreateWithoutEstadoInput,
-				Prisma.EtiquetaUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.EtiquetaCreateWithoutEstadoInput, Prisma.EtiquetaUncheckedCreateWithoutEstadoInput>
 		| Prisma.EtiquetaCreateWithoutEstadoInput[]
 		| Prisma.EtiquetaUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.EtiquetaCreateOrConnectWithoutEstadoInput
-		| Prisma.EtiquetaCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.EtiquetaCreateOrConnectWithoutEstadoInput | Prisma.EtiquetaCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.EtiquetaCreateManyEstadoInputEnvelope;
 	connect?: Prisma.EtiquetaWhereUniqueInput | Prisma.EtiquetaWhereUniqueInput[];
 };
 
 export type EtiquetaUncheckedCreateNestedManyWithoutEstadoInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.EtiquetaCreateWithoutEstadoInput,
-				Prisma.EtiquetaUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.EtiquetaCreateWithoutEstadoInput, Prisma.EtiquetaUncheckedCreateWithoutEstadoInput>
 		| Prisma.EtiquetaCreateWithoutEstadoInput[]
 		| Prisma.EtiquetaUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.EtiquetaCreateOrConnectWithoutEstadoInput
-		| Prisma.EtiquetaCreateOrConnectWithoutEstadoInput[];
+	connectOrCreate?: Prisma.EtiquetaCreateOrConnectWithoutEstadoInput | Prisma.EtiquetaCreateOrConnectWithoutEstadoInput[];
 	createMany?: Prisma.EtiquetaCreateManyEstadoInputEnvelope;
 	connect?: Prisma.EtiquetaWhereUniqueInput | Prisma.EtiquetaWhereUniqueInput[];
 };
 
 export type EtiquetaUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.EtiquetaCreateWithoutEstadoInput,
-				Prisma.EtiquetaUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.EtiquetaCreateWithoutEstadoInput, Prisma.EtiquetaUncheckedCreateWithoutEstadoInput>
 		| Prisma.EtiquetaCreateWithoutEstadoInput[]
 		| Prisma.EtiquetaUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.EtiquetaCreateOrConnectWithoutEstadoInput
-		| Prisma.EtiquetaCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.EtiquetaUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.EtiquetaUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.EtiquetaCreateOrConnectWithoutEstadoInput | Prisma.EtiquetaCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.EtiquetaUpsertWithWhereUniqueWithoutEstadoInput | Prisma.EtiquetaUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.EtiquetaCreateManyEstadoInputEnvelope;
 	set?: Prisma.EtiquetaWhereUniqueInput | Prisma.EtiquetaWhereUniqueInput[];
-	disconnect?:
-		| Prisma.EtiquetaWhereUniqueInput
-		| Prisma.EtiquetaWhereUniqueInput[];
+	disconnect?: Prisma.EtiquetaWhereUniqueInput | Prisma.EtiquetaWhereUniqueInput[];
 	delete?: Prisma.EtiquetaWhereUniqueInput | Prisma.EtiquetaWhereUniqueInput[];
 	connect?: Prisma.EtiquetaWhereUniqueInput | Prisma.EtiquetaWhereUniqueInput[];
-	update?:
-		| Prisma.EtiquetaUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.EtiquetaUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.EtiquetaUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.EtiquetaUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.EtiquetaScalarWhereInput
-		| Prisma.EtiquetaScalarWhereInput[];
+	update?: Prisma.EtiquetaUpdateWithWhereUniqueWithoutEstadoInput | Prisma.EtiquetaUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.EtiquetaUpdateManyWithWhereWithoutEstadoInput | Prisma.EtiquetaUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.EtiquetaScalarWhereInput | Prisma.EtiquetaScalarWhereInput[];
 };
 
 export type EtiquetaUncheckedUpdateManyWithoutEstadoNestedInput = {
 	create?:
-		| Prisma.XOR<
-				Prisma.EtiquetaCreateWithoutEstadoInput,
-				Prisma.EtiquetaUncheckedCreateWithoutEstadoInput
-		  >
+		| Prisma.XOR<Prisma.EtiquetaCreateWithoutEstadoInput, Prisma.EtiquetaUncheckedCreateWithoutEstadoInput>
 		| Prisma.EtiquetaCreateWithoutEstadoInput[]
 		| Prisma.EtiquetaUncheckedCreateWithoutEstadoInput[];
-	connectOrCreate?:
-		| Prisma.EtiquetaCreateOrConnectWithoutEstadoInput
-		| Prisma.EtiquetaCreateOrConnectWithoutEstadoInput[];
-	upsert?:
-		| Prisma.EtiquetaUpsertWithWhereUniqueWithoutEstadoInput
-		| Prisma.EtiquetaUpsertWithWhereUniqueWithoutEstadoInput[];
+	connectOrCreate?: Prisma.EtiquetaCreateOrConnectWithoutEstadoInput | Prisma.EtiquetaCreateOrConnectWithoutEstadoInput[];
+	upsert?: Prisma.EtiquetaUpsertWithWhereUniqueWithoutEstadoInput | Prisma.EtiquetaUpsertWithWhereUniqueWithoutEstadoInput[];
 	createMany?: Prisma.EtiquetaCreateManyEstadoInputEnvelope;
 	set?: Prisma.EtiquetaWhereUniqueInput | Prisma.EtiquetaWhereUniqueInput[];
-	disconnect?:
-		| Prisma.EtiquetaWhereUniqueInput
-		| Prisma.EtiquetaWhereUniqueInput[];
+	disconnect?: Prisma.EtiquetaWhereUniqueInput | Prisma.EtiquetaWhereUniqueInput[];
 	delete?: Prisma.EtiquetaWhereUniqueInput | Prisma.EtiquetaWhereUniqueInput[];
 	connect?: Prisma.EtiquetaWhereUniqueInput | Prisma.EtiquetaWhereUniqueInput[];
-	update?:
-		| Prisma.EtiquetaUpdateWithWhereUniqueWithoutEstadoInput
-		| Prisma.EtiquetaUpdateWithWhereUniqueWithoutEstadoInput[];
-	updateMany?:
-		| Prisma.EtiquetaUpdateManyWithWhereWithoutEstadoInput
-		| Prisma.EtiquetaUpdateManyWithWhereWithoutEstadoInput[];
-	deleteMany?:
-		| Prisma.EtiquetaScalarWhereInput
-		| Prisma.EtiquetaScalarWhereInput[];
+	update?: Prisma.EtiquetaUpdateWithWhereUniqueWithoutEstadoInput | Prisma.EtiquetaUpdateWithWhereUniqueWithoutEstadoInput[];
+	updateMany?: Prisma.EtiquetaUpdateManyWithWhereWithoutEstadoInput | Prisma.EtiquetaUpdateManyWithWhereWithoutEstadoInput[];
+	deleteMany?: Prisma.EtiquetaScalarWhereInput | Prisma.EtiquetaScalarWhereInput[];
 };
 
 export type EtiquetaCreateNestedOneWithoutLibrosInput = {
-	create?: Prisma.XOR<
-		Prisma.EtiquetaCreateWithoutLibrosInput,
-		Prisma.EtiquetaUncheckedCreateWithoutLibrosInput
-	>;
+	create?: Prisma.XOR<Prisma.EtiquetaCreateWithoutLibrosInput, Prisma.EtiquetaUncheckedCreateWithoutLibrosInput>;
 	connectOrCreate?: Prisma.EtiquetaCreateOrConnectWithoutLibrosInput;
 	connect?: Prisma.EtiquetaWhereUniqueInput;
 };
 
 export type EtiquetaUpdateOneRequiredWithoutLibrosNestedInput = {
-	create?: Prisma.XOR<
-		Prisma.EtiquetaCreateWithoutLibrosInput,
-		Prisma.EtiquetaUncheckedCreateWithoutLibrosInput
-	>;
+	create?: Prisma.XOR<Prisma.EtiquetaCreateWithoutLibrosInput, Prisma.EtiquetaUncheckedCreateWithoutLibrosInput>;
 	connectOrCreate?: Prisma.EtiquetaCreateOrConnectWithoutLibrosInput;
 	upsert?: Prisma.EtiquetaUpsertWithoutLibrosInput;
 	connect?: Prisma.EtiquetaWhereUniqueInput;
-	update?: Prisma.XOR<
-		Prisma.XOR<
-			Prisma.EtiquetaUpdateToOneWithWhereWithoutLibrosInput,
-			Prisma.EtiquetaUpdateWithoutLibrosInput
-		>,
-		Prisma.EtiquetaUncheckedUpdateWithoutLibrosInput
-	>;
+	update?: Prisma.XOR<Prisma.XOR<Prisma.EtiquetaUpdateToOneWithWhereWithoutLibrosInput, Prisma.EtiquetaUpdateWithoutLibrosInput>, Prisma.EtiquetaUncheckedUpdateWithoutLibrosInput>;
 };
 
 export type EtiquetaCreateWithoutEstadoInput = {
@@ -533,45 +456,28 @@ export type EtiquetaUncheckedCreateWithoutEstadoInput = {
 
 export type EtiquetaCreateOrConnectWithoutEstadoInput = {
 	where: Prisma.EtiquetaWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EtiquetaCreateWithoutEstadoInput,
-		Prisma.EtiquetaUncheckedCreateWithoutEstadoInput
-	>;
+	create: Prisma.XOR<Prisma.EtiquetaCreateWithoutEstadoInput, Prisma.EtiquetaUncheckedCreateWithoutEstadoInput>;
 };
 
 export type EtiquetaCreateManyEstadoInputEnvelope = {
-	data:
-		| Prisma.EtiquetaCreateManyEstadoInput
-		| Prisma.EtiquetaCreateManyEstadoInput[];
+	data: Prisma.EtiquetaCreateManyEstadoInput | Prisma.EtiquetaCreateManyEstadoInput[];
 	skipDuplicates?: boolean;
 };
 
 export type EtiquetaUpsertWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.EtiquetaWhereUniqueInput;
-	update: Prisma.XOR<
-		Prisma.EtiquetaUpdateWithoutEstadoInput,
-		Prisma.EtiquetaUncheckedUpdateWithoutEstadoInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EtiquetaCreateWithoutEstadoInput,
-		Prisma.EtiquetaUncheckedCreateWithoutEstadoInput
-	>;
+	update: Prisma.XOR<Prisma.EtiquetaUpdateWithoutEstadoInput, Prisma.EtiquetaUncheckedUpdateWithoutEstadoInput>;
+	create: Prisma.XOR<Prisma.EtiquetaCreateWithoutEstadoInput, Prisma.EtiquetaUncheckedCreateWithoutEstadoInput>;
 };
 
 export type EtiquetaUpdateWithWhereUniqueWithoutEstadoInput = {
 	where: Prisma.EtiquetaWhereUniqueInput;
-	data: Prisma.XOR<
-		Prisma.EtiquetaUpdateWithoutEstadoInput,
-		Prisma.EtiquetaUncheckedUpdateWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.EtiquetaUpdateWithoutEstadoInput, Prisma.EtiquetaUncheckedUpdateWithoutEstadoInput>;
 };
 
 export type EtiquetaUpdateManyWithWhereWithoutEstadoInput = {
 	where: Prisma.EtiquetaScalarWhereInput;
-	data: Prisma.XOR<
-		Prisma.EtiquetaUpdateManyMutationInput,
-		Prisma.EtiquetaUncheckedUpdateManyWithoutEstadoInput
-	>;
+	data: Prisma.XOR<Prisma.EtiquetaUpdateManyMutationInput, Prisma.EtiquetaUncheckedUpdateManyWithoutEstadoInput>;
 };
 
 export type EtiquetaScalarWhereInput = {
@@ -602,30 +508,18 @@ export type EtiquetaUncheckedCreateWithoutLibrosInput = {
 
 export type EtiquetaCreateOrConnectWithoutLibrosInput = {
 	where: Prisma.EtiquetaWhereUniqueInput;
-	create: Prisma.XOR<
-		Prisma.EtiquetaCreateWithoutLibrosInput,
-		Prisma.EtiquetaUncheckedCreateWithoutLibrosInput
-	>;
+	create: Prisma.XOR<Prisma.EtiquetaCreateWithoutLibrosInput, Prisma.EtiquetaUncheckedCreateWithoutLibrosInput>;
 };
 
 export type EtiquetaUpsertWithoutLibrosInput = {
-	update: Prisma.XOR<
-		Prisma.EtiquetaUpdateWithoutLibrosInput,
-		Prisma.EtiquetaUncheckedUpdateWithoutLibrosInput
-	>;
-	create: Prisma.XOR<
-		Prisma.EtiquetaCreateWithoutLibrosInput,
-		Prisma.EtiquetaUncheckedCreateWithoutLibrosInput
-	>;
+	update: Prisma.XOR<Prisma.EtiquetaUpdateWithoutLibrosInput, Prisma.EtiquetaUncheckedUpdateWithoutLibrosInput>;
+	create: Prisma.XOR<Prisma.EtiquetaCreateWithoutLibrosInput, Prisma.EtiquetaUncheckedCreateWithoutLibrosInput>;
 	where?: Prisma.EtiquetaWhereInput;
 };
 
 export type EtiquetaUpdateToOneWithWhereWithoutLibrosInput = {
 	where?: Prisma.EtiquetaWhereInput;
-	data: Prisma.XOR<
-		Prisma.EtiquetaUpdateWithoutLibrosInput,
-		Prisma.EtiquetaUncheckedUpdateWithoutLibrosInput
-	>;
+	data: Prisma.XOR<Prisma.EtiquetaUpdateWithoutLibrosInput, Prisma.EtiquetaUncheckedUpdateWithoutLibrosInput>;
 };
 
 export type EtiquetaUpdateWithoutLibrosInput = {
@@ -680,20 +574,14 @@ export type EtiquetaCountOutputType = {
 	libros: number;
 };
 
-export type EtiquetaCountOutputTypeSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	libros?: boolean | EtiquetaCountOutputTypeCountLibrosArgs;
 };
 
 /**
  * EtiquetaCountOutputType without action
  */
-export type EtiquetaCountOutputTypeDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the EtiquetaCountOutputType
 	 */
@@ -703,17 +591,11 @@ export type EtiquetaCountOutputTypeDefaultArgs<
 /**
  * EtiquetaCountOutputType without action
  */
-export type EtiquetaCountOutputTypeCountLibrosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaCountOutputTypeCountLibrosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	where?: Prisma.LibroEtiquetaWhereInput;
 };
 
-export type EtiquetaSelect<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type EtiquetaSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -727,10 +609,7 @@ export type EtiquetaSelect<
 	ExtArgs["result"]["etiqueta"]
 >;
 
-export type EtiquetaSelectCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type EtiquetaSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -742,10 +621,7 @@ export type EtiquetaSelectCreateManyAndReturn<
 	ExtArgs["result"]["etiqueta"]
 >;
 
-export type EtiquetaSelectUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetSelect<
+export type EtiquetaSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
 	{
 		id?: boolean;
 		nombre?: boolean;
@@ -765,38 +641,23 @@ export type EtiquetaSelectScalar = {
 	estadoId?: boolean;
 };
 
-export type EtiquetaOmit<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = runtime.Types.Extensions.GetOmit<
+export type EtiquetaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<
 	"id" | "nombre" | "createdAt" | "updatedAt" | "estadoId",
 	ExtArgs["result"]["etiqueta"]
 >;
-export type EtiquetaInclude<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 	libros?: boolean | Prisma.Etiqueta$librosArgs<ExtArgs>;
 	_count?: boolean | Prisma.EtiquetaCountOutputTypeDefaultArgs<ExtArgs>;
 };
-export type EtiquetaIncludeCreateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
-export type EtiquetaIncludeUpdateManyAndReturn<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	estado?: boolean | Prisma.EstadoDefaultArgs<ExtArgs>;
 };
 
-export type $EtiquetaPayload<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type $EtiquetaPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	name: "Etiqueta";
 	objects: {
 		estado: Prisma.$EstadoPayload<ExtArgs>;
@@ -815,26 +676,14 @@ export type $EtiquetaPayload<
 	composites: {};
 };
 
-export type EtiquetaGetPayload<
-	S extends boolean | null | undefined | EtiquetaDefaultArgs,
-> = runtime.Types.Result.GetResult<Prisma.$EtiquetaPayload, S>;
+export type EtiquetaGetPayload<S extends boolean | null | undefined | EtiquetaDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$EtiquetaPayload, S>;
 
-export type EtiquetaCountArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = Omit<EtiquetaFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
+export type EtiquetaCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<EtiquetaFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
 	select?: EtiquetaCountAggregateInputType | true;
 };
 
-export interface EtiquetaDelegate<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> {
-	[K: symbol]: {
-		types: Prisma.TypeMap<ExtArgs>["model"]["Etiqueta"];
-		meta: { name: "Etiqueta" };
-	};
+export interface EtiquetaDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+	[K: symbol]: { types: Prisma.TypeMap<ExtArgs>["model"]["Etiqueta"]; meta: { name: "Etiqueta" } };
 	/**
 	 * Find zero or one Etiqueta that matches the filter.
 	 * @param {EtiquetaFindUniqueArgs} args - Arguments to find a Etiqueta
@@ -848,17 +697,7 @@ export interface EtiquetaDelegate<
 	 */
 	findUnique<T extends EtiquetaFindUniqueArgs>(
 		args: Prisma.SelectSubset<T, EtiquetaFindUniqueArgs<ExtArgs>>,
-	): Prisma.Prisma__EtiquetaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EtiquetaPayload<ExtArgs>,
-			T,
-			"findUnique",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EtiquetaClient<runtime.Types.Result.GetResult<Prisma.$EtiquetaPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find one Etiqueta that matches the filter or throw an error with `error.code='P2025'`
@@ -874,17 +713,7 @@ export interface EtiquetaDelegate<
 	 */
 	findUniqueOrThrow<T extends EtiquetaFindUniqueOrThrowArgs>(
 		args: Prisma.SelectSubset<T, EtiquetaFindUniqueOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__EtiquetaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EtiquetaPayload<ExtArgs>,
-			T,
-			"findUniqueOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EtiquetaClient<runtime.Types.Result.GetResult<Prisma.$EtiquetaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Etiqueta that matches the filter.
@@ -901,17 +730,7 @@ export interface EtiquetaDelegate<
 	 */
 	findFirst<T extends EtiquetaFindFirstArgs>(
 		args?: Prisma.SelectSubset<T, EtiquetaFindFirstArgs<ExtArgs>>,
-	): Prisma.Prisma__EtiquetaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EtiquetaPayload<ExtArgs>,
-			T,
-			"findFirst",
-			GlobalOmitOptions
-		> | null,
-		null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EtiquetaClient<runtime.Types.Result.GetResult<Prisma.$EtiquetaPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find the first Etiqueta that matches the filter or
@@ -929,17 +748,7 @@ export interface EtiquetaDelegate<
 	 */
 	findFirstOrThrow<T extends EtiquetaFindFirstOrThrowArgs>(
 		args?: Prisma.SelectSubset<T, EtiquetaFindFirstOrThrowArgs<ExtArgs>>,
-	): Prisma.Prisma__EtiquetaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EtiquetaPayload<ExtArgs>,
-			T,
-			"findFirstOrThrow",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EtiquetaClient<runtime.Types.Result.GetResult<Prisma.$EtiquetaPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Find zero or more Etiquetas that matches the filter.
@@ -959,14 +768,7 @@ export interface EtiquetaDelegate<
 	 */
 	findMany<T extends EtiquetaFindManyArgs>(
 		args?: Prisma.SelectSubset<T, EtiquetaFindManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$EtiquetaPayload<ExtArgs>,
-			T,
-			"findMany",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EtiquetaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
 
 	/**
 	 * Create a Etiqueta.
@@ -982,17 +784,7 @@ export interface EtiquetaDelegate<
 	 */
 	create<T extends EtiquetaCreateArgs>(
 		args: Prisma.SelectSubset<T, EtiquetaCreateArgs<ExtArgs>>,
-	): Prisma.Prisma__EtiquetaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EtiquetaPayload<ExtArgs>,
-			T,
-			"create",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EtiquetaClient<runtime.Types.Result.GetResult<Prisma.$EtiquetaPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Create many Etiquetas.
@@ -1006,9 +798,7 @@ export interface EtiquetaDelegate<
 	 * })
 	 *
 	 */
-	createMany<T extends EtiquetaCreateManyArgs>(
-		args?: Prisma.SelectSubset<T, EtiquetaCreateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	createMany<T extends EtiquetaCreateManyArgs>(args?: Prisma.SelectSubset<T, EtiquetaCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Create many Etiquetas and returns the data saved in the database.
@@ -1034,14 +824,7 @@ export interface EtiquetaDelegate<
 	 */
 	createManyAndReturn<T extends EtiquetaCreateManyAndReturnArgs>(
 		args?: Prisma.SelectSubset<T, EtiquetaCreateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$EtiquetaPayload<ExtArgs>,
-			T,
-			"createManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EtiquetaPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Delete a Etiqueta.
@@ -1057,17 +840,7 @@ export interface EtiquetaDelegate<
 	 */
 	delete<T extends EtiquetaDeleteArgs>(
 		args: Prisma.SelectSubset<T, EtiquetaDeleteArgs<ExtArgs>>,
-	): Prisma.Prisma__EtiquetaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EtiquetaPayload<ExtArgs>,
-			T,
-			"delete",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EtiquetaClient<runtime.Types.Result.GetResult<Prisma.$EtiquetaPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Update one Etiqueta.
@@ -1086,17 +859,7 @@ export interface EtiquetaDelegate<
 	 */
 	update<T extends EtiquetaUpdateArgs>(
 		args: Prisma.SelectSubset<T, EtiquetaUpdateArgs<ExtArgs>>,
-	): Prisma.Prisma__EtiquetaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EtiquetaPayload<ExtArgs>,
-			T,
-			"update",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EtiquetaClient<runtime.Types.Result.GetResult<Prisma.$EtiquetaPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Delete zero or more Etiquetas.
@@ -1110,9 +873,7 @@ export interface EtiquetaDelegate<
 	 * })
 	 *
 	 */
-	deleteMany<T extends EtiquetaDeleteManyArgs>(
-		args?: Prisma.SelectSubset<T, EtiquetaDeleteManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	deleteMany<T extends EtiquetaDeleteManyArgs>(args?: Prisma.SelectSubset<T, EtiquetaDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Etiquetas.
@@ -1131,9 +892,7 @@ export interface EtiquetaDelegate<
 	 * })
 	 *
 	 */
-	updateMany<T extends EtiquetaUpdateManyArgs>(
-		args: Prisma.SelectSubset<T, EtiquetaUpdateManyArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<Prisma.BatchPayload>;
+	updateMany<T extends EtiquetaUpdateManyArgs>(args: Prisma.SelectSubset<T, EtiquetaUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
 
 	/**
 	 * Update zero or more Etiquetas and returns the data updated in the database.
@@ -1165,14 +924,7 @@ export interface EtiquetaDelegate<
 	 */
 	updateManyAndReturn<T extends EtiquetaUpdateManyAndReturnArgs>(
 		args: Prisma.SelectSubset<T, EtiquetaUpdateManyAndReturnArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		runtime.Types.Result.GetResult<
-			Prisma.$EtiquetaPayload<ExtArgs>,
-			T,
-			"updateManyAndReturn",
-			GlobalOmitOptions
-		>
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EtiquetaPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
 
 	/**
 	 * Create or update one Etiqueta.
@@ -1193,17 +945,7 @@ export interface EtiquetaDelegate<
 	 */
 	upsert<T extends EtiquetaUpsertArgs>(
 		args: Prisma.SelectSubset<T, EtiquetaUpsertArgs<ExtArgs>>,
-	): Prisma.Prisma__EtiquetaClient<
-		runtime.Types.Result.GetResult<
-			Prisma.$EtiquetaPayload<ExtArgs>,
-			T,
-			"upsert",
-			GlobalOmitOptions
-		>,
-		never,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EtiquetaClient<runtime.Types.Result.GetResult<Prisma.$EtiquetaPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
 
 	/**
 	 * Count the number of Etiquetas.
@@ -1220,13 +962,7 @@ export interface EtiquetaDelegate<
 	 **/
 	count<T extends EtiquetaCountArgs>(
 		args?: Prisma.Subset<T, EtiquetaCountArgs>,
-	): Prisma.PrismaPromise<
-		T extends runtime.Types.Utils.Record<"select", any>
-			? T["select"] extends true
-				? number
-				: Prisma.GetScalarType<T["select"], EtiquetaCountAggregateOutputType>
-			: number
-	>;
+	): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<"select", any> ? (T["select"] extends true ? number : Prisma.GetScalarType<T["select"], EtiquetaCountAggregateOutputType>) : number>;
 
 	/**
 	 * Allows you to perform aggregations operations on a Etiqueta.
@@ -1252,9 +988,7 @@ export interface EtiquetaDelegate<
 	 *   take: 10,
 	 * })
 	 **/
-	aggregate<T extends EtiquetaAggregateArgs>(
-		args: Prisma.Subset<T, EtiquetaAggregateArgs>,
-	): Prisma.PrismaPromise<GetEtiquetaAggregateType<T>>;
+	aggregate<T extends EtiquetaAggregateArgs>(args: Prisma.Subset<T, EtiquetaAggregateArgs>): Prisma.PrismaPromise<GetEtiquetaAggregateType<T>>;
 
 	/**
 	 * Group by Etiqueta.
@@ -1276,16 +1010,9 @@ export interface EtiquetaDelegate<
 	 **/
 	groupBy<
 		T extends EtiquetaGroupByArgs,
-		HasSelectOrTake extends Prisma.Or<
-			Prisma.Extends<"skip", Prisma.Keys<T>>,
-			Prisma.Extends<"take", Prisma.Keys<T>>
-		>,
-		OrderByArg extends Prisma.True extends HasSelectOrTake
-			? { orderBy: EtiquetaGroupByArgs["orderBy"] }
-			: { orderBy?: EtiquetaGroupByArgs["orderBy"] },
-		OrderFields extends Prisma.ExcludeUnderscoreKeys<
-			Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>
-		>,
+		HasSelectOrTake extends Prisma.Or<Prisma.Extends<"skip", Prisma.Keys<T>>, Prisma.Extends<"take", Prisma.Keys<T>>>,
+		OrderByArg extends Prisma.True extends HasSelectOrTake ? { orderBy: EtiquetaGroupByArgs["orderBy"] } : { orderBy?: EtiquetaGroupByArgs["orderBy"] },
+		OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T["orderBy"]>>>,
 		ByFields extends Prisma.MaybeTupleToUnion<T["by"]>,
 		ByValid extends Prisma.Has<ByFields, OrderFields>,
 		HavingFields extends Prisma.GetHavingFields<T["having"]>,
@@ -1299,21 +1026,14 @@ export interface EtiquetaDelegate<
 							? never
 							: P extends string
 								? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-								: [
-										Error,
-										"Field ",
-										P,
-										` in "having" needs to be provided in "by"`,
-									];
+								: [Error, "Field ", P, ` in "having" needs to be provided in "by"`];
 					}[HavingFields]
 				: "take" extends Prisma.Keys<T>
 					? "orderBy" extends Prisma.Keys<T>
 						? ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields]
 						: 'Error: If you provide "take", you also need to provide "orderBy"'
 					: "skip" extends Prisma.Keys<T>
@@ -1321,24 +1041,15 @@ export interface EtiquetaDelegate<
 							? ByValid extends Prisma.True
 								? {}
 								: {
-										[P in OrderFields]: P extends ByFields
-											? never
-											: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+										[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 									}[OrderFields]
 							: 'Error: If you provide "skip", you also need to provide "orderBy"'
 						: ByValid extends Prisma.True
 							? {}
 							: {
-									[P in OrderFields]: P extends ByFields
-										? never
-										: `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+									[P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
 								}[OrderFields],
-	>(
-		args: Prisma.SubsetIntersection<T, EtiquetaGroupByArgs, OrderByArg> &
-			InputErrors,
-	): {} extends InputErrors
-		? GetEtiquetaGroupByPayload<T>
-		: Prisma.PrismaPromise<InputErrors>;
+	>(args: Prisma.SubsetIntersection<T, EtiquetaGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetEtiquetaGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
 	/**
 	 * Fields of the Etiqueta model
 	 */
@@ -1351,39 +1062,15 @@ export interface EtiquetaDelegate<
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__EtiquetaClient<
-	T,
-	Null = never,
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-	GlobalOmitOptions = {},
-> extends Prisma.PrismaPromise<T> {
+export interface Prisma__EtiquetaClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}>
+	extends Prisma.PrismaPromise<T> {
 	readonly [Symbol.toStringTag]: "PrismaPromise";
 	estado<T extends Prisma.EstadoDefaultArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.EstadoDefaultArgs<ExtArgs>>,
-	): Prisma.Prisma__EstadoClient<
-		| runtime.Types.Result.GetResult<
-				Prisma.$EstadoPayload<ExtArgs>,
-				T,
-				"findUniqueOrThrow",
-				GlobalOmitOptions
-		  >
-		| Null,
-		Null,
-		ExtArgs,
-		GlobalOmitOptions
-	>;
+	): Prisma.Prisma__EstadoClient<runtime.Types.Result.GetResult<Prisma.$EstadoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
 	libros<T extends Prisma.Etiqueta$librosArgs<ExtArgs> = {}>(
 		args?: Prisma.Subset<T, Prisma.Etiqueta$librosArgs<ExtArgs>>,
-	): Prisma.PrismaPromise<
-		| runtime.Types.Result.GetResult<
-				Prisma.$LibroEtiquetaPayload<ExtArgs>,
-				T,
-				"findMany",
-				GlobalOmitOptions
-		  >
-		| Null
-	>;
+	): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LibroEtiquetaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
 	/**
 	 * Attaches callbacks for the resolution and/or rejection of the Promise.
 	 * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1391,35 +1078,22 @@ export interface Prisma__EtiquetaClient<
 	 * @returns A Promise for the completion of which ever callback is executed.
 	 */
 	then<TResult1 = T, TResult2 = never>(
-		onfulfilled?:
-			| ((value: T) => TResult1 | PromiseLike<TResult1>)
-			| undefined
-			| null,
-		onrejected?:
-			| ((reason: any) => TResult2 | PromiseLike<TResult2>)
-			| undefined
-			| null,
+		onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+		onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
 	): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
 	/**
 	 * Attaches a callback for only the rejection of the Promise.
 	 * @param onrejected The callback to execute when the Promise is rejected.
 	 * @returns A Promise for the completion of the callback.
 	 */
-	catch<TResult = never>(
-		onrejected?:
-			| ((reason: any) => TResult | PromiseLike<TResult>)
-			| undefined
-			| null,
-	): runtime.Types.Utils.JsPromise<T | TResult>;
+	catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
 	/**
 	 * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
 	 * resolved value cannot be modified from the callback.
 	 * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
 	 * @returns A Promise for the completion of the callback.
 	 */
-	finally(
-		onfinally?: (() => void) | undefined | null,
-	): runtime.Types.Utils.JsPromise<T>;
+	finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
 }
 
 /**
@@ -1437,10 +1111,7 @@ export interface EtiquetaFieldRefs {
 /**
  * Etiqueta findUnique
  */
-export type EtiquetaFindUniqueArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Etiqueta
 	 */
@@ -1462,10 +1133,7 @@ export type EtiquetaFindUniqueArgs<
 /**
  * Etiqueta findUniqueOrThrow
  */
-export type EtiquetaFindUniqueOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Etiqueta
 	 */
@@ -1487,10 +1155,7 @@ export type EtiquetaFindUniqueOrThrowArgs<
 /**
  * Etiqueta findFirst
  */
-export type EtiquetaFindFirstArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Etiqueta
 	 */
@@ -1512,9 +1177,7 @@ export type EtiquetaFindFirstArgs<
 	 *
 	 * Determine the order of Etiquetas to fetch.
 	 */
-	orderBy?:
-		| Prisma.EtiquetaOrderByWithRelationInput
-		| Prisma.EtiquetaOrderByWithRelationInput[];
+	orderBy?: Prisma.EtiquetaOrderByWithRelationInput | Prisma.EtiquetaOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1544,10 +1207,7 @@ export type EtiquetaFindFirstArgs<
 /**
  * Etiqueta findFirstOrThrow
  */
-export type EtiquetaFindFirstOrThrowArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Etiqueta
 	 */
@@ -1569,9 +1229,7 @@ export type EtiquetaFindFirstOrThrowArgs<
 	 *
 	 * Determine the order of Etiquetas to fetch.
 	 */
-	orderBy?:
-		| Prisma.EtiquetaOrderByWithRelationInput
-		| Prisma.EtiquetaOrderByWithRelationInput[];
+	orderBy?: Prisma.EtiquetaOrderByWithRelationInput | Prisma.EtiquetaOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1601,10 +1259,7 @@ export type EtiquetaFindFirstOrThrowArgs<
 /**
  * Etiqueta findMany
  */
-export type EtiquetaFindManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Etiqueta
 	 */
@@ -1626,9 +1281,7 @@ export type EtiquetaFindManyArgs<
 	 *
 	 * Determine the order of Etiquetas to fetch.
 	 */
-	orderBy?:
-		| Prisma.EtiquetaOrderByWithRelationInput
-		| Prisma.EtiquetaOrderByWithRelationInput[];
+	orderBy?: Prisma.EtiquetaOrderByWithRelationInput | Prisma.EtiquetaOrderByWithRelationInput[];
 	/**
 	 * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
 	 *
@@ -1658,10 +1311,7 @@ export type EtiquetaFindManyArgs<
 /**
  * Etiqueta create
  */
-export type EtiquetaCreateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Etiqueta
 	 */
@@ -1677,19 +1327,13 @@ export type EtiquetaCreateArgs<
 	/**
 	 * The data needed to create a Etiqueta.
 	 */
-	data: Prisma.XOR<
-		Prisma.EtiquetaCreateInput,
-		Prisma.EtiquetaUncheckedCreateInput
-	>;
+	data: Prisma.XOR<Prisma.EtiquetaCreateInput, Prisma.EtiquetaUncheckedCreateInput>;
 };
 
 /**
  * Etiqueta createMany
  */
-export type EtiquetaCreateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to create many Etiquetas.
 	 */
@@ -1700,10 +1344,7 @@ export type EtiquetaCreateManyArgs<
 /**
  * Etiqueta createManyAndReturn
  */
-export type EtiquetaCreateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Etiqueta
 	 */
@@ -1726,10 +1367,7 @@ export type EtiquetaCreateManyAndReturnArgs<
 /**
  * Etiqueta update
  */
-export type EtiquetaUpdateArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Etiqueta
 	 */
@@ -1745,10 +1383,7 @@ export type EtiquetaUpdateArgs<
 	/**
 	 * The data needed to update a Etiqueta.
 	 */
-	data: Prisma.XOR<
-		Prisma.EtiquetaUpdateInput,
-		Prisma.EtiquetaUncheckedUpdateInput
-	>;
+	data: Prisma.XOR<Prisma.EtiquetaUpdateInput, Prisma.EtiquetaUncheckedUpdateInput>;
 	/**
 	 * Choose, which Etiqueta to update.
 	 */
@@ -1758,17 +1393,11 @@ export type EtiquetaUpdateArgs<
 /**
  * Etiqueta updateMany
  */
-export type EtiquetaUpdateManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * The data used to update Etiquetas.
 	 */
-	data: Prisma.XOR<
-		Prisma.EtiquetaUpdateManyMutationInput,
-		Prisma.EtiquetaUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.EtiquetaUpdateManyMutationInput, Prisma.EtiquetaUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Etiquetas to update
 	 */
@@ -1782,10 +1411,7 @@ export type EtiquetaUpdateManyArgs<
 /**
  * Etiqueta updateManyAndReturn
  */
-export type EtiquetaUpdateManyAndReturnArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Etiqueta
 	 */
@@ -1797,10 +1423,7 @@ export type EtiquetaUpdateManyAndReturnArgs<
 	/**
 	 * The data used to update Etiquetas.
 	 */
-	data: Prisma.XOR<
-		Prisma.EtiquetaUpdateManyMutationInput,
-		Prisma.EtiquetaUncheckedUpdateManyInput
-	>;
+	data: Prisma.XOR<Prisma.EtiquetaUpdateManyMutationInput, Prisma.EtiquetaUncheckedUpdateManyInput>;
 	/**
 	 * Filter which Etiquetas to update
 	 */
@@ -1818,10 +1441,7 @@ export type EtiquetaUpdateManyAndReturnArgs<
 /**
  * Etiqueta upsert
  */
-export type EtiquetaUpsertArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Etiqueta
 	 */
@@ -1841,26 +1461,17 @@ export type EtiquetaUpsertArgs<
 	/**
 	 * In case the Etiqueta found by the `where` argument doesn't exist, create a new Etiqueta with this data.
 	 */
-	create: Prisma.XOR<
-		Prisma.EtiquetaCreateInput,
-		Prisma.EtiquetaUncheckedCreateInput
-	>;
+	create: Prisma.XOR<Prisma.EtiquetaCreateInput, Prisma.EtiquetaUncheckedCreateInput>;
 	/**
 	 * In case the Etiqueta was found with the provided `where` argument, update it with this data.
 	 */
-	update: Prisma.XOR<
-		Prisma.EtiquetaUpdateInput,
-		Prisma.EtiquetaUncheckedUpdateInput
-	>;
+	update: Prisma.XOR<Prisma.EtiquetaUpdateInput, Prisma.EtiquetaUncheckedUpdateInput>;
 };
 
 /**
  * Etiqueta delete
  */
-export type EtiquetaDeleteArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Etiqueta
 	 */
@@ -1882,10 +1493,7 @@ export type EtiquetaDeleteArgs<
 /**
  * Etiqueta deleteMany
  */
-export type EtiquetaDeleteManyArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Filter which Etiquetas to delete
 	 */
@@ -1899,10 +1507,7 @@ export type EtiquetaDeleteManyArgs<
 /**
  * Etiqueta.libros
  */
-export type Etiqueta$librosArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type Etiqueta$librosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the LibroEtiqueta
 	 */
@@ -1916,24 +1521,17 @@ export type Etiqueta$librosArgs<
 	 */
 	include?: Prisma.LibroEtiquetaInclude<ExtArgs> | null;
 	where?: Prisma.LibroEtiquetaWhereInput;
-	orderBy?:
-		| Prisma.LibroEtiquetaOrderByWithRelationInput
-		| Prisma.LibroEtiquetaOrderByWithRelationInput[];
+	orderBy?: Prisma.LibroEtiquetaOrderByWithRelationInput | Prisma.LibroEtiquetaOrderByWithRelationInput[];
 	cursor?: Prisma.LibroEtiquetaWhereUniqueInput;
 	take?: number;
 	skip?: number;
-	distinct?:
-		| Prisma.LibroEtiquetaScalarFieldEnum
-		| Prisma.LibroEtiquetaScalarFieldEnum[];
+	distinct?: Prisma.LibroEtiquetaScalarFieldEnum | Prisma.LibroEtiquetaScalarFieldEnum[];
 };
 
 /**
  * Etiqueta without action
  */
-export type EtiquetaDefaultArgs<
-	ExtArgs extends
-		runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
-> = {
+export type EtiquetaDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
 	/**
 	 * Select specific fields to fetch from the Etiqueta
 	 */
