@@ -1,6 +1,6 @@
 import Logo from "@/components/custom/logo/logo";
 import LogoAnimated from "@/components/custom/logo/logo-animated";
-import LogoErrorAnimated from "@/components/custom/logo/logo-error-animated";
+import LogoTextAnimated from "@/components/custom/logo/logo-text-animated";
 
 export function BrandShowcaseExample() {
 	return (
@@ -21,13 +21,15 @@ export function BrandShowcaseExample() {
 
 			<div className="space-y-4">
 				<h3 className="text-base font-semibold">Logo error animado</h3>
-				<LogoErrorAnimated
+				<LogoTextAnimated
 					size={180}
 					tipo={401}
+					texto="Error 401"
 					waves={5}
 					duration={8}
 					waveColorClass="text-accent"
 					errorFill="fill-accent"
+					errorTextFill="fill-accent"
 				/>
 			</div>
 		</div>

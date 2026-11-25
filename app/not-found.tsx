@@ -1,6 +1,6 @@
 import { ArrowLeftIcon, HomeIcon } from "lucide-react";
 import Link from "next/link";
-import Logo404Animated from "@/components/custom/logo/logo-error-animated";
+import LogoTextAnimated from "@/components/custom/logo/logo-text-animated";
 import AuthNavBar from "@/components/custom/navigation/navbar/auth-navbar";
 
 const notFound = () => {
@@ -10,7 +10,7 @@ const notFound = () => {
 				<AuthNavBar />
 			</div>
 			<div className="absolute inset-0 z-0 opacity-50 pointer-events-none flex items-center justify-center">
-				<Logo404Animated
+				<LogoTextAnimated
 					size="100%"
 					style={{ width: "100vw", height: "100vh" }}
 					waveColorClass="text-destructive"

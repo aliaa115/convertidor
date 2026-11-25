@@ -53,7 +53,7 @@ export function HeroBrand() {
 }
 ```
 
-## `LogoErrorAnimated`
+## `LogoTextAnimated`
 
 Version animada del logo de libro para estados de error como `401` y `404`.
 
@@ -75,11 +75,11 @@ Version animada del logo de libro para estados de error como `401` y `404`.
 ### Ejemplo
 
 ```tsx
-import LogoErrorAnimated from "@/components/custom/logo/logo-error-animated";
+import LogoTextAnimated from "@/components/custom/logo/logo-text-animated";
 
 export function ErrorBrand() {
 	return (
-		<LogoErrorAnimated
+		<LogoTextAnimated
 			tipo={401}
 			size={220}
 			waves={5}

@@ -7,7 +7,7 @@ type _fillClasses = "fill-primary" | "fill-secondary" | "fill-background" | "fil
 
 type _waveClasses = "text-primary" | "text-secondary" | "text-background" | "text-foreground" | "text-destructive" | "text-accent" | "text-warning";
 
-type LogoErrorAnimatedProps = React.SVGProps<SVGSVGElement> & {
+type LogoTextAnimatedProps = React.SVGProps<SVGSVGElement> & {
 	waves?: number;
 	duration?: number;
 	maxRadius?: number;
@@ -38,7 +38,7 @@ const LEFT_PAGE_PATH =
 const RIGHT_PAGE_PATH =
 	"M 95.775 142.243 L 95.439 53.836 C 95.439 53.836 112.362 38.855 122.702 34.936 C 134.273 30.55 159.566 30.551 159.566 30.551 L 158.558 125.302 C 158.558 125.302 137.693 126.403 127.657 129.035 C 116.53 131.953 95.775 142.243 95.775 142.243 Z";
 
-export const LogoErrorAnimated = ({
+export const LogoTextAnimated = ({
 	waves = 6,
 	duration = 10,
 	maxRadius = 190,
@@ -60,7 +60,7 @@ export const LogoErrorAnimated = ({
 	textoFontSize = "1rem",
 	texto,
 	...props
-}: LogoErrorAnimatedProps) => {
+}: LogoTextAnimatedProps) => {
 	const { className, ...restProps } = props;
 
 	const safeWaves = Math.max(1, Math.floor(waves));
@@ -275,4 +275,4 @@ export const LogoErrorAnimated = ({
 	);
 };
 
-export default LogoErrorAnimated;
+export default LogoTextAnimated;

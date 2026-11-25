@@ -1,6 +1,6 @@
 import { ArrowLeftIcon, HomeIcon } from "lucide-react";
 import Link from "next/link";
-import Logo404Animated from "@/components/custom/logo/logo-error-animated";
+import LogoTextAnimated from "@/components/custom/logo/logo-text-animated";
 import type { EstadoErrorLibro } from "@/lib/validar-libro";
 
 type BookErrorProps = {
@@ -28,7 +28,7 @@ export default function BookError({ estado }: BookErrorProps) {
 	return (
 		<div className="relative flex min-h-[80vh] h-[80vh] items-center justify-center flex-col w-full">
 			<div className="absolute inset-0 z-0 opacity-50 pointer-events-none flex items-center justify-center">
-				<Logo404Animated
+				<LogoTextAnimated
 					size="100%"
 					waveColors={errorWaveColor}
 					errorFill={errorColor}
